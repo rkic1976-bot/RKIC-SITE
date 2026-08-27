@@ -1,2 +1,0 @@
-# RKIC-SITE
-For Website
