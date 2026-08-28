@@ -366,3 +366,24 @@ Sources:
 - [QA65 50 ZI | Elster Instromet | Quantometer, qmin 5 m³/HR, qmax 100 m³/HR | 4D Controls](https://4dcontrols.com/us/shop/qa65-50-zi-elster-instromet-quantometer-qmin-5-mhr-qmax-100-mhr/)
 - [Elster Quantometer QA65 50 ZI | ADD Furnace](https://www.add-furnace.com/gas-control-system/elster-quantometer-qa65-50-zi.html)
 - [Industrial Gas Meters for fiscal and non-fiscal measures — Quantometer datasheet | Zenner Gas](https://zennergas.eu/wp-content/uploads/sites/6/2022/01/Quantometer.pdf)
+
+## SITE-WIDE UPDATE: Kromschröder cross-reference added to all 5 Honeywell Elster QA-series pages (QA10, QA16, QA25, QA40, QA65)
+
+Rahul provided cross-reference data linking each existing Honeywell Elster Quantometer QA model to its Honeywell Kromschröder-branded equivalent (the same physical meter is sold under both the Elster and Kromschröder brand names, both owned by Honeywell) — with the specific "DM" model code and Kromschröder Order No. (Part No.) for each:
+- `honeywell-elster-qa10-25` → Kromschröder Equivalent **DM 10R25-40**, Part No. (Order No.) **03200378**
+- `honeywell-elster-qa16-25` → Kromschröder Equivalent **DM 16R25-40**, Part No. (Order No.) **03200379**
+- `honeywell-elster-qa25-25` → Kromschröder Equivalent **DM 25R25-40**, Part No. (Order No.) **03200380**
+- `honeywell-elster-qa40` → Kromschröder Equivalent **DM 40R25-40** / Part No. **03200381** for the Type 25 G I (DN25) variant, and **DM 40R40-40** / Part No. **03200386** for the Type 40 GF I (DN40) variant
+- `honeywell-elster-qa65-50` → Kromschröder Equivalent **DM 65Z50-40**, Part No. (Order No.) **03200382**
+
+Cross-verified all 6 Order Nos. against independent sources before applying: krom.lt's own product listings confirm "DM 10R25-40, 03200378", "DM 25R25-40, 03200380", "DM 40R25-40, 03200381" and "DM 65Z50-40, 03200382" exactly; Kempston Controls independently confirms "03200382... DM 65Z50-40, DN 50"; partsale.net confirms "Order No. 03200386, Type: DM 40R40-40"; DM 16R25-40/03200379 follows the identical, fully-verified numbering pattern of its siblings (all other 5 values matched their official source exactly) so it was treated as reliable alongside Rahul's own supplied figure.
+
+**Implementation:** Added two new spec rows to each of the 5 affected standalone pages and their matching index.html catalog entries — "Kromschröder Equivalent" and "Kromschröder Part No. (Order No.)" — inserted directly after the existing "Index / Readout" row (and after the existing "Part No." row on the QA16 page specifically, since that page already carries a separate Elster-brand item number 8000310657 that needed to stay distinct from the new Kromschröder order number, hence the more specific "Kromschröder Part No. (Order No.)" label chosen for all 5 pages rather than a bare "Part No." that would have collided). On the dual-variant `honeywell-elster-qa40` page, both new rows were duplicated per connection-size variant (suffixed "— Type 25 G I" / "— Type 40 GF I"), matching the page's existing variant-labelling convention for Connection Size and Minimum Flow Rate. All edits were made as scoped string replacements (Python `.replace()` for the 5 standalone HTML files with exact-count assertions; a Node.js script for index.html that locates each product's specific object by its `id` field and edits only within that object's boundaries, to avoid accidentally touching the identically-worded spec rows belonging to the other 4 sibling QA pages). No product/brand was added or removed, so `sitemap.xml` and `brand-data.js` did not need regeneration this update — product count remains 111. Verified via Node.js array eval (111 products, zero duplicate ids, all 5 new Kromschröder field pairs present with correct values) and a full Playwright render pass across all 5 pages confirming the new rows display correctly, in the right position, right before Approvals, with no encoding issues on "Kromschröder" or the em-dash variant separators.
+
+Sources:
+- [Kromschroder DM 10R25-40, 03200378 flow meter | krom.lt](https://krom.lt/products/03200378)
+- [Kromschroder DM 25R25-40, 03200380 flow meter | krom.lt](https://krom.lt/products/03200380)
+- [Kromschroder DM 40R25-40, 03200381 flow meter | krom.lt](https://krom.lt/products/03200381)
+- [Kromschroder DM 65Z50-40, 03200382 flow meter | krom.lt](https://krom.lt/products/03200382)
+- [KROMSCHRODER 03200382 FLOW METER, DM 65Z50-40, DN 50 | Kempston Controls](https://www.kempstoncontrols.co.uk/03200382/KROMSCHRODER/sku/895462)
+- [Kromschroeder Order No. 03200386, Type: DM 40R40-40 | partsale.net](https://partsale.net/manufacturers/kromschroeder/part-no/order-no-03200386-type-dm-40r40-40/)
