@@ -330,3 +330,6 @@ Sources:
 - [Quantometer QA16 25 G I - Elster instromet | ADD Furnace](https://www.add-furnace.com/furnace-accessories/quantometer-qa16-25-g-i-elster-instromet.html)
 - [Elster QA Turbine Gas Meter (25-150mm) | DMS Ltd](https://www.dmsltd.com/p_124_elster-qa-turbine-gas-meter)
 - [Honeywell Elster QA Turbine Gas Quantometers | Meter Suppliers UK](https://www.metersuppliers.co.uk/honeywell-elster-qa-quantometers)
+
+### Correction — subcategory renamed
+Rahul asked for the subcategory name to be **Turbine Gas Meter Quantometer** (not "Turbine Gas Meters" as initially built). Updated in index.html in both places that needed it: the `honeywell-elster-qa16-25` product's `subcategory` field, and the `subcategoryMap['GAS FLOW METERS']` array (which drives the nav dropdown and category-page subcategory list — this second location was easy to miss since it's a separate curated list, not derived from the products array). Verified via Playwright on both the `#/subcategory/Turbine%20Gas%20Meter%20Quantometer` route and the `#/category/GAS%20FLOW%20METERS` category page that the new name renders correctly everywhere. No changes needed to the standalone product page itself — it doesn't display the subcategory value anywhere (only the top-level "Gas Flow Meters" category appears in its breadcrumb/tags).
