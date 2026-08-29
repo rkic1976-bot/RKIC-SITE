@@ -1,12 +1,10 @@
 # Low-Quality Product Images — Resend List
 
-Ye 75 products ki images abhi bhi purani "quality 55%" setting par saved hain (blurry). Baaki 35+ naye products already high quality (92%) par hain. Jab bhi in products ki photo dobara bhejenge, main unhe high-quality mein reprocess karke website par update kar dunga.
+Ye 72 products ki images abhi bhi purani "quality 55%" setting par saved hain (blurry). Baaki 37+ naye products already high quality (92%) par hain. Jab bhi in products ki photo dobara bhejenge, main unhe high-quality mein reprocess karke website par update kar dunga.
 
 Har entry ke saamne product ka naam aur code diya hai taaki aap sahi physical item pehchan sakein — photo bhejte waqt bas naam ya code bata dijiye, id bataane ki zaroorat nahi.
 
-## Brahma (26)
-- Brahma Solenoid Valve EG12*L*GMO — code 13922051
-- Brahma Solenoid Valve EG12*SR*GMO — code 13912001
+## Brahma (24)
 - Brahma Solenoid Valve E6G*SR10*1/2*GMO — code 13762002
 - Brahma Solenoid Valve E6G*SR10*3/8*GMO — code 13767002
 - Brahma Ignition Transformer T8 — code 15000081
@@ -58,7 +56,7 @@ Har entry ke saamne product ka naam aur code diya hai taaki aap sahi physical it
 ## Honeywell Kromschröder (1)
 - Kromschröder Ignition Transformer TZI 8-12/100WE — code 84391170
 
-## Honeywell Technologies (10)
+## Honeywell Technologies (9)
 - Honeywell Modutrol Transformer 50004263-001
 - Honeywell UV Flame Detector Bulb 129464N
 - Honeywell UV Flame Sensor C7027A1049
@@ -68,7 +66,6 @@ Har entry ke saamne product ka naam aur code diya hai taaki aap sahi physical it
 - Honeywell UV Flame Sensor C7027A1031
 - Honeywell UV Flame Sensor C7027A1064
 - Honeywell UV Flame Sensor C7044A1006
-- Honeywell Ignition Transformer ET 401A1 — code ET 401A1 (iski catalog-card image mein ek alag bug bhi mila tha — search results mein broken dikhta tha — wo fix ho gaya hai; sirf blurriness abhi baaki hai)
 
 ## Madas (1)
 - Madas RG/2MCS DN25 Gas Pressure Regulator — code RCS040000

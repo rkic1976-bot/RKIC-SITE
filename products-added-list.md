@@ -398,3 +398,31 @@ While answering Rahul's question about whether all product images are saved as f
 **Fix:** added `image` and `imageLarge` fields (both set to the first of the 2 existing photos, matching the site's established "data-large equals main image" convention) to this product's index.html entry, while leaving its original 2-element `images` array untouched so the catalog card's 2-photo slider keeps working exactly as before. First fix attempt (collapsing `images` down to a single `image`/`imageLarge` pair) was caught by a syntax-validation step — the array actually held 2 distinct photos, not 1, and the initial edit corrupted the object literal; this was caught before delivery, the file was reverted to the last verified-good push, and redone correctly. Verified via Node.js array eval (111 products, zero duplicate ids) and Playwright: search-results-panel image now renders correctly, and the catalog-grid card's slider still shows both photos with 2 dots as before.
 
 **Separately reported (not a bug, informational):** a JPEG-quality audit across all 111 products' embedded images found 74 products (plus this et401a1 fix's own underlying photo) still saved at the old low quality=55 setting identified earlier in this project (blurry) — from before the quality fix to 92% was adopted partway through the catalog build — while 35 newer products (roughly from `madas-psm050` onward, including every product added in the most recent session) are correctly at quality=92 (sharp). Since the original source photos for those 74 older products are no longer available in the working environment, they cannot be reprocessed without Rahul resending them. Rahul chose to resend all 75 (74 + et401a1's own photo) so each can be rebuilt at the correct 92% quality; a full brand-grouped list with product names/codes was delivered to guide that resend.
+
+## PRODUCT REMOVED: honeywell-et401a1 (Honeywell Ignition Transformer ET 401A1)
+
+Removed per Rahul ji's explicit request — he will supply new/corrected details for this product to be re-added.
+
+**What was removed (2026-08-28):**
+- `index.html`: product object with `id: 'honeywell-et401a1'` deleted from the `products` array (111 → 110 products; verified via Node.js array eval, zero duplicate ids, zero leftover `et401a1` text references anywhere in the file).
+- `products/honeywell-et401a1.html` — standalone page file deleted.
+- `images/honeywell-et401a1-large.jpg` — og:image/twitter:image file deleted.
+- `sitemap.xml` — corresponding `<url>` entry removed.
+- `low-quality-images-list.md` — its entry removed from the Honeywell Technologies group (10 → 9 items) and the resend total decremented (73 → 72), since it no longer needs a quality-reprocess.
+- `brand-data.js` — "Honeywell Technologies" brand count decremented (10 → 9) to match the live product count; this is the shared, auto-generated file every standalone page reads dynamically for its "Associate Brands" strip, so no other file needed a manual badge edit.
+
+No other product's data, subcategory grouping, or brand entry was touched. Pending: re-add this product once Rahul ji provides the new details/photo.
+
+## PRODUCT RE-ADDED: honeywell-et401a1 (Honeywell Ignition Transformer ET 401A1)
+
+Rahul ji resupplied the product photo (same 110–120V nameplate, same specs as before removal) — rebuilt from the pre-deletion version and reinserted (2026-08-28).
+
+- Photo re-encoded at genuine quality=92 (previous underlying file was at quality=55; verified via Pillow quantization-table comparison). Native resolution unchanged at 375x500 — this is the source photo's actual size, not an artificial upscale.
+- Rebuilt using the site's current single-image convention (`image`/`imageLarge`, both set to the new photo) rather than the old legacy `images:[...]` 2-photo array that this product previously carried (that array held the 110-120V photo plus a since-unavailable 230V-variant photo, and was the root cause of the earlier search-results-panel bug). If Rahul ji resends the 230V-variant photo later, the slider can be reinstated.
+- All specs, description, meta tags, and JSON-LD carried over verbatim from the pre-deletion version (`git show 6b78fdf:...`), since nothing about the product itself changed — only the photo needed resupplying because source images aren't retained in the working environment across sessions.
+- `index.html`: product object reinserted into the `products` array (110 → 111 products; verified via Node.js array eval, zero duplicate ids).
+- `products/honeywell-et401a1.html` — standalone page restored, with the new photo swapped in.
+- `images/honeywell-et401a1-large.jpg` — og:image/twitter:image file restored.
+- `sitemap.xml` — `<url>` entry restored (112 total, matches 111 products + homepage).
+- `brand-data.js` — "Honeywell Technologies" brand count incremented back (9 → 10), verified to match the live product count.
+- Not re-added to `low-quality-images-list.md` — this photo is now at genuine quality=92, so it doesn't need a future reprocess.

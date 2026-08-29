@@ -301,11 +301,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.rkinstruments.in/products/honeywell-et401a1.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.rkinstruments.in/products/honeywell-maxon-47232.html</loc>
     <lastmod>2026-08-28</lastmod>
     <priority>0.8</priority>
@@ -557,6 +552,11 @@
   </url>
   <url>
     <loc>https://www.rkinstruments.in/products/vanaz-v7744.html</loc>
+    <lastmod>2026-08-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rkinstruments.in/products/honeywell-et401a1.html</loc>
     <lastmod>2026-08-28</lastmod>
     <priority>0.8</priority>
   </url>
