@@ -306,6 +306,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.rkinstruments.in/products/honeywell-maxon-23739.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.rkinstruments.in/products/kromschroder-dg10u3.html</loc>
     <lastmod>2026-08-28</lastmod>
     <priority>0.8</priority>
@@ -373,6 +378,11 @@
   <url>
     <loc>https://www.rkinstruments.in/products/madas-fm-dn25.html</loc>
     <lastmod>2026-08-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rkinstruments.in/products/madas-psm010.html</loc>
+    <lastmod>2026-08-31</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -463,6 +473,11 @@
   <url>
     <loc>https://www.rkinstruments.in/products/vanaz-r2301.html</loc>
     <lastmod>2026-08-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rkinstruments.in/products/vanaz-r2202.html</loc>
+    <lastmod>2026-09-06</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -558,6 +573,41 @@
   <url>
     <loc>https://www.rkinstruments.in/products/honeywell-et401a1.html</loc>
     <lastmod>2026-08-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rkinstruments.in/products/rkic-srg-21.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rkinstruments.in/products/rkic-sp-2307.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rkinstruments.in/products/honeywell-elster-qa100-80.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rkinstruments.in/products/honeywell-elster-qa160-80.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rkinstruments.in/products/honeywell-elster-rabo-g40-dn50.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rkinstruments.in/products/honeywell-elster-rabo-model-range.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.rkinstruments.in/products/brahma-sm592ns.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

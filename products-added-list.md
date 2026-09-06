@@ -426,3 +426,573 @@ Rahul ji resupplied the product photo (same 110–120V nameplate, same specs as 
 - `sitemap.xml` — `<url>` entry restored (112 total, matches 111 products + homepage).
 - `brand-data.js` — "Honeywell Technologies" brand count incremented back (9 → 10), verified to match the live product count.
 - Not re-added to `low-quality-images-list.md` — this photo is now at genuine quality=92, so it doesn't need a future reprocess.
+
+## SITE-WIDE LOGO REFRESH (2026-08-29)
+
+Rahul ji supplied a fine-tuned version of the existing R.K. Instruments & Controls flame+leaf logo (same design, cleaner/sharper linework, no functional redesign). Per his instruction, replaced the logo everywhere across the entire site rather than scoping it to one product:
+
+- Source PNG had a white background — converted to transparent using a feathered whiteness-based alpha ramp (not a hard threshold) to avoid a white halo/fringe around the anti-aliased edges of the artwork.
+- Generated fresh variants: an embeddable ~360px version (used inline wherever the logo appears — header brand-block, mobile drawer-head, per-product `pg-brand-logo` tag, `brandLogos` object, `brand-data.js`), a 600px version for `logo.png` (site root, used for `og:image`/`twitter:image`/JSON-LD `image` on `index.html`), and three favicon sizes (16x16, 32x32, 180x180 apple-touch-icon) matching each existing icon's own padding/crop style.
+- Replaced the old logo's base64 payload everywhere it was byte-identically embedded: `logo.png` (root file), `index.html` (favicons ×3, `brandLogos['R.K. Instruments & Controls']`, `og:image:width`/`height` meta updated 280×235 → 600×498 to match the new root logo's dimensions), `brand-data.js` (both the `R.K. Instruments & Controls` and `Siltek` entries — Siltek has no separate logo asset and reuses this same one), and the header/mobile-drawer brand-block `<img>` on **all 111 existing standalone product pages** (every page carries its own inline copy of the site header logo, not just the RKIC/Siltek-branded ones) — 220 total occurrences replaced across 109 files, verified zero remaining references to the old logo's base64 signature anywhere in the repo afterward.
+- Visually verified via a local static server + Playwright screenshot (`products/brahma-cm12u.html` header) that the new logo renders correctly before committing.
+- Committed separately from the SRG-21 product addition below, as its own site-wide change.
+
+## PRODUCT ADDED: rkic-srg-21 (R.K. Instruments & Controls SRG-21 Burner Sequence Controller, 16-Step)
+
+113. `rkic-srg-21` — SRG-21 Burner Sequence Controller (16-Step), a 16-step industrial gas burner sequence controller supporting single and double stage gas burners, 230 VAC supply, 3.5–5.0 VA power consumption, available in plug-in base or panel-mount configurations. Terminal layout confirmed directly by Rahul ji: N,N,N,N (Neutral), L (Line), AL (Alarm), BL (Blower), IG (Ignition), SV1/SV2 (Solenoid Valve 1/2), UV (UV Sensor input) — front panel also carries Power/Stage-2/V1/FLM/V2/AL indicator LEDs and a manual RESET button, read directly off the product photo. **Brand = "R.K. Instruments & Controls" AND Manufacturer spec = "R.K. Instruments & Controls"** — confirmed by Rahul ji this is a product he manufactures in-house himself (not sourced from a third party), and also supplies to other vendors on an OEM basis; this is an explicit exception to the usual "R.K. Instruments & Controls umbrella brand → real manufacturer goes in the Manufacturer field" rule, saved to memory for future products of this kind. Filed under **SEQUENCE CONTROLLERS → Burner Control** subcategory, alongside the existing Brahma sequence controllers.
+
+Researched "SRG 21" online first since it's a common model designation in the Indian burner-controller market (made by several unrelated Ahmedabad manufacturers — Pooja Engineers, Camy Electro Mech, Unitech Combustion, etc.) — none of their branding matched the logo on Rahul ji's unit, so manufacturer identity was confirmed directly with him rather than assumed from search results. Certification-level specs not provided (IP/protection rating, safety timing, weight/dimensions) were deliberately left out of the spec table rather than guessed, per Rahul ji's own instruction this session.
+
+Photo: single front-view studio shot on white background (nameplate/label area not separately photographed — all specs came from Rahul ji directly as the manufacturer, not read off a nameplate). Background was already near-clean (corners ~254/255 brightness, no heavy shadow) but still ran through the standard per-column/per-pixel background cleanup (brightness+saturation-gated whitening, not a flat global threshold) to fully flatten it to pure white without touching the red case, printed label text, or the in-body logo decal. Cropped to content bbox with padding, centered on a white square canvas, resized to 600px thumbnail + 1100px large via LANCZOS, both saved at JPEG quality 92. Standalone page created (`products/rkic-srg-21.html`) by adapting the `kromschroder-ifd258-3-1w.html` template — title/meta/OG/Twitter tags, JSON-LD Product + BreadcrumbList, visible breadcrumb, main image + matching lightbox `data-large`, brand-logo tag (swapped to the new RKIC logo), product-code tag (was a leftover `84621610` initially missed since it's a 3rd tag in `pg-tags` beyond category+brand-logo — caught and fixed), h1/pg-code, full spec table, description paragraph, WhatsApp enquiry link text. Verified via html.parser meta-attribute check (no unescaped-quote regression) and a full-page Playwright screenshot before finalizing. `index.html` products array (111 → 112), `brand-data.js` (R.K. Instruments & Controls 3 → 4, regenerated from live product/brand data via a Node script mirroring the homepage's own counting logic), and `sitemap.xml` (112 → 113 URLs, today's date) all updated to match. Total catalog: 112 products (per direct array count).
+
+## SITE-WIDE FIX: JSON-LD `offers`/price removal + unescaped-quote bug (2026-08-29)
+
+Follow-up from the SEO pattern audit — two issues found in the Product JSON-LD structured data across the catalog, discussed with Rahul ji and fixed:
+
+1. **`offers` block removed (112/112 pages).** Every product's JSON-LD had an `offers` sub-object with `priceCurrency`/`availability`/`seller` but no `price` — Google flags this as an invalid/incomplete Offer (missing required field). Since RKIC doesn't publish fixed public pricing (enquiry-based B2B), Rahul ji decided against adding a placeholder price (risk of misleading data / Google penalty) and instead had the whole `offers` block dropped — this is standard practice for B2B catalogs without listed prices, and doesn't affect normal search ranking (only the optional price/stock rich-snippet eligibility, which wasn't working anyway). Business address/phone/email are not lost — `index.html` already carries a complete `LocalBusiness` schema with the same info, so no separate `Organization` block was needed.
+2. **Unescaped-quote JSON bug found and fixed (48/112 pages).** Independently of the offers issue, discovered that many product descriptions contain literal, un-escaped `"` characters inside the JSON-LD string value (e.g. Brahma CE11U's description says the Brahma `"Control Microflat"` series) — this makes the entire Product JSON-LD block unparseable by Google on those 48 pages (a bigger issue than the price field, since it invalidates the whole block, not just one field). Fixed with a string-boundary-aware escaping pass (walks the raw JSON character-by-character, treats a `"` as a real closing quote only when followed by `,`/`}`/`]`/`:`, otherwise escapes it as `\"`) — verified all 112 pages now parse as fully valid JSON, zero errors, via a full-catalog Python validation pass.
+3. Demoed the fix on a single product (`brahma-ce11u.html`) first before rolling out, per Rahul ji's request, then applied to all 112 pages after explicit confirmation.
+4. **Alt-text reverted:** `cofi-09ca091804m.html` and `rkic-srg-21.html` had a shorter alt-text experiment (one from an earlier correction request, one from initial build) — Rahul ji decided the site's established long-form pattern (`{Title} — {Category} by {Brand}, {CodeLabel} {Code}`) should stay standard everywhere, so both were reverted/updated to match it. All 112 pages now use one consistent alt-text pattern.
+
+No visible/rendered change on any page from items 1–2 — this is all hidden structured data. Verified via `html.parser` validation (0 failures across 112 files) and a Playwright screenshot spot-check (page renders identically pre/post-fix).
+
+## PRODUCT ADDED: honeywell-elster-qa100-80 (Honeywell Elster Quantometer QA100 80 Z I Turbine Gas Meter)
+
+114. `honeywell-elster-qa100-80` — Honeywell Elster Quantometer QA100 80 Z I Turbine Gas Meter, the largest-capacity member of the QA-series turbine gas flow meters added to the catalog so far (QA10, QA16, QA25, QA40, QA65 already present). Built directly from the product nameplate photo Rahul ji supplied: brand "elster instromet" (Honeywell Elster), CE 0085, ATEX marking "II 2G Ex h IIC T4 Gc / II 2D Ex h IIIC T60°43°C" (transcribed literally off the nameplate — a newer/fuller ATEX "Ex h" marking format than the older "II 2G c IIC T4" shown on the existing QA65 page), Qmin 10 m³/h, Qmax 160 m³/h, pmax 16 bar, operating temperature -10°C to +60°C, model "QA100 80 Z I". Cross-reference data supplied directly by Rahul ji: Kromschröder Model No. "DM 100 Z80-40", Kromschröder Part No. (Order No.) "03200390". Connection size given as DN80 (3"), following the same wafer/flange-type mounting convention as the other QA-series pages. Unit-specific serial numbers visible on the nameplate (B003710657, Serial no. 693706697/2022) were deliberately left out of the spec table — they identify this individual meter, not the model, matching how no other QA-series page carries a serial field.
+
+Filed under **GAS FLOW METERS → Turbine Gas Meter Quantometer** subcategory (matching the existing QA-series convention exactly, not the "Turbine Gas Flow Meter" wording Rahul ji used in his message — kept the established subcategory string for consistency across the QA family). Brand = Honeywell Elster, Manufacturer = "Elster GmbH, Uelzen, Germany (Honeywell Elster)", matching every other QA-series page's manufacturer field verbatim.
+
+Duplicate check run before treating this as a new product: `ls products/ | grep -i qa` confirmed no existing `qa100` page, and a perceptual-hash (average_hash, 16x16) compare of the new photo against every image in `images/*.jpg` returned a best match distance of 29 (closest: `kromschroder-gik-20r02-5-large.jpg`) — far above the near-zero distance a true duplicate would show, confirming this is a genuinely new product photo.
+
+Photo: single angled studio shot of the actual meter body (not just a nameplate crop) on a clean white background, nameplate/dial clearly legible. Processed with the standard pipeline: brightness+saturation-gated whitening (feathered ramp, not a flat global threshold) to flatten the background to pure white without touching the nameplate text, CE/Ex markings, or the red/black plastic housing detail; cropped to content bounding box with padding; centered on a white square canvas; resized to 600px thumbnail + 1100px large via LANCZOS; both saved at JPEG quality 92. Standalone page created (`products/honeywell-elster-qa100-80.html`) by adapting the `honeywell-elster-qa65-50.html` template byte-for-byte (confirmed via diff that only the QA100-specific fields changed — title/meta/OG/Twitter tags, canonical, JSON-LD Product (no `offers` block, consistent with the site-wide fix already in place) + BreadcrumbList, visible breadcrumb, main image + lightbox `data-large`, pg-tags, h1/pg-code, full spec table, description paragraph, WhatsApp enquiry link text — header, mobile drawer, footer, and Associate Brands script were left untouched). `og:image:width`/`height` set correctly to 1100/1100 to match the actual large image dimensions (checked explicitly this time, since a missing-image/wrong-dimension bug was caught and fixed on the previous SRG-21 build). Alt text uses the site's established long-form pattern. Verified via `html.parser` (parses cleanly, 0 errors) and a JSON-LD `json.loads()` check on both structured-data blocks (Product + BreadcrumbList, both valid).
+
+`index.html` products array (112 → 113, syntax-verified with Node), `brand-data.js` (Honeywell Elster count 9 → 10), and `sitemap.xml` (113 → 114 URLs, dated 2026-08-29, priority 0.8, XML-validated) all updated to match. Total catalog: 113 products (per direct array count).
+
+## PRODUCT ADDED: honeywell-elster-qa160-80 (Honeywell Elster Quantometer QA160 80 Z I Turbine Gas Meter)
+
+115. `honeywell-elster-qa160-80` — Honeywell Elster Quantometer QA160 80 Z I Turbine Gas Meter, the next size class up from QA100 80 (added moments earlier) in the QA-series turbine gas flow meter family. Built directly from the nameplate photo Rahul ji supplied: model "QA160 80 Z I", Qmin 13 m³/h, Qmax 250 m³/h, pmax 16 bar, T -10°C to +60°C, CE 0085, hazardous area marking "II 2G Ex h IIC T4 Gb" with IECEx certificate reference "IECEx TUR 16.0043X" (transcribed literally as printed — this nameplate's marking differs in form from the QA100 page's ATEX-style "Gc / II 2D ... T60°43°C" marking, so it was NOT copied from that sibling page; each QA-series page's hazardous-area field reflects its own nameplate as photographed). Kromschröder cross-reference supplied directly by Rahul ji: Model No. "DM 160 Z80-40", Part No. (Order No.) "03200391". Connection size kept at DN80 (3"), wafer/flange-type, matching the QA100 80 page's "80" designation and mounting convention. Unit-specific serial number visible on the nameplate (Serial no. 6937474D/2022 approx., plus a separate ID code) deliberately left out of the spec table, consistent with every other QA-series page.
+
+**Naming discrepancy caught and resolved before building:** an earlier photo sent in this same exchange (labelled "Elster QA 160 DN 80" by Rahul ji) had a nameplate that actually printed "QA100 80 Z I" — i.e. the model text on that photo did not match the stated name. Flagged this to Rahul ji directly rather than guessing which was correct; he confirmed that photo was a duplicate re-send of the already-added QA100 80 unit, sent by mistake, and no product was created from it. This second, genuinely new photo (with its own distinct nameplate correctly reading "QA160 80 Z I", Qmax 250 vs the QA100's Qmax 160) is the one used for this entry — consistent with the QA-series' expected pattern of each larger size class carrying a higher Qmax (QA65→100, QA100→160, QA160→250).
+
+Filed under **GAS FLOW METERS → Turbine Gas Meter Quantometer** subcategory (matching the established QA-series convention, not the "Turbine Gas Flow Meter" wording Rahul ji used). Brand = Honeywell Elster, Manufacturer = "Elster GmbH, Uelzen, Germany (Honeywell Elster)".
+
+Duplicate check: `ls products/ | grep -i qa` confirmed no existing `qa160` page; a perceptual-hash (average_hash + phash, 16×16) compare of the new photo against every image in `images/*.jpg` returned best-match distances of 48 (ahash) / 118 (phash) — well above the near-zero range a genuine duplicate would show, confirming this is a new, distinct product photo.
+
+**Photo cleanup (explicitly requested by Rahul ji — "background white karo, ADD ka logo bhi hataye"):** the supplied photo carried a third-party reseller's watermark overlay — a circular "A·DD" (Add Furnace Ltd., Thailand) logo top-right, a semi-transparent Thai + English "บริษัท เอดีดี เฟอร์เนส จำกัด / Add Furnace Ltd." text band across the meter body, a small diamond/sparkle glyph, and a bottom-right contact-details text block (phone/website/email). Removed all four using OpenCV inpainting: the two corner elements (sitting on plain white background) via a direct rectangular mask + `cv2.inpaint` (Telea algorithm); the diagonal text band, which overlapped real product detail (metal casing, red o-ring edge, warning label), via a precision mask built by detecting only the locally-brighter translucent-text pixels (Gaussian-blurred local baseline subtracted from grayscale, threshold + slight dilation) rather than a blanket box — this preserved the underlying metal texture, label, and "elster" branding on the dial with no visible artifacts. Background was then whitened using the standard brightness+saturation-gated approach (stronger gating than usual since this photo's ambient floor shadow was more pronounced than typical submissions), cropped to content bounding box, centered on a white square canvas, and resized to 600px thumbnail + 1100px large via LANCZOS, both saved at JPEG quality 92. Verified via before/after crops of all four watermark regions — no readable trace of any watermark element remains.
+
+Standalone page created (`products/honeywell-elster-qa160-80.html`) by adapting `honeywell-elster-qa100-80.html` (its closest sibling, same DN80/connection pattern) — diff-verified only the QA160-specific fields changed (title/meta/OG/Twitter, canonical, JSON-LD Product (no `offers` block) + BreadcrumbList, breadcrumb, main image, pg-tags, h1/pg-code, full spec table, description, WhatsApp link), header/drawer/footer untouched. `og:image:width`/`height` confirmed against the actual saved image (1100×1100). Verified via `html.parser` (0 errors) and `json.loads()` on both JSON-LD blocks (valid).
+
+`index.html` products array (113 → 114, Node-verified), `brand-data.js` (Honeywell Elster count 10 → 11), and `sitemap.xml` (114 → 115 URLs, dated 2026-08-29, XML-validated) all updated. Total catalog: 114 products (per direct array count).
+
+## SITE STRUCTURE: New subcategory "RPD Rotary Gas Meter" under Gas Flow Meters (2026-08-30)
+
+Rahul ji requested a new subcategory be created under **GAS FLOW METERS**: **RPD Rotary Gas Meter** (for the RPD-type rotary/positive-displacement gas meter product line, alongside the existing Diaphragm Gas Meters and Turbine Gas Meter Quantometer subcategories). Added to `subcategoryMap['GAS FLOW METERS']` in `index.html` — this is the single site-wide registry that drives the expandable sub-category list shown under each category tile on the catalog grid (product counts per subcategory are computed live from the `products` array, so no other file needed a change). Verified visually via Playwright: expanding the Gas Flow Meters tile now shows three rows — Diaphragm Gas Meters (4), Turbine Gas Meter Quantometer (7), RPD Rotary Gas Meter (0, until a product is added under it).
+
+No product added yet under this subcategory — this is purely the catalog-structure change so RPD Rotary Gas Meter products can be filed correctly whenever Rahul ji sends the first one.
+
+## PRODUCT ADDED: honeywell-elster-rabo-g40-dn50 (Honeywell Elster RABO G40 DN50 Rotary Gas Meter)
+
+116. `honeywell-elster-rabo-g40-dn50` — Honeywell Elster RABO G40 DN50 CLASS150 Rotary Gas Meter, the first product filed under the newly-created **RPD Rotary Gas Meter** subcategory (created earlier this session at Rahul ji's request, under GAS FLOW METERS). Built from two photos of the same physical unit (front nameplate close-up + 3/4 angled body view showing flange connections and an optional ENCODER S1D pulse module fitted) sent as one combined side-by-side image — split into the two source photos before processing.
+
+Specs taken directly off the nameplate: Model "RABO G40 DN50 CLASS150", Qmax = 65 m³/h, Qmin = 0.32 m³/h, Vcyc = 0.97 dm³, TS (storage) = -40°C to +70°C, t (operating) = -25°C to +70°C, PS (max pressure) = 20 bar, V (internal volume) = 1.36 L, index ratio 1 m³ = 10 Imp, standard compliance EN 12480:2015 AC 10, hazardous area marking "II 2G Ex h IIC T4 Gb, IECEx TUR 16.0042X, 557/Ex-Ab 2684/16" (transcribed as printed), CE 0085, serial S/N 77131368/2022 (unit-specific, omitted from the spec table per the usual policy). "G40" was cross-checked against the standard EN 12480 gas-meter G-number table — G40 corresponds to Qmax 65 m³/h, consistent with the nameplate reading, confirming no transcription error. Noted that the nameplate's Qmin (0.32 m³/h) is notably lower than the generic "RABODN50G40 ... Qmin 3 m³/h" line in the third-party MWA Technology reference chart shown earlier in this session — the nameplate reading was used as authoritative for this specific unit rather than the generic distributor chart, since CLASS150 (≈1:150 turndown ratio, 65/150 ≈ 0.43) is close to the photographed 0.32 m³/h and the chart's rounder figures likely reflect a different/lower accuracy class.
+
+Photo used as the main catalog image: the 3/4 angled body shot (shows the flanged brass/bronze inlet-outlet ports and full cast housing, consistent with how other flow-meter pages in the catalog present their hero shot), which happens to have the optional ENCODER S1D pulse-output module fitted — called out explicitly in the description as an optional configuration, noting a plain mechanical-index version (as seen in the other supplied photo) is also available. Background was already clean/white in the source photo — only the standard brightness+saturation-gated whitening pass was applied (no watermark or cleanup needed this time), then cropped to content bbox, centered on a white square canvas, resized to 600px thumbnail + 1100px large via LANCZOS, JPEG quality 92.
+
+Duplicate check: perceptual-hash (average_hash + phash, 16×16) compare against every existing catalog image returned a best-match distance of 38 (ahash) — well outside duplicate range; `ls products/ | grep -i rabo` confirmed no existing page.
+
+Standalone page created (`products/honeywell-elster-rabo-g40-dn50.html`) by reusing the `honeywell-elster-qa160-80.html` page's full CSS/header/mobile-drawer/footer/lightbox/brand-strip-script shell verbatim (same GAS FLOW METERS category), with entirely new head meta/JSON-LD (no `offers` block) and body content (breadcrumb, pg-tags including the Honeywell Elster brand-logo tag, h1/pg-code, a fresh 18-row spec table specific to rotary-meter terminology, description, WhatsApp CTA) — since the RABO's spec fields don't overlap with the QA-series turbine-meter fields, this was built as fresh content rather than a field-substitution pass. Caught and fixed one build bug during review: the first draft's `pg-tags` block was written by hand and initially omitted the brand-logo `<img>` tag that every other product page carries — caught via a full-page screenshot comparison, fixed by re-inserting the exact brand-logo tag markup (and its embedded base64) copied from the QA160 sibling page. Verified via `html.parser` (0 errors), `json.loads()` on both JSON-LD blocks (valid), and a Playwright screenshot after the fix (brand-logo tag now renders correctly).
+
+`index.html` products array (114 → 115, Node-verified, `subcategory: 'RPD Rotary Gas Meter'` confirmed on the parsed entry), `brand-data.js` (Honeywell Elster count 11 → 12), and `sitemap.xml` (115 → 116 URLs, dated 2026-08-30, XML-validated) all updated. Total catalog: 115 products (per direct array count).
+
+Separately, the earlier RPD/RABO full-model-range reference chart (`rpd-rotary-gas-meter-chart-DEMO.html`, sent as a demo, listing all 18 MWA-coded RABO variants from mwatechnology.com) is still a standalone demo file only — not yet part of the site. Rahul ji has asked that, whenever that chart page is finalized/published, the "Source: mwatechnology.com..." citation line be removed from it. Not actioned yet since the chart hasn't been finalized — noted here for when that decision is made.
+
+## SITE PAGE FINALIZED: RABO Rotary Gas Meter — full model range reference page (2026-08-30)
+
+Rahul ji asked for the earlier RABO/RPD reference-chart demo (`rpd-rotary-gas-meter-chart-DEMO.html`) to be finalized and published to the live site. Rebuilt as a proper site page rather than the standalone demo: `products/honeywell-elster-rabo-model-range.html`, reusing the real site header/nav/mobile-drawer/footer/Associate-Brands-script shell (copied verbatim from the `honeywell-elster-rabo-g40-dn50.html` product page) instead of the demo's simplified header, so it looks and behaves exactly like the rest of the catalog (working nav dropdowns, WhatsApp float button, live brand strip).
+
+Per Rahul ji's explicit instruction, the "Source: mwatechnology.com..." citation line was removed from the finalized page (was present on the demo, is not on the published version). The demo banner was also removed.
+
+This page is a **reference/collection page, not a single-product listing** — it carries only `BreadcrumbList` JSON-LD (no `Product` schema, since Product markup shouldn't be used for a page describing 17 different model variants at once — this avoids a Google Rich Results mismatch). It is intentionally kept **outside** the `products` JS array in `index.html` (it's not a purchasable SKU with its own image/spec-table entry) — it's a standalone static page, reachable by direct link and cross-linked from the RABO G40 DN50 product page.
+
+Table content: same 17-row chart from the demo (DN32/DN40/DN50/DN80/DN100 groups, MWA code / description / body length columns), restyled using the site's own CSS variables (no separate color palette) so it matches the rest of the catalog visually.
+
+**Cross-linking added both ways:** the model-range page's intro text links to `honeywell-elster-rabo-g40-dn50.html` ("We currently stock and supply the RABO G40 DN50 CLASS150 — enquire for other sizes"), and the RABO G40 DN50 product page's CTA row now has a third button, "View Full RABO Model Range (DN32–DN100)", linking back to this page — so a visitor can move between the one stocked variant and the full reference range either way.
+
+`sitemap.xml` updated (116 → 117 URLs, priority 0.6 since it's a reference page rather than a product page). Verified via `html.parser` (0 errors), `json.loads()` on the BreadcrumbList block (valid), and Playwright screenshots of both the full model-range page and the updated RABO G40 DN50 CTA row.
+
+## PAGE UPDATE: representative product photo added to RABO model-range page (2026-08-30)
+
+Rahul ji asked for one photo of a Honeywell RABO meter to be added to the finalized model-range reference page (`products/honeywell-elster-rabo-model-range.html`), which until now was text/table-only.
+
+Restructured the top `chart-hero` section into a two-column layout (`hero-grid`): left column is a `pg-img-box` (`id="pgImgBox"`) holding the RABO G40 DN50 photo — the same thumbnail+large base64 already processed and used on the `honeywell-elster-rabo-g40-dn50.html` product page, reused as-is (no reprocessing needed since it's the same source photo), with a small caption "RABO G40 DN50 shown — representative of the series" underneath; right column is the original eyebrow/h1/intro paragraph, unchanged. The image automatically got click-to-zoom lightbox behaviour with no new JavaScript, since the reused footer-shell script already wires up any `#pgImgBox` element found on the page.
+
+New CSS only (`.hero-grid`, `.hero-grid .pg-img-box`, `.hero-img-cap`, plus a responsive rule stacking to one column under 760px) — no changes to JSON-LD, the products array, sitemap, or brand-data, since this is a purely visual addition to an existing non-product reference page.
+
+Verified via `html.parser` (0 errors), `json.loads()` on the BreadcrumbList block (still valid), a count check confirming `id="pgImgBox"` appears exactly once, and a Playwright screenshot confirming the photo renders correctly in the new two-column layout above the model-range table.
+
+## PAGE UPDATE: "MWA Code" renamed to "RABO Code" on model-range page (2026-08-30)
+
+Rahul ji asked to remove "MWA" naming entirely — only "RABO Code" should remain. Updated the table header (`MWA Code` → `RABO Code`), the intro paragraph ("Model (MWA) code..." → "RABO Code..."), and the three meta description strings (title/og/twitter) that referenced "MWA code". Confirmed no remaining real-text "MWA" occurrences in the page (only coincidental substrings inside unrelated base64 image data, which are not text and don't render). No change to the actual code values in the table (e.g. `RABODN50G40`) — only the column label and surrounding copy.
+
+## PAGE UPDATE: Qmin discrepancy footnote added to model-range chart (2026-08-30)
+
+Rahul ji asked for the previously-noted RABODN50G40 Qmin discrepancy (chart says Qmin 3 m³/h; the actual nameplate on the RABO G40 DN50 CLASS150 unit we stock reads Qmin 0.32 m³/h) to be surfaced on the chart page itself, not just in this internal log.
+
+Added an asterisk marker on the `RABODN50G40` row (only that row — the same "Qmin 3" figure appears on the DN32/DN40 G40 rows too but those aren't marked, since we don't have a stocked/verified unit for them) plus an explanatory footnote directly below the table, reusing the existing `.chart-note` CSS class (already defined from the original chart build but unused until now). Footnote text: chart figures are generic reference values for the RABO series; for the RABODN50G40 unit actually stocked, the nameplate-verified Qmin is 0.32 m³/h, with a link through to the RABO G40 DN50 product page for the full nameplate-confirmed spec sheet.
+
+No changes to any other row's figures, to JSON-LD, sitemap, or the products array — text/footnote-only addition. Verified via `html.parser` (0 errors), `json.loads()` on the BreadcrumbList (valid), and Playwright screenshots confirming both the asterisk on the correct row and the footnote rendering cleanly below the table.
+
+## SITE-WIDE FIX: favicon added to all product pages + "missing Associate Brands" root cause found (2026-08-30)
+
+Rahul ji reported that on the newly-built pages, the Associate Brands / "Ready to spec your next gas train" footer section was missing everywhere, and the browser tab favicon wasn't showing either.
+
+**Favicon (real, sitewide bug, now fixed):** every one of the 116 product pages was missing the `<link rel="icon">` / `apple-touch-icon` tags in `<head>` entirely — only `index.html` ever had them. Fixed by inserting the exact same base64 favicon block used on `index.html` (16x16 PNG, 32x32 PNG, apple-touch-icon) right after the viewport meta tag, identically across all 116 product pages (script-driven, not just the 4 new ones — this was a pre-existing gap on every old page too, not something introduced this session). Verified via a sampled `html.parser` pass (0 errors) and a live in-browser check confirming all 3 icon `<link>` elements resolve with real base64 data on every page.
+
+**Associate Brands strip "missing" (not a code bug — a delivery-format issue):** every product page loads its Associate Brands cards via `<script src="../brand-data.js">` (relative reference to the sitewide brand file, populated into an empty `#brandStrip` div by JS) — this is the same mechanism used on all 116 pages, old and new alike, and works correctly whenever the page is opened as part of the full site/zip structure (confirmed via local server test — renders identically to Rahul ji's reference screenshot). Reproduced the reported issue directly: opening a standalone single `.html` file via `file://` with no sibling `brand-data.js` present leaves `#brandStrip` completely empty (script silently no-ops since `RKIC_BRANDS` is undefined), while the rest of the page — including the static "Ready to spec your next gas train" footer/contact block — renders fine. This matches exactly what was reported. Root cause: the last few deliveries (image addition, MWA-to-RABO Code rename, Qmin footnote) were sent as a single standalone `.html` file only, not the zip+file combination Rahul ji had asked for earlier in the session ("zip file ke sath standalone page bheje").
+
+Fix going forward: delivered a zip (`rabo_pages_with_brand_data.zip`) containing `brand-data.js` alongside `products/honeywell-elster-qa100-80.html`, `honeywell-elster-qa160-80.html`, `honeywell-elster-rabo-g40-dn50.html` and `honeywell-elster-rabo-model-range.html`, matching the site's real relative folder structure — verified by extracting the zip fresh and opening the model-range page via `file://`: all 15 brand cards now populate correctly. Standalone-file deliveries for pages that depend on `brand-data.js` will include this sibling file (or the zip) going forward.
+
+## BUG FIX: breadcrumb/back-link category corrected on 4 Honeywell Elster BK-G pages (2026-08-30)
+
+Spotted during the screenshot review Rahul ji asked for: `honeywell-elster-bk-g6m.html`, `bk-g10m.html`, `bk-g16m.html` and `bk-g25m.html` (all Diaphragm Gas Meters under GAS FLOW METERS, per their `index.html` array entries and their own `pg-tags` row, which already showed the correct "Gas Flow Meters" tag) had a pre-existing bug — this predates this session — where the breadcrumb link and the "← Back to Catalog" link both incorrectly pointed to SPARK ELECTRODES instead of GAS FLOW METERS. Fixed both links on all 4 pages (2 targeted string replacements per file: the breadcrumb category link+label, and the back-link href). The header/mobile-drawer nav dropdown's own "Spark Electrodes" category entry was left untouched — that's a legitimate, unrelated link to the real Spark Electrodes category and was never wrong. Verified via `html.parser` (0 errors on all 4) and a Playwright screenshot confirming the breadcrumb, back-link and category tag now all correctly read "Gas Flow Meters".
+
+## SITE FIX: RABO model-range reference page was undiscoverable from the catalog (2026-08-30)
+
+Rahul ji reported that `honeywell-elster-rabo-model-range.html` could not be found anywhere on the site. Root cause: this page was deliberately kept outside the `products` JS array (it's a 17-variant reference chart, not a single SKU — see the earlier "SITE PAGE FINALIZED" entry for the schema reasoning), so it never got a catalog card, and the only link to it anywhere on the site was the single CTA button on the RABO G40 DN50 product page itself. A visitor browsing the catalog normally (category → subcategory → product cards) would never encounter it.
+
+Fixed by adding a small "reference chart" banner directly into the catalog's own rendering: a `RANGE_BANNERS` config object in `index.html`'s script (keyed by subcategory name) now renders a linked banner above the product cards whenever the **RPD Rotary Gas Meter** subcategory is viewed — both via the direct subcategory route (`#/subcategory/RPD Rotary Gas Meter`) and via the grouped Gas Flow Meters category view (where it appears right under the "RPD Rotary Gas Meter" subcategory heading). Styled with new `.pm-range-banner` CSS reusing the site's existing color variables, matching the surrounding card list.
+
+This is written as a general mechanism (not RABO-specific) — any future reference/model-range page for another subcategory can be added with one more entry in `RANGE_BANNERS`, no other JS changes needed.
+
+Verified: JS syntax check (`node --check` on the extracted script) passed, `html.parser` passed (0 errors), and a Playwright click-through confirmed the banner renders on both routes and correctly navigates to `products/honeywell-elster-rabo-model-range.html`.
+
+## SITE FIX: RPD Rotary Gas Meter subcategory now redirects to the full model-range list (2026-08-30)
+
+Follow-up to the previous discoverability fix. Rahul ji was asked to choose between (a) expanding the banner into an inline full table on the subcategory page, or (b) making the subcategory route redirect straight to the full model-range page — he chose (b).
+
+Implemented via a `redirectSubcategory: true` flag added to the existing `RANGE_BANNERS['RPD Rotary Gas Meter']` config entry in `index.html`. `renderProductView()` now checks this flag at the very top, before any rendering, and does `location.href = ...` straight to `products/honeywell-elster-rabo-model-range.html` whenever the RPD Rotary Gas Meter subcategory route is opened directly — whether from the nav dropdown sublink, the homepage category-tile's expandable subcategory list, or a direct `#/subcategory/RPD Rotary Gas Meter` link. Browsing the whole **Gas Flow Meters category** (the grouped view showing all subcategories together) is unaffected — that still shows the small reference-chart banner + the RABO G40 DN50 product card inline, since redirecting an entire mixed-category view would be wrong.
+
+Caught and fixed a self-loop this created: `honeywell-elster-rabo-model-range.html`'s own breadcrumb crumb and "Back to Catalog" link previously pointed at the subcategory route — which would now just immediately redirect back to the same page. Repointed both to the `#/category/GAS%20FLOW%20METERS` route instead, which lands on a sensible destination (the full Gas Flow Meters listing, RPD group included).
+
+Verified via `node --check` on the extracted script (syntax OK), `html.parser` (0 errors), and Playwright: direct subcategory-hash navigation correctly redirects to the model-range page, and clicking its Back-to-Catalog link now lands cleanly on the Gas Flow Meters category view instead of looping.
+
+## SITE FIX: RABO model-range reference chart now shown as its own listed card (2026-08-31)
+
+Rahul ji clarified the earlier redirect wasn't what he wanted — he wants the reference chart page listed as a proper, separate item within the RPD Rotary Gas Meter subcategory, alongside the actual product, not a full-page redirect and not a thin banner.
+
+Replaced the `redirectSubcategory` behavior and the `.pm-range-banner` strip from the previous two fixes with a new `rangeCardHTML()` function that renders a full `.spot-card`-style entry — visually identical in size/format to a real product card: the RABO G40 DN50 photo (reused directly from that product's own `image` field in the `products` array, no duplicated base64), an amber "Reference Chart" tag (new `.spot-tag-chart` CSS), the chart's title and description, and a "View Full Model Range List" button linking to `products/honeywell-elster-rabo-model-range.html`. This card now appears above the RABO G40 DN50 product card in both the direct subcategory route (`#/subcategory/RPD Rotary Gas Meter`) and the grouped Gas Flow Meters category view — browsing either way shows both the reference chart and the actual stocked product as two clearly separate, equally-weighted listings.
+
+Reverted `honeywell-elster-rabo-model-range.html`'s breadcrumb crumb and "Back to Catalog" link back to the subcategory route (`#/subcategory/RPD Rotary Gas Meter`), since that route is a normal listing again and no longer redirects — no more self-loop risk.
+
+Verified via `node --check` on the extracted script (syntax OK), `html.parser` (0 errors), and Playwright: the subcategory route stays on `index.html` and renders both cards, clicking the reference card's link/button lands on the model-range page, and its Back-to-Catalog link returns cleanly to the subcategory listing (not a loop).
+
+## SITE FIX: RABO model-range reference chart now also shown on the Honeywell Elster brand page (2026-08-31)
+
+Rahul ji reported it was still missing on the Honeywell Elster brand page (`#/brand/Honeywell Elster`) — the previous fix only wired the reference card into the subcategory route and the Gas Flow Meters category-grouped view, not the brand view (or the combined category+brand view).
+
+Generalized the fix: the `RANGE_BANNERS['RPD Rotary Gas Meter']` entry now also carries `brand: 'Honeywell Elster'` and `category: 'GAS FLOW METERS'` fields. Card rendering was split into a shared `rangeCardFromEntry()` plus three lookup helpers — `rangeCardHTML(subcategory)` (existing), and two new ones, `rangeCardsForBrand(brand)` and `rangeCardsForCategoryBrand(category, brand)` — wired into the `brand` and `category-brand` branches of `renderProductView()`. The reference card now appears everywhere a visitor could land on Honeywell Elster's RABO range: by subcategory, by the full Gas Flow Meters category, by brand, or by category+brand combined — all from one config entry, no duplicated markup.
+
+Verified via `node --check` (syntax OK), `html.parser` (0 errors), and Playwright: the reference card now renders at the top of the Honeywell Elster brand page, above all 12 of that brand's products.
+
+---
+
+## Madas PSM010 Gas Pressure Switch — new product added
+
+Rahul ji ne ek nayi photo bheji: Madas ka ek gas pressure switch, nameplate par saaf likha hua — "PSM010", "P max=500mbar Gas", "6A 250VAC 50/60Hz", "ID.No: CE-1015CU0757", dial scale "2" se "10" tak "mbar" marked, "IP54", CE mark "1015-19".
+
+**Duplicate check**: `images/*.jpg` mein existing Madas PSM-series products (`madas-psm050`, `madas-psm150`, `madas-psm500`) ke against perceptual hash (average_hash + phash, hash_size=16) compare kiya — sabse close match bhi 44/256 (ahash) aur 122/256 (phash) door tha, yaani clearly ek naya distinct product hai, koi duplicate nahi. Filename check se bhi confirm hua ki `madas-psm010` catalog mein kahin exist nahi karta tha.
+
+**Spec research**: "Adjustable Setting Range" ke liye — jo is site ka mandatory rule hai pressure switches ke liye, kabhi guess nahi karna — Madas ki official PSM series datasheet (madas.it) fetch ki. Confirmed: PSM010 ka adjustable range hai **2 – 10 mbar** (factory setting 2 mbar), jo bilkul nameplate ke dial scale (2 se 10 tak markings) se match karta hai. Baaki sab specs (Pmax=500mbar Gas, 6A/250VAC/50-60Hz, IP54, CE 1015-19) seedhe nameplate se liye — nameplate hamesha authoritative hai, iss unit ka apna khud ka ID No. bhi nameplate se hi liya: **CE-1015CU0757** (yeh sibling PSM050 page ke ID No. "CE-101SCU0757" se thoda alag hai — dono units ke apne-apne unique ID numbers hain, dono correct hain apni-apni nameplate ke hisaab se).
+
+**Image processing**: Source photo already clean white-background studio shot tha. Standard pipeline apply kiya — brightness+saturation-gated whitening pass (bright>0.82 aur sat<0.12 wale pixels hi white kiye, taaki yellow label aur dial text bilkul safe rahe), content bounding-box crop with 6% padding, white square canvas par center, LANCZOS resize → 600px thumbnail (index.html catalog grid ke liye) + 1100px large (standalone page hero + lightbox zoom ke liye), JPEG quality 92. Ek 500×500 physical file (`images/madas-psm010-large.jpg`, quality 90) bhi bana kar save kiya — sirf `og:image`/`twitter:image` meta tags ke liye, jaisa har product ke saath convention hai.
+
+**Files changed**:
+- `products/madas-psm010.html` — naya standalone page, `madas-psm050.html` (sabse close sibling — same brand, category, spec-field shape) se field-substitution karke banaya: title/meta/JSON-LD/breadcrumb/spec-table/description sab PSM050→PSM010, aur range/ID No. specific values update kiye. Validated: html.parser (0 errors), dono JSON-LD blocks (Product + BreadcrumbList) valid JSON parse hue.
+- `index.html` — `products` array mein naya entry add kiya (`id: 'madas-psm010'`), 600px thumbnail + 1100px large base64 embedded. Validated via `node --check` (extracted inline script) aur html.parser.
+- `sitemap.xml` — `products/madas-psm010.html` ka `<url>` entry add kiya (lastmod 2026-08-31), madas-psm050 ke entry se pehle.
+- `brand-data.js` — Madas ka stock-count badge 7 → **8** kiya.
+
+**Verification**: Local server (`python3 -m http.server`) par Playwright se standalone page ka poora screenshot liya — hero image, spec table (sab 9 rows correct), breadcrumb ("Home / Catalog / Pressure Switches / Madas PSM010 Gas Pressure Switch"), Associate Brands strip (Madas chip "8 ADDED" dikha raha), favicon — sab sahi render hue. `index.html#/brand/Madas` bhi check kiya — PSM010 ab Madas brand page par list ho raha hai.
+
+Git mein locally commit kar diya (`/tmp/rkic/RKIC-SITE`) — GitHub par push nahi kiya, standard rule ke mutabik.
+
+---
+
+## Homepage — Business-type badges added (About section)
+
+Rahul ji ne ek reference screenshot bheja tha (4 pill-style badges: Exporters, Manufacturers, Export Houses, Traders) — homepage par add karne ko kaha, lekin "Export Houses" hatakar uski jagah "Supplier" aur "Importer" add karne ko bola.
+
+`index.html` ke About section ("Who We Are" heading ke turant baad, about-copy paragraph se pehle) mein ek naya `.biz-badges` row add kiya — 5 pill badges: **Exporters, Manufacturers, Traders, Supplier, Importer**. Design site ke apne theme (forest green `--sage-deep` + flame-amber `--flame`) ke hisaab se banaya — reference screenshot ka blue/orange palette use nahi kiya, taaki site ki existing color language se match kare. Naya CSS block (`.biz-badges`, `.biz-badge`, `.dot`) `.pillar` rules ke paas add kiya.
+
+Verified: `node --check` (JS syntax OK), `html.parser` (0 errors), Playwright screenshot se visually confirm kiya.
+
+---
+
+## Siltek aur R.K. Instruments & Controls — do alag brand logos ko 1 mein merge kiya
+
+Rahul ji ne point out kiya: Associate Brands strip mein "R.K. Instruments & Controls" aur "Siltek" — dono alag-alag chip/logo ki tarah dikh rahe the, jabki dono ka logo hamesha same (RKIC logo) hi hota hai. Wajah: Siltek is essentially Rahul ji ka apna hi in-house "miscellaneous" umbrella hai, jisme 5-6 different products aa sakte hain — isliye ek alag brand ki tarah split dikhana galat tha, sab ek hi "R.K. Instruments & Controls" ke andar hone chahiye.
+
+**Fix**: Dono Siltek products (`siltek-siaf-ht`, `siltek-siaf-ht-15kv`) ka `brand` field `'Siltek'` se `'R.K. Instruments & Controls'` kar diya — `index.html` ke products array mein. Product ka naam (title), description, aur spec-table ka "Manufacturer" row abhi bhi "Siltek" hi rahega — woh product-line ki actual identity hai, sirf top-level brand-grouping/logo unify kiya hai.
+
+**Files changed**:
+- `index.html` — donon Siltek products ka brand field update, `brands` array se "Siltek" hataya, ab-zaroorat-na-rahi `brandLogos['Siltek'] = ...` line hataya.
+- `products/siltek-siaf-ht.html`, `products/siltek-siaf-ht-15kv.html` — JSON-LD Product block ka `"brand": {"name": "Siltek"}` → `"brand": {"name": "R.K. Instruments & Controls"}` (manufacturer field "Siltek" hi rehne diya).
+- `brand-data.js` — "Siltek" entry hata di, "R.K. Instruments & Controls" ka count 4 → **6** kiya.
+
+**Verification**: `node --check` (JS syntax), `html.parser` + JSON-LD parse (dono product pages + index.html), aur Playwright se live check kiya — Associate Brands strip par ab total 14 chips hain (pehle 15 the, duplicate ke saath), R.K. Instruments & Controls chip "6 ADDED" dikha raha, "Siltek" naam se koi alag chip nahi bacha. Dono products `index.html#/brand/R.K.%20Instruments%20%26%20Controls` par bhi list ho rahe hain.
+
+---
+
+## Elektrogas VMR12 Gas Solenoid Valve — photo replace kiya
+
+Rahul ji ne is existing product (`elektrogas-vmr12`) ki nayi, saaf nameplate-visible photo bheji, purani wali replace karne ko bola.
+
+**Image processing**: Source photo clean white background tha — standard pipeline (brightness+saturation-gated whitening, content bbox crop, white square canvas center, LANCZOS resize) se 600px thumbnail + 1100px large banaye, JPEG quality 92. Purana image non-square tha (351×500 thumb / 900×516 large, purani convention) — naya image current site convention (square, 600/1100) mein hai.
+
+**Files changed**:
+- `index.html` — products array mein `elektrogas-vmr12` ka `image` aur `imageLarge` field naye base64 se replace kiya.
+- `products/elektrogas-vmr12.html` — hero image (src + data-large, dono barabar) replace kiya.
+- `images/elektrogas-vmr12-large.jpg` — naya 500×500 og:image file se replace kiya.
+
+**Note (flag kiya, fix nahi kiya)**: Nayi nameplate photo saaf "Power 25 VA" dikha rahi hai, jabki site ka existing spec row "Power: 25 W" hai — VA aur W technically alag units hain (solenoid coils ke liye VA zyada accurate hota hai). Sirf photo change maanga gaya tha, spec row isliye touch nahi kiya — Rahul ji confirm karein to "25 VA" kar denge.
+
+Verified: `node --check`, `html.parser` + JSON-LD parse, Playwright screenshot se naya photo standalone page par sahi dikh raha.
+
+---
+
+## SP 2307 Burner Sequence Controller — new product added
+
+Rahul ji ne is naye product ki 2 photos bheji (front panel + rear terminal block, ek hi combined image mein side-by-side), plus ek summary table (operation sequence) aur ek text note. Baad mein 2 aur clarifying images bheji: exact terminal-indicator list (L, N, BL, IG, SV1, LO, SV2, FL, Earthing) aur detailed "Gas Burner Sequence Working System" text — dono authoritative source maankar use kiye.
+
+**Duplicate check**: Combined photo ko front/rear mein split karke, front-panel photo ko existing RKIC-brand photos (`rkic-ignition-electrode`, `rkic-srg-21`, etc.) ke against perceptual hash se compare kiya — sabse close match bhi 69/256 door tha, clearly naya distinct product.
+
+**Missing spec handled correctly (nahi guess kiya)**: Supply Voltage photo/nameplate par nahi tha — AskUserQuestion se pucha; Rahul ji ne khud exact figures dene ka bola aur apne agle message mein "INPUT VOLTAGE 230V" confirm kar diya (sequence-working-system text ke point 1 mein). Power Consumption (VA rating) kahin nahi mila — is baar bhi guess nahi kiya, spec table se woh row hi omit kar diya.
+
+**Photo — explicit "no tampering" instruction follow ki**: Rahul ji ne clearly bola "photo mein koi change mat karna, ched chad mat karna". Verify kiya ki brightness/saturation-gated whitening pass ka is photo par practically koi asar nahi pada (background already clean white tha, pixel values ~254/255) — sirf combined image ko front/rear do hisso mein split kiya aur site ke standard 600px/1100px/500px dimensions mein resize kiya, content/label/branding kuch bhi retouch ya remove nahi kiya. Front panel = main hero image; rear/terminal photo = as-is naya "Wiring & Terminal Guide" section mein embed kiya (yehi to maanga gaya tha).
+
+**Naya page structure**: `rkic-sp-2307.html` mein do extra sections add kiye (SRG-21 ke standard template ke aage) — jo pehle kisi bhi product page par nahi the:
+1. **Sequence of Operation** — table format mein 7-step firing sequence (Power ON → Ignition (11s) → SV1/Low Flame (1.5s) → Flame Sensing → SV2/High Flame (12s) → Alarm/Lock Out agar flame na mile → Restart), Rahul ji ke diye authoritative text se.
+2. **Wiring & Terminal Guide** — rear-panel photo (as-is, no editing) ke saath side-by-side ek terminal-by-terminal function table (L, N, BL, IG, SV1, LO, SV2, FL, Earthing) — yehi Rahul ji ne "schematic diagram / detailed wiring instructions" maanga tha.
+
+**Files changed**:
+- `products/rkic-sp-2307.html` — naya page, `rkic-srg-21.html` se structural template liya, do naye custom sections + unka CSS add kiya.
+- `index.html` — products array mein naya entry, 600px thumb + 1100px large.
+- `sitemap.xml` — naya `<url>` entry.
+- `brand-data.js` — R.K. Instruments & Controls count 6 → **7**.
+- `images/rkic-sp-2307-large.jpg` — 500×500 og:image file.
+
+**Bug fix during build**: index.html ke JS products array mein description string single-quoted thi, aur "flame relay's" wale apostrophe ne JS syntax break kar diya tha — `node --check` se turant pakड़ liya, escape (`relay\'s`) karke fix kiya.
+
+Verified: `node --check`, `html.parser` + JSON-LD parse, Playwright se poora page (dono naye sections + hero + spec table) screenshot liya, aur confirm kiya ki Sequence Controllers category page aur RKIC brand page dono par naya product list ho raha hai.
+
+---
+
+## SP 2307 — Box Size spec add + index.html par "full specifications" missing issue fix
+
+Rahul ji ne 2 cheezein bheji: (1) Box Size — Cut-Out 92 x 92 mm, Depth 80 mm — SP 2307 mein add karne ko, (2) complaint ki index page (index.html) par "full page specifications" nahi dikh rahi, use "mandatory" (hamesha reliably visible) banane ko kaha.
+
+**Part 1 — Box Size row add**: Dono jagah "Box Size" spec row add kiya — value: "Panel Cut-Out 92 x 92 mm · Mounting Depth 80 mm":
+- `products/rkic-sp-2307.html` — spec-row block mein "Reset" ke baad, "Application" se pehle.
+- `index.html` — `rkic-sp-2307` product ke `specs` object mein same jagah.
+
+**Part 2 — root cause diagnose kiya**: `index.html` ka `renderProductView()` function jab single product dikhata hai, to woh `productCardHTML(p)` use karta hai — jo product ke generic `specs` object se poora spec-grid render karta hai (yeh already sab specs dikha raha tha, including ab Box Size bhi). Lekin problem yeh thi: SP 2307 standalone page (`products/rkic-sp-2307.html`) par maine do custom sections hand-written the — "Sequence of Operation" table aur "Wiring & Terminal Guide" (rear-photo + terminal table) — aur yeh dono sirf standalone page ki HTML mein the, `index.html` ke generic `products` array/`specs` data-model mein inka koi representation nahi tha. Isliye jab Rahul ji index.html se SP 2307 dekhte the, to unhe sirf basic spec-grid dikhta tha — yeh do detailed sections (jo unhone khud request karke banwaye the) missing rehte the. Yehi "full page specifications" na dikhne ki wajah thi.
+
+**Fix**: `index.html` mein naya optional `extraHTML` field pattern add kiya — sirf jis product ko zaroorat ho (abhi sirf SP 2307), uske product-object mein raw HTML (Sequence-of-Operation table + Wiring-Guide, wahi rear-panel photo jo standalone page par hai, byte-identical) ek `extraHTML` field mein daala. `productCardHTML(p, showExtra)` function ko modify kiya — jab `showExtra=true` ho (sirf single-product detail view mein, category/subcategory/brand listing views mein nahi — taaki listing pages clutter na ho) tabhi `p.extraHTML` card ke niche render hoga. Matching CSS (`.spot-extra`, `.sec-seq`, `.seq-table`, `.wire-grid`, `.wire-img`, `.wire-table` waghera) `index.html` ke `<style>` block mein add ki. Ab index.html se `#/product/rkic-sp-2307` open karne par — spec-grid (Box Size sameत), Sequence of Operation table, aur Wiring & Terminal Guide (photo + terminal table) — sab standalone page jaisa hi dikhta hai.
+
+**Files changed**:
+- `products/rkic-sp-2307.html` — "Box Size" spec row add.
+- `index.html` — `rkic-sp-2307` specs object mein "Box Size" row; naya `extraHTML` field (Sequence + Wiring sections); `productCardHTML()` function signature aur single-product render branch update; naya CSS block add.
+
+Verified: `node --check` (JS syntax OK), `html.parser` (0 errors dono files), Playwright se `index.html#/product/rkic-sp-2307` load karke confirm kiya — Box Size row, Sequence of Operation table (7 steps), aur Wiring & Terminal Guide (rear photo 900×900 load, terminal table) sab visible hain; standalone page bhi alag se screenshot leke Box Size row confirm kiya.
+
+---
+
+## SP 2307 — Wiring Guide table: L/N row text simplify kiya
+
+Rahul ji ne Wiring & Terminal Guide table ki "N" row par point out kiya — "Neutral — 230V AC supply input" mein se "— 230V AC supply input" wala hissa hataने ko bola, sirf "N — Neutral" chahiye. Same redundant pattern "L" row mein bhi tha ("Line — 230V AC supply input"), isliye consistency ke liye dono rows fix kiye.
+
+**Fix**: `L` row ab sirf "Line" dikhata hai, `N` row ab sirf "Neutral" dikhata hai — dono jagah (`products/rkic-sp-2307.html` ka wire-table, aur `index.html` ka `extraHTML` field ke andar same wire-table).
+
+**Files changed**: `products/rkic-sp-2307.html`, `index.html`.
+
+Verified: `node --check`, `html.parser`, aur Playwright se dono pages (standalone + index.html single-product view) par wire-table row-text directly check kiya — "LLine" aur "NNeutral" confirm hua, extra text kahin nahi.
+
+---
+
+## SP 2307 — L row wapas original kiya (correction)
+
+Pichli edit mein galti se "L" row bhi simplify kar diya tha, jabki Rahul ji ne sirf "N" (Neutral) row ke liye bola tha. Correction: `L` row wapas "Line — 230V AC supply input" kar diya (jaisa pehle tha), `N` row "Neutral" hi rahega (simplified, jaisa maanga gaya tha).
+
+**Files changed**: `products/rkic-sp-2307.html`, `index.html`.
+
+Verified: Playwright se dono pages par L/N row text directly check kiya — "LLine — 230V AC supply input" aur "NNeutral" confirm hua.
+
+---
+
+## SP 2307 — Earthing row par "compulsory" emphasis add kiya
+
+Rahul ji ne bataya: Earthing connection 100% compulsory hai, isse SP 2307 mein explicitly mention karna hai.
+
+**Fix**: Wiring & Terminal Guide table ki "Earthing" row mein bold text add kiya — "Ground/earth reference for the flame-sensing circuit (marked "R" on the flame-sensing schematic) — **compulsory connection for safe operation**". Yeh row ab safety-critical hone ka clear signal deti hai, sirf function-description nahi.
+
+**Files changed**: `products/rkic-sp-2307.html`, `index.html` (dono jagah wire-table).
+
+Verified: `node --check`, `html.parser`, aur Playwright se dono pages par Earthing row text directly check kiya — "compulsory connection for safe operation" confirm hua.
+
+---
+
+## Site-wide: "You May Also Need" (Related Products) section — sabhi 117 product pages par add kiya
+
+Rahul ji ne apna bahut shuruaati (project start) standing-rules document aur pehla product-visual-index (38 products) dobara bheja, permanently save karne ko kaha. Compare karte waqt pata chala ki ek din-1 instruction — har product page ke neeche isi category/brand ke 3-4 "You May Also Need" related products — kabhi implement nahi hui thi. Flag kiya, Rahul ji ne turant "ek baar sab pages par add kar do" bola.
+
+**Implementation** (`brand-data.js` jaisa hi dynamic pattern, taaki future products automatically pick ho jaayein):
+- **`related-products-data.js`** (naya, repo root) — har product ka halka record: id, name, brand, category, subcategory, code, aur ek chhota 140px thumbnail (quality 78, alag se generate kiya — har product ke apne 600px/1100px images se independent, taaki yeh shared file 300+ products tak scale karne par bhi halki rahe). 117 products, total ~525KB.
+- **`related-products.js`** (naya, repo root) — matching + rendering logic: pehle same subcategory, phir same category, phir same brand se 4 tak products pick karta hai (current product khud exclude), `#relatedGrid` mein render karta hai.
+- **117 standalone product pages** (`honeywell-elster-rabo-model-range.html` chhod kar — woh ek reference/model-range chart hai, asli product nahi) — teen edits, sabme: (1) naya CSS block (`.sec-related`, `.related-grid`, `.related-card` waghera) page ke apne `<style>` block mein, (2) naya `<section class="sec sec-related" id="relatedSection">` HTML, Associate Brands section se theek pehle, (3) `<script>var CURRENT_PRODUCT_ID = '...';</script>` + do naye script includes, `</body>` se pehle.
+- **`index.html`** — apne single-product view (`renderProductView`'s single-product branch) mein bhi wahi feature — naya `relatedProductsHTML(p)` helper function, jo already-loaded `products` array se seedha compute karta hai (koi extra data-file load nahi karna padta, kyunki images already page par mojood hain).
+
+**Bug pakda aur fix kiya isi kaam ke dauraan**: `index.html` mein `matches.map(productCardHTML)` jaisi 5 calls JS ke Array.map ki wajah se apna 2nd argument (index) galti se `showExtra` parameter mein pass kar rahi thi — is wajah se category/subcategory/brand listing views mein (list ke pehle item ko chhod kar baaki sab mein) SP 2307 ke custom sections aur naya Related Products section bhi dikhne lagte the, jabki woh sirf single-product detail view mein dikhne chahiye. Sabhi `.map(productCardHTML)` ko `.map(p => productCardHTML(p))` mein badal kar fix kiya.
+
+**Duplicate photo rule clarify hui**: Rahul ji ne explicitly bola — duplicate/samaan photo par kabhi bina poochhe replace nahi karna, hamesha poochhna hai. (Original day-1 document ka "bina poochhe replace karo" wala rule ab deprecated hai.)
+
+**Files changed**: naye `related-products-data.js`, `related-products.js`; 117 `products/*.html` files; `index.html` (CSS + `relatedProductsHTML()` helper + `productCardHTML` tail + 5 `.map()` call-site fixes); `archive/rkic-standing-rules-original.md`, `archive/rkic-product-visual-index-original-38products.html` (naye, original files ka permanent save); `RKIC-Site-Reminder-Instructions.md` (updated).
+
+Verified: sabhi 118 product pages `html.parser` se (0 errors), har inline `<script>` (JSON-LD alag se `json.loads`, baaki `node --check`) se JS syntax validate kiya — 0 real JS failures (5 pre-existing, is kaam se unrelated JSON-LD bugs mil gaye — `elektrogas-vmr4/vmr6`, `vanaz-r2316/r2317/r2323` — flag kar raha hoon, abhi fix nahi kiya). Playwright se SP 2307, ek Brahma solenoid valve, aur Madas PSM050 standalone pages par Related Products section visually + functionally verify kiya (sahi products match ho rahe hain, links kaam kar rahe hain, images load ho rahi hain). `index.html` par bhi single-product view mein verify kiya, aur category/brand listing views mein confirm kiya ki Related Products/custom-sections kahin leak nahi ho rahe.
+
+---
+
+## Purani archive photos ki ACTUAL JPEG quality — measure karke verify kiya (guess nahi)
+
+Rahul ji ne pehle mera hedge ("55%-quality wali ho sakti hain") reject kiya aur asli check maanga: "55%-quality wali ho sakti hain....nahi abhi ek baar check kare". Isliye guess ki jagah real measurement kiya — PIL ke `quantization` table se har JPEG ki actual encode-quality nikaali (IJG standard quality=50 reference table se compare karke, 1-100 range mein best-fit dhoond kar).
+
+**Result**:
+- Chat 1 archive (38 products) aur Chat 2 archive (41 products) — dono ki images **68%–72%** quality par nikli; 3 products jo Chat 2 mein naye add hue the (Brahma RE3 240V, Siemens QRB4A, Vanaz R4110 plain) **82%** par — clearly 55% nahi.
+- Currently LIVE website images (jo `low-quality-images-list.md` list mein hain) bhi measure ki — 6 sample products (Brahma E7/L*A3C, CM12U, UV1, Madas RG/2MCS, Danfoss EBI4, Vanaz R2304) sab exactly **55%** par nikle — list ka figure verified/sahi hai.
+- 72 pending products mein se **38 ki purani photo dono archives mein mil gayi** (68-72%/82%) — **34 ki koi bhi purani photo nahi mili** (Cofi 3, Siltek 2, Dungs 1, Honeywell Technologies 9, Honeywell Eclipse 1, Elektrogas VMR 6 variants, Vanaz 6 variants, Brahma 5 — TC1SVCS/TC1LVCA/BE8*GMO/Photocell FC7/F8).
+
+**Final answer Rahul ji ko diya**: Blur problem abhi bhi unresolved hai. Archive photos (68-72%) live 55% se better hain lekin 92% target se kam — permanent solution wahi hai: Rahul ji fresh original photos bhejein, tabhi 92% par reprocess ho payega. 34 products ke liye to koi purani photo hai hi nahi, unke liye fresh photo ke alawa koi rasta nahi.
+
+---
+
+## 38 products ki images archive se temporarily upgrade ki gayi (55% → 68-82%) + 5 pre-existing JSON-LD bugs fix kiye
+
+Pichhle update mein maine purani archive photos ki actual quality measure karke Rahul ji ko bataya tha ki 38 products ki purani photo dono archives mein mil gayi (68-72%, 3 products 82% par), aur baaki 34 ki nahi. Rahul ji ne turant bola: "haa chahte hain ki main un 38 products ke live images ko abhi archive-wali 68-72% quality se turant upgrade kar dun (interim improvement ke roop mein), jab tak fresh photos nahi aatin. ye sahi rahega."
+
+**Implementation** — har ek 38 products ke liye, 4 jagah image upgrade ki:
+1. `images/{id}-large.jpg` file — purani 55%-quality file archive-wali (68-82%) se overwrite ki.
+2. `products/{id}.html` standalone page — dono embedded base64 image blob (main photo + lightbox) naye se replace kiye.
+3. `index.html` — us product ke `image:` field ka base64 bhi replace kiya.
+4. `related-products-data.js` — us product ka 140px thumbnail (quality 78) naye (behtar) source se regenerate kiya, taaki "You May Also Need" section mein bhi purani blurry thumbnail na dikhe.
+
+Sabhi 38 products mein **pixel dimensions bilkul same hain** (sirf compression quality badli, koi resolution/content change nahi) — matlab yeh wahi original photo hai, sirf better compression ke saath. Ek product (`brahma-re3-220v-c1035`) mein crop thoda different tha (480x466 vs 496x500) lekin same photo/product hai.
+
+**Verification**: sabhi 38 images ab measure karne par 68% ya usse zyada quality dikhati hain (koi bhi 55% par nahi bacha). Poori website ke 118 product pages par HTML-parse + JSON-LD validation dobara chalayi — 0 errors. Playwright se standalone page (`brahma-e7-l-a3c.html`), `index.html` ka single-product view (`#/product/brahma-e7-l-a3c`), aur ek JSON-LD-fix-wala page (`vanaz-r2316.html`) manually check kiye — image sahi load ho rahi hai, Related Products section (4 cards) sahi dikh raha hai, JSON-LD valid hai.
+
+**Bonus fix (isi verification ke dauraan mila)**: pehle se flag kiye gaye 5 JSON-LD syntax bugs (`elektrogas-vmr4.html`, `elektrogas-vmr6.html`, `vanaz-r2316.html`, `vanaz-r2317.html`, `vanaz-r2323.html`) — sabhi mein product-name ke andar ek unescaped double-quote (inch-mark `"`, jaise `1.5" Flgd`) tha jo BreadcrumbList JSON-LD ko todता tha. Sabhi 5 mein quote ko `\"` se escape karke fix kiya — ab poori website ke 118 pages par 0 JSON-LD errors hain.
+
+**`low-quality-images-list.md` update kiya**: ab 2 sections hain — Section A (38 products, temporarily 68-82% par, permanent fix ke liye abhi bhi fresh photo chahiye), Section B (34 products, koi purani photo mili hi nahi, sirf fresh photo se hi theek hoga).
+
+**Files changed**: `images/*.jpg` (38 files), `products/*.html` (38 image-upgrade + 5 JSON-LD-fix, kuch overlap), `index.html`, `related-products-data.js`, `low-quality-images-list.md`, `RKIC-Site-Reminder-Instructions.md`.
+
+---
+
+## Chat 3 archive (13-14 Aug 2026, 44 products) save kiya + 2 aur products ki image upgrade + 1 product-gap mila
+
+Rahul ji ne ek aur purana archive bheja: `RKICReminderInstructions_Chat_3.md` (standing rules snapshot, 13-14 Aug 2026) aur `rkicproductindex_Chat_3.html` (44-product visual index, 43 images). Dono permanently save kiye: `archive/rkic-standing-instructions-chat3.md`, `archive/rkic-product-visual-index-original-chat3-44products.html`.
+
+**Quality measure ki** (43 images) — zyada tar wahi products the jo pehle se Section A mein upgrade ho chuke the (same 68-72%/82%), lekin **2 naye finds** mile jo pehle Section B mein the (koi purani photo nahi thi):
+- **Brahma Solenoid Coil BE8*GMO** — archive mein 78% quality, 600x600px (live 500x500 se bhi zyada resolution)
+- **Brahma Ignition Transformer TC1SVCS** — archive mein 78% quality, 600x600px
+
+In dono ki live images turant upgrade ki (same 4-jagah process: `images/*.jpg`, `products/*.html` dono copies, `index.html`, `related-products-data.js` thumbnail) — 55% se 78% par, resolution bhi 500→600px. Verify kiya: quality ab 78% (55% nahi), poori 118-page site HTML+JSON-LD validation mein 0 errors, Playwright se `brahma-be8-gmo-coil.html` manually check kiya — image 600px load ho rahi hai, Related Products (4 cards) sahi hai.
+
+**`low-quality-images-list.md` update**: Section A ab 40 products (38+2), Section B ab 32 products (34-2).
+
+**Ek gap bhi mila** (flag kiya, fix nahi kiya — Rahul ji se confirm karna hai): Chat 3 ke standing-rules doc mein "SM 592N/S case" ka zikr tha (ek Brahma Sequence Controller, jiske specs pehle diye gaye the, phir photo maangi gayi thi) — iski photo purane archive mein bhi hai (80% quality) — lekin yeh product abhi live site par exist hi nahi karta (na koi standalone page, na index.html mein). Ho sakta hai us waqt yeh incomplete reh gaya ho. Rahul ji se poochhna hai ki isse add karna hai ya nahi.
+
+**Files changed**: `images/brahma-be8-gmo-coil-large.jpg`, `images/brahma-tc1svcs-large.jpg`, `products/brahma-be8-gmo-coil.html`, `products/brahma-tc1svcs.html`, `index.html`, `related-products-data.js`, `low-quality-images-list.md`, `RKIC-Site-Reminder-Instructions.md`, naye `archive/rkic-standing-instructions-chat3.md` + `archive/rkic-product-visual-index-original-chat3-44products.html`.
+
+---
+
+## Naya product add kiya: Brahma Sequence Controller SM 592N/S (code 36223321)
+
+Rahul ji ne pehle isse "gap" flag kiya tha (Chat 3 doc mein zikr tha, live site par nahi mila) — turant confirm kiya: "ha ye add karna hai", aur asli product ki photo (front-panel label + rear terminal block, dono views) bheji.
+
+**Photo processing**: front-panel view alag kiya (rear terminal view isi image mein tha, lekin site convention ke hisab se sirf front-panel hi main product photo hoti hai), tight-crop karke, 500px aur 700px versions banaye — dono 92% JPEG quality (site ka standard), koi tilt-correction ki zaroorat nahi thi (angled 3/4 product-shot style already doosre Brahma sequence controllers jaisa hi hai).
+
+**Specs verify kiye** (official web sources se — eBay/Aeliya Marine listings, label ke saath cross-check): Type SM 592N/S, Code 36223321, Pre-Purge Time (TW) 1.5s, Safety Time (TS) 5s, Voltage 230V/50-60Hz/14VA, Min. Flame Signal 1.2 µA (label ka "S.1,2 µA"), Compliance CE 0051 + EN298:2003 + RoHS. Application (atmospheric gas burners, non-permanent operation, non-volatile lockout) mahalaxmienterprice.co.in ke listing se verify kiya.
+
+**Duplicate check**: pehle hi confirm kar chuka tha ki yeh product live site par exist nahi karta — naya add kiya, dobara nahi.
+
+**Files changed**: naya `products/brahma-sm592ns.html` (existing `brahma-cm191n2.html` — same TW1.5s/EN298:2003 family — ko base template banakar), `images/brahma-sm592ns-large.jpg` (naya), `index.html` (naya product-array entry — image + imageLarge dono base64), `related-products-data.js` (naya entry + 140px thumbnail), `brand-data.js` (Brahma count 26→27), `sitemap.xml` (naya URL entry).
+
+**Verified**: poori site ab 119 pages, 0 HTML/JSON-LD errors. Playwright se standalone page (image 500px load, Related Products 4 cards), `index.html` single-product view (specs "SM 592N/S" + "36223321" dono visible), aur "Burner Control" subcategory listing (naya product sahi dikh raha hai, koi related-card leak nahi) — sab check kiya.
+
+---
+
+## Chat 4 archive (67 products, sabse bada archive ab tak) save kiya + 21 products ki image upgrade + 1 correction + 1 product-gap mila
+
+Rahul ji ne ek aur purana archive bheja: `RKICReminderInstructions_Chat_4.md` (standing rules snapshot) aur `rkicproductindex_Chat_4.html` (67-image visual index, ab tak ka sabse bada archive). Dono permanently save kiye: `archive/rkic-standing-instructions-chat4.md`, `archive/rkic-product-visual-index-original-chat4.html`.
+
+**Quality measure ki** (67 images, quantization-table method se) — 22 products Section B (koi purani photo nahi) ke saath match hue. In sabki current LIVE quality pehle check ki (blindly overwrite nahi kiya) — isi check mein pata chala ki **Elektrogas VMR12** already 90% par hai (archive ki 82% se behtar), isliye ise **upgrade NAHI kiya** — baaki **21 products** genuinely upgrade hue:
+
+- **Brahma (3)**: Ignition Transformer TC1LVCA, Photocell FC7, Photocell F8
+- **Cofi (2)**: Ignition Transformer TRE820PISO, Ignition Transformer TRH2-30C
+- **Elektrogas (5)**: VMR1-5, VMR2-5, VMR4, VMR4-2, VMR6 (Gas Solenoid Valves)
+- **Honeywell (9)**: Modutrol Transformer 50004263-001, UV Flame Detector Bulb 129464N, UV Flame Sensor C7027A1023/C7027A1031/C7027A1049/C7027A1056/C7027A1064, Minipeeper UV Detector C7027A1072, UV Flame Sensor C7044A1006
+- **Vanaz (2)**: Low Pressure Regulator R4109 II, R4109IV
+
+Sabhi 55% se **82-85%** par upgrade hue (2 products — C7027A1031, C7027A1064 — 85% tak pahunche, baaki 82%), pixel dimensions sabme same rahe (koi resolution loss nahi, pure compression-quality upgrade). Same 4-jagah process follow kiya: `images/*-large.jpg` overwrite, `products/*.html` dono base64 copies (main + lightbox) replace, `index.html` array-entry `image:` field replace, `related-products-data.js` 140px/q78 thumbnail regenerate (naye upgraded source se).
+
+**Verify kiya**: sabhi 21 ki live quality re-measure ki (82-85% confirm), sabhi 119 product pages ka JSON-LD 0 errors, `index.html` ka main script `node --check` pass, `related-products-data.js` `node --check` pass, Playwright se `brahma-f8.html` manually check kiya — main image load ho rahi hai (naturalWidth 500), Related Products section (4 cards) sahi hai.
+
+**`low-quality-images-list.md` update**: Section A ab 61 products (40+21), Section B ab 10 products (32-21-1, VMR12 correction ke saath).
+
+**Ek naya potential product bhi mila** (flag kiya, add nahi kiya — Rahul ji se confirm karna hai): **Honeywell UV Flame Sensor C7027A1080** — archive mein iski photo hai (85% quality), lekin yeh product abhi live site par exist hi nahi karta (na standalone page, na index.html mein). SM 592N/S jaisa hi ek gap — Rahul ji se poochhna hai add karna hai ya nahi.
+
+**Files changed**: 21 `images/*-large.jpg` files, 21 `products/*.html` files, `index.html`, `related-products-data.js`, `low-quality-images-list.md`, naye `archive/rkic-standing-instructions-chat4.md` + `archive/rkic-product-visual-index-original-chat4.html`.
+
+---
+
+## Chat 5 archive (76 images) save kiya — koi image-quality upgrade possible nahi nikla (important finding)
+
+Rahul ji ne teen files bheji: `rkicstandinginstructions_Chat_5.md` aur `rkicstandinginstructions_Chat_5.1.md` (dono byte-identical nikle, ek hi standing-rules doc), aur `rkicproductindex_Chat_5.html` (76-image visual index). Sab permanently save kiye: `archive/rkic-standing-instructions-chat5.md`, `archive/rkic-product-visual-index-original-chat5.html`.
+
+**Quality measure ki (76 images)** — is baar ek alag/important result mila: **saari 76 images exactly 55% quality par hain** (koi bhi 68-92% range mein nahi) — pehli baar aisa hua hai. Isi doc ke item #17 ("File Size Optimization") mein iska reason likha hai: is chat ke dauraan Rahul ji ne khud "file bahut badi ho gayi thi, use halka karo" bola tha, aur us waqt saari 116 photos ko quality=90 se **quality=55** par recompress kar diya gaya tha (file size chhota karne ke liye). Matlab **yeh archive us hi recompression-event ke BAAD ka snapshot hai** — yani yeh already-degraded 55%-quality images hain, uss se pehle ki behtar-quality original photos nahi. (Chat 1-4 ke archives is recompression se PEHLE ke the, isliye unme 68-92% quality mili thi.)
+
+**Verify kiya** (4 sample products byte-for-byte compare karke: Cofi 09CA091804M, Vanaz V7744, Dungs DN65, Siltek 10kV) — archive ki image aur currently-live image dono **exactly same size/dimensions/quality** nikle (byte-identical). Confirm ho gaya: **is archive se koi bhi product upgrade nahi ho sakta** — na Section A ke 61 products ke liye (unhe 55% par le jaana ulta downgrade hoga), na Section B ke 10 products ke liye (waha bhi same 55% hi milega, koi sudhar nahi).
+
+**Product-gap cross-check bhi ki** (76 names vs. current 118 site products) — 75/76 already-existing products se match hue, 1 ("Vanaz High Pressure Regulator R2304 II") pehle se hi known labeling-artifact hai (R2304 ka hi duplicate naam, koi alag product nahi) — **koi naya product-gap nahi mila is baar**.
+
+**Standing-rules doc ke 17 rules bhi cross-check kiye** current live site ke against — sab already sahi se implemented hain (Cofi srl, Honeywell no-location, UV Flame Sensor naam, V7713/V7715 merge + dot-removal + connection format, Ammonia Regulator subcategory, Siltek RK-logo mapping, brand badges) — **koi gap nahi mila**.
+
+**Files changed**: naye `archive/rkic-standing-instructions-chat5.md` + `archive/rkic-product-visual-index-original-chat5.html`. Koi aur file change nahi hui — is baar koi upgrade ya fix zaroori nahi tha.
+
+---
+
+## Honeywell C7027A1080 add nahi ho saka + bug pakda aur fix kiya: 2 products ki photo galti se placeholder ban gayi thi (Chat 4 correction)
+
+Rahul ji ne confirm kiya tha ki **Honeywell UV Flame Sensor C7027A1080** ko naya product ke roop mein add karna hai (Chat 4 archive mein iski photo dikhi thi, 85% quality). Add karne se pehle photo extract karke dekhi — yeh nikli ek generic **"Photo Pending" placeholder graphic** (grey background, "Photo Pending / Honeywell UV Flame Sensor" text), koi real product photo nahi. Isliye **C7027A1080 add nahi kiya gaya**.
+
+**Isi verification ke dauraan ek zaroori bug pakda gaya**: yehi placeholder graphic (byte-for-byte identical, 11292 bytes) Chat 4 archive mein 2 aur products ke against bhi thi — **Honeywell UV Flame Sensor C7027A1031** aur **Honeywell UV Flame Sensor C7027A1064**. Chat 4 ke 21-product upgrade batch mein dono ki reported "85% quality" asal mein is placeholder graphic ki thi — dono ki asli/real live product photo (pre-upgrade backup se confirm ki gayi: label "C7027A 1031" / "C7027A 1064" wali asli sensor photos) galti se is generic placeholder se overwrite ho gayi thi.
+
+**Turant revert kiya** — dono products ki sabhi 4 jagah wapas unki asli (55% quality, lekin real) photo par restore ki: `images/{id}-large.jpg` (backup se copy), `products/{id}.html` (dono embedded copies, backup se copy), `index.html` ka `image:` field (backup base64 se restore — is dauraan ek aur chhota bug pakda: dono products ka placeholder base64 EXACTLY same tha, isliye pehla blind revert-script c7027a1064 ki entry mein galti se c7027a1031 ki photo daal gaya tha — position-scoped replace se turant theek kiya), aur `related-products-data.js` ka thumbnail (naye se regenerate kiya asli image se).
+
+**Verify kiya**: dono products ab wapas 55% quality par (real photo confirm), `index.html` single-product view mein dono apni-apni sahi photo dikha rahe hain (visually verify kiya), `node --check` dono JS files par pass, JSON-LD 0 errors dono standalone pages par.
+
+**`low-quality-images-list.md` update**: Section A ab 59 products (61-2), Section B ab 12 products (10+2) — C7027A1031 aur C7027A1064 wapas Section B mein, jab tak inki asli photo na mile.
+
+**Files changed**: `images/honeywell-c7027a1031-large.jpg`, `images/honeywell-c7027a1064-large.jpg`, `products/honeywell-c7027a1031.html`, `products/honeywell-c7027a1064.html`, `index.html`, `related-products-data.js`, `low-quality-images-list.md`.
+
+---
+
+## Chat 6 archive save kiya — is baar koi photo file nahi thi, sirf standing-rules doc
+
+Rahul ji ne 2 files bheji: `RKICSiteReminderInstructions_Chat_6.md` aur `RKICSiteReminderInstructions_Chat_6.1.md` — dono byte-identical nikle (ek hi doc). Is baar (Chat 1-5 ke uलट) koi visual product-index HTML file nahi thi — isliye is round mein koi photo extract/upgrade karne ke liye kuch nahi tha. Doc permanently save kiya: `archive/rkic-standing-instructions-chat6.md`.
+
+**Doc ke saare rules current live site ke against cross-check kiye** (18 sections): Image processing (90-92% quality target, duplicate-photo-ask-first rule), sabhi brand-specific rules (Cofi srl, Honeywell no-location, Vanaz Manufacturer field, Siltek RK-logo/naam-merge), Gas Meters ke compulsory fields ("Size and Capacity" not "Meter Size", "Part No." not "Order No." — verify kiya ki "Order No." sirf Kromschröder pressure-switch/BCU/valve products mein hi hai, jaha yeh unki apni sahi naming convention hai, Gas Flow Meters mein kahin nahi), Pressure Switches ka "Adjustable Setting Range" field, Ignition Electrodes ka "Kanthal A1" field, Combined-page rule (QA40 ek hi page confirm kiya), Cross-brand Kromschröder-equivalent rows, SEO requirements (favicon, data-large match, sitemap.xml/robots.txt valid), aur purane `.map(productCardHTML)` bug ka koi leftover — **sab kuch already sahi implemented hai, koi gap nahi mila**.
+
+**Files changed**: naya `archive/rkic-standing-instructions-chat6.md`. Koi aur file change nahi hui.
+
+---
+
+## Chat 7 archive save kiya — ZAROORI FINDING: ek "photo" AI-generated nikli, add NAHI ki gayi
+
+Rahul ji ne 3 files bheji: `RKICWebsiteStandingInstructions_Chat_7.md` (ek purani standing-rules doc, 2026-08-27 ki, jab site sirf 101 products ki thi), `productsaddedlist_1_Chat_7.md` (us waqt ki 101-product tracking list), aur `vanazr2202_Chat_7.html` (Vanaz R2202 High Pressure LPG Gas Regulator ka ek standalone product page, us purani chat mein bana hua).
+
+**Cross-check kiya current site (118 products) se** — 2 products is purani list mein the jo abhi live site par MISSING hain:
+- **vanaz-r2202** (Vanaz R2202 High Pressure LPG Gas Regulator) — poori standalone page uploaded file mein maujood thi (specs, description, sab kuch)
+- **honeywell-maxon-23739** (Honeywell Maxon 23739 Spark Ignition Electrode) — sirf naam/mention mila, koi photo/page uploaded nahi hui is baar
+
+**Vanaz R2202 ki photo add karne se pehle usse extract karke dekha — aur ek zaroori cheez pakdi gayi**: is image ki file mein embedded **C2PA content-credentials metadata** hai jo explicitly likhta hai — "Created by Google Generative AI", digitalSourceType = "trainedAlgorithmicMedia", aur "Applied imperceptible SynthID watermark". Matlab **yeh ek real product photo nahi hai — yeh Google ke Generative AI (jaise Gemini/Imagen) se banayi gayi ek AI-generated/fake image hai**, kisi asli Vanaz R2202 unit ki li gayi photo nahi.
+
+**Isliye Vanaz R2202 add NAHI kiya gaya** — humari site ki bunyaadi requirement hai ki har product photo real/genuine ho (chahe manufacturer site se ho ya trader/reseller site se), kabhi AI-generated/fake nahi — customer ko asli product dikhana zaroori hai jo woh khareed rahe hain. Yeh file `archive/rkic-vanaz-r2202-chat7-AI-GENERATED-DO-NOT-USE.html` naam se clearly-labelled save kar di gayi hai (future reference ke liye, taaki galti se kabhi use na ho).
+
+**Doc ke rules bhi cross-check kiye** (data-large attribute, Honeywell Maxon brand assignment, subcategory breadcrumb pattern) — sab already sahi hai, koi gap nahi.
+
+**Files changed**: naye `archive/rkic-standing-instructions-chat7.md`, `archive/rkic-products-added-list-chat7-101products.md`, `archive/rkic-vanaz-r2202-chat7-AI-GENERATED-DO-NOT-USE.html`. Koi live-site file change nahi hui — Vanaz R2202 add nahi kiya gaya.
+
+**Rahul ji se poochna hai**: Vanaz R2202 ki asli photo (real, camera se li hui ya trader site se) bhej sakein to turant add kar denge. Honeywell Maxon 23739 ki bhi photo chahiye add karne ke liye.
+
+---
+
+## Honeywell Maxon 23739 ki photo bhi AI-generated nikli — add nahi ki gayi
+
+Rahul ji ne Honeywell Maxon 23739 Spark Ignition Electrode ki ek photo bheji (label saaf padha ja raha tha: "Honeywell MAXON 23739"). Add karne se pehle — pichhle Vanaz R2202 finding ke baad ab har extracted/uploaded "photo" ki C2PA metadata check karna standard practice ban gaya hai — is image ko bhi check kiya.
+
+**Yeh bhi AI-generated nikli**: same embedded C2PA metadata — "Created by Google Generative AI", digitalSourceType "trainedAlgorithmicMedia", "Applied imperceptible SynthID watermark". Bilkul real dikhti hai (sharp label, sahi lighting, sahi shadow), lekin technical proof confirm karta hai ki yeh Google Generative AI se banayi gayi image hai, kisi asli Honeywell Maxon 23739 unit ki khinchi hui photo nahi.
+
+**Isliye Honeywell Maxon 23739 bhi add NAHI kiya gaya.** File clearly-labelled naam se save kar di: `archive/honeywell-maxon-23739-chat7-AI-GENERATED-DO-NOT-USE.png`.
+
+**Dono products (Vanaz R2202, Honeywell Maxon 23739) ab bhi add hone baaki hain** — Rahul ji se asli (genuinely camera-shot ya trader-website-se-li-hui, AI-generated nahi) photo ka wait hai.
+
+---
+
+## Honeywell Maxon 23739 ADD kiya gaya — Rahul ji ke explicit risk/decision par (AI-generated photo hone ke bawajood)
+
+Pichhle finding ke baad (upar) Rahul ji ne eBay listing ka reference diya — **https://www.ebay.com/itm/405018047763** (seller "SenHui", genuine Honeywell Maxon 23739 electrodes bech rahe hain) — jahan bilkul yehi photo primary listing image ke roop mein use ho rahi hai. Isके baad Rahul ji ne 2 aur baar yehi photo alag-alag format mein bheji (JPEG re-save, phir WebP with logo/text overlay) — dono ko verify kiya (pehli mein C2PA metadata stripped mil gaya, lekin pixel-level comparison aur cropped region-matching se confirm hua ki teeno versions **same underlying AI-generated image** hain, sirf background/overlay/format badla hua tha).
+
+**Rahul ji ka final decision**: "Isi photo se add kar dein (Mere risk/decision par) par hamesha pooch kar koi difference dikhe to batao." — Matlab: photo AI-generated hone ka finding sahi hai, real eBay listing bhi isi photo ko use kar rahi hai (real product, real seller) — Rahul ji apni informed risk par ise add karne ka decision le rahe hain. Saath hi ek naya standing rule diya: aage se koi bhi difference/discrepancy dikhe to hamesha pooch kar batana hai, chup-chap decide nahi karna.
+
+**Photo processing**: Rahul ji ne turant ek behtar version bhi bheja — same product ka ek pehle-se-clean white-background version (1024×1024, koi logo/text overlay nahi) — aur mehnat kam karne ko kaha ("ye photo ko dale sirf jpeg hai, jaroor dekhe aur jpeg mein convert kare"). **Transparency note (naye standing rule ke tehat)**: yeh white-bg version bhi same AI-generated render hai (same exact product pose/geometry jo pehle C2PA + pixel-comparison se confirm hui thi) — bas background pehle se saaf kiya hua tha, ismein koi naya farak nahi. Isi photo ko 500×500 JPEG (quality 90, site convention ke mutabik) mein resize/convert karke use kiya gaya — koi extra rotation/background-editing nahi ki gayi (Rahul ji ke "itni mehnat na karo" instruction ke mutabik).
+
+**Specs research kiya (web se, kyunki yeh ek real bikta hua part hai)**: Part No. 23739, self-grounding direct-spark ignition electrode (spark-plug style), 14mm x 1.25mm thread, 1-1/2" (1.5") extended gap, Maxon APX burners (0.5–5.0 APX) + NP-LE/NP AIRFLO + RG AIRFLO ke liye. Cross-reference part numbers: MXN23739, USI P-5022, Eclipse 16927, Crown CA506, Champion F121508, Auburn I-31-1, CS15266/CS15266-B. Sources: lesman.com, radwell.com, stromquist.com, kempstoncontrols.co.uk, martincontrol.com, horizonpfm.com.
+
+**Add kiya gaya (5 jagah)**:
+- `images/honeywell-maxon-23739-large.jpg` (naya, 500×500)
+- `products/honeywell-maxon-23739.html` (naya standalone page, `honeywell-maxon-47232.html` template se banaya)
+- `index.html` — naya product object (SPARK ELECTRODES category, Honeywell Maxon brand)
+- `related-products-data.js` — naya 140px/q78 thumbnail entry
+- `brand-data.js` — Honeywell Maxon count 2→3
+- `sitemap.xml` — naya `<url>` entry
+
+**Verify kiya**: JSON-LD valid (dono schema blocks), `node --check` index.html/related-products-data.js/brand-data.js sab pass, sitemap.xml valid XML, Playwright se product page load kiya (title/H1/image/related-cards/brand-chips sab sahi), aur SPARK ELECTRODES category page mein card sahi dikh raha hai (koi console error nahi).
+
+**IMPORTANT — permanent note**: Is product ki photo AI-generated hai (confirmed via C2PA metadata + pixel comparison), lekin Rahul ji ke explicit informed risk/decision par add ki gayi hai kyunki real eBay listing bhi yehi photo use kar rahi hai isi genuine part ke liye. Agar future mein koi behtar (genuinely camera-shot) photo mil jaye, use kar denge.
+
+**Correction (turant baad)**: Rahul ji ne kaha cross-reference part numbers (USI P-5022, Eclipse 16927, Crown CA506, Champion F121508, Auburn I-31-1, CS15266/CS15266-B — aur MXN23739 bhi) site par publish na karo, un sources se sirf specification (technical data) le lo. Sabhi jagah se (product page meta/JSON-LD/pg-code/specs/description, index.html code/specs/description, related-products-data.js code) yeh saare cross-ref numbers hata diye — ab sirf "23739" hi dikhta hai part number ke roop mein.
+
+---
+
+## Vanaz R2202 ADD kiya gaya — Rahul ji ke explicit risk/decision par (Maxon 23739 jaisa hi pattern)
+
+Rahul ji ne ek naya photo bheja Vanaz R2202 ke liye, pehle inline (koi file path nahi mila, isliye process nahi kar saka — file attachment maanga), phir dobara "mobile se upload kiya" bol kar file ke roop mein bheja.
+
+**Verification kiya**: is naye photo mein bhi wahi C2PA metadata mili jo pehli (Chat 7 wali) fake Vanaz R2202 photo mein thi — "Created by Google Generative AI", digitalSourceType "trainedAlgorithmicMedia", "Applied imperceptible SynthID watermark". Pixel-comparison se pata chala ki ye pehli fake photo se bilkul same nahi hai (thoda alag), matlab **ek doosri, alag AI-generated image** hai, wahi purani copy nahi. Rahul ji ko turant yeh saaf-saaf bataya (unke "mobile se li" claim ke bawajood) — unhone confirm kiya: "isi risk par add kar dein, jaisa Maxon mein kiya tha."
+
+**Specs research kiya (web se cross-verify)**: 3 independent sources se match kiya — moglix.com, rkic.in (Rahul ji ki hi ek purani/alag website lagti hai), aur vanaz.com se related pages. Inlet 0.5–17 kg/cm², Outlet 0.2–2 kg/cm², Flow 20 Nm³/hr, Inlet connection 21.8×14 TPI (LH) Female Union Nut, Outlet 1/4" BSPF, Brass body, Vanaz Engineers Ltd Pune. (Chat 7 ke purane archive page mein bhi yehi specs the — cross-verify se confirm ho gaya, wahi text base bana.)
+
+**Photo processing**: 1024×1024, already white background, seedha 500×500 resize kiya (Maxon jaisa hi, koi extra editing nahi).
+
+**Add kiya gaya (6 jagah)**:
+- `images/vanaz-r2202-large.jpg` (naya, 500×500)
+- `products/vanaz-r2202.html` (naya, `vanaz-r2301.html` template se, 4-level breadcrumb — live-site convention, Chat 7 ke 5-level wale se alag)
+- `index.html` — naya product object (PRESSURE REGULATOR VALVES / High Pressure Regulator subcategory)
+- `related-products-data.js` — naya thumbnail entry
+- `brand-data.js` — Vanaz count 19→20
+- `sitemap.xml` — naya entry
+
+**Verify kiya**: JSON-LD valid, `node --check` sab files pass, sitemap.xml valid XML, Playwright se page (title/H1/image/specs/related-4-cards/brand-chips) aur subcategory listing (8 cards) dono check kiye — koi console error nahi.
+
+**IMPORTANT — permanent note**: Is product ki photo bhi AI-generated hai (confirmed via C2PA metadata), Rahul ji ke explicit informed risk/decision par add ki gayi hai — same pattern jaisa Honeywell Maxon 23739 mein tha.
+
+---
+
+## Chat 8 archive cross-check (rkicstandingrules_Chat_8.md + index_Chat_8.html, 111 products) — findings aur corrections
+
+**Photo quality**: Is archive mein 106 products parse hue (55%: 72, 90%: 1, 92%: 33). Section A ke 59 products (68–85% par already) is archive mein 55% par mile — worse, koi upgrade nahi (Chat 5 jaisa hi result).
+
+**Section B correction**: Section B ke sabhi 12 products ("koi purani photo nahi mili" wale) is archive mein 55% quality par mil gaye — par check karne par pata chala ki yeh **sabhi already live site par maujood hain**, is archive wali photo se byte-identical (matlab yeh products kabhi add ho chuke the, list simply stale thi, update nahi hui thi). 6 photos visually verify ki (label/nameplate clear, genuine photos, placeholder nahi). Rahul ji ne is baat ki confirm karne par bataya ki photo/image ka kaam abhi jaisa hai waisa hi rehne dena hai — koi reclassify/upgrade nahi kiya gaya, `low-quality-images-list.md` untouched chhod diya.
+
+**Gap check**: Chat 8 archive ke sabhi 106 product IDs current live site (120 products) par already maujood hain. **Koi missing/gap product nahi mila.**
+
+**Standing-rules cross-check — 3 genuine gaps mile, sabhi Rahul ji ke confirm karne par fix kiye gaye**:
+1. "Electrode & Wiring Material: Kanthal A1 (FeCrAl resistance wire)" compulsory row 4 branded ignition-electrode pages par missing thi — Honeywell Eclipse 10019728, Honeywell Maxon 23739, Honeywell Maxon 47232, Maxon M333 39782. Add kar diya (standalone pages + index.html specs, sabhi jagah).
+2. Vanaz Manufacturer row punctuation inconsistent thi — 3 pages (R4109 II, R4109IV, R4110) mein "Vanaz Engineers Ltd., Pune" (period ke saath) tha, jabki baaki 17 Vanaz pages mein "Vanaz Engineers Ltd, Pune" (bina period) hai. Standardize kar diya — sabhi jagah ab bina period.
+3. **Self-correction**: shuru mein "Uetzen" (QA10-25 page) ko "Uelzen" typo samajh kar fix kar diya tha, lekin turant hi products-added-list.md ki hi purani entry (#108) check karne par pata chala ki yeh galti nahi hai — "Uetzen" us specific unit ke asli nameplate photo se liya gaya address hai (Elster GmbH, Stromstr. 1, D-29525 Uetzen), jaan-boojh kar baaki pages ke "Uelzen"/"Elster Instromet" se alag rakha gaya tha (har QA page apne hi nameplate ka exact manufacturer text dikhata hai). Turant revert kar diya (standalone page + index.html, dono) — koi actual change nahi hua is item par.
+
+Baaki sab rules (RANGE_BANNERS, extraHTML, favicon tags, lightbox data-large=src, brand-data.js counts, Cofi manufacturer naming) — fully compliant nikle.
+
+**Delivery-format rule** (isi Chat 8 doc mein naya mila): standalone product page ke saath brand-data.js bhi zip mein bhejna hai. Yeh rule Maxon 23739 aur Vanaz R2202 ki delivery ke BAAD discover hua tha, isliye dono ko dobara — standalone .html + (page + brand-data.js) zip, dono formats mein — resend kar diya.
+
+Sabhi changes Playwright se verify kiye (8 pages: title/H1/specs/related-cards/brand-chips, koi console error nahi) aur `node --check` se JS syntax valid confirm kiya.
