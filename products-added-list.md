@@ -1249,3 +1249,58 @@ Poori tarah remove kar diya:
 - `brand-data.js` — Elektrogas count 9 → 8 update kiya
 
 Verify kiya: `node --check` (index.html, related-products-data.js, brand-data.js sab pass), sitemap.xml valid XML, kahi bhi "elektrogas-vmr12" reference nahi bacha.
+
+---
+
+## Naya product ADD kiya — 4.0mm Female Bullet Cable Lug (IGNITION SPARES ki pehli entry)
+
+Rahul ji ne ek spec-diagram image bheji (dimensions overlay wali, supplier listing jaisi — asli photograph nahi) aur bola: category IGNITION SPARES, brand RKIC, ignition cable ke liye cable lug.
+
+Clarify kiya (poochke):
+- **Category**: site mein IGNITION SPARES pehle se hi master categories list mein tha (koi product abhi tak nahi tha) — Rahul ji ne confirm kiya "already hai", isliye naya category nahi banaya, seedha use kiya. Yeh iska pehla product hai.
+- **Part code**: koi specific RKIC code nahi diya gaya — size se hi identify kiya ("4.0mm Female Bullet Lug").
+- **Image source**: yeh ek generic/supplier spec-diagram thi, asli product photo nahi — Rahul ji ne confirm kiya ("bilkul...koi dikkat nahi aaram se", jaisa Maxon 23739 / Vanaz R2202 mein pehle kiya tha), apne informed risk par add kiya.
+
+Product add kiya (naya id: `rkic-cable-lug-4mm`):
+- **Name**: Female Bullet Cable Lug 4.0mm (Phosphor Bronze)
+- **Category**: IGNITION SPARES (koi subcategory nahi)
+- **Brand/Manufacturer**: R.K. Instruments & Controls
+- Specs: Connector Diameter 4.0mm, Overall Length 19.5mm, Body Width 7.6mm × 8.7mm, Insertion Depth 5.0mm (barrel)/4.0mm (bullet pin), Material Phosphor Bronze, Material Thickness 0.5mm, Wiring Range up to 10 mm² conductor
+
+Image processing: image already white-background thi, 600px thumbnail + 1100px large + 140px related-products thumbnail banaye, JPEG quality 90–92%, LANCZOS resize, white canvas center.
+
+Sabhi jagah add kiya:
+- `index.html` — naya product object (products array mein 122 total ho gaye, pehle 121 the)
+- `products/rkic-cable-lug-4mm.html` — standalone page banayi (rkic-ignition-electrode.html template se, RKIC logo tag reuse kiya)
+- `sitemap.xml` — entry add ki
+- `related-products-data.js` — entry add ki (140px thumbnail ke saath)
+- `brand-data.js` — R.K. Instruments & Controls count 7 → 8
+
+Verify kiya: `node --check` (index.html ka products-array block, related-products-data.js, brand-data.js sab pass), naye product object ko Node mein load karke fields confirm kiye (10 specs, sahi category/code), JSON-LD dono blocks (Product + BreadcrumbList) valid JSON nikle, standalone page mein purane product ka koi reference nahi bacha.
+
+**Turant refine kiya — Rahul ji ne zyada precise technical spec di**: Product Type ko "Non-Insulated Female Quick-Disconnect Spade/Bullet Crimp Terminal (High-Voltage Ignition Connector)" kiya, "Body Width" aur "Insertion Depth" combined rows ko 4 separate precise rows mein split kiya (Receptacle Inner Diameter 4.0mm, Outer Barrel Diameter 5.0mm, Mating Width Back Opening 7.6mm, Mating Width Outer Wing 8.7mm), Material row mein Phosphor Bronze ke fayde (elasticity, fatigue resistance, conductivity vs brass) add kiye, Application ko "Ignition Transformer Connector / Ceramic Ignition Pin Termination" specific kiya (11 specs ab total). Description bhi isi detail ke saath rewrite ki. `index.html` aur standalone page dono jagah update kiya (specs + description + meta tags + JSON-LD), verify karke.
+
+---
+
+## Doosra size variant ADD kiya — 6.0mm Female Bullet Cable Lug
+
+Rahul ji ne same style ka ek aur spec-diagram bheja, is baar 6.0mm size variant (bada size).
+
+Naya id: `rkic-cable-lug-6mm` — same product family (4.0mm wale ki tarah), same clarifications already established (category IGNITION SPARES, image generic/supplier spec-diagram hai — Rahul ji ka pehle se diya informed risk yahan bhi apply kiya, koi naya sawaal nahi poocha).
+
+Specs (refined pattern, 4mm wale jaisa hi format):
+- Receptacle Inner Diameter: 6.0mm, Outer Barrel Diameter: 7.3mm
+- Overall Length: 20mm
+- Mating Width (Back Opening): 8.4mm, Mating Width (Outer Wing): 9.4mm
+- Material: Phosphor Bronze (same elasticity/fatigue/conductivity note), Thickness: 0.5mm
+- Wiring Range: Up to 10 mm² conductor
+
+Image processing: 600px thumbnail + 1100px large + 140px related-products thumbnail, JPEG quality 90–92%, white canvas center.
+
+Sabhi jagah add kiya:
+- `index.html` — naya product object (123 products total ho gaye, pehle 122 the)
+- `products/rkic-cable-lug-6mm.html` — standalone page (same template)
+- `sitemap.xml`, `related-products-data.js` — entries add ki
+- `brand-data.js` — R.K. Instruments & Controls count 8 → 9
+
+Verify kiya: `node --check` pass, dono product objects (4mm + 6mm) Node mein load karke confirm kiye, JSON-LD valid, sitemap.xml valid XML.
