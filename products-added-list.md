@@ -1219,3 +1219,33 @@ og:image meta check improve kiya: pehle galti se meta ko on-page thumbnail (`src
 SEO: 17 titles abhi bhi 60-char se lambe hain — yeh genuinely lambe product names ki wajah se hai (already Rahul ji ne accept kiya tha "| RKIC" suffix-shorten ke baad), koi naya regression nahi.
 
 **Result: koi naya bug nahi mila. Site clean hai.**
+
+---
+
+## FLAGGED (Rahul ji ne khud pakda, screenshot se) — elektrogas-vmr12 ki galat photo
+
+Rahul ji ne VMR1-2 aur VMR12 product pages side-by-side dekhe aur pucha "duplicate content hai kya". Zoom karke check kiya:
+
+**`elektrogas-vmr12`** (Product Code: VMR12) ki photo **galat hai** — nameplate zoom karne par usme "**Model VMR1-2 Rp1/2**" likha hua hai (VMR12 nahi). Matlab yeh page apni photo nahi, balki `elektrogas-vmr1-2` (naya product, is session me add kiya) ki milti-julti dikhne wali photo dikha raha hai — asal me alag nameplate/unit ki photo hai jismein VMR1-2 likha hai.
+
+Yeh bug is session ka nahi hai (git history: sirf SEO/og:image commits is file ko touch kiye hain, base commit se hi yeh galat photo thi).
+
+Spec bhi thodi alag hai (VMR1-2: Power 25VA; VMR12: Power 25W) — isliye yeh genuinely 2 alag products lagte hain, koi duplicate-id typo nahi. Sirf VMR12 ki apni sahi photo missing/galat hai.
+
+**Rahul ji se pucha**: VMR12 ki sahi photo hai kya bhejne ke liye, ya confirm karo ki VMR12 valid alag product hai ya nahi. **Fix abhi nahi kiya — Rahul ji ke jawab ka wait hai.**
+
+---
+
+## elektrogas-vmr12 DELETE kiya (Rahul ji ne confirm kiya — yeh valid product nahi tha)
+
+Pichhle flag (VMR12 ki galat photo, VMR1-2 ka nameplate dikha raha tha) ke baad Rahul ji ne seedha bataya: **"VMR12 koi product nahi hai isko delete karo"**.
+
+Poori tarah remove kar diya:
+- `index.html` — products array se object hataya (121 products reh gaye, pehle 122 the)
+- `products/elektrogas-vmr12.html` — file delete
+- `images/elektrogas-vmr12-large.jpg` — physical image delete
+- `sitemap.xml` — entry hataya
+- `related-products-data.js` — entry hataya
+- `brand-data.js` — Elektrogas count 9 → 8 update kiya
+
+Verify kiya: `node --check` (index.html, related-products-data.js, brand-data.js sab pass), sitemap.xml valid XML, kahi bhi "elektrogas-vmr12" reference nahi bacha.
