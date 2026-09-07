@@ -28,6 +28,8 @@ Jab bhi koi single standalone product-page `.html` file akele deliver karta hoon
 
 **Further correction (dubara galti hui)**: sirf zip dena kaafi nahi hai — **standalone `.html` page ko hamesha ALAG SE (apni ek plain file ki tarah) bhi bhejna hai**, sirf zip ke andar dabi hui nahi. Yaani har naye/edited product page delivery mein do cheezein jaani chahiye: (1) `.html` page akele, standalone file ke roop mein, aur (2) zip (page + `brand-data.js`) poori functionality ke liye. Dono sath mein, har baar.
 
+**Teesra addition (7 Sep 2026, Chat 10 — Rahul ji ka explicit request)**: GitHub direct-push (session-authorized-repo issue) fix nahi ho saka is session se, isliye purana reliable workflow (zip + standalone file, Rahul ji khud GitHub Desktop se push karte hain) hi continue rahega. Iske saath ab **har delivery mein poori updated `index.html` file bhi hamesha bhejni hai** — standalone `.html` + zip ke alawa teesri cheez ke roop mein, har naye/edited product ke saath, taaki Rahul ji apne local clone mein seedha replace kar sakein bina alag se track kiye ki kya-kya update hua.
+
 ## 4. Site-wide technical conventions (permanent, sab current/future products par apply)
 
 - **Image quality**: hamesha 90–92% JPEG (kabhi 55% nahi) — thumbnail aur large dono.

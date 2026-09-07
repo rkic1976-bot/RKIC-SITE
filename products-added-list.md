@@ -996,3 +996,226 @@ Baaki sab rules (RANGE_BANNERS, extraHTML, favicon tags, lightbox data-large=src
 **Delivery-format rule** (isi Chat 8 doc mein naya mila): standalone product page ke saath brand-data.js bhi zip mein bhejna hai. Yeh rule Maxon 23739 aur Vanaz R2202 ki delivery ke BAAD discover hua tha, isliye dono ko dobara — standalone .html + (page + brand-data.js) zip, dono formats mein — resend kar diya.
 
 Sabhi changes Playwright se verify kiye (8 pages: title/H1/specs/related-cards/brand-chips, koi console error nahi) aur `node --check` se JS syntax valid confirm kiya.
+
+---
+
+## Naya product add kiya: Kromschröder Ignition Transformer TZI 5-15/100WE (code 84391150)
+
+Rahul ji ne ek naya photo bheja — "Brand Kromschroder | Product Ignition Transformer". Nameplate se: Type TZI 5-15/100WE, Order No. 84391150, Batch A 2309 02125788, Pri. 230V 50(60)Hz 0.4(0.3)A, Sec. 1x5kV 15(10)mA Ampl.5kV, ED 100% ta35°C/B, IP00, Elster GmbH Osnabrück, Made in Italy, EAC/CE/UKCA marked.
+
+**Duplicate-check**: Perceptual hash (16x16 phash) se sabhi 120 existing product images ke against compare kiya — sabse kareeb match bhi distance 100/256 tha (koi real match nahi), aur existing `kromschroder-tzi` (TZI 8-12/100WE, alag model/code) se distance 128/256 — matlab yeh genuinely ek naya, alag product hai, same TZI family ka doosra model/rating.
+
+**Specs cross-verify kiye (web se)**: proflamm.com aur onergys.de par yehi part (84391150, TZI 5-15/100WE) genuine Kromschröder/Elster part ke roop mein listed mila, "replacement for old type TZI 5-15/100W (84331381)". Application: high-voltage ignition of gas/oil burners. Sab specs nameplate se match hue.
+
+**Photo processing**: 1024×1024, already clean white background — seedha 600px (thumbnail) + 1100px (large) resize kiya, LANCZOS, JPEG quality 92%. Koi heavy reconstruction ki zaroorat nahi thi.
+
+**Product ID**: `kromschroder-tzi-5-15-100we` (existing `kromschroder-tzi` se alag rakha, kyunki electrical specs alag hain — sirf size/connection variant nahi, isliye combined-page rule apply nahi hoti, alag standalone page banai).
+
+**Add kiya gaya (6 jagah)**:
+- `images/kromschroder-tzi-5-15-100we-large.jpg` (naya, 1100×1100)
+- `products/kromschroder-tzi-5-15-100we.html` (naya, `kromschroder-tzi.html` template se targeted string-replace karke banaya)
+- `index.html` — naya product object (IGNITION TRANSFORMERS category, "Ignition Transformer" subcategory — existing subcategoryMap mein already tha, koi map-change nahi chahiye thi)
+- `related-products-data.js` — naya 140px/q78 thumbnail entry
+- `brand-data.js` — Honeywell Kromschröder count 11→12
+- `sitemap.xml` — naya `<url>` entry (lastmod 2026-09-07)
+
+**Verify kiya**: `node --check` se index.html ka poora products/subcategoryMap script, `related-products-data.js`, aur `brand-data.js` — teeno syntax-valid. JSON-LD (Product + BreadcrumbList) dono blocks manually cross-check kiye. Spec table, breadcrumb, WhatsApp enquiry link, CURRENT_PRODUCT_ID, og:image dimensions (1100×1100) — sab sahi update hue.
+
+**Naya standing rule is session se (Rahul ji ka explicit request)**: GitHub direct-push is session se fix nahi ho saka (session-authorized-repo issue), isliye purana workflow (zip + standalone file, Rahul ji khud GitHub Desktop se push) hi continue. Iske saath ab har delivery mein poori updated `index.html` file bhi hamesha bhejni hai, standalone `.html` + zip ke alawa.
+
+---
+
+## Naya product add kiya: Elektrogas VMR1-2 Gas Solenoid Valve (Rp1/2)
+
+Rahul ji ne ek naya photo bheja (galti se "Kromschroder | Ignition Transformer" caption ke saath, par photo khud Elektrogas VMR1-2 valve ki thi — nameplate se hi correct pehchana). Nameplate: Model VMR1-2 Rp1/2, Voltage 230 VAC-50/60Hz, Power 25 VA, P.max 200 mbar, T.amb -15/+60°C, Class A-Group 2-IP54, CE 0694-EN 161, cert no. 0063AQ1350.
+
+**Duplicate-check**: Perceptual hash se sabhi existing images ke against compare kiya. Sabse kareeb match existing `elektrogas-vmr1-5` (same Rp1/2 connection, similar naam) tha — lekin specs alag hain (VMR1-5 = higher flow/power variant), isliye genuinely naya, alag product confirm hua, naam-similarity ke bawajood duplicate nahi.
+
+**Specs**: Nameplate se hi seedhe liye (koi ambiguity nahi thi) — Elektrogas VMR1-2, normally-closed automatic-reset gas solenoid valve, 1/2" (Rp1/2) connection, 230VAC 50/60Hz, 25VA coil, 200 mbar max pressure, EN 161 Class A Group 2 IP54, CE 0694, -15°C se +60°C ambient range. Manufacturer: Elektrogas, Italy.
+
+**Photo processing**: Nameplate photo se product ka clean cutout banaya, white background, thumbnail + large dono sizes LANCZOS resize + JPEG quality 90-92%.
+
+**Product ID**: `elektrogas-vmr1-2`.
+
+**Add kiya gaya (6 jagah)**:
+- `images/elektrogas-vmr1-2-large.jpg` (naya)
+- `products/elektrogas-vmr1-2.html` (naya, `elektrogas-vmr1-5.html` template se banaya)
+- `index.html` — naya product object (SOLENOID VALVES category)
+- `related-products-data.js` — naya 140px/q78 thumbnail entry
+- `brand-data.js` — Elektrogas count 8→9
+- `sitemap.xml` — naya `<url>` entry (lastmod 2026-09-07)
+
+**IMPORTANT — is product ki wajah se ek purana, alag bug pakda gaya (neeche detail hai)**: Ignition Transformer TZI 5-15/100WE aur is VMR1-2 dono naye pages banate waqt, dono mein `data-large` attribute image `src` se **match nahi kar raha tha** (site ka apna rule hai ki lightbox zoom ke liye dono barabar hone chahiye) — apni hi mistake thi (thumb ke liye ek size, "large"/zoom ke liye doosra size use kar liya tha, jabki site ka established convention hai: ek hi image dono jagah). Dono files mein fix kar diya — ab `data-large` = `src`, dono jagah wahi image.
+
+---
+
+## CRITICAL BUG MILA AUR FIX KIYA: `kromschroder-tzi` (TZI 8-12/100WE) ka zoom-photo galat tha — PURANA bug, is session se pehle ka
+
+Elektrogas VMR1-2 add karte waqt Playwright verification mein upar wala data-large mismatch pakda gaya. Usi investigation ke dauraan, sabhi existing products ka bhi cross-check kiya (jinke paas `image` + `imageLarge` dono fields hain) — aur ek serious, **pehle se maujood** bug mila:
+
+**Kya galat tha**: `index.html` mein existing product `kromschroder-tzi` (TZI 8-12/100WE) ka `imageLarge` field — jo lightbox/zoom ke liye use hota hai (`p.imageLarge || images[0]`) — usme **Elektrogas VMR1-2 valve ki photo** thi, na ki ignition transformer ki. Matlab site par (aur SPA catalog view mein) is product ko click karke zoom karne par galat product ki photo dikhti thi — bilkul wahi jo Rahul ji ne apne purane delivered link (claudeusercontent.com/products/kromschroder-tzi.html) mein report kiya tha.
+
+**Root-cause investigation**: Git history check kiya — yeh corruption is session ke SHURU se, pehle hi commit (`46b783b`, jo repo clone hote hi tha) mein maujood thi. Is session ki koi bhi script (kromschroder-tzi-5-15-100we ya elektrogas-vmr1-2 add karne wali) ne isse touch nahi kiya — diff se confirm hua ki product-1 ki insertion sirf ek clean naya object add karti hai, kromschroder-tzi ke fields ko chhoot-ti tak nahi. Iska matlab yeh bug kisi **PURANI chat session** se already maujood tha — shayad kisi purani session mein Elektrogas VMR1-2 add karne ki koshish ho rahi thi (yehi exact product jo aaj naya add kiya), aur us waqt kisi script-mistake se uski large photo galti se `kromschroder-tzi` ke `imageLarge` field mein chali gayi thi. Exact mechanism (kaunsi purani session, kaunsa script) reconstruct nahi ho saka kyunki us session ka record yahan available nahi hai — lekin fact confirmed hai ki yeh is session se pehle se corrupt tha.
+
+**Fix kiya**: `kromschroder-tzi` ke `imageLarge` field ko hata diya (delete) — ab site ka dominant/correct convention follow karta hai (sirf ek `image` field, jo already sahi/correct photo hai — ignition transformer, nameplate 84391170 wala). Isse `p.imageLarge || images[0]` fallback automatically sahi `image` field use karega. Playwright se verify kiya: ab `#/product/kromschroder-tzi` par zoom image aur main image dono barabar hain, aur `alt` text bhi sahi "TZI 8-12/100WE" dikhata hai.
+
+**Widespread check kiya (safety ke liye)**: Poore catalog mein 77 aur products hain jinke paas `image` + `imageLarge` dono fields hain (purana pattern, naye products mein sirf ek `image` field use hota hai). In sabhi 77 ka perceptual-hash distance `image` vs `imageLarge` ke beech check kiya — **sabhi 77 mein distance 0-2/256 hai** (matlab same photo, sirf alag resolution — 500px vs 900-1100px) — koi aur corruption nahi mila. **`kromschroder-tzi` isolated, ek hi case tha.**
+
+**Yeh bug abhi standalone product page (`products/kromschroder-tzi.html`) mein reproduce nahi hua** — is file ka apna `src`/`data-large` already barabar the (verify kiya). Bug sirf `index.html` ke data mein tha (jo SPA catalog/homepage view use karta hai). Rahul ji ka purana claudeusercontent.com link ek stale, purani delivery ka snapshot hai — us waqt shayad standalone file mein bhi yehi corruption thi, jo baad mein alag se fix ho gayi thi, lekin `index.html` ka data kabhi fix nahi hua tha. **Yeh mismatch abhi tak GitHub par live/pushed hai (kyunki push is session se ho hi nahi paya) — Rahul ji jab bhi is delivery ko push karenge, tabhi live site par bhi fix ho jayega.**
+
+---
+
+## Photo update kiya: Kromschröder Ignition Transformer TZI 8-12/100WE (existing product, code 84391170)
+
+Rahul ji ne isi product ki ek naya, saaf photo bheja (back-view, wires ke saath) — nameplate se confirm hua ki same product hai: TZI 8-12/100WE, 84391170, A 2407 02201454, Pri. 230V 50/60Hz 0.6/0.4A, Sec. 1x6kV 12/9mA Ampl.11kV, ED 100% ta35°C/B, IP00, Elster GmbH Osnabrück, Made in Italy — purani photo (front+side collage, do photos ek saath) se match hote hue bhi ek behtar, saaf single-angle photo. Rahul ji ne explicitly "update/change" bola, isliye purani photo replace kar di (koi naya product nahi, sirf photo update).
+
+**Photo processing**: Content ke around tight crop (padding 20px), white square canvas par center-pad, 700×700 tak LANCZOS resize, JPEG quality 92%.
+
+**Update kiya gaya (5 jagah)**:
+- `images/kromschroder-tzi-large.jpg` (replace, ab 700×700, pehle 700×401 tha)
+- `products/kromschroder-tzi.html` — `<img src>` aur `data-large` dono naye photo se update (barabar rakhe), og:image height meta 401→700
+- `index.html` — `kromschroder-tzi` product object ka `image` field naye photo se replace
+- `related-products-data.js` — 140px/q78 thumbnail bhi naye photo se regenerate kiya
+
+**Verify kiya**: Playwright se standalone page (src=data-large match) aur index.html SPA view (`#/product/kromschroder-tzi`, zoom=main image match, alt text sahi) dono confirm kiye. `node --check` se related-products-data.js aur index.html ka inline script — dono syntax-valid.
+
+---
+
+## Poori website ka full scan (Rahul ji ka explicit request) — findings aur fixes
+
+Rahul ji ne poori site scan karke bugs/galtiyan fix karne ko kaha. Systematic checks kiye (Python scripts se, sabhi 122 products cross-verify):
+
+**Clean nikle (koi issue nahi)**:
+1. Duplicate product `id` — koi nahi (122 unique).
+2. Har product ka apna `products/{id}.html` file maujood hai; koi orphan standalone page nahi (`honeywell-elster-rabo-model-range.html` RANGE_BANNERS ke through jaan-boojh kar bina product-array entry ke rakha gaya hai — sahi hai).
+3. `subcategoryMap` — sirf 6 categories mein subcategory hoti hai (established rule), baaki categories ke products mein subcategory field na hona expected hai, koi mismatch nahi.
+4. `brand-data.js` ke sabhi 14 brand counts index.html ke actual counts se match karte hain.
+5. `sitemap.xml` mein sabhi 122 products + 1 range-banner page — na koi missing, na koi stale entry.
+6. `related-products-data.js` — sabhi 122 products ki entry hai, koi duplicate nahi.
+7. Har standalone page: `CURRENT_PRODUCT_ID` sahi, favicon tags maujood, canonical/og:url sahi, brand-data.js/related-products scripts sahi load ho rahe.
+8. JSON-LD (Product schema) — sabhi 122 pages mein valid JSON.
+9. Internal links (breadcrumb, related-products, category) — koi bhi broken/404 link nahi mila.
+10. `node --check` — index.html ka inline script, brand-data.js, related-products-data.js, related-products.js — sabhi syntax-valid.
+11. `productCardHTML` — kahin bhi bare `.map(productCardHTML)` anti-pattern nahi mila (established bug-prevention rule follow ho raha hai).
+12. Meta descriptions — sabhi 122 pages mein hai. `<title>` tags — koi bhi duplicate nahi, sabhi unique.
+13. Cross-product photo-mixup check (jaisa kromschroder-tzi wala bug tha) — poore catalog (122 products) par perceptual-hash se dobara check kiya, koi aur aisa case nahi mila. `imageLarge` fields (77 products) bhi dobara cross-check kiye against SABHI products' `image` field (na sirf apne khud ke) — koi bhi kisi doosre product se zyada match nahi karta. Confirm: kromschroder-tzi wala tha, ek hi, isolated case tha.
+
+**Bug mila aur fix kar diya (17 pages)**: `og:image:width`/`og:image:height` meta tags actual image file ke dimensions se match nahi kar rahe the (SEO/social-share preview ke liye galat size batate the) — `brahma-eg12l-gmo`, `brahma-eg12sr-gmo`, `vanaz-r2202`, `elektrogas-vmr12`, `brahma-tc1svcs`, `brahma-re3-220v-c1035`, `brahma-be8-gmo-coil`, `kromschroder-dmg-s2601`, `kromschroder-gik-20r02-5`, `vanaz-r2301-oxygen`, `danfoss-ebi4-1p`, `honeywell-elster-qa16-25/qa10-25/qa25-25/qa40/qa65-50`, `rkic-sp-2307`. Sabhi 17 mein actual file dimensions se meta tags correct kar diye — koi photo change nahi hui, sirf metadata number sahi kiya.
+
+**Flag kiya, fix NAHI kiya (Rahul ji se pooch kar decide karna hai)**:
+1. 17 standalone pages mein `src` (thumbnail, 500-600px) aur `data-large` (zoom, 900-1100px) alag-alag resolution ki images hain — same product ki hi photo hai (perceptual-hash se confirm, koi wrong-product nahi), sirf size alag. Site ka apna likha rule hai "data-large hamesha src ke barabar hona chahiye" — is hisaab se yeh 17 pages us rule ka pura paalan nahi karte. List: `brahma-eg12l-gmo`, `brahma-eg12sr-gmo`, `brahma-sm592ns`, `rkic-angled-ignition-electrode`, `kromschroder-dmg-s2601`, `kromschroder-gik-20r02-5`, `vanaz-r2301-oxygen`, `danfoss-ebi4-1p`, `honeywell-elster-qa16-25/qa10-25/qa25-25/qa40/qa65-50/qa100-80/qa160-80`, `honeywell-elster-rabo-g40-dn50`, `rkic-srg-21`. Do options hain: (a) bada (zoom-quality) image hi hamesha use karo, dono jagah — better zoom, thoda bada page-size; (b) chhota image hi dono jagah use karo — jaisa recent products (elektrogas-vmr4, vanaz-r2202) karte hain, halka/fast lekin zoom detail kam. Rahul ji ka decision chahiye is par.
+2. `vanaz-r2301` aur `vanaz-r2301-oxygen` dono ka `code` field same hai ("R2301") — General High Pressure Regulator vs Oxygen-service variant, likely Vanaz ka apna hi base model number dono ke liye same hai (jaisa asli industry practice mein hota hai), isliye shayad sahi hai — lekin confirm karne ke liye flag kar raha hoon.
+3. `brahma-re3-220v` aur `brahma-re3-220v-c1035` (dono Brahma RE3 220-230V relay, alag order code 10801025 vs 10801035) dono ki photo bilkul identical hai (perceptual-hash distance 0) — plausible hai ki bahar se relay same dikhta hai, sirf internal code alag, isliye same stock photo reuse ki gayi — lekin flag kar raha hoon confirm ke liye.
+
+Sabhi fixes Playwright se re-verify kiye, `node --check` se sab JS files pass, local commit kar diya.
+
+---
+
+## Complete SEO check (Rahul ji ka explicit request)
+
+Poore site ka SEO audit kiya — title tags, meta descriptions, H1, alt text, canonical/og tags, structured data (JSON-LD), sitemap, robots.txt, page weight, sab check kiya.
+
+**Clean/sahi mila**:
+- Har page: unique `<title>`, unique meta description (koi duplicate content nahi), single H1, `lang` attribute, viewport meta.
+- Image alt text — sabhi 122 products mein present aur descriptive (pehle ek galat script se false-positive laga tha ki missing hai, dobara sahi check kiya to sab theek nikla).
+- JSON-LD — Product + BreadcrumbList schema har product page par valid; homepage par LocalBusiness + WebSite + BreadcrumbList bhi present.
+- `robots.txt` present, sitemap.xml ko correctly reference karta hai.
+- Koi accidental `noindex` tag kahin nahi.
+- Koi http:// (non-secure) link nahi mila.
+
+**Fix kiya (Rahul ji ke decision ke baad)**:
+- **Title tags**: 108/122 pages ka `<title>` Google ke ~60-character safe-display limit se zyada tha — zyada tar wajah "| R.K. Instruments & Controls" suffix (30 characters) thi. Rahul ji ne suffix chhota karne ko bola — sabhi 123 standalone pages (122 products + range-banner page) mein "| R.K. Instruments & Controls" ko "| RKIC" kar diya. Isse 108 mein se 93 titles ab limit ke andar aa gaye; baaki 15 genuinely lambe product names ki wajah se hain (suffix ki wajah se nahi) — un pe koi change nahi kiya, jaisa decide hua.
+
+**Flag kiya, fix NAHI kiya (Rahul ji ne "abhi rehne do" bola)**:
+- **Meta descriptions**: sabhi 122 products ki meta description Google ke ~160-character display limit se kaafi zyada lambi hain (minimum 308, maximum 1111, average ~570 characters) — search result snippet mein cut ho jayengi. Rahul ji ne abhi ke liye "rehne do" decide kiya — future mein zaroorat pade to short auto-generated versions ban sakte hain (page ka visible content touch kiye bina, sirf meta tag).
+
+**Bade architectural finding (sirf information ke liye, fix nahi kiya)**: Poori site base64-embedded images use karti hai (koi separate image files load nahi hoti) — isse `index.html` akela 14.2 MB ka hai, aur kuch product pages 500-835 KB tak ke hain (average 281 KB). Yeh Google Core Web Vitals (page load speed, especially mobile par) ke liye theek nahi hai — lekin yeh ek established, poore site ka architecture decision hai, isko badalna (external image files + lazy loading mein switch karna) ek bada re-engineering project hoga, chhota fix nahi. Sirf Rahul ji ki jaankari ke liye flag kar raha hoon, koi action nahi liya.
+
+**Brahma RE3 relay codes research (10801025 vs 10801035)**: Web research se pata chala ki 10801025 = "RE3 ionisation" variant aur 10801035 = "RE3 SP" variant — dono ka external housing/design same RE3 series ka hi lagta hai (kisi bhi distributor listing mein alag photo nahi mila in dono ke liye), farak sirf internal flame-sensing circuit mein hai. Isliye same photo reuse karna sahi lagta hai — koi confirmation nahi mil paya Brahma ke official manual se, lekin available evidence se yeh theek lagta hai. Koi change nahi kiya.
+
+Sabhi title fixes Playwright se re-verify kiye, local commit kar diya.
+
+---
+
+## Bug confirm hua aur fix kiya: `brahma-re3-220v-c1035` (Code 10801035) ki photo galat thi
+
+Pichhle scan mein maine `brahma-re3-220v` (Code 10801025) aur `brahma-re3-220v-c1035` (Code 10801035) ki photo identical (perceptual-hash distance 0) paayi thi, aur assume kiya tha ki dono relay bahar se same dikhte hain isliye photo reuse ki gayi hogi — lekin Rahul ji ne screenshot bhej kar dikhaya ki yeh galat tha: `c1035` (Code 10801035) wale page par photo ke nameplate par saaf "CODE 10801025" likha hua tha — matlab `c1035` page par galti se `220v` (10801025) wale product ki hi photo lag gayi thi (koi generic-photo-reuse nahi, ek genuine copy-paste mistake thi).
+
+Rahul ji ne Code 10801035 ki ek nayi, saaf photo bheji (nameplate par "CODE 10801035" clearly visible) — usi se replace kar diya.
+
+**Verify kiya (dono taraf se)**: `brahma-re3-220v` (10801025) ki apni photo check ki — woh sahi hai, uspar bhi "CODE 10801025" hi dikhta hai, sirf `c1035` wala hi galat tha.
+
+**Update kiya gaya (5 jagah)**:
+- `images/brahma-re3-220v-c1035-large.jpg` (replace, ab 700×700)
+- `products/brahma-re3-220v-c1035.html` — `src` aur `data-large` dono naye photo se (barabar rakhe), og:image dims 496×500→700×700
+- `index.html` — `brahma-re3-220v-c1035` ka `image` field replace
+- `related-products-data.js` — 140px/q78 thumbnail regenerate
+
+**Verify kiya**: Playwright se standalone page (src=data-large) aur index.html SPA view dono confirm kiye, `node --check` se index.html ka inline script pass.
+
+**Lesson**: Perceptual-hash se "same photo" dikhna kaafi nahi tha is case mein — nameplate ka text hi asli truth hai. Agar future mein aise koi aur "identical photo" pair dikhe (jaisa brahma-eg12l-gmo/eg12sr-gmo ya doosre "SUSPECT" na-lage-hue pairs), unko bhi nameplate-text-level par cross-verify karna chahiye, sirf visual similarity par bharosa nahi karna.
+
+---
+
+## Poori website ka product-photo match dobara, deeper check (OCR ke saath) — Rahul ji ka request (RE3 bug ke baad)
+
+Rahul ji ne RE3 wale bug ke baad poori site ka product/photo match dobara, aur deeper check karne ko kaha (kyunki sirf perceptual-hash kaafi nahi tha, jaisa RE3 case mein pata chala). Is baar 4 tarah ke checks kiye:
+
+1. **Poori catalog ka fresh pairwise perceptual-hash sweep** (122×122 comparisons, index.html ki `image` fields) — RE3 fix ke baad koi bhi close/duplicate pair nahi mila (0 results, pehle jo RE3 pair tha woh ab fix hone ke baad clean hai).
+2. **`imageLarge` legacy fields (77 products) dobara cross-check** — sabhi apne hi product se match karte hain, koi doosre product se zyada match nahi karta.
+3. **NAYA: OCR-based nameplate-text cross-check** — Tesseract OCR se har product ki photo se text nikal kar dekha ki kahin kisi product ki photo mein KISI DOOSRE product ka registered code to nahi likha hua (RE3 jaisa case, jahan photo par "CODE 10801025" likha tha lekin product 10801035 ka tha). Poori catalog mein aisa **koi bhi case nahi mila** — matlab kisi bhi product ki photo par galti se doosre kisi product ka code nahi likha hai.
+4. **NAYA: standalone page ki photo vs index.html ki photo, same product ke liye match honi chahiye** — yeh check pehle kabhi nahi kiya gaya tha. 122 mein se **121 products mein dono jagah exact same photo hai** (jaisa hona chahiye) — sirf **1 product mein inconsistency mili**:
+
+**`vanaz-r2402-ammonia` (Vanaz Ammonia Regulator R2402, code R2402)**: index.html mein is product ki photo **full valve (dono taraf pipe-fitting connections ke saath, zoomed-out)** hai, jabki iske standalone page (`products/vanaz-r2402-ammonia.html`) par **wahi regulator, lekin zoomed-in nameplate-close-up photo** hai. Dono clearly SAME product hain (koi wrong-product nahi) — bas do alag photos/crops hain jo do jagah use ho rahi hain, jo site ke "ek hi image hamesha" convention se match nahi karta. Rahul ji se poochna hai: kaunsi photo final rakhein (full-valve wali ya nameplate-closeup wali), taaki dono jagah same ho jaye.
+
+Baaki 121 products mein koi difference nahi mila — index.html aur standalone page dono hi ek jaisi photo dikhate hain.
+
+**Fix ho gaya**: Rahul ji ne confirm kiya ki `index.html` wali (full-valve, pipe-fittings ke saath) photo hi sahi hai — usko `products/vanaz-r2402-ammonia.html` mein bhi laga do. Lekin update se pehle Rahul ji ne khud ek NAYI, aur bhi saaf photo bhej di (same regulator, clean white background, dono taraf pipe-fittings clearly dikhte hue) — "Vanaz R 2402 ka sirf yahi ek image hai" bol kar. Isi nayi photo se dono jagah (index.html `image`+`imageLarge` fields, aur standalone page `src`+`data-large`) replace kar diya, taaki dono jagah ab ek hi (aur behtar quality) photo ho.
+
+**Update kiya gaya (5 jagah)**:
+- `images/vanaz-r2402-ammonia-large.jpg` (replace, ab 700×700)
+- `products/vanaz-r2402-ammonia.html` — `src` aur `data-large` dono naye photo se
+- `index.html` — `image` aur `imageLarge` dono fields naye photo se
+- `related-products-data.js` — 140px/q78 thumbnail regenerate
+
+**Verify kiya**: Playwright se standalone page (src=data-large) aur index.html SPA view (src=zoom-src) dono confirm kiye, `node --check` se index.html ka inline script aur related-products-data.js dono pass.
+
+---
+
+## Fresh full-site scan (dobara, Rahul ji ka request) — structural checks + 17 standalone pages ka lightbox rule fix
+
+Poori catalog (122 products) ka fresh scan kiya, sabhi structural checks dobara: duplicate ids (0), missing standalone pages (0), orphan pages (sirf jaan-boojh kar wala range-banner page), `brand-data.js` counts (sab match), `sitemap.xml` coverage (sab match), `related-products-data.js` coverage (sab match, no duplicates), JSON-LD validity (sabhi 122 valid), og:image dimensions (sab match), `node --check` (sabhi JS files aur index.html ka inline script pass) — **sab clean nikla, koi naya structural bug nahi**.
+
+**Ek purana pending item fix kar diya**: pichhle scan mein 17 standalone pages flag kiye the jahan `src` (thumbnail resolution) aur `data-large` (900-1100px) alag the — us waqt Rahul ji se decision maanga tha (bada image ya chhota, dono jagah same karne ke liye) lekin seedha jawab nahi mila tha. Site ka apna likha hua rule (`RKIC-Site-Reminder-Instructions.md`: "Lightbox zoom: data-large attribute hamesha main image (src) ke barabar hona chahiye") clear hai, aur Rahul ji ne is baar explicitly "bug mile to fix kare" bola — isliye fix kar diya: 17 pages mein `data-large` ko chhote `src` ke barabar kar diya (bade 900-1100px wale ki jagah, jaisa is session ke pehle 3 fixes — kromschroder-tzi, RE3 c1035, R2402 — mein bhi consistently kiya gaya). List: `brahma-eg12l-gmo`, `brahma-eg12sr-gmo`, `brahma-sm592ns`, `rkic-angled-ignition-electrode`, `kromschroder-dmg-s2601`, `kromschroder-gik-20r02-5`, `vanaz-r2301-oxygen`, `danfoss-ebi4-1p`, `honeywell-elster-qa16-25/10-25/25-25/40/65-50/100-80/160-80`, `honeywell-elster-rabo-g40-dn50`, `rkic-srg-21`. **Note**: yeh sirf standalone page ke andar (`<img>` tag) tha — `index.html` ke `imageLarge`/`data-zoom-src` field ko touch nahi kiya, kyunki woh catalog-listing ke liye jaan-boojh kar chhota-thumb + bada-zoom pattern use karta hai (alag purpose, alag rule scope) aur likhi hui rule sirf standalone page ke `data-large` attribute ke baare mein hai.
+
+**Photo-match dobara verify kiya (fresh)**: poori catalog ka pairwise perceptual-hash sweep (0 duplicate/mismatch pairs), OCR-based cross-product-code check (0 suspects), aur standalone-vs-index photo-content consistency (0 mismatch, sirf resolution allowed farak hai jo ab fix ho gaya) — sab clean.
+
+Sabhi fixes Playwright se verify kiye, local commit kar diya.
+
+---
+
+## Recheck (Rahul ji ka request) — 17-page fix ke scope ka dobara verify, 1 miss mila aur fix kiya
+
+Rahul ji ne pucha "baaki 105 products already matched the — ek baar recheck kar le". Poori `products/*.html` (123 files) ka dobara, poore-file-level scan kiya (sirf product-id wale pages nahi, har HTML file), src vs data-large compare karke.
+
+**Result**: 122 pages match the (jaisa bola tha), lekin **1 page miss ho gaya tha**: `honeywell-elster-rabo-model-range.html` (RABO Full Model Range overview page). Yeh pichhle scan mein "orphan page — jaan-boojh kar" bol kar exclude kar diya gaya tha kyunki yeh kisi single product-id se linked nahi (poore RABO family ka overview page hai), lekin usmein bhi wahi bug tha: src 600×600, data-large 1100×1100, same photo (phash distance 0) — sirf resolution mismatch, exactly wahi pattern jo baaki 17 pages mein tha.
+
+**Fix kar diya**: `data-large` ko chhote `src` (600×600) ke barabar kar diya, same pattern jo baaki 17 pages mein use kiya. `index.html` ko touch nahi kiya (is page ka index.html mein koi separate imageLarge entry nahi hai, sirf ek link hai).
+
+**Lesson**: agli baar site-wide fix karte waqt "har product-id" ke bajaye "poore products/ folder ki har HTML file" scan karni chahiye — non-catalog overview/range pages bhi isi tarah ke bugs carry kar sakte hain.
+
+Verify kiya: node --check (sabhi 3 inline script blocks pass), full re-scan (0 mismatches remaining across all 123 files). Git commit kar diya.
+
+---
+
+## Dobara full-site scan (Rahul ji ka request) — sab clean, koi naya bug nahi
+
+Structural checks: duplicate ids (0), missing standalone pages (0), orphan pages (sirf jaan-boojh kar wala rabo-model-range), subcategoryMap sync (sab match, jo categories map mein nahi hain unmein subcategory field hi nahi hai — by design), brand-data.js counts (14/14 brands match), sitemap.xml coverage (124 = 122 products + 1 range-banner + 1 homepage, sab match), related-products-data.js coverage (122/122 match, no duplicates), canonical/og:url per page (sab match), robots.txt/sitemap present aur sahi, JSON-LD validity (123/123 valid), `node --check` (sabhi JS files + index.html inline script pass).
+
+Photo/product-match checks (dobara): pairwise perceptual-hash sweep saare 122 products ki `image` field (0 duplicate/mismatch pairs), `imageLarge` legacy field (77 products) apne hi image se consistent (0 mismatch), standalone-page-vs-index.html photo consistency (0 mismatch, 17-page fix se pehle jo tha wo ab clean hai), OCR-based nameplate cross-check (2 "suspects" mile the — `brahma-be9-gmo-coil` aur `brahma-be6-gmo-coil` — dono verify kiye visually: yeh genuine coil products hain jinke nameplate par apna khud ka code + jis valve ke saath compatible hain uska bhi code likha hota hai [normal industry convention], koi bug nahi — false positive, is pattern ko note kar liya future scans ke liye).
+
+og:image meta check improve kiya: pehle galti se meta ko on-page thumbnail (`src`) se compare kar raha tha jabki og:image asal mein alag physical file (`images/*-large.jpg`) ko point karta hai — sahi tareeke se physical file ke against check kiya: 0 dimension mismatch, 0 photo-content mismatch (1 case `kromschroder-tzi-5-15-100we` mein high phash-distance aaya tha lekin visually verify kiya, same hi photo hai bas thoda alag crop/zoom hai, koi bug nahi).
+
+SEO: 17 titles abhi bhi 60-char se lambe hain — yeh genuinely lambe product names ki wajah se hai (already Rahul ji ne accept kiya tha "| RKIC" suffix-shorten ke baad), koi naya regression nahi.
+
+**Result: koi naya bug nahi mila. Site clean hai.**
