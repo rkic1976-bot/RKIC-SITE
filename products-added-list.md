@@ -1304,3 +1304,26 @@ Sabhi jagah add kiya:
 - `brand-data.js` — R.K. Instruments & Controls count 8 → 9
 
 Verify kiya: `node --check` pass, dono product objects (4mm + 6mm) Node mein load karke confirm kiye, JSON-LD valid, sitemap.xml valid XML.
+
+---
+
+## Teesra IGNITION SPARES product ADD kiya — Honeywell Kromschröder Connex Light Spring Pin L4x40 (pehla non-RKIC brand is category mein)
+
+Rahul ji ne is baar poori detailed specs text mein di (asli photo ke saath, generic spec-diagram nahi):
+- Part Number: 74921607, Manufacturer: Honeywell Kromschröder, Country of Origin: Germany
+- Component Type: Connex Light Spring Pin / Slotted Pin
+- Material: Stainless Steel Grade 1.4568
+- Pin Dimensions: 4mm OD x 40mm length (L4 x 40)
+- Compatible Wire Diameter: d = 3.5mm electrode
+
+Naya id: `kromschroder-connex-l4x40`. Photo perceptual-hash se existing images ke against check ki — koi duplicate/close-match nahi mila (closest distance 14, kaafi door). Real product photo hai (spec-diagram nahi), isliye image-source ka sawaal nahi poocha is baar.
+
+Brand naming convention follow ki: site par existing Kromschröder products "Honeywell Kromschröder" brand/manufacturer use karte hain — isi convention se add kiya (pehli baar RKIC brand ke alawa koi product IGNITION SPARES mein).
+
+Sabhi jagah add kiya:
+- `index.html` — naya product object (124 products total ho gaye, pehle 123 the)
+- `products/kromschroder-connex-l4x40.html` — standalone page (Kromschröder logo tag reuse kiya existing product se)
+- `sitemap.xml`, `related-products-data.js` — entries add ki
+- `brand-data.js` — Honeywell Kromschröder count 12 → 13
+
+Verify kiya: `node --check` pass, product object Node mein load karke confirm kiya (9 specs), JSON-LD dono blocks valid, sitemap.xml valid XML.
