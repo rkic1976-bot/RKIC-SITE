@@ -1340,3 +1340,15 @@ Update kiya sabhi jagah:
 - `related-products-data.js` — dono entries ka category field (matching logic ke liye zaroori)
 
 Generic nav menu (dropdown/mobile drawer) ki full category list touch nahi ki — woh sabhi categories dikhata hai, kisi ek product-specific nahi. Verify kiya: dono standalone pages ka JSON-LD (Product category + Breadcrumb name3) sahi "SPARK ELECTRODES"/"Spark Electrodes" nikla, `node --check` related-products-data.js pass.
+
+---
+
+## Title fix — 3 Brahma RE3 flame relay products mein Product Code add kiya
+
+Rahul ji ne bataya: `brahma-re3-220v-c1035` (Code 10801035) ka title pattern — "Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801035" — jaisa hai, waisa hi baki 3 RE3 variants ka bhi title hona chahiye:
+
+- `brahma-re3` (110–120V) → title mein "— Code 10801125" add kiya
+- `brahma-re3-220v` (220–230V) → title mein "— Code 10801025" add kiya
+- `brahma-re3-240v` (240V) → title mein "— Code 10801075" add kiya
+
+Update kiya sabhi jagah (`<title>`, meta keywords, og:title, twitter:title, JSON-LD Product name, JSON-LD Breadcrumb name, visible breadcrumb, image alt, H1) — teeno standalone pages mein, `index.html` ke product objects mein, aur `related-products-data.js` mein. Meta description text nahi chheda (usme naam repeat nahi hota tha). Verify kiya: JSON-LD `json.loads()` pass, Node se `products` array query karke chaaron RE3 variants ke naam aur code cross-check kiye, `node --check` related-products-data.js pass.
