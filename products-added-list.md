@@ -1481,3 +1481,21 @@ Yeh pattern 127 standalone product pages par apply kiya (`honeywell-elster-rabo-
 Update kiya: 127 `products/*.html` pages. `RKIC-Site-Reminder-Instructions.md` Section 9 mein naya note add kiya (render-blocking scripts, `defer`, aur inline-script-ke-liye-`DOMContentLoaded` ka pattern).
 
 **Honest note**: yeh fix sahi/low-risk hai aur achhi tarah verify kiya gaya hai, lekin — pichli do "fix" ki tarah — exact hang ko locally reproduce kar ke 100% confirm nahi kiya ja saka, kyunki yeh specifically slow/congested network par hota hai jo yahan reproduce nahi ho paaya. Rahul ji se dobara real-device test aur (agar possible ho) network condition (WiFi ya mobile data/hotspot) ka feedback maanga gaya hai.
+
+---
+
+## Chautha round — cache-busting fix (browser purani JS file cache kar raha ho sakta hai)
+
+Defer fix ke baad Rahul ji ne turant reply kiya: "not resolved boss...still same funda..." — matlab abhi bhi wahi hang ho raha hai.
+
+Is baar naya angle try kiya: GitHub par seedha check kiya (`raw.githubusercontent.com`, main + master dono branch) ki kya pichle saare fixes (defer + brandLogos) genuinely live hain — **haan, dono branch mein sab kuch byte-exact sahi tha**. Matlab code-level koi cheez miss nahi thi.
+
+Isse ek naya hypothesis bana: `brand-data.js`, `related-products-data.js`, `related-products.js` — in teeno ke `<script src>` tags par **kabhi koi version query-string nahi thi** (no `?v=...`). Static sites mein yeh ek classic problem hai — agar Rahul ji ke phone ke browser (Chrome/Comet/Grok) ne pehli visit par yeh files cache kar li thi, to har baad ki visit par bhi wahi **purani cached JS** use hoti rahegi, chahe GitHub par file kitni bhi baar update ho jaye — jab tak browser cache khud expire na ho ya user manually clear na kare. Yeh ek bahut plausible wajah hai ki teen alag-alag genuine code-fixes ke baad bhi Rahul ji ko real device par koi farak na dikha ho.
+
+**Fix**: sabhi 127 standalone product pages ke teeno script tags mein cache-busting version query add kiya: `../brand-data.js?v=20260908d` (waisa hi doosre do scripts ke liye bhi). Ab se yeh ek standing rule hai — jab bhi in teeno shared files mein se kisi ka content change ho, version string bump karni hai, taaki browser/CDN cache ko naya URL dikhe aur woh purani copy kabhi na de.
+
+Verify kiya: Playwright se naye versioned URLs ke saath bhi brandStrip (14 logos), Related Products, aur lightbox zoom sab sahi test kiye. Device par 3 batches commit (45+45+37, sab 0 rejected), 10 random files byte-verify kiye — sab exact match.
+
+**Correction bhi ki gayi**: pichli entry mein likha tha `Claude outputs/index.html` (12MB) delete/keep karne ka sawaal — Rahul ji ke "check karo, side kar do" bolne par dobara actual device check kiya to pata chala **woh exact file wahan hai hi nahi**. Uski jagah `Claude outputs/` folder mein 4 chhoti, purani (outdated), unreferenced stray files mili — grep se confirm kiya koi reference nahi hai. Delete/move karne ka koi tool current session ke paas nahi hai (sirf file copy/write, koi delete/rename capability nahi) — isliye Rahul ji ko khud File Explorer se delete karne ko bola gaya.
+
+**Ab bhi pending**: Rahul ji ko is naye fix (cache-busting) ke baad **fresh browser tab (ya cache clear kar ke)** dobara zoom test karna hai — agar ab bhi hang ho raha hai, to iska matlab yeh caching-theory bhi poori tarah root-cause nahi thi, aur deeper investigation chahiye hogi (jaise: exact device/browser/OS version, WiFi vs mobile data, aur ek fresh screen-recording).
