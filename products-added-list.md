@@ -1352,3 +1352,20 @@ Rahul ji ne bataya: `brahma-re3-220v-c1035` (Code 10801035) ka title pattern —
 - `brahma-re3-240v` (240V) → title mein "— Code 10801075" add kiya
 
 Update kiya sabhi jagah (`<title>`, meta keywords, og:title, twitter:title, JSON-LD Product name, JSON-LD Breadcrumb name, visible breadcrumb, image alt, H1) — teeno standalone pages mein, `index.html` ke product objects mein, aur `related-products-data.js` mein. Meta description text nahi chheda (usme naam repeat nahi hota tha). Verify kiya: JSON-LD `json.loads()` pass, Node se `products` array query karke chaaron RE3 variants ke naam aur code cross-check kiye, `node --check` related-products-data.js pass.
+
+---
+
+## Site speed fix — `index.html` 15MB se 1.2MB kiya + `llms.txt` add kiya
+
+Rahul ji ke SEO/GEO diagram (Semrush) share karne ke baad, site par 2 gaps identify kiye:
+
+**1. `llms.txt` add kiya** — AI crawlers (ChatGPT, Perplexity, etc.) ke liye site summary, company info, categories, brands ki list. GEO ke "AI crawler accessibility" point ke liye.
+
+**2. `index.html` ka size fix (15.4MB → 1.2MB, ~92% reduction)** — Har product ka thumbnail (`image`) aur zoom photo (`imageLarge`) pehle poora base64 text ke roop mein JS array ke andar embedded tha (14.4MB sirf images ka data). Ab in dono ko physical `.jpg` files mein nikaal kar `images/` folder mein rakh diya, aur array mein sirf file path (`images/{id}-large.jpg`, `images/{id}-xl.jpg`) reference kiya:
+
+- `image` field → existing `images/{id}-large.jpg` (99 products already match the byte pattern; 22 products ka file drift tha jo isi process mein fix ho gaya — ab woh og:image bhi current photo dikhayega, pehle stale ho sakta tha)
+- `imageLarge` field → naya `images/{id}-xl.jpg` (80 unique files, kuch variants same photo share karte hain)
+
+Isse home/catalog/subcategory page (index.html) ka load bahut fast hoga — Core Web Vitals aur SERP dono improve honge. Standalone product pages (`products/*.html`) abhi bhi apna image base64 embed karte hain (~270KB average per page) — ye kam critical hai kyunki ek time par sirf ek hi product page load hota hai, isliye abhi ke liye chhoda hai, future mein zaroorat lage to alag se fix karenge.
+
+Verify kiya: Node se products array parse karke confirm kiya ki 124/124 products ka `image`+`imageLarge` ab sirf file-path hai (koi base64 leftover nahi), har referenced file `images/` folder mein physically maujood hai, sample images JPEG-valid open ho rahe hain (PIL verify).

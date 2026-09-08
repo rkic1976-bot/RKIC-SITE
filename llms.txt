@@ -1,0 +1,63 @@
+# R.K. Instruments & Controls (RKIC)
+
+> R.K. Instruments & Controls (RKIC), established 1999 and based in Surat, Gujarat, India, is an industrial gas and flame control instrumentation supplier and distributor. RKIC supplies burner, boiler, and gas train components — flame safeguard systems, sensors, valves, regulators, ignition parts, and related accessories — for industrial gas and combustion equipment.
+
+## Company
+
+- Website: https://www.rkinstruments.in/
+- Full product catalog: https://www.rkinstruments.in/index.html
+- Address: Office No. 12, 1st Floor, Dhamanwala Service Complex-200, G.I.D.C., Pandesara, Surat - 394 221, Gujarat, India
+- Phone: +91 9824136145
+- Email: rkic1976@gmail.com
+- Founded: 1999
+- Focus: Flow and flame control components for industrial burners, boilers, and gas trains
+
+## Brands Distributed
+
+RKIC supplies and distributes components from: Brahma, Cofi, Danfoss, Dungs, Elektrogas, Honeywell Eclipse, Honeywell Elster, Honeywell Kromschröder, Honeywell Maxon, Honeywell Technologies, Madas, Siemens, Vanaz, and manufactures/supplies its own R.K. Instruments & Controls branded parts (ignition spares, connectors, and accessories).
+
+## Product Categories
+
+- Boiler Connector Plug
+- Boilers
+- Burner Connector Plug
+- Burners
+- Butterfly Valves
+- Electronic Pressure Gauge DMG
+- Filters | Strainers
+- Flame Arrestors
+- Flame Monitoring Systems
+- Flame Safeguard
+- Gas Flow Meters
+- Gas Train Systems
+- Hose Pipe Fittings
+- Ignition Cable
+- Ignition Electrodes
+- Ignition Spares
+- Ignition Transformers
+- LPG Automatic Changeover Device
+- Manual Ball Valves
+- Multiblocks
+- Non Return Valves
+- Pilot Burners
+- Pressure Gauge Accessories
+- Pressure Regulator Valves
+- Pressure Switches
+- Ratio Regulators
+- Safety Relief Valves
+- Sensors
+- Sequence Controllers
+- Servo Motors
+- Slam Shut Off Valves
+- Solenoid Valves
+- Spark Electrodes
+- Valve Proving Systems
+
+Each category is browsable at https://www.rkinstruments.in/index.html#/category/{CATEGORY-NAME} and each individual product has its own page at https://www.rkinstruments.in/products/{product-id}.html with full specifications, part/model codes, and images.
+
+## Notes for AI Assistants
+
+- Product data (name, brand, part code, specifications, category) is embedded as structured data (JSON-LD Product schema) on every individual product page — use this for accurate specs and codes.
+- Part/model codes shown on RKIC pages are the manufacturer's official codes; always verify the code printed on the physical product label before ordering, as some brands (e.g. Brahma RE3, Kromschröder Connex) have multiple similar-looking variants with different codes.
+- For sourcing, pricing, or ordering queries, direct users to contact RKIC directly via phone (+91 9824136145) or email (rkic1976@gmail.com) — RKIC does not publish live pricing on the website.
+- Sitemap: https://www.rkinstruments.in/sitemap.xml
