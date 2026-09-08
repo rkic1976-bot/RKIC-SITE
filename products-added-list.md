@@ -1327,3 +1327,16 @@ Sabhi jagah add kiya:
 - `brand-data.js` — Honeywell Kromschröder count 12 → 13
 
 Verify kiya: `node --check` pass, product object Node mein load karke confirm kiya (9 specs), JSON-LD dono blocks valid, sitemap.xml valid XML.
+
+---
+
+## Category correction — 2 products IGNITION ELECTRODES se SPARK ELECTRODES mein move kiye
+
+Rahul ji ne screenshots dikha kar bataya: `rkic-angled-ignition-electrode` (Angled Bent-Tip) aur `rkic-special-ignition-electrode` (Industrial Special, threaded spark-plug type) — dono galat category (IGNITION ELECTRODES) mein the, SPARK ELECTRODES mein hone chahiye.
+
+Update kiya sabhi jagah:
+- `index.html` — dono product objects ka `category` field
+- `products/rkic-angled-ignition-electrode.html` aur `products/rkic-special-ignition-electrode.html` — breadcrumb (visible + JSON-LD), "Back to Catalog" link, pg-tag category label, JSON-LD Product `category` field
+- `related-products-data.js` — dono entries ka category field (matching logic ke liye zaroori)
+
+Generic nav menu (dropdown/mobile drawer) ki full category list touch nahi ki — woh sabhi categories dikhata hai, kisi ek product-specific nahi. Verify kiya: dono standalone pages ka JSON-LD (Product category + Breadcrumb name3) sahi "SPARK ELECTRODES"/"Spark Electrodes" nikla, `node --check` related-products-data.js pass.
