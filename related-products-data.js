@@ -133,7 +133,7 @@ const RKIC_PRODUCTS = [
   {id:"rkic-cable-lug-4mm", name:"Female Bullet Cable Lug 4.0mm (Phosphor Bronze)", brand:"R.K. Instruments & Controls", category:"IGNITION SPARES", subcategory:null, code:"4.0mm Female Bullet Lug", thumb:"../images/thumbs/rkic-cable-lug-4mm-thumb.jpg"},
   {id:"rkic-cable-lug-6mm", name:"Female Bullet Cable Lug 6.0mm (Phosphor Bronze)", brand:"R.K. Instruments & Controls", category:"IGNITION SPARES", subcategory:null, code:"6.0mm Female Bullet Lug", thumb:"../images/thumbs/rkic-cable-lug-6mm-thumb.jpg"},
   {id:"kromschroder-connex-l4x40", name:"Honeywell Kromschröder Connex Light Spring Pin L4 x 40", brand:"Honeywell Kromschröder", category:"IGNITION SPARES", subcategory:null, code:"74921607", thumb:"../images/thumbs/kromschroder-connex-l4x40-thumb.jpg"},
-  {id:"rkic-srg-21", name:"SRG-21 Burner Sequence Controller (16-Step)", brand:"R.K. Instruments & Controls", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"SRG-21", thumb:"../images/thumbs/rkic-srg-21-thumb.jpg"},
-  {id:"rkic-sp-2307", name:"SP 2307 Burner Sequence Controller", brand:"R.K. Instruments & Controls", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"SP 2307", thumb:"../images/thumbs/rkic-sp-2307-thumb.jpg"},
+  {id:"rkic-srg-21", name:"Gas Burner Sequence Controller SRG-21", brand:"R.K. Instruments & Controls", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"SRG-21", thumb:"../images/thumbs/rkic-srg-21-thumb.jpg"},
+  {id:"rkic-sp-2307", name:"Gas Burner Sequence Controller SP 2307", brand:"R.K. Instruments & Controls", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"SP 2307", thumb:"../images/thumbs/rkic-sp-2307-thumb.jpg"},
   {id:"brahma-sm592ns", name:"Brahma Sequence Controller SM 592N/S", brand:"Brahma", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"36223321", thumb:"../images/thumbs/brahma-sm592ns-thumb.jpg"},
 ];
