@@ -1381,3 +1381,17 @@ Perceptual-hash duplicate check kiya (best match distance 20, kaafi door — koi
 Naya SEO/GEO convention follow kiya (8 Sep 2026 wale rule ke mutabik): image seedhe `images/dungs-vps504s04-large.jpg` (500px) aur `images/dungs-vps504s04-xl.jpg` (1100px) physical files banayi, `index.html` array mein sirf path reference kiya — koi base64 nahi. Standalone page (`products/dungs-vps504s04.html`) mein bhi external image reference use kiya (base64 embed nahi kiya) — naya product hone ki wajah se shuru se hi lightweight banaya.
 
 Update kiya: `index.html` (naya product object, 125 total), `products/dungs-vps504s04.html` (naya standalone page), `sitemap.xml`, `brand-data.js` (Dungs count 1→2), `related-products-data.js` (140px thumb ke saath naya entry). Verify kiya: Node se products array + JSON-LD dono valid, Playwright se standalone page + index.html single-product view + category listing view teeno screenshot leke check kiye — image, specs (14 rows), description, related products (Dungs gas train dikha), Associate Brands strip (Dungs badge count sahi) sab sahi.
+
+---
+
+## Naya product add kiya — Dungs Valve Proving System VPS 504 S01 (# 219876)
+
+Rahul ji ne dusra VPS 504 variant bheja — is baar **S01** (plug/cable connection), jabki pehla (abhi-abhi add kiya) **S04** (screw-terminal) tha. Nameplate se: VPS 504 S01, # 219876, ~(AC) 230V/240V 50Hz, Imax 4A, **IP40** (S04 se kam — woh IP54 tha), Pmax 500 mbar, CE 0036, ID-No. CE-0085AP0168. Perceptual-hash duplicate check kiya (best match distance 18, S04 se bhi door) — genuinely alag photo (angled view, cable ke saath), koi duplicate nahi.
+
+Specs Dungs reseller source (comtherm.co.uk) se cross-verify kiye: S01 = "plug connection" (integrated 2m cable), max body pressure 1000mbar/100kPa, test cycle ~10s (max 36s), weight 2.0kg, EN 1643 compliant. S04 se explicitly differentiate kiya description mein (connection type + IP rating dono alag).
+
+Same category **VALVE PROVING SYSTEMS** (ab 2 products isme). Naya rule follow kiya: `index.html` mein external image path (`images/dungs-vps504s01-large.jpg` + `-xl.jpg`), standalone page (`products/dungs-vps504s01.html`) mein base64-embedded image (pichli galti se seekha gaya rule — standalone pages hamesha self-contained rehni chahiye).
+
+**Bug pakda aur fix kiya isi kaam ke dauraan**: Naya standalone page banane ke baad "Related Products" section khaali (0 items) dikh raha tha — wajah: `related-products-data.js` mein is naye product ka apna entry abhi tak nahi tha, aur matching-script pehle current product ko khud data-file mein dhoondhta hai apni category/brand jaanne ke liye. `related-products-data.js` mein entry add karne ke baad turant fix ho gaya (2 related products dikhne lage: S04 aur gas train). **Sabak**: naye product ki delivery order mein `related-products-data.js` entry hamesha standalone page verification se PEHLE ya turant baad add karni hai, warna verification ka result bhi confusing dikhega.
+
+Update kiya: `index.html` (126 total products), `products/dungs-vps504s01.html`, `sitemap.xml`, `brand-data.js` (Dungs count 2→3), `related-products-data.js`. Verify kiya: Node se products array + JSON-LD dono valid, Playwright se standalone page + category listing (dono products ek saath grid mein) screenshot leke check kiye — sab sahi (image, 16 spec rows, related products, brand strip).
