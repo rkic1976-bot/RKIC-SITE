@@ -1425,3 +1425,39 @@ Rahul ji ne report kiya: photo enlarge (magnifying glass) karte waqt site hang h
 Verify kiya: Node se dono files syntax-check, 127/127 thumb files aur 14/14 logo files physically maujood confirm kiya (koi missing nahi), Playwright se `dungs-vps504s02.html` + 4 random doosre products (`vanaz-r4110-ii`, `honeywell-c7027a1064`, `brahma-sm592ns`, `brahma-fc7`) khol kar check kiya — sab brand badges (14) aur related products sahi dikh rahe the, koi broken image nahi. Zoom timing test: pehle jahan browser pane par 5+ second lag raha tha, fix ke baad turant (<0.2s) khulta hai. Total 143 naye image files (14 brand logos + 127 thumbnails) banaye, sab device par commit + verify kiye (byte-match; image files transfer ke dauraan thoda re-encode hue jaisa pehle bhi hua tha — content/dimensions verify kar liye, sahi hain).
 
 Update kiya: `brand-data.js`, `related-products-data.js`, `images/brands/` (14 nayi files), `images/thumbs/` (127 nayi files). `RKIC-Site-Reminder-Instructions.md` Section 9 mein naya rule add kiya: koi bhi SHARED/multi-page JS data file mein image base64 kabhi nahi — sirf standalone product page (jo khud akele deliver/preview hoti hai) base64 se fayda leti hai.
+
+---
+
+## Domain correction — `rkinstruments.in` hataya, GitHub Pages URL ko interim canonical banaya
+
+Rahul ji ne clarify kiya: **`rkinstruments.in` unka domain hai hi nahi** — lekin poore site mein (canonical tags, sitemap.xml, JSON-LD schema, robots.txt, llms.txt, aur reminder doc) yeh URL har jagah "confirmed live domain" maan kar hardcode kiya hua tha. Yeh galti pichle kisi session se chali aa rahi thi — is baar tak kabhi verify nahi hui thi ki yeh domain genuinely unka hai ya nahi.
+
+Discovery: `rkinstruments.in` ko web se access karne ki koshish (WebFetch aur built-in browser dono se) baar-baar fail hui — DNS resolve nahi ho raha tha. Pehle isse ek "deployment/DNS problem" samjha gaya tha jo fix karni thi, lekin Rahul ji ne bataya ki asal wajah yeh hai ki yeh unka domain hi nahi hai.
+
+Poochha gaya ki sahi domain kya hai — jawab mila: **"Abhi koi domain nahi, baad mein decide karenge."** Isliye interim canonical URL ke roop mein site ka asli live GitHub Pages URL use kiya: `https://rkic1976-bot.github.io/RKIC-SITE/` (jab tak koi custom domain decide na ho, tab dobara sab jagah update karna hoga).
+
+**Scope**: `grep -rl "rkinstruments\.in"` se poore repo mein 134 files mile jinme yeh purana domain reference tha — `index.html`, `sitemap.xml` (129 `<loc>` entries), `robots.txt` (`Sitemap:` line), `llms.txt` (4 mentions), `RKIC-Site-Reminder-Instructions.md` (1 descriptive line), aur 128 standalone `products/*.html` pages (har ek mein canonical tag, og:url, og:image, twitter:image, JSON-LD `Product.url`/`Product.image`, JSON-LD `BreadcrumbList` URLs). Blanket find-replace kiya: `https://www.rkinstruments.in/` → `https://rkic1976-bot.github.io/RKIC-SITE/`.
+
+**Verify kiya**: 134/134 files change hue, poore repo mein `rkinstruments` ka 0 leftover mention. `sitemap.xml` dobara valid XML confirm ki (`xml.etree.ElementTree.parse()`). 6 random standalone pages + naya `dungs-vps504s02.html` par JSON-LD dono blocks (`Product` + `BreadcrumbList`) JSON-syntax-valid confirm kiye. `dungs-vps504s02.html` ke canonical/og:url/og:image/twitter:image tags manually check kiye — sab naye GitHub Pages URL par sahi point kar rahe the. `robots.txt` aur `llms.txt` ka content dump kar ke visually confirm kiya. Device par 3 batches mein commit kiya (45+45+43 files — ek stray tracked file `Claude outputs/index.html`, jo kisi purani session ki galti se repo mein pada 12MB duplicate/stale index.html hai, is batch se jaan-boojh kar exclude kiya gaya, neeche note dekhein), sab batches "0 rejected" — commit ke baad 13 random sample files dobara stage kar ke byte-size match verify kiya, sab exact match (koi silent-write-failure nahi is baar).
+
+**Note (follow-up needed)**: Repo mein ek stray tracked file mili — `Claude outputs/index.html` (12MB, base64-embedded images wala purana index.html, kisi pichli session ki galti se galat folder naam ke saath commit ho gaya tha). Yeh file kahin se bhi link/reference nahi hoti (live site isse use nahi karta), sirf repo bloat kar rahi hai. Rahul ji ko is baare mein batana/poochhna hai ki isse delete kar dein ya rehne dein.
+
+Update kiya: 133 files (134 minus stray file) — `index.html`, `sitemap.xml`, `robots.txt`, `llms.txt`, `RKIC-Site-Reminder-Instructions.md`, aur 128 `products/*.html` pages.
+
+---
+
+## Bug fix (asli root cause) — Photo zoom hang abhi bhi ho raha tha, index.html ka apna alag `brandLogos` object mila
+
+Pichli fix (brand-data.js/related-products-data.js externalize karna) ke baad Rahul ji se poocha ki hang band hua ya nahi — jawab mila **"nahi hua"** (abhi bhi hang ho raha hai). Iska matlab pichli fix asli root cause nahi thi, ya sirf ek hissa thi.
+
+Dobara deep-check kiya, is baar **index.html khud** ke andar. Pata chala: `index.html` ke JS mein ek **doosra, alag** `const brandLogos = {...}` object hai (jo `brand-data.js` se koi lena-dena nahi rakhta) — isme bhi saare 14 brands ke logos base64-embedded the (poora object ~570KB). Yeh object `productCardHTML(p)` function ke andar use hota hai, jo har product ka card render karta hai — aur category/brand listing view (jaise "Brahma" brand par click karna, jo 27 products dikhata hai) ek saath us brand ke SAARE matching products ko `pmGrid.innerHTML = matches.map(p => productCardHTML(p)).join('')` se render karta hai. Matlab: ek hi brand ka logo utni baar duplicate hota tha jitne us brand ke products the — worst case Honeywell Elster (13 products × ~57KB logo) ≈ 740KB duplicate base64, Vanaz (20 products), Brahma (27 products) — sab is se affected. Yeh saara duplicate base64 ek hi synchronous `innerHTML` write mein browser ko diya jaata tha, jisse main-thread block hoti thi aur "hang/freeze" feel hota tha — bilkul waisa hi jaisa Rahul ji describe kar rahe the: "hamesha, sabhi jagah."
+
+**Important correction**: Pichli changelog entry mein maine likha tha "index.html is se affected nahi tha" — yeh galat tha, bina verify kiye assume kar liya tha. Sahi tareeke se check karne ke baad hi yeh doosra bug mila.
+
+**Fix**: `index.html` ke `brandLogos` object ko bhi wahi pehle se banaye hue `images/brands/brand-{slug}.png` files ki taraf point kar diya (path bina `../` ke, kyunki index.html khud repo root mein hai). Object 570KB se ghatkar ~1.5KB ho gaya. `index.html` total file size: 1.23MB → 658KB.
+
+Verify kiya: Playwright se Brahma brand listing (27 products, worst duplication case Brahma ke liye) aur Honeywell Elster listing (worst duplication case overall — 13 products) dono khol kar check kiya — sab 27/13 brand-tag images sahi external path (`images/brands/brand-brahma.png` etc.) se load ho rahe the, 0 base64 image mila un mein, koi console/JS error nahi. Zoom button click karke lightbox bhi test kiya — turant khula, image sahi dikhi, koi lag nahi. `brandLogos` object ka JS syntax bhi manually verify kiya (valid object literal, 14 keys, sab external paths).
+
+Update kiya: `index.html` (`brandLogos` const). `RKIC-Site-Reminder-Instructions.md` Section 9 mein correction note add kiya — naya lesson: yeh rule sirf "shared/multiple files" tak seemit nahi hai, agar SAME file ke andar bhi koi object multiple product-card renders mein reuse hota hai (jaise yeh `brandLogos`), to woh bhi isi rule ke daayre mein aata hai.
+
+**Ab bhi pending**: Rahul ji ko dobara apni taraf se live site par test karke confirm karna hai ki hang ab genuinely band ho gaya hai.

@@ -4,8 +4,8 @@
 
 ## Company
 
-- Website: https://www.rkinstruments.in/
-- Full product catalog: https://www.rkinstruments.in/index.html
+- Website: https://rkic1976-bot.github.io/RKIC-SITE/
+- Full product catalog: https://rkic1976-bot.github.io/RKIC-SITE/index.html
 - Address: Office No. 12, 1st Floor, Dhamanwala Service Complex-200, G.I.D.C., Pandesara, Surat - 394 221, Gujarat, India
 - Phone: +91 9824136145
 - Email: rkic1976@gmail.com
@@ -53,11 +53,11 @@ RKIC supplies and distributes components from: Brahma, Cofi, Danfoss, Dungs, Ele
 - Spark Electrodes
 - Valve Proving Systems
 
-Each category is browsable at https://www.rkinstruments.in/index.html#/category/{CATEGORY-NAME} and each individual product has its own page at https://www.rkinstruments.in/products/{product-id}.html with full specifications, part/model codes, and images.
+Each category is browsable at https://rkic1976-bot.github.io/RKIC-SITE/index.html#/category/{CATEGORY-NAME} and each individual product has its own page at https://rkic1976-bot.github.io/RKIC-SITE/products/{product-id}.html with full specifications, part/model codes, and images.
 
 ## Notes for AI Assistants
 
 - Product data (name, brand, part code, specifications, category) is embedded as structured data (JSON-LD Product schema) on every individual product page — use this for accurate specs and codes.
 - Part/model codes shown on RKIC pages are the manufacturer's official codes; always verify the code printed on the physical product label before ordering, as some brands (e.g. Brahma RE3, Kromschröder Connex) have multiple similar-looking variants with different codes.
 - For sourcing, pricing, or ordering queries, direct users to contact RKIC directly via phone (+91 9824136145) or email (rkic1976@gmail.com) — RKIC does not publish live pricing on the website.
-- Sitemap: https://www.rkinstruments.in/sitemap.xml
+- Sitemap: https://rkic1976-bot.github.io/RKIC-SITE/sitemap.xml

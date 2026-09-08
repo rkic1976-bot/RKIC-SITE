@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.rkinstruments.in/sitemap.xml
+Sitemap: https://rkic1976-bot.github.io/RKIC-SITE/sitemap.xml
