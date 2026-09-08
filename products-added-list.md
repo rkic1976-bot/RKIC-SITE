@@ -1517,3 +1517,15 @@ Code review kiya (event delegation pattern hai, DOM re-render se break nahi hona
 Verify kiya: Playwright rapid-repeat-tap test (50ms gap se) — 4 consecutive cycles, dono `index.html` subcategory view aur ek standalone product page par, sab clean. `index.html` + 128 product pages device par commit + byte-verify kiye (`index.html` ek baar silent-fail hui, force-retry se fix).
 
 **Honest note**: yeh is poori investigation ka sabse strong, evidence-based fix hai ab tak (real bug genuinely video mein dikha, code-review se JS bug rule-out hua, `touch-action` ek well-known standard fix hai isi tarah ke native-gesture-interference issues ke liye) — lekin exact intermittent double-tap-zoom-hijack ko sandbox mein 100% replicate nahi kar saka (real touchscreen hardware/gesture-engine specific hai). Rahul ji se phir se real-device confirm karwana hai.
+
+---
+
+## Chhattha round — Rahul ji ka faisla: enlarge/magnifying-glass zoom feature poori site se hata di gayi
+
+`touch-action` fix ke baad bhi 100% guarantee nahi thi (jaisa pichli entry ke honest note mein tha). Rahul ji ne khud faisla liya — "koi development nahi ab, enlarge karne ke liye jo magnifying glass ka option hai wo hata de ek bar hamesha ke liye, phir baad mein koi dusra plugin add kar ke dekhna." Matlab: abhi aur debug/fix-round try karne ke bajaye, poora zoom feature filhaal ke liye hata diya jaaye.
+
+**Kya hataya**: `index.html` mein — `.img-zoom-btn`/`.img-lightbox` ka poora CSS, homepage spotlight ka zoom button, lightbox overlay HTML (`#imgLightbox`), `productCardHTML` template ka zoom button + `data-zoom-src`/`data-zoom-alt` attributes, `openImgLightbox`/`closeImgLightbox` functions + unke saare event listeners, aur `updateSpotImgSlide` se zoom-related 2 lines. **Multi-photo slider feature (`.img-slide-prev/next/dot`, `sliderNavHTML`) bilkul chhua nahi gaya** — woh ek alag feature hai. Sabhi 128 standalone product pages mein — `.pg-img-zoom-btn` button, `.pg-lightbox` overlay, aur zoom-trigger `<script>` block hataya; saath hi har page ke main image ka `data-large="..."` attribute (ek duplicate, poora dooosra base64 copy) bhi hataya — is se har page ka size bhi kam hua (128 pages total ~18% chhote ho gaye, ~6.5MB bacha).
+
+Verify: `node --check` se sab JS syntax valid, poore codebase mein zoom/lightbox references ke liye grep — koi orphaned reference nahi mila. Playwright se index.html + product cards + product-modal + ek standalone page test kiye — sab bina zoom-button/lightbox ke, bina console error ke sahi load hue. Saare 128 product pages + index.html device par commit karke byte-exact verify kiya.
+
+**Note**: yeh temporary decision hai — Rahul ji ke apne shabdon mein "baad mein koi dusra plugin add kar ke dekhna". Abhi site par photo enlarge/zoom ka koi option nahi hai.
