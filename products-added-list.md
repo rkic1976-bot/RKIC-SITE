@@ -1499,3 +1499,21 @@ Verify kiya: Playwright se naye versioned URLs ke saath bhi brandStrip (14 logos
 **Correction bhi ki gayi**: pichli entry mein likha tha `Claude outputs/index.html` (12MB) delete/keep karne ka sawaal — Rahul ji ke "check karo, side kar do" bolne par dobara actual device check kiya to pata chala **woh exact file wahan hai hi nahi**. Uski jagah `Claude outputs/` folder mein 4 chhoti, purani (outdated), unreferenced stray files mili — grep se confirm kiya koi reference nahi hai. Delete/move karne ka koi tool current session ke paas nahi hai (sirf file copy/write, koi delete/rename capability nahi) — isliye Rahul ji ko khud File Explorer se delete karne ko bola gaya.
 
 **Ab bhi pending**: Rahul ji ko is naye fix (cache-busting) ke baad **fresh browser tab (ya cache clear kar ke)** dobara zoom test karna hai — agar ab bhi hang ho raha hai, to iska matlab yeh caching-theory bhi poori tarah root-cause nahi thi, aur deeper investigation chahiye hogi (jaise: exact device/browser/OS version, WiFi vs mobile data, aur ek fresh screen-recording).
+
+---
+
+## Paanchwa round — asli bug genuinely reproduce hua (double-tap-zoom browser gesture)
+
+Cache-busting fix push karne ke turant baad Rahul ji ne reply kiya: "not resolved boss...still same funda... comet mein khola pvt mein same problem... sare history aur caches ko delete kar ke." — matlab caching theory bhi rule-out ho gayi (private/incognito mode + poora cache clear karne ke baad bhi wahi issue).
+
+Rahul ji ne ek fresh screen-recording bheji apne real device (Comet browser, private mode) se. Frame-by-frame ffmpeg analysis ki — is baar pehli baar asli bug clearly dikha: `index.html` ke ek "Product Sub-category" listing (drawer menu se navigate karke) mein, image zoom **pehli 2 baar sahi khulta/band hota hai**, lekin **3rd/agli baar tap karne par bilkul respond nahi karta** — no error, no visual change, jabki video mein tap-ripples clearly dikh rahe the.
+
+Code review kiya (event delegation pattern hai, DOM re-render se break nahi hona chahiye) aur Playwright se mobile-touch-emulation (`has_touch`, `is_mobile`) ke saath 6 real open→close cycles test kiye — **sab clean pass hue, koi JS bug reproduce nahi hua**. Matlab underlying JS logic sahi hai.
+
+**Working hypothesis**: `<meta viewport>` mein `user-scalable=no`/`maximum-scale` set nahi thi, isliye agar user do taps thoda jaldi-jaldi karta hai (natural hai jab pehla tap turant respond na kare), to mobile browser (Chrome/Comet/Grok, Android) isse **native double-tap-to-zoom gesture** samajh sakta hai — JS click event fire hone ke bajaye browser khud page-zoom kar deta hai. Yeh explain karta hai: teeno alag browsers mein equally hona (browser-level native behavior hai, code bug nahi), automated testing mein kuch na milna, aur cache-clear se koi fark na padna.
+
+**Fix**: sabhi zoom-related clickable elements par `touch-action:manipulation` CSS add kiya (`index.html`: `.spot-img img`, `.img-zoom-btn`, slide-prev/next/dot, `.img-lightbox` aur uske andar ke elements; sabhi 128 standalone pages: `.pg-img-zoom-btn`, `.pg-img-box img`, `.pg-lightbox`, `.pg-lightbox-close`). Yeh in specific controls par double-tap-zoom-ambiguity-wait hata deta hai — poori site ka pinch-zoom disable nahi kiya (accessibility ke liye zaroori hai), sirf targeted fix hai.
+
+Verify kiya: Playwright rapid-repeat-tap test (50ms gap se) — 4 consecutive cycles, dono `index.html` subcategory view aur ek standalone product page par, sab clean. `index.html` + 128 product pages device par commit + byte-verify kiye (`index.html` ek baar silent-fail hui, force-retry se fix).
+
+**Honest note**: yeh is poori investigation ka sabse strong, evidence-based fix hai ab tak (real bug genuinely video mein dikha, code-review se JS bug rule-out hua, `touch-action` ek well-known standard fix hai isi tarah ke native-gesture-interference issues ke liye) — lekin exact intermittent double-tap-zoom-hijack ko sandbox mein 100% replicate nahi kar saka (real touchscreen hardware/gesture-engine specific hai). Rahul ji se phir se real-device confirm karwana hai.
