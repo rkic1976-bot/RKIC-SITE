@@ -530,9 +530,9 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   lb.addEventListener('click', (e) => { if(e.target === lb) lb.classList.remove('open'); });
 })();
 </script>
-<script src="../brand-data.js"></script>
+<script src="../brand-data.js" defer></script>
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   if (typeof RKIC_BRANDS === 'undefined') return;
   var strip = document.getElementById('brandStrip');
   if (!strip) return;
@@ -544,10 +544,10 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
       '<img class="brand-chip-logo" src="' + b.logo + '" alt="' + b.name + ' logo">' + badge + '</a>';
   });
   strip.innerHTML = html;
-})();
+});
 </script>
 <script>var CURRENT_PRODUCT_ID = "kromschroder-tzi-5-15-100we";</script>
-<script src="../related-products-data.js"></script>
-<script src="../related-products.js"></script>
+<script src="../related-products-data.js" defer></script>
+<script src="../related-products.js" defer></script>
 </body>
 </html>

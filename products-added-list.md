@@ -1461,3 +1461,23 @@ Verify kiya: Playwright se Brahma brand listing (27 products, worst duplication 
 Update kiya: `index.html` (`brandLogos` const). `RKIC-Site-Reminder-Instructions.md` Section 9 mein correction note add kiya — naya lesson: yeh rule sirf "shared/multiple files" tak seemit nahi hai, agar SAME file ke andar bhi koi object multiple product-card renders mein reuse hota hai (jaise yeh `brandLogos`), to woh bhi isi rule ke daayre mein aata hai.
 
 **Ab bhi pending**: Rahul ji ko dobara apni taraf se live site par test karke confirm karna hai ki hang ab genuinely band ho gaya hai.
+
+---
+
+## Teesra round — render-blocking scripts fix, 127 standalone product pages par (video-forensics se mile)
+
+`brandLogos` fix ke baad bhi Rahul ji ne "kindly check from your side. it's not done. same problem same issue still persist." bola, aur 3 browsers (Comet, Chrome, Grok) ke screenshots bheje "sab mein ek hi problem hai" ke saath. Phir ek screen-recording video bheja ("kindly check") — apne mobile se site use karte hue, zoom karte waqt.
+
+Video ko ffmpeg se frame-by-frame extract kiya (contact-sheet JPGs mein tile kar ke) taaki Android ke tap-ripple indicators dekh sakoon — yeh batate hain ki touch registered hua ya nahi, isse pata chalta hai real hang hai ya sirf normal viewing-pause. Ek period mein multiple taps interactive image area par bilkul respond nahi kar rahe the — real unresponsiveness ka mazboot signal mila.
+
+**Naya potential root-cause**: har standalone `products/{id}.html` page ke teeno external `<script src>` tags (`brand-data.js`, `related-products-data.js`, `related-products.js`) render-blocking the — na `defer`, na `async`. Video ke Android status-bar mein "1 device" (hotspot) indicator bhi dikh raha tha, jo slow/congested mobile network suggest karta hai. Slow network par render-blocking scripts ki wajah se page ke liye "several seconds unresponsive" jaisa experience ban sakta hai.
+
+**Fix**: teeno external scripts par `defer` add kiya. Ek zaroori technical catch: `defer` inline (bina `src`) scripts par koi effect nahi karta — sirf external scripts par kaam karta hai. Isliye jo inline script `RKIC_BRANDS` (brand-data.js ka global) par depend karta tha, use `defer` dena galat tha (pehli koshish mein yehi galti hui — Playwright test se turant pakda, brandStrip khaali reh gaya tha). Sahi fix: us inline script ko `document.addEventListener('DOMContentLoaded', function(){...})` mein wrap kiya, taaki woh sab deferred scripts load hone ke BAAD chale.
+
+Yeh pattern 127 standalone product pages par apply kiya (`honeywell-elster-rabo-model-range.html` sahi tarah se skip hui — usme yeh scripts hain hi nahi, woh product nahi ek reference model-range chart hai).
+
+**Verify kiya**: Playwright se 8+ random pages test kiye (brandStrip 14 logos ke saath populate, Related Products 3-4 cards, lightbox zoom sahi khulta hai, koi console error nahi). Device par 3 batches mein commit kiya (45+45+37 files, sab "0 rejected"). Commit ke baad 8 random files dobara stage kar ke byte-size verify kiya — sab exact match, koi silent-write-failure nahi.
+
+Update kiya: 127 `products/*.html` pages. `RKIC-Site-Reminder-Instructions.md` Section 9 mein naya note add kiya (render-blocking scripts, `defer`, aur inline-script-ke-liye-`DOMContentLoaded` ka pattern).
+
+**Honest note**: yeh fix sahi/low-risk hai aur achhi tarah verify kiya gaya hai, lekin — pichli do "fix" ki tarah — exact hang ko locally reproduce kar ke 100% confirm nahi kiya ja saka, kyunki yeh specifically slow/congested network par hota hai jo yahan reproduce nahi ho paaya. Rahul ji se dobara real-device test aur (agar possible ho) network condition (WiFi ya mobile data/hotspot) ka feedback maanga gaya hai.
