@@ -1369,3 +1369,15 @@ Rahul ji ke SEO/GEO diagram (Semrush) share karne ke baad, site par 2 gaps ident
 Isse home/catalog/subcategory page (index.html) ka load bahut fast hoga — Core Web Vitals aur SERP dono improve honge. Standalone product pages (`products/*.html`) abhi bhi apna image base64 embed karte hain (~270KB average per page) — ye kam critical hai kyunki ek time par sirf ek hi product page load hota hai, isliye abhi ke liye chhoda hai, future mein zaroorat lage to alag se fix karenge.
 
 Verify kiya: Node se products array parse karke confirm kiya ki 124/124 products ka `image`+`imageLarge` ab sirf file-path hai (koi base64 leftover nahi), har referenced file `images/` folder mein physically maujood hai, sample images JPEG-valid open ho rahe hain (PIL verify).
+
+---
+
+## Naya product add kiya — Dungs Valve Proving System VPS 504 S04 (Art. Nr. 219881)
+
+Rahul ji ne nameplate photo bheji ("Product: Dungs Valve Proving System – VPS, Brand Dungs"). Nameplate se saari details clear thi: VPS 504 S04, Art. Nr. 219881, Pmax 500 mbar/50 kPa, ~(AC) 230V 50Hz (-15 to 70°C) / ~(AC) 240V 50Hz (-15 to 60°C), Imax 4A, IP54, CE 0036, AGA 5272 G. Specs Dungs ki official site + 3 reseller sources (horizonpfm.com, burnerparts.com, industrialstores.com) se cross-verify kiye — test volume ≤4 litres, test cycle ~10-26 seconds, EN 1643/DIN 1643 standard, S04 = screw-terminal connection variant confirm hua.
+
+Perceptual-hash duplicate check kiya (best match distance 20, kaafi door — koi duplicate nahi). Category: **VALVE PROVING SYSTEMS** (site mein already category list mein tha, empty tha — ye pehla product hai isme). Existing `dungs-gastrain-dn65` product ke description mein VPS 504 ka zikr tha (integrated component ke roop mein) — ye standalone unit alag/valid product hai, duplicate nahi.
+
+Naya SEO/GEO convention follow kiya (8 Sep 2026 wale rule ke mutabik): image seedhe `images/dungs-vps504s04-large.jpg` (500px) aur `images/dungs-vps504s04-xl.jpg` (1100px) physical files banayi, `index.html` array mein sirf path reference kiya — koi base64 nahi. Standalone page (`products/dungs-vps504s04.html`) mein bhi external image reference use kiya (base64 embed nahi kiya) — naya product hone ki wajah se shuru se hi lightweight banaya.
+
+Update kiya: `index.html` (naya product object, 125 total), `products/dungs-vps504s04.html` (naya standalone page), `sitemap.xml`, `brand-data.js` (Dungs count 1→2), `related-products-data.js` (140px thumb ke saath naya entry). Verify kiya: Node se products array + JSON-LD dono valid, Playwright se standalone page + index.html single-product view + category listing view teeno screenshot leke check kiye — image, specs (14 rows), description, related products (Dungs gas train dikha), Associate Brands strip (Dungs badge count sahi) sab sahi.

@@ -108,7 +108,29 @@ Rahul ji ne turant ek pehle-se-clean white-background version bheja (1024×1024,
 
 **Chat 8 archive processed — 111-product old index.html snapshot + updated standing-rules doc**: Rahul ji ne `rkicstandingrules_Chat_8.md` + `index_Chat_8.html` bheje ("Sirf Chat 8 Baki Bhej Raha Hoon"). Naya rule mila is doc mein: **delivery-format** — koi bhi standalone product `.html` akela bhejne se "Associate Brands" section khaali dikhta hai (brand-data.js sibling file chahiye), isliye ab har naye/edited product page ki delivery mein DO cheezein bhejni hain: akeli `.html` file, aur ek zip jismein wahi page + `brand-data.js` dono ho. Yeh rule Maxon 23739 + Vanaz R2202 ki delivery ke BAAD discover hua, isliye dono ko turant dobara (dono formats mein) resend kiya. Photo quality analysis: 106 products parse hue (55%: 72, 90%: 1, 92%: 33) — Section A ke 59 products is archive mein 55% par mile (worse, koi upgrade nahi). **Section B correction**: Section B ke sabhi 12 products is archive mein 55% par mile — par check karne par pata chala sabhi already live site par hain, byte-identical photo ke saath (list stale thi). Rahul ji ne confirm kiya "photo/image ka kaam jaisa hai waisa hi rehne do" — koi photo-list change nahi kiya. Gap-check: 0 missing products (sabhi 106 IDs already live 120-product site par). Standing-rules cross-check mein 3 genuine gaps mile aur Rahul ji ke confirm karne par fix kiye: (1) Kanthal A1 compulsory row 4 branded electrode pages par missing thi (Honeywell Eclipse 10019728, Maxon 23739, Maxon 47232, Maxon M333 39782) — add kiya; (2) Vanaz Manufacturer row punctuation inconsistent thi 3 pages par ("Ltd., Pune" vs sahi "Ltd, Pune") — standardize kiya; (3) "Uetzen" ko shuru mein typo samajh kar "Uelzen" fix kiya tha, par turant hi purani entry (#108) check karne par pata chala ki yeh product ke asli nameplate se liya gaya sahi address hai (D-29525 Uetzen) — turant revert kiya, koi actual change nahi. Baaki sab rules (RANGE_BANNERS, extraHTML, favicon, lightbox data-large, brand-data.js counts) fully compliant nikle. Sabhi changes Playwright + `node --check` se verify kiye.
 
-## 9. Design system (reference)
+## 9. SEO & GEO — standing checklist (permanent, 8 Sep 2026 se)
+
+Rahul ji ne Semrush ka "SEO vs GEO" diagram share kiya aur site ko us hisaab se check/fix karne ko kaha. Ye ab permanent standard hai — har naye product/page ke saath (aur periodically poore site ke liye) yeh sab maintain karna hai:
+
+**Traditional SEO (existing routine, continue karna hai):**
+- Har product page par unique meta title, meta description, meta keywords, canonical URL.
+- og:title/description/image aur twitter:title/description/image tags.
+- `sitemap.xml` mein har product ka `<url>` entry, `<lastmod>` current date ke saath.
+- Page speed / Core Web Vitals — **image kabhi base64 inline mein embed nahi karni `index.html` ke `products` array mein** (ye ek baar 15.4MB tak pahunch gaya tha, 1.2MB par fix kiya 8 Sep 2026 ko). Naya rule: `image` field hamesha `images/{id}-large.jpg` (external file path) hona chahiye, `imageLarge` field hamesha `images/{id}-xl.jpg` — dono physical `.jpg` files ke roop mein `images/` folder mein save karni hain, JS array mein sirf path reference. Standalone `products/{id}.html` pages abhi bhi apni image base64-embed karte hain (kam critical, kyunki ek time par ek hi page load hota hai) — lekin future mein agar ye bhi bade ho jaayein to same pattern (external file reference) apply karna hai.
+
+**Essential for both SEO + GEO (existing routine, continue karna hai):**
+- JSON-LD structured data — har product page par `Product` schema + `BreadcrumbList` schema (dono `json.loads()`/valid JSON check ke saath verify karna).
+- Homepage par `LocalBusiness` schema (address, phone, hours) — E-E-A-T/trust signal.
+- Clear category → subcategory → product structure (topic authority).
+- `products-added-list.md` changelog — content freshness signal (har addition/edit ka date-stamped record).
+
+**GEO-specific (naya, 8 Sep 2026 se add):**
+- **`llms.txt`** (repo root) — AI crawlers (ChatGPT, Perplexity, etc.) ke liye company summary, product categories, brands list, aur "notes for AI assistants" (jaise: part codes hamesha manufacturer label se verify karo, RKIC live pricing publish nahi karta — contact karo). **Jab bhi koi naya category ya naya brand add ho, `llms.txt` bhi update karna hai** (jaise `sitemap.xml`/`brand-data.js` ke saath hota hai).
+- `robots.txt` mein sitemap link already hai — maintain karna hai.
+
+**Verification pattern jo follow kiya (future audits ke liye reuse karna)**: `index.html` mein kitna % base64 image data hai check karne ke liye — `re.findall(r'data:image/[a-zA-Z]+;base64,[A-Za-z0-9+/=]{200,}', content)` se total base64 chars count karo aur file size se compare karo. Agar image data 50%+ ho, external-file conversion zaroori hai.
+
+## 10. Design system (reference)
 
 - Theme: forest green + flame-amber (`--ink:#1D3A2A`, `--flame:#C1621B`)
 - Fonts: Barlow Condensed (headings) + Barlow (body) + IBM Plex Mono (labels/codes)
