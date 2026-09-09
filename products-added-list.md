@@ -1623,3 +1623,22 @@ Do special cases mile aur alag se handle kiye: (1) `honeywell-elster-rabo-model-
 
 Ab har standalone product page ka image URL browser mein directly khol'ne par bhi ek real, crawlable, product-naam-wala path dikhega (jaise `.../images/madas-cn2131-large.jpg`) — Google Images ko discoverable hoga.
 
+
+## Site-wide fix — Meta Title aur Meta Description, sabhi 132 standalone product pages par (9 Sep 2026)
+
+**Kaise pata chala**: Rahul ji ne ek third-party SEO audit report paste ki (`dungs-vps504s04.html` ke liye) jismein kai issues flag kiye gaye the — Meta Title/Description not optimized, Schema Markup absent, Image Alt Text partial, OG/Twitter tags missing. Live file check karke pata chala ki audit ke teen points galat the: JSON-LD Product+BreadcrumbList schema, descriptive alt text, aur OG/twitter tags — teenon already sahi se present the (base64 image wala issue pehle hi is session mein fix ho chuka tha). Lekin ek point genuinely sahi tha: **meta title/description ki length** — `dungs-vps504s04.html` mein 847-character ka meta description tha (ideal: 140-160), aur titles inconsistent lengths mein the. 4 aur pages spot-check kiye — 35-72 char titles, 490-967 char descriptions mile — confirm hua ki yeh poore site ka systemic pattern hai, sirf ek page ka nahi.
+
+**Confirm kiya**: Rahul ji ne "haan, sabhi 132 pages par fix karo" bola — poore site par meta title (target ~50-60 chars) aur meta description (target 140-160 chars) fix karne ko, consistent format mein (keyword + CTA ke saath).
+
+**Kya kiya**: `index.html` ke products array (131 entries) se ek data-driven generator banaya jo har product ke apne naam, brand, category, aur specs se naya title aur description banata hai — generic boilerplate nahi, har page ka apna real content:
+- **Title**: product ka naam + " | RKIC" / " | RKIC Surat" / " | RKIC, Surat, India" jaisa suffix — jo bhi sabse chhota suffix 45-60 char range mein fit ho.
+- **Description**: brand (agar naam mein pehle se na ho) + product naam + category + 2-4 chhoti spec key:value pairs + fixed CTA ("Buy from RKIC, Surat – genuine parts, best price, fast delivery.") — 140-160 char range mein fit karne ke liye length-varied filler phrases use kiye.
+- Special hub page (`honeywell-elster-rabo-model-range.html`, jo products array ka part nahi hai) ke liye hand-crafted title/description banaya.
+
+Sirf `<title>` aur `<meta name="description" content="...">` badle — OG/Twitter tags, JSON-LD schema, alt text, images, favicons, brand badges bilkul chhue nahi (scope sirf meta title/description tak tha).
+
+Do quality bugs pakde aur fix kiye generation ke dauraan: (1) compound brand names (jaise "Honeywell Kromschröder") mein brand-word duplication ho raha tha description mein — sirf brand ka pehla word check karne ki jagah poora brand string ke har word ko naam mein check karna shuru kiya; (2) jin product names mein pehle se " — " (em-dash) tha, unmein description mein doosra dash add hone se ajeeb spacing/artifact ban raha tha — is case ko alag se handle kiya. HTML-escaping bhi add ki (`&`, `"`, `<`, `>` ke liye) kyunki 22 generated strings mein literal `"` (inch marks jaise `1/2" BSP`) aur 9 mein literal `&` (jaise "R.K. Instruments & Controls") tha, jo escape na karne par HTML corrupt kar dete.
+
+**Verify**: Generation ke baad range-check kiya — sabhi 132 titles [45,59] chars ke andar, sabhi descriptions [140,160] chars ke andar (0 out-of-range). Duplicate-word aur dash-artifact scan se 0 issues confirm kiye application se pehle. Application ke baad har file mein: exactly 1 `<title>` aur 1 `<meta name="description">` tag, `html.unescape()` round-trip se exact match generated text ke saath, image-path fix (pichhle round ka) still intact, JSON-LD still valid, inline scripts still `node --check`-valid — 0 errors 132 files mein se. Playwright se 3 sample pages par live DOM check kiya (`page.title()` aur meta description content). Har batch (34+34+34+30 = 132 files) device par commit karne ke baad turant re-stage karke byte-exact diff verify kiya — sabhi 132 files 100% match.
+
+Ab har standalone product page ka search-engine snippet clean aur consistent hoga — na zyada chhota title, na 800+ character ka description jo Google truncate kar deta hai.
