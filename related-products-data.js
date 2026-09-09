@@ -138,4 +138,5 @@ const RKIC_PRODUCTS = [
   {id:"brahma-sm592ns", name:"Brahma Sequence Controller SM 592N/S", brand:"Brahma", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"36223321", thumb:"../images/thumbs/brahma-sm592ns-thumb.jpg"},
   {id:"madas-cn0045", name:"Madas CN 0045 Solenoid Valve Coil Connector", brand:"Madas", category:"SOLENOID VALVES", subcategory:"Coil Connector", code:"CN.0045", thumb:"../images/thumbs/madas-cn0045-thumb.jpg"},
   {id:"madas-cn2130", name:"Madas CN 2130 Solenoid Valve Coil Connector", brand:"Madas", category:"SOLENOID VALVES", subcategory:"Coil Connector", code:"CN-2130", thumb:"../images/thumbs/madas-cn2130-thumb.jpg"},
+  {id:"madas-mtc10", name:"Madas MTC10 Valve Proving System", brand:"Madas", category:"VALVE PROVING SYSTEMS", subcategory:null, code:"MTC10", thumb:"../images/thumbs/madas-mtc10-thumb.jpg"},
 ];
