@@ -1576,3 +1576,15 @@ Web research kiya (rkic.in ka apna existing product page, madas.it official page
 Files update kiye: `index.html` (naya product object), `related-products-data.js` (naya entry), `brand-data.js` (Madas count 10→11), `sitemap.xml` (naya URL entry).
 
 Verify: `node --check` se index.html ka inline script, brand-data.js, related-products-data.js sab syntax-valid; standalone page ke dono JSON-LD blocks `json.loads()` se valid; residual-leftover grep se koi purani "Dungs"/"219876"/"VPS 504 S01" reference nahi mila (sirf generic brand-directory nav list mein "Dungs" — woh sabhi pages par common hai, bug nahi). Isolated Playwright test (brand-data.js/related-products-data.js/related-products.js/products/ ke saath) — title/h1/breadcrumb/16 specs/image (600×600 visible)/WhatsApp CTA sab sahi, "You May Also Need" section sahi 4 cards dikha raha hai (3 Dungs VPS products same-category se, 1 Madas product brand-fallback se), koi console/page error nahi. Saare files device par commit kiye, byte-exact verify kiya.
+
+---
+
+## Madas pages standardize — Manufacturer + Country of Origin (9 Sep 2026)
+
+Rahul ji ne 2 screenshot bheje (Madas pages ke "Manufacturer: MADAS s.r.l., Italy" / "Country of Origin: Italy" spec rows dikhate hue) aur bola: "ye sabhi menin madas ke pages unn sabi mention kare" — matlab yeh dono fields sabhi Madas product pages par honi chahiye.
+
+Check kiya sabhi 11 Madas products ka index.html specs — 3 sabse naye (CN 0045, CN 2130, MTC10) mein pehle se dono fields sahi format mein thi. Baaki 8 purane products mein gap tha: 7 (PSM500, PSM150, PSM050, PSM010, FM DN15, FM DN20, FM DN25) mein sirf short `'Manufacturer': 'Madas'` tha, `Country of Origin` missing; 1 (RG/2MCS DN25) mein dono hi missing the.
+
+**Kya kiya**: sabhi 8 mein `Manufacturer` value ko `'MADAS s.r.l., Italy'` (naye pages jaisa full format) mein standardize kiya, aur `'Country of Origin': 'Italy'` row add ki jahan missing thi. `index.html` (specs objects) + corresponding 8 standalone pages (`products/madas-rg-2mcs-dn25.html`, `madas-psm500.html`, `madas-psm150.html`, `madas-psm050.html`, `madas-psm010.html`, `madas-fm-dn15.html`, `madas-fm-dn20.html`, `madas-fm-dn25.html`) — dono jagah pg-specs table update ki.
+
+Verify: `diff` se sirf intended lines badli (koi aur content chhua nahi), JSON-LD blocks `json.loads()` se valid, `node --check` se index.html ka inline script valid. Sab 9 files device par commit karke byte-exact verify kiya. Ab sabhi 11 Madas products consistently "Manufacturer: MADAS s.r.l., Italy" aur "Country of Origin: Italy" dikhate hain.
