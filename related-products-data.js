@@ -136,4 +136,5 @@ const RKIC_PRODUCTS = [
   {id:"rkic-srg-21", name:"Gas Burner Sequence Controller SRG-21", brand:"R.K. Instruments & Controls", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"SRG-21", thumb:"../images/thumbs/rkic-srg-21-thumb.jpg"},
   {id:"rkic-sp-2307", name:"Gas Burner Sequence Controller SP 2307", brand:"R.K. Instruments & Controls", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"SP 2307", thumb:"../images/thumbs/rkic-sp-2307-thumb.jpg"},
   {id:"brahma-sm592ns", name:"Brahma Sequence Controller SM 592N/S", brand:"Brahma", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"36223321", thumb:"../images/thumbs/brahma-sm592ns-thumb.jpg"},
+  {id:"madas-cn0045", name:"Madas CN 0045 Solenoid Valve Coil Connector", brand:"Madas", category:"SOLENOID VALVES", subcategory:"Coil Connector", code:"CN.0045", thumb:"../images/thumbs/madas-cn0045-thumb.jpg"},
 ];

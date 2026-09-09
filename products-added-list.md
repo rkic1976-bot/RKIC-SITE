@@ -1529,3 +1529,18 @@ Verify kiya: Playwright rapid-repeat-tap test (50ms gap se) — 4 consecutive cy
 Verify: `node --check` se sab JS syntax valid, poore codebase mein zoom/lightbox references ke liye grep — koi orphaned reference nahi mila. Playwright se index.html + product cards + product-modal + ek standalone page test kiye — sab bina zoom-button/lightbox ke, bina console error ke sahi load hue. Saare 128 product pages + index.html device par commit karke byte-exact verify kiya.
 
 **Note**: yeh temporary decision hai — Rahul ji ke apne shabdon mein "baad mein koi dusra plugin add kar ke dekhna". Abhi site par photo enlarge/zoom ka koi option nahi hai.
+
+
+---
+
+## Naya product — Madas CN 0045 Solenoid Valve Coil Connector (9 Sep 2026)
+
+Rahul ji ne 2 photo (ek hi item ki, duplicate) aur title bheja: "Madas CN 0045 Solenoid Valve Coil Connector | Brand: Madas | Product: Solenoid Valve". Confirm kiya ki yeh naya product hai (index.html, sabhi 128 product pages, products-added-list.md mein "CN 0045"/"CN0045"/"coil connector"/"DIN 43650" kahin nahi mila) aur AskUserQuestion se 3 cheezein confirm ki: (1) naya product add karna hai, (2) dono photo same hai, ek hi use karo, (3) sirf image mein visible specs (230 VAC, 1.5A) hi kaafi hain.
+
+Web research kiya (thermcross, expertbynet, mandmcontrols ka official Madas technical manual) taaki specs verify ho sakein bina fabricate kiye — pata chala CN.0045 ek DIN 43650 connector hai jisme **built-in rectifier** hai (nameplate ke diode-symbol se bhi match hua) — 230 VAC / 110 VAC AC supply ko rectify karke DC coil ko chalata hai, mainly DN15–DN25 Madas valve range ke liye. Ek retail listing (Indiamart) ne "5A, 3-pole" bataya tha jo nameplate photo (230 VAC, 1.5A, clearly zoom karke padha) se mismatch tha — retail listing ko discard kiya, physical nameplate ko authoritative maana.
+
+**Kya banaya**: naya `id: 'madas-cn0045'`, category `SOLENOID VALVES` ke andar naya subcategory `Coil Connector` add kiya (pehli baar). Product image (user-uploaded 700×800 PNG) ko white-canvas-pad kar ke 600×600 JPG (index.html + main image) aur 140×140 JPG (thumb) mein convert kiya — koi legacy `imageLarge`/xl field add nahi ki (standing rule ke mutabik). Standalone page `products/madas-cn0045.html` ek existing Madas single-image page (`madas-psm010.html`) ko template bana kar generate ki — sabhi fields (title, meta/OG/twitter, JSON-LD Product + Breadcrumb, breadcrumb HTML, pg-tags, h1, code, 11-row spec table, description, WhatsApp CTA, `CURRENT_PRODUCT_ID`) targeted replace se update kiye, CSS/nav/footer/scripts bilkul chhue nahi.
+
+Files update kiye: `index.html` (subcategoryMap + naya product object), `related-products-data.js` (naya entry), `brand-data.js` (Madas count 8→9), `sitemap.xml` (naya URL entry).
+
+Verify: `node --check` se sab inline scripts + JSON-LD blocks valid, `diff` se template ke against sirf expected lines hi badli (68 lines, sab intentional), Playwright se poora page render kiya (isolated test dir mein index/thumbs/related-products.js ke saath) — title/h1/breadcrumb/11 specs/image/CTA sab sahi, "You May Also Need" section ab sahi Solenoid Valve category products dikha raha hai (pehle CURRENT_PRODUCT_ID galat reh gaya tha "madas-psm010" — pakad ke fix kiya), Associate Brands strip mein Madas "9 ADDED" sahi dikh raha hai.
