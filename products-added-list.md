@@ -1544,3 +1544,20 @@ Web research kiya (thermcross, expertbynet, mandmcontrols ka official Madas tech
 Files update kiye: `index.html` (subcategoryMap + naya product object), `related-products-data.js` (naya entry), `brand-data.js` (Madas count 8→9), `sitemap.xml` (naya URL entry).
 
 Verify: `node --check` se sab inline scripts + JSON-LD blocks valid, `diff` se template ke against sirf expected lines hi badli (68 lines, sab intentional), Playwright se poora page render kiya (isolated test dir mein index/thumbs/related-products.js ke saath) — title/h1/breadcrumb/11 specs/image/CTA sab sahi, "You May Also Need" section ab sahi Solenoid Valve category products dikha raha hai (pehle CURRENT_PRODUCT_ID galat reh gaya tha "madas-psm010" — pakad ke fix kiya), Associate Brands strip mein Madas "9 ADDED" sahi dikh raha hai.
+
+
+---
+
+## Naya product — Madas CN 2130 Solenoid Valve Coil Connector (9 Sep 2026)
+
+Rahul ji ne 2 photo bheji (ek hi item ki, duplicate — composite shot: main product view + zoom-inset circle nameplate ke saath) aur title diya: "Madas CN 2130 Solenoid Valve Coil Connector | Brand: Madas | Product: Coil Connector". Confirm kiya ki yeh naya product hai (index.html, related-products-data.js, sitemap.xml mein "2130"/"CN-2130" kahin nahi mila) aur GitHub repo (raw.githubusercontent.com) se live files fetch karke cross-check kiya — koi duplicate nahi.
+
+Nameplate zoom karke padha: "CN-2130 / Energy saving for / 230V / 50-60Hz" — Current Rating (Amps) kahin nahi likha tha. Web research (kempstoncontrols.co.uk, indiamart.com, arbogroup.eu/suner.eu, faustoricambi.it) se confirm kiya ki CN-2130 genuine Madas part hai — DIN 43650 energy-saving/automatic-reset rectifier connector, 230V/50-60Hz, MADAS EVP/EVPC series NC gas solenoid valves (DN15–DN20) ke saath use hota hai. Current Rating kahin (na nameplate, na web sources) nahi mila — CN 0045 ka 1.5A copy nahi kiya (standing rule), Rahul ji se poocha to "no preference" mila, isliye us spec row ko simply skip kar diya, guess nahi kiya.
+
+AskUserQuestion se 3 cheezein confirm ki: (1) naya product add karna hai, (2) dono photo same hain — sirf clean product shot use karo, zoom-inset circle wala hissa crop karke hata do, (3) Current Rating row skip karo (mismatch/missing data).
+
+**Kya banaya**: naya `id: 'madas-cn2130'`, existing subcategory `SOLENOID VALVES > Coil Connector` (CN 0045 se pehle se bana hua) mein add kiya. Uploaded composite photo se sirf main product shot crop kiya (zoom-inset circle discard), white-canvas-pad kar ke 600×600 JPG (index.html + main image) aur 140×140 JPG (thumb) mein convert kiya, 92%/78% quality. Standalone page `products/madas-cn2130.html` `madas-cn0045.html` ko template bana kar generate ki — sabhi fields (title, meta/OG/twitter, JSON-LD Product + Breadcrumb, breadcrumb HTML, pg-tags, h1, code line, 10-row spec table — Includes aur Current Rating rows hataye, Frequency row naya add kiya —, description, WhatsApp CTA, `CURRENT_PRODUCT_ID`) targeted replace se update kiye, CSS/nav/footer/scripts bilkul chhue nahi.
+
+Files update kiye: `index.html` (naya product object, subcategoryMap mein koi change nahi chahiye tha — "Coil Connector" pehle se tha), `related-products-data.js` (naya entry), `brand-data.js` (Madas count 9→10), `sitemap.xml` (naya URL entry).
+
+Verify: `node --check` se related-products-data.js, brand-data.js, aur index.html ka inline script sab valid; poore index.html + naye product page ke JSON-LD blocks `json.loads()` se valid. Poora GitHub repo local clone karke (naye files overlay kar ke) Playwright se live-jaisa test kiya: standalone page (image, breadcrumb, 10 specs, WhatsApp CTA, Related Products 4 cards — CN 0045 sabse pehle, phir same-category Brahma products —, Associate Brands strip mein Madas "10 ADDED"), index.html ka category-listing view (CN 2130 card dikh raha hai), aur index.html ka single-product view (`#/product/madas-cn2130` — poora spec-grid, related products, sab sahi) — teeno jagah screenshot le kar visually confirm kiya, koi console error nahi (sirf ek unrelated font-preconnect network warning, sandbox restriction ki wajah se, real bug nahi).
