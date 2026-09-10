@@ -44,6 +44,7 @@
     --steel-2:#DAD3BC;
     --line: rgba(29,58,42,0.18);
     --sage:#9CAF97;
+    --sage-pale:#B3CCB6;
     --sage-deep:#35573F;
     --flame:#C1621B;
     --flame-light:#F3E4CE;
@@ -440,11 +441,11 @@
 
   /* ---------- BRANDS ---------- */
   .brands{ background:var(--paper); }
-  .stats-band{ background:var(--ink); padding:52px 0; }
+  .stats-band{ background:var(--sage-pale); padding:52px 0; }
   .stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
   @media (max-width:800px){ .stats-grid{ grid-template-columns:repeat(2,1fr); gap:32px 20px; } }
   .stat-num{ font-family:'Barlow Condensed',sans-serif; font-size:2.4rem; font-weight:700; color:var(--flame); line-height:1; }
-  .stat-label{ margin-top:10px; font-size:0.8rem; color:rgba(248,246,240,0.75); letter-spacing:0.02em; }
+  .stat-label{ margin-top:10px; font-size:0.8rem; color:rgba(29,58,42,0.75); letter-spacing:0.02em; }
   .tagline-band{ background:var(--flame-light); padding:56px 0; }
   .tagline-quote{ font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:600; text-align:center; color:var(--ink); max-width:56ch; margin:0 auto; line-height:1.5; }
   @media (max-width:700px){ .tagline-quote{ font-size:1.15rem; } }
