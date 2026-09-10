@@ -171,20 +171,26 @@
   .nav-drop-panel a{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 10px; font-size:0.84rem; color:var(--ink); border-radius:2px; }
   .nav-drop-panel a:hover{ background:var(--steel); }
   #navProductsPanel{
-    min-width:400px; max-width:440px; padding:12px 12px 10px;
+    width:min(92vw, 940px); max-width:940px; padding:12px;
   }
   .nav-drop-search{
     display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:5px;
-    padding:8px 11px; margin:0; background:var(--paper);
+    padding:8px 11px; margin:0 0 10px; background:var(--paper);
   }
   .nav-drop-search svg{ width:15px; height:15px; stroke:var(--sage-deep); flex:0 0 auto; }
   .nav-drop-search input{ border:none; outline:none; font-size:0.82rem; color:var(--ink); width:100%; background:transparent; font-family:'Barlow',sans-serif; }
   .nav-drop-search input::placeholder{ color:var(--text-dim); }
-  #navProductsResults{ margin-top:6px; max-height:56vh; }
+  #navProductsGrid{
+    display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 8px;
+    max-height:60vh; overflow-y:auto;
+  }
+  #navProductsGrid[hidden]{ display:none; }
+  #navProductsGrid a{ font-size:0.76rem; padding:7px 6px; }
+  .nav-cat-caret{ display:inline-block; color:var(--sage-deep); font-size:0.72em; margin-left:3px; opacity:0.7; }
+  #navProductsResults{ margin:0 auto; max-width:460px; max-height:56vh; }
   #navProductsResults a{ font-size:0.83rem; padding:9px 6px; }
   #navProductsResults .search-kicker{ padding-top:8px; }
-  .nav-drop-hint{ padding:16px 8px; font-size:0.82rem; color:var(--text-dim); line-height:1.5; }
-  @media (max-width:860px){ #navProductsPanel{ min-width:320px; max-width:360px; } }
+  .nav-drop-hint{ padding:16px 8px; font-size:0.82rem; color:var(--text-dim); line-height:1.5; text-align:center; }
 
   /* mobile drawer */
   .mobile-drawer{
@@ -596,7 +602,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
             <input type="text" id="navProductsFilter" placeholder="Search products or categories…" autocomplete="off">
           </div>
-          <div class="nav-drop-results search-results" id="navProductsResults"></div>
+          <div class="nav-drop-grid" id="navProductsGrid"></div>
+          <div class="nav-drop-results search-results" id="navProductsResults" hidden></div>
         </div>
       </div>
       <div class="nav-dropdown" id="navBrands">
@@ -4412,19 +4419,23 @@
     strip.appendChild(chip);
   });
 
-  // ---- Desktop dropdown: Products search (product-wise, not a category wall) ----
+  // ---- Desktop dropdown: category grid (default) + product/category search (on type) ----
+  const navProductsGrid = document.getElementById('navProductsGrid');
+  categories.forEach(name => {
+    const n = categoryCount(name);
+    const hasSub = (subcategoryMap[name] || []).length > 0;
+    const a = document.createElement('a');
+    a.href = 'javascript:void(0)';
+    a.className = 'nav-drop-link';
+    a.innerHTML = `<span>${name}${hasSub ? ' <span class="nav-cat-caret">⌄</span>' : ''}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
+    a.addEventListener('click', (e) => { e.preventDefault(); navigateToProduct({type:'category', value:name}); });
+    navProductsGrid.appendChild(a);
+  });
   const navProductsFilter = document.getElementById('navProductsFilter');
   const navProductsResults = document.getElementById('navProductsResults');
   function renderNavProductResults(rawQuery){
     const q = rawQuery.trim().toLowerCase();
     navProductsResults.innerHTML = '';
-    if(!q){
-      const hint = document.createElement('div');
-      hint.className = 'nav-drop-hint';
-      hint.textContent = 'Product ka naam ya category type karein — jaise "solenoid valve" ya "ignition".';
-      navProductsResults.appendChild(hint);
-      return;
-    }
     const prodMatches = products.filter(p => (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().includes(q)).slice(0, 10);
     const catMatches = categories.filter(c => c.toLowerCase().includes(q)).slice(0, 6);
     if(prodMatches.length === 0 && catMatches.length === 0){
@@ -4463,15 +4474,24 @@
     }
   }
   if(navProductsFilter){
-    renderNavProductResults('');
-    navProductsFilter.addEventListener('input', (e) => renderNavProductResults(e.target.value));
+    navProductsFilter.addEventListener('input', (e) => {
+      const q = e.target.value.trim();
+      if(!q){
+        navProductsGrid.hidden = false;
+        navProductsResults.hidden = true;
+      } else {
+        navProductsGrid.hidden = true;
+        navProductsResults.hidden = false;
+        renderNavProductResults(q);
+      }
+    });
     // Prevent dropdown from closing when clicking inside the filter input
     navProductsFilter.addEventListener('click', (e) => e.stopPropagation());
-    // Reset filter each time the dropdown is reopened
+    // Reset filter (back to category grid) each time the dropdown is reopened
     document.getElementById('navProducts').querySelector('.nav-drop-btn').addEventListener('click', () => {
       navProductsFilter.value = '';
-      renderNavProductResults('');
-      setTimeout(() => navProductsFilter.focus(), 150);
+      navProductsGrid.hidden = false;
+      navProductsResults.hidden = true;
     });
   }
   const navBrandsPanel = document.getElementById('navBrandsPanel');
