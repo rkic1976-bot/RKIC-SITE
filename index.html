@@ -187,14 +187,14 @@
   }
   #navProductsGrid[hidden]{ display:none; }
   #navProductsGrid a{ font-size:0.76rem; padding:7px 6px; }
-  .nav-cat-caret{ display:inline-block; color:var(--sage-deep); font-size:0.72em; opacity:0.85; transition:transform 0.2s ease; }
-  .nav-cat-row{ display:flex; align-items:stretch; border-radius:2px; }
+  .nav-cat-caret{ display:inline-block; color:#fff; font-size:0.85rem; font-weight:800; line-height:1; opacity:1; transition:transform 0.2s ease; }
+  .nav-cat-row{ display:flex; align-items:stretch; gap:4px; border-radius:2px; }
   .nav-cat-row .nav-drop-link{ flex:1; min-width:0; }
   .nav-cat-toggle{
-    flex:0 0 22px; display:flex; align-items:center; justify-content:center;
-    background:none; border:none; cursor:pointer; color:var(--sage-deep); border-radius:2px; padding:0;
+    flex:0 0 24px; width:24px; height:24px; align-self:center; display:flex; align-items:center; justify-content:center;
+    background:var(--sage-deep); border:none; cursor:pointer; border-radius:50%; padding:0;
   }
-  .nav-cat-toggle:hover{ background:var(--steel); }
+  .nav-cat-toggle:hover{ background:var(--ink); }
   .nav-cat-row.expanded .nav-cat-toggle .nav-cat-caret{ transform:rotate(180deg); }
   .nav-cat-subs{
     grid-column:1 / -1; display:none; flex-wrap:wrap; gap:2px 16px;
