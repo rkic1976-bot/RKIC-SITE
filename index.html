@@ -172,12 +172,23 @@
   .nav-drop-panel a:hover{ background:var(--steel); }
   .nav-drop-sublink{ padding-left:24px !important; font-size:0.76rem !important; color:var(--text-dim) !important; }
   #navProductsPanel{
-    min-width:640px; max-width:700px;
+    min-width:640px; max-width:700px; padding:12px 10px 10px;
+    max-height:780px; overflow-y:visible;
+  }
+  .nav-drop-search{
+    display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:5px;
+    padding:8px 11px; margin:0 0 10px; background:var(--paper);
+  }
+  .nav-drop-search svg{ width:15px; height:15px; stroke:var(--sage-deep); flex:0 0 auto; }
+  .nav-drop-search input{ border:none; outline:none; font-size:0.82rem; color:var(--ink); width:100%; background:transparent; font-family:'Barlow',sans-serif; }
+  .nav-drop-search input::placeholder{ color:var(--text-dim); }
+  #navProductsGrid{
     display:grid; grid-auto-flow:column; grid-template-rows:repeat(14, auto);
     column-gap:6px; row-gap:1px; max-height:720px;
   }
-  #navProductsPanel a{ font-size:0.79rem; padding:7px 8px; }
-  @media (max-width:1020px){ #navProductsPanel{ min-width:520px; grid-template-rows:repeat(18, auto); } }
+  #navProductsGrid a{ font-size:0.79rem; padding:7px 8px; }
+  .nav-drop-noresult{ grid-column:1 / -1; padding:14px 8px; font-size:0.82rem; color:var(--text-dim); text-align:center; }
+  @media (max-width:1020px){ #navProductsPanel{ min-width:520px; } #navProductsGrid{ grid-template-rows:repeat(18, auto); } }
   .nav-cat-caret{ display:inline-block; color:var(--sage-deep); font-size:0.72em; margin-left:4px; opacity:0.7; }
 
   /* mobile drawer */
@@ -585,7 +596,13 @@
       <a href="#about">About Us</a>
       <div class="nav-dropdown" id="navProducts">
         <button class="nav-drop-btn">Products <span class="chev">⌄</span></button>
-        <div class="nav-drop-panel" id="navProductsPanel"></div>
+        <div class="nav-drop-panel" id="navProductsPanel">
+          <div class="nav-drop-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" id="navProductsFilter" placeholder="Filter categories…" autocomplete="off">
+          </div>
+          <div class="nav-drop-grid" id="navProductsGrid"></div>
+        </div>
       </div>
       <div class="nav-dropdown" id="navBrands">
         <button class="nav-drop-btn">Brands <span class="chev">⌄</span></button>
@@ -4401,26 +4418,68 @@
   });
 
   // ---- Desktop dropdown panels ----
-  const navProductsPanel = document.getElementById('navProductsPanel');
+  const navProductsGrid = document.getElementById('navProductsGrid');
   categories.forEach(name => {
     const n = categoryCount(name);
     const hasSub = (subcategoryMap[name] || []).length > 0;
     const a = document.createElement('a');
     a.href = 'javascript:void(0)';
     a.className = 'nav-drop-link';
+    a.dataset.cat = name;
     a.innerHTML = `<span>${name}${hasSub ? ' <span class="nav-cat-caret">⌄</span>' : ''}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
     a.addEventListener('click', (e) => { e.preventDefault(); navigateToProduct({type:'category', value:name}); });
-    navProductsPanel.appendChild(a);
+    navProductsGrid.appendChild(a);
     (subcategoryMap[name] || []).forEach(subName => {
       const sn = categoryCount ? products.filter(p => p.subcategory === subName).length : 0;
       const sa = document.createElement('a');
       sa.href = 'javascript:void(0)';
       sa.className = 'nav-drop-link nav-drop-sublink';
+      sa.dataset.parent = name;
       sa.innerHTML = `<span>↳ ${subName}</span>${sn > 0 ? `<span class="nav-drop-dot" aria-label="${sn} products added"></span>` : ''}`;
       sa.addEventListener('click', (e) => { e.preventDefault(); navigateToProduct({type:'subcategory', value:subName}); });
-      navProductsPanel.appendChild(sa);
+      navProductsGrid.appendChild(sa);
     });
   });
+  // Filter box inside Products dropdown — narrows the 33 categories live
+  const navProductsFilter = document.getElementById('navProductsFilter');
+  if(navProductsFilter){
+    navProductsFilter.addEventListener('input', (e) => {
+      const query = e.target.value.trim().toLowerCase();
+      const links = Array.from(navProductsGrid.querySelectorAll('.nav-drop-link'));
+      const existingMsg = navProductsGrid.querySelector('.nav-drop-noresult');
+      if(existingMsg) existingMsg.remove();
+      if(!query){ links.forEach(l => l.style.display = ''); return; }
+      const catSelfMatch = {};
+      links.forEach(l => { if(!l.classList.contains('nav-drop-sublink')) catSelfMatch[l.dataset.cat] = l.textContent.toLowerCase().includes(query); });
+      let anyVisible = false;
+      links.forEach(l => {
+        let show;
+        if(l.classList.contains('nav-drop-sublink')){
+          show = catSelfMatch[l.dataset.parent] || l.textContent.toLowerCase().includes(query);
+        } else {
+          const hasMatchingSub = links.some(x => x.dataset.parent === l.dataset.cat && x.textContent.toLowerCase().includes(query));
+          show = catSelfMatch[l.dataset.cat] || hasMatchingSub;
+        }
+        l.style.display = show ? '' : 'none';
+        if(show) anyVisible = true;
+      });
+      if(!anyVisible){
+        const div = document.createElement('div');
+        div.className = 'nav-drop-noresult';
+        div.textContent = `"${e.target.value}" se koi category match nahi hui.`;
+        navProductsGrid.appendChild(div);
+      }
+    });
+    // Prevent dropdown from closing when clicking inside the filter input
+    navProductsFilter.addEventListener('click', (e) => e.stopPropagation());
+    // Reset filter each time the dropdown is reopened
+    document.getElementById('navProducts').querySelector('.nav-drop-btn').addEventListener('click', () => {
+      navProductsFilter.value = '';
+      navProductsGrid.querySelectorAll('.nav-drop-link').forEach(l => l.style.display = '');
+      const msg = navProductsGrid.querySelector('.nav-drop-noresult');
+      if(msg) msg.remove();
+    });
+  }
   const navBrandsPanel = document.getElementById('navBrandsPanel');
   brands.forEach(b => {
     const n = brandCount(b);
