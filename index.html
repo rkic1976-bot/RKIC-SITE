@@ -4447,7 +4447,7 @@
       const a = document.createElement('a');
       a.href = 'javascript:void(0)';
       a.className = 'nav-drop-link';
-      a.innerHTML = `<span>${name}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
+      a.innerHTML = `<span>${name}</span>`;
       a.addEventListener('click', (e) => { e.preventDefault(); navigateToProduct({type:'category', value:name}); });
       const toggle = document.createElement('button');
       toggle.type = 'button';
@@ -4462,7 +4462,7 @@
         const sn = products.filter(p => p.subcategory === subName).length;
         const sa = document.createElement('a');
         sa.href = 'javascript:void(0)';
-        sa.innerHTML = `<span>↳ ${subName}</span>${sn > 0 ? `<span class="nav-drop-dot" aria-label="${sn} products added"></span>` : ''}`;
+        sa.innerHTML = `<span>↳ ${subName}</span>`;
         sa.addEventListener('click', (e) => {
           e.preventDefault();
           document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
@@ -4484,7 +4484,7 @@
       const a = document.createElement('a');
       a.href = 'javascript:void(0)';
       a.className = 'nav-drop-link';
-      a.innerHTML = `<span>${name}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
+      a.innerHTML = `<span>${name}</span>`;
       a.addEventListener('click', (e) => { e.preventDefault(); navigateToProduct({type:'category', value:name}); });
       navProductsGrid.appendChild(a);
     }
@@ -4566,7 +4566,7 @@
     a.className = 'nav-drop-link';
     const bLogo = brandLogos[b];
     const bLabel = bLogo ? `<img src="${bLogo}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
-    a.innerHTML = `${bLabel}${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
+    a.innerHTML = `${bLabel}`;
     a.addEventListener('click', (e) => { e.preventDefault(); navigateToProduct({type:'brand', value:b}); });
     navBrandsPanel.appendChild(a);
   });
