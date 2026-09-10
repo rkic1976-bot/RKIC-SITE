@@ -249,15 +249,15 @@
   .drawer-cat-item.open .drawer-subcat-list{ display:block; }
   .drawer-subcat-viewall{ font-weight:600 !important; color:var(--sage-deep) !important; }
   .nav-drop-dot{ width:7px; height:7px; border-radius:50%; background:var(--lemon-text); flex:0 0 auto; }
-  .nav-drop-brand-logo{ height:18px; width:auto; max-width:110px; object-fit:contain; }
+  .nav-drop-brand-logo{ height:20px; width:38px; object-fit:contain; object-position:left center; flex:0 0 38px; }
   .nav-drop-brand-name{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-left:8px; letter-spacing:0.02em; flex:1 1 auto; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   #navBrandsPanel{
     width:min(92vw, 940px); max-width:940px; padding:12px;
     max-height:85vh; overflow-y:visible;
-    display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 10px;
+    grid-template-columns:repeat(6, 1fr); gap:2px 10px;
   }
-  #navBrandsPanel a{ font-size:0.78rem; padding:8px 6px; min-width:0; }
-  #navBrandsPanel a img{ flex:0 0 auto; }
+  .nav-dropdown.open #navBrandsPanel{ display:grid; }
+  #navBrandsPanel a{ font-size:0.78rem; padding:8px 6px; min-width:0; justify-content:flex-start; gap:0; }
 
   /* floating whatsapp button */
   .wa-float{
@@ -4455,7 +4455,7 @@
       a.href = 'javascript:void(0)';
       a.className = 'nav-drop-link';
       a.innerHTML = `<span>${name}</span>`;
-      a.addEventListener('click', (e) => { e.preventDefault(); navigateToProduct({type:'category', value:name}); });
+      a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
       const toggle = document.createElement('button');
       toggle.type = 'button';
       toggle.className = 'nav-cat-toggle';
@@ -4492,7 +4492,7 @@
       a.href = 'javascript:void(0)';
       a.className = 'nav-drop-link';
       a.innerHTML = `<span>${name}</span>`;
-      a.addEventListener('click', (e) => { e.preventDefault(); navigateToProduct({type:'category', value:name}); });
+      a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
       navProductsGrid.appendChild(a);
     }
   });
@@ -4574,7 +4574,7 @@
     const bLogo = brandLogos[b];
     const bLabel = bLogo ? `<img src="${bLogo}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
     a.innerHTML = `${bLabel}`;
-    a.addEventListener('click', (e) => { e.preventDefault(); navigateToProduct({type:'brand', value:b}); });
+    a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'brand', value:b}); });
     navBrandsPanel.appendChild(a);
   });
 
