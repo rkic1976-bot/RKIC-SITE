@@ -171,25 +171,20 @@
   .nav-drop-panel a{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 10px; font-size:0.84rem; color:var(--ink); border-radius:2px; }
   .nav-drop-panel a:hover{ background:var(--steel); }
   #navProductsPanel{
-    min-width:960px; max-width:1080px; padding:12px 12px 10px;
-    max-height:80vh; overflow-y:visible;
+    min-width:400px; max-width:440px; padding:12px 12px 10px;
   }
   .nav-drop-search{
     display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:5px;
-    padding:8px 11px; margin:0 0 10px; background:var(--paper);
+    padding:8px 11px; margin:0; background:var(--paper);
   }
   .nav-drop-search svg{ width:15px; height:15px; stroke:var(--sage-deep); flex:0 0 auto; }
   .nav-drop-search input{ border:none; outline:none; font-size:0.82rem; color:var(--ink); width:100%; background:transparent; font-family:'Barlow',sans-serif; }
   .nav-drop-search input::placeholder{ color:var(--text-dim); }
-  #navProductsGrid{
-    display:grid; grid-auto-flow:column; grid-template-rows:repeat(6, auto);
-    column-gap:8px; row-gap:1px; max-height:72vh; overflow-y:auto;
-  }
-  #navProductsGrid a{ font-size:0.79rem; padding:8px 6px; }
-  .nav-drop-noresult{ grid-column:1 / -1; padding:14px 8px; font-size:0.82rem; color:var(--text-dim); text-align:center; }
-  @media (max-width:1120px){ #navProductsPanel{ min-width:700px; max-width:780px; } #navProductsGrid{ grid-template-rows:repeat(9, auto); } }
-  @media (max-width:860px){ #navProductsPanel{ min-width:520px; max-width:580px; } #navProductsGrid{ grid-template-rows:repeat(17, auto); } }
-  .nav-cat-caret{ display:inline-block; color:var(--sage-deep); font-size:0.72em; margin-left:4px; opacity:0.7; }
+  #navProductsResults{ margin-top:6px; max-height:56vh; }
+  #navProductsResults a{ font-size:0.83rem; padding:9px 6px; }
+  #navProductsResults .search-kicker{ padding-top:8px; }
+  .nav-drop-hint{ padding:16px 8px; font-size:0.82rem; color:var(--text-dim); line-height:1.5; }
+  @media (max-width:860px){ #navProductsPanel{ min-width:320px; max-width:360px; } }
 
   /* mobile drawer */
   .mobile-drawer{
@@ -599,9 +594,9 @@
         <div class="nav-drop-panel" id="navProductsPanel">
           <div class="nav-drop-search">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            <input type="text" id="navProductsFilter" placeholder="Filter categories…" autocomplete="off">
+            <input type="text" id="navProductsFilter" placeholder="Search products or categories…" autocomplete="off">
           </div>
-          <div class="nav-drop-grid" id="navProductsGrid"></div>
+          <div class="nav-drop-results search-results" id="navProductsResults"></div>
         </div>
       </div>
       <div class="nav-dropdown" id="navBrands">
@@ -4417,49 +4412,66 @@
     strip.appendChild(chip);
   });
 
-  // ---- Desktop dropdown panels ----
-  const navProductsGrid = document.getElementById('navProductsGrid');
-  categories.forEach(name => {
-    const n = categoryCount(name);
-    const hasSub = (subcategoryMap[name] || []).length > 0;
-    const a = document.createElement('a');
-    a.href = 'javascript:void(0)';
-    a.className = 'nav-drop-link';
-    a.dataset.cat = name;
-    a.innerHTML = `<span>${name}${hasSub ? ' <span class="nav-cat-caret">⌄</span>' : ''}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
-    a.addEventListener('click', (e) => { e.preventDefault(); navigateToProduct({type:'category', value:name}); });
-    navProductsGrid.appendChild(a);
-  });
-  // Filter box inside Products dropdown — narrows the 33 categories live
+  // ---- Desktop dropdown: Products search (product-wise, not a category wall) ----
   const navProductsFilter = document.getElementById('navProductsFilter');
-  if(navProductsFilter){
-    navProductsFilter.addEventListener('input', (e) => {
-      const query = e.target.value.trim().toLowerCase();
-      const links = Array.from(navProductsGrid.querySelectorAll('.nav-drop-link'));
-      const existingMsg = navProductsGrid.querySelector('.nav-drop-noresult');
-      if(existingMsg) existingMsg.remove();
-      if(!query){ links.forEach(l => l.style.display = ''); return; }
-      let anyVisible = false;
-      links.forEach(l => {
-        const show = l.textContent.toLowerCase().includes(query);
-        l.style.display = show ? '' : 'none';
-        if(show) anyVisible = true;
+  const navProductsResults = document.getElementById('navProductsResults');
+  function renderNavProductResults(rawQuery){
+    const q = rawQuery.trim().toLowerCase();
+    navProductsResults.innerHTML = '';
+    if(!q){
+      const hint = document.createElement('div');
+      hint.className = 'nav-drop-hint';
+      hint.textContent = 'Product ka naam ya category type karein — jaise "solenoid valve" ya "ignition".';
+      navProductsResults.appendChild(hint);
+      return;
+    }
+    const prodMatches = products.filter(p => (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().includes(q)).slice(0, 10);
+    const catMatches = categories.filter(c => c.toLowerCase().includes(q)).slice(0, 6);
+    if(prodMatches.length === 0 && catMatches.length === 0){
+      const div = document.createElement('div');
+      div.className = 'search-empty nav-drop-hint';
+      div.textContent = `"${rawQuery}" se koi match nahi mila.`;
+      navProductsResults.appendChild(div);
+      return;
+    }
+    if(prodMatches.length){
+      const kicker = document.createElement('div');
+      kicker.className = 'search-kicker';
+      kicker.textContent = 'Products';
+      navProductsResults.appendChild(kicker);
+      prodMatches.forEach(p => {
+        const a = document.createElement('a');
+        a.href = 'products/' + p.id + '.html';
+        a.className = 'search-product-row';
+        const brandHTML = brandLogos[p.brand] ? `<img class="srp-brand-logo" src="${brandLogos[p.brand]}" alt="${p.brand}">` : `${p.brand} · `;
+        a.innerHTML = `<img src="${p.image}" alt="${p.name}"><span class="srp-info"><span class="srp-name">${p.name}</span><span class="srp-meta">${brandHTML}${p.category}</span></span><span class="code">${p.code}</span>`;
+        navProductsResults.appendChild(a);
       });
-      if(!anyVisible){
-        const div = document.createElement('div');
-        div.className = 'nav-drop-noresult';
-        div.textContent = `"${e.target.value}" se koi category match nahi hui.`;
-        navProductsGrid.appendChild(div);
-      }
-    });
+    }
+    if(catMatches.length){
+      const kicker = document.createElement('div');
+      kicker.className = 'search-kicker';
+      kicker.textContent = 'Categories';
+      navProductsResults.appendChild(kicker);
+      catMatches.forEach(name => {
+        const a = document.createElement('a');
+        a.href = 'javascript:void(0)';
+        a.innerHTML = `<span>${name}</span>`;
+        a.addEventListener('click', (e) => { e.preventDefault(); navProductsFilter.value=''; document.querySelectorAll('.nav-dropdown.open').forEach(d=>d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
+        navProductsResults.appendChild(a);
+      });
+    }
+  }
+  if(navProductsFilter){
+    renderNavProductResults('');
+    navProductsFilter.addEventListener('input', (e) => renderNavProductResults(e.target.value));
     // Prevent dropdown from closing when clicking inside the filter input
     navProductsFilter.addEventListener('click', (e) => e.stopPropagation());
     // Reset filter each time the dropdown is reopened
     document.getElementById('navProducts').querySelector('.nav-drop-btn').addEventListener('click', () => {
       navProductsFilter.value = '';
-      navProductsGrid.querySelectorAll('.nav-drop-link').forEach(l => l.style.display = '');
-      const msg = navProductsGrid.querySelector('.nav-drop-noresult');
-      if(msg) msg.remove();
+      renderNavProductResults('');
+      setTimeout(() => navProductsFilter.focus(), 150);
     });
   }
   const navBrandsPanel = document.getElementById('navBrandsPanel');
