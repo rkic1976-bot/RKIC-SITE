@@ -251,6 +251,12 @@
   .nav-drop-dot{ width:7px; height:7px; border-radius:50%; background:var(--lemon-text); flex:0 0 auto; }
   .nav-drop-brand-logo{ height:18px; width:auto; max-width:110px; object-fit:contain; }
   .nav-drop-brand-name{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-left:8px; letter-spacing:0.02em; }
+  #navBrandsPanel{
+    width:min(92vw, 940px); max-width:940px; padding:12px;
+    max-height:85vh; overflow-y:visible;
+    display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 10px;
+  }
+  #navBrandsPanel a{ font-size:0.78rem; padding:8px 6px; }
 
   /* floating whatsapp button */
   .wa-float{
