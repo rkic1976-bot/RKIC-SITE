@@ -172,6 +172,13 @@ Sabhi 128 standalone `products/{id}.html` pages mein: `.pg-img-zoom-btn` CSS (3 
 - Fonts: Barlow Condensed (headings) + Barlow (body) + IBM Plex Mono (labels/codes)
 - Navigation: hash-based routing on `index.html`; mobile mein hamburger drawer with accordion Products/Brands
 
+## 11. Computer-use / screen access (11 Sep 2026 se)
+
+- Ab agar zaroorat pade (jaise GitHub Desktop ka koi confusing state, live site ka visual verify, ya koi aur app-level cheez jo sirf screen dekh kar hi confirm ho sakti hai), to main aapke desktop ko seedha dekh/click/type kar sakta hoon — har baar aapko ek approval popup dikhega, uske baad hi main aage badhta hoon.
+- Isi tareeke se ek real mystery solve hua: fixes commit karne ke baad GitHub Desktop ka "Changes" tab hamesha "0 changed files" dikha raha tha, isliye lag raha tha ki kuch push nahi hua. Screen dekh kar pata chala ki aapke system par ek automated process already local changes ko commit + push kar deta hai (GitHub Desktop History mein baar-baar "update" commit by rkic1976-bot, har ~20min-1hr mein) — matlab "0 changed files" ka matlab hi yeh hai ki sab already committed+pushed ho chuka hai, manually kuch karne ki zaroorat nahi.
+- Isi verification se yeh bhi confirm hua (browser se live site kholkar, JS se actual CSS/content check karke) ki 11 Sep 2026 ke teeno fixes — phone format, theme color, header/logo scale — live site par sahi se pahunch chuke the.
+- **Standing rule**: agar file-level edit/commit ke baad bhi koi cheez "confirm" nahi ho pa rahi (jaise GitHub Desktop ka state, live site ka actual dikhna, kisi app ka visual behavior), to text-based guess-work/reassurance dene ke bajaye seedha screen access use karke concretely verify karna hai — yeh Rahul ji ki pehle di hui feedback ("local developer ke tarah bat na karo, precise raho") ke saath consistent hai.
+
 ---
 
 Yeh document maine sirf transparency ke liye banaya hai — agar isme kuch chhoot gaya ho ya galat ho, bata dijiye, main update kar dunga.
