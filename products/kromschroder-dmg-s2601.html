@@ -198,6 +198,18 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .related-thumb img{ width:100%; height:100%; object-fit:contain; }
 .related-name{ font-size:0.86rem; font-weight:600; line-height:1.35; }
 .related-code{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-top:4px; }
+
+/* Live product search (added) */
+.pg-search-results{ max-width:700px; margin:8px auto 0; max-height:60vh; overflow-y:auto; background:#fff; border-radius:4px; }
+.pg-search-results a{ display:flex; align-items:center; gap:10px; padding:10px 12px; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line, #e0ddd0); font-size:0.86rem; }
+.pg-search-results a:hover{ background:var(--steel); }
+.pg-search-results a img{ width:34px; height:34px; object-fit:contain; flex:0 0 auto; background:var(--paper); border-radius:3px; }
+.pg-search-results .pg-sr-info{ flex:1 1 auto; min-width:0; }
+.pg-search-results .pg-sr-name{ display:block; font-weight:600; }
+.pg-search-results .pg-sr-meta{ display:block; font-size:0.74rem; color:var(--text-dim); margin-top:2px; }
+.pg-search-results .pg-sr-code{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); flex:0 0 auto; white-space:nowrap; }
+.pg-search-kicker{ font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage-deep); padding:10px 12px 4px; }
+.pg-search-empty{ padding:16px 12px; font-size:0.82rem; color:var(--text-dim); }
 </style>
 </head>
 <body>
@@ -297,6 +309,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         <input type="text" name="q" placeholder="Search products — e.g. solenoid valve, ignition electrode…" autocomplete="off">
         <button type="button" class="search-close" id="pgSearchClose" aria-label="Close search">✕</button>
       </form>
+      <div class="pg-search-results" id="pgSearchResults"></div>
     </div>
   </div>
 </header>
@@ -412,6 +425,47 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
       setTimeout(() => panel.querySelector('input').focus(), 100);
     });
     closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+  }
+  // Live search results (added) — uses RKIC_PRODUCTS from related-products-data.js
+  const pgSearchInput = panel ? panel.querySelector('input[name="q"]') : null;
+  const pgSearchResults = document.getElementById('pgSearchResults');
+  if(pgSearchInput && pgSearchResults){
+    pgSearchInput.addEventListener('input', function(){
+      var q = pgSearchInput.value.trim().toLowerCase();
+      if(!q || typeof RKIC_PRODUCTS === 'undefined'){ pgSearchResults.innerHTML = ''; return; }
+      var cats = [];
+      var seenCat = {};
+      RKIC_PRODUCTS.forEach(function(p){ if(!seenCat[p.category]){ seenCat[p.category] = true; cats.push(p.category); } });
+      var prodMatches = RKIC_PRODUCTS.filter(function(p){
+        return (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().indexOf(q) !== -1;
+      }).slice(0, 8);
+      var catMatches = cats.filter(function(c){ return c.toLowerCase().indexOf(q) !== -1; }).slice(0, 5);
+      var html = '';
+      if(prodMatches.length === 0 && catMatches.length === 0){
+        html = '<div class="pg-search-empty">No products match \"' + q.replace(/</g,'&lt;') + '\" — try a different term, or contact us for a custom requirement.</div>';
+      } else {
+        if(prodMatches.length){
+          html += '<div class="pg-search-kicker">In Stock</div>';
+          prodMatches.forEach(function(p){
+            html += '<a href="' + p.id + '.html">' +
+              '<img src="' + p.thumb + '" alt="" loading="lazy">' +
+              '<span class="pg-sr-info"><span class="pg-sr-name">' + p.name + '</span>' +
+              '<span class="pg-sr-meta">' + p.brand + ' · ' + p.category + '</span></span>' +
+              '<span class="pg-sr-code">' + p.code + '</span></a>';
+          });
+        }
+        if(catMatches.length){
+          html += '<div class="pg-search-kicker">Categories</div>';
+          catMatches.forEach(function(c){
+            html += '<a href="../index.html#/category/' + encodeURIComponent(c) + '"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
+          });
+        }
+      }
+      pgSearchResults.innerHTML = html;
+    });
+    closeBtn && closeBtn.addEventListener('click', function(){ pgSearchInput.value = ''; pgSearchResults.innerHTML = ''; });
+  }
+  if(true){
   }
   const burger = document.getElementById('pgBurgerBtn');
   const drawer = document.getElementById('pgMobileDrawer');
