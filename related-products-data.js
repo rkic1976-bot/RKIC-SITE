@@ -20,6 +20,7 @@ const RKIC_PRODUCTS = [
   {id:"vanaz-v7744", name:"Vanaz V7744 Safety Relief Valve", brand:"Vanaz", category:"SAFETY RELIEF VALVES", subcategory:null, code:"V.7744", thumb:"../images/thumbs/vanaz-v7744-thumb.jpg"},
   {id:"vanaz-v7734", name:"Vanaz V7734 Safety Relief Valve", brand:"Vanaz", category:"SAFETY RELIEF VALVES", subcategory:null, code:"V.7734", thumb:"../images/thumbs/vanaz-v7734-thumb.jpg"},
   {id:"vanaz-v7713", name:"Vanaz V7713 / V7715 Safety Relief Valve", brand:"Vanaz", category:"SAFETY RELIEF VALVES", subcategory:null, code:"V7713 / V7715", thumb:"../images/thumbs/vanaz-v7713-thumb.jpg"},
+{id:"vanaz-twostage-gastrain", name:"Vanaz Two-Stage Pressure Reducing System", brand:"Vanaz", category:"GAS TRAIN SYSTEMS", subcategory:null, code:"Two-Stage PRS", thumb:"../images/thumbs/vanaz-twostage-gastrain-thumb.jpg"},
   {id:"dungs-gastrain-dn65", name:"Dungs Flanged Gas Train System DN65", brand:"Dungs", category:"GAS TRAIN SYSTEMS", subcategory:null, code:"DN65 Gas Train", thumb:"../images/thumbs/dungs-gastrain-dn65-thumb.jpg"},
 {id:"madas-gastrain-dn50", name:"Madas Flanged Gas Train System DN50", brand:"Madas", category:"GAS TRAIN SYSTEMS", subcategory:null, code:"DN50 Gas Train", thumb:"../images/thumbs/madas-gastrain-dn50-thumb.jpg"},
   {id:"dungs-vps504s04", name:"Dungs Valve Proving System VPS 504 S04", brand:"Dungs", category:"VALVE PROVING SYSTEMS", subcategory:null, code:"219881", thumb:"../images/thumbs/dungs-vps504s04-thumb.jpg"},

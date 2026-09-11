@@ -1669,3 +1669,16 @@ Rahul ji ne ek stock/catalog-style photo bheji ek complete Madas modular gas tra
 **Category**: GAS TRAIN SYSTEMS (existing top-level category, ab tak sirf `dungs-gastrain-dn65` tha — ab 2 products).
 
 Standalone page `products/madas-gastrain-dn50.html` GAS TRAIN SYSTEMS ke closest (aur category-exact) template (`dungs-gastrain-dn65.html`) se banayi, live-search block already included. `index.html`, `sitemap.xml`, `brand-data.js` (Madas count is entry mein bhi shamil, total 12→14), aur `related-products-data.js` sab update kiye.
+
+
+## Vanaz Two-Stage Pressure Reducing System — new product added (11 Sep 2026)
+
+Rahul ji ne ek official-style catalog photo bheji (colorful red/blue/yellow multi-valve gas train assembly, koi nameplate nahi) title ke saath: "Vanaz Gas Train Two-Stage Pressure Reducing System for LPG PNG N2 CO2".
+
+**Duplicate check**: Perceptual hash se sabhi 134 existing photos ke against compare kiya — closest match distance 20/256 tha, clearly ek naya distinct product hai.
+
+**Spec research**: Yeh title exactly Vanaz ki apni official website (vanaz.com/products/pressure-reducing-systems-gas-trains.html) par listed ek real product hai — "Vanaz Two-Stage Pressure Reducing System for LPG / PNG / N2 / CO2". Wahan se confirmed specs: inlet up to 49 kg/cm², outlet 0.03–26 kg/cm², flow up to 6,000 SCMH, connections 1"–4" NB flanged (ANSI 150/300). Components (ball valves, filter, slam shut-off valve, regulator, relief valves, gauges, optional heater) bhi wahi official page se liye. Kyunki yeh Vanaz ki khud ki product-line hi ek size-range (1"–4") cover karti hai — na ki ek fixed DN — is liye ismein bhi range hi rakhi (jaise site par pehle se `madas-rg-2mcs-dn25` jaisi range-covering entries ka precedent hai), ek specific DN guess nahi kiya.
+
+**Category**: GAS TRAIN SYSTEMS (ab 3 products: `dungs-gastrain-dn65`, `madas-gastrain-dn50`, `vanaz-twostage-gastrain`).
+
+Standalone page `products/vanaz-twostage-gastrain.html` GAS TRAIN SYSTEMS ke closest template (`dungs-gastrain-dn65.html`) se banayi, live-search block included. `index.html`, `sitemap.xml`, `brand-data.js` (Vanaz 20→21), aur `related-products-data.js` sab update kiye.
