@@ -1642,3 +1642,30 @@ Do quality bugs pakde aur fix kiye generation ke dauraan: (1) compound brand nam
 **Verify**: Generation ke baad range-check kiya — sabhi 132 titles [45,59] chars ke andar, sabhi descriptions [140,160] chars ke andar (0 out-of-range). Duplicate-word aur dash-artifact scan se 0 issues confirm kiye application se pehle. Application ke baad har file mein: exactly 1 `<title>` aur 1 `<meta name="description">` tag, `html.unescape()` round-trip se exact match generated text ke saath, image-path fix (pichhle round ka) still intact, JSON-LD still valid, inline scripts still `node --check`-valid — 0 errors 132 files mein se. Playwright se 3 sample pages par live DOM check kiya (`page.title()` aur meta description content). Har batch (34+34+34+30 = 132 files) device par commit karne ke baad turant re-stage karke byte-exact diff verify kiya — sabhi 132 files 100% match.
 
 Ab har standalone product page ka search-engine snippet clean aur consistent hoga — na zyada chhota title, na 800+ character ka description jo Google truncate kar deta hai.
+
+
+## Madas AG/RC DN25 Air/Gas Ratio Regulator — new product added (11 Sep 2026)
+
+Rahul ji ne ek photo bheji: Madas AG/RC DN25 ka ek air/gas ratio regulator, nameplate par saaf likha hua — "Mod.: AG/RC DN 25", "Ratio gas/air: 1/1-1/10", "P2:0.2-120 mbar", "year: 2013", "Lot: U1316".
+
+**Duplicate check**: `images/*.jpg` ke saare 132 existing product photos ke against perceptual hash (phash) compare kiya — closest match bhi distance 20/256 tha, yaani clearly ek naya distinct product hai, koi duplicate nahi.
+
+**Spec research**: Official Madas technical bulletin (madas.it, "REGOLATORI DI ZERO E DI RAPPORTO GAS/ARIA TIPO AG/RC") aur distributor listings (add-furnace.com, mahalaxmienterprice.co.in) se confirm kiya — Part No. **AG04**, max inlet pressure 500 mbar, outlet/control range 0.2–120 mbar (nameplate se match), ratio 1:1–1:10, ambient temperature -15°C to +60°C, 50µm built-in filter, EN 88-1 / EN 13611 / EN 10226 certified. Body material aur exact weight kisi bhi source mein nahi mila — is liye woh spec rows add nahi ki (site ka standing rule: kabhi guess nahi karna).
+
+**Image**: Photo already clean white-background studio shot tha — sirf square-pad + resize kiya (600×600 large, 140×140 thumb), koi heavy background cleanup nahi lagi.
+
+**Category**: RATIO REGULATORS (existing top-level category, ab tak sirf `kromschroder-gik-20r02-5` tha — ab 2 products).
+
+Standalone page `products/madas-ag-rc-dn25.html` RATIO REGULATORS ke closest existing template (`kromschroder-gik-20r02-5.html`) se banayi, jisme already live-search block bhi included tha (10 Sep ka fix) — is liye naya page automatically us fix ke saath consistent hai. `index.html`, `sitemap.xml`, `brand-data.js` (Madas 12→14), aur `related-products-data.js` sab update kiye.
+
+## Madas Flanged Gas Train System DN50 — new product added (11 Sep 2026)
+
+Rahul ji ne ek stock/catalog-style photo bheji ek complete Madas modular gas train assembly ki (manual valve → filter → regulator with breather pipe → pressure switch → 2 solenoid valves in series → outlet flange), bina kisi nameplate ke. AskUserQuestion se DN size confirm kiya — Rahul ji ne **DN50** bataya.
+
+**Duplicate check**: Perceptual hash se sabhi 132 existing photos ke against compare kiya — closest match `dungs-gastrain-dn65` (distance 14/256) tha, jo expected hai (dono hi "long pipe assembly on white background" style shots hain) lekin duplicate-level match nahi (0–3 range duplicate maana jata hai).
+
+**IMPORTANT — flag for Rahul**: Kyunki photo mein koi nameplate/model-number nahi tha, is product ka component makeup (Madas FM filter, RG/2MC regulator, PSM pressure switch, M16/RM solenoid valves ×2 in series) **generic/typical Madas DN50 gas-train configuration** hai — bilkul waisे hi jaise existing `dungs-gastrain-dn65` entry pehle se site par hai (wahan bhi exact nameplate-verified nahi tha, generic system description hai). Agar actual supplied unit ke components alag hain (jaise different filter/regulator series, ya ek valve ki jagah do), toh Rahul ji please confirm/correct kar dein.
+
+**Category**: GAS TRAIN SYSTEMS (existing top-level category, ab tak sirf `dungs-gastrain-dn65` tha — ab 2 products).
+
+Standalone page `products/madas-gastrain-dn50.html` GAS TRAIN SYSTEMS ke closest (aur category-exact) template (`dungs-gastrain-dn65.html`) se banayi, live-search block already included. `index.html`, `sitemap.xml`, `brand-data.js` (Madas count is entry mein bhi shamil, total 12→14), aur `related-products-data.js` sab update kiye.
