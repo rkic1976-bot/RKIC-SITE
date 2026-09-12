@@ -309,10 +309,6 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   </div>
 </header>
 <div class="mobile-drawer" id="pgMobileDrawer">
-  <div class="drawer-head">
-    <span class="drawer-head-title">Menu</span>
-    <button class="drawer-close" id="pgDrawerClose">X</button>
-  </div>
   <ul class="drawer-list">
     <li><a class="drawer-row" href="../index.html#home">Home</a></li>
     <li><a class="drawer-row" href="../index.html#about">About Us</a></li>
@@ -426,14 +422,12 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   }
   const burger = document.getElementById('pgBurgerBtn');
   const drawer = document.getElementById('pgMobileDrawer');
-  const drawerClose = document.getElementById('pgDrawerClose');
   function pgPositionDrawer(){
     var h = document.querySelector('header');
     if(h && drawer) drawer.style.top = h.getBoundingClientRect().bottom + 'px';
   }
   if(burger){
-    burger.addEventListener('click', () => { pgPositionDrawer(); drawer.classList.add('open'); });
-    drawerClose.addEventListener('click', () => drawer.classList.remove('open'));
+    burger.addEventListener('click', () => { pgPositionDrawer(); drawer.classList.toggle('open'); });
     window.addEventListener('resize', pgPositionDrawer);
     document.addEventListener('click', function(e){
       if(drawer.classList.contains('open') && !drawer.contains(e.target) && !burger.contains(e.target)){
@@ -445,6 +439,11 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         drawer.classList.remove('open');
       }
     });
+    new MutationObserver(function(){
+      var isOpen = drawer.classList.contains('open');
+      burger.textContent = isOpen ? '\u2715' : '\u2630';
+      burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    }).observe(drawer, {attributes:true, attributeFilter:['class']});
   }
 })();
 </script>

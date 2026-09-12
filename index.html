@@ -681,10 +681,6 @@
 </div>
 
 <div class="mobile-drawer" id="mobileDrawer">
-  <div class="drawer-head">
-    <span class="drawer-head-title">Menu</span>
-    <button class="drawer-close" id="drawerClose">X</button>
-  </div>
   <ul class="drawer-list">
     <li><a class="drawer-row" href="#home">Home</a></li>
     <li><a class="drawer-row" href="#about">About Us</a></li>
@@ -4741,8 +4737,7 @@
   // ---- Mobile drawer ----
   const drawer = document.getElementById('mobileDrawer');
   const burgerBtn = document.getElementById('burgerBtn');
-  burgerBtn.addEventListener('click', () => drawer.classList.add('open'));
-  document.getElementById('drawerClose').addEventListener('click', () => drawer.classList.remove('open'));
+  burgerBtn.addEventListener('click', () => drawer.classList.toggle('open'));
   drawer.querySelectorAll('a.drawer-row').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
   document.addEventListener('click', function(e){
     if(drawer.classList.contains('open') && !drawer.contains(e.target) && !burgerBtn.contains(e.target)){
@@ -4754,6 +4749,11 @@
       drawer.classList.remove('open');
     }
   });
+  new MutationObserver(function(){
+    var isOpen = drawer.classList.contains('open');
+    burgerBtn.textContent = isOpen ? '\u2715' : '\u2630';
+    burgerBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  }).observe(drawer, {attributes:true, attributeFilter:['class']});
 
   const drawerProductsSub = document.getElementById('drawerProductsSub');
   categories.forEach(name => {
