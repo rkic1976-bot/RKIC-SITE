@@ -520,8 +520,9 @@
 
   /* ---------- CONTACT / FOOTER (light sage panel) ---------- */
   footer{ background:var(--steel); color:var(--ink); padding-bottom:96px; }
-  .contact-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; padding-top:84px; padding-bottom:48px; }
-  @media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:40px; } }
+  .contact-grid{ display:grid; grid-template-columns:0.85fr 1fr 0.85fr; gap:40px; padding-top:84px; padding-bottom:48px; }
+  @media (max-width:1080px){ .contact-grid{ grid-template-columns:1fr 1fr; } .contact-grid > div:first-child{ grid-column:1 / -1; } }
+  @media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:40px; } .contact-grid > div:first-child{ grid-column:auto; } }
   .contact-grid h2{ font-size:clamp(1.7rem,3.4vw,2.3rem); font-weight:600; max-width:14ch; }
   .contact-grid > div:first-child p{ color:var(--text-dim); margin-top:16px; max-width:42ch; line-height:1.65; }
   .cta-row{ margin-top:28px; display:flex; gap:14px; flex-wrap:wrap; }
@@ -534,6 +535,25 @@
   .map-embed{ margin-top:22px; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
   .map-embed iframe{ display:block; }
   .map-open-link{ display:block; padding:10px 14px; font-size:0.82rem; color:var(--ink); background:var(--paper); border-top:1px solid var(--line); text-decoration:none; }
+  .contact-form-col h3{ font-size:1.15rem; font-weight:600; margin-bottom:6px; }
+  .contact-form-col > p{ color:var(--text-dim); font-size:0.88rem; line-height:1.55; margin-bottom:20px; max-width:38ch; }
+  .cf-field{ margin-bottom:16px; }
+  .cf-field label{ display:block; font-family:'IBM Plex Mono',monospace; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--lemon-text); margin-bottom:6px; }
+  .cf-field .cf-req{ color:var(--flame); }
+  .cf-field input, .cf-field textarea{ width:100%; border:1px solid var(--line); border-radius:4px; padding:11px 12px; font-family:'Barlow',sans-serif; font-size:0.94rem; color:var(--ink); background:#fff; }
+  .cf-field input:focus, .cf-field textarea:focus{ outline:none; border-color:var(--sage-deep); }
+  .cf-field input[aria-invalid="true"], .cf-field textarea[aria-invalid="true"]{ border-color:#c0392b; }
+  .cf-field textarea{ min-height:92px; resize:vertical; }
+  .cf-field-err{ display:block; margin-top:5px; font-size:0.78rem; color:#c0392b; }
+  .cf-hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+  .cf-submit{ width:100%; border:none; cursor:pointer; background:var(--ink); color:var(--paper); padding:14px 24px; font-weight:600; font-size:0.92rem; border-radius:2px; font-family:'Barlow',sans-serif; }
+  .cf-submit:hover{ background:var(--sage-deep); }
+  .cf-submit:disabled{ opacity:0.6; cursor:not-allowed; }
+  .cf-note{ margin-top:12px; font-size:0.76rem; color:var(--text-dim); }
+  .cf-status{ margin-top:14px; padding:11px 13px; border-radius:4px; font-size:0.86rem; line-height:1.5; }
+  .cf-status:empty{ display:none; }
+  .cf-status[data-fs-success]{ background:rgba(53,120,66,0.1); color:#2e7d32; border:1px solid rgba(53,120,66,0.25); }
+  .cf-status[data-fs-error]{ background:rgba(193,57,43,0.08); color:#c0392b; border:1px solid rgba(193,57,43,0.25); }
   .map-open-link:hover{ color:var(--flame); }
   footer .contact-grid{ padding-bottom:76px; }
   .foot-bottom{
@@ -896,6 +916,42 @@
         <a class="btn-primary" href="mailto:rkic1976@gmail.com">Email the Technical Desk</a>
         <a class="btn-ghost" href="https://wa.me/919824136145">WhatsApp Us</a>
       </div>
+    </div>
+    <div class="contact-form-col">
+      <h3>Send an Enquiry</h3>
+      <p>Fill this in and our technical desk will get back to you directly.</p>
+      <form id="cfForm" action="https://formspree.io/f/mppznvnq" method="POST">
+        <div class="cf-field">
+          <label for="cfName">Name <span class="cf-req">*</span></label>
+          <input type="text" id="cfName" name="name" required autocomplete="name" data-fs-field>
+          <span class="cf-field-err" data-fs-error="name"></span>
+        </div>
+        <div class="cf-field">
+          <label for="cfPhone">Phone (with country code) <span class="cf-req">*</span></label>
+          <input type="tel" id="cfPhone" name="phone" required autocomplete="tel" placeholder="+91 98765 43210" pattern="^\+[1-9][0-9\s\-]{6,17}$" title="Please include the country code, e.g. +91 98765 43210" data-fs-field>
+          <span class="cf-field-err" data-fs-error="phone"></span>
+        </div>
+        <div class="cf-field">
+          <label for="cfEmail">Email <span class="cf-req">*</span></label>
+          <input type="email" id="cfEmail" name="email" required autocomplete="email" data-fs-field>
+          <span class="cf-field-err" data-fs-error="email"></span>
+        </div>
+        <div class="cf-field">
+          <label for="cfProduct">Product / Part No. (if known)</label>
+          <input type="text" id="cfProduct" name="product" autocomplete="off" data-fs-field>
+        </div>
+        <div class="cf-field">
+          <label for="cfMessage">Message <span class="cf-req">*</span></label>
+          <textarea id="cfMessage" name="message" required data-fs-field></textarea>
+          <span class="cf-field-err" data-fs-error="message"></span>
+        </div>
+        <input type="text" name="_gotcha" class="cf-hp" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="New Enquiry — RKIC Website Contact Form">
+        <button type="submit" class="cf-submit" data-fs-submit-btn>Send Enquiry</button>
+        <p class="cf-note">Protected by Formspree spam &amp; CAPTCHA protection.</p>
+        <div class="cf-status" data-fs-success></div>
+        <div class="cf-status" data-fs-error></div>
+      </form>
     </div>
     <div>
       <div class="info-block"><div class="k">Registered Office</div><div class="v">12, 1st Floor, Dhamanwala Service Complex, G.I.D.C., Pandesara, Surat, Gujarat, India</div></div>
@@ -4830,6 +4886,12 @@
     try { history.replaceState(null, '', location.pathname + location.hash); } catch(e) {}
   }
 </script>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#cfForm', formId: 'mppznvnq' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
