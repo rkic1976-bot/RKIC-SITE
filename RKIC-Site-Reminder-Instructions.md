@@ -168,7 +168,9 @@ Sabhi 128 standalone `products/{id}.html` pages mein: `.pg-img-zoom-btn` CSS (3 
 
 ## 10. Design system (reference)
 
-- Theme: forest green + flame-amber (`--ink:#1D3A2A`, `--flame:#C1621B`)
+- **Theme (PERMANENT, 12 Sep 2026 se lock) — slate-blue ink + gold/khaki accent**: `--ink:#33414E`, `--paper:#F7F5EE`, `--steel:#E8E6DD`, `--steel-2:#D5D2C4`, `--sage:#E4CE96`, `--sage-deep:#855E1C`, `--flame:#D64933`, `--flame-light:#ECD9A8` (product pages ke `:root` mein `--sage-pale`/`--lemon-text`/`--text-soft` nahi hote, sirf index.html mein).
+  - **History**: originally yehi (slate-blue + gold/khaki) theme tha. 11 Sep 2026 ko ek forest-green + flame-amber theme (`--ink:#1D3A2A`, `--flame:#C1621B`) par switch kiya gaya tha (header/logo-scale fix ke saath bundled). 12 Sep 2026 ko Rahul ji ne dono themes ka screenshot comparison dekhne ke baad explicitly slate-blue + gold/khaki wapas revert karne ko bola — poora site (`index.html` + saare 135 product pages) wapas is original palette par revert kiya gaya, byte-verify kiya.
+  - **Standing rule**: **yeh ab permanent hai — future mein koi bhi kaam (naye product pages, redesign, koi bhi fix) is palette ko change NAHI karega**, jab tak Rahul ji khud dobara explicitly naya color badlne ko na kahein. Agar kisi aur kaam ke doraan galti se in hex values mein farak aa jaaye, usse turant is section ke values se match karke wapas correct karna hai.
 - Fonts: Barlow Condensed (headings) + Barlow (body) + IBM Plex Mono (labels/codes)
 - Navigation: hash-based routing on `index.html`; mobile mein hamburger drawer with accordion Products/Brands
 
