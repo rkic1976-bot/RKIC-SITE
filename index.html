@@ -267,10 +267,10 @@
   /* floating whatsapp button */
   .wa-float{
     position:fixed; right:22px; bottom:22px; z-index:80;
-    width:56px; height:56px; border-radius:50%; background:#25D366;
-    display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(37,211,102,0.4);
+    width:56px; height:56px; border-radius:50%; background:#075E54;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(7,94,84,0.4);
   }
-  .wa-float:hover{ background:#1EBE5A; }
+  .wa-float:hover{ background:#054C43; }
   .wa-float svg{ width:28px; height:28px; }
 
   /* ---------- HERO (light sage block, no dark bg) ---------- */
@@ -302,6 +302,8 @@
   .btn-primary:hover{ background:var(--sage-deep); }
   .btn-ghost{ border:1px solid var(--sage-deep); color:var(--ink); padding:14px 24px; font-weight:500; font-size:0.92rem; border-radius:2px; }
   .btn-ghost:hover{ background:rgba(255,255,255,0.4); }
+  .btn-whatsapp{ background:#075E54 !important; color:var(--paper) !important; border-color:#075E54 !important; }
+  .btn-whatsapp:hover{ background:#054C43 !important; }
 
   .schematic{ position:relative; }
   .schematic svg{ width:100%; height:auto; }
@@ -875,7 +877,7 @@
           <div><span class="k">Protection</span>IP54</div>
         </div>
         <div class="spot-ctas">
-          <a class="btn-primary" href="https://wa.me/919824136145?text=Enquiry%20for%20Brahma%20Solenoid%20Valve%20EG12*L*GMO%20(Code%2013922051)" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+          <a class="btn-primary btn-whatsapp" href="https://wa.me/919824136145?text=Enquiry%20for%20Brahma%20Solenoid%20Valve%20EG12*L*GMO%20(Code%2013922051)" target="_blank" rel="noopener">Enquire on WhatsApp</a>
           <a class="btn-ghost" href="#catalog">View All Solenoid Valves</a>
         </div>
       </div>
@@ -909,7 +911,7 @@
       <p>Send us your requirement — part numbers, drawings, or just a description of the application — and our technical desk will get back with the right components and lead time.</p>
       <div class="cta-row">
         <a class="btn-primary" href="mailto:rkic1976@gmail.com">Email the Technical Desk</a>
-        <a class="btn-ghost" href="https://wa.me/919824136145">WhatsApp Us</a>
+        <a class="btn-primary btn-whatsapp" href="https://wa.me/919824136145">WhatsApp Us</a>
       </div>
     </div>
     <div class="contact-form-col">
@@ -4301,7 +4303,7 @@
         <p class="spot-desc">${p.description}</p>
         <div class="spot-specs">${specsHTML}</div>
         <div class="spot-ctas">
-          <a class="btn-primary" href="${waLink('Enquiry for ' + p.name + ' (Code ' + p.code + ')')}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+          <a class="btn-primary btn-whatsapp" href="${waLink('Enquiry for ' + p.name + ' (Code ' + p.code + ')')}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
           <a class="btn-secondary" href="products/${p.id}.html">View Full Page</a>
         </div>
       </div>

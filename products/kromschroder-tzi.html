@@ -82,9 +82,10 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .search-close{ background:none; border:none; font-size:1.1rem; cursor:pointer; color:var(--text-dim); flex:0 0 auto; }
 .wa-float{
   position:fixed; right:20px; bottom:20px; z-index:80;
-  width:54px; height:54px; border-radius:50%; background:#25D366;
-  display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(37,211,102,0.4);
+  width:54px; height:54px; border-radius:50%; background:#075E54;
+  display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(7,94,84,0.4);
 }
+.wa-float:hover{ background:#054C43; }
 .wa-float svg{ width:26px; height:26px; }
 .burger{ display:none; color:var(--ink); font-size:1.4rem; cursor:pointer; background:none; border:none; padding:4px; }
 @media (max-width:860px){
@@ -145,7 +146,8 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .pg-desc{ font-size:0.94rem; line-height:1.7; color:var(--ink); margin:20px 0 28px; }
 .pg-cta{ display:flex; gap:12px; flex-wrap:wrap; }
 .pg-btn{ display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:3px; font-size:0.88rem; font-weight:600; cursor:pointer; border:1px solid var(--sage-deep); }
-.pg-btn-primary{ background:#25D366; color:#fff; border-color:#25D366; }
+.pg-btn-primary{ background:#075E54; color:#fff; border-color:#075E54; }
+.pg-btn-primary:hover{ background:#054C43; }
 .pg-btn-secondary{ background:transparent; color:var(--sage-deep); }
 footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .contact-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; padding-top:56px; padding-bottom:40px; }
@@ -155,6 +157,8 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .cta-row{ margin-top:24px; display:flex; gap:12px; flex-wrap:wrap; }
 .btn-primary{ background:var(--ink); color:var(--paper); padding:13px 22px; font-weight:600; font-size:0.88rem; border-radius:2px; text-decoration:none; display:inline-block; }
 .btn-ghost{ border:1px solid var(--sage-deep); color:var(--ink); padding:13px 22px; font-weight:500; font-size:0.88rem; border-radius:2px; text-decoration:none; display:inline-block; }
+.btn-whatsapp{ background:#075E54 !important; color:#fff !important; border-color:#075E54 !important; }
+.btn-whatsapp:hover{ background:#054C43 !important; }
 .info-block{ border-top:1px solid var(--line); padding:16px 0; }
 .info-block:last-child{ border-bottom:1px solid var(--line); }
 .info-block .k{ font-family:'IBM Plex Mono',monospace; font-size:0.64rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--flame); }
@@ -544,7 +548,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
       <p>Send us your requirement — part numbers, drawings, or just a description of the application — and our technical desk will get back with the right components and lead time.</p>
       <div class="cta-row">
         <a class="btn-primary" href="mailto:rkic1976@gmail.com">Email the Technical Desk</a>
-        <a class="btn-ghost" href="https://wa.me/919824136145">WhatsApp Us</a>
+        <a class="btn-primary btn-whatsapp" href="https://wa.me/919824136145">WhatsApp Us</a>
       </div>
     </div>
     <div>

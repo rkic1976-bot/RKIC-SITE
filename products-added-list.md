@@ -1740,3 +1740,17 @@ Rahul ji ne screenshot bheja (drawer open, MENU/X header, Home/About Us/Products
 **Fix — index.html aur 136 product pages**: Drawer/burger ke existing click-listeners ke baad ek naya `document` level click-listener add kiya — agar drawer open hai aur click drawer ke andar ya burger button par nahi hua, to drawer automatically band ho jata hai. Drawer ke andar click (jaise category link) is listener se untouched rehta hai.
 
 **Verify**: Playwright se index.html aur `kromschroder-dh8tn40.html` dono par check kiya — drawer open karke header area par click karne se drawer band ho gaya, drawer-row (menu item) par click karne se drawer open hi raha (normal navigation behavior untouched). Saare 136 product-page JS blocks + index.html ka script `node --check` se syntax-valid confirm kiya. Sabhi 137 files (`index.html` + 136 product pages) device par commit kiye — index.html single call mein, product pages 3 batches (46+46+44) mein, zero rejections, sample byte-verify (`kromschroder-dh8tn40.html`, `vanaz-v7744.html`, `index.html`) se 100% match confirm kiya.
+
+## WhatsApp button color — brand teal #075E54 (12 Sep 2026)
+
+Rahul ji ne ek reference image bheji (WhatsApp ka apna "Dark Teal" brand shade #075E54, header/formal usage ke liye) aur kaha: "Ye colour apply kare whatsapp ke liye har jagah par" — matlab site ke saare WhatsApp CTA/buttons is color mein hone chahiye.
+
+**Kya badla — index.html aur 136 product pages, sabhi WhatsApp-specific buttons**:
+- Floating "Chat on WhatsApp" round button (`.wa-float`) — pehle WhatsApp ka default green `#25D366` tha, ab `#075E54` (dark teal)
+- "Enquire on WhatsApp" button (product spotlight cards aur har product page par) — index.html par pehle site ka generic dark-ink color tha, product pages par WhatsApp green tha; dono ab `#075E54`
+- "WhatsApp Us" button (footer contact section, index.html aur har product page) — pehle outline/ghost style tha, ab solid teal fill, "Enquire on WhatsApp" jaisa hi consistent look
+- Naya shared CSS class `.btn-whatsapp` banaya (dono files mein) taaki future mein bhi koi WhatsApp button add ho to yehi class use ho — non-WhatsApp buttons (jaise "Browse the Catalog", "Email the Technical Desk", "Contact Us") ko touch nahi kiya, wo apne original color mein hi hain
+
+**Chhoda gaya (jaan-bujh kar)**: Footer ke chhote social-icon row mein "wa" icon (f/x/in ke saath) apne neutral bordered-circle style mein hi rakha — wo ek shared "social icon" design hai (sirf outline, koi bhi platform ka apna background color nahi), WhatsApp button jaisa CTA nahi. Agar Rahul ji chahein to isko bhi teal kiya ja sakta hai.
+
+**Verify**: Playwright se dono files (index.html aur `kromschroder-dh8tn40.html`) par computed background-color check kiya — floating button, "Enquire on WhatsApp", "WhatsApp Us" teeno jagah `rgb(7, 94, 84)` (#075E54) confirm hua, screenshot se visually bhi match kiya reference image ke saath. Saare 136 product-page JS blocks + index.html ka script `node --check` se syntax-valid confirm kiya. Sabhi 137 files (`index.html` + 136 product pages) device par commit kiye — index.html single call, product pages 3 batches (46+46+44) mein, zero rejections, sample byte-verify se 100% match confirm kiya.
