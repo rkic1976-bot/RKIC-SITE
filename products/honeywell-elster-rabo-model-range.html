@@ -440,6 +440,11 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         drawer.classList.remove('open');
       }
     });
+    drawer.addEventListener('click', function(e){
+      if(drawer.classList.contains('open') && !e.target.closest('a, button, .drawer-row, .drawer-cat-row')){
+        drawer.classList.remove('open');
+      }
+    });
   }
 })();
 </script>
