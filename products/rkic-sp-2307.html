@@ -73,7 +73,7 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .nav-drop-panel-brands{ display:grid; grid-template-columns:1fr 1fr; gap:4px; min-width:280px; }
 .nav-drop-brand-logo{ height:18px; width:auto; max-width:100px; object-fit:contain; }
 /* Search overlay panel */
-.search-panel{ display:none; position:fixed; inset:0 0 auto 0; z-index:90; background:rgba(29,58,42,0.55); padding-top:0; }
+.search-panel{ display:none; position:fixed; top:0; left:0; right:0; bottom:auto; z-index:90; background:rgba(29,58,42,0.55); padding-top:0; }
 .search-panel.open{ display:block; }
 .search-panel-inner{ background:var(--paper); padding:20px; margin-top:0; }
 .search-row{ display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line); border-radius:4px; padding:12px 14px; max-width:700px; margin:0 auto; }
@@ -435,12 +435,18 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   const btn = document.getElementById('pgSearchBtn');
   const panel = document.getElementById('pgSearchPanel');
   const closeBtn = document.getElementById('pgSearchClose');
+  function pgPositionSearchPanel(){
+    var h = document.querySelector('header');
+    if(h && panel) panel.style.top = h.getBoundingClientRect().bottom + 'px';
+  }
   if(btn){
     btn.addEventListener('click', () => {
+      pgPositionSearchPanel();
       panel.classList.add('open');
       setTimeout(() => panel.querySelector('input').focus(), 100);
     });
     closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+    window.addEventListener('resize', pgPositionSearchPanel);
   }
   // Live search results (added) — uses RKIC_PRODUCTS from related-products-data.js
   const pgSearchInput = panel ? panel.querySelector('input[name="q"]') : null;

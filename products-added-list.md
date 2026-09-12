@@ -1669,3 +1669,66 @@ Rahul ji ne ek stock/catalog-style photo bheji ek complete Madas modular gas tra
 **Category**: GAS TRAIN SYSTEMS (existing top-level category, ab tak sirf `dungs-gastrain-dn65` tha — ab 2 products).
 
 Standalone page `products/madas-gastrain-dn50.html` GAS TRAIN SYSTEMS ke closest (aur category-exact) template (`dungs-gastrain-dn65.html`) se banayi, live-search block already included. `index.html`, `sitemap.xml`, `brand-data.js` (Madas count is entry mein bhi shamil, total 12→14), aur `related-products-data.js` sab update kiye.
+
+
+## Vanaz Two-Stage Pressure Reducing System — new product added (11 Sep 2026)
+
+Rahul ji ne ek official-style catalog photo bheji (colorful red/blue/yellow multi-valve gas train assembly, koi nameplate nahi) title ke saath: "Vanaz Gas Train Two-Stage Pressure Reducing System for LPG PNG N2 CO2".
+
+**Duplicate check**: Perceptual hash se sabhi 134 existing photos ke against compare kiya — closest match distance 20/256 tha, clearly ek naya distinct product hai.
+
+**Spec research**: Yeh title exactly Vanaz ki apni official website (vanaz.com/products/pressure-reducing-systems-gas-trains.html) par listed ek real product hai — "Vanaz Two-Stage Pressure Reducing System for LPG / PNG / N2 / CO2". Wahan se confirmed specs: inlet up to 49 kg/cm², outlet 0.03–26 kg/cm², flow up to 6,000 SCMH, connections 1"–4" NB flanged (ANSI 150/300). Components (ball valves, filter, slam shut-off valve, regulator, relief valves, gauges, optional heater) bhi wahi official page se liye. Kyunki yeh Vanaz ki khud ki product-line hi ek size-range (1"–4") cover karti hai — na ki ek fixed DN — is liye ismein bhi range hi rakhi (jaise site par pehle se `madas-rg-2mcs-dn25` jaisi range-covering entries ka precedent hai), ek specific DN guess nahi kiya.
+
+**Category**: GAS TRAIN SYSTEMS (ab 3 products: `dungs-gastrain-dn65`, `madas-gastrain-dn50`, `vanaz-twostage-gastrain`).
+
+Standalone page `products/vanaz-twostage-gastrain.html` GAS TRAIN SYSTEMS ke closest template (`dungs-gastrain-dn65.html`) se banayi, live-search block included. `index.html`, `sitemap.xml`, `brand-data.js` (Vanaz 20→21), aur `related-products-data.js` sab update kiye.
+
+## Honeywell Kromschröder Ignition & Sensing Electrode Plug (04115302) — new product added (12 Sep 2026)
+
+Rahul ji ne ek product photo bheji (black PBT plastic plug, knurled grip, brass pin socket, white background) caption ke saath: "04115302 | KROMSCHRODER IGNITION AND SENSING ELECTRODE, 4MM CONNECTION, PBT (product IGNITION SPARES)".
+
+**Duplicate check**: Perceptual hash se sabhi 134 existing photos ke against compare kiya — closest match `maxon-m333-39782` (distance 92/256) tha, jo duplicate-range (0–3/256) se bahut door hai — confirmed ek naya distinct product hai.
+
+**IMPORTANT — flag for Rahul**: Order No. 04115302 Kromschröder ki apni Type-C electrode-plug range ka hai, na ki ek complete electrode rod — isliye is per compulsory "Kanthal A1 electrode wire" spec row (jo actual electrode rods ke liye hai) apply nahi hoti, sirf connector plug hai. Kromschröder ke official docuthek PDF (FE/FZE ignition & sensing electrode datasheet) se verify kiya. Ek pehle WebFetch ne dimensions (54×21×14mm) bataye the jo ek doosre independent source se match nahi hue — ek teesra targeted WebFetch (verbatim table row maangi) se confirm hua ki 04115302 ke against koi dimensions ya country-of-origin actually documented nahi hain (sirf "Type C | 4mm connection" row hai). Is liye dimensions/country-of-origin page par nahi daale — guess karne ke bajaye omit kiya, jaisa site ka standing rule hai.
+
+**Category**: IGNITION SPARES (existing category — `rkic-cable-lug-4mm`, `rkic-cable-lug-6mm`, `kromschroder-connex-l4x40` ke saath ab 4th entry).
+
+Standalone page `products/kromschroder-electrode-plug-04115302.html` IGNITION SPARES ke closest (same-brand + same-category) template `kromschroder-connex-l4x40.html` se assert-verified string-replace se banayi (live-search block already included via template). `index.html`, `sitemap.xml`, `brand-data.js` (Honeywell Kromschröder 13→14), aur `related-products-data.js` sab update kiye. Photo clean white-background thi, koi bg-cleanup nahi lagi — seedha 1100×1100 large (q91) + 140×140 thumb (q78) resize kiya. Playwright se desktop + mobile dono breakpoints par screenshot-verify kiya (koi JS console error nahi, related products aur associate-brands sections sahi render hue).
+
+## "You May Also Need" related-product thumbnails — site-wide blur fix (12 Sep 2026)
+
+Rahul ji ne screenshot bheja (Push Button Valve page, mobile view) jisme "You May Also Need" section ke related-product thumbnails blur dikh rahe the.
+
+**Root cause**: `images/thumbs/<id>-thumb.jpg` files sirf 140×140px thi, lekin `.related-thumb img{width:100%;height:100%}` CSS unhe grid-cell ke hisaab se stretch karta hai — mobile par (jab related-grid single-column ban jaata hai) cell ~330-370px wide ho jaata hai, yaani ~2.5x upscale, isliye blur. Yeh koi single page ka bug nahi tha — saare 135 products isi shared thumbnail-convention aur CSS ko use karte hain, isliye har product page par equally affect ho raha tha.
+
+**Fix**: Rahul ji se approach confirm kiya (high-res regenerate vs CSS-cap vs skip) — unhone high-res regenerate karna choose kiya. Har product ke apne `-large.jpg` (1100×1100) source se naya thumbnail 400×400px @ quality 82 (LANCZOS resize) banaya — saare 135 products, id/image pairing index.html ke products array se hi seedha nikali taaki har product ka sahi source use ho. 3 batches (45+45+45) mein device par commit kiya, zero rejections. Verify kiya: pixel-level diff (5-file sample, zero difference), GitHub par raw file check (naya 400px hi live hai), aur live site par WhatsApp-embedded browser se related products section sahi render hote dekha.
+
+**Convention update (permanent)**: Naye products ke liye ab thumbnail generation 400×400/q82 hai, purana 140×140/q78 nahi. Total thumb footprint ~1.2MB se ~2.15MB hua — site ke existing 14MB+ base64 index.html ke saamne negligible.
+
+Files updated: sirf `images/thumbs/*.jpg` (135 files replace) — koi HTML/JS/CSS file nahi badli, isliye `sitemap.xml` ke lastmod dates jaan-bujh kar nahi bumped (site convention: shared-asset-only changes lastmod mein reflect nahi hote, sirf per-product content edits hote hain — jaise pehle ka theme-revert aur phone-format fix bhi lastmod mein nahi aaya tha).
+
+## Mobile hamburger menu — drawer position aur duplicate-branding fix (12 Sep 2026)
+
+Rahul ji ne 3 screenshots bheje (homepage hero, opened hamburger menu poori screen cover karte hue, header ka cropped zoom) saath mein: "Drop down menu breadcrumbs ke niche se khulna chaiye". Turant baad ek aur cropped screenshot bheja jisme drawer ke andar header wali "R.K. Instruments & Controls" branding bar doosri baar dikh rahi thi (apne alag "X" close button ke saath) — "Ye do bar company details", aur confirm kiya "Ek bar hona chahiye".
+
+**Root cause 1 (position)**: `.mobile-drawer{position:fixed; inset:0;}` poori viewport cover kar raha tha (y=0 se), isliye topbar+header ke upar overlay ho raha tha, unke niche se nahi khul raha tha.
+
+**Root cause 2 (duplicate branding)**: Drawer ke apne `drawer-head` block mein khud ka ek chhota logo+company-name+tagline tha — jo real site header mein already dikhta hai — isliye drawer khulte hi company details do baar dikhti thi.
+
+**Fix — index.html**: `.mobile-drawer` ko `top:115px` (fixed value, kyunki index.html ka header height CSS mein fixed hai — topbar 40px + header 75px = 115px, verified via Playwright) diya, taaki drawer header ke bilkul niche se khule. Drawer-head se poora brand-logo/name/tagline block hata kar simple "MENU" label rakha, height 74px se 52px kar di.
+
+**Fix — 136 product pages** (jaise `kromschroder-dh8tn40.html`): Yahan header height fixed nahi thi (content/padding-based, page-to-page thoda vary ho sakta hai) — isliye hardcoded pixel value safe nahi thi. Iski jagah JS se dynamic top-offset lagaya: hamburger button click hone par `header.getBoundingClientRect().bottom` se drawer ka top set hota hai (window resize par bhi re-calculate hota hai) — yeh har page ke apne actual header height ke saath automatically sahi position deta hai, chahe wo kitna bhi ho. Drawer-head se bhi wahi duplicate branding block hataya, same "MENU" label pattern.
+
+**Verify**: Playwright se dono index.html aur representative product page (`kromschroder-dh8tn40.html`, jo original flagged page thi) par mobile drawer open karke screenshot + bounding-box check kiya — dono jagah drawer exactly header ke niche se khul raha hai, branding sirf ek baar (header mein) dikh rahi hai, koi duplicate nahi. Saare 136 product-page JS blocks `node --check` se syntax-valid confirm kiye. Sabhi 137 files (`index.html` + 136 product pages) device par 3 batches mein commit kiye, zero rejections, sample byte-verify se 100% match confirm kiya.
+
+## Mobile search-bar overlapping-header bug — fix (12 Sep 2026)
+
+Rahul ji ne mobile par search icon try kiya aur bola "Overlapping issue search bar kam nahi kar raha hai".
+
+**Root cause**: Yeh bilkul wahi bug-pattern tha jo hamburger drawer mein tha (upar wali entry dekhen), lekin search box mein — 136 product pages ka `.search-panel{position:fixed; inset:0 0 auto 0; z-index:90;}` bhi poori viewport ke top (y=0) se anchor tha, header ke bilkul upar overlay ho raha tha (header ka apna z-index/position set nahi hai), isliye search box header ke saath overlap karke tuta-tuta dikhta tha aur input tak sahi se pahunchna mushkil ho raha tha.
+
+**Fix**: Drawer wale fix jaisa hi dynamic top-offset pattern lagaya — search icon click hone par `header.getBoundingClientRect().bottom` se panel ka top set hota hai (aur window resize par bhi re-calculate), taaki search box hamesha header ke bilkul niche khule, chahe us page ka header height kuch bhi ho. index.html ko yeh fix chahiye hi nahi tha (wahan pehle se sahi `position:absolute;top:100%` pattern hai).
+
+**Verify**: Playwright se `kromschroder-dh8tn40.html` par search icon click karke check kiya — search box ab header ke exact niche (121.8px) khulta hai, koi overlap nahi. Saare 136 product-page JS blocks `node --check` se syntax-valid confirm kiye. Saare 136 files device par 3 batches mein commit kiye, zero rejections, sample byte-verify se 100% match confirm kiya.
+
+**NOTE**: Is entry se pehle wale 4 entries (Vanaz Two-Stage, Kromschröder Electrode Plug, blur fix, drawer fix) ek baar pehle bhi is file mein likhe gaye the, lekin device par file check karne par pata chala woh missing the (shayad ek concurrent auto-commit/sync clash se) — isliye sabko yahan dobara likh diya hai taaki changelog complete rahe. Actual website files (index.html, product pages, images) is se affected nahi hue — sirf yeh tracking/changelog doc.
