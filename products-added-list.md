@@ -1732,3 +1732,11 @@ Rahul ji ne mobile par search icon try kiya aur bola "Overlapping issue search b
 **Verify**: Playwright se `kromschroder-dh8tn40.html` par search icon click karke check kiya — search box ab header ke exact niche (121.8px) khulta hai, koi overlap nahi. Saare 136 product-page JS blocks `node --check` se syntax-valid confirm kiye. Saare 136 files device par 3 batches mein commit kiye, zero rejections, sample byte-verify se 100% match confirm kiya.
 
 **NOTE**: Is entry se pehle wale 4 entries (Vanaz Two-Stage, Kromschröder Electrode Plug, blur fix, drawer fix) ek baar pehle bhi is file mein likhe gaye the, lekin device par file check karne par pata chala woh missing the (shayad ek concurrent auto-commit/sync clash se) — isliye sabko yahan dobara likh diya hai taaki changelog complete rahe. Actual website files (index.html, product pages, images) is se affected nahi hue — sirf yeh tracking/changelog doc.
+
+## Mobile drawer — click-outside-to-close fix (12 Sep 2026)
+
+Rahul ji ne screenshot bheja (drawer open, MENU/X header, Home/About Us/Products categories) saath mein: "Menu mein X wo to sahi par breadcrumb par bhi touch karne se drop-down band hona chahiye" — matlab X button to sahi kaam kar raha hai, lekin drawer ke bahar (header area) touch karne se bhi drawer band ho jana chahiye.
+
+**Fix — index.html aur 136 product pages**: Drawer/burger ke existing click-listeners ke baad ek naya `document` level click-listener add kiya — agar drawer open hai aur click drawer ke andar ya burger button par nahi hua, to drawer automatically band ho jata hai. Drawer ke andar click (jaise category link) is listener se untouched rehta hai.
+
+**Verify**: Playwright se index.html aur `kromschroder-dh8tn40.html` dono par check kiya — drawer open karke header area par click karne se drawer band ho gaya, drawer-row (menu item) par click karne se drawer open hi raha (normal navigation behavior untouched). Saare 136 product-page JS blocks + index.html ka script `node --check` se syntax-valid confirm kiya. Sabhi 137 files (`index.html` + 136 product pages) device par commit kiye — index.html single call mein, product pages 3 batches (46+46+44) mein, zero rejections, sample byte-verify (`kromschroder-dh8tn40.html`, `vanaz-v7744.html`, `index.html`) se 100% match confirm kiya.

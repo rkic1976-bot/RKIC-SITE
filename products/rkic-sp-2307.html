@@ -500,6 +500,11 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
     burger.addEventListener('click', () => { pgPositionDrawer(); drawer.classList.add('open'); });
     drawerClose.addEventListener('click', () => drawer.classList.remove('open'));
     window.addEventListener('resize', pgPositionDrawer);
+    document.addEventListener('click', function(e){
+      if(drawer.classList.contains('open') && !drawer.contains(e.target) && !burger.contains(e.target)){
+        drawer.classList.remove('open');
+      }
+    });
   }
 })();
 </script>

@@ -4738,9 +4738,15 @@
 
   // ---- Mobile drawer ----
   const drawer = document.getElementById('mobileDrawer');
-  document.getElementById('burgerBtn').addEventListener('click', () => drawer.classList.add('open'));
+  const burgerBtn = document.getElementById('burgerBtn');
+  burgerBtn.addEventListener('click', () => drawer.classList.add('open'));
   document.getElementById('drawerClose').addEventListener('click', () => drawer.classList.remove('open'));
   drawer.querySelectorAll('a.drawer-row').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
+  document.addEventListener('click', function(e){
+    if(drawer.classList.contains('open') && !drawer.contains(e.target) && !burgerBtn.contains(e.target)){
+      drawer.classList.remove('open');
+    }
+  });
 
   const drawerProductsSub = document.getElementById('drawerProductsSub');
   categories.forEach(name => {
