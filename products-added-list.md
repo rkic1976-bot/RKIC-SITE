@@ -1669,28 +1669,3 @@ Rahul ji ne ek stock/catalog-style photo bheji ek complete Madas modular gas tra
 **Category**: GAS TRAIN SYSTEMS (existing top-level category, ab tak sirf `dungs-gastrain-dn65` tha — ab 2 products).
 
 Standalone page `products/madas-gastrain-dn50.html` GAS TRAIN SYSTEMS ke closest (aur category-exact) template (`dungs-gastrain-dn65.html`) se banayi, live-search block already included. `index.html`, `sitemap.xml`, `brand-data.js` (Madas count is entry mein bhi shamil, total 12→14), aur `related-products-data.js` sab update kiye.
-
-
-## Vanaz Two-Stage Pressure Reducing System — new product added (11 Sep 2026)
-
-Rahul ji ne ek official-style catalog photo bheji (colorful red/blue/yellow multi-valve gas train assembly, koi nameplate nahi) title ke saath: "Vanaz Gas Train Two-Stage Pressure Reducing System for LPG PNG N2 CO2".
-
-**Duplicate check**: Perceptual hash se sabhi 134 existing photos ke against compare kiya — closest match distance 20/256 tha, clearly ek naya distinct product hai.
-
-**Spec research**: Yeh title exactly Vanaz ki apni official website (vanaz.com/products/pressure-reducing-systems-gas-trains.html) par listed ek real product hai — "Vanaz Two-Stage Pressure Reducing System for LPG / PNG / N2 / CO2". Wahan se confirmed specs: inlet up to 49 kg/cm², outlet 0.03–26 kg/cm², flow up to 6,000 SCMH, connections 1"–4" NB flanged (ANSI 150/300). Components (ball valves, filter, slam shut-off valve, regulator, relief valves, gauges, optional heater) bhi wahi official page se liye. Kyunki yeh Vanaz ki khud ki product-line hi ek size-range (1"–4") cover karti hai — na ki ek fixed DN — is liye ismein bhi range hi rakhi (jaise site par pehle se `madas-rg-2mcs-dn25` jaisi range-covering entries ka precedent hai), ek specific DN guess nahi kiya.
-
-**Category**: GAS TRAIN SYSTEMS (ab 3 products: `dungs-gastrain-dn65`, `madas-gastrain-dn50`, `vanaz-twostage-gastrain`).
-
-Standalone page `products/vanaz-twostage-gastrain.html` GAS TRAIN SYSTEMS ke closest template (`dungs-gastrain-dn65.html`) se banayi, live-search block included. `index.html`, `sitemap.xml`, `brand-data.js` (Vanaz 20→21), aur `related-products-data.js` sab update kiye.
-
-## Honeywell Kromschröder Ignition & Sensing Electrode Plug (04115302) — new product added (12 Sep 2026)
-
-Rahul ji ne ek product photo bheji (black PBT plastic plug, knurled grip, brass pin socket, white background) caption ke saath: "04115302 | KROMSCHRODER IGNITION AND SENSING ELECTRODE, 4MM CONNECTION, PBT (product IGNITION SPARES)".
-
-**Duplicate check**: Perceptual hash se sabhi 134 existing photos ke against compare kiya — closest match `maxon-m333-39782` (distance 92/256) tha, jo duplicate-range (0–3/256) se bahut door hai — confirmed ek naya distinct product hai.
-
-**IMPORTANT — flag for Rahul**: Order No. 04115302 Kromschröder ki apni Type-C electrode-plug range ka hai, na ki ek complete electrode rod — isliye is per compulsory "Kanthal A1 electrode wire" spec row (jo actual electrode rods ke liye hai) apply nahi hoti, sirf connector plug hai. Kromschröder ke official docuthek PDF (FE/FZE ignition & sensing electrode datasheet) se verify kiya. Ek pehle WebFetch ne dimensions (54×21×14mm) bataye the jo ek doosre independent source se match nahi hue — ek teesra targeted WebFetch (verbatim table row maangi) se confirm hua ki 04115302 ke against koi dimensions ya country-of-origin actually documented nahi hain (sirf "Type C | 4mm connection" row hai). Is liye dimensions/country-of-origin page par nahi daale — guess karne ke bajaye omit kiya, jaisa site ka standing rule hai.
-
-**Category**: IGNITION SPARES (existing category — `rkic-cable-lug-4mm`, `rkic-cable-lug-6mm`, `kromschroder-connex-l4x40` ke saath ab 4th entry).
-
-Standalone page `products/kromschroder-electrode-plug-04115302.html` IGNITION SPARES ke closest (same-brand + same-category) template `kromschroder-connex-l4x40.html` se assert-verified string-replace se banayi (live-search block already included via template). `index.html`, `sitemap.xml`, `brand-data.js` (Honeywell Kromschröder 13→14), aur `related-products-data.js` sab update kiye. Photo clean white-background thi, koi bg-cleanup nahi lagi — seedha 1100×1100 large (q91) + 140×140 thumb (q78) resize kiya. Playwright se desktop + mobile dono breakpoints par screenshot-verify kiya (koi JS console error nahi, related products aur associate-brands sections sahi render hue).
