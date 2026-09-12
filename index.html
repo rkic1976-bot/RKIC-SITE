@@ -544,16 +544,14 @@
   .cf-field input:focus, .cf-field textarea:focus{ outline:none; border-color:var(--sage-deep); }
   .cf-field input[aria-invalid="true"], .cf-field textarea[aria-invalid="true"]{ border-color:#c0392b; }
   .cf-field textarea{ min-height:92px; resize:vertical; }
-  .cf-field-err{ display:block; margin-top:5px; font-size:0.78rem; color:#c0392b; }
   .cf-hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
   .cf-submit{ width:100%; border:none; cursor:pointer; background:var(--ink); color:var(--paper); padding:14px 24px; font-weight:600; font-size:0.92rem; border-radius:2px; font-family:'Barlow',sans-serif; }
   .cf-submit:hover{ background:var(--sage-deep); }
   .cf-submit:disabled{ opacity:0.6; cursor:not-allowed; }
   .cf-note{ margin-top:12px; font-size:0.76rem; color:var(--text-dim); }
-  .cf-status{ margin-top:14px; padding:11px 13px; border-radius:4px; font-size:0.86rem; line-height:1.5; }
-  .cf-status:empty{ display:none; }
-  .cf-status[data-fs-success]{ background:rgba(53,120,66,0.1); color:#2e7d32; border:1px solid rgba(53,120,66,0.25); }
-  .cf-status[data-fs-error]{ background:rgba(193,57,43,0.08); color:#c0392b; border:1px solid rgba(193,57,43,0.25); }
+  .cf-status{ margin-top:14px; padding:11px 13px; border-radius:4px; font-size:0.86rem; line-height:1.5; display:none; }
+  .cf-status.show{ display:block; }
+  .cf-status.ok{ background:rgba(53,120,66,0.1); color:#2e7d32; border:1px solid rgba(53,120,66,0.25); }
   .map-open-link:hover{ color:var(--flame); }
   footer .contact-grid{ padding-bottom:76px; }
   .foot-bottom{
@@ -923,34 +921,30 @@
       <form id="cfForm" action="https://formspree.io/f/mppznvnq" method="POST">
         <div class="cf-field">
           <label for="cfName">Name <span class="cf-req">*</span></label>
-          <input type="text" id="cfName" name="name" required autocomplete="name" data-fs-field>
-          <span class="cf-field-err" data-fs-error="name"></span>
+          <input type="text" id="cfName" name="name" required autocomplete="name">
         </div>
         <div class="cf-field">
           <label for="cfPhone">Phone (with country code) <span class="cf-req">*</span></label>
-          <input type="tel" id="cfPhone" name="phone" required autocomplete="tel" placeholder="+91 98765 43210" pattern="^\+[1-9][0-9\s\-]{6,17}$" title="Please include the country code, e.g. +91 98765 43210" data-fs-field>
-          <span class="cf-field-err" data-fs-error="phone"></span>
+          <input type="tel" id="cfPhone" name="phone" required autocomplete="tel" placeholder="+91 98765 43210" pattern="^\+[1-9][0-9\s\-]{6,17}$" title="Please include the country code, e.g. +91 98765 43210">
         </div>
         <div class="cf-field">
           <label for="cfEmail">Email <span class="cf-req">*</span></label>
-          <input type="email" id="cfEmail" name="email" required autocomplete="email" data-fs-field>
-          <span class="cf-field-err" data-fs-error="email"></span>
+          <input type="email" id="cfEmail" name="email" required autocomplete="email">
         </div>
         <div class="cf-field">
           <label for="cfProduct">Product / Part No. (if known)</label>
-          <input type="text" id="cfProduct" name="product" autocomplete="off" data-fs-field>
+          <input type="text" id="cfProduct" name="product" autocomplete="off">
         </div>
         <div class="cf-field">
           <label for="cfMessage">Message <span class="cf-req">*</span></label>
-          <textarea id="cfMessage" name="message" required data-fs-field></textarea>
-          <span class="cf-field-err" data-fs-error="message"></span>
+          <textarea id="cfMessage" name="message" required></textarea>
         </div>
         <input type="text" name="_gotcha" class="cf-hp" tabindex="-1" autocomplete="off">
         <input type="hidden" name="_subject" value="New Enquiry — RKIC Website Contact Form">
-        <button type="submit" class="cf-submit" data-fs-submit-btn>Send Enquiry</button>
-        <p class="cf-note">Protected by Formspree spam &amp; CAPTCHA protection.</p>
-        <div class="cf-status" data-fs-success></div>
-        <div class="cf-status" data-fs-error></div>
+        <input type="hidden" name="_next" value="https://rkic1976-bot.github.io/RKIC-SITE/?sent=1#contact">
+        <button type="submit" class="cf-submit">Send Enquiry</button>
+        <p class="cf-note">Protected by Formspree spam &amp; CAPTCHA protection. You may see a quick verification step before your enquiry is sent.</p>
+        <div class="cf-status" id="cfStatus"></div>
       </form>
     </div>
     <div>
@@ -4888,10 +4882,23 @@
 </script>
 
 <script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#cfForm', formId: 'mppznvnq' });
+(function(){
+  var params = new URLSearchParams(location.search);
+  if (params.get('sent') !== '1') return;
+  var status = document.getElementById('cfStatus');
+  if (status) {
+    status.textContent = 'Thank you \u2014 your enquiry has been sent. Our technical desk will get back to you shortly.';
+    status.className = 'cf-status show ok';
+  }
+  try {
+    params.delete('sent');
+    var qs = params.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + '#contact');
+  } catch(e) {}
+  var form = document.getElementById('cfForm');
+  if (form && form.scrollIntoView) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+})();
 </script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
