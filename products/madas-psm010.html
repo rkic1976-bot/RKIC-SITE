@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="The Madas PSM010 is an adjustable gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 2 to 10 mbar and a maximum working pressure of 500 mbar on gas service. It is rated 6A at 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 1015-19). Manufactured by Madas.">
 <meta name="twitter:image" content="https://rkic1976-bot.github.io/RKIC-SITE/images/madas-psm010-large.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Madas PSM010 Gas Pressure Switch", "sku": "PSM010", "mpn": "PSM010", "description": "The Madas PSM010 is an adjustable gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 2 to 10 mbar and a maximum working pressure of 500 mbar on gas service. It is rated 6A at 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 1015-19). Manufactured by Madas.", "brand": {"@type": "Brand", "name": "Madas"}, "category": "PRESSURE SWITCHES", "manufacturer": {"@type": "Organization", "name": "Madas"}, "image": "https://rkic1976-bot.github.io/RKIC-SITE/images/madas-psm010-large.jpg", "url": "https://rkic1976-bot.github.io/RKIC-SITE/products/madas-psm010.html"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rkic1976-bot.github.io/RKIC-SITE/"}, {"@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 3, "name": "Pressure Switches", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 4, "name": "Madas PSM010 Gas Pressure Switch", "item": "https://rkic1976-bot.github.io/RKIC-SITE/products/madas-psm010.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rkic1976-bot.github.io/RKIC-SITE/"}, {"@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 3, "name": "Pressure Switches", "item": "https://rkic1976-bot.github.io/RKIC-SITE/categories/pressure-switches.html"}, {"@type": "ListItem", "position": 4, "name": "Madas PSM010 Gas Pressure Switch", "item": "https://rkic1976-bot.github.io/RKIC-SITE/products/madas-psm010.html"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -459,7 +459,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         if(catMatches.length){
           html += '<div class="pg-search-kicker">Categories</div>';
           catMatches.forEach(function(c){
-            html += '<a href="../index.html#/category/' + encodeURIComponent(c) + '"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
+            var _catSlug = c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); html += '<a href="../categories/' + _catSlug + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
           });
         }
       }
@@ -498,9 +498,9 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 </script>
 <div class="wrap">
   <div class="breadcrumb">
-    <a href="../index.html#home">Home</a><span class="sep">/</span><a href="../index.html#catalog">Catalog</a><span class="sep">/</span><a href="../index.html#/category/PRESSURE%20SWITCHES">Pressure Switches</a><span class="sep">/</span>Madas PSM010 Gas Pressure Switch
+    <a href="../index.html#home">Home</a><span class="sep">/</span><a href="../index.html#catalog">Catalog</a><span class="sep">/</span><a href="../categories/pressure-switches.html">Pressure Switches</a><span class="sep">/</span>Madas PSM010 Gas Pressure Switch
   </div>
-  <a class="pg-back" href="../index.html#/category/PRESSURE%20SWITCHES">&larr; Back to Catalog</a>
+  <a class="pg-back" href="../categories/pressure-switches.html">&larr; Back to Catalog</a>
   <div class="pg-grid">
     <div class="pg-img-box" id="pgImgBox">
       <img src="../images/madas-psm010-large.jpg" alt="Madas PSM010 Gas Pressure Switch &mdash; Pressure Switches by Madas, Type PSM010" loading="lazy">

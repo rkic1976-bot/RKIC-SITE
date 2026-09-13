@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="The Vanaz R4110 is a low-pressure, medium-flow gas pressure regulator designed for small industrial boilers, furnaces and commercial appliances such as canteen and restaurant kitchens. It steps down a 1–17 kg/cm² inlet pressure to a controlled, spring-adjustable 0.03–0.3 kg/cm² (30–300 mbar) outlet at up to 30 Nm³/hr, with a ½&quot; BSP threaded inlet and ¾&quot; BSP threaded outlet. It handles air, LPG, natural gas, carbon dioxide, nitrogen, hydrogen and acetylene, and is manufactured by Vanaz Engineers Ltd, Pune, for use across small-to-medium gas-fired equipment installations in India.">
 <meta name="twitter:image" content="https://rkic1976-bot.github.io/RKIC-SITE/images/vanaz-r4110-large.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Vanaz Low Pressure Regulator R4110", "sku": "R4110", "mpn": "R4110", "description": "The Vanaz R4110 is a low-pressure, medium-flow gas pressure regulator designed for small industrial boilers, furnaces and commercial appliances such as canteen and restaurant kitchens. It steps down a 1–17 kg/cm² inlet pressure to a controlled, spring-adjustable 0.03–0.3 kg/cm² (30–300 mbar) outlet at up to 30 Nm³/hr, with a ½\" BSP threaded inlet and ¾\" BSP threaded outlet. It handles air, LPG, natural gas, carbon dioxide, nitrogen, hydrogen and acetylene, and is manufactured by Vanaz Engineers Ltd, Pune, for use across small-to-medium gas-fired equipment installations in India.", "brand": {"@type": "Brand", "name": "Vanaz"}, "category": "PRESSURE REGULATOR VALVES", "manufacturer": {"@type": "Organization", "name": "Vanaz Engineers Ltd, Pune"}, "image": "https://rkic1976-bot.github.io/RKIC-SITE/images/vanaz-r4110-large.jpg", "url": "https://rkic1976-bot.github.io/RKIC-SITE/products/vanaz-r4110.html"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rkic1976-bot.github.io/RKIC-SITE/"}, {"@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 3, "name": "Pressure Regulator Valves", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 4, "name": "Vanaz Low Pressure Regulator R4110", "item": "https://rkic1976-bot.github.io/RKIC-SITE/products/vanaz-r4110.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rkic1976-bot.github.io/RKIC-SITE/"}, {"@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 3, "name": "Pressure Regulator Valves", "item": "https://rkic1976-bot.github.io/RKIC-SITE/categories/pressure-regulator-valves.html"}, {"@type": "ListItem", "position": 4, "name": "Vanaz Low Pressure Regulator R4110", "item": "https://rkic1976-bot.github.io/RKIC-SITE/products/vanaz-r4110.html"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -459,7 +459,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         if(catMatches.length){
           html += '<div class="pg-search-kicker">Categories</div>';
           catMatches.forEach(function(c){
-            html += '<a href="../index.html#/category/' + encodeURIComponent(c) + '"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
+            var _catSlug = c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); html += '<a href="../categories/' + _catSlug + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
           });
         }
       }
@@ -498,9 +498,9 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 </script>
 <div class="wrap">
   <div class="breadcrumb">
-    <a href="../index.html#home">Home</a><span class="sep">/</span><a href="../index.html#catalog">Catalog</a><span class="sep">/</span><a href="../index.html#/category/PRESSURE%20REGULATOR%20VALVES">Pressure Regulator Valves</a><span class="sep">/</span>Vanaz Low Pressure Regulator R4110
+    <a href="../index.html#home">Home</a><span class="sep">/</span><a href="../index.html#catalog">Catalog</a><span class="sep">/</span><a href="../categories/pressure-regulator-valves.html">Pressure Regulator Valves</a><span class="sep">/</span>Vanaz Low Pressure Regulator R4110
   </div>
-  <a class="pg-back" href="../index.html#/category/PRESSURE%20REGULATOR%20VALVES">&larr; Back to Catalog</a>
+  <a class="pg-back" href="../categories/pressure-regulator-valves.html">&larr; Back to Catalog</a>
   <div class="pg-grid">
     <div class="pg-img-box" id="pgImgBox">
       <img src="../images/vanaz-r4110-large.jpg" alt="Vanaz Low Pressure Regulator R4110 &mdash; Pressure Regulator Valves by Vanaz, Type R4110" loading="lazy">

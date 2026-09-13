@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="The Brahma T11/N is an induction ignition transformer for gas and oil burners, stepping up a 220-230V, 1.1A, 50Hz primary supply to a 9kV peak secondary voltage at 20mA RMS output current for firing a single ignition electrode. It has a 33% duty cycle over a 3-minute cycle (intermittent-spark duty, not for continuous operation, unlike the 100%-ED T13/T17 series), and operates within -10°C to 35°C ambient. The &quot;/N&quot; suffix denotes a non-standard mounting variant of the base T11 transformer. Manufactured by Brahma, Italy and CE marked, it weighs under 2kg and is sized to a compact 98x98x80mm footprint for burner ignition duty.">
 <meta name="twitter:image" content="https://rkic1976-bot.github.io/RKIC-SITE/images/brahma-t11-n-large.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Brahma Ignition Transformer T11/N", "sku": "15099001", "mpn": "15099001", "description": "The Brahma T11/N is an induction ignition transformer for gas and oil burners, stepping up a 220-230V, 1.1A, 50Hz primary supply to a 9kV peak secondary voltage at 20mA RMS output current for firing a single ignition electrode. It has a 33% duty cycle over a 3-minute cycle (intermittent-spark duty, not for continuous operation, unlike the 100%-ED T13/T17 series), and operates within -10°C to 35°C ambient. The \"/N\" suffix denotes a non-standard mounting variant of the base T11 transformer. Manufactured by Brahma, Italy and CE marked, it weighs under 2kg and is sized to a compact 98x98x80mm footprint for burner ignition duty.", "brand": {"@type": "Brand", "name": "Brahma"}, "category": "IGNITION TRANSFORMERS", "manufacturer": {"@type": "Organization", "name": "Brahma"}, "image": "https://rkic1976-bot.github.io/RKIC-SITE/images/brahma-t11-n-large.jpg", "url": "https://rkic1976-bot.github.io/RKIC-SITE/products/brahma-t11-n.html"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rkic1976-bot.github.io/RKIC-SITE/"}, {"@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 3, "name": "Ignition Transformers", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 4, "name": "Brahma Ignition Transformer T11/N", "item": "https://rkic1976-bot.github.io/RKIC-SITE/products/brahma-t11-n.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rkic1976-bot.github.io/RKIC-SITE/"}, {"@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 3, "name": "Ignition Transformers", "item": "https://rkic1976-bot.github.io/RKIC-SITE/categories/ignition-transformers.html"}, {"@type": "ListItem", "position": 4, "name": "Brahma Ignition Transformer T11/N", "item": "https://rkic1976-bot.github.io/RKIC-SITE/products/brahma-t11-n.html"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -459,7 +459,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         if(catMatches.length){
           html += '<div class="pg-search-kicker">Categories</div>';
           catMatches.forEach(function(c){
-            html += '<a href="../index.html#/category/' + encodeURIComponent(c) + '"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
+            var _catSlug = c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); html += '<a href="../categories/' + _catSlug + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
           });
         }
       }
@@ -498,9 +498,9 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 </script>
 <div class="wrap">
   <div class="breadcrumb">
-    <a href="../index.html#home">Home</a><span class="sep">/</span><a href="../index.html#catalog">Catalog</a><span class="sep">/</span><a href="../index.html#/category/IGNITION%20TRANSFORMERS">Ignition Transformers</a><span class="sep">/</span>Brahma Ignition Transformer T11/N
+    <a href="../index.html#home">Home</a><span class="sep">/</span><a href="../index.html#catalog">Catalog</a><span class="sep">/</span><a href="../categories/ignition-transformers.html">Ignition Transformers</a><span class="sep">/</span>Brahma Ignition Transformer T11/N
   </div>
-  <a class="pg-back" href="../index.html#/category/IGNITION%20TRANSFORMERS">&larr; Back to Catalog</a>
+  <a class="pg-back" href="../categories/ignition-transformers.html">&larr; Back to Catalog</a>
   <div class="pg-grid">
     <div class="pg-img-box" id="pgImgBox">
       <img src="../images/brahma-t11-n-large.jpg" alt="Brahma Ignition Transformer T11/N &mdash; Ignition Transformers by Brahma, Type 15099001" loading="lazy">

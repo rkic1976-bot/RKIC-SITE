@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="The Brahma UV1 is a UV phototube flame sensor that detects the ultraviolet light (190–290 nm) emitted by a burning flame and generates an ionization-based electrical signal used by ignition and burner control devices, such as a flame relay module, to confirm flame presence. Housed in a compact ø22mm nylon body with a 655mm integral cable and a mounting nut for a 1/2&quot; sighting pipe, it is rated for -20°C to 50°C ambient operation with a nominal service life of 10,000 hours before the phototube should be replaced. Manufactured by Brahma, Italy, it is suited to gas and mixed-fuel (gas and oil) burner flame supervision, and pairs with flame relay control units such as the Brahma RE3.">
 <meta name="twitter:image" content="https://rkic1976-bot.github.io/RKIC-SITE/images/brahma-uv1-large.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Brahma UV1 Flame Sensor", "sku": "18210060", "mpn": "18210060", "description": "The Brahma UV1 is a UV phototube flame sensor that detects the ultraviolet light (190–290 nm) emitted by a burning flame and generates an ionization-based electrical signal used by ignition and burner control devices, such as a flame relay module, to confirm flame presence. Housed in a compact ø22mm nylon body with a 655mm integral cable and a mounting nut for a 1/2\" sighting pipe, it is rated for -20°C to 50°C ambient operation with a nominal service life of 10,000 hours before the phototube should be replaced. Manufactured by Brahma, Italy, it is suited to gas and mixed-fuel (gas and oil) burner flame supervision, and pairs with flame relay control units such as the Brahma RE3.", "brand": {"@type": "Brand", "name": "Brahma"}, "category": "SENSORS", "manufacturer": {"@type": "Organization", "name": "Brahma"}, "image": "https://rkic1976-bot.github.io/RKIC-SITE/images/brahma-uv1-large.jpg", "url": "https://rkic1976-bot.github.io/RKIC-SITE/products/brahma-uv1.html"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rkic1976-bot.github.io/RKIC-SITE/"}, {"@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 3, "name": "Sensors", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 4, "name": "Brahma UV1 Flame Sensor", "item": "https://rkic1976-bot.github.io/RKIC-SITE/products/brahma-uv1.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rkic1976-bot.github.io/RKIC-SITE/"}, {"@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 3, "name": "Sensors", "item": "https://rkic1976-bot.github.io/RKIC-SITE/categories/sensors.html"}, {"@type": "ListItem", "position": 4, "name": "Brahma UV1 Flame Sensor", "item": "https://rkic1976-bot.github.io/RKIC-SITE/products/brahma-uv1.html"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -459,7 +459,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         if(catMatches.length){
           html += '<div class="pg-search-kicker">Categories</div>';
           catMatches.forEach(function(c){
-            html += '<a href="../index.html#/category/' + encodeURIComponent(c) + '"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
+            var _catSlug = c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); html += '<a href="../categories/' + _catSlug + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
           });
         }
       }
@@ -498,9 +498,9 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 </script>
 <div class="wrap">
   <div class="breadcrumb">
-    <a href="../index.html#home">Home</a><span class="sep">/</span><a href="../index.html#catalog">Catalog</a><span class="sep">/</span><a href="../index.html#/category/SENSORS">Sensors</a><span class="sep">/</span>Brahma UV1 Flame Sensor
+    <a href="../index.html#home">Home</a><span class="sep">/</span><a href="../index.html#catalog">Catalog</a><span class="sep">/</span><a href="../categories/sensors.html">Sensors</a><span class="sep">/</span>Brahma UV1 Flame Sensor
   </div>
-  <a class="pg-back" href="../index.html#/category/SENSORS">&larr; Back to Catalog</a>
+  <a class="pg-back" href="../categories/sensors.html">&larr; Back to Catalog</a>
   <div class="pg-grid">
     <div class="pg-img-box" id="pgImgBox">
       <img src="../images/brahma-uv1-large.jpg" alt="Brahma UV1 Flame Sensor &mdash; Sensors by Brahma, Type 18210060" loading="lazy">

@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="The Brahma SM 152N.2 is a burner sequence controller from the Brahma &quot;Eurobox&quot; series, managing the start-up, ignition, and flame-monitoring cycle of gas burners with a 5-second pre-purge time and a 10-second safety time. Running on a 230V, 50-60Hz, 7VA supply, it is manufactured by Brahma, Italy, EN298:2003 compliant and RoHS compliant, for automatic burner control and flame safeguard duty on atmospheric and monobloc gas burners.">
 <meta name="twitter:image" content="https://rkic1976-bot.github.io/RKIC-SITE/images/brahma-sm152n2-large.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Brahma Sequence Controller SM 152N.2", "sku": "24283961", "mpn": "24283961", "description": "The Brahma SM 152N.2 is a burner sequence controller from the Brahma \"Eurobox\" series, managing the start-up, ignition, and flame-monitoring cycle of gas burners with a 5-second pre-purge time and a 10-second safety time. Running on a 230V, 50-60Hz, 7VA supply, it is manufactured by Brahma, Italy, EN298:2003 compliant and RoHS compliant, for automatic burner control and flame safeguard duty on atmospheric and monobloc gas burners.", "brand": {"@type": "Brand", "name": "Brahma"}, "category": "SEQUENCE CONTROLLERS", "manufacturer": {"@type": "Organization", "name": "Brahma"}, "image": "https://rkic1976-bot.github.io/RKIC-SITE/images/brahma-sm152n2-large.jpg", "url": "https://rkic1976-bot.github.io/RKIC-SITE/products/brahma-sm152n2.html"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rkic1976-bot.github.io/RKIC-SITE/"}, {"@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 3, "name": "Sequence Controllers", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 4, "name": "Brahma Sequence Controller SM 152N.2", "item": "https://rkic1976-bot.github.io/RKIC-SITE/products/brahma-sm152n2.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://rkic1976-bot.github.io/RKIC-SITE/"}, {"@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://rkic1976-bot.github.io/RKIC-SITE/#catalog"}, {"@type": "ListItem", "position": 3, "name": "Sequence Controllers", "item": "https://rkic1976-bot.github.io/RKIC-SITE/categories/sequence-controllers.html"}, {"@type": "ListItem", "position": 4, "name": "Brahma Sequence Controller SM 152N.2", "item": "https://rkic1976-bot.github.io/RKIC-SITE/products/brahma-sm152n2.html"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -459,7 +459,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         if(catMatches.length){
           html += '<div class="pg-search-kicker">Categories</div>';
           catMatches.forEach(function(c){
-            html += '<a href="../index.html#/category/' + encodeURIComponent(c) + '"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
+            var _catSlug = c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); html += '<a href="../categories/' + _catSlug + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
           });
         }
       }
@@ -498,9 +498,9 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 </script>
 <div class="wrap">
   <div class="breadcrumb">
-    <a href="../index.html#home">Home</a><span class="sep">/</span><a href="../index.html#catalog">Catalog</a><span class="sep">/</span><a href="../index.html#/category/SEQUENCE%20CONTROLLERS">Sequence Controllers</a><span class="sep">/</span>Brahma Sequence Controller SM 152N.2
+    <a href="../index.html#home">Home</a><span class="sep">/</span><a href="../index.html#catalog">Catalog</a><span class="sep">/</span><a href="../categories/sequence-controllers.html">Sequence Controllers</a><span class="sep">/</span>Brahma Sequence Controller SM 152N.2
   </div>
-  <a class="pg-back" href="../index.html#/category/SEQUENCE%20CONTROLLERS">&larr; Back to Catalog</a>
+  <a class="pg-back" href="../categories/sequence-controllers.html">&larr; Back to Catalog</a>
   <div class="pg-grid">
     <div class="pg-img-box" id="pgImgBox">
       <img src="../images/brahma-sm152n2-large.jpg" alt="Brahma Sequence Controller SM 152N.2 &mdash; Sequence Controllers by Brahma, Type 24283961" loading="lazy">
