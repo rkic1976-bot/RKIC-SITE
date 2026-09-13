@@ -369,6 +369,7 @@
   .cat-tile{ background:var(--paper); padding:22px 20px; position:relative; overflow:hidden; transition:background 0.25s ease, border-color 0.25s ease; cursor:pointer; border:2px solid transparent; }
   .cat-tile:hover{ background:#fff; }
   .cat-tile .code{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; color:var(--sage-deep); letter-spacing:0.08em; }
+  .cat-tile .cname-link{ display:block; text-decoration:none; color:inherit; }
   .cat-tile .cname{ margin-top:10px; font-size:0.92rem; font-weight:500; line-height:1.35; color:var(--ink); padding-right:90px; }
   .cat-tile::after{
     content:""; position:absolute; left:20px; right:20px; bottom:0; height:2px;
@@ -4477,6 +4478,9 @@
   document.getElementById('productModalBack').addEventListener('click', goBackToCatalog);
 
   function categoryCount(name){ return products.filter(p => p.category === name).length; }
+  // Matches the slugify() used by the category-page generator (tmp/gen_categories.py) exactly.
+  function categorySlug(name){ return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+  function categoryHref(name){ return categoryCount(name) > 0 ? 'categories/' + categorySlug(name) + '.html' : 'javascript:void(0)'; }
   function brandCount(name){ return products.filter(p => p.brand === name).length; }
   function countBadge(n){ return n > 0 ? `<span class="stock-badge">${n} added</span>` : ''; }
   // Brands present within a category, with counts - used as a fallback "sub-category" list
@@ -4493,7 +4497,10 @@
     const n = categoryCount(name);
     const tile = document.createElement('div');
     tile.className = 'cat-tile';
-    tile.innerHTML = `<div class="code">${code}</div><div class="cname">${name}</div>${countBadge(n)}<button type="button" class="cat-toggle" aria-label="Toggle sub-categories">+</button>`;
+    const catHref = categoryHref(name);
+    tile.innerHTML = `<div class="code">${code}</div><a href="${catHref}" class="cname cname-link"><div class="cname">${name}</div></a>${countBadge(n)}<button type="button" class="cat-toggle" aria-label="Toggle sub-categories">+</button>`;
+    const tileLink = tile.querySelector('.cname-link');
+    if(tileLink){ tileLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); navigateToProduct({type:'category', value:name}); }); }
     const toggleBtn = tile.querySelector('.cat-toggle');
     toggleBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -4593,7 +4600,7 @@
       row.className = 'nav-cat-row';
       row.dataset.cat = name;
       const a = document.createElement('a');
-      a.href = 'javascript:void(0)';
+      a.href = categoryHref(name);
       a.className = 'nav-drop-link';
       a.innerHTML = `<span>${name}</span>`;
       a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
@@ -4630,7 +4637,7 @@
       navProductsGrid.appendChild(subsRow);
     } else {
       const a = document.createElement('a');
-      a.href = 'javascript:void(0)';
+      a.href = categoryHref(name);
       a.className = 'nav-drop-link';
       a.innerHTML = `<span>${name}</span>`;
       a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
@@ -4672,7 +4679,7 @@
       navProductsResults.appendChild(kicker);
       catMatches.forEach(name => {
         const a = document.createElement('a');
-        a.href = 'javascript:void(0)';
+        a.href = categoryHref(name);
         a.innerHTML = `<span>${name}</span>`;
         a.addEventListener('click', (e) => { e.preventDefault(); navProductsFilter.value=''; document.querySelectorAll('.nav-dropdown.open').forEach(d=>d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
         navProductsResults.appendChild(a);
@@ -4761,7 +4768,7 @@
     const subNames = subcategoryMap[name] || [];
     if(subNames.length === 0){
       const a = document.createElement('a');
-      a.href = 'javascript:void(0)';
+      a.href = categoryHref(name);
       a.className = 'drawer-sub-link';
       a.innerHTML = `<span>${name}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
       a.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct({type:'category', value:name}); });
@@ -4776,7 +4783,7 @@
     catRow.setAttribute('role', 'button');
     catRow.setAttribute('aria-label', 'Show sub-categories for ' + name);
     const a = document.createElement('a');
-    a.href = 'javascript:void(0)';
+    a.href = categoryHref(name);
     a.className = 'drawer-sub-link';
     a.innerHTML = `<span>${name}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
     const toggle = document.createElement('button');
@@ -4889,7 +4896,7 @@
       catMatches.forEach(name => {
         const idx = categories.indexOf(name);
         const a = document.createElement('a');
-        a.href = 'javascript:void(0)';
+        a.href = categoryHref(name);
         a.innerHTML = `<span>${name}</span><span class="code">RK-${String(idx+1).padStart(2,'0')}</span>`;
         a.addEventListener('click', (e) => { e.preventDefault(); closeSearch(); navigateToProduct({type:'category', value:name}); });
         searchResults.appendChild(a);
