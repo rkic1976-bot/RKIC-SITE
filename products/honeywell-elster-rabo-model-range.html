@@ -275,20 +275,20 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
       <details class="nav-dd">
         <summary>Brands <span class="chev">⌄</span></summary>
         <div class="nav-drop-panel nav-drop-panel-brands">
-      <a href="../index.html#/brand/Brahma">Brahma</a>
-      <a href="../index.html#/brand/Cofi">Cofi</a>
-      <a href="../index.html#/brand/Danfoss">Danfoss</a>
-      <a href="../index.html#/brand/Dungs">Dungs</a>
-      <a href="../index.html#/brand/Elektrogas">Elektrogas</a>
-      <a href="../index.html#/brand/Honeywell%20Eclipse">Honeywell Eclipse</a>
-      <a href="../index.html#/brand/Honeywell%20Elster">Honeywell Elster</a>
-      <a href="../index.html#/brand/Honeywell%20Kromschr%C3%B6der">Honeywell Kromschröder</a>
-      <a href="../index.html#/brand/Honeywell%20Maxon">Honeywell Maxon</a>
-      <a href="../index.html#/brand/Honeywell%20Technologies">Honeywell Technologies</a>
-      <a href="../index.html#/brand/Madas">Madas</a>
-      <a href="../index.html#/brand/R.K.%20Instruments%20%26%20Controls">R.K. Instruments &amp; Controls</a>
-      <a href="../index.html#/brand/Siemens">Siemens</a>
-      <a href="../index.html#/brand/Vanaz">Vanaz</a>
+      <a href="../brands/brahma.html">Brahma</a>
+      <a href="../brands/cofi.html">Cofi</a>
+      <a href="../brands/danfoss.html">Danfoss</a>
+      <a href="../brands/dungs.html">Dungs</a>
+      <a href="../brands/elektrogas.html">Elektrogas</a>
+      <a href="../brands/honeywell-eclipse.html">Honeywell Eclipse</a>
+      <a href="../brands/honeywell-elster.html">Honeywell Elster</a>
+      <a href="../brands/honeywell-kromschroder.html">Honeywell Kromschröder</a>
+      <a href="../brands/honeywell-maxon.html">Honeywell Maxon</a>
+      <a href="../brands/honeywell-technologies.html">Honeywell Technologies</a>
+      <a href="../brands/madas.html">Madas</a>
+      <a href="../brands/r-k-instruments-and-controls.html">R.K. Instruments &amp; Controls</a>
+      <a href="../brands/siemens.html">Siemens</a>
+      <a href="../brands/vanaz.html">Vanaz</a>
         </div>
       </details>
       <a href="../index.html#contact">Contact Us</a>
@@ -380,20 +380,20 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
     <li class="drawer-item">
       <div class="drawer-row" onclick="this.closest('.drawer-item').classList.toggle('open')">Brands <span class="chev">⌄</span></div>
       <div class="drawer-sub">
-        <a href="../index.html#/brand/Brahma">Brahma</a>
-        <a href="../index.html#/brand/Cofi">Cofi</a>
-        <a href="../index.html#/brand/Danfoss">Danfoss</a>
-        <a href="../index.html#/brand/Dungs">Dungs</a>
-        <a href="../index.html#/brand/Elektrogas">Elektrogas</a>
-        <a href="../index.html#/brand/Honeywell%20Eclipse">Honeywell Eclipse</a>
-        <a href="../index.html#/brand/Honeywell%20Elster">Honeywell Elster</a>
-        <a href="../index.html#/brand/Honeywell%20Kromschr%C3%B6der">Honeywell Kromschröder</a>
-        <a href="../index.html#/brand/Honeywell%20Maxon">Honeywell Maxon</a>
-        <a href="../index.html#/brand/Honeywell%20Technologies">Honeywell Technologies</a>
-        <a href="../index.html#/brand/Madas">Madas</a>
-        <a href="../index.html#/brand/R.K.%20Instruments%20%26%20Controls">R.K. Instruments &amp; Controls</a>
-        <a href="../index.html#/brand/Siemens">Siemens</a>
-        <a href="../index.html#/brand/Vanaz">Vanaz</a>
+        <a href="../brands/brahma.html">Brahma</a>
+        <a href="../brands/cofi.html">Cofi</a>
+        <a href="../brands/danfoss.html">Danfoss</a>
+        <a href="../brands/dungs.html">Dungs</a>
+        <a href="../brands/elektrogas.html">Elektrogas</a>
+        <a href="../brands/honeywell-eclipse.html">Honeywell Eclipse</a>
+        <a href="../brands/honeywell-elster.html">Honeywell Elster</a>
+        <a href="../brands/honeywell-kromschroder.html">Honeywell Kromschröder</a>
+        <a href="../brands/honeywell-maxon.html">Honeywell Maxon</a>
+        <a href="../brands/honeywell-technologies.html">Honeywell Technologies</a>
+        <a href="../brands/madas.html">Madas</a>
+        <a href="../brands/r-k-instruments-and-controls.html">R.K. Instruments &amp; Controls</a>
+        <a href="../brands/siemens.html">Siemens</a>
+        <a href="../brands/vanaz.html">Vanaz</a>
       </div>
     </li>
     <li><a class="drawer-row" href="../index.html#contact">Contact Us</a></li>
@@ -550,7 +550,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   RKIC_BRANDS.forEach(function(b){
     if (!b.count) return;
     var badge = '<span class="stock-badge">' + b.count + ' added</span>';
-    html += '<a class="brand-chip" href="../index.html#/brand/' + encodeURIComponent(b.name) + '">' +
+    html += '<a class="brand-chip" href="../brands/' + b.slug + '.html">' +
       '<img class="brand-chip-logo" src="' + b.logo + '" alt="' + b.name + ' logo">' + badge + '</a>';
   });
   strip.innerHTML = html;

@@ -518,6 +518,7 @@
   .brand-logo-img{ height:22px; width:auto; max-width:110px; object-fit:contain; display:block; }
   .brand-chip:hover{ background:var(--steel); border-color:var(--sage-deep); }
   .brand-chip .mono{ color:var(--lemon-text); font-size:0.66rem; margin-right:8px; }
+  .brand-chip-link{ display:flex; align-items:center; text-decoration:none; color:inherit; }
 
   /* ---------- CONTACT / FOOTER (light sage panel) ---------- */
   footer{ background:var(--steel); color:var(--ink); padding-bottom:96px; }
@@ -4479,6 +4480,9 @@
   function categorySlug(name){ return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
   function categoryHref(name){ return categoryCount(name) > 0 ? 'categories/' + categorySlug(name) + '.html' : 'javascript:void(0)'; }
   function brandCount(name){ return products.filter(p => p.brand === name).length; }
+  // Matches the slugify() used by the brand-page generator (tmp/brands_gen/gen_brands.py) exactly.
+  function brandSlug(name){ return name.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+  function brandHref(name){ return brandCount(name) > 0 ? 'brands/' + brandSlug(name) + '.html' : 'javascript:void(0)'; }
   function countBadge(n){ return n > 0 ? `<span class="stock-badge">${n} added</span>` : ''; }
   // Brands present within a category, with counts - used as a fallback "sub-category" list
   // for categories that don't have an explicit subcategoryMap entry.
@@ -4581,7 +4585,9 @@
     const label = brandLogos[b]
       ? `<img src="${brandLogos[b]}" alt="${b} logo" class="brand-logo-img">`
       : b;
-    chip.innerHTML = `<span class="mono">${String(i+1).padStart(2,'0')}</span>${label}${countBadge(n)}`;
+    chip.innerHTML = `<span class="mono">${String(i+1).padStart(2,'0')}</span><a href="${brandHref(b)}" class="brand-chip-link">${label}</a>${countBadge(n)}`;
+    const chipLink = chip.querySelector('.brand-chip-link');
+    if(chipLink){ chipLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); navigateToProduct({type:'brand', value:b}); }); }
     chip.addEventListener('click', () => navigateToProduct({type:'brand', value:b}));
     strip.appendChild(chip);
   });
@@ -4714,7 +4720,7 @@
   brands.forEach(b => {
     const n = brandCount(b);
     const a = document.createElement('a');
-    a.href = 'javascript:void(0)';
+    a.href = brandHref(b);
     a.className = 'nav-drop-link';
     const bLogo = brandLogos[b];
     const bLabel = bLogo ? `<img src="${bLogo}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
@@ -4815,7 +4821,7 @@
   brands.forEach(b => {
     const n = brandCount(b);
     const a = document.createElement('a');
-    a.href = 'javascript:void(0)';
+    a.href = brandHref(b);
     a.className = 'drawer-sub-link';
     const bLogo2 = brandLogos[b];
     const bLabel2 = bLogo2 ? `<img src="${bLogo2}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
