@@ -1939,3 +1939,23 @@ Saare 170 files (index.html + 136 products + 19 categories + 14 brands) 5 batche
 **Minor/optional item (fix nahi kiya, sirf FYI diya)**: Header ka live-search dropdown (JS-generated, runtime pe banta hai) category-suggestion links hamesha hash-route (`#/category/...`) banata hai, chahe us category ki real static page ho ya na ho. Google crawl nahi karta isse (JS-rendered), sirf ek chhoti UX inconsistency hai — user search karke real page ki jagah SPA view pe jaata hai.
 
 **Ab bhi pending/deferred (Rahul ka apna decision)**: Domain/canonical/OG-URL tags abhi bhi `rkic1976-bot.github.io` (GitHub Pages) par point karte hain — final domain lene ke baad hi update honge.
+
+## WCAG contrast fix (baahar ke UI/UX audit se flag hua) — 170 files (16 Sep 2026)
+
+Rahul ne ek external UI/UX audit ki ek line relay ki — "साफ इंडस्ट्रियल लुक और स्मूथ मोबाइल ड्रॉअर, हालांकि कुछ छोटे फॉन्ट का कंट्रास्ट हल्का है" (clean look, smooth mobile drawer, lekin kuch chhote fonts ka contrast halka hai). Standing rule ke mutabik blindly trust nahi kiya — khud CSS mein saare `font-size ≤ 0.8rem` rules nikaal ke unke color values ka WCAG relative-luminance/contrast-ratio formula se actual calculation kiya.
+
+**Verify kiya — 2 genuine failing cases mile**:
+1. `--flame` (#D64933), `color:` ke roop mein sirf 5 jagah use hota hai (`.nav-cat-caret`, `.info-block .k`, dono `.sec-brands`/`.sec-related .eyebrow-lt`) — `--paper` (#F7F5EE) background par **3.96:1** (WCAG AA ka 4.5:1 threshold fail).
+2. `.brand-chip .stock-badge{ background:var(--sage); color:var(--sage-deep); }` — `--sage` (#E4CE96) background par **3.75:1** (fail). `index.html` ka apna equivalent base `.stock-badge{...}` rule bhi yahi issue.
+
+Ek teesri jagah bhi mili jahan same `--sage`/`--sage-deep` combo use hota hai (`index.html` ka `.cat-toggle` button) — lekin woh 0.95rem bold hai (WCAG large-text exemption, threshold sirf 3:1), aur 3.75:1 usme pass karta hai, isliye woh jaanboojh kar chhoda gaya.
+
+**Fix (minimal darkening, sirf failing cases par)**: Python se sabse chhota darkening-percentage dhoonda jo 4.5:1 clear kare — `--flame` 8% dark hoke `#C5432F` bana (paper par 4.56:1, white par 4.98:1). Stock-badge ka `color:` (sirf us ek rule mein, global `--sage-deep` variable ko touch nahi kiya taaki baaki 16 jagah jo already pass karti hain unpar asar na ho) 12% dark hoke `#755319` bana (sage bg par 4.52:1).
+
+Rahul ko before/after numbers + ek isolated HTML snippet screenshot (`solenoid-valves.html` ke actual CSS rules reproduce karke) dikhaya pehle, approval mili — "इसे ठीक करने के लिए... रंग को थोड़ा और गहरा करना होगा" — tab batch-apply kiya.
+
+**Batch fix**: Saare 170 files (index.html + 136 products + 19 categories + 14 brands) mein `--flame:#D64933;` → `--flame:#C5432F;` aur stock-badge ka `color:var(--sage-deep);` → `color:#755319;` (index.html ke different selector-structure ko special-case handle kiya) — Python script se replace, zero anomalies (flame_fixed:170, badge_fixed:170).
+
+**Verify**: Structural HTML check + JSON-LD `json.loads()` validity — sab 170 files clean. Playwright mobile-viewport spot-check (3 files) — zero console errors. Batch commit 5 chunks mein (40×4+10), zero rejections. Commit ke baad fresh `device_list_dir` se brands/ aur categories/ ka byte-size local se compare kiya — 0 mismatches.
+
+**Ab bhi pending/deferred (Rahul ka apna decision)**: Domain/canonical/OG-URL tags abhi bhi `rkic1976-bot.github.io` (GitHub Pages) par point karte hain — final domain lene ke baad hi update honge.
