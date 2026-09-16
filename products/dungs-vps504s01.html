@@ -31,7 +31,7 @@
   --ink:#33414E; --paper:#F7F5EE; --steel:#E8E6DD; --steel-2:#D5D2C4;
   --line: rgba(51,65,78,0.18); --sage:#E4CE96; --sage-deep:#855E1C;
   --flame:#D64933; --flame-light:#ECD9A8;
-  --text-dim: rgba(51,65,78,0.55); font-size:16px;
+  --text-dim: rgba(51,65,78,0.75); font-size:16px;
 }
 *{box-sizing:border-box;}
 body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Barlow', sans-serif; -webkit-font-smoothing:antialiased; }
@@ -467,8 +467,6 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
     });
     closeBtn && closeBtn.addEventListener('click', function(){ pgSearchInput.value = ''; pgSearchResults.innerHTML = ''; });
   }
-  if(true){
-  }
   const burger = document.getElementById('pgBurgerBtn');
   const drawer = document.getElementById('pgMobileDrawer');
   function pgPositionDrawer(){
@@ -573,9 +571,6 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   <div class="wrap foot-bottom">
     <div>© 2026 R.K. Instruments &amp; Controls. All rights reserved.</div>
     <div class="socials">
-      <a href="#" aria-label="Facebook">f</a>
-      <a href="#" aria-label="Twitter">x</a>
-      <a href="#" aria-label="LinkedIn">in</a>
       <a href="https://wa.me/919824136145" aria-label="WhatsApp">wa</a>
     </div>
   </div>
