@@ -1959,3 +1959,21 @@ Rahul ko before/after numbers + ek isolated HTML snippet screenshot (`solenoid-v
 **Verify**: Structural HTML check + JSON-LD `json.loads()` validity — sab 170 files clean. Playwright mobile-viewport spot-check (3 files) — zero console errors. Batch commit 5 chunks mein (40×4+10), zero rejections. Commit ke baad fresh `device_list_dir` se brands/ aur categories/ ka byte-size local se compare kiya — 0 mismatches.
 
 **Ab bhi pending/deferred (Rahul ka apna decision)**: Domain/canonical/OG-URL tags abhi bhi `rkic1976-bot.github.io` (GitHub Pages) par point karte hain — final domain lene ke baad hi update honge.
+
+## Gemini AI audit (82/100) — verify + back-link label fix, 135 files (16 Sep 2026)
+
+Rahul ne sitemap.xml, robots.txt aur sample pages Gemini ko audit ke liye bheje. Gemini ne ~82/100 score diya, 5 "remaining items" flag kiye. Standing rule ke mutabik koi bhi finding blindly implement nahi ki — pehle har ek ko live files ke against verify kiya:
+
+1. **Missing `offers` JSON-LD node** — **False positive.** Site enquiry-based B2B hai, koi bhi product page pricing nahi dikhata (jaanboojh kar liya gaya decision). Fake `"price":"0"` daalna misleading hota — nahi kiya.
+2. **15 categories sirf hash-route par, static page nahi** — **False positive.** In sabke paas abhi 0 live products hain, aur existing workflow rule ke mutabik category ka static page tabhi banta hai jab kam se kam 1 live product ho — by design hai, bug nahi.
+3. **Base64 favicon/logo externalize karna** (~53KB/page overhead) — genuine trade-off, lekin standalone product/category/brand pages ka poora design hi self-contained (offline-viewable) rehne par based hai. Rahul ne apni judgment par chhod diya — "बाद में फिर से एक बार कंफर्म कर लेंगे" — **deferred, backlog mein note kiya** (neeche dekhein).
+4. **Inline CSS/JS ko shared `css/main.css`/`js/nav.js` mein extract karna** (~300 lines CSS + ~90 lines JS har page mein duplicate) — genuine large refactor. Rahul ne apni judgment par chhod diya — **deferred, backlog mein note kiya**.
+5. **Product page ka "Back to Catalog" back-link label generic hai, category-specific nahi** — genuine, low-risk finding, verify kiya sahi nikla. Rahul ne explicit approve kiya — "Haan, fix kar do".
+
+**Fix (item 5)**: Har product page ke breadcrumb mein already-correct, properly-cased category name maujood hai (`<a href="../categories/<slug>.html">Category Name</a>`) — usi ko source-of-truth maan kar `pg-back` link ka text "&larr; Back to Catalog" se "&larr; Back to <Category Name>" kiya (e.g. `madas-cn2130.html` → "Back to Solenoid Valves"). Python script se saare 136 product pages process kiye — **135 fixed, 1 correctly skipped** (`honeywell-elster-rabo-model-range.html` — orphan reference page, iska pg-back ek subcategory hash par point karta hai, real category page par nahi), **0 mismatches**.
+
+**Verify**: Structural HTML check (doctype/html/head/body counts) — 0 issues. `grep -l 'Back to Catalog'` sirf us 1 correctly-skipped orphan file ko return karta hai. Batch commit 4 chunks mein (40×3+15) — zero rejections. Commit ke baad fresh `device_list_dir` se saare 136 files ka byte-size local se compare kiya — 0 mismatches.
+
+**Backlog (Rahul ke kehne par note kiya gaya, abhi implement nahi kiya)**:
+- Base64 favicon + header-logo ko external files mein extract karna (standalone-page self-containment design ke against jaata hai — trade-off discuss karke decide karna hai)
+- Inline CSS/JS ko shared `css/main.css` / `js/nav.js` files mein extract karna (bada refactor, ~300+90 lines/page duplicate)
