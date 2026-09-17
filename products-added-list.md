@@ -1977,3 +1977,15 @@ Rahul ne sitemap.xml, robots.txt aur sample pages Gemini ko audit ke liye bheje.
 **Backlog (Rahul ke kehne par note kiya gaya, abhi implement nahi kiya)**:
 - Base64 favicon + header-logo ko external files mein extract karna (standalone-page self-containment design ke against jaata hai — trade-off discuss karke decide karna hai)
 - Inline CSS/JS ko shared `css/main.css` / `js/nav.js` files mein extract karna (bada refactor, ~300+90 lines/page duplicate)
+
+## Nav menu contrast fix (Rahul ne khud flag kiya — "letters bahut light hai") — 170 files (17 Sep 2026)
+
+Rahul ne index.html ke desktop nav menu (Home/About Us/Products/Brands/Contact Us) ka screenshot bhejkar bataya ki text bahut halka/light hai, kam dikhne walon ke liye padhna mushkil hai. Verify kiya: nav text `--text-dim` CSS variable use karta hai (`rgba(51,65,78,0.75)`), jo pehle ke ek WCAG-fix round mein already 0.55→0.75 kiya gaya tha (AA pass, 4.84:1) — lekin AA ka minimum hi tha, isliye subjectively halka lagta raha.
+
+`--text-dim` sirf nav mein nahi, 170 files (index + 136 products + 19 categories + 14 brands) mein 26+ jagah "muted/secondary" text ke liye use hota hai (labels, meta text, etc.) — ek hi shared CSS variable, har page ki apni embedded copy mein.
+
+Rahul ko 3 options diye (AAA / thoda kam dark / full-ink jitna dark) proof-screenshot ke saath (before/after nav bar mockup, real header background/font-size ke saath render karke) — Recommended AAA option approve hua ("proposed kar de").
+
+**Fix**: `--text-dim: rgba(51,65,78,0.75);` → `rgba(51,65,78,0.90);` — contrast 4.84:1 → **7.3:1 (WCAG AAA)**, still muted/dim tone (full --ink se halka) lekin ab comfortably readable. Python replace, saare 170 files mein exactly 1-1 occurrence match, 0 skip.
+
+**Verify**: Structural HTML check (doctype/html/head/body counts + old/new value presence) — 0 issues, sab 170 files clean. Playwright se desktop (1440px), tablet (820px), mobile (390px) teeno viewports par header screenshot liya — desktop par nav text clearly darker/readable; tablet/mobile par `nav.links` hidden hi rehta hai (hamburger drawer use hota hai, jiska text pehle se hi full `--ink` par tha, is fix se unaffected — drawer khol kar confirm bhi kiya, koi regression nahi). Batch commit 5 chunks mein (40×4+10), zero rejections. Content-level spot-check (size nahi, actual `--text-dim` value padh kar) 4 files par (1 product, 1 category, 2 brands) — sab sahi.
