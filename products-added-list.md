@@ -1989,3 +1989,16 @@ Rahul ko 3 options diye (AAA / thoda kam dark / full-ink jitna dark) proof-scree
 **Fix**: `--text-dim: rgba(51,65,78,0.75);` → `rgba(51,65,78,0.90);` — contrast 4.84:1 → **7.3:1 (WCAG AAA)**, still muted/dim tone (full --ink se halka) lekin ab comfortably readable. Python replace, saare 170 files mein exactly 1-1 occurrence match, 0 skip.
 
 **Verify**: Structural HTML check (doctype/html/head/body counts + old/new value presence) — 0 issues, sab 170 files clean. Playwright se desktop (1440px), tablet (820px), mobile (390px) teeno viewports par header screenshot liya — desktop par nav text clearly darker/readable; tablet/mobile par `nav.links` hidden hi rehta hai (hamburger drawer use hota hai, jiska text pehle se hi full `--ink` par tha, is fix se unaffected — drawer khol kar confirm bhi kiya, koi regression nahi). Batch commit 5 chunks mein (40×4+10), zero rejections. Content-level spot-check (size nahi, actual `--text-dim` value padh kar) 4 files par (1 product, 1 category, 2 brands) — sab sahi.
+
+
+## 2 naye RKIC Straight Ignition Electrode (Standard Stock sizes) — 8x100x100mm aur 10x150x200mm (17 Sep 2026)
+
+Rahul ne 2 photos bheje — pehle "8mm x 100mm x 100mm" (dimension callouts: 8mm insulator diameter, 100mm insulator/ceramic length, 100mm electrode length), phir "10mm x 200mm x 150mm" (clarify karne par confirm hua: 10mm dia, 150mm ceramic/insulator length, 200mm electrode rod/wire length — Rahul ke apne labels).
+
+Dono naye standalone fixed-size product pages hain — maujooda "Custom Ignition Electrode" (rkic-ignition-electrode.html, jo fully customer-spec/made-to-order hai) se alag, kyunki inka connector bhi alag hai (push-fit terminal pin, na ki SAE/D4/M4 threaded). Rahul ne AskUserQuestion se confirm kiya: naya alag page banega (merge nahi), aur "dimension should maintain in every page" — dono naye pages ke beech consistent spec-row naming (Insulator Diameter (D2) / Insulator Length (L2) / Electrode Length (L1) / Connection Type / Insulator Material / Electrode & Wiring Material / Manufacturer) follow kiya.
+
+Slugs: `rkic-ignition-electrode-8x100x100mm` aur `rkic-ignition-electrode-10x150x200mm` (dia x insulator-length x electrode-length pattern — extensible naam agar future mein aur sizes aayen).
+
+Har page: standalone HTML (rkic-ignition-electrode.html ko template maan kar targeted string-replace se banaya — title/meta/OG/twitter/JSON-LD Product+Breadcrumb/breadcrumb text/image+alt/pg-tag/h1/pg-code/spec rows/description/WhatsApp CTA/CURRENT_PRODUCT_ID, sab product-specific), naya processed image (1100px large + 400px thumb, PIL LANCZOS, JPEG q91/q82). index.html products array mein dono naye entries add kiye (137 products total ab), related-products-data.js aur sitemap.xml (172 URLs ab) mein bhi add kiya, brand-data.js RKIC count 9→11.
+
+**Verify**: dono pages par structural check (head/html/body tag counts) clean, ek doosre ke dimension values ka cross-contamination check (0 matches), index.html ka poora `products` array Node.js se parse karke validate kiya (137 entries, dono naye IDs present) — sirf grep nahi, actual JS-parse se confirm kiya ki syntax valid hai.
