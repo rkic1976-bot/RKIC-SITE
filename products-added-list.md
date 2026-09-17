@@ -2002,3 +2002,15 @@ Slugs: `rkic-ignition-electrode-8x100x100mm` aur `rkic-ignition-electrode-10x150
 Har page: standalone HTML (rkic-ignition-electrode.html ko template maan kar targeted string-replace se banaya — title/meta/OG/twitter/JSON-LD Product+Breadcrumb/breadcrumb text/image+alt/pg-tag/h1/pg-code/spec rows/description/WhatsApp CTA/CURRENT_PRODUCT_ID, sab product-specific), naya processed image (1100px large + 400px thumb, PIL LANCZOS, JPEG q91/q82). index.html products array mein dono naye entries add kiye (137 products total ab), related-products-data.js aur sitemap.xml (172 URLs ab) mein bhi add kiya, brand-data.js RKIC count 9→11.
 
 **Verify**: dono pages par structural check (head/html/body tag counts) clean, ek doosre ke dimension values ka cross-contamination check (0 matches), index.html ka poora `products` array Node.js se parse karke validate kiya (137 entries, dono naye IDs present) — sirf grep nahi, actual JS-parse se confirm kiya ki syntax valid hai.
+
+## Terminal Thread spec row — Ignition Electrodes category (17 Sep 2026)
+
+Rahul ne bataya: "Terminal Thread: 8-32 NC (common on industrial/burner ignition electrodes) ya M4 x 0.7 metric thread (common on general spark plugs) — ye point sabhi jagah Ignition Electrode category mein Connection Type ke saath lagna chahiye." Poori category (5 pages) mein apply karne ko confirm kiya (AskUserQuestion).
+
+Har page ka actual connector alag hai, isliye value bhi alag rakhi (guess nahi kiya):
+
+- **rkic-ignition-electrode.html** (Custom, Connection Type: SAE/D4/M4): naya row "Terminal Thread: SAE = 8-32 NC · M4 = M4 x 0.7 (D4 connection thread size not listed — confirm on request)" — D4 ka exact thread pata nahi tha, isliye invent nahi kiya, "confirm on request" likha.
+- **rkic-ignition-electrode-8x100x100mm.html** aur **rkic-ignition-electrode-10x150x200mm.html** (Push-Fit Terminal Pin): naya row "Terminal Thread: Not applicable — push-fit (friction) terminal, no threaded connection" — push-fit connector mein thread hota hi nahi, isliye N/A likha, 8-32NC/M4x0.7 force nahi kiya.
+- **rkic-special-ignition-electrode.html** aur **rkic-angled-ignition-electrode.html**: in dono ka already ek "Thread / Mounting Size: M14 x 1.25 or M18 x 1.50" row maujood tha jo exactly yahi info deta hai — isliye duplicate row nahi banaya, koi change nahi kiya. (Rahul ko flag kiya hai ki ye 2 pages already covered hain.)
+
+index.html ke corresponding 3 products (Custom + dono naye Push-Fit) ke specs object mein bhi same row add kiya. Node.js se products array re-parse karke verify kiya (137 entries, teeno mein Terminal Thread field sahi). 4 files commit, zero rejections, content-level grep verify (Terminal Thread text match) — no revert.
