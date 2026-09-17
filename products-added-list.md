@@ -2014,3 +2014,29 @@ Har page ka actual connector alag hai, isliye value bhi alag rakhi (guess nahi k
 - **rkic-special-ignition-electrode.html** aur **rkic-angled-ignition-electrode.html**: in dono ka already ek "Thread / Mounting Size: M14 x 1.25 or M18 x 1.50" row maujood tha jo exactly yahi info deta hai — isliye duplicate row nahi banaya, koi change nahi kiya. (Rahul ko flag kiya hai ki ye 2 pages already covered hain.)
 
 index.html ke corresponding 3 products (Custom + dono naye Push-Fit) ke specs object mein bhi same row add kiya. Node.js se products array re-parse karke verify kiya (137 entries, teeno mein Terminal Thread field sahi). 4 files commit, zero rejections, content-level grep verify (Terminal Thread text match) — no revert.
+
+## CORRECTION: Connection Type/Terminal Thread + Title fix — 2 naye Ignition Electrode pages (17 Sep 2026)
+
+Pichhli entry mein maine galti se dono naye fixed-size electrodes (8x100x100mm aur 10x150x200mm) ka connector "Push-Fit Terminal Pin" maan liya tha — sirf photo dekh kar, Rahul se confirm kiye bina. Yeh galat nikla.
+
+Rahul ne apni hi summary quote karke correct kiya: "Push-Fit Terminal Pin / Not applicable" = **Wrong**; "SAE/D4/M4 ✓, Terminal Thread = SAE = 8-32 NC · M4 = M4 x 0.7 (D4 confirm on request) ✓" = **Right** — yaani dono naye products ka connector bhi wahi hai jo Custom Ignition Electrode (rkic-ignition-electrode.html) page par hai.
+
+Fix kiya gaya (dono standalone pages + index.html + related-products-data.js mein):
+- **Connection Type**: "Push-Fit Terminal Pin" → "SAE / D4 / M4 Connection (other terminations on request)"
+- **Terminal Thread**: "Not applicable — push-fit (friction) terminal, no threaded connection" → "SAE = 8-32 NC · M4 = M4 x 0.7 (D4 connection thread size not listed — confirm on request)"
+- Har jagah "push-fit" wording (title, meta description/keywords, OG/twitter tags, JSON-LD name+description, breadcrumb, img alt, h1, pg-code, pg-desc paragraph) hata kar upar wali sahi terminology se replace kiya.
+
+**Title bhi simplify kiya** (Rahul ne AskUserQuestion mein confirm kiya): naya title "Ignition Electrode 8mm Insulator" (aur "Ignition Electrode 10mm Insulator" doosre product ke liye) — purana "Straight Ignition Electrode — [dims], Push-Fit Terminal" hata diya. Dimensions/"Standard Stock" suffix H1 aur title tag mein SEO ke liye retain kiya (e.g. "Ignition Electrode 8mm Insulator — 100mm x 100mm, Standard Stock") — sirf naam simplify kiya gaya hai, isliye slug/URL/filename dono products ka same raha (`rkic-ignition-electrode-8x100x100mm` / `-10x150x200mm`) — sitemap.xml, image filenames, product ID kahin change nahi kiya, kyunki Rahul ne sirf "title" mention kiya tha.
+
+**Verify**: dono standalone pages par case-insensitive "push-fit" grep zero match; head/html/body tag counts clean. index.html ka `products` array Node.js se re-parse kiya (137 entries, dono naye IDs ka Connection Type/Terminal Thread/name sahi). related-products-data.js ko Function() se execute karke syntax valid confirm kiya.
+
+**Lesson (project memory mein bhi note kiya)**: connector/terminal-type ka technical naam sirf photo dekh kar kabhi invent nahi karna — jab site par already ek established/Rahul-approved terminology maujood ho (jaise SAE/D4/M4 yahan), to pehle wahi assume/confirm karna, naya naam nahi banana.
+
+## Insulator Material wording standardized — Ignition Electrodes category, 5 pages (17 Sep 2026)
+
+Rahul ne exact wording di aur "compulsory" bataya: "Low-loss, alkali-free Steatite Ceramic (glazed or unglazed, natural satin-smooth finish) or 92–95% Aluminium Oxide" — yeh text pehle se hi `rkic-ignition-electrode.html` (Custom) par tha, baaki 4 pages par incomplete/inconsistent tha:
+
+- **rkic-ignition-electrode-8x100x100mm.html** aur **-10x150x200mm.html**: sirf "Low-loss, alkali-free Steatite Ceramic (natural satin-smooth finish)" tha — "glazed or unglazed" aur "or 92–95% Aluminium Oxide" dono missing the.
+- **rkic-special-ignition-electrode.html** aur **rkic-angled-ignition-electrode.html**: "Low-loss, alkali-free Steatite Ceramic or 92–95% Aluminium Oxide" tha — sirf "(glazed or unglazed, natural satin-smooth finish)" missing tha.
+
+Sabhi 5 pages ka Insulator Material spec row ab byte-identical hai Rahul ki di hui wording se. index.html ke corresponding 5 products ke specs object mein bhi same update kiya. Node.js se products array re-parse karke verify kiya (137 entries, paanchon Ignition/Spark Electrode products ka Insulator Material field match).
