@@ -2136,3 +2136,16 @@ Full-site audit: har 19 category page aur 14 brand page ka static product grid +
 Fix: dono pages mein missing 4 products ke related-card entries add kiye (thumb/name/code, existing card pattern follow karke), product-count text update kiya (ignition-electrodes: 1→5, R.K. Instruments brand: 9→13), JSON-LD numberOfItems aur itemListElement positions bhi update kiye. Rahul ko before/after screenshot proof bheja, confirm karne ke baad commit kiya. Content re-verify kiya (byte-diff match).
 
 Repo junk cleanup: root mein "Claude outputs" folder tha (80 purani files — screenshots, delivery zips, sample pages) jo galti se git mein commit ho gaya tha, site ka hissa nahi tha. Rahul ne khud delete karke push kiya. ROOT CAUSE MILA: jab bhi Claude SendUserFile se koi screenshot/file bhejta hai aur ek local folder connected hota hai, desktop app usko automatically "Claude outputs/" subfolder mein bhi save kar deta hai — isiliye ye folder baar-baar banta rehta hai. FIX: repo root mein `.gitignore` add kiya jisme `Claude outputs/` entry hai — ab ye folder future mein bhi ban sakta hai lekin git usse kabhi commit nahi karega, permanent solution.
+
+## Base64 favicon/logo images externalize kiye — site-wide perf fix (18 Sep 2026)
+
+Har ek 176 HTML page (index.html + 142 products + 19 categories + 14 brands) mein favicon (16px + 32px), apple-touch-icon, header logo, aur per-product brand-badge logo — ye images base64-encoded text ke roop mein directly HTML ke andar duplicate ho rahe the. Total ~11 MB duplicate base64 sirf in chhote logos ke liye tha.
+
+Fix: 18 images (4 global + 14 per-brand) ko external files mein nikaal diya (`images/favicon-16.png`, `images/favicon-32.png`, `images/apple-touch-icon-180.png`, `images/logo-header.png`, `images/pg-logos/pg-logo-<brand-slug>.png`), aur unko display-size ke hisaab se right-size bhi kiya (pehle bahut bade the, ab sirf jitna 16px/34px display ke liye chahiye). Sabhi 176 pages mein base64 references ko in external file paths se replace kiya. Vanaz ke 2 similar logo variants the — ek hi canonical version use kiya dono jagah, Rahul se confirm karke.
+
+Result: product pages ~69% chhote (254 KB → 78 KB average), category pages ~58% chhote, brand pages ~55% chhote, index.html ~20% chhota. Total HTML payload repo-wide 24.5 MB → 9.3 MB (-62%). Ab browser images sirf ek baar download/cache karega instead of har page mein baar-baar.
+
+Bonus fix: products/siltek-siaf-ht.html aur siltek-siaf-ht-15kv.html mein brand-badge "Siltek logo" tha jo actually RKIC ka hi leaf/flame logo hai (byte-identical) — usi correct image se replace kiya, visual output same raha.
+
+Rahul ko before/after screenshots (product page + category page + logo quality zoom-compare) bheje, confirm milne ke baad hi rollout kiya. Har commit batch ke baad content re-verify kiya (byte-diff on sample across all batches, pixel-diff on all 18 images). Ek note: device transfer pipeline har PNG mein ek chhota (~5.6 KB) C2PA content-credentials chunk add kar deta hai automatically — visual/pixel par koi asar nahi, bas file size thoda zyada (18 images ka total ~155 KB ho gaya 51 KB se, ab bhi 426 KB se bahut kam).
+
