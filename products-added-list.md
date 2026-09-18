@@ -2076,3 +2076,15 @@ Standalone page `honeywell-et401a.html` template `honeywell-et401a1.html` se tar
 index.html mein naya 140th product entry add kiya (no imageLarge field, no Approvals spec key) — Node.js se products array re-parse karke verify kiya (140 entries). related-products-data.js (140 entries), brand-data.js (Honeywell Technologies count 10→11), sitemap.xml (175 URLs, 18 Sep 2026 lastmod) sab update kiye, Function()/XML-parse se syntax validate kiya.
 
 Pichli entries ka flag (categories/ignition-electrodes.html aur brands/r-k-instruments-and-controls.html ke static listings out of sync, sirf Ignition Electrodes category ke liye) is task se unaffected hai — ET 401A Ignition Transformers category mein hai, alag category page.
+
+## Naya Honeywell Ignition Transformer ET 402 (230V, 2-Pole) — 141 products total (18 Sep 2026)
+
+Rahul ne Honeywell ET 402 ka nameplate photo bheja, 230V AC, aur pooncha confirm karne ko: "Ye two pole hai" — nameplate check kiya: **"Sec. 2 x 7kV. Ampl. 40mA rms"** — yeh confirm karta hai ki ye genuinely ek 2-pole (dual secondary output) ignition transformer hai, ET 401A/401A1 ke single 14kV output design se architecturally different (do alag 7kV outputs, na ki ek 14kV output). Rahul ki baat sahi confirm hui.
+
+Nameplate se specs nikale: Type ET 402, Primary 230V/0.25A/50-60Hz (ET 401A jaisa hi), Secondary 2 x 7kV Ampl./40mA rms (naya — dual output), Duty Cycle AB 33% ED in 3 Min., Protection IP40, Wiring Blue-N/Brown-L/Green&Yellow-E, Origin Made in China, Manufacturer Honeywell. Nameplate par UL/cUL text visible nahi tha (sirf generic icons) — isliye Approvals row is baar bhi add nahi kiya, pichli ET 401A decision ke consistent.
+
+Naya distinct product — koi existing ET 402 page pehle se nahi tha. Duplicate-photo check: perceptual-hash se saare existing images ke against compare kiya, min diff=18 (genuinely naya photo, koi match nahi).
+
+Standalone page `honeywell-et402.html` template `honeywell-et401a.html` se banaya (dono 230V/no-Approvals-row/current-image-convention share karte hain) — patterns count-assert verify kiye (ET 401A→ET 402 ×22, honeywell-et401a→honeywell-et402 ×9, ET%20401A→ET%20402 ×1, Secondary spec ×2, description-phrase restructure ×4). Ek chhoti grammar galti pehle draft mein pakdi khud (verify step mein) — "supply to **a** two 7kV outputs" (galat article) → "supply to two 7kV outputs" (sahi) — 4 jagah fix ki commit se pehle. Full diff se confirm kiya sirf expected lines badli, div-count same (64=64, kuch remove nahi hua is baar).
+
+Images: naya photo 500x500 square, current convention follow ki (1100px-large q91 + 400px-thumb q82, no imageLarge). index.html mein naya 141st product entry add kiya, Node.js se re-parse verify kiya. related-products-data.js (141 entries), brand-data.js (Honeywell Technologies count 11→12), sitemap.xml (176 URLs) sab update kiye.
