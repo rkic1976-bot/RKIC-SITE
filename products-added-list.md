@@ -2088,3 +2088,17 @@ Naya distinct product — koi existing ET 402 page pehle se nahi tha. Duplicate-
 Standalone page `honeywell-et402.html` template `honeywell-et401a.html` se banaya (dono 230V/no-Approvals-row/current-image-convention share karte hain) — patterns count-assert verify kiye (ET 401A→ET 402 ×22, honeywell-et401a→honeywell-et402 ×9, ET%20401A→ET%20402 ×1, Secondary spec ×2, description-phrase restructure ×4). Ek chhoti grammar galti pehle draft mein pakdi khud (verify step mein) — "supply to **a** two 7kV outputs" (galat article) → "supply to two 7kV outputs" (sahi) — 4 jagah fix ki commit se pehle. Full diff se confirm kiya sirf expected lines badli, div-count same (64=64, kuch remove nahi hua is baar).
 
 Images: naya photo 500x500 square, current convention follow ki (1100px-large q91 + 400px-thumb q82, no imageLarge). index.html mein naya 141st product entry add kiya, Node.js se re-parse verify kiya. related-products-data.js (141 entries), brand-data.js (Honeywell Technologies count 11→12), sitemap.xml (176 URLs) sab update kiye.
+
+## ET 401A / ET 401A1 naming disambiguation + category/brand static-listing sync (18 Sep 2026)
+
+Rahul ne flag kiya ki ET 401A1 aur ET 401A (naya) page browse karte waqt "duplicate" jaise lag rahe the — dono naam sirf ek "1" se differ karte hain, isliye scan karte waqt pehchan mushkil ho rahi thi. Unhone specify karne ko kaha: "230V AC & 110V AC" clearly dikhna chahiye.
+
+Fix: dono pages ke displayed naam mein voltage suffix add kiya — title/meta/OG/twitter/JSON-LD/breadcrumb/alt/h1 sabme (10 jagah har page mein, count-assert verify kiya):
+- **ET 401A1** → "Honeywell Ignition Transformer ET 401A1 (110-120V AC)" (nameplate ka actual range, "110V" round nahi kiya)
+- **ET 401A** → "Honeywell Ignition Transformer ET 401A (230V AC)"
+
+index.html aur related-products-data.js ke `name` field bhi dono products ke liye update kiye (Node.js re-parse se verify, 141 entries intact).
+
+**Isi investigation mein ek asli pre-existing bug mila** (jo Rahul ki confusion ki asli wajah ho sakti hai): `categories/ignition-transformers.html` aur `brands/honeywell-technologies.html` — dono STATIC listing pages — is session mein add kiye gaye 2 naye products (ET 401A, ET 402) ko bilkul show hi nahi kar rahe the (pehle se flagged Ignition Electrodes category wali staleness gap ka hi pattern, is baar Ignition Transformers/Honeywell Technologies brand ke liye). Dono files manually fix ki (poora `/tmp/gen_categories.py` regenerator re-run nahi kiya — woh saare 19 category pages ko 13 Sep ki purani state mein reset kar deta, jisse baad ke saare site-wide fixes — WCAG contrast, nav links, OG images — khatam ho jaate): related-card grid mein 2 naye cards add kiye + existing ET 401A1 card ka naam bhi (110-120V AC) suffix ke saath sahi kiya, JSON-LD itemListElement mein bhi 2 naye entries + numberOfItems count sahi kiya (ignition-transformers: 13→15, honeywell-technologies: 10→12). Dono files JSON-parse + tag-balance se verify kiye.
+
+**Flagged, not fixed**: baaki 17 category pages aur 13 baaki brand pages ka staleness status is session mein check nahi kiya gaya — sirf yeh 2 (jo is task se directly related the) fix kiye. Agar Rahul chahein to poora site-wide static-listing sync audit alag se kiya ja sakta hai.
