@@ -2128,3 +2128,11 @@ Rollout se pehle: saare 175 files mein exact byte-identical mobile-drawer Brands
 Device par 5 batches mein commit kiya, sab 175 files zero rejections ke saath. Commit ke baad 7 representative files (saare 5 batches se, products/categories/brands mix) re-stage kiye aur content verify kiya — har file mein dono naye class count sahi (15 each: 1 CSS rule + 14 usages), html/body tag count 1-1, markup exact expected format mein. Ab desktop AND mobile dono jagah Brands dropdown/drawer mein logos consistent hain — koi open item nahi bacha is feature ke liye.
 
 
+
+## Category/Brand static listing sync fix + repo junk cleanup (18 Sep 2026)
+
+Full-site audit: har 19 category page aur 14 brand page ka static product grid + JSON-LD itemListElement live index.html products array se compare kiya. Sirf 2 pages stale mile — categories/ignition-electrodes.html aur brands/r-k-instruments-and-controls.html — dono mein 4 naye Standard Stock Ignition Electrode products (8x100x100mm, 10x150x200mm, 12x125x100mm, 14x200x200mm) missing the. Baaki 17 category + 13 brand pages already sync mein hain, koi aur gap nahi mila.
+
+Fix: dono pages mein missing 4 products ke related-card entries add kiye (thumb/name/code, existing card pattern follow karke), product-count text update kiya (ignition-electrodes: 1→5, R.K. Instruments brand: 9→13), JSON-LD numberOfItems aur itemListElement positions bhi update kiye. Rahul ko before/after screenshot proof bheja, confirm karne ke baad commit kiya. Content re-verify kiya (byte-diff match).
+
+Repo junk cleanup: root mein "Claude outputs" folder tha (80 purani files — screenshots, delivery zips, sample pages) jo galti se git mein commit ho gaya tha, site ka hissa nahi tha. Rahul ne khud delete karke push kiya. ROOT CAUSE MILA: jab bhi Claude SendUserFile se koi screenshot/file bhejta hai aur ek local folder connected hota hai, desktop app usko automatically "Claude outputs/" subfolder mein bhi save kar deta hai — isiliye ye folder baar-baar banta rehta hai. FIX: repo root mein `.gitignore` add kiya jisme `Claude outputs/` entry hai — ab ye folder future mein bhi ban sakta hai lekin git usse kabhi commit nahi karega, permanent solution.
