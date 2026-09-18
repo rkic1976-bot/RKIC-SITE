@@ -2127,3 +2127,4 @@ Rollout se pehle: saare 175 files mein exact byte-identical mobile-drawer Brands
 
 Device par 5 batches mein commit kiya, sab 175 files zero rejections ke saath. Commit ke baad 7 representative files (saare 5 batches se, products/categories/brands mix) re-stage kiye aur content verify kiya — har file mein dono naye class count sahi (15 each: 1 CSS rule + 14 usages), html/body tag count 1-1, markup exact expected format mein. Ab desktop AND mobile dono jagah Brands dropdown/drawer mein logos consistent hain — koi open item nahi bacha is feature ke liye.
 
+
