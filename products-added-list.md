@@ -2102,3 +2102,28 @@ index.html aur related-products-data.js ke `name` field bhi dono products ke liy
 **Isi investigation mein ek asli pre-existing bug mila** (jo Rahul ki confusion ki asli wajah ho sakti hai): `categories/ignition-transformers.html` aur `brands/honeywell-technologies.html` — dono STATIC listing pages — is session mein add kiye gaye 2 naye products (ET 401A, ET 402) ko bilkul show hi nahi kar rahe the (pehle se flagged Ignition Electrodes category wali staleness gap ka hi pattern, is baar Ignition Transformers/Honeywell Technologies brand ke liye). Dono files manually fix ki (poora `/tmp/gen_categories.py` regenerator re-run nahi kiya — woh saare 19 category pages ko 13 Sep ki purani state mein reset kar deta, jisse baad ke saare site-wide fixes — WCAG contrast, nav links, OG images — khatam ho jaate): related-card grid mein 2 naye cards add kiye + existing ET 401A1 card ka naam bhi (110-120V AC) suffix ke saath sahi kiya, JSON-LD itemListElement mein bhi 2 naye entries + numberOfItems count sahi kiya (ignition-transformers: 13→15, honeywell-technologies: 10→12). Dono files JSON-parse + tag-balance se verify kiye.
 
 **Flagged, not fixed**: baaki 17 category pages aur 13 baaki brand pages ka staleness status is session mein check nahi kiya gaya — sirf yeh 2 (jo is task se directly related the) fix kiye. Agar Rahul chahein to poora site-wide static-listing sync audit alag se kiya ja sakta hai.
+
+## Header "Brands" dropdown mein logos add kiye — site-wide, 175 files (18 Sep 2026)
+
+Rahul ne screenshot bheja "yaha logo dikaye nahi diya" — pehle laga ye product-tag badge ke paas ka logo hai (ET 401A1 page), jo investigate kiya: local copy AND Rahul ke actual device se re-staged file dono ka base64 PNG decode kiya, dono clean 431×108 valid Honeywell Technologies logo nikla — file corruption nahi tha, browser cache issue lagta hai (hard refresh suggest kiya).
+
+Rahul ne clarify kiya: "Internal page ke dropdown mein logo nahi dikhai de raha hai" — asli complaint header ki "Brands" nav dropdown menu ke baare mein tha (plain text list, koi logo icon nahi), na ki product-tag badge.
+
+Scripted audit kiya: saare 175 standalone pages (142 products + 19 categories + 14 brands) check kiye — **0 files mein Brands dropdown ke andar `<img>` tag tha** (100% consistent gap). index.html ka apna equivalent dropdown already dynamic JS-rendered hai logos ke saath (brand-data.js se) — sirf standalone pages ye miss kar rahe the.
+
+Fix confirm karne ke liye pehle Playwright se isolated screenshot banaya (before/after), Rahul ko bheja — unhone apne reference screenshots ke saath confirm kiya: "ye look tha ..yahi chaiye apne change kar diya.."
+
+Rollout: saare 175 files mein exact byte-identical Brands-dropdown block pehle verify kiya (grep se, 0 mismatch), phir ek Python script se sabme `<img class="nav-drop-brand-logo" src="../images/brands/brand-<slug>.png" alt="<name>" loading="lazy">` add kiya har 14 brand links ke andar (pehle se maujood, kabhi use na hui `.nav-drop-brand-logo` CSS class reuse ki, koi nayi CSS nahi likhi). Result: Changed 175, Skipped 0, Failed 0.
+
+Device par 5 batches mein commit kiya (~40 files per batch), sab 175 files zero rejections ke saath likhe gaye. Commit ke baad standing rule follow ki: 8 representative files re-stage kiye (products/categories/brands mix, alag-alag batches se) aur content verify kiya — har file mein logo class count sahi (14 img usages + 1 CSS rule = 15), html/body tag count 1-1 (koi corruption nahi), src path sahi resolve ho raha.
+
+## Mobile drawer "Brands" list mein bhi logos add kiye — 175 files (18 Sep 2026)
+
+Rahul ne header dropdown fix confirm karne ke turant baad kaha: "mobile drawer mein bhi ye logo fix kar do" — same gap tha hamburger-menu ke Brands sub-list mein (`.drawer-sub`), jo already flag kiya gaya tha as "not fixed" pichle changelog entry mein.
+
+Investigate kiya: `.drawer-sub a` CSS `justify-content:space-between` use karta hai (products/categories ke count-badges ke liye), jo agar seedha logo `<img>` add karte to brand-naam ko dropdown ke dooosre kinare tak push kar deta — isliye ek naya modifier class `drawer-sub-brand` (justify-content:flex-start !important) sirf brand links par add kiya, plus `drawer-brand-logo` class (16px height, existing desktop `.nav-drop-brand-logo` jaisa hi pattern, bas chhota size mobile ke liye) — dono CSS rules add kiye, koi existing style nahi chheda.
+
+Rollout se pehle: saare 175 files mein exact byte-identical mobile-drawer Brands block verify kiya (0 mismatch), phir Python script se sabme `<img class="drawer-brand-logo" ...>` add kiya har 14 brand link ke andar + naya `drawer-sub-brand` class. Result: Changed 175, Failed 0. Playwright se mobile viewport (390x844) par drawer khol ke Brands section expand kiya, screenshot Rahul ko bheja — layout clean tha (desktop dropdown jaisa hi look), usi confirmed pattern ka extension hone se seedha rollout kiya.
+
+Device par 5 batches mein commit kiya, sab 175 files zero rejections ke saath. Commit ke baad 7 representative files (saare 5 batches se, products/categories/brands mix) re-stage kiye aur content verify kiya — har file mein dono naye class count sahi (15 each: 1 CSS rule + 14 usages), html/body tag count 1-1, markup exact expected format mein. Ab desktop AND mobile dono jagah Brands dropdown/drawer mein logos consistent hain — koi open item nahi bacha is feature ke liye.
+

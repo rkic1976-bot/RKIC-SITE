@@ -72,6 +72,8 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .nav-cat-caret{ color:var(--flame); font-size:0.72em; opacity:0.8; }
 .nav-drop-panel-brands{ display:grid; grid-template-columns:1fr 1fr; gap:4px; min-width:280px; }
 .nav-drop-brand-logo{ height:18px; width:auto; max-width:100px; object-fit:contain; }
+.drawer-sub-brand{ justify-content:flex-start !important; }
+.drawer-brand-logo{ height:16px; width:auto; max-width:80px; object-fit:contain; }
 /* Search overlay panel */
 .search-panel{ display:none; position:fixed; top:0; left:0; right:0; bottom:auto; z-index:90; background:rgba(51,65,78,0.55); padding-top:0; }
 .search-panel.open{ display:block; }
@@ -407,20 +409,20 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
     <li class="drawer-item">
       <div class="drawer-row" onclick="this.closest('.drawer-item').classList.toggle('open')">Brands <span class="chev">⌄</span></div>
       <div class="drawer-sub">
-        <a href="../brands/brahma.html">Brahma</a>
-        <a href="../brands/cofi.html">Cofi</a>
-        <a href="../brands/danfoss.html">Danfoss</a>
-        <a href="../brands/dungs.html">Dungs</a>
-        <a href="../brands/elektrogas.html">Elektrogas</a>
-        <a href="../brands/honeywell-eclipse.html">Honeywell Eclipse</a>
-        <a href="../brands/honeywell-elster.html">Honeywell Elster</a>
-        <a href="../brands/honeywell-kromschroder.html">Honeywell Kromschröder</a>
-        <a href="../brands/honeywell-maxon.html">Honeywell Maxon</a>
-        <a href="../brands/honeywell-technologies.html">Honeywell Technologies</a>
-        <a href="../brands/madas.html">Madas</a>
-        <a href="../brands/r-k-instruments-and-controls.html">R.K. Instruments &amp; Controls</a>
-        <a href="../brands/siemens.html">Siemens</a>
-        <a href="../brands/vanaz.html">Vanaz</a>
+        <a href="../brands/brahma.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-brahma.png" alt="Brahma" loading="lazy">Brahma</a>
+        <a href="../brands/cofi.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-cofi.png" alt="Cofi" loading="lazy">Cofi</a>
+        <a href="../brands/danfoss.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-danfoss.png" alt="Danfoss" loading="lazy">Danfoss</a>
+        <a href="../brands/dungs.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-dungs.png" alt="Dungs" loading="lazy">Dungs</a>
+        <a href="../brands/elektrogas.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-elektrogas.png" alt="Elektrogas" loading="lazy">Elektrogas</a>
+        <a href="../brands/honeywell-eclipse.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-honeywell-eclipse.png" alt="Honeywell Eclipse" loading="lazy">Honeywell Eclipse</a>
+        <a href="../brands/honeywell-elster.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-honeywell-elster.png" alt="Honeywell Elster" loading="lazy">Honeywell Elster</a>
+        <a href="../brands/honeywell-kromschroder.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-honeywell-kromschroder.png" alt="Honeywell Kromschröder" loading="lazy">Honeywell Kromschröder</a>
+        <a href="../brands/honeywell-maxon.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-honeywell-maxon.png" alt="Honeywell Maxon" loading="lazy">Honeywell Maxon</a>
+        <a href="../brands/honeywell-technologies.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-honeywell-technologies.png" alt="Honeywell Technologies" loading="lazy">Honeywell Technologies</a>
+        <a href="../brands/madas.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-madas.png" alt="Madas" loading="lazy">Madas</a>
+        <a href="../brands/r-k-instruments-and-controls.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-r-k-instruments-and-controls.png" alt="R.K. Instruments & Controls" loading="lazy">R.K. Instruments &amp; Controls</a>
+        <a href="../brands/siemens.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-siemens.png" alt="Siemens" loading="lazy">Siemens</a>
+        <a href="../brands/vanaz.html" class="drawer-sub-brand"><img class="drawer-brand-logo" src="../images/brands/brand-vanaz.png" alt="Vanaz" loading="lazy">Vanaz</a>
       </div>
     </li>
     <li><a class="drawer-row" href="../index.html#contact">Contact Us</a></li>
