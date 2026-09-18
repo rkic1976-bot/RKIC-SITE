@@ -1,0 +1,6 @@
+# Files Claude Cowork auto-saves to this connected folder when it sends
+# screenshots/proofs/deliverables into the chat (e.g. via SendUserFile) get
+# mirrored here automatically by the desktop app. This is scratch, not part
+# of the live site -- never commit it. (Root-caused 18 Sep 2026: this is why
+# a "Claude outputs" folder kept reappearing after being deleted.)
+Claude outputs/
