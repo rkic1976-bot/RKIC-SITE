@@ -2149,3 +2149,17 @@ Bonus fix: products/siltek-siaf-ht.html aur siltek-siaf-ht-15kv.html mein brand-
 
 Rahul ko before/after screenshots (product page + category page + logo quality zoom-compare) bheje, confirm milne ke baad hi rollout kiya. Har commit batch ke baad content re-verify kiya (byte-diff on sample across all batches, pixel-diff on all 18 images). Ek note: device transfer pipeline har PNG mein ek chhota (~5.6 KB) C2PA content-credentials chunk add kar deta hai automatically — visual/pixel par koi asar nahi, bas file size thoda zyada (18 images ka total ~155 KB ho gaya 51 KB se, ab bhi 426 KB se bahut kam).
 
+
+## Products dropdown grid fix — 175 static pages (19 Sep 2026)
+
+Rahul ne screenshot bheja: kisi bhi product/category/brand page (home ke alawa) par header ka "Products" dropdown galat dikh raha tha — cramped, single narrow scrolling column, jabki home page ka apna Products dropdown (JS-driven mega-menu) wide 6-column grid mein sahi tha. Brands dropdown in 175 pages par already grid-styled tha (`.nav-drop-panel-brands`), isi wajah se Products aur Brands ka contrast saaf dikh raha tha.
+
+Root cause: home page (`index.html`) ka Products dropdown JS se dynamically banta hai (`#navProductsGrid`, live search + collapsible sub-categories). Baaki 175 static pages (`products/*.html`, `categories/*.html`, `brands/*.html`) mein Products dropdown sirf generic `.nav-drop-panel` class use karta tha (narrow single column, `max-height:340px; overflow-y:auto`), koi grid styling nahi thi — jabki Brands dropdown ke liye pehle se hi separate `.nav-drop-panel-brands` grid class maujood thi.
+
+Fix: CSS-only (koi JS, koi naya markup structure nahi) — naya `.nav-drop-panel-products` class add kiya, home page ke exact grid values match karke (`width:min(92vw, 940px)`, `grid-template-columns:repeat(6, 1fr)`, `gap:2px 8px`, `max-height:60vh`, link font-size 0.76rem/padding 7px 6px), Products div par existing `.nav-drop-panel` ke saath extra class laga di. Sub-category sublinks (jaise "↳ Oxygen Regulator") ko `grid-column:1 / -1` diya taaki wo apni pura row le (home page ke grouping look ko approximate karta hai, bina full JS ke).
+
+Rollout se pehle 3 sample files (ek product, ek category, ek brand) par fix laga ke Playwright se desktop (1400x900) aur mobile (390x844) dono viewport par screenshot liya, Rahul ko bheja — desktop grid home page jaisa match, mobile drawer (jo already alag CSS use karta hai) bilkul unaffected raha. Rahul ne confirm karne ke baad poore 172 remaining files (175 total minus 3 samples) ka go-ahead diya.
+
+Rollout: 175/175 files (142 products + 19 categories + 14 brands) successfully process hue (0 errors — har file mein CSS marker aur target div dono exactly 1 baar match hue). Device par 4 batches mein commit kiya, sab 175 files zero rejections. Commit ke baad 8 representative files (saare 4 batches se, products/categories/brands mix) re-stage kiye — content byte-diff exact match (0 mismatch). Live committed files par Playwright se dobara desktop + mobile screenshot liya (naya http server, seedha device se staged files par) — Products dropdown desktop par wide 6-column grid, mobile drawer bilkul unaffected — dono confirmed.
+
+Is fix ke baad ab Products aur Brands dropdown consistent hain sabhi 176 pages (home + 175 static) par.

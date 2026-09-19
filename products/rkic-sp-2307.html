@@ -71,6 +71,9 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .nav-drop-sublink{ padding-left:24px !important; font-size:0.76rem !important; color:var(--text-dim) !important; }
 .nav-cat-caret{ color:var(--flame); font-size:0.72em; opacity:0.8; }
 .nav-drop-panel-brands{ display:grid; grid-template-columns:1fr 1fr; gap:4px; min-width:280px; }
+.nav-drop-panel-products{ width:min(92vw, 940px); max-width:940px; padding:12px; display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 8px; max-height:60vh; overflow-y:auto; }
+.nav-drop-panel-products a{ font-size:0.76rem; padding:7px 6px; }
+.nav-drop-panel-products .nav-drop-sublink{ grid-column:1 / -1; }
 .nav-drop-brand-logo{ height:18px; width:auto; max-width:100px; object-fit:contain; }
 .drawer-sub-brand{ justify-content:flex-start !important; }
 .drawer-brand-logo{ height:16px; width:auto; max-width:80px; object-fit:contain; }
@@ -259,7 +262,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
       <a href="../index.html#about">About Us</a>
       <details class="nav-dd">
         <summary>Products <span class="chev">⌄</span></summary>
-        <div class="nav-drop-panel">
+        <div class="nav-drop-panel nav-drop-panel-products">
       <a href="../index.html#/category/BOILER%20CONNECTOR%20PLUG">Boiler Connector Plug</a>
       <a href="../index.html#/category/BOILERS">Boilers</a>
       <a href="../index.html#/category/BURNER%20CONNECTOR%20PLUG">Burner Connector Plug</a>
