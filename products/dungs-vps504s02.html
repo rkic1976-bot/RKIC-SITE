@@ -55,26 +55,86 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .nav-cta{ background:var(--ink); color:var(--paper); padding:9px 16px; border-radius:2px; font-size:0.82rem; font-weight:600; text-decoration:none; white-space:nowrap; }
 .search-btn{ background:none; border:1px solid var(--line); color:var(--ink); width:38px; height:38px; border-radius:4px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
 .search-btn svg{ width:17px; height:17px; }
-/* Products/Brands dropdowns via native <details> — no JS required */
-.nav-dd{ position:relative; }
-.nav-dd summary{ display:flex; align-items:center; gap:6px; cursor:pointer; list-style:none; color:inherit; }
-.nav-dd summary::-webkit-details-marker{ display:none; }
-.nav-dd .chev{ font-size:0.7rem; transition:transform 0.2s ease; }
-.nav-dd[open] .chev{ transform:rotate(180deg); }
-.nav-drop-panel{
-  position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%);
-  background:#fff; border:1px solid var(--line); border-radius:4px; padding:10px;
-  min-width:260px; max-height:340px; overflow-y:auto; box-shadow:0 12px 28px rgba(51,65,78,0.14); z-index:60;
+/* Products/Brands dropdowns — matches index.html's dynamic mega-menu exactly (19 Sep 2026) */
+.nav-dropdown{ position:relative; }
+.nav-drop-btn{
+  display:flex; align-items:center; gap:6px; background:none; border:none; cursor:pointer;
+  color:inherit; font-size:inherit; font-family:'Barlow',sans-serif; padding:0;
 }
-.nav-drop-panel a{ display:flex; align-items:center; gap:8px; padding:8px 10px; font-size:0.84rem; color:var(--ink); border-radius:2px; text-decoration:none; }
+.nav-drop-btn .chev{ font-size:0.7rem; transition:transform 0.2s ease; }
+.nav-dropdown.open .nav-drop-btn .chev{ transform:rotate(180deg); }
+.nav-drop-panel{
+  display:none; position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%);
+  background:#fff; border:1px solid var(--line); border-radius:4px; padding:10px; z-index:60;
+  min-width:260px; max-height:340px; overflow-y:auto; box-shadow:0 12px 28px rgba(51,65,78,0.14);
+}
+.nav-dropdown.open .nav-drop-panel{ display:block; }
+.nav-drop-panel a{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 10px; font-size:0.84rem; color:var(--ink); border-radius:2px; text-decoration:none; }
 .nav-drop-panel a:hover{ background:var(--steel); }
-.nav-drop-sublink{ padding-left:24px !important; font-size:0.76rem !important; color:var(--text-dim) !important; }
-.nav-cat-caret{ color:var(--flame); font-size:0.72em; opacity:0.8; }
-.nav-drop-panel-brands{ display:grid; grid-template-columns:1fr 1fr; gap:4px; min-width:280px; }
-.nav-drop-panel-products{ width:min(92vw, 940px); max-width:940px; padding:12px; display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 8px; max-height:60vh; overflow-y:auto; }
-.nav-drop-panel-products a{ font-size:0.76rem; padding:7px 6px; }
-.nav-drop-panel-products .nav-drop-sublink{ grid-column:1 / -1; }
-.nav-drop-brand-logo{ height:18px; width:auto; max-width:100px; object-fit:contain; }
+#navProductsPanel{
+  width:min(92vw, 940px); max-width:940px; padding:12px;
+  max-height:85vh; overflow-y:visible;
+}
+.nav-drop-search{
+  display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:5px;
+  padding:8px 11px; margin:0 0 10px; background:var(--paper);
+}
+.nav-drop-search svg{ width:15px; height:15px; stroke:var(--sage-deep); flex:0 0 auto; }
+.nav-drop-search input{ border:none; outline:none; font-size:0.82rem; color:var(--ink); width:100%; background:transparent; font-family:'Barlow',sans-serif; }
+.nav-drop-search input::placeholder{ color:var(--text-dim); }
+#navProductsGrid{
+  display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 8px;
+  max-height:60vh; overflow-y:auto;
+}
+#navProductsGrid[hidden]{ display:none; }
+#navProductsGrid a{ font-size:0.76rem; padding:7px 6px; }
+.nav-cat-caret{ display:inline-block; color:var(--sage-deep); font-size:1rem; font-weight:800; line-height:1; opacity:1; transition:transform 0.2s ease; }
+.nav-cat-row{ display:flex; align-items:stretch; gap:2px; border-radius:2px; }
+.nav-cat-row .nav-drop-link{ flex:1; min-width:0; }
+.nav-cat-toggle{
+  flex:0 0 22px; width:22px; align-self:center; display:flex; align-items:center; justify-content:center;
+  background:none; border:none; cursor:pointer; padding:0;
+}
+.nav-cat-toggle:hover .nav-cat-caret{ color:var(--ink); }
+.nav-cat-row.expanded .nav-cat-toggle .nav-cat-caret{ transform:rotate(180deg); }
+.nav-cat-subs{
+  grid-column:1 / -1; display:none; flex-wrap:wrap; gap:2px 16px;
+  padding:2px 6px 8px 16px; border-bottom:1px solid var(--line); margin-bottom:2px;
+}
+.nav-cat-subs a{ font-size:0.76rem; color:#3f3f3f; padding:5px 6px; display:flex; align-items:center; gap:5px; border-radius:2px; text-decoration:none; }
+.nav-cat-subs a:hover{ background:var(--steel); color:var(--ink); }
+#navProductsResults{ margin:0 auto; max-width:460px; max-height:56vh; }
+#navProductsResults a{ font-size:0.83rem; padding:9px 6px; }
+#navProductsResults .search-kicker{ padding-top:8px; }
+.nav-drop-hint{ padding:16px 8px; font-size:0.82rem; color:var(--text-dim); line-height:1.5; text-align:center; }
+.search-results{ margin-top:0; max-height:280px; overflow-y:auto; }
+.search-results a{ display:flex; justify-content:space-between; align-items:center; padding:11px 6px; font-size:0.92rem; color:var(--ink); border-bottom:1px solid var(--line); text-decoration:none; }
+.search-results a:hover{ background:var(--steel); }
+.search-results a .code{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:var(--sage-deep); }
+.search-empty{ padding:16px 6px; font-size:0.88rem; color:var(--text-dim); }
+.search-results a.search-product-row{ gap:12px; }
+.search-product-row img{ width:38px; height:38px; object-fit:contain; background:var(--paper); border-radius:2px; flex:0 0 auto; border:1px solid var(--line); }
+.search-product-row .srp-info{ display:flex; flex-direction:column; flex:1; min-width:0; gap:2px; }
+.search-product-row .srp-name{ font-weight:500; }
+.search-product-row .srp-meta{ font-size:0.72rem; color:var(--text-dim); }
+.search-kicker{ font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--lemon-text); padding:10px 6px 2px; }
+.srp-brand-logo{ height:14px; width:auto; vertical-align:middle; object-fit:contain; margin-right:4px; }
+.nav-drop-brand-logo{ height:20px; width:38px; object-fit:contain; object-position:left center; flex:0 0 38px; }
+.nav-drop-brand-name{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-left:8px; letter-spacing:0.02em; flex:1 1 auto; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#navBrandsPanel{
+  width:min(92vw, 940px); max-width:940px; padding:12px;
+  max-height:85vh; overflow-y:visible;
+  grid-template-columns:repeat(6, 1fr); gap:2px 10px;
+}
+.nav-dropdown.open #navBrandsPanel{ display:grid; }
+#navBrandsPanel a{
+  font-size:0.76rem; padding:8px 6px; min-width:0;
+  flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:5px;
+}
+#navBrandsPanel .nav-drop-brand-logo{ width:auto; max-width:90px; flex:0 0 auto; }
+#navBrandsPanel .nav-drop-brand-name{
+  flex:0 0 auto; width:100%; margin-left:0; white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:break-word;
+}
 .drawer-sub-brand{ justify-content:flex-start !important; }
 .drawer-brand-logo{ height:16px; width:auto; max-width:80px; object-fit:contain; }
 /* Search overlay panel */
@@ -240,68 +300,21 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
     <nav class="nav-links">
       <a href="../index.html#home">Home</a>
       <a href="../index.html#about">About Us</a>
-      <details class="nav-dd">
-        <summary>Products <span class="chev">⌄</span></summary>
-        <div class="nav-drop-panel nav-drop-panel-products">
-      <a href="../index.html#/category/BOILER%20CONNECTOR%20PLUG">Boiler Connector Plug</a>
-      <a href="../index.html#/category/BOILERS">Boilers</a>
-      <a href="../index.html#/category/BURNER%20CONNECTOR%20PLUG">Burner Connector Plug</a>
-      <a href="../index.html#/category/BURNERS">Burners</a>
-      <a href="../index.html#/category/BUTTERFLY%20VALVES">Butterfly Valves</a>
-      <a href="../categories/electronic-pressure-gauge-dmg.html">Electronic Pressure Gauge Dmg</a>
-      <a href="../categories/filters-strainers.html">Filters | Strainers</a>
-      <a href="../index.html#/category/FLAME%20ARRESTORS">Flame Arrestors</a>
-      <a href="../index.html#/category/FLAME%20MONITORING%20SYSTEMS">Flame Monitoring Systems</a>
-      <a href="../categories/flame-safeguard.html">Flame Safeguard</a>
-      <a href="../categories/gas-flow-meters.html">Gas Flow Meters</a>
-      <a href="../categories/gas-train-systems.html">Gas Train Systems</a>
-      <a href="../index.html#/category/HOSE%20PIPE%20FITTINGS">Hose Pipe Fittings</a>
-      <a href="../categories/ignition-cable.html">Ignition Cable</a>
-      <a href="../categories/ignition-electrodes.html">Ignition Electrodes</a>
-      <a href="../categories/ignition-spares.html">Ignition Spares</a>
-      <a href="../categories/ignition-transformers.html">Ignition Transformers</a>
-      <a href="../index.html#/category/LPG%20AUTOMATIC%20CHANGEOVER%20DEVICE">Lpg Automatic Changeover Device</a>
-      <a href="../index.html#/category/MANUAL%20BALL%20VALVES">Manual Ball Valves</a>
-      <a href="../index.html#/category/MULTIBLOCKS">Multiblocks</a>
-      <a href="../index.html#/category/NON%20RETURN%20VALVES">Non Return Valves</a>
-      <a href="../index.html#/category/PILOT%20BURNERS">Pilot Burners</a>
-      <a href="../categories/pressure-gauge-accessories.html">Pressure Gauge Accessories</a>
-      <a href="../categories/pressure-regulator-valves.html">Pressure Regulator Valves <span class="nav-cat-caret">⌄</span></a>
-      <a href="../index.html#/subcategory/Oxygen%20Regulator" class="nav-drop-sublink">↳ Oxygen Regulator</a>
-      <a href="../categories/pressure-switches.html">Pressure Switches</a>
-      <a href="../categories/ratio-regulators.html">Ratio Regulators</a>
-      <a href="../categories/safety-relief-valves.html">Safety Relief Valves</a>
-      <a href="../categories/sensors.html">Sensors <span class="nav-cat-caret">⌄</span></a>
-      <a href="../index.html#/subcategory/Flame%20Relay" class="nav-drop-sublink">↳ Flame Relay</a>
-      <a href="../index.html#/subcategory/UV%20Sensor" class="nav-drop-sublink">↳ UV Sensor</a>
-      <a href="../categories/sequence-controllers.html">Sequence Controllers</a>
-      <a href="../index.html#/category/SERVO%20MOTORS">Servo Motors</a>
-      <a href="../index.html#/category/SLAM%20SHUT%20OFF%20VALVES">Slam Shut Off Valves</a>
-      <a href="../categories/solenoid-valves.html">Solenoid Valves <span class="nav-cat-caret">⌄</span></a>
-      <a href="../index.html#/subcategory/Solenoid%20Coil" class="nav-drop-sublink">↳ Solenoid Coil</a>
-      <a href="../categories/spark-electrodes.html">Spark Electrodes</a>
-      <a href="../categories/valve-proving-systems.html">Valve Proving Systems</a>
+      <div class="nav-dropdown" id="navProducts">
+        <button type="button" class="nav-drop-btn">Products <span class="chev">⌄</span></button>
+        <div class="nav-drop-panel" id="navProductsPanel">
+          <div class="nav-drop-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" id="navProductsFilter" placeholder="Search products or categories…" autocomplete="off">
+          </div>
+          <div class="nav-drop-grid" id="navProductsGrid"></div>
+          <div class="nav-drop-results search-results" id="navProductsResults" hidden></div>
         </div>
-      </details>
-      <details class="nav-dd">
-        <summary>Brands <span class="chev">⌄</span></summary>
-        <div class="nav-drop-panel nav-drop-panel-brands">
-      <a href="../brands/brahma.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-brahma.png" alt="Brahma" loading="lazy">Brahma</a>
-      <a href="../brands/cofi.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-cofi.png" alt="Cofi" loading="lazy">Cofi</a>
-      <a href="../brands/danfoss.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-danfoss.png" alt="Danfoss" loading="lazy">Danfoss</a>
-      <a href="../brands/dungs.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-dungs.png" alt="Dungs" loading="lazy">Dungs</a>
-      <a href="../brands/elektrogas.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-elektrogas.png" alt="Elektrogas" loading="lazy">Elektrogas</a>
-      <a href="../brands/honeywell-eclipse.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-honeywell-eclipse.png" alt="Honeywell Eclipse" loading="lazy">Honeywell Eclipse</a>
-      <a href="../brands/honeywell-elster.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-honeywell-elster.png" alt="Honeywell Elster" loading="lazy">Honeywell Elster</a>
-      <a href="../brands/honeywell-kromschroder.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-honeywell-kromschroder.png" alt="Honeywell Kromschröder" loading="lazy">Honeywell Kromschröder</a>
-      <a href="../brands/honeywell-maxon.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-honeywell-maxon.png" alt="Honeywell Maxon" loading="lazy">Honeywell Maxon</a>
-      <a href="../brands/honeywell-technologies.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-honeywell-technologies.png" alt="Honeywell Technologies" loading="lazy">Honeywell Technologies</a>
-      <a href="../brands/madas.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-madas.png" alt="Madas" loading="lazy">Madas</a>
-      <a href="../brands/r-k-instruments-and-controls.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-r-k-instruments-and-controls.png" alt="R.K. Instruments & Controls" loading="lazy">R.K. Instruments &amp; Controls</a>
-      <a href="../brands/siemens.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-siemens.png" alt="Siemens" loading="lazy">Siemens</a>
-      <a href="../brands/vanaz.html"><img class="nav-drop-brand-logo" src="../images/brands/brand-vanaz.png" alt="Vanaz" loading="lazy">Vanaz</a>
-        </div>
-      </details>
+      </div>
+      <div class="nav-dropdown" id="navBrands">
+        <button type="button" class="nav-drop-btn">Brands <span class="chev">⌄</span></button>
+        <div class="nav-drop-panel" id="navBrandsPanel"></div>
+      </div>
       <a href="../index.html#contact">Contact Us</a>
     </nav>
     <button type="button" class="search-btn" id="pgSearchBtn" aria-label="Search products">
@@ -472,22 +485,6 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
     });
     closeBtn && closeBtn.addEventListener('click', function(){ pgSearchInput.value = ''; pgSearchResults.innerHTML = ''; });
   }
-  // Products/Brands header dropdowns: native <details>, no built-in mutual exclusion.
-  // Fix (19 Sep 2026): close sibling dropdown when one opens, and close on outside click.
-  document.querySelectorAll('.nav-dd').forEach(function(d){
-    d.addEventListener('toggle', function(){
-      if(d.open){
-        document.querySelectorAll('.nav-dd').forEach(function(other){
-          if(other !== d) other.removeAttribute('open');
-        });
-      }
-    });
-  });
-  document.addEventListener('click', function(e){
-    document.querySelectorAll('.nav-dd[open]').forEach(function(d){
-      if(!d.contains(e.target)) d.removeAttribute('open');
-    });
-  });
   const burger = document.getElementById('pgBurgerBtn');
   const drawer = document.getElementById('pgMobileDrawer');
   function pgPositionDrawer(){
@@ -615,5 +612,6 @@ document.addEventListener('DOMContentLoaded', function(){
 <script>var CURRENT_PRODUCT_ID = "dungs-vps504s02";</script>
 <script src="../related-products-data.js?v=20260908d" defer></script>
 <script src="../related-products.js?v=20260908d" defer></script>
+<script src="../nav-dropdown.js?v=20260919a" defer></script>
 </body>
 </html>
