@@ -2189,3 +2189,15 @@ Rollout ke baad verification: 6 representative files (sabhi 4 batches se, produc
 Rahul ne khud screenshot compare karke pakda: home page ka "FLOW & FLAME CONTROL" tagline dark/bold gold tha, lekin baaki 175 pages (products/categories/brands) par gray/thin dikh raha tha — sirf color nahi, teen CSS properties alag thi: color (`--sage-deep` vs `--text-dim`), font-weight (600/bold vs normal), letter-spacing (0.14em vs 0.08em). Logo icon aur company naam dono jagah same the, sirf tagline ka `.brand-tag` rule alag tha.
 
 Fix: `.brand-tag` CSS ek line replace — home page ke `.name span` rule se exact match. Pehle 1 file par sample test kiya (Playwright screenshot), Rahul ne confirm kiya, phir 175/175 files par same one-line CSS change rollout — 4 batches, 0 rejections. Post-rollout: 5 files (sabhi batches se, incl. RABO outlier) byte-diff exact match; live Playwright screenshot par confirm — tagline ab dark/bold gold, home page jaisa.
+
+## New product added: Metrix G4 LPG High Pressure Diaphragm Gas Meter — 142 products total (19 Sep 2026)
+
+Rahul ne ek naye product ki photo bheji (G4 LPG diaphragm gas meter, nameplate par "metrix italia" likha, Padova Italy) aur bola "Brand RKIC" rakhna — matlab yeh Siltek jaisa umbrella-brand case hai: top-level brand chip "R.K. Instruments & Controls" (RKIC logo reuse), asli manufacturer "Metrix Italia, Padova, Italy" Manufacturer spec row mein.
+
+Naya product: id `metrix-g4-lpg-gas-meter`, category GAS FLOW METERS, subcategory Diaphragm Gas Meters. Saari specs nameplate se nikali (koi guess nahi): Qmax 6 m³/h, Qmin 0.016 m³/h, Qt 0.6 m³/h, Cyclic Volume 1.2 litres, 1 imp = 0.01 m³ reading resolution, Working Pressure 0.006-2 bar, Temp Range -25°C to +55°C, LPG/GLP applicable media, Aluminium (UG-ALU) housing, Class 1.5 (EN 1359:1998+A1:2006), CE M23 1450, OIML R137-1&2:2012. Connection Size ko hedge kiya ("exact thread/flange size not printed on nameplate — confirm on request") kyunki nameplate par explicitly nahi tha aur ye Honeywell Elster-specific chart hai, Metrix ke liye guess nahi kiya. Serial No. row pehle add kiya tha, Rahul ne turant "remove serial no." bola to hata diya.
+
+Image: source photo already clean white background thi (koi cleanup nahi kiya, jaisa naya standing rule hai) — sirf 1100x1100 large + 400x400 thumb resize kiya, LANCZOS, white canvas centered, JPEG 92%/82%.
+
+Files updated: `index.html` (products array, 142 entries — Node se syntax validate kiya), `related-products-data.js` (RKIC_PRODUCTS entry), `brand-data.js` (RKIC count 13→14), `sitemap.xml` (177 URLs), `categories/gas-flow-meters.html` (13 products, tile + JSON-LD + brands list add kiya), `brands/r-k-instruments-and-controls.html` (14 products, tile + JSON-LD + categories list add kiya). Standalone page `products/metrix-g4-lpg-gas-meter.html` `honeywell-elster-bk-g6m.html` template se build ki.
+
+**Flag kiya Rahul ko** (fix nahi kiya khud se): `brands/r-k-instruments-and-controls.html` ka description text abhi bhi "RKIC's own in-house manufactured range" bolta hai — yeh product in-house nahi hai (Metrix banata hai), sirf brand-label RKIC hai. Text update karna hai ya nahi, Rahul ka decision.

@@ -150,4 +150,5 @@ const RKIC_PRODUCTS = [
   {id:"madas-cn2130", name:"Madas CN 2130 Solenoid Valve Coil Connector", brand:"Madas", category:"SOLENOID VALVES", subcategory:"Coil Connector", code:"CN-2130", thumb:"../images/thumbs/madas-cn2130-thumb.jpg"},
   {id:"madas-mtc10", name:"Madas MTC10 Valve Proving System", brand:"Madas", category:"VALVE PROVING SYSTEMS", subcategory:null, code:"MTC10", thumb:"../images/thumbs/madas-mtc10-thumb.jpg"},
   {id:"madas-cn2131", name:"Madas CN 2131 Solenoid Valve Coil Connector", brand:"Madas", category:"SOLENOID VALVES", subcategory:"Coil Connector", code:"CN-2131", thumb:"../images/thumbs/madas-cn2131-thumb.jpg"},
+  {id:"metrix-g4-lpg-gas-meter", name:"Metrix G4 LPG High Pressure Diaphragm Gas Meter", brand:"R.K. Instruments & Controls", category:"GAS FLOW METERS", subcategory:"Diaphragm Gas Meters", code:"G4 LPG", thumb:"../images/thumbs/metrix-g4-lpg-gas-meter-thumb.jpg"},
 ];
