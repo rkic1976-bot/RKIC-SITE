@@ -2183,3 +2183,9 @@ Ab dono mechanism exactly match karte hain. Naya shared file `nav-dropdown.js` (
 Pehle sirf `products/rkic-ignition-electrode.html` par test deploy kiya, Rahul ko site link diya, confirm milne ke baad (thoda confusion hua tha kyunki Rahul ne category page `categories/ignition-electrodes.html` check kar li thi jo tab tak untouched thi — clarify karne ke baad "go ahead" mila) baaki 174 files (141 products + 19 categories + 14 brands) par same transform 4 batches mein commit kiya — sab 0 rejections.
 
 Rollout ke baad verification: 6 representative files (sabhi 4 batches se, products/categories/brands + outlier RABO spec-page) re-stage karke byte-diff — exact match. Live rendering bhi Playwright se check kiya: wahi `categories/ignition-electrodes.html` (jo Rahul ne pehle test ki thi) aur ek brand page (`brands/vanaz.html`) dono par naya mechanism sahi dikh raha hai — ALL CAPS categories, search box, collapsible chevrons, 6-column Brands grid logo-upar-naam-neeche.
+
+## Header tagline styling fix — all 175 static pages (19 Sep 2026)
+
+Rahul ne khud screenshot compare karke pakda: home page ka "FLOW & FLAME CONTROL" tagline dark/bold gold tha, lekin baaki 175 pages (products/categories/brands) par gray/thin dikh raha tha — sirf color nahi, teen CSS properties alag thi: color (`--sage-deep` vs `--text-dim`), font-weight (600/bold vs normal), letter-spacing (0.14em vs 0.08em). Logo icon aur company naam dono jagah same the, sirf tagline ka `.brand-tag` rule alag tha.
+
+Fix: `.brand-tag` CSS ek line replace — home page ke `.name span` rule se exact match. Pehle 1 file par sample test kiya (Playwright screenshot), Rahul ne confirm kiya, phir 175/175 files par same one-line CSS change rollout — 4 batches, 0 rejections. Post-rollout: 5 files (sabhi batches se, incl. RABO outlier) byte-diff exact match; live Playwright screenshot par confirm — tagline ab dark/bold gold, home page jaisa.
