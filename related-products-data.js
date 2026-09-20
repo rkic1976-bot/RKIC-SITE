@@ -154,4 +154,6 @@ const RKIC_PRODUCTS = [
   {id:"siemens-lme11-330c2", name:"Siemens Burner Control LME11.330C2", brand:"Siemens", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"BPZ:LME11.330C2", thumb:"../images/thumbs/siemens-lme11-330c2-thumb.jpg"},
   {id:"siemens-lgk16-322a27", name:"Siemens Burner Control LGK16.322A27", brand:"Siemens", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"BPZ:LGK16.322A27", thumb:"../images/thumbs/siemens-lgk16-322a27-thumb.jpg"},
   {id:"siemens-lfl1-333", name:"Siemens Burner Control LFL1.333", brand:"Siemens", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"BPZ:LFL1.333", thumb:"../images/thumbs/siemens-lfl1-333-thumb.jpg"},
+  {id:"siemens-lfs1-21a1", name:"Siemens Flame Safeguard LFS1.21A1", brand:"Siemens", category:"FLAME SAFEGUARD", subcategory:null, code:"BPZ:LFS1.21A1", thumb:"../images/thumbs/siemens-lfs1-21a1-thumb.jpg"},
+  {id:"siemens-lfs1-21a2", name:"Siemens Flame Safeguard LFS1.21A2", brand:"Siemens", category:"FLAME SAFEGUARD", subcategory:null, code:"BPZ:LFS1.21A2", thumb:"../images/thumbs/siemens-lfs1-21a2-thumb.jpg"},
 ];

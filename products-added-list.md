@@ -2233,3 +2233,17 @@ Dono products Category: SEQUENCE CONTROLLERS, Subcategory: Burner Control. Produ
 Images: dono source photos already clean white background thi — sirf 1100x1100 large + 400x400 thumb resize kiya, LANCZOS, koi cleanup nahi kiya.
 
 Files updated: `index.html` (products array, 145 entries — Node se validate), `related-products-data.js` (145 entries), `brand-data.js` (Siemens count 8→10), `sitemap.xml` (180 URLs), `categories/sequence-controllers.html` (12 products, JSON-LD + 2 nayi tiles), `brands/siemens.html` (10 products, JSON-LD + 2 nayi tiles). Dono standalone pages `products/siemens-lme11-330c2.html` template se build ki (same category/subcategory pattern).
+
+## Two more new products: Siemens Flame Safeguard LFS1.21A1 & LFS1.21A2 — 147 products total (20 Sep 2026)
+
+Rahul ne same session mein 2 aur Siemens products bheje, dono LFS1-series flame safeguards — existing `siemens-lfs1-11a2` (230V, Rg. No. 5F248, DIN approval) se alag Type/BPZ code aur approval scheme (CE-0085CQ0369 + CSA certified) wale genuinely distinct products, sirf voltage variant nahi.
+
+**Siemens LFS1.21A1** (120V) — nameplate: LFS1.21A1, BPZ:LFS1.21A1, 120V~ 50-60Hz, CE-0085CQ0369, CSA marked, Siemens AG D-76437 Rastatt, Origin Germany. Pehli image EXIF-rotated thi (orientation tag 8) — PIL ne bina fix kiye rotated canvas bana diya tha, pehli baar mein pakda gaya aur `ImageOps.exif_transpose()` laga kar dobara process kiya.
+
+**Siemens LFS1.21A2** (230V) — nameplate: LFS1.21A2, BPZ:LFS1.21A2, 230V~ 50-60Hz, CE-0085CQ0369, Siemens AG D-76437 Rastatt, Origin Germany — same series ka 230V variant.
+
+Web research (todo-control.com listing) se application/detector/output details confirm kiye: continuous oil + intermittent gas supervision, ionization probe/RAR9 photocell/QRA2,QRA4.U,QRA10 UV detectors, DC 0-10V display output + potential-free double-insulated contacts, IP40, -20°C to +60°C.
+
+Category: FLAME SAFEGUARD (no subcategory, matching sibling LFS1.11A2 convention). Product IDs: `siemens-lfs1-21a1`, `siemens-lfs1-21a2`.
+
+Files updated: `index.html` (147 entries), `related-products-data.js` (147 entries), `brand-data.js` (Siemens 10→12), `sitemap.xml` (182 URLs), `categories/flame-safeguard.html` (1→3 products, "1 product"→"3 products" grammar fix bhi), `brands/siemens.html` (10→12 products). Dono standalone pages `products/siemens-lfs1-11a2.html` template se build ki (same category pattern).
