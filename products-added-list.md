@@ -2219,3 +2219,17 @@ Category: SEQUENCE CONTROLLERS, Subcategory: Burner Control (existing convention
 Image: source photo already clean white background thi — sirf 1100x1100 large + 400x400 thumb resize kiya, LANCZOS, koi cleanup nahi kiya.
 
 Files updated: `index.html` (products array, 143 entries), `related-products-data.js` (143 entries), `brand-data.js` (Siemens count 7→8), `sitemap.xml` (178 URLs), `categories/sequence-controllers.html` (10 products, Siemens brand add kiya list mein), `brands/siemens.html` (8 products, Sequence Controllers category add kiya list mein). Standalone page `products/siemens-lme11-330c2.html` `brahma-cm12u.html` template se build ki (same category/subcategory).
+
+## Two new products added: Siemens Burner Control LGK16.322A27 & LFL1.333 — 145 products total (20 Sep 2026)
+
+Rahul ne ek hi session mein 2 naye Siemens products bheje, dono alag-alag mechanical-dial-style burner controls (indicator window ke sath, LME11.330C2 se dikhne mein alag — LME11 ek compact IC-based module hai).
+
+**Siemens LGK16.322A27** — nameplate: LGK16.322A27, 220-240V~ 50-60Hz 3.5VA, "ts max.2s (2s)/2s", "tv 36s", Ø4A/total 5A, DIN Rg.5F018/02, CE-0085AO0103, Siemens Building Technologies Production GmbH, Made in Germany. Ek discrepancy pakda gaya: pehle (interrupt se pehle) web-sourced listing se t1=35.5s note kiya tha, lekin jab nameplate ko zoom karke dobara padha, "tv 36s" saaf likha mila — nameplate ko authoritative maan kar 36s use kiya, 35.5s discard kiya. Application: gas burner control for stationary air heaters (general LGK-series info se), flame detector QRA53/QRA55 UV ya ionization probe.
+
+**Siemens LFL1.333** — nameplate: LFL1.333, BPZ:LFL1.333, 230V~ 50-60Hz 3.5VA, "ts max.3s (3s)/3s", "tv 31s", Ø4A/total 5A, DIN 5F091, CE-0085AP0001, Siemens AG D-76437 Rastatt Germany. Web research (Kempston Controls listing) se cross-check kiya — "T1=31S, TSA=3S, T9=3S, AC230V" confirm milta hai nameplate se. Application: single-burner gas/oil/dual-fuel installations (on-off/multi-stage/modulating), ionization probe (flame rod) ya QRA-series UV detector.
+
+Dono products Category: SEQUENCE CONTROLLERS, Subcategory: Burner Control. Product IDs: `siemens-lgk16-322a27`, `siemens-lfl1-333`.
+
+Images: dono source photos already clean white background thi — sirf 1100x1100 large + 400x400 thumb resize kiya, LANCZOS, koi cleanup nahi kiya.
+
+Files updated: `index.html` (products array, 145 entries — Node se validate), `related-products-data.js` (145 entries), `brand-data.js` (Siemens count 8→10), `sitemap.xml` (180 URLs), `categories/sequence-controllers.html` (12 products, JSON-LD + 2 nayi tiles), `brands/siemens.html` (10 products, JSON-LD + 2 nayi tiles). Dono standalone pages `products/siemens-lme11-330c2.html` template se build ki (same category/subcategory pattern).
