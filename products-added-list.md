@@ -2201,3 +2201,9 @@ Image: source photo already clean white background thi (koi cleanup nahi kiya, j
 Files updated: `index.html` (products array, 142 entries — Node se syntax validate kiya), `related-products-data.js` (RKIC_PRODUCTS entry), `brand-data.js` (RKIC count 13→14), `sitemap.xml` (177 URLs), `categories/gas-flow-meters.html` (13 products, tile + JSON-LD + brands list add kiya), `brands/r-k-instruments-and-controls.html` (14 products, tile + JSON-LD + categories list add kiya). Standalone page `products/metrix-g4-lpg-gas-meter.html` `honeywell-elster-bk-g6m.html` template se build ki.
 
 **Flag kiya Rahul ko** (fix nahi kiya khud se): `brands/r-k-instruments-and-controls.html` ka description text abhi bhi "RKIC's own in-house manufactured range" bolta hai — yeh product in-house nahi hai (Metrix banata hai), sirf brand-label RKIC hai. Text update karna hai ya nahi, Rahul ka decision.
+
+## Text fix: "supplied by RKIC" → "supplied by R.K. Instruments & Controls" (20 Sep 2026)
+
+Rahul ne bola company ka full naam hamesha likha jaaye, "RKIC" short form kabhi nahi — chahe Rahul khud "RKIC" type kare instructions mein. `index.html` (products array description, 1 jagah) aur `products/metrix-g4-lpg-gas-meter.html` (og:description, twitter:description, JSON-LD description, pg-desc paragraph — 4 jagah) mein "and supplied by RKIC." ko "and supplied by R.K. Instruments & Controls." se replace kiya. Content-verify kiya — 0 "supplied by RKIC." baaki, sahi count mila (index.html 3, product page 5 total "R.K. Instruments" occurrences, image alt text ka pre-existing occurrence bhi shaamil).
+
+**Naya standing rule (permanent)**: aage se site-facing text mein hamesha "R.K. Instruments & Controls" poora likhna hai, "RKIC" abbreviation kabhi use nahi karna.
