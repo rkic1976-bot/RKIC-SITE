@@ -2207,3 +2207,15 @@ Files updated: `index.html` (products array, 142 entries — Node se syntax vali
 Rahul ne bola company ka full naam hamesha likha jaaye, "RKIC" short form kabhi nahi — chahe Rahul khud "RKIC" type kare instructions mein. `index.html` (products array description, 1 jagah) aur `products/metrix-g4-lpg-gas-meter.html` (og:description, twitter:description, JSON-LD description, pg-desc paragraph — 4 jagah) mein "and supplied by RKIC." ko "and supplied by R.K. Instruments & Controls." se replace kiya. Content-verify kiya — 0 "supplied by RKIC." baaki, sahi count mila (index.html 3, product page 5 total "R.K. Instruments" occurrences, image alt text ka pre-existing occurrence bhi shaamil).
 
 **Naya standing rule (permanent)**: aage se site-facing text mein hamesha "R.K. Instruments & Controls" poora likhna hai, "RKIC" abbreviation kabhi use nahi karna.
+
+## New product added: Siemens Burner Control LME11.330C2 — 143 products total (20 Sep 2026)
+
+Rahul ne product photo bheji (nameplate: LME11.330C2, BPZ:LME11.330C2, 230V~ 50-60Hz, TSAmax.3s, CE-0085BR0263, Siemens AG DE-76437 Rastatt, UKCA 0168 0086-22, Origin Germany) — "Siemens Brand" bataya. Nameplate se sabhi visible specs directly extract kiye (naye standing rule ke mutabik, bina baar-baar poochhe).
+
+**Research**: Siemens ka official LME1/LME2/LME4 series datasheet (sid.siemens.com) aur 2 independent distributor listings se cross-verify kiya. Pehli baar datasheet extraction mein confusion hua tha (t1 aur TSA values mix ho gaye the) — nameplate par saaf "TSAmax. 3s" likha tha, jabki pehla extraction "30s safety time" bata raha tha. Nameplate ko authoritative maan kar dobara, zyada precise prompt ke saath datasheet dobara fetch kiya — confirm hua ki t1 (pre-purge) = 2s min, TSA (safety time) = 3s max, jo nameplate se match karta hai. Yeh lesson: web-sourced datasheet summary bhi galat ho sakta hai, nameplate ke against hamesha cross-check karo.
+
+Category: SEQUENCE CONTROLLERS, Subcategory: Burner Control (existing convention se match — Brahma CM12U jaisa hi pattern). Product ID: `siemens-lme11-330c2`.
+
+Image: source photo already clean white background thi — sirf 1100x1100 large + 400x400 thumb resize kiya, LANCZOS, koi cleanup nahi kiya.
+
+Files updated: `index.html` (products array, 143 entries), `related-products-data.js` (143 entries), `brand-data.js` (Siemens count 7→8), `sitemap.xml` (178 URLs), `categories/sequence-controllers.html` (10 products, Siemens brand add kiya list mein), `brands/siemens.html` (8 products, Sequence Controllers category add kiya list mein). Standalone page `products/siemens-lme11-330c2.html` `brahma-cm12u.html` template se build ki (same category/subcategory).

@@ -189,6 +189,12 @@ Google `#` (hash) ke baad wale URL fragments ko crawl/index nahi karta — matla
 - Isi verification se yeh bhi confirm hua (browser se live site kholkar, JS se actual CSS/content check karke) ki 11 Sep 2026 ke teeno fixes — phone format, theme color, header/logo scale — live site par sahi se pahunch chuke the.
 - **Standing rule**: agar file-level edit/commit ke baad bhi koi cheez "confirm" nahi ho pa rahi (jaise GitHub Desktop ka state, live site ka actual dikhna, kisi app ka visual behavior), to text-based guess-work/reassurance dene ke bajaye seedha screen access use karke concretely verify karna hai — yeh Rahul ji ki pehle di hui feedback ("local developer ke tarah bat na karo, precise raho") ke saath consistent hai.
 
+## 12. Company ka naam — hamesha full likhna (20 Sep 2026 se)
+
+- Site-facing text (product description, alt text, meta tags, JSON-LD, kahin bhi) mein company ka naam hamesha poora likhna hai: **"R.K. Instruments & Controls"**.
+- **"RKIC" short form kabhi use nahi karna** — chahe Rahul ji khud apne chat instructions mein "RKIC" likhein, phir bhi site par likhte waqt poora naam hi likhna hai.
+- Trigger: ek product description mein "supplied by RKIC" likh diya tha, Rahul ji ne turant "supplied by R.K. Instruments & Controls" karne ko bola aur isko permanent reminder mein daalne ko kaha.
+
 ---
 
 Yeh document maine sirf transparency ke liye banaya hai — agar isme kuch chhoot gaya ho ya galat ho, bata dijiye, main update kar dunga.
