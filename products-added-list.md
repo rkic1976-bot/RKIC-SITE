@@ -2271,3 +2271,17 @@ Category: SERVO MOTORS (no subcategory). Product ID: `siemens-sqn30-402a2700`.
 Files updated: `index.html` (148 entries), `related-products-data.js` (148 entries), `brand-data.js` (Siemens 12→13), `sitemap.xml` (184 URLs, naya category page + product page dono add kiye), `brands/siemens.html` (12→13 products, "categories:" list mein "Servo Motors" add kiya). Naya standalone page `products/siemens-sqn30-402a2700.html` `siemens-lfs1-21a2.html` template se build kiya. Naya category page `categories/servo-motors.html` `flame-safeguard.html` template se build kiya.
 
 Note: site ke mobile drawer menu mein "Servo Motors" link abhi bhi purane hash-route (`index.html#/category/SERVO%20MOTORS`) par point karta hai kyunki wo static markup har page mein hardcoded hai — sirf desktop dropdown (`nav-dropdown.js` ka `categoryHref()`) dynamically naye category page par switch hota hai. Ye site ka existing pattern hai (dusre categories jinke paas dedicated page nahi hai unke liye bhi same behavior), is session mein introduce nahi kiya gaya.
+
+## 2nd servo motor: Siemens Servo Motor | Damper Actuator SQN31.401A2700 — 149 products total (21 Sep 2026)
+
+Rahul ne bina caption ke 2 aur nameplate images bheji, upside-down photograph ki hui (SQN30.402A2700 jaisi hi situation). Nameplate zoom karke dekha to pata chala ye **alag model hai**: SQN31.401A2700 (SQN30.402A2700 se Type/BPZ, VA rating, aur auxiliary switch rating sab alag) — isliye duplicate nahi, genuinely naya product samjh kar add kiya.
+
+**Nameplate**: SQN31.401A2700, Siemens AG, 220-240V~ 50-60Hz **6.5VA** (SQN30 wale mein 6.3VA tha), 30s/90°, 3Nm, aux switch **"7(1) A, 250V~"** (SQN30 wale mein "1(1)A ~250V~" tha), Made in Germany, CE. eBay/TCI Supply/GSIstore listings se product genuine confirm hua, aur flamtec.es ka SQN3-series manual se general specs (torque, running time, IP40, 160° max rotation) match hue.
+
+Image fix same as pehle: EXIF orientation tag nahi tha, physically ulta photograph — manual 180° rotation `make_canvas()` mein use kiya.
+
+Naam convention Rahul ke pichle instruction ke hisaab se: "Siemens Servo Motor | Damper Actuator SQN31.401A2700".
+
+Category: SERVO MOTORS (existing category page update ki, naya nahi banana pada is baar). Product ID: `siemens-sqn31-401a2700`.
+
+Files updated: `index.html` (149 entries), `related-products-data.js` (149 entries), `brand-data.js` (Siemens 13→14), `sitemap.xml` (185 URLs), `categories/servo-motors.html` (1→2 products), `brands/siemens.html` (13→14 products).
