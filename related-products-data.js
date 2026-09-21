@@ -156,5 +156,5 @@ const RKIC_PRODUCTS = [
   {id:"siemens-lfl1-333", name:"Siemens Burner Control LFL1.333", brand:"Siemens", category:"SEQUENCE CONTROLLERS", subcategory:"Burner Control", code:"BPZ:LFL1.333", thumb:"../images/thumbs/siemens-lfl1-333-thumb.jpg"},
   {id:"siemens-lfs1-21a1", name:"Siemens Flame Safeguard LFS1.21A1", brand:"Siemens", category:"FLAME SAFEGUARD", subcategory:null, code:"BPZ:LFS1.21A1", thumb:"../images/thumbs/siemens-lfs1-21a1-thumb.jpg"},
   {id:"siemens-lfs1-21a2", name:"Siemens Flame Safeguard LFS1.21A2", brand:"Siemens", category:"FLAME SAFEGUARD", subcategory:null, code:"BPZ:LFS1.21A2", thumb:"../images/thumbs/siemens-lfs1-21a2-thumb.jpg"},
-  {id:"siemens-sqn30-402a2700", name:"Siemens Damper Actuator (Servo Motor) SQN30.402A2700", brand:"Siemens", category:"SERVO MOTORS", subcategory:null, code:"BPZ:SQN30.402A2700", thumb:"../images/thumbs/siemens-sqn30-402a2700-thumb.jpg"},
+  {id:"siemens-sqn30-402a2700", name:"Siemens Servo Motor | Damper Actuator SQN30.402A2700", brand:"Siemens", category:"SERVO MOTORS", subcategory:null, code:"BPZ:SQN30.402A2700", thumb:"../images/thumbs/siemens-sqn30-402a2700-thumb.jpg"},
 ];
