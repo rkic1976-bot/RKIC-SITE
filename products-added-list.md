@@ -2255,3 +2255,19 @@ Rahul ne screenshot bheja — live site par "Attach Photo/Drawing (optional)" fi
 2. Phone field label "Phone (with country code)" se sirf "Phone" kar diya — saath hi validation pattern relax kiya (ab plain digits bhi chalenge, "+" country-code prefix zaroori nahi), placeholder "+91 98241 36145" se "98241 36145" kar diya.
 
 Playwright se desktop + mobile dono par form verify kiya — attachment field gaya, Phone label/placeholder update dikh raha hai. `index.html` update, commit + byte-diff verify kiya.
+
+## New category: Siemens Damper Actuator (Servo Motor) SQN30.402A2700 — 148 products total, SERVO MOTORS ki pehli product (21 Sep 2026)
+
+Rahul ne "Siemens SERVO MOTORS" caption ke saath ek SQN30.402A2700 actuator ki nameplate images bheji, upside-down photograph ki hui. Baad mein clarify kiya ki ye "damper actuator (servo motor)" ke naam se bhi jaana jaata hai — isliye product name mein dono terms rakhe: "Siemens Damper Actuator (Servo Motor) SQN30.402A2700".
+
+**Image fix**: Source photo mein EXIF orientation tag nahi tha (auto-fix nahi hua), lekin physically unit ulta photograph kiya gaya tha — nameplate sirf 180° manually rotate karne par seedha padhta tha. `make_canvas()` mein `exif_transpose()` ke saath ek manual 180° rotation step add kiya, tab canvas seedha bana.
+
+**Nameplate**: SQN30.402A2700, Siemens AG, 220-240V~ 50-60Hz 6.3VA, 30s/90°, 3Nm, "(1)A ~250V~" (ek auxiliary switch rating), Made D Germany, CE. Web research (flamtec.es ka SQN technical manual) se model-specific running time (30s/90° @ 50Hz) aur torque (3Nm) confirm hue.
+
+**SERVO MOTORS category site ke master categories list mein pehle se thi lekin zero products ke saath** — isliye pehli baar `categories/servo-motors.html` file **naye se banayi** (existing `categories/flame-safeguard.html` ko exact structural template maan kar), kyunki koi existing category page update karne ke liye nahi tha.
+
+Category: SERVO MOTORS (no subcategory). Product ID: `siemens-sqn30-402a2700`.
+
+Files updated: `index.html` (148 entries), `related-products-data.js` (148 entries), `brand-data.js` (Siemens 12→13), `sitemap.xml` (184 URLs, naya category page + product page dono add kiye), `brands/siemens.html` (12→13 products, "categories:" list mein "Servo Motors" add kiya). Naya standalone page `products/siemens-sqn30-402a2700.html` `siemens-lfs1-21a2.html` template se build kiya. Naya category page `categories/servo-motors.html` `flame-safeguard.html` template se build kiya.
+
+Note: site ke mobile drawer menu mein "Servo Motors" link abhi bhi purane hash-route (`index.html#/category/SERVO%20MOTORS`) par point karta hai kyunki wo static markup har page mein hardcoded hai — sirf desktop dropdown (`nav-dropdown.js` ka `categoryHref()`) dynamically naye category page par switch hota hai. Ye site ka existing pattern hai (dusre categories jinke paas dedicated page nahi hai unke liye bhi same behavior), is session mein introduce nahi kiya gaya.
