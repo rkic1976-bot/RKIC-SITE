@@ -2285,3 +2285,15 @@ Naam convention Rahul ke pichle instruction ke hisaab se: "Siemens Servo Motor |
 Category: SERVO MOTORS (existing category page update ki, naya nahi banana pada is baar). Product ID: `siemens-sqn31-401a2700`.
 
 Files updated: `index.html` (149 entries), `related-products-data.js` (149 entries), `brand-data.js` (Siemens 13→14), `sitemap.xml` (185 URLs), `categories/servo-motors.html` (1→2 products), `brands/siemens.html` (13→14 products).
+
+## 3rd servo motor: Siemens Servo Motor | Damper Actuator SQN71.664B20 — 150 products total (21 Sep 2026)
+
+Rahul ne bina caption ke 2 aur nameplate images bheji — is baar photo pehle se hi seedha tha (upside-down nahi tha, koi manual rotation ki zaroorat nahi padi, pehli baar is session mein). Product SQN71 series ka hai — SQN30/SQN31 se bilkul alag form factor (plug-in socket connector top par, chhota/halka).
+
+**Nameplate**: SQN71.664B20, Siemens, 230V~ 50-60Hz 6VA (single voltage, SQN30/31 ke 220-240V range jaisa nahi), aux switch "7(1)A / 250V~", 30s/90° running time, **2,5Nm torque** (SQN30/31 ke 3Nm se kam). eBay/todo-control.com listings se genuine confirm hua (RIELLO burners ke liye bhi use hota hai), aur Siemens ke official SQN70/71/74/75 servomotor datasheet (sid.siemens.com) se general family specs cross-check kiye: IP40, max 160° rotation, ~500g weight (SQN30/31 series ke ~800g se halka).
+
+Build karte waqt ek bug pakda: initial script mein torque replace `&` (plain ampersand) se try kiya tha jabki file mein `&amp;` (HTML entity) tha — match fail hua, torque field purana (3Nm) reh gaya tha. Commit se pehle hi grep se pakad kar fix kiya, saath mein voltage bhi galat tha (220-240V range copy ho gaya tha jo SQN71 par nahi likha — nameplate sirf 230V single value dikhata hai) — wo bhi fix kiya.
+
+Category: SERVO MOTORS (existing page, 2→3 products). Product ID: `siemens-sqn71-664b20`.
+
+Files updated: `index.html` (150 entries), `related-products-data.js` (150 entries), `brand-data.js` (Siemens 14→15), `sitemap.xml` (186 URLs), `categories/servo-motors.html` (2→3 products), `brands/siemens.html` (14→15 products).

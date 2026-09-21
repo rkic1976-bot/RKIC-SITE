@@ -158,4 +158,5 @@ const RKIC_PRODUCTS = [
   {id:"siemens-lfs1-21a2", name:"Siemens Flame Safeguard LFS1.21A2", brand:"Siemens", category:"FLAME SAFEGUARD", subcategory:null, code:"BPZ:LFS1.21A2", thumb:"../images/thumbs/siemens-lfs1-21a2-thumb.jpg"},
   {id:"siemens-sqn30-402a2700", name:"Siemens Servo Motor | Damper Actuator SQN30.402A2700", brand:"Siemens", category:"SERVO MOTORS", subcategory:null, code:"BPZ:SQN30.402A2700", thumb:"../images/thumbs/siemens-sqn30-402a2700-thumb.jpg"},
   {id:"siemens-sqn31-401a2700", name:"Siemens Servo Motor | Damper Actuator SQN31.401A2700", brand:"Siemens", category:"SERVO MOTORS", subcategory:null, code:"BPZ:SQN31.401A2700", thumb:"../images/thumbs/siemens-sqn31-401a2700-thumb.jpg"},
+  {id:"siemens-sqn71-664b20", name:"Siemens Servo Motor | Damper Actuator SQN71.664B20", brand:"Siemens", category:"SERVO MOTORS", subcategory:null, code:"BPZ:SQN71.664B20", thumb:"../images/thumbs/siemens-sqn71-664b20-thumb.jpg"},
 ];
