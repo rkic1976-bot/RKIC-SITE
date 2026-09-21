@@ -2247,3 +2247,11 @@ Web research (todo-control.com listing) se application/detector/output details c
 Category: FLAME SAFEGUARD (no subcategory, matching sibling LFS1.11A2 convention). Product IDs: `siemens-lfs1-21a1`, `siemens-lfs1-21a2`.
 
 Files updated: `index.html` (147 entries), `related-products-data.js` (147 entries), `brand-data.js` (Siemens 10→12), `sitemap.xml` (182 URLs), `categories/flame-safeguard.html` (1→3 products, "1 product"→"3 products" grammar fix bhi), `brands/siemens.html` (10→12 products). Dono standalone pages `products/siemens-lfs1-11a2.html` template se build ki (same category pattern).
+
+## Enquiry form: attachment field removed, phone label simplified (21 Sep 2026)
+
+Rahul ne screenshot bheja — live site par "Attach Photo/Drawing (optional)" file field already maujood tha (pichle session ke stale-summary record se contradict karta hai; live file ko hi authoritative maana). Do changes:
+1. Attachment field poora hata diya (`<input type="file" id="cfAttachment">` + label + hint span), aur form ka `enctype="multipart/form-data"` bhi hata diya kyunki ab koi file upload nahi hoga.
+2. Phone field label "Phone (with country code)" se sirf "Phone" kar diya — saath hi validation pattern relax kiya (ab plain digits bhi chalenge, "+" country-code prefix zaroori nahi), placeholder "+91 98241 36145" se "98241 36145" kar diya.
+
+Playwright se desktop + mobile dono par form verify kiya — attachment field gaya, Phone label/placeholder update dikh raha hai. `index.html` update, commit + byte-diff verify kiya.

@@ -916,15 +916,15 @@
     <div class="contact-form-col">
       <h3>Send an Enquiry</h3>
       <p>Fill this in and our technical desk will get back to you directly.</p>
-      <form id="cfForm" action="https://formspree.io/f/mppznvnq" method="POST" enctype="multipart/form-data">
+      <form id="cfForm" action="https://formspree.io/f/mppznvnq" method="POST">
         <div class="cf-field">
           <label for="cfName">Name <span class="cf-req">*</span></label>
           <input type="text" id="cfName" name="name" required autocomplete="name" data-fs-field>
           <span class="cf-field-err" data-fs-error="name"></span>
         </div>
         <div class="cf-field">
-          <label for="cfPhone">Phone (with country code) <span class="cf-req">*</span></label>
-          <input type="tel" id="cfPhone" name="phone" required autocomplete="tel" placeholder="+91 98241 36145" pattern="^\+[1-9][0-9\s\-]{6,17}$" title="Please include the country code, e.g. +91 98241 36145" data-fs-field>
+          <label for="cfPhone">Phone <span class="cf-req">*</span></label>
+          <input type="tel" id="cfPhone" name="phone" required autocomplete="tel" placeholder="98241 36145" pattern="^[0-9\s\-\+]{7,17}$" title="Please enter a valid phone number" data-fs-field>
           <span class="cf-field-err" data-fs-error="phone"></span>
         </div>
         <div class="cf-field">
@@ -935,11 +935,6 @@
         <div class="cf-field">
           <label for="cfProduct">Product / Part No. (if known)</label>
           <input type="text" id="cfProduct" name="product" autocomplete="off" data-fs-field>
-        </div>
-        <div class="cf-field">
-          <label for="cfAttachment">Attach Photo / Drawing (optional)</label>
-          <input type="file" id="cfAttachment" name="attachment" accept="image/*,.pdf" data-fs-field>
-          <span class="cf-field-hint">Photo, drawing or PDF of the part &mdash; max 25MB.</span>
         </div>
         <div class="cf-field">
           <label for="cfMessage">Message <span class="cf-req">*</span></label>
