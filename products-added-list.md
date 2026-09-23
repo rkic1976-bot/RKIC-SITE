@@ -2297,3 +2297,15 @@ Build karte waqt ek bug pakda: initial script mein torque replace `&` (plain amp
 Category: SERVO MOTORS (existing page, 2→3 products). Product ID: `siemens-sqn71-664b20`.
 
 Files updated: `index.html` (150 entries), `related-products-data.js` (150 entries), `brand-data.js` (Siemens 14→15), `sitemap.xml` (186 URLs), `categories/servo-motors.html` (2→3 products), `brands/siemens.html` (14→15 products).
+
+## 4th servo motor: Siemens Servo Motor | Damper Actuator SQN72.4A4B20 — 151 products total (23 Sep 2026)
+
+Rahul ne bina caption ke 2 aur nameplate images bheji — SQN72 series (SQN30/31/71 se alag). Is baar photo par "boilersp.ru" ka watermark tha (kisi Russian boiler-parts reseller site se aayi hui photo signal karta hai). Watermark ke baare mein Rahul ko flag kiya (ki ye kisi third-party site ki photo lagti hai, unki khud ki khichi nahi), Rahul ne confirm kiya ki legitimately available hai aur watermark hata kar use karne ko bola — plain white background par tha (product ko touch nahi karta tha), isliye us region ko white paint karke saaf kiya gaya, koi cropping/product edit nahi.
+
+**Nameplate**: SQN72.4A4B20, Siemens, 230V~ 50-60Hz 6VA, 12s/90° running time (SQN71 ke 30s se kaafi fast), 2.5Nm torque (SQN71 jaisa hi), IP54 (SQN71 ke IP40 se zyada), -20°C to +60°C operating range explicitly nameplate par likha. Siemens ke official SQN72/73 actuator datasheet (Kotelprom PDF copy) se cross-check kiya: 230V AC -15%/+10% 50-60Hz, max 6VA, SQN72.4A4x variants ka 12s/90° running time match hua, IP54, -20 to +60°C, ~500g weight, aur "2 free auxiliary switches + 2 end switches" confirm hua (SQN71 ke single amp-rated switch se alag structure — genuinely different product).
+
+Category: SERVO MOTORS (existing page, 3→4 products). Nayi spec row bhi add ki: "Operating Temperature" (pehle kisi servo motor product mein nahi thi, is nameplate par explicitly diya tha).
+
+Files updated: `index.html` (151 entries), `related-products-data.js` (151 entries), `brand-data.js` (Siemens 15→16), `sitemap.xml` (187 URLs), `categories/servo-motors.html` (3→4 products), `brands/siemens.html` (15→16 products).
+
+Build ke dauraan ek aur bug pakda (commit se pehle, Playwright screenshot se): category page update script ne SQN71.664B20 card ka "Code" line aur closing `</a>` galti se hata diya tha (replace ka old-string us card ke end tak tha, new-string mein wapas nahi dala) — SQN72 card SQN71 ke andar nest ho gaya tha. Fix karke `<a>`/`</a>` count (4/4) verify kiya.
