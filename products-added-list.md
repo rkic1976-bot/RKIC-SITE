@@ -2309,3 +2309,18 @@ Category: SERVO MOTORS (existing page, 3→4 products). Nayi spec row bhi add ki
 Files updated: `index.html` (151 entries), `related-products-data.js` (151 entries), `brand-data.js` (Siemens 15→16), `sitemap.xml` (187 URLs), `categories/servo-motors.html` (3→4 products), `brands/siemens.html` (15→16 products).
 
 Build ke dauraan ek aur bug pakda (commit se pehle, Playwright screenshot se): category page update script ne SQN71.664B20 card ka "Code" line aur closing `</a>` galti se hata diya tha (replace ka old-string us card ke end tak tha, new-string mein wapas nahi dala) — SQN72 card SQN71 ke andar nest ho gaya tha. Fix karke `<a>`/`</a>` count (4/4) verify kiya.
+
+
+## 5th spark electrode: Kromschröder Spark Plug KS34483591 (M18 x 1.5, L50) — 152 products total (24 Sep 2026)
+
+Rahul ne naam/code ke saath hi image bheji: "Kromschroder Spark Plug M18 x 1.5 L50 | KS34483591". Image already clean thi (white background, koi watermark nahi, koi rotation ki zaroorat nahi).
+
+**Nameplate engraving**: "Germany  ZE 18-12-50" hex body par. Web research se genuine part confirm hua — Kempston Controls ("KROMSCHRODER 34483591 KROMSCHRODER SPARK PLUG, M18X1,5 L50 SPARK PLUG FOR BURNERS"), KromAmericas ("KS34483591 - Spark plug M18 x 1.5 L50"), aur kc-co.com listing (Mfr. Part No. 34483591, Description: Spark plug) se cross-confirm hua. Full technical datasheet (material grade, exact temp rating) publicly available nahi mili — sirf part-number confirmation aur "on request" specs milin, isliye spec table mein sirf nameplate-confirmed aur visually-confirmed cheezein (thread, length, marking, ceramic insulator) daali, koi fabricated number nahi.
+
+Duplicate check kiya — `kromschroder-electrode-plug-04115302` alag product hai (chhota connector plug, spark plug nahi khud).
+
+Brand: Honeywell Kromschröder (existing site convention ke hisaab se, jaise dusre Kromschröder products mein hai). Category: SPARK ELECTRODES (existing category page, 6→7 products — is category mein pehli Kromschröder entry, pehle sirf Honeywell Eclipse/Maxon/R.K. Instruments thay). Template: `honeywell-eclipse-10019728.html` (fixed-spec branded electrode structure) ka use kiya.
+
+Product ID: `kromschroder-spark-plug-ks34483591`.
+
+Files updated: `index.html` (152 entries), `related-products-data.js` (152 entries), `brand-data.js` (Honeywell Kromschröder 14→15), `sitemap.xml` (188 URLs), `categories/spark-electrodes.html` (6→7 products, brands list mein Honeywell Kromschröder add kiya), `brands/honeywell-kromschroder.html` (14→15 products, categories list mein Spark Electrodes add kiya).

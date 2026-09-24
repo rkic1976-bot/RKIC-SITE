@@ -160,4 +160,5 @@ const RKIC_PRODUCTS = [
   {id:"siemens-sqn31-401a2700", name:"Siemens Servo Motor | Damper Actuator SQN31.401A2700", brand:"Siemens", category:"SERVO MOTORS", subcategory:null, code:"BPZ:SQN31.401A2700", thumb:"../images/thumbs/siemens-sqn31-401a2700-thumb.jpg"},
   {id:"siemens-sqn71-664b20", name:"Siemens Servo Motor | Damper Actuator SQN71.664B20", brand:"Siemens", category:"SERVO MOTORS", subcategory:null, code:"BPZ:SQN71.664B20", thumb:"../images/thumbs/siemens-sqn71-664b20-thumb.jpg"},
   {id:"siemens-sqn72-4a4b20", name:"Siemens Servo Motor | Damper Actuator SQN72.4A4B20", brand:"Siemens", category:"SERVO MOTORS", subcategory:null, code:"BPZ:SQN72.4A4B20", thumb:"../images/thumbs/siemens-sqn72-4a4b20-thumb.jpg"},
+  {id:"kromschroder-spark-plug-ks34483591", name:"Kromschröder Spark Plug KS34483591 (M18 x 1.5, L50)", brand:"Honeywell Kromschröder", category:"SPARK ELECTRODES", subcategory:null, code:"KS34483591", thumb:"../images/thumbs/kromschroder-spark-plug-ks34483591-thumb.jpg"},
 ];
