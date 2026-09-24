@@ -2324,3 +2324,21 @@ Brand: Honeywell Kromschröder (existing site convention ke hisaab se, jaise dus
 Product ID: `kromschroder-spark-plug-ks34483591`.
 
 Files updated: `index.html` (152 entries), `related-products-data.js` (152 entries), `brand-data.js` (Honeywell Kromschröder 14→15), `sitemap.xml` (188 URLs), `categories/spark-electrodes.html` (6→7 products, brands list mein Honeywell Kromschröder add kiya), `brands/honeywell-kromschroder.html` (14→15 products, categories list mein Spark Electrodes add kiya).
+
+## ZE series batch: 11 naye Threaded Ignition Electrode P/N (ZE-14-12/8-XXX-A1) — 163 products total (24 Sep 2026)
+
+Rahul ne 2 reference images bheji: ek P/N specification table (ZE-14-12-XXX-A1 series, columns P/N | Material Type (ME) | Thread Length (LG) | Critical Length (L)), aur ek dimensioned technical drawing (photo + CAD diagram) example "ZE 14-12-500 A1" ke saath, showing M14 x 1.25 thread aur LG/L/ØME dimension callouts. Caption: "Specification Given....Mention details With All Part No."
+
+Yeh drawing/naming convention already site par mojood tha — `rkic-special-ignition-electrode.html` ke meta keywords mein "ZE14-12 type" pehle se likha tha, aur yehi composite photo+diagram image us product mein already use ho raha tha. Is table ne yeh convention decode kiya: ZE-[thread code]-[LG]-[L]-A1 (A1 = Kanthal A1 material). Isse pichle session ka Kromschröder KS34483591 ka engraving "ZE 18-12-50" bhi cross-verify hua — M18 thread, LG=12mm, L=50mm, exactly wahi spec jo humne uss product mein diya tha.
+
+AskUserQuestion se confirm kiya ki Rahul 11 alag-alag naye products chahte hain (har P/N ke liye ek page) — sirf existing `rkic-special-ignition-electrode` page update karna ya reference save karna nahi.
+
+11 P/N: ZE-14-12-35-A1, ZE-14-12-66-A1, ZE-14-12-100-A1, ZE-14-12-150-A1, ZE-14-12-200-A1, ZE-14-8-250-A1 (LG=8mm, baaki sab LG=12mm), ZE-14-12-300-A1, ZE-14-12-400-A1, ZE-14-12-500-A1, ZE-14-12-1000-A1, ZE-14-12-1200-A1. Sab M14 x 1.25 thread, Kanthal A1 electrode material, existing `rkic-special-ignition-electrode.html` ko template banaya (Custom/Made-to-Order → fixed Standard Stock spec rows mein convert kiya: Part Number, Thread Length (LG), Overall/Critical Length (L) — "Customization" row hata diya kyunki ab fixed sizes hain). Image: koi individual product photo nahi thi har length ke liye — existing `rkic-special-ignition-electrode-large.jpg`/thumb (jo already photo+diagram composite hai, isi family ko represent karta hai) sab 11 products mein reuse kiya, naya image processing nahi kiya.
+
+Product IDs: `rkic-ze-14-12-35-a1` se `rkic-ze-14-12-1200-a1` tak (P/N se derive kiye).
+
+Category: SPARK ELECTRODES (existing page, 7→18 products — bahut bada jump ek batch mein, Rahul ne explicitly confirm kiya tha). Brand: R.K. Instruments & Controls (14→25 products, categories list mein already "Spark Electrodes" tha).
+
+Build/update process: ek parameterized Python script se sab 11 product pages generate kiye (fixed-integer `rep()` discipline follow ki), phir index.html/related-products-data.js/sitemap.xml/spark-electrodes.html/r-k-instruments-and-controls.html sab ek-ek karke update kiye. Bug pakda aur fix kiya: breadcrumb JSON-LD block mein em-dash character JSON-escaped `—` (literal backslash-u-2014 text) tha, baaki sab jagah plain UTF-8 em-dash — pehla `rep()` call isi wajah se fail hua tha, dono cases handle kiye. `<a>`/`</a>` balance check dono category aur brand page ke related-grid mein kiya (18/18 aur 25/25).
+
+Files updated: `index.html` (163 entries), `related-products-data.js` (163 entries), `brand-data.js` (R.K. Instruments & Controls 14→25), `sitemap.xml` (199 URLs), `categories/spark-electrodes.html` (7→18 products), `brands/r-k-instruments-and-controls.html` (14→25 products).
