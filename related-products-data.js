@@ -17,6 +17,7 @@ const RKIC_PRODUCTS = [
   {id:"vanaz-r2202", name:"Vanaz R2202 High Pressure LPG Gas Regulator", brand:"Vanaz", category:"PRESSURE REGULATOR VALVES", subcategory:"High Pressure Regulator", code:"R2202", thumb:"../images/thumbs/vanaz-r2202-thumb.jpg"},
   {id:"vanaz-r9102", name:"Vanaz R9102 Flame Arrestor with Non-Return Valve", brand:"Vanaz", category:"FLAME ARRESTORS", subcategory:null, code:"R9102", thumb:"../images/thumbs/vanaz-r9102-thumb.jpg"},
 {id:"vanaz-r9103", name:"Vanaz R9103 Flame Arrestor", brand:"Vanaz", category:"FLAME ARRESTORS", subcategory:null, code:"R9103", thumb:"../images/thumbs/vanaz-r9103-thumb.jpg"},
+{id:"vanaz-r9104", name:"Vanaz R9104 Flame Arrestor with Non-Return Valve", brand:"Vanaz", category:"FLAME ARRESTORS", subcategory:null, code:"R9104", thumb:"../images/thumbs/vanaz-r9104-thumb.jpg"},
   {id:"vanaz-r2301-ii", name:"Vanaz R2301 II Oxygen Gas Pressure Regulator", brand:"Vanaz", category:"PRESSURE REGULATOR VALVES", subcategory:"Oxygen Regulator", code:"R2301 II", thumb:"../images/thumbs/vanaz-r2301-ii-thumb.jpg"},
   {id:"vanaz-r2325", name:"Vanaz R2325 Medical Oxygen Pressure Regulator", brand:"Vanaz", category:"PRESSURE REGULATOR VALVES", subcategory:"Oxygen Regulator", code:"R2325", thumb:"../images/thumbs/vanaz-r2325-thumb.jpg"},
   {id:"vanaz-v7744", name:"Vanaz V7744 Safety Relief Valve", brand:"Vanaz", category:"SAFETY RELIEF VALVES", subcategory:null, code:"V.7744", thumb:"../images/thumbs/vanaz-v7744-thumb.jpg"},
