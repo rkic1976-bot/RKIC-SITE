@@ -41,6 +41,7 @@ img{ max-width:100%; display:block; }
 .wrap{ max-width:900px; margin:0 auto; padding:0 20px; }
 .topbar .wrap, header .wrap{ max-width:1180px; }
 header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); }
+.sticky-stack{ position:sticky; top:0; z-index:60; }
 .topbar{ background:var(--ink); color:#fff; font-size:0.8rem; }
 .topbar .wrap{ display:flex; align-items:center; gap:24px; height:38px; }
 .topbar a{ display:flex; align-items:center; gap:7px; color:#fff; text-decoration:none; }
@@ -281,6 +282,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 </head>
 <body>
 
+<div class="sticky-stack">
 <div class="topbar">
   <div class="wrap">
     <a href="mailto:rkic1976@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg><span class="tb-text">rkic1976@gmail.com</span></a>
@@ -333,6 +335,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
     </div>
   </div>
 </header>
+</div>
 <div class="mobile-drawer" id="pgMobileDrawer">
   <ul class="drawer-list">
     <li><a class="drawer-row" href="../index.html#home">Home</a></li>
