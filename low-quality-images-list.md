@@ -121,8 +121,8 @@ Photo bhejte waqt bas naam ya code bata dijiye, id bataane ki zaroorat nahi.
 ### Vanaz (5)
 - Vanaz R2301 II Oxygen Gas Pressure Regulator — code R2301 II
 - Vanaz R2325 Medical Oxygen Pressure Regulator — code R2325
-- Vanaz V7744 Safety Relief Valve — code V.7744
-- Vanaz V7734 Safety Relief Valve — code V.7734
+- Vanaz V7744 Safety Relief Valve — code V7744
+- Vanaz V7734 Safety Relief Valve — code V7734
 - Vanaz V7713 / V7715 Safety Relief Valve
 
 ---
