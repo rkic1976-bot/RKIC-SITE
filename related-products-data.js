@@ -23,6 +23,7 @@ const RKIC_PRODUCTS = [
 {id:"vanaz-f0112", name:"Vanaz F0112 Gas Filter", brand:"Vanaz", category:"FILTERS | STRAINERS", subcategory:null, code:"F0112", thumb:"../images/thumbs/vanaz-f0112-thumb.jpg"},
 {id:"vanaz-f0105", name:"Vanaz F0105 Series Gas Filter", brand:"Vanaz", category:"FILTERS | STRAINERS", subcategory:null, code:"F0105", thumb:"../images/thumbs/vanaz-f0105-thumb.jpg"},
 {id:"vanaz-r2301-iii-co2", name:"Vanaz R2301 III CO2 Gas Pressure Regulator", brand:"Vanaz", category:"PRESSURE REGULATOR VALVES", subcategory:"CO2 Regulator", code:"R2301 III", thumb:"../images/thumbs/vanaz-r2301-iii-co2-thumb.jpg"},
+{id:"vanaz-r2310", name:"Vanaz R2310 Industrial Gas Pressure Regulator", brand:"Vanaz", category:"PRESSURE REGULATOR VALVES", subcategory:"Oxygen Regulator", code:"R2310", thumb:"../images/thumbs/vanaz-r2310-thumb.jpg"},
   {id:"vanaz-r2301-ii", name:"Vanaz R2301 II Oxygen Gas Pressure Regulator", brand:"Vanaz", category:"PRESSURE REGULATOR VALVES", subcategory:"Oxygen Regulator", code:"R2301 II", thumb:"../images/thumbs/vanaz-r2301-ii-thumb.jpg"},
   {id:"vanaz-r2325", name:"Vanaz R2325 Medical Oxygen Pressure Regulator", brand:"Vanaz", category:"PRESSURE REGULATOR VALVES", subcategory:"Oxygen Regulator", code:"R2325", thumb:"../images/thumbs/vanaz-r2325-thumb.jpg"},
   {id:"vanaz-v7744", name:"Vanaz V7744 Safety Relief Valve", brand:"Vanaz", category:"SAFETY RELIEF VALVES", subcategory:null, code:"V.7744", thumb:"../images/thumbs/vanaz-v7744-thumb.jpg"},
