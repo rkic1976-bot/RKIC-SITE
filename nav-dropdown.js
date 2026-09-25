@@ -24,7 +24,7 @@
     "VALVE PROVING SYSTEMS"
   ];
   var subcategoryMap = {
-    'PRESSURE REGULATOR VALVES': ['High Pressure Regulator', 'Low Pressure Regulator', 'Oxygen Regulator', 'Ammonia Regulator'],
+    'PRESSURE REGULATOR VALVES': ['High Pressure Regulator', 'Low Pressure Regulator', 'Oxygen Regulator', 'Ammonia Regulator', 'CO2 Regulator'],
     'SENSORS': ['Flame Relay', 'UV Flame Sensor', 'Photocell'],
     'SOLENOID VALVES': ['Brahma Solenoid Valve', 'Kromschröder Solenoid Valve', 'Elektrogas Solenoid Valve', 'Solenoid Coil', 'Coil Connector'],
     'IGNITION TRANSFORMERS': ['Ignition Transformer', 'Modutrol Transformer'],
