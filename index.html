@@ -54,7 +54,13 @@
     font-size: 16px;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  /* scroll-behavior:smooth previously here broke the native "jump to #contact on
+     page load" navigation used by every Request a Quote link/button on the site
+     (confirmed: with smooth active, a fresh cross-page load to a URL fragment can
+     silently never scroll at all). Kept instant/auto so that native browser
+     behavior always lands correctly; the JS below still restores a smooth feel
+     for same-page nav-link clicks. */
+  html{scroll-behavior:auto;}
   body{
     margin:0;
     background:var(--paper);
@@ -5564,22 +5570,23 @@
   }
   searchInput.addEventListener('input', (e) => renderResults(e.target.value));
   if(location.hash){ handleHashRoute(); }
-  // Fix: html has scroll-behavior:smooth (below), and browsers animate the native
-  // "jump to URL fragment on load" through that same smooth behavior. On a real
-  // cross-page navigation (e.g. clicking Request a Quote on a product/category
-  // page, which links to "../index.html#contact"), that smooth-scroll animation
-  // can silently never progress (confirmed: window.scrollTo/scrollIntoView with
-  // default smooth behavior just sits at scrollY 0 indefinitely after such a
-  // navigation) — so the page never reaches #contact in one click. An INSTANT
-  // jump does not depend on that animation and always lands correctly, so force
-  // one here. 'pageshow' also covers the bfcache-restore case (browser Back/
-  // Forward), where the native fragment scroll doesn't re-run at all.
-  window.addEventListener('pageshow', function(){
+  // Fix: a plain URL-fragment link (e.g. Request a Quote on a product/category
+  // page, linking to "../index.html#contact") must land on #contact in one
+  // click. html{scroll-behavior} is kept 'auto' above so the browser's own
+  // native fragment-jump-on-load always fires correctly (confirmed: with
+  // scroll-behavior:smooth that native jump could silently never happen at
+  // all on a real cross-page navigation). As a safety net in case the target
+  // wasn't laid out yet at native-jump time, re-apply an instant jump on both
+  // 'load' (fresh navigation) and 'pageshow' (also covers the browser
+  // Back/Forward bfcache-restore case, where the native jump doesn't re-run).
+  function fixHashScroll(){
     if(location.hash && !/^#\//.test(location.hash)){
       const target = document.querySelector(location.hash);
       if(target) target.scrollIntoView({behavior:'instant', block:'start'});
     }
-  });
+  }
+  window.addEventListener('load', fixHashScroll);
+  window.addEventListener('pageshow', fixHashScroll);
   // Keep stats band figures accurate automatically as products/brands are added
   const statProductsEl = document.getElementById('statProducts');
   const statBrandsEl = document.getElementById('statBrands');
