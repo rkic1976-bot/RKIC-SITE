@@ -5586,5 +5586,25 @@
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
+
+<style>
+@media (max-width:860px){
+  .mobile-quote-bar{
+    display:flex; position:fixed; left:0; right:0; bottom:0; z-index:90;
+    background:transparent; pointer-events:none;
+  }
+  .mobile-quote-bar a{
+    flex:1; text-align:center; color:#33414E; padding:16px;
+    font-weight:800; font-size:0.95rem; text-decoration:none; letter-spacing:0.05em;
+    font-family:'Barlow',sans-serif; text-transform:uppercase;
+    pointer-events:auto;
+    text-shadow:
+      0 1px 0 #F7F5EE, 0 -1px 0 #F7F5EE, 1px 0 0 #F7F5EE, -1px 0 0 #F7F5EE,
+      0 2px 10px rgba(247,245,238,0.95), 0 0 18px rgba(247,245,238,0.9);
+  }
+}
+@media (min-width:861px){ .mobile-quote-bar{ display:none; } }
+</style>
+<div class="mobile-quote-bar"><a href="#contact">Request a Quote</a></div>
 </body>
 </html>
