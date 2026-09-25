@@ -331,7 +331,7 @@
     padding-top:26px; display:grid; grid-template-columns:repeat(5,1fr); gap:20px;
   }
   @media (max-width:900px){ .rating{ grid-template-columns:repeat(3,1fr); } }
-  @media (max-width:640px){ .rating{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px){ .rating{ grid-template-columns:repeat(2,1fr); padding-right:70px; } }
   .rating .num{ font-family:'Barlow Condensed',sans-serif; font-size:1.55rem; color:var(--ink); font-weight:600; }
   .rating .lab{ font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-top:4px; }
 
@@ -5564,6 +5564,17 @@
   }
   searchInput.addEventListener('input', (e) => renderResults(e.target.value));
   if(location.hash){ handleHashRoute(); }
+  // Fix: when this page is restored from bfcache (common when navigating here
+  // via "../index.html#contact" from a product/category/brand page), the browser
+  // does NOT re-run the fragment scroll — it just restores the old scroll position.
+  // 'pageshow' fires on both a fresh load and a bfcache restore, so re-apply the
+  // jump to the target section every time, making Request a Quote work in 1 click.
+  window.addEventListener('pageshow', function(){
+    if(location.hash && !/^#\//.test(location.hash)){
+      const target = document.querySelector(location.hash);
+      if(target) target.scrollIntoView();
+    }
+  });
   // Keep stats band figures accurate automatically as products/brands are added
   const statProductsEl = document.getElementById('statProducts');
   const statBrandsEl = document.getElementById('statBrands');
