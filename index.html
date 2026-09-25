@@ -5564,15 +5564,20 @@
   }
   searchInput.addEventListener('input', (e) => renderResults(e.target.value));
   if(location.hash){ handleHashRoute(); }
-  // Fix: when this page is restored from bfcache (common when navigating here
-  // via "../index.html#contact" from a product/category/brand page), the browser
-  // does NOT re-run the fragment scroll — it just restores the old scroll position.
-  // 'pageshow' fires on both a fresh load and a bfcache restore, so re-apply the
-  // jump to the target section every time, making Request a Quote work in 1 click.
+  // Fix: html has scroll-behavior:smooth (below), and browsers animate the native
+  // "jump to URL fragment on load" through that same smooth behavior. On a real
+  // cross-page navigation (e.g. clicking Request a Quote on a product/category
+  // page, which links to "../index.html#contact"), that smooth-scroll animation
+  // can silently never progress (confirmed: window.scrollTo/scrollIntoView with
+  // default smooth behavior just sits at scrollY 0 indefinitely after such a
+  // navigation) — so the page never reaches #contact in one click. An INSTANT
+  // jump does not depend on that animation and always lands correctly, so force
+  // one here. 'pageshow' also covers the bfcache-restore case (browser Back/
+  // Forward), where the native fragment scroll doesn't re-run at all.
   window.addEventListener('pageshow', function(){
     if(location.hash && !/^#\//.test(location.hash)){
       const target = document.querySelector(location.hash);
-      if(target) target.scrollIntoView();
+      if(target) target.scrollIntoView({behavior:'instant', block:'start'});
     }
   });
   // Keep stats band figures accurate automatically as products/brands are added
