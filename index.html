@@ -5575,16 +5575,26 @@
   // click. html{scroll-behavior} is kept 'auto' above so the browser's own
   // native fragment-jump-on-load always fires correctly (confirmed: with
   // scroll-behavior:smooth that native jump could silently never happen at
-  // all on a real cross-page navigation). As a safety net in case the target
-  // wasn't laid out yet at native-jump time, re-apply an instant jump on both
-  // 'load' (fresh navigation) and 'pageshow' (also covers the browser
-  // Back/Forward bfcache-restore case, where the native jump doesn't re-run).
+  // all on a real cross-page navigation). IMPORTANT: on a slow mobile
+  // connection the 'load' event (waits for every resource on the page) can
+  // fire many seconds late, leaving the page stuck at the very top with no
+  // scroll at all until then (confirmed via a real-device screen recording
+  // on a throttled connection) -- so we no longer rely on 'load' alone. This
+  // script tag sits near the end of <body>, after <footer id="contact">, so
+  // #contact is already in the DOM the instant this script runs -- call the
+  // fix immediately (no event wait at all), plus on 'DOMContentLoaded' as a
+  // backup for the (impossible today, but cheap to guard) case this script
+  // were ever moved above the footer, and keep 'load'/'pageshow' as final
+  // safety nets for late layout shifts and the Back/Forward bfcache-restore
+  // case (where neither the native jump nor DOMContentLoaded re-run).
   function fixHashScroll(){
     if(location.hash && !/^#\//.test(location.hash)){
       const target = document.querySelector(location.hash);
       if(target) target.scrollIntoView({behavior:'instant', block:'start'});
     }
   }
+  fixHashScroll();
+  document.addEventListener('DOMContentLoaded', fixHashScroll);
   window.addEventListener('load', fixHashScroll);
   window.addEventListener('pageshow', fixHashScroll);
   // Keep stats band figures accurate automatically as products/brands are added
