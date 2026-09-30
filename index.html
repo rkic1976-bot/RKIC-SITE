@@ -3378,7 +3378,7 @@
     },
     {
       id: 'maxon-m333-39782',
-      name: 'Honeywell Maxon M333 Spark Electrode',
+      name: 'Honeywell Maxon M333 Spark Electrode 39782',
       brand: 'Honeywell Maxon',
       category: 'SPARK ELECTRODES',
       code: '39782',
@@ -4487,16 +4487,15 @@
     },
     {
       id: 'rkic-sp-2307',
-      name: 'Gas Burner Sequence Controller SP 2307',
+      name: 'Gas Burner Sequence Controller',
       brand: 'R.K. Instruments & Controls',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
-      code: 'SP 2307',
+      code: '',
       size: '230V AC, 2-Stage Low/High Flame',
       image: 'images/rkic-sp-2307-large.jpg',
       imageLarge: 'images/rkic-sp-2307-xl.jpg',
       specs: {
-        'Model': 'SP 2307',
         'Type': 'Burner Sequence Controller (2-Stage, Low/High Flame)',
         'Burner Type': 'Gas Burner (Two Stage — Low Flame / High Flame)',
         'Supply Voltage': '230 VAC',
@@ -4508,11 +4507,11 @@
         'Application': 'Industrial Gas-Fired Heating, Two-Stage Burner Control',
         'Manufacturer': 'R.K. Instruments & Controls'
       },
-      description: 'The R.K. Instruments &amp; Controls SP 2307 is an in-house manufactured burner sequence controller for industrial gas-fired burners, operating on a 230 VAC supply. On power-up the Blower Motor (BL) output energizes immediately; after an 11-second pre-purge delay the Ignition Transformer (IG) output energizes, followed 1.5 seconds later by the low-flame Solenoid Valve (SV1) output. Flame is verified within milliseconds by a flame-rectification (ionization probe) sensing circuit &mdash; the built-in flame relay\'s NO/NC contacts remove the need for a separate external NC connection &mdash; and 12 seconds after flame is confirmed, the high-flame Solenoid Valve (SV2) output energizes for two-stage firing. If flame is not sensed, the controller enters Alarm/Lock Out mode, switching off the Ignition, SV1 and SV2 outputs and indicating burner-off on the Lock Out (LO) / alarm siren output; restart is via the front-panel manual RESET button, or an optional external reset terminal on request. Manufactured and supplied by R.K. Instruments &amp; Controls for industrial gas-fired heating applications.',
+      description: 'The R.K. Instruments &amp; Controls Gas Burner Sequence Controller is an in-house manufactured burner sequence controller for industrial gas-fired burners, operating on a 230 VAC supply. On power-up the Blower Motor (BL) output energizes immediately; after an 11-second pre-purge delay the Ignition Transformer (IG) output energizes, followed 1.5 seconds later by the low-flame Solenoid Valve (SV1) output. Flame is verified within milliseconds by a flame-rectification (ionization probe) sensing circuit &mdash; the built-in flame relay\'s NO/NC contacts remove the need for a separate external NC connection &mdash; and 12 seconds after flame is confirmed, the high-flame Solenoid Valve (SV2) output energizes for two-stage firing. If flame is not sensed, the controller enters Alarm/Lock Out mode, switching off the Ignition, SV1 and SV2 outputs and indicating burner-off on the Lock Out (LO) / alarm siren output; restart is via the front-panel manual RESET button, or an optional external reset terminal on request. Manufactured and supplied by R.K. Instruments &amp; Controls for industrial gas-fired heating applications.',
       extraHTML: `<div class="spot-extra">
         <section class="sec-seq">
           <div class="eyebrow-lt">Sequence of Operation</div>
-          <h2>How the SP 2307 fires and monitors a two-stage gas burner.</h2>
+          <h2>How the controller fires and monitors a two-stage gas burner.</h2>
           <table class="seq-table">
             <thead><tr><th>Step</th><th>Action</th><th>Delay / Condition</th><th>Output / Status</th></tr></thead>
             <tbody>
@@ -5261,7 +5260,7 @@
     <article class="spot-card">
       <div class="spot-img" data-images='${JSON.stringify(images).replace(/'/g,'&#39;')}' data-idx="0">
         <a href="products/${p.id}.html">
-          <img src="${images[0]}" alt="${p.name} — ${p.category} by ${p.brand}, product code ${p.code}" loading="lazy"/>
+          <img src="${images[0]}" alt="${p.name} — ${p.category} by ${p.brand}${p.code ? ', product code ' + p.code : ''}" loading="lazy"/>
         </a>
         ${sliderNavHTML}
       </div>
@@ -5273,11 +5272,11 @@
           ${p.size ? `<span class="spot-tag">${p.size}</span>` : ''}
         </div>
         <h3><a href="products/${p.id}.html">${p.name}</a></h3>
-        <div class="spot-sku">Product Code ${p.code}</div>
+        ${p.code ? `<div class="spot-sku">Product Code ${p.code}</div>` : ''}
         <p class="spot-desc">${p.description}</p>
         <div class="spot-specs">${specsHTML}</div>
         <div class="spot-ctas">
-          <a class="btn-primary btn-whatsapp" href="${waLink('Enquiry for ' + p.name + ' (Code ' + p.code + ')')}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+          <a class="btn-primary btn-whatsapp" href="${waLink('Enquiry for ' + p.name + (p.code ? ' (Code ' + p.code + ')' : ''))}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
           <a class="btn-secondary" href="products/${p.id}.html">View Full Page</a>
         </div>
       </div>
