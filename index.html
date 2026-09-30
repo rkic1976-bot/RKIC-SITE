@@ -456,6 +456,9 @@
   .seq-table th{ text-align:left; font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-dim); border-bottom:1px solid var(--line); padding:8px 12px; }
   .seq-table td{ border-bottom:1px solid var(--line); padding:11px 12px; vertical-align:top; }
   .seq-table tr:last-child td{ border-bottom:none; }
+  .spot-extra .tech-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:36px; align-items:start; margin-top:20px; }
+  @media (max-width:760px){ .spot-extra .tech-grid{ grid-template-columns:1fr; gap:24px; } }
+  .spot-extra .tech-grid h3{ font-size:0.95rem; font-weight:600; margin:0 0 4px; }
   .seq-step{ font-family:'IBM Plex Mono',monospace; color:var(--sage-deep); font-weight:600; width:2.4em; }
   .seq-note{ margin-top:14px; font-size:0.86rem; color:var(--text-dim); line-height:1.6; }
   .seq-note strong{ color:var(--ink); }
@@ -4680,7 +4683,7 @@
     },
     {
       id: 'rkic-gas-ball-valve',
-      name: 'Full Bore Gas Ball Valve',
+      name: 'Gas Ball Valve',
       brand: 'R.K. Instruments & Controls',
       category: 'MANUAL BALL VALVES',
       code: '',
@@ -4703,59 +4706,40 @@
         <section class="sec-seq">
           <div class="eyebrow-lt">Technical Data</div>
           <h2>Size range, gas pressure rating &amp; materials of construction.</h2>
-          <table class="seq-table">
-            <tr><th>Size</th><th>Gas Working Pressure</th></tr>
-            <tr><td>1/4" (DN 8)</td><td>5 bar / 72.5 psi</td></tr>
-            <tr><td>3/8" (DN 10)</td><td>5 bar / 72.5 psi</td></tr>
-            <tr><td>1/2" (DN 15)</td><td>5 bar / 72.5 psi</td></tr>
-            <tr><td>3/4" (DN 20)</td><td>5 bar / 72.5 psi</td></tr>
-            <tr><td>1" (DN 25)</td><td>5 bar / 72.5 psi</td></tr>
-            <tr><td>1"1/4 (DN 32)</td><td>5 bar / 72.5 psi</td></tr>
-            <tr><td>1"1/2 (DN 40)</td><td>5 bar / 72.5 psi</td></tr>
-            <tr><td>2" (DN 50)</td><td>5 bar / 72.5 psi</td></tr>
-            <tr><td>2"1/2 (DN 65)</td><td>18 bar / 261 psi</td></tr>
-            <tr><td>3" (DN 80)</td><td>16 bar / 232 psi</td></tr>
-            <tr><td>4" (DN 100)</td><td>14 bar / 203 psi</td></tr>
-          </table>
-          <h3 style="margin-top:28px;font-size:1rem;">Materials — sizes 1/4" through 3/8"</h3>
-          <table class="seq-table">
-            <tr><th>Pos.</th><th>Description</th><th>N.</th><th>Material</th></tr>
-            <tr><td>1</td><td>Female end adapter</td><td>1</td><td>Nickel-plated brass CW617N</td></tr>
-            <tr><td>2</td><td>Seat</td><td>2</td><td>PTFE</td></tr>
-            <tr><td>3</td><td>Ball</td><td>1</td><td>Chrome-plated brass CW614N</td></tr>
-            <tr><td>4</td><td>Stem</td><td>1</td><td>Brass CW614N</td></tr>
-            <tr><td>5</td><td>O-ring</td><td>1</td><td>NBR</td></tr>
-            <tr><td>6</td><td>O-ring</td><td>1</td><td>Viton®</td></tr>
-            <tr><td>7</td><td>Body</td><td>1</td><td>Nickel-plated brass CW617N</td></tr>
-            <tr><td>8</td><td>Lever</td><td>1</td><td>Varnished steel P04</td></tr>
-            <tr><td>9</td><td>Screw</td><td>1</td><td>Zinc-plated steel C4C</td></tr>
-          </table>
-          <h3 style="margin-top:28px;font-size:1rem;">Materials — sizes 1/2" through 2"</h3>
-          <table class="seq-table">
-            <tr><th>Pos.</th><th>Description</th><th>N.</th><th>Material</th></tr>
-            <tr><td>1</td><td>Female end adapter</td><td>1</td><td>Nickel-plated brass CW617N</td></tr>
-            <tr><td>2</td><td>Seat</td><td>2</td><td>PTFE</td></tr>
-            <tr><td>3</td><td>Ball</td><td>1</td><td>Chrome-plated brass CW617N</td></tr>
-            <tr><td>4</td><td>Stem</td><td>1</td><td>Brass CW614N</td></tr>
-            <tr><td>5</td><td>O-ring</td><td>1</td><td>NBR</td></tr>
-            <tr><td>6</td><td>O-ring</td><td>1</td><td>Viton®</td></tr>
-            <tr><td>7</td><td>Body</td><td>1</td><td>Nickel-plated brass CW617N</td></tr>
-            <tr><td>8</td><td>Lever</td><td>1</td><td>Varnished steel P04</td></tr>
-            <tr><td>9</td><td>Screw</td><td>1</td><td>Zinc-plated steel C4C</td></tr>
-          </table>
-          <h3 style="margin-top:28px;font-size:1rem;">Materials — sizes 2"1/2 through 4"</h3>
-          <table class="seq-table">
-            <tr><th>Pos.</th><th>Description</th><th>N.</th><th>Material</th></tr>
-            <tr><td>1</td><td>Female end adapter</td><td>1</td><td>Nickel-plated brass CW617N</td></tr>
-            <tr><td>2</td><td>Seat</td><td>2</td><td>PTFE</td></tr>
-            <tr><td>3</td><td>Ball</td><td>1</td><td>Chrome-plated brass CW617N</td></tr>
-            <tr><td>4</td><td>Stem</td><td>1</td><td>Brass CW614N</td></tr>
-            <tr><td>5</td><td>O-ring</td><td>1</td><td>NBR</td></tr>
-            <tr><td>6</td><td>O-ring</td><td>1</td><td>Viton®</td></tr>
-            <tr><td>7</td><td>Body</td><td>1</td><td>Nickel-plated brass CW617N</td></tr>
-            <tr><td>8</td><td>Lever</td><td>1</td><td>Aluminium</td></tr>
-            <tr><td>9</td><td>Screw</td><td>1</td><td>Zinc-plated CB4 FF (C34)</td></tr>
-          </table>
+          <div class="tech-grid">
+            <div>
+              <h3>Size &amp; Gas Working Pressure</h3>
+              <table class="seq-table">
+                <tr><th>Size</th><th>Gas Working Pressure</th></tr>
+                <tr><td>1/4" (DN 8)</td><td>5 bar / 72.5 psi</td></tr>
+                <tr><td>3/8" (DN 10)</td><td>5 bar / 72.5 psi</td></tr>
+                <tr><td>1/2" (DN 15)</td><td>5 bar / 72.5 psi</td></tr>
+                <tr><td>3/4" (DN 20)</td><td>5 bar / 72.5 psi</td></tr>
+                <tr><td>1" (DN 25)</td><td>5 bar / 72.5 psi</td></tr>
+                <tr><td>1"1/4 (DN 32)</td><td>5 bar / 72.5 psi</td></tr>
+                <tr><td>1"1/2 (DN 40)</td><td>5 bar / 72.5 psi</td></tr>
+                <tr><td>2" (DN 50)</td><td>5 bar / 72.5 psi</td></tr>
+                <tr><td>2"1/2 (DN 65)</td><td>18 bar / 261 psi</td></tr>
+                <tr><td>3" (DN 80)</td><td>16 bar / 232 psi</td></tr>
+                <tr><td>4" (DN 100)</td><td>14 bar / 203 psi</td></tr>
+              </table>
+            </div>
+            <div>
+              <h3>Materials of Construction</h3>
+              <table class="seq-table">
+                <tr><th>Pos.</th><th>Description</th><th>N.</th><th>Material</th></tr>
+                <tr><td>1</td><td>Female end adapter</td><td>1</td><td>Nickel-plated brass CW617N</td></tr>
+                <tr><td>2</td><td>Seat</td><td>2</td><td>PTFE</td></tr>
+                <tr><td>3</td><td>Ball</td><td>1</td><td>Chrome-plated brass CW614N (1/4"&ndash;3/8") &middot; CW617N (1/2"&ndash;4")</td></tr>
+                <tr><td>4</td><td>Stem</td><td>1</td><td>Brass CW614N</td></tr>
+                <tr><td>5</td><td>O-ring</td><td>1</td><td>NBR</td></tr>
+                <tr><td>6</td><td>O-ring</td><td>1</td><td>Viton®</td></tr>
+                <tr><td>7</td><td>Body</td><td>1</td><td>Nickel-plated brass CW617N</td></tr>
+                <tr><td>8</td><td>Lever</td><td>1</td><td>Varnished steel P04 (1/4"&ndash;2") &middot; Aluminium (2"1/2&ndash;4")</td></tr>
+                <tr><td>9</td><td>Screw</td><td>1</td><td>Zinc-plated steel C4C (1/4"&ndash;2") &middot; Zinc-plated CB4 FF/C34 (2"1/2&ndash;4")</td></tr>
+              </table>
+            </div>
+          </div>
         </section>
       </div>`
     },
