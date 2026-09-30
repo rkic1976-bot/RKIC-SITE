@@ -96,8 +96,8 @@
     navProductsResults.innerHTML = '';
     var prodMatches = RKIC_PRODUCTS.filter(function(p){
       return (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().indexOf(q) !== -1;
-    }).slice(0, 10);
-    var catMatches = categories.filter(function(c){ return c.toLowerCase().indexOf(q) !== -1; }).slice(0, 6);
+    }).slice(0, 50);
+    var catMatches = categories.filter(function(c){ return c.toLowerCase().indexOf(q) !== -1; }).slice(0, 15);
     if(prodMatches.length === 0 && catMatches.length === 0){
       var div = document.createElement('div');
       div.className = 'search-empty nav-drop-hint';

@@ -460,8 +460,8 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
       RKIC_PRODUCTS.forEach(function(p){ if(!seenCat[p.category]){ seenCat[p.category] = true; cats.push(p.category); } });
       var prodMatches = RKIC_PRODUCTS.filter(function(p){
         return (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().indexOf(q) !== -1;
-      }).slice(0, 8);
-      var catMatches = cats.filter(function(c){ return c.toLowerCase().indexOf(q) !== -1; }).slice(0, 5);
+      }).slice(0, 50);
+      var catMatches = cats.filter(function(c){ return c.toLowerCase().indexOf(q) !== -1; }).slice(0, 15);
       var html = '';
       if(prodMatches.length === 0 && catMatches.length === 0){
         html = '<div class="pg-search-empty">No products match \"' + q.replace(/</g,'&lt;') + '\" — try a different term, or contact us for a custom requirement.</div>';
@@ -614,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <script>var CURRENT_PRODUCT_ID = "dungs-vps504s02";</script>
 <script src="../related-products-data.js?v=20260908d" defer></script>
 <script src="../related-products.js?v=20260908d" defer></script>
-<script src="../nav-dropdown.js?v=20260919a" defer></script>
+<script src="../nav-dropdown.js?v=20260930a" defer></script>
 
 <style>
 @media (max-width:860px){

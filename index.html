@@ -5758,8 +5758,8 @@
   function renderNavProductResults(rawQuery){
     const q = rawQuery.trim().toLowerCase();
     navProductsResults.innerHTML = '';
-    const prodMatches = products.filter(p => (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().includes(q)).slice(0, 10);
-    const catMatches = categories.filter(c => c.toLowerCase().includes(q)).slice(0, 6);
+    const prodMatches = products.filter(p => (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().includes(q)).slice(0, 50);
+    const catMatches = categories.filter(c => c.toLowerCase().includes(q)).slice(0, 15);
     if(prodMatches.length === 0 && catMatches.length === 0){
       const div = document.createElement('div');
       div.className = 'search-empty nav-drop-hint';
