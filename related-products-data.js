@@ -195,4 +195,5 @@ const RKIC_PRODUCTS = [
   {id:"kromschroder-br140-ks74330411", name:"Kromschröder Electrode Rod BR140 L35, Torch Type (KS74330411)", brand:"Honeywell Kromschröder", category:"SPARK ELECTRODES", subcategory:null, code:"KS74330411", thumb:"../images/thumbs/kromschroder-br140-ks74330411-thumb.jpg"},
   {id:"kromschroder-ks74337958", name:"Kromschröder Ignition & Sensing Electrode Rod (KS74337958)", brand:"Honeywell Kromschröder", category:"SPARK ELECTRODES", subcategory:null, code:"KS74337958", thumb:"../images/thumbs/kromschroder-ks74337958-thumb.jpg"},
   {id:"rkic-cap-connector-bakelite", name:"Ignition Spark Cable Boot — 90° Bakelite Cap Connector (Black)", brand:"R.K. Instruments & Controls", category:"IGNITION SPARES", subcategory:null, code:"90° Bakelite Cap Connector, Type D", thumb:"../images/thumbs/rkic-cap-connector-bakelite-thumb.jpg"},
+  {id:"honeywell-elster-rabo-model-range", name:"Honeywell Elster RABO Rotary Gas Meter — Full Model Range", brand:"Honeywell Elster", category:"GAS FLOW METERS", subcategory:"RPD Rotary Gas Meter", code:"", thumb:"../images/thumbs/honeywell-elster-rabo-g40-dn50-thumb.jpg"},
 ];
