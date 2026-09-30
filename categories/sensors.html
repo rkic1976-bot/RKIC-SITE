@@ -266,6 +266,13 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .related-thumb img{ width:100%; height:100%; object-fit:contain; }
 .related-name{ font-size:0.86rem; font-weight:600; line-height:1.35; }
 .related-code{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-top:4px; }
+.related-thumb{ position:relative; }
+.related-zoom-btn{ position:absolute; bottom:6px; right:6px; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.92); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,0.12); cursor:zoom-in; touch-action:manipulation; z-index:2; }
+.related-zoom-btn svg{ width:14px; height:14px; display:block; }
+.cat-lightbox{ position:fixed; inset:0; background:rgba(20,20,20,0.92); z-index:9999; display:none; align-items:center; justify-content:center; padding:24px; touch-action:manipulation; }
+.cat-lightbox.open{ display:flex; }
+.cat-lightbox img{ max-width:min(92vw,900px); max-height:88vh; object-fit:contain; border-radius:4px; background:#fff; touch-action:manipulation; }
+.cat-lightbox-close{ position:absolute; top:18px; right:22px; width:42px; height:42px; border-radius:50%; background:#fff; border:none; font-size:1.3rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--ink); touch-action:manipulation; }
 
 /* Live product search (added) */
 .pg-search-results{ max-width:700px; margin:8px auto 0; max-height:60vh; overflow-y:auto; background:#fff; border-radius:4px; }
@@ -522,118 +529,122 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   <p class="pg-desc">Flame relays, UV flame sensors and photocells let a burner control system confirm that a flame is actually present before it allows gas to keep flowing — a core flame-safeguard function on every burner. RKIC supplies Brahma, Siemens and Honeywell Technologies sensors for burner and boiler flame-monitoring circuits.</p>
   <p class="pg-desc" style="margin-top:-8px;"><strong>23 products</strong> currently in stock &middot; brands: Brahma, Honeywell Technologies, Siemens</p>
   <div class="related-grid" style="margin-top:24px;">
+    <div class="cat-lightbox" id="catLightbox">
+      <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
+      <img src="" alt="">
+    </div>
     <a href="../products/siemens-qrb3-1.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/siemens-qrb3-1-thumb.jpg" alt="Siemens Photoresistive Flame Detector QRB3(1)" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/siemens-qrb3-1-thumb.jpg" alt="Siemens Photoresistive Flame Detector QRB3(1)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/siemens-qrb3-1-large.jpg" data-zoom-alt="Siemens Photoresistive Flame Detector QRB3(1)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Siemens Photoresistive Flame Detector QRB3(1)</div>
   <div class="related-code">Siemens &middot; Code BPZ:QRB3(1)</div>
 </a>
     <a href="../products/siemens-qrb1a-a070b70a.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/siemens-qrb1a-a070b70a-thumb.jpg" alt="Siemens Photoresistive Flame Detector QRB1A-A070B70A" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/siemens-qrb1a-a070b70a-thumb.jpg" alt="Siemens Photoresistive Flame Detector QRB1A-A070B70A" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/siemens-qrb1a-a070b70a-large.jpg" data-zoom-alt="Siemens Photoresistive Flame Detector QRB1A-A070B70A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Siemens Photoresistive Flame Detector QRB1A-A070B70A</div>
   <div class="related-code">Siemens &middot; Code QRB1A-A070B70A</div>
 </a>
     <a href="../products/siemens-qrb4a-b070b70a.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/siemens-qrb4a-b070b70a-thumb.jpg" alt="Siemens Photoresistive Flame Detector QRB4A-B070B70A" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/siemens-qrb4a-b070b70a-thumb.jpg" alt="Siemens Photoresistive Flame Detector QRB4A-B070B70A" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/siemens-qrb4a-b070b70a-large.jpg" data-zoom-alt="Siemens Photoresistive Flame Detector QRB4A-B070B70A" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Siemens Photoresistive Flame Detector QRB4A-B070B70A</div>
   <div class="related-code">Siemens &middot; Code QRB4A-B070B70A</div>
 </a>
     <a href="../products/honeywell-129464n.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/honeywell-129464n-thumb.jpg" alt="Honeywell UV Flame Detector Bulb 129464N" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/honeywell-129464n-thumb.jpg" alt="Honeywell UV Flame Detector Bulb 129464N" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-129464n-large.jpg" data-zoom-alt="Honeywell UV Flame Detector Bulb 129464N" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell UV Flame Detector Bulb 129464N</div>
   <div class="related-code">Honeywell Technologies &middot; Code 129464N</div>
 </a>
     <a href="../products/honeywell-c7027a1049.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1049-thumb.jpg" alt="Honeywell UV Flame Sensor C7027A1049" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1049-thumb.jpg" alt="Honeywell UV Flame Sensor C7027A1049" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-c7027a1049-large.jpg" data-zoom-alt="Honeywell UV Flame Sensor C7027A1049" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell UV Flame Sensor C7027A1049</div>
   <div class="related-code">Honeywell Technologies &middot; Code C7027A1049</div>
 </a>
     <a href="../products/honeywell-c7027a1023.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1023-thumb.jpg" alt="Honeywell UV Flame Sensor C7027A1023" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1023-thumb.jpg" alt="Honeywell UV Flame Sensor C7027A1023" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-c7027a1023-large.jpg" data-zoom-alt="Honeywell UV Flame Sensor C7027A1023" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell UV Flame Sensor C7027A1023</div>
   <div class="related-code">Honeywell Technologies &middot; Code C7027A1023</div>
 </a>
     <a href="../products/honeywell-c7027a1072.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1072-thumb.jpg" alt="Honeywell Minipeeper UV Detector C7027A1072" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1072-thumb.jpg" alt="Honeywell Minipeeper UV Detector C7027A1072" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-c7027a1072-large.jpg" data-zoom-alt="Honeywell Minipeeper UV Detector C7027A1072" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Minipeeper UV Detector C7027A1072</div>
   <div class="related-code">Honeywell Technologies &middot; Code C7027A1072</div>
 </a>
     <a href="../products/honeywell-c7027a1056.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1056-thumb.jpg" alt="Honeywell UV Flame Sensor C7027A1056" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1056-thumb.jpg" alt="Honeywell UV Flame Sensor C7027A1056" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-c7027a1056-large.jpg" data-zoom-alt="Honeywell UV Flame Sensor C7027A1056" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell UV Flame Sensor C7027A1056</div>
   <div class="related-code">Honeywell Technologies &middot; Code C7027A1056</div>
 </a>
     <a href="../products/honeywell-c7027a1031.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1031-thumb.jpg" alt="Honeywell UV Flame Sensor C7027A1031" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1031-thumb.jpg" alt="Honeywell UV Flame Sensor C7027A1031" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-c7027a1031-large.jpg" data-zoom-alt="Honeywell UV Flame Sensor C7027A1031" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell UV Flame Sensor C7027A1031</div>
   <div class="related-code">Honeywell Technologies &middot; Code C7027A1031</div>
 </a>
     <a href="../products/honeywell-c7027a1064.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1064-thumb.jpg" alt="Honeywell UV Flame Sensor C7027A1064" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7027a1064-thumb.jpg" alt="Honeywell UV Flame Sensor C7027A1064" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-c7027a1064-large.jpg" data-zoom-alt="Honeywell UV Flame Sensor C7027A1064" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell UV Flame Sensor C7027A1064</div>
   <div class="related-code">Honeywell Technologies &middot; Code C7027A1064</div>
 </a>
     <a href="../products/honeywell-c7044a1006.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7044a1006-thumb.jpg" alt="Honeywell UV Flame Sensor C7044A1006" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/honeywell-c7044a1006-thumb.jpg" alt="Honeywell UV Flame Sensor C7044A1006" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-c7044a1006-large.jpg" data-zoom-alt="Honeywell UV Flame Sensor C7044A1006" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell UV Flame Sensor C7044A1006</div>
   <div class="related-code">Honeywell Technologies &middot; Code C7044A1006</div>
 </a>
     <a href="../products/brahma-re3.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-re3-thumb.jpg" alt="Brahma Flame Relay Sensor RE3 (110–120V) — Code 10801125" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-re3-thumb.jpg" alt="Brahma Flame Relay Sensor RE3 (110–120V) — Code 10801125" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-re3-large.jpg" data-zoom-alt="Brahma Flame Relay Sensor RE3 (110–120V) — Code 10801125" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Flame Relay Sensor RE3 (110–120V) — Code 10801125</div>
   <div class="related-code">Brahma &middot; Code 10801125</div>
 </a>
     <a href="../products/brahma-re3-220v.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-re3-220v-thumb.jpg" alt="Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801025" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-re3-220v-thumb.jpg" alt="Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801025" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-re3-220v-large.jpg" data-zoom-alt="Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801025" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801025</div>
   <div class="related-code">Brahma &middot; Code 10801025</div>
 </a>
     <a href="../products/brahma-re3-220v-c1035.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-re3-220v-c1035-thumb.jpg" alt="Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801035" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-re3-220v-c1035-thumb.jpg" alt="Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801035" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-re3-220v-c1035-large.jpg" data-zoom-alt="Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801035" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801035</div>
   <div class="related-code">Brahma &middot; Code 10801035</div>
 </a>
     <a href="../products/brahma-re3-240v.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-re3-240v-thumb.jpg" alt="Brahma Flame Relay Sensor RE3 (240V) — Code 10801075" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-re3-240v-thumb.jpg" alt="Brahma Flame Relay Sensor RE3 (240V) — Code 10801075" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-re3-240v-large.jpg" data-zoom-alt="Brahma Flame Relay Sensor RE3 (240V) — Code 10801075" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Flame Relay Sensor RE3 (240V) — Code 10801075</div>
   <div class="related-code">Brahma &middot; Code 10801075</div>
 </a>
     <a href="../products/brahma-uv1.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-uv1-thumb.jpg" alt="Brahma UV1 Flame Sensor" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-uv1-thumb.jpg" alt="Brahma UV1 Flame Sensor" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-uv1-large.jpg" data-zoom-alt="Brahma UV1 Flame Sensor" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma UV1 Flame Sensor</div>
   <div class="related-code">Brahma &middot; Code 18210060</div>
 </a>
     <a href="../products/brahma-fc7.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-fc7-thumb.jpg" alt="Brahma Photocell FC7" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-fc7-thumb.jpg" alt="Brahma Photocell FC7" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-fc7-large.jpg" data-zoom-alt="Brahma Photocell FC7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Photocell FC7</div>
   <div class="related-code">Brahma &middot; Code 18210006</div>
 </a>
     <a href="../products/brahma-f8.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-f8-thumb.jpg" alt="Brahma Photocell F8" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-f8-thumb.jpg" alt="Brahma Photocell F8" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-f8-large.jpg" data-zoom-alt="Brahma Photocell F8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Photocell F8</div>
   <div class="related-code">Brahma &middot; Code 18210025</div>
 </a>
     <a href="../products/siemens-qra4-u.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/siemens-qra4-u-thumb.jpg" alt="Siemens QRA4.U UV Flame Detector" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/siemens-qra4-u-thumb.jpg" alt="Siemens QRA4.U UV Flame Detector" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/siemens-qra4-u-large.jpg" data-zoom-alt="Siemens QRA4.U UV Flame Detector" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Siemens QRA4.U UV Flame Detector</div>
   <div class="related-code">Siemens &middot; Code BPZ:QRA4.U</div>
 </a>
     <a href="../products/siemens-qra2m.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/siemens-qra2m-thumb.jpg" alt="Siemens QRA2M UV Flame Detector" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/siemens-qra2m-thumb.jpg" alt="Siemens QRA2M UV Flame Detector" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/siemens-qra2m-large.jpg" data-zoom-alt="Siemens QRA2M UV Flame Detector" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Siemens QRA2M UV Flame Detector</div>
   <div class="related-code">Siemens &middot; Code BPZ:QRA2M</div>
 </a>
     <a href="../products/siemens-qra2.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/siemens-qra2-thumb.jpg" alt="Siemens QRA2 UV Flame Detector" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/siemens-qra2-thumb.jpg" alt="Siemens QRA2 UV Flame Detector" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/siemens-qra2-large.jpg" data-zoom-alt="Siemens QRA2 UV Flame Detector" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Siemens QRA2 UV Flame Detector</div>
   <div class="related-code">Siemens &middot; Code BPZ:QRA2</div>
 </a>
     <a href="../products/siemens-qra10-c.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/siemens-qra10-c-thumb.jpg" alt="Siemens QRA10.C UV Flame Detector" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/siemens-qra10-c-thumb.jpg" alt="Siemens QRA10.C UV Flame Detector" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/siemens-qra10-c-large.jpg" data-zoom-alt="Siemens QRA10.C UV Flame Detector" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Siemens QRA10.C UV Flame Detector</div>
   <div class="related-code">Siemens &middot; Code BPZ:QRA10.C</div>
 </a>
     <a href="../products/siemens-qra10m-c.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/siemens-qra10m-c-thumb.jpg" alt="Siemens QRA10M.C UV Flame Detector" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/siemens-qra10m-c-thumb.jpg" alt="Siemens QRA10M.C UV Flame Detector" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/siemens-qra10m-c-large.jpg" data-zoom-alt="Siemens QRA10M.C UV Flame Detector" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Siemens QRA10M.C UV Flame Detector</div>
   <div class="related-code">Siemens &middot; Code BPZ:QRA10M.C</div>
 </a>
@@ -708,5 +719,22 @@ document.addEventListener('DOMContentLoaded', function(){
 @media (min-width:861px){ .mobile-quote-bar{ display:none; } }
 </style>
 <div class="mobile-quote-bar"><a href="../index.html#contact">Request a Quote</a></div>
+<script>
+(function(){
+  var lightbox = document.getElementById('catLightbox');
+  if (!lightbox) return;
+  var img = lightbox.querySelector('img');
+  var closeBtn = document.getElementById('catLightboxClose');
+  function openBox(src, alt){ img.src = src; img.alt = alt; lightbox.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeBox(){ lightbox.classList.remove('open'); document.body.style.overflow=''; }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.related-zoom-btn');
+    if (btn){ e.preventDefault(); e.stopPropagation(); openBox(btn.getAttribute('data-zoom-src'), btn.getAttribute('data-zoom-alt')); }
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeBox);
+  lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeBox(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeBox(); });
+})();
+</script>
 </body>
 </html>

@@ -266,6 +266,13 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .related-thumb img{ width:100%; height:100%; object-fit:contain; }
 .related-name{ font-size:0.86rem; font-weight:600; line-height:1.35; }
 .related-code{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-top:4px; }
+.related-thumb{ position:relative; }
+.related-zoom-btn{ position:absolute; bottom:6px; right:6px; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.92); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,0.12); cursor:zoom-in; touch-action:manipulation; z-index:2; }
+.related-zoom-btn svg{ width:14px; height:14px; display:block; }
+.cat-lightbox{ position:fixed; inset:0; background:rgba(20,20,20,0.92); z-index:9999; display:none; align-items:center; justify-content:center; padding:24px; touch-action:manipulation; }
+.cat-lightbox.open{ display:flex; }
+.cat-lightbox img{ max-width:min(92vw,900px); max-height:88vh; object-fit:contain; border-radius:4px; background:#fff; touch-action:manipulation; }
+.cat-lightbox-close{ position:absolute; top:18px; right:22px; width:42px; height:42px; border-radius:50%; background:#fff; border:none; font-size:1.3rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--ink); touch-action:manipulation; }
 
 /* Live product search (added) */
 .pg-search-results{ max-width:700px; margin:8px auto 0; max-height:60vh; overflow-y:auto; background:#fff; border-radius:4px; }
@@ -522,108 +529,112 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   <p class="pg-desc">Gas solenoid valves shut off the fuel-gas supply to a burner automatically, on command from the burner control system or on a safety trip. RKIC stocks Brahma, Madas and Elektrogas solenoid valves across a wide range of connection sizes and pressure classes, used on boiler, burner and gas-train installations across India.</p>
   <p class="pg-desc" style="margin-top:-8px;"><strong>21 products</strong> currently in stock &middot; brands: Brahma, Elektrogas, Madas</p>
   <div class="related-grid" style="margin-top:24px;">
+    <div class="cat-lightbox" id="catLightbox">
+      <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
+      <img src="" alt="">
+    </div>
     <a href="../products/brahma-eg12l-gmo.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-eg12l-gmo-thumb.jpg" alt="Brahma Solenoid Valve EG12*L*GMO" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-eg12l-gmo-thumb.jpg" alt="Brahma Solenoid Valve EG12*L*GMO" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-eg12l-gmo-large.jpg" data-zoom-alt="Brahma Solenoid Valve EG12*L*GMO" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Solenoid Valve EG12*L*GMO</div>
   <div class="related-code">Brahma &middot; Code 13922051</div>
 </a>
     <a href="../products/brahma-eg12sr-gmo.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-eg12sr-gmo-thumb.jpg" alt="Brahma Solenoid Valve EG12*SR*GMO" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-eg12sr-gmo-thumb.jpg" alt="Brahma Solenoid Valve EG12*SR*GMO" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-eg12sr-gmo-large.jpg" data-zoom-alt="Brahma Solenoid Valve EG12*SR*GMO" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Solenoid Valve EG12*SR*GMO</div>
   <div class="related-code">Brahma &middot; Code 13912001</div>
 </a>
     <a href="../products/brahma-e6gsr10-gmo.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-e6gsr10-gmo-thumb.jpg" alt="Brahma Solenoid Valve E6G*SR10*1/2*GMO" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-e6gsr10-gmo-thumb.jpg" alt="Brahma Solenoid Valve E6G*SR10*1/2*GMO" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-e6gsr10-gmo-large.jpg" data-zoom-alt="Brahma Solenoid Valve E6G*SR10*1/2*GMO" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Solenoid Valve E6G*SR10*1/2*GMO</div>
   <div class="related-code">Brahma &middot; Code 13762002</div>
 </a>
     <a href="../products/brahma-e6gsr10-38-gmo.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-e6gsr10-38-gmo-thumb.jpg" alt="Brahma Solenoid Valve E6G*SR10*3/8*GMO" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-e6gsr10-38-gmo-thumb.jpg" alt="Brahma Solenoid Valve E6G*SR10*3/8*GMO" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-e6gsr10-38-gmo-large.jpg" data-zoom-alt="Brahma Solenoid Valve E6G*SR10*3/8*GMO" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Solenoid Valve E6G*SR10*3/8*GMO</div>
   <div class="related-code">Brahma &middot; Code 13767002</div>
 </a>
     <a href="../products/elektrogas-vmrl.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmrl-thumb.jpg" alt="Elektrogas VMR/L Solenoid Coil" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmrl-thumb.jpg" alt="Elektrogas VMR/L Solenoid Coil" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/elektrogas-vmrl-large.jpg" data-zoom-alt="Elektrogas VMR/L Solenoid Coil" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Elektrogas VMR/L Solenoid Coil</div>
   <div class="related-code">Elektrogas &middot; Code 1930.1313</div>
 </a>
     <a href="../products/elektrogas-vmr4-2.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr4-2-thumb.jpg" alt="Elektrogas VMR4-2 Gas Solenoid Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr4-2-thumb.jpg" alt="Elektrogas VMR4-2 Gas Solenoid Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/elektrogas-vmr4-2-large.jpg" data-zoom-alt="Elektrogas VMR4-2 Gas Solenoid Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Elektrogas VMR4-2 Gas Solenoid Valve</div>
   <div class="related-code">Elektrogas &middot; Code VMR4-2</div>
 </a>
     <a href="../products/elektrogas-vmr1-5.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr1-5-thumb.jpg" alt="Elektrogas VMR1-5 Gas Solenoid Valve (Rp1/2)" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr1-5-thumb.jpg" alt="Elektrogas VMR1-5 Gas Solenoid Valve (Rp1/2)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/elektrogas-vmr1-5-large.jpg" data-zoom-alt="Elektrogas VMR1-5 Gas Solenoid Valve (Rp1/2)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Elektrogas VMR1-5 Gas Solenoid Valve (Rp1/2)</div>
   <div class="related-code">Elektrogas &middot; Code VMR1-5</div>
 </a>
     <a href="../products/elektrogas-vmr1-2.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr1-2-thumb.jpg" alt="Elektrogas VMR1-2 Gas Solenoid Valve (Rp1/2)" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr1-2-thumb.jpg" alt="Elektrogas VMR1-2 Gas Solenoid Valve (Rp1/2)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/elektrogas-vmr1-2-large.jpg" data-zoom-alt="Elektrogas VMR1-2 Gas Solenoid Valve (Rp1/2)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Elektrogas VMR1-2 Gas Solenoid Valve (Rp1/2)</div>
   <div class="related-code">Elektrogas &middot; Code VMR1-2</div>
 </a>
     <a href="../products/elektrogas-vmr2-5.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr2-5-thumb.jpg" alt="Elektrogas VMR2-5 Gas Solenoid Valve (Rp3/4)" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr2-5-thumb.jpg" alt="Elektrogas VMR2-5 Gas Solenoid Valve (Rp3/4)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/elektrogas-vmr2-5-large.jpg" data-zoom-alt="Elektrogas VMR2-5 Gas Solenoid Valve (Rp3/4)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Elektrogas VMR2-5 Gas Solenoid Valve (Rp3/4)</div>
   <div class="related-code">Elektrogas &middot; Code VMR2-5</div>
 </a>
     <a href="../products/elektrogas-vmr4.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr4-thumb.jpg" alt="Elektrogas VMR4 Gas Solenoid Valve (Rp1½&quot;)" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr4-thumb.jpg" alt="Elektrogas VMR4 Gas Solenoid Valve (Rp1½&quot;)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/elektrogas-vmr4-large.jpg" data-zoom-alt="Elektrogas VMR4 Gas Solenoid Valve (Rp1½&quot;)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Elektrogas VMR4 Gas Solenoid Valve (Rp1½&quot;)</div>
   <div class="related-code">Elektrogas &middot; Code VMR4</div>
 </a>
     <a href="../products/elektrogas-vmr6.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr6-thumb.jpg" alt="Elektrogas VMR6 Gas Solenoid Valve (Rp2&quot;)" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr6-thumb.jpg" alt="Elektrogas VMR6 Gas Solenoid Valve (Rp2&quot;)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/elektrogas-vmr6-large.jpg" data-zoom-alt="Elektrogas VMR6 Gas Solenoid Valve (Rp2&quot;)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Elektrogas VMR6 Gas Solenoid Valve (Rp2&quot;)</div>
   <div class="related-code">Elektrogas &middot; Code VMR6</div>
 </a>
     <a href="../products/brahma-e7-l-a3c.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-e7-l-a3c-thumb.jpg" alt="Brahma E7/L*A3C Oil Solenoid Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-e7-l-a3c-thumb.jpg" alt="Brahma E7/L*A3C Oil Solenoid Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-e7-l-a3c-large.jpg" data-zoom-alt="Brahma E7/L*A3C Oil Solenoid Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma E7/L*A3C Oil Solenoid Valve</div>
   <div class="related-code">Brahma &middot; Code 13191801</div>
 </a>
     <a href="../products/brahma-be9-gmo-coil.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-be9-gmo-coil-thumb.jpg" alt="Brahma Solenoid Coil BE9*GMO" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-be9-gmo-coil-thumb.jpg" alt="Brahma Solenoid Coil BE9*GMO" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-be9-gmo-coil-large.jpg" data-zoom-alt="Brahma Solenoid Coil BE9*GMO" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Solenoid Coil BE9*GMO</div>
   <div class="related-code">Brahma &middot; Code BE9*GMO</div>
 </a>
     <a href="../products/brahma-be6-gmo-coil.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-be6-gmo-coil-thumb.jpg" alt="Brahma Solenoid Coil BE6*GMO" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-be6-gmo-coil-thumb.jpg" alt="Brahma Solenoid Coil BE6*GMO" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-be6-gmo-coil-large.jpg" data-zoom-alt="Brahma Solenoid Coil BE6*GMO" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Solenoid Coil BE6*GMO</div>
   <div class="related-code">Brahma &middot; Code 18811000</div>
 </a>
     <a href="../products/brahma-be8-gmo-coil.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-be8-gmo-coil-thumb.jpg" alt="Brahma Solenoid Coil BE8*GMO" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-be8-gmo-coil-thumb.jpg" alt="Brahma Solenoid Coil BE8*GMO" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-be8-gmo-coil-large.jpg" data-zoom-alt="Brahma Solenoid Coil BE8*GMO" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Solenoid Coil BE8*GMO</div>
   <div class="related-code">Brahma &middot; Code BE8*GMO</div>
 </a>
     <a href="../products/brahma-eg40-sr-gmo.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-eg40-sr-gmo-thumb.jpg" alt="Brahma EG40*SR*GMO Gas Solenoid Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-eg40-sr-gmo-thumb.jpg" alt="Brahma EG40*SR*GMO Gas Solenoid Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-eg40-sr-gmo-large.jpg" data-zoom-alt="Brahma EG40*SR*GMO Gas Solenoid Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma EG40*SR*GMO Gas Solenoid Valve</div>
   <div class="related-code">Brahma &middot; Code 13950100</div>
 </a>
     <a href="../products/brahma-eg40-l-gmo.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/brahma-eg40-l-gmo-thumb.jpg" alt="Brahma EG40*L*GMO Gas Solenoid Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/brahma-eg40-l-gmo-thumb.jpg" alt="Brahma EG40*L*GMO Gas Solenoid Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-eg40-l-gmo-large.jpg" data-zoom-alt="Brahma EG40*L*GMO Gas Solenoid Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma EG40*L*GMO Gas Solenoid Valve</div>
   <div class="related-code">Brahma &middot; Code 13950200</div>
 </a>
     <a href="../products/elektrogas-vmr2-2.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr2-2-thumb.jpg" alt="Elektrogas VMR2-2 Solenoid Coil" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/elektrogas-vmr2-2-thumb.jpg" alt="Elektrogas VMR2-2 Solenoid Coil" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/elektrogas-vmr2-2-large.jpg" data-zoom-alt="Elektrogas VMR2-2 Solenoid Coil" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Elektrogas VMR2-2 Solenoid Coil</div>
   <div class="related-code">Elektrogas &middot; Code VMR2-2</div>
 </a>
     <a href="../products/madas-cn0045.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/madas-cn0045-thumb.jpg" alt="Madas CN 0045 Solenoid Valve Coil Connector" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/madas-cn0045-thumb.jpg" alt="Madas CN 0045 Solenoid Valve Coil Connector" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/madas-cn0045-large.jpg" data-zoom-alt="Madas CN 0045 Solenoid Valve Coil Connector" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Madas CN 0045 Solenoid Valve Coil Connector</div>
   <div class="related-code">Madas &middot; Code CN.0045</div>
 </a>
     <a href="../products/madas-cn2130.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/madas-cn2130-thumb.jpg" alt="Madas CN 2130 Solenoid Valve Coil Connector" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/madas-cn2130-thumb.jpg" alt="Madas CN 2130 Solenoid Valve Coil Connector" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/madas-cn2130-large.jpg" data-zoom-alt="Madas CN 2130 Solenoid Valve Coil Connector" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Madas CN 2130 Solenoid Valve Coil Connector</div>
   <div class="related-code">Madas &middot; Code CN-2130</div>
 </a>
     <a href="../products/madas-cn2131.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/madas-cn2131-thumb.jpg" alt="Madas CN 2131 Solenoid Valve Coil Connector" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/madas-cn2131-thumb.jpg" alt="Madas CN 2131 Solenoid Valve Coil Connector" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/madas-cn2131-large.jpg" data-zoom-alt="Madas CN 2131 Solenoid Valve Coil Connector" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Madas CN 2131 Solenoid Valve Coil Connector</div>
   <div class="related-code">Madas &middot; Code CN-2131</div>
 </a>
@@ -698,5 +709,22 @@ document.addEventListener('DOMContentLoaded', function(){
 @media (min-width:861px){ .mobile-quote-bar{ display:none; } }
 </style>
 <div class="mobile-quote-bar"><a href="../index.html#contact">Request a Quote</a></div>
+<script>
+(function(){
+  var lightbox = document.getElementById('catLightbox');
+  if (!lightbox) return;
+  var img = lightbox.querySelector('img');
+  var closeBtn = document.getElementById('catLightboxClose');
+  function openBox(src, alt){ img.src = src; img.alt = alt; lightbox.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeBox(){ lightbox.classList.remove('open'); document.body.style.overflow=''; }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.related-zoom-btn');
+    if (btn){ e.preventDefault(); e.stopPropagation(); openBox(btn.getAttribute('data-zoom-src'), btn.getAttribute('data-zoom-alt')); }
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeBox);
+  lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeBox(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeBox(); });
+})();
+</script>
 </body>
 </html>

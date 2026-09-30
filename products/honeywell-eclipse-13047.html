@@ -210,6 +210,14 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .pg-spec-k{ color:var(--text-dim); flex:0 0 42%; }
 .pg-spec-v{ font-weight:500; text-align:right; }
 .pg-desc{ font-size:0.94rem; line-height:1.7; color:var(--ink); margin:20px 0 28px; }
+.pg-img-box{ cursor:zoom-in; touch-action:manipulation; }
+.pg-img-box img{ touch-action:manipulation; }
+.pg-zoom-hint{ position:absolute; bottom:12px; right:12px; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.92); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,0.12); pointer-events:none; }
+.pg-zoom-hint svg{ width:18px; height:18px; }
+.pg-lightbox{ position:fixed; inset:0; background:rgba(20,20,20,0.92); z-index:9999; display:none; align-items:center; justify-content:center; padding:24px; touch-action:manipulation; }
+.pg-lightbox.open{ display:flex; }
+.pg-lightbox img{ max-width:min(92vw,900px); max-height:88vh; object-fit:contain; border-radius:4px; background:#fff; touch-action:manipulation; }
+.pg-lightbox-close{ position:absolute; top:18px; right:22px; width:42px; height:42px; border-radius:50%; background:#fff; border:none; font-size:1.3rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--ink); touch-action:manipulation; }
 .pg-cta{ display:flex; gap:12px; flex-wrap:wrap; }
 .pg-btn{ display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:3px; font-size:0.88rem; font-weight:600; cursor:pointer; border:1px solid var(--sage-deep); }
 .pg-btn-primary{ background:#075E54; color:#fff; border-color:#075E54; }
@@ -522,6 +530,11 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   <div class="pg-grid">
     <div class="pg-img-box" id="pgImgBox">
       <img src="../images/honeywell-eclipse-13047-large.jpg" alt="Honeywell Eclipse Spark Ignition Electrode 13047 &mdash; Spark Electrodes by Honeywell Eclipse, Type 13047" loading="lazy">
+      <span class="pg-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span>
+    </div>
+    <div class="pg-lightbox" id="pgLightbox">
+      <button class="pg-lightbox-close" id="pgLightboxClose" aria-label="Close">&times;</button>
+      <img src="../images/honeywell-eclipse-13047-large.jpg" alt="Honeywell Eclipse Spark Ignition Electrode 13047 &mdash; Spark Electrodes by Honeywell Eclipse, Type 13047 — zoomed view">
     </div>
     <div>
       <div class="pg-tags">
@@ -605,6 +618,20 @@ document.addEventListener('DOMContentLoaded', function(){
   });
   strip.innerHTML = html;
 });
+</script>
+<script>
+(function(){
+  var box = document.getElementById('pgImgBox');
+  var lightbox = document.getElementById('pgLightbox');
+  var closeBtn = document.getElementById('pgLightboxClose');
+  if (!box || !lightbox || !closeBtn) return;
+  function open(){ lightbox.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ lightbox.classList.remove('open'); document.body.style.overflow=''; }
+  box.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  lightbox.addEventListener('click', function(e){ if (e.target === lightbox) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+})();
 </script>
 <script>var CURRENT_PRODUCT_ID = "honeywell-eclipse-13047";</script>
 <script src="../related-products-data.js?v=20260908d" defer></script>

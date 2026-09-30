@@ -266,6 +266,13 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .related-thumb img{ width:100%; height:100%; object-fit:contain; }
 .related-name{ font-size:0.86rem; font-weight:600; line-height:1.35; }
 .related-code{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-top:4px; }
+.related-thumb{ position:relative; }
+.related-zoom-btn{ position:absolute; bottom:6px; right:6px; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.92); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,0.12); cursor:zoom-in; touch-action:manipulation; z-index:2; }
+.related-zoom-btn svg{ width:14px; height:14px; display:block; }
+.cat-lightbox{ position:fixed; inset:0; background:rgba(20,20,20,0.92); z-index:9999; display:none; align-items:center; justify-content:center; padding:24px; touch-action:manipulation; }
+.cat-lightbox.open{ display:flex; }
+.cat-lightbox img{ max-width:min(92vw,900px); max-height:88vh; object-fit:contain; border-radius:4px; background:#fff; touch-action:manipulation; }
+.cat-lightbox-close{ position:absolute; top:18px; right:22px; width:42px; height:42px; border-radius:50%; background:#fff; border:none; font-size:1.3rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--ink); touch-action:manipulation; }
 
 /* Live product search (added) */
 .pg-search-results{ max-width:700px; margin:8px auto 0; max-height:60vh; overflow-y:auto; background:#fff; border-radius:4px; }
@@ -522,28 +529,32 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   <p class="pg-desc">Flame arrestors stop flashback (backfire) from reaching the upstream gas line by quenching the flame front inside the fitting. RKIC supplies the Vanaz R9102 (1″ BSP), R9103 (¾″ BSP, Mild Steel body), R9104 (½″ BSP), the high-capacity R9109 series (1½″–2″, threaded or ANSI #150 flanged, four connection variants) for heavy-duty distribution manifolds, and the R9110 (½″–2″ BSP/BSPF, Oxygen/LPG/Natural Gas/Acetylene, SS or Carbon Steel body per gas media) — all with an integrated non-return valve (NRV) except R9103.</p>
   <p class="pg-desc" style="margin-top:-8px;"><strong>5 products</strong> currently in stock &middot; brands: Vanaz</p>
   <div class="related-grid" style="margin-top:24px;">
+    <div class="cat-lightbox" id="catLightbox">
+      <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
+      <img src="" alt="">
+    </div>
     <a href="../products/vanaz-r9102.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9102-thumb.jpg" alt="Vanaz R9102 Flame Arrestor with Non-Return Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9102-thumb.jpg" alt="Vanaz R9102 Flame Arrestor with Non-Return Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r9102-large.jpg" data-zoom-alt="Vanaz R9102 Flame Arrestor with Non-Return Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R9102 Flame Arrestor with Non-Return Valve</div>
   <div class="related-code">Vanaz &middot; Code R9102</div>
 </a>
     <a href="../products/vanaz-r9103.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9103-thumb.jpg" alt="Vanaz R9103 Flame Arrestor with Non-Return Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9103-thumb.jpg" alt="Vanaz R9103 Flame Arrestor with Non-Return Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r9103-large.jpg" data-zoom-alt="Vanaz R9103 Flame Arrestor with Non-Return Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R9103 Flame Arrestor with Non-Return Valve</div>
   <div class="related-code">Vanaz &middot; Code R9103</div>
 </a>
     <a href="../products/vanaz-r9104.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9104-thumb.jpg" alt="Vanaz R9104 Flame Arrestor with Non-Return Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9104-thumb.jpg" alt="Vanaz R9104 Flame Arrestor with Non-Return Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r9104-large.jpg" data-zoom-alt="Vanaz R9104 Flame Arrestor with Non-Return Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R9104 Flame Arrestor with Non-Return Valve</div>
   <div class="related-code">Vanaz &middot; Code R9104</div>
 </a>
     <a href="../products/vanaz-r9109.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9109-thumb.jpg" alt="Vanaz R9109 Series Flame Arrestor with Non-Return Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9109-thumb.jpg" alt="Vanaz R9109 Series Flame Arrestor with Non-Return Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r9109-large.jpg" data-zoom-alt="Vanaz R9109 Series Flame Arrestor with Non-Return Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R9109 Series Flame Arrestor with Non-Return Valve</div>
   <div class="related-code">Vanaz &middot; Code R9109</div>
 </a>
     <a href="../products/vanaz-r9110.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9110-thumb.jpg" alt="Vanaz R9110 Flame Arrestor with Non-Return Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9110-thumb.jpg" alt="Vanaz R9110 Flame Arrestor with Non-Return Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r9110-large.jpg" data-zoom-alt="Vanaz R9110 Flame Arrestor with Non-Return Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R9110 Flame Arrestor with Non-Return Valve</div>
   <div class="related-code">Vanaz &middot; Code R9110</div>
 </a>
@@ -618,5 +629,22 @@ document.addEventListener('DOMContentLoaded', function(){
 @media (min-width:861px){ .mobile-quote-bar{ display:none; } }
 </style>
 <div class="mobile-quote-bar"><a href="../index.html#contact">Request a Quote</a></div>
+<script>
+(function(){
+  var lightbox = document.getElementById('catLightbox');
+  if (!lightbox) return;
+  var img = lightbox.querySelector('img');
+  var closeBtn = document.getElementById('catLightboxClose');
+  function openBox(src, alt){ img.src = src; img.alt = alt; lightbox.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeBox(){ lightbox.classList.remove('open'); document.body.style.overflow=''; }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.related-zoom-btn');
+    if (btn){ e.preventDefault(); e.stopPropagation(); openBox(btn.getAttribute('data-zoom-src'), btn.getAttribute('data-zoom-alt')); }
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeBox);
+  lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeBox(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeBox(); });
+})();
+</script>
 </body>
 </html>

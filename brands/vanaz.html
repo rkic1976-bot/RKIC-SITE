@@ -266,6 +266,13 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .related-thumb img{ width:100%; height:100%; object-fit:contain; }
 .related-name{ font-size:0.86rem; font-weight:600; line-height:1.35; }
 .related-code{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-top:4px; }
+.related-thumb{ position:relative; }
+.related-zoom-btn{ position:absolute; bottom:6px; right:6px; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.92); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,0.12); cursor:zoom-in; touch-action:manipulation; z-index:2; }
+.related-zoom-btn svg{ width:14px; height:14px; display:block; }
+.cat-lightbox{ position:fixed; inset:0; background:rgba(20,20,20,0.92); z-index:9999; display:none; align-items:center; justify-content:center; padding:24px; touch-action:manipulation; }
+.cat-lightbox.open{ display:flex; }
+.cat-lightbox img{ max-width:min(92vw,900px); max-height:88vh; object-fit:contain; border-radius:4px; background:#fff; touch-action:manipulation; }
+.cat-lightbox-close{ position:absolute; top:18px; right:22px; width:42px; height:42px; border-radius:50%; background:#fff; border:none; font-size:1.3rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--ink); touch-action:manipulation; }
 
 /* Live product search (added) */
 .pg-search-results{ max-width:700px; margin:8px auto 0; max-height:60vh; overflow-y:auto; background:#fff; border-radius:4px; }
@@ -523,163 +530,167 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   <p class="pg-desc">Vanaz Engineers Ltd, Pune manufactures pressure regulator valves and safety relief valves for gas lines, protecting downstream equipment from over- and under-pressure. RKIC stocks the Vanaz range across high-pressure, low-pressure, oxygen and ammonia regulators plus safety relief valves and gas train components.</p>
   <p class="pg-desc" style="margin-top:-8px;"><strong>32 products</strong> currently in stock &middot; categories: Filters | Strainers, Flame Arrestors, Gas Train Systems, Pressure Regulator Valves, Safety Relief Valves</p>
   <div class="related-grid" style="margin-top:24px;">
+    <div class="cat-lightbox" id="catLightbox">
+      <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
+      <img src="" alt="">
+    </div>
     <a href="../products/vanaz-r2301.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2301-thumb.jpg" alt="Vanaz R2301 High Pressure Regulator" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2301-thumb.jpg" alt="Vanaz R2301 High Pressure Regulator" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2301-large.jpg" data-zoom-alt="Vanaz R2301 High Pressure Regulator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R2301 High Pressure Regulator</div>
   <div class="related-code">Vanaz &middot; Code R2301</div>
 </a>
     <a href="../products/vanaz-r2202.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2202-thumb.jpg" alt="Vanaz R2202 High Pressure LPG Gas Regulator" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2202-thumb.jpg" alt="Vanaz R2202 High Pressure LPG Gas Regulator" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2202-large.jpg" data-zoom-alt="Vanaz R2202 High Pressure LPG Gas Regulator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R2202 High Pressure LPG Gas Regulator</div>
   <div class="related-code">Vanaz &middot; Code R2202</div>
 </a>
     <a href="../products/vanaz-r2301-ii.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2301-ii-thumb.jpg" alt="Vanaz R2301 II Oxygen Gas Pressure Regulator" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2301-ii-thumb.jpg" alt="Vanaz R2301 II Oxygen Gas Pressure Regulator" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2301-ii-large.jpg" data-zoom-alt="Vanaz R2301 II Oxygen Gas Pressure Regulator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R2301 II Oxygen Gas Pressure Regulator</div>
   <div class="related-code">Vanaz &middot; Code R2301 II</div>
 </a>
     <a href="../products/vanaz-r2325.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2325-thumb.jpg" alt="Vanaz R2325 Medical Oxygen Pressure Regulator" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2325-thumb.jpg" alt="Vanaz R2325 Medical Oxygen Pressure Regulator" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2325-large.jpg" data-zoom-alt="Vanaz R2325 Medical Oxygen Pressure Regulator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R2325 Medical Oxygen Pressure Regulator</div>
   <div class="related-code">Vanaz &middot; Code R2325</div>
 </a>
     <a href="../products/vanaz-v7744.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-v7744-thumb.jpg" alt="Vanaz V7744 Safety Relief Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-v7744-thumb.jpg" alt="Vanaz V7744 Safety Relief Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-v7744-large.jpg" data-zoom-alt="Vanaz V7744 Safety Relief Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz V7744 Safety Relief Valve</div>
   <div class="related-code">Vanaz &middot; Code V7744</div>
 </a>
     <a href="../products/vanaz-v7734.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-v7734-thumb.jpg" alt="Vanaz V7734 Safety Relief Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-v7734-thumb.jpg" alt="Vanaz V7734 Safety Relief Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-v7734-large.jpg" data-zoom-alt="Vanaz V7734 Safety Relief Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz V7734 Safety Relief Valve</div>
   <div class="related-code">Vanaz &middot; Code V7734</div>
 </a>
     <a href="../products/vanaz-v7713.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-v7713-thumb.jpg" alt="Vanaz V7713 / V7715 Safety Relief Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-v7713-thumb.jpg" alt="Vanaz V7713 / V7715 Safety Relief Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-v7713-large.jpg" data-zoom-alt="Vanaz V7713 / V7715 Safety Relief Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz V7713 / V7715 Safety Relief Valve</div>
   <div class="related-code">Vanaz &middot; Code V7713 / V7715</div>
 </a>
     <a href="../products/vanaz-twostage-gastrain.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-twostage-gastrain-thumb.jpg" alt="Vanaz Two-Stage Pressure Reducing System" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-twostage-gastrain-thumb.jpg" alt="Vanaz Two-Stage Pressure Reducing System" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-twostage-gastrain-large.jpg" data-zoom-alt="Vanaz Two-Stage Pressure Reducing System" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz Two-Stage Pressure Reducing System</div>
   <div class="related-code">Vanaz &middot; Code Two-Stage PRS</div>
 </a>
     <a href="../products/vanaz-r2304.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2304-thumb.jpg" alt="Vanaz High Pressure Regulator R2304" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2304-thumb.jpg" alt="Vanaz High Pressure Regulator R2304" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2304-large.jpg" data-zoom-alt="Vanaz High Pressure Regulator R2304" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz High Pressure Regulator R2304</div>
   <div class="related-code">Vanaz &middot; Code R2304</div>
 </a>
     <a href="../products/vanaz-r2316.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2316-thumb.jpg" alt="Vanaz High Pressure Regulator R2316 1.5&quot; Flgd #150" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2316-thumb.jpg" alt="Vanaz High Pressure Regulator R2316 1.5&quot; Flgd #150" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2316-large.jpg" data-zoom-alt="Vanaz High Pressure Regulator R2316 1.5&quot; Flgd #150" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz High Pressure Regulator R2316 1.5&quot; Flgd #150</div>
   <div class="related-code">Vanaz &middot; Code R2316</div>
 </a>
     <a href="../products/vanaz-r2317.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2317-thumb.jpg" alt="Vanaz High Pressure Regulator R2317 2&quot; Flgd #150" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2317-thumb.jpg" alt="Vanaz High Pressure Regulator R2317 2&quot; Flgd #150" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2317-large.jpg" data-zoom-alt="Vanaz High Pressure Regulator R2317 2&quot; Flgd #150" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz High Pressure Regulator R2317 2&quot; Flgd #150</div>
   <div class="related-code">Vanaz &middot; Code R2317</div>
 </a>
     <a href="../products/vanaz-r2323.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2323-thumb.jpg" alt="Vanaz High Pressure Regulator R2323 1&quot; Flgd #150" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2323-thumb.jpg" alt="Vanaz High Pressure Regulator R2323 1&quot; Flgd #150" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2323-large.jpg" data-zoom-alt="Vanaz High Pressure Regulator R2323 1&quot; Flgd #150" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz High Pressure Regulator R2323 1&quot; Flgd #150</div>
   <div class="related-code">Vanaz &middot; Code R2323</div>
 </a>
     <a href="../products/vanaz-r2331-ii.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2331-ii-thumb.jpg" alt="Vanaz R2331 II Medical Oxygen Regulator" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2331-ii-thumb.jpg" alt="Vanaz R2331 II Medical Oxygen Regulator" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2331-ii-large.jpg" data-zoom-alt="Vanaz R2331 II Medical Oxygen Regulator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R2331 II Medical Oxygen Regulator</div>
   <div class="related-code">Vanaz &middot; Code R2331 II</div>
 </a>
     <a href="../products/vanaz-r4110-ii.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r4110-ii-thumb.jpg" alt="Vanaz R4110 II Low Pressure Regulator" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r4110-ii-thumb.jpg" alt="Vanaz R4110 II Low Pressure Regulator" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r4110-ii-large.jpg" data-zoom-alt="Vanaz R4110 II Low Pressure Regulator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R4110 II Low Pressure Regulator</div>
   <div class="related-code">Vanaz &middot; Code R4110 II</div>
 </a>
     <a href="../products/vanaz-r4110.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r4110-thumb.jpg" alt="Vanaz Low Pressure Regulator R4110" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r4110-thumb.jpg" alt="Vanaz Low Pressure Regulator R4110" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r4110-large.jpg" data-zoom-alt="Vanaz Low Pressure Regulator R4110" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz Low Pressure Regulator R4110</div>
   <div class="related-code">Vanaz &middot; Code R4110</div>
 </a>
     <a href="../products/vanaz-r4109iv.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r4109iv-thumb.jpg" alt="Vanaz Low Pressure Regulator R4109IV" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r4109iv-thumb.jpg" alt="Vanaz Low Pressure Regulator R4109IV" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r4109iv-large.jpg" data-zoom-alt="Vanaz Low Pressure Regulator R4109IV" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz Low Pressure Regulator R4109IV</div>
   <div class="related-code">Vanaz &middot; Code R4109IV</div>
 </a>
     <a href="../products/vanaz-r4109-ii.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r4109-ii-thumb.jpg" alt="Vanaz Low Pressure Regulator R4109 II" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r4109-ii-thumb.jpg" alt="Vanaz Low Pressure Regulator R4109 II" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r4109-ii-large.jpg" data-zoom-alt="Vanaz Low Pressure Regulator R4109 II" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz Low Pressure Regulator R4109 II</div>
   <div class="related-code">Vanaz &middot; Code R4109 II</div>
 </a>
     <a href="../products/vanaz-r2304-iv.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2304-iv-thumb.jpg" alt="Vanaz High Pressure Regulator R2304 IV" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2304-iv-thumb.jpg" alt="Vanaz High Pressure Regulator R2304 IV" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2304-iv-large.jpg" data-zoom-alt="Vanaz High Pressure Regulator R2304 IV" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz High Pressure Regulator R2304 IV</div>
   <div class="related-code">Vanaz &middot; Code R2304 IV</div>
 </a>
     <a href="../products/vanaz-r2301-i-ammonia.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2301-i-ammonia-thumb.jpg" alt="Vanaz Ammonia Regulator R2301 I" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2301-i-ammonia-thumb.jpg" alt="Vanaz Ammonia Regulator R2301 I" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2301-i-ammonia-large.jpg" data-zoom-alt="Vanaz Ammonia Regulator R2301 I" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz Ammonia Regulator R2301 I</div>
   <div class="related-code">Vanaz &middot; Code R2301 I</div>
 </a>
     <a href="../products/vanaz-r2402-ammonia.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2402-ammonia-thumb.jpg" alt="Vanaz Ammonia Regulator R2402" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2402-ammonia-thumb.jpg" alt="Vanaz Ammonia Regulator R2402" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2402-ammonia-large.jpg" data-zoom-alt="Vanaz Ammonia Regulator R2402" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz Ammonia Regulator R2402</div>
   <div class="related-code">Vanaz &middot; Code R2402</div>
 </a>
     <a href="../products/vanaz-r2301-oxygen.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2301-oxygen-thumb.jpg" alt="Vanaz R2301 Oxygen Regulator" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2301-oxygen-thumb.jpg" alt="Vanaz R2301 Oxygen Regulator" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2301-oxygen-large.jpg" data-zoom-alt="Vanaz R2301 Oxygen Regulator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R2301 Oxygen Regulator</div>
   <div class="related-code">Vanaz &middot; Code R2301</div>
 </a>
     <a href="../products/vanaz-r9102.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9102-thumb.jpg" alt="Vanaz R9102 Flame Arrestor with Non-Return Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9102-thumb.jpg" alt="Vanaz R9102 Flame Arrestor with Non-Return Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r9102-large.jpg" data-zoom-alt="Vanaz R9102 Flame Arrestor with Non-Return Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R9102 Flame Arrestor with Non-Return Valve</div>
   <div class="related-code">Vanaz &middot; Code R9102</div>
 </a>
     <a href="../products/vanaz-r9103.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9103-thumb.jpg" alt="Vanaz R9103 Flame Arrestor with Non-Return Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9103-thumb.jpg" alt="Vanaz R9103 Flame Arrestor with Non-Return Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r9103-large.jpg" data-zoom-alt="Vanaz R9103 Flame Arrestor with Non-Return Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R9103 Flame Arrestor with Non-Return Valve</div>
   <div class="related-code">Vanaz &middot; Code R9103</div>
 </a>
     <a href="../products/vanaz-r9104.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9104-thumb.jpg" alt="Vanaz R9104 Flame Arrestor with Non-Return Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9104-thumb.jpg" alt="Vanaz R9104 Flame Arrestor with Non-Return Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r9104-large.jpg" data-zoom-alt="Vanaz R9104 Flame Arrestor with Non-Return Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R9104 Flame Arrestor with Non-Return Valve</div>
   <div class="related-code">Vanaz &middot; Code R9104</div>
 </a>
     <a href="../products/vanaz-r9109.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9109-thumb.jpg" alt="Vanaz R9109 Series Flame Arrestor with Non-Return Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9109-thumb.jpg" alt="Vanaz R9109 Series Flame Arrestor with Non-Return Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r9109-large.jpg" data-zoom-alt="Vanaz R9109 Series Flame Arrestor with Non-Return Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R9109 Series Flame Arrestor with Non-Return Valve</div>
   <div class="related-code">Vanaz &middot; Code R9109</div>
 </a>
     <a href="../products/vanaz-r9110.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9110-thumb.jpg" alt="Vanaz R9110 Flame Arrestor with Non-Return Valve" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r9110-thumb.jpg" alt="Vanaz R9110 Flame Arrestor with Non-Return Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r9110-large.jpg" data-zoom-alt="Vanaz R9110 Flame Arrestor with Non-Return Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R9110 Flame Arrestor with Non-Return Valve</div>
   <div class="related-code">Vanaz &middot; Code R9110</div>
 </a>
     <a href="../products/vanaz-f0112.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-f0112-thumb.jpg" alt="Vanaz F0112 Gas Filter" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-f0112-thumb.jpg" alt="Vanaz F0112 Gas Filter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-f0112-large.jpg" data-zoom-alt="Vanaz F0112 Gas Filter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz F0112 Gas Filter</div>
   <div class="related-code">Vanaz &middot; Code F0112</div>
 </a>
     <a href="../products/vanaz-f0105.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-f0105-thumb.jpg" alt="Vanaz F0105 Series Gas Filter" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-f0105-thumb.jpg" alt="Vanaz F0105 Series Gas Filter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-f0105-large.jpg" data-zoom-alt="Vanaz F0105 Series Gas Filter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz F0105 Series Gas Filter</div>
   <div class="related-code">Vanaz &middot; Code F0105</div>
 </a>
     <a href="../products/vanaz-r2301-iii-co2.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2301-iii-co2-thumb.jpg" alt="Vanaz R2301 III CO2 Gas Pressure Regulator" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2301-iii-co2-thumb.jpg" alt="Vanaz R2301 III CO2 Gas Pressure Regulator" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2301-iii-co2-large.jpg" data-zoom-alt="Vanaz R2301 III CO2 Gas Pressure Regulator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R2301 III CO2 Gas Pressure Regulator</div>
   <div class="related-code">Vanaz &middot; Code R2301 III</div>
 </a>
     <a href="../products/vanaz-r2310.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2310-thumb.jpg" alt="Vanaz R2310 Industrial Gas Pressure Regulator" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2310-thumb.jpg" alt="Vanaz R2310 Industrial Gas Pressure Regulator" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2310-large.jpg" data-zoom-alt="Vanaz R2310 Industrial Gas Pressure Regulator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R2310 Industrial Gas Pressure Regulator</div>
   <div class="related-code">Vanaz &middot; Code R2310</div>
 </a>
     <a href="../products/vanaz-r2322.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2322-thumb.jpg" alt="Vanaz R2322 Industrial Gas Pressure Regulator" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r2322-thumb.jpg" alt="Vanaz R2322 Industrial Gas Pressure Regulator" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r2322-large.jpg" data-zoom-alt="Vanaz R2322 Industrial Gas Pressure Regulator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R2322 Industrial Gas Pressure Regulator</div>
   <div class="related-code">Vanaz &middot; Code R2322</div>
 </a>
     <a href="../products/vanaz-r6111.html" class="related-card">
-  <div class="related-thumb"><img src="../images/thumbs/vanaz-r6111-thumb.jpg" alt="Vanaz R6111-I Low Pressure Regulator (1.5 to 2 Bar)" loading="lazy"></div>
+  <div class="related-thumb"><img src="../images/thumbs/vanaz-r6111-thumb.jpg" alt="Vanaz R6111-I Low Pressure Regulator (1.5 to 2 Bar)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-r6111-large.jpg" data-zoom-alt="Vanaz R6111-I Low Pressure Regulator (1.5 to 2 Bar)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz R6111-I Low Pressure Regulator (1.5 to 2 Bar)</div>
   <div class="related-code">Vanaz &middot; Code R6111-I / R6111-II</div>
 </a>
@@ -754,5 +765,22 @@ document.addEventListener('DOMContentLoaded', function(){
 @media (min-width:861px){ .mobile-quote-bar{ display:none; } }
 </style>
 <div class="mobile-quote-bar"><a href="../index.html#contact">Request a Quote</a></div>
+<script>
+(function(){
+  var lightbox = document.getElementById('catLightbox');
+  if (!lightbox) return;
+  var img = lightbox.querySelector('img');
+  var closeBtn = document.getElementById('catLightboxClose');
+  function openBox(src, alt){ img.src = src; img.alt = alt; lightbox.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeBox(){ lightbox.classList.remove('open'); document.body.style.overflow=''; }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.related-zoom-btn');
+    if (btn){ e.preventDefault(); e.stopPropagation(); openBox(btn.getAttribute('data-zoom-src'), btn.getAttribute('data-zoom-alt')); }
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeBox);
+  lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeBox(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeBox(); });
+})();
+</script>
 </body>
 </html>
