@@ -27,7 +27,7 @@
     'PRESSURE REGULATOR VALVES': ['High Pressure Regulator', 'Low Pressure Regulator', 'Oxygen Regulator', 'Ammonia Regulator', 'CO2 Regulator', 'LPG Auto Change Over Regulator'],
     'SENSORS': ['Flame Relay', 'UV Flame Sensor', 'Photocell'],
     'SOLENOID VALVES': ['Brahma Solenoid Valve', 'Kromschröder Solenoid Valve', 'Elektrogas Solenoid Valve', 'Solenoid Coil', 'Coil Connector'],
-    'IGNITION TRANSFORMERS': ['Ignition Transformer', 'Modutrol Transformer'],
+    'IGNITION TRANSFORMERS': ['Brahma', 'Cofi', 'Danfoss', 'Honeywell Kromschröder', 'Honeywell Technologies'],
     'GAS FLOW METERS': ['Diaphragm Gas Meters', 'Turbine Gas Meter Quantometer', 'RPD Rotary Gas Meter'],
     'SEQUENCE CONTROLLERS': ['Burner Control', 'Burner Control Unit (BCU)']
   };
