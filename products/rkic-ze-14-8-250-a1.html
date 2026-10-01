@@ -486,7 +486,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         if(prodMatches.length){
           html += '<div class="pg-search-kicker">In Stock</div>';
           prodMatches.forEach(function(p){
-            html += '<a href="' + p.id + '.html">' +
+            html += '<a href="../products/' + p.id + '.html">' +
               '<img src="' + p.thumb + '" alt="" loading="lazy">' +
               '<span class="pg-sr-info"><span class="pg-sr-name">' + p.name + '</span>' +
               '<span class="pg-sr-meta">' + p.brand + ' · ' + p.category + '</span></span>' +
