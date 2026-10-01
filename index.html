@@ -6156,6 +6156,26 @@
     return counts;
   }
   function titleCaseWord(str){ return str.charAt(0) + str.slice(1).toLowerCase(); }
+  // Sub-navigation items for a category: explicit sub-categories when defined
+  // in subcategoryMap, otherwise a per-brand breakdown fallback so every
+  // category (not just the ones with a subcategoryMap entry) gets an
+  // expandable list in the tile, nav dropdown, and mobile drawer.
+  function subcategoryItemsForCategory(name){
+    const subNames = subcategoryMap[name] || [];
+    if(subNames.length){
+      return subNames.map(sub => ({
+        label: sub,
+        count: products.filter(p => p.category === name && p.subcategory === sub).length,
+        filter: {type:'subcategory', value: sub}
+      }));
+    }
+    const brandCounts = categoryBrandCounts(name);
+    return Object.keys(brandCounts).sort().map(brand => ({
+      label: brand + ' ' + titleCaseWord(name),
+      count: brandCounts[brand],
+      filter: {type:'category-brand', value:{category:name, brand:brand}}
+    }));
+  }
 
   categories.forEach((name, i) => {
     const code = 'RK-' + String(i+1).padStart(2,'0');
@@ -6179,22 +6199,7 @@
       }
       tile.classList.add('expanded');
       toggleBtn.textContent = '\u2212';
-      const subNames = subcategoryMap[name] || [];
-      let items;
-      if(subNames.length){
-        items = subNames.map(sub => ({
-          label: sub,
-          count: products.filter(p => p.category === name && p.subcategory === sub).length,
-          filter: {type:'subcategory', value: sub}
-        }));
-      } else {
-        const brandCounts = categoryBrandCounts(name);
-        items = Object.keys(brandCounts).sort().map(brand => ({
-          label: brand + ' ' + titleCaseWord(name),
-          count: brandCounts[brand],
-          filter: {type:'category-brand', value:{category:name, brand:brand}}
-        }));
-      }
+      const items = subcategoryItemsForCategory(name);
       const list = document.createElement('ul');
       list.className = 'cat-subcats';
       if(items.length === 0){
@@ -6260,8 +6265,8 @@
   const navProductsGrid = document.getElementById('navProductsGrid');
   categories.forEach(name => {
     const n = categoryCount(name);
-    const subNames = subcategoryMap[name] || [];
-    const hasSub = subNames.length > 0;
+    const items = subcategoryItemsForCategory(name);
+    const hasSub = items.length > 0;
     if(hasSub){
       const row = document.createElement('div');
       row.className = 'nav-cat-row';
@@ -6280,15 +6285,14 @@
       const subsRow = document.createElement('div');
       subsRow.className = 'nav-cat-subs';
       subsRow.dataset.parent = name;
-      subNames.forEach(subName => {
-        const sn = products.filter(p => p.subcategory === subName).length;
+      items.forEach(item => {
         const sa = document.createElement('a');
         sa.href = 'javascript:void(0)';
-        sa.innerHTML = `<span>↳ ${subName}</span>`;
+        sa.innerHTML = `<span>↳ ${item.label}</span>`;
         sa.addEventListener('click', (e) => {
           e.preventDefault();
           document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
-          navigateToProduct({type:'subcategory', value:subName});
+          navigateToProduct(item.filter);
         });
         subsRow.appendChild(sa);
       });
@@ -6432,8 +6436,8 @@
   const drawerProductsSub = document.getElementById('drawerProductsSub');
   categories.forEach(name => {
     const n = categoryCount(name);
-    const subNames = subcategoryMap[name] || [];
-    if(subNames.length === 0){
+    const items = subcategoryItemsForCategory(name);
+    if(items.length === 0){
       const a = document.createElement('a');
       a.href = categoryHref(name);
       a.className = 'drawer-sub-link';
@@ -6469,13 +6473,12 @@
     viewAll.innerHTML = `<span>↳ View all ${name}</span>`;
     viewAll.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct({type:'category', value:name}); });
     subList.appendChild(viewAll);
-    subNames.forEach(subName => {
-      const sn = products.filter(p => p.subcategory === subName).length;
+    items.forEach(item => {
       const sa = document.createElement('a');
       sa.href = 'javascript:void(0)';
       sa.className = 'drawer-sub-link drawer-sub-sublink';
-      sa.innerHTML = `<span>↳ ${subName}</span>${sn > 0 ? `<span class="nav-drop-dot" aria-label="${sn} products added"></span>` : ''}`;
-      sa.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct({type:'subcategory', value:subName}); });
+      sa.innerHTML = `<span>↳ ${item.label}</span>${item.count > 0 ? `<span class="nav-drop-dot" aria-label="${item.count} products added"></span>` : ''}`;
+      sa.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct(item.filter); });
       subList.appendChild(sa);
     });
     catItem.appendChild(subList);
