@@ -6009,6 +6009,13 @@
     return Object.values(RANGE_BANNERS).filter(b => b.category === category && b.brand === brand).map(rangeCardFromEntry).join('');
   }
 
+  function compactCardHTML(p){
+    return `<a class="related-card" href="products/${p.id}.html">
+      <div class="related-thumb"><img src="${p.image}" alt="${p.name}" loading="lazy"></div>
+      <div class="related-name">${p.name}</div>
+      ${p.code ? `<div class="related-code">${p.code}</div>` : ''}
+    </a>`;
+  }
   function renderProductView(filter){
     let matches, title, eyebrow;
     if(filter.type === 'category'){
@@ -6041,11 +6048,11 @@
       const general = matches.filter(p => !p.subcategory);
       const subGroups = {};
       matches.forEach(p => { if(p.subcategory){ (subGroups[p.subcategory] = subGroups[p.subcategory] || []).push(p); } });
-      let html = general.map(p => productCardHTML(p)).join('');
+      let html = general.length ? `<div class="related-grid">${general.map(p => compactCardHTML(p)).join('')}</div>` : '';
       Object.keys(subGroups).forEach(subName => {
         html += `<div class="pm-subcat-heading"><span>${subName}</span></div>`;
         html += rangeCardHTML(subName);
-        html += subGroups[subName].map(p => productCardHTML(p)).join('');
+        html += `<div class="related-grid">${subGroups[subName].map(p => compactCardHTML(p)).join('')}</div>`;
       });
       pmGrid.innerHTML = html;
     } else if(filter.type === 'subcategory'){
