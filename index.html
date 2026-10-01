@@ -474,8 +474,10 @@
   .sec-related .eyebrow-lt{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--flame); }
   .sec-related h2{ font-size:clamp(1.1rem,2.2vw,1.35rem); font-weight:600; margin-top:6px; }
   .related-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:20px; }
-  @media (max-width:900px){ .related-grid{ grid-template-columns:repeat(2,1fr); gap:10px; } }
-  @media (max-width:380px){ .related-grid{ gap:8px; } }
+  @media (max-width:900px){ .related-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .related-grid{ grid-template-columns:1fr; } }
+  @media (max-width:520px){ .related-grid.force-2col{ grid-template-columns:repeat(2,1fr); gap:10px; } }
+  @media (max-width:380px){ .related-grid.force-2col{ gap:8px; } }
   .related-card{ display:block; background:#fff; border:1px solid var(--line); border-radius:4px; padding:12px; text-decoration:none; color:var(--ink); transition:border-color 0.2s ease, box-shadow 0.2s ease; }
   .related-card:hover{ border-color:var(--sage-deep); box-shadow:0 6px 18px rgba(51,65,78,0.10); }
   .related-thumb{ aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; margin-bottom:8px; position:relative; }
@@ -6074,14 +6076,15 @@
     if(matches.length === 0){
       pmGrid.innerHTML = `<div class="pm-empty">We're adding parts to this ${filter.type} every week.<br>Have a specific part number in mind? <a href="${waLink('Enquiry for ' + title)}" target="_blank" rel="noopener">Ask us on WhatsApp</a> or <a href="#contact">send an enquiry</a>.</div>`;
     } else if(filter.type === 'category'){
+      const gridClass = filter.value === 'PRESSURE REGULATOR VALVES' ? 'related-grid force-2col' : 'related-grid';
       const general = matches.filter(p => !p.subcategory);
       const subGroups = {};
       matches.forEach(p => { if(p.subcategory){ (subGroups[p.subcategory] = subGroups[p.subcategory] || []).push(p); } });
-      let html = general.length ? `<div class="related-grid">${general.map(p => compactCardHTML(p)).join('')}</div>` : '';
+      let html = general.length ? `<div class="${gridClass}">${general.map(p => compactCardHTML(p)).join('')}</div>` : '';
       Object.keys(subGroups).forEach(subName => {
         html += `<div class="pm-subcat-heading"><span>${subName}</span></div>`;
         html += rangeCardHTML(subName);
-        html += `<div class="related-grid">${subGroups[subName].map(p => compactCardHTML(p)).join('')}</div>`;
+        html += `<div class="${gridClass}">${subGroups[subName].map(p => compactCardHTML(p)).join('')}</div>`;
       });
       pmGrid.innerHTML = html;
     } else if(filter.type === 'subcategory'){
