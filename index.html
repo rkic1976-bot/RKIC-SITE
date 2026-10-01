@@ -6083,11 +6083,11 @@
       });
       pmGrid.innerHTML = html;
     } else if(filter.type === 'subcategory'){
-      pmGrid.innerHTML = rangeCardHTML(filter.value) + matches.map(p => productCardHTML(p)).join('');
+      pmGrid.innerHTML = rangeCardHTML(filter.value) + `<div class="related-grid">${matches.map(p => compactCardHTML(p)).join('')}</div>`;
     } else if(filter.type === 'brand'){
-      pmGrid.innerHTML = rangeCardsForBrand(filter.value) + matches.map(p => productCardHTML(p)).join('');
+      pmGrid.innerHTML = rangeCardsForBrand(filter.value) + `<div class="related-grid">${matches.map(p => compactCardHTML(p)).join('')}</div>`;
     } else if(filter.type === 'category-brand'){
-      pmGrid.innerHTML = rangeCardsForCategoryBrand(filter.value.category, filter.value.brand) + matches.map(p => productCardHTML(p)).join('');
+      pmGrid.innerHTML = rangeCardsForCategoryBrand(filter.value.category, filter.value.brand) + `<div class="related-grid">${matches.map(p => compactCardHTML(p)).join('')}</div>`;
     } else {
       pmGrid.innerHTML = matches.map(p => productCardHTML(p, true)).join('');
     }
