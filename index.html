@@ -474,8 +474,8 @@
   .sec-related .eyebrow-lt{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--flame); }
   .sec-related h2{ font-size:clamp(1.1rem,2.2vw,1.35rem); font-weight:600; margin-top:6px; }
   .related-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:20px; }
-  @media (max-width:900px){ .related-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:520px){ .related-grid{ grid-template-columns:1fr; } }
+  @media (max-width:900px){ .related-grid{ grid-template-columns:repeat(2,1fr); gap:10px; } }
+  @media (max-width:380px){ .related-grid{ gap:8px; } }
   .related-card{ display:block; background:#fff; border:1px solid var(--line); border-radius:4px; padding:12px; text-decoration:none; color:var(--ink); transition:border-color 0.2s ease, box-shadow 0.2s ease; }
   .related-card:hover{ border-color:var(--sage-deep); box-shadow:0 6px 18px rgba(51,65,78,0.10); }
   .related-thumb{ aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; margin-bottom:8px; position:relative; }
