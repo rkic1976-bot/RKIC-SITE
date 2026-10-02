@@ -221,4 +221,6 @@ const RKIC_PRODUCTS = [
   {id:"rkic-cap-connector-bakelite", name:"Ignition Spark Cable Boot — 90° Bakelite Cap Connector (Black)", brand:"R.K. Instruments & Controls", category:"IGNITION SPARES", subcategory:null, code:"90° Bakelite Cap Connector, Type D", thumb:"../images/thumbs/rkic-cap-connector-bakelite-thumb.jpg"},
   {id:"honeywell-elster-rabo-model-range", name:"Honeywell Elster RABO Rotary Gas Meter — Full Model Range", brand:"Honeywell Elster", category:"GAS FLOW METERS", subcategory:"RPD Rotary Gas Meter", code:"", thumb:"../images/thumbs/honeywell-elster-rabo-g40-dn50-thumb.jpg"},
   {id:"siemens-sqn75-224a21", name:"Siemens Servo Motor | Damper Actuator SQN75.224A21", brand:"Siemens", category:"SERVO MOTORS", subcategory:null, code:"BPZ:SQN75.224A21", thumb:"../images/thumbs/siemens-sqn75-224a21-thumb.jpg"},
+{id:"vanaz-v4321", name:"Vanaz Slam Shut-Off Valve V4321", brand:"Vanaz", category:"SLAM SHUT OFF VALVES", subcategory:null, code:"V4321", thumb:"../images/thumbs/vanaz-v4321-thumb.jpg"},
+{id:"vanaz-v4325", name:"Vanaz Slam Shut-Off Valve V4325 / V4325 II", brand:"Vanaz", category:"SLAM SHUT OFF VALVES", subcategory:null, code:"V4325 / V4325 II", thumb:"../images/thumbs/vanaz-v4325-thumb.jpg"},
 ];
