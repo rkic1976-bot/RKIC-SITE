@@ -510,6 +510,8 @@
   .product-modal-grid{ display:flex; flex-direction:column; gap:24px; }
   .product-modal-grid .spot-card{ margin-top:0; }
   .pm-subcat-heading{ display:flex; align-items:center; gap:14px; margin:10px 0 -6px; }
+  .pm-brands{ padding:40px 0 0; margin-top:8px; border-top:1px solid var(--line); }
+  .pm-brands .sec-head{ margin-bottom:28px; }
   .pm-subcat-heading span{ font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage-deep); font-weight:600; white-space:nowrap; }
   .pm-subcat-heading::after{ content:''; flex:1; height:1px; background:var(--line); }
   .pm-empty{ padding:36px 10px; text-align:center; color:var(--text-dim); font-size:0.94rem; line-height:1.75; }
@@ -942,6 +944,16 @@
       <h3 id="pmTitle"></h3>
     </div>
     <div class="product-modal-grid" id="pmGrid"></div>
+    <section class="sec brands pm-brands">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow-lt">Associate Brands</div>
+          <h2>Genuine parts from the manufacturers your plant already runs on.</h2>
+        </div>
+        <p>We represent the sales &amp; service of these manufacturers across our territories.</p>
+      </div>
+      <div class="brand-strip" id="pmBrandStrip"></div>
+    </section>
   </div>
 </div>
 
@@ -6533,20 +6545,25 @@
     'Honeywell Maxon': 'images/brands/brand-honeywell-maxon.png',
     'Honeywell Eclipse': 'images/brands/brand-honeywell-eclipse.png',
   };
-  const strip = document.getElementById('brandStrip');
-  brands.forEach((b,i)=>{
-    const n = brandCount(b);
-    const chip = document.createElement('div');
-    chip.className = 'brand-chip';
-    const label = brandLogos[b]
-      ? `<img src="${brandLogos[b]}" alt="${b} logo" class="brand-logo-img">`
-      : b;
-    chip.innerHTML = `<span class="mono">${String(i+1).padStart(2,'0')}</span><a href="${brandHref(b)}" class="brand-chip-link">${label}</a>${countBadge(n)}`;
-    const chipLink = chip.querySelector('.brand-chip-link');
-    if(chipLink){ chipLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); navigateToProduct({type:'brand', value:b}); }); }
-    chip.addEventListener('click', () => navigateToProduct({type:'brand', value:b}));
-    strip.appendChild(chip);
-  });
+  function populateBrandStrip(strip){
+    if(!strip) return;
+    strip.innerHTML = '';
+    brands.forEach((b,i)=>{
+      const n = brandCount(b);
+      const chip = document.createElement('div');
+      chip.className = 'brand-chip';
+      const label = brandLogos[b]
+        ? `<img src="${brandLogos[b]}" alt="${b} logo" class="brand-logo-img">`
+        : b;
+      chip.innerHTML = `<span class="mono">${String(i+1).padStart(2,'0')}</span><a href="${brandHref(b)}" class="brand-chip-link">${label}</a>${countBadge(n)}`;
+      const chipLink = chip.querySelector('.brand-chip-link');
+      if(chipLink){ chipLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); navigateToProduct({type:'brand', value:b}); }); }
+      chip.addEventListener('click', () => navigateToProduct({type:'brand', value:b}));
+      strip.appendChild(chip);
+    });
+  }
+  populateBrandStrip(document.getElementById('brandStrip'));
+  populateBrandStrip(document.getElementById('pmBrandStrip'));
 
   // ---- Desktop dropdown: category grid (default) + product/category search (on type) ----
   const navProductsGrid = document.getElementById('navProductsGrid');
