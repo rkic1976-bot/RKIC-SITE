@@ -230,3 +230,9 @@ const RKIC_PRODUCTS = [
   {id:"rkic-spark-ignition-electrode-200mm", name:"Industrial Spark Ignition Electrode Assembly, 200mm", brand:"R.K. Instruments & Controls", category:"IGNITION ELECTRODES", subcategory:null, code:"", thumb:"../images/thumbs/rkic-spark-ignition-electrode-200mm-thumb.jpg"},
   {id:"rkic-uv-flame-sensor-probe", name:"UV Flame Sensor — Ultraviolet Flame Detector Scanner Probe", brand:"R.K. Instruments & Controls", category:"SENSORS", subcategory:"UV Flame Sensor", code:"", thumb:"../images/thumbs/rkic-uv-flame-sensor-probe-thumb.jpg"},
 ];
+// Root-level pages (about.html, contact.html, index.html) sit one folder
+// shallower than products/*.html — strip the leading "../" from every thumb
+// path on those pages (used by nav-dropdown.js's live search) so images resolve.
+if (!/\/(products|categories|brands)\//.test(location.pathname)) {
+  RKIC_PRODUCTS.forEach(function(p){ p.thumb = p.thumb.replace(/^\.\.\//, ''); });
+}
