@@ -536,6 +536,25 @@
   .brand-chip .mono{ color:var(--lemon-text); font-size:0.66rem; margin-right:8px; }
   .brand-chip-link{ display:flex; align-items:center; text-decoration:none; color:inherit; }
 
+  /* ---------- OUR CLIENTS ---------- */
+  .clients-sec{ background:var(--paper); border-top:1px solid var(--line); }
+  .clients-sec .sec-head{ justify-content:center; text-align:center; margin-bottom:36px; }
+  .clients-marquee{
+    position:relative; overflow:hidden; width:100%;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 60px,#000 calc(100% - 60px),transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 60px,#000 calc(100% - 60px),transparent 100%);
+  }
+  .clients-track{ display:flex; align-items:center; gap:44px; width:max-content; animation:clientsScroll 42s linear infinite; }
+  .clients-marquee:hover .clients-track{ animation-play-state:paused; }
+  .clients-track img{
+    height:42px; width:auto; object-fit:contain; flex:0 0 auto;
+    opacity:0.82; filter:grayscale(12%); transition:opacity 0.2s ease, filter 0.2s ease;
+  }
+  .clients-track img:hover{ opacity:1; filter:grayscale(0%); }
+  @keyframes clientsScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  @media (max-width:640px){ .clients-track img{ height:32px; } .clients-track{ gap:30px; } }
+  @media (prefers-reduced-motion: reduce){ .clients-track{ animation:none; } }
+
   /* ---------- CONTACT / FOOTER (light sage panel) ---------- */
   footer{ background:var(--steel); color:var(--ink); padding-bottom:96px; }
   .contact-grid{ display:grid; grid-template-columns:0.85fr 1fr 0.85fr; gap:40px; padding-top:84px; padding-bottom:48px; }
@@ -946,6 +965,83 @@
   <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
   <img src="" alt="">
 </div>
+
+<!-- OUR CLIENTS -->
+<section class="sec clients-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow-lt">Trusted By</div>
+        <h2>Our Clients</h2>
+      </div>
+    </div>
+    <div class="clients-marquee">
+      <div class="clients-track">
+        <img src="images/clients/aether.png" alt="Aether logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/amns-india.png" alt="AM/NS India logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/forbes-marshall.png" alt="Forbes Marshall logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/gail.png" alt="GAIL logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/jsw-coated-steel.png" alt="JSW Coated Steel logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/kirloskar-ferrous.png" alt="Kirloskar Ferrous logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/kirloskar-pneumatic.png" alt="Kirloskar Pneumatic logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/kribhco.png" alt="Kribhco logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/lt-heavy-engineering.png" alt="L&T Heavy Engineering logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/lt-mhi-power.png" alt="L&T-MHI Power Boilers logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/macawber-beekay.png" alt="Macawber Beekay logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/mahle.png" alt="Mahle logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/mrf.png" alt="MRF logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/mubea.png" alt="Mubea logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/navin-fluorine.png" alt="Navin Fluorine logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/nmdc.png" alt="NMDC Limited logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/ntpc.png" alt="NTPC Vidyut Vyapar logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/ongc.png" alt="ONGC logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/pgp-glass.png" alt="PGP Glass logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/piaggio.png" alt="Piaggio logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/polycab.png" alt="Polycab logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/precision.png" alt="Precision logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/raymond.png" alt="Raymond logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/reliance.png" alt="Reliance logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/sanmar.png" alt="Sanmar logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/sonalika.png" alt="Sonalika logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/sun-petrochemicals.png" alt="Sun Petrochemicals logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/sun-pharma.png" alt="Sun Pharma logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/tata-chemicals.png" alt="Tata Chemicals logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/varun-beverages.png" alt="Varun Beverages logo" loading="lazy" width="160" height="42">
+        <!-- duplicate set, seamless loop -->
+        <img src="images/clients/aether.png" alt="Aether logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/amns-india.png" alt="AM/NS India logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/forbes-marshall.png" alt="Forbes Marshall logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/gail.png" alt="GAIL logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/jsw-coated-steel.png" alt="JSW Coated Steel logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/kirloskar-ferrous.png" alt="Kirloskar Ferrous logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/kirloskar-pneumatic.png" alt="Kirloskar Pneumatic logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/kribhco.png" alt="Kribhco logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/lt-heavy-engineering.png" alt="L&T Heavy Engineering logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/lt-mhi-power.png" alt="L&T-MHI Power Boilers logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/macawber-beekay.png" alt="Macawber Beekay logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/mahle.png" alt="Mahle logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/mrf.png" alt="MRF logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/mubea.png" alt="Mubea logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/navin-fluorine.png" alt="Navin Fluorine logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/nmdc.png" alt="NMDC Limited logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/ntpc.png" alt="NTPC Vidyut Vyapar logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/ongc.png" alt="ONGC logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/pgp-glass.png" alt="PGP Glass logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/piaggio.png" alt="Piaggio logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/polycab.png" alt="Polycab logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/precision.png" alt="Precision logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/raymond.png" alt="Raymond logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/reliance.png" alt="Reliance logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/sanmar.png" alt="Sanmar logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/sonalika.png" alt="Sonalika logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/sun-petrochemicals.png" alt="Sun Petrochemicals logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/sun-pharma.png" alt="Sun Pharma logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/tata-chemicals.png" alt="Tata Chemicals logo" loading="lazy" width="160" height="42">
+        <img src="images/clients/varun-beverages.png" alt="Varun Beverages logo" loading="lazy" width="160" height="42">
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- #contact footer moved out of #homeView (see below, after #productModal) so it
      stays visible on every SPA route — category/brand/product views open inside
