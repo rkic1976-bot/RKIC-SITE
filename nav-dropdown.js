@@ -18,18 +18,17 @@
   var prefix = /\/(products|categories|brands)\//.test(location.pathname) ? '../' : '';
 
   var categories = [
-    "BURNER CONNECTOR PLUG","BURNERS","BUTTERFLY VALVES",
-    "FILTERS","FLAME ARRESTORS","FLAME MONITORING SYSTEMS",
+    "BUTTERFLY VALVES",
+    "FILTERS","FLAME ARRESTORS","FLAME MONITORING SYSTEMS","FLAME RELAY",
     "FLAME SAFEGUARD","GAS FLOW METERS","GAS TRAIN SYSTEMS","HOSE PIPE FITTINGS","IGNITION CABLE",
     "IGNITION ELECTRODES","IGNITION SPARES","IGNITION SPARK ELECTRODES","IGNITION TRANSFORMERS",
-    "MANUAL BALL VALVES","MULTIBLOCKS","PILOT BURNERS","PRESSURE GAUGES",
-    "PRESSURE REGULATOR VALVES","PRESSURE SWITCHES","RATIO REGULATORS","SAFETY RELIEF VALVES","SENSORS",
+    "MANUAL BALL VALVES","MULTIBLOCKS","PHOTOCELL","PILOT BURNERS","PRESSURE GAUGES",
+    "PRESSURE REGULATOR VALVES","PRESSURE SWITCHES","RATIO REGULATORS","SAFETY RELIEF VALVES",
     "SEQUENCE CONTROLLERS","SERVO MOTORS","SLAM SHUT OFF VALVES","SOLENOID VALVES",
-    "VALVE PROVING SYSTEMS"
+    "UV FLAME DETECTORS","UV FLAME SENSOR","VALVE PROVING SYSTEMS"
   ];
   var subcategoryMap = {
     'PRESSURE REGULATOR VALVES': ['High Pressure Regulator', 'Low Pressure Regulator', 'Oxygen Regulator', 'Ammonia Regulator', 'CO2 Regulator', 'LPG Auto Change Over Regulator'],
-    'SENSORS': ['Flame Relay', 'UV Flame Sensor', 'Photocell'],
     'SOLENOID VALVES': ['Brahma Solenoid Valve', 'Kromschröder Solenoid Valve', 'Elektrogas Solenoid Valve', 'Solenoid Coil', 'Coil Connector'],
     'IGNITION TRANSFORMERS': ['Brahma', 'Cofi', 'Danfoss', 'Honeywell Kromschröder', 'Honeywell Technologies'],
     'GAS FLOW METERS': ['Diaphragm Gas Meters', 'Turbine Gas Meter Quantometer', 'RPD Rotary Gas Meter'],
