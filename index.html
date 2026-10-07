@@ -547,12 +547,10 @@
   .clients-track{ display:flex; align-items:center; gap:44px; width:max-content; animation:clientsScroll 42s linear infinite; }
   .clients-marquee:hover .clients-track{ animation-play-state:paused; }
   .clients-track img{
-    height:42px; width:auto; object-fit:contain; flex:0 0 auto;
-    opacity:0.82; filter:grayscale(12%); transition:opacity 0.2s ease, filter 0.2s ease;
+    height:48px; width:auto; object-fit:contain; flex:0 0 auto;
   }
-  .clients-track img:hover{ opacity:1; filter:grayscale(0%); }
   @keyframes clientsScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  @media (max-width:640px){ .clients-track img{ height:32px; } .clients-track{ gap:30px; } }
+  @media (max-width:640px){ .clients-track img{ height:36px; } .clients-track{ gap:30px; } }
   @media (prefers-reduced-motion: reduce){ .clients-track{ animation:none; } }
 
   /* ---------- CONTACT / FOOTER (light sage panel) ---------- */
