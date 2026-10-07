@@ -13,6 +13,10 @@
 (function(){
   if (typeof RKIC_PRODUCTS === 'undefined' || typeof RKIC_BRANDS === 'undefined') return;
 
+  // Root-level pages (about.html, contact.html, index.html) need no "../"
+  // prefix; pages one folder deep (products/, categories/, brands/) do.
+  var prefix = /\/(products|categories|brands)\//.test(location.pathname) ? '../' : '';
+
   var categories = [
     "BURNER CONNECTOR PLUG","BURNERS","BUTTERFLY VALVES",
     "FILTERS","FLAME ARRESTORS","FLAME MONITORING SYSTEMS",
@@ -34,7 +38,7 @@
 
   function categoryCount(name){ return RKIC_PRODUCTS.filter(function(p){ return p.category === name; }).length; }
   function categorySlug(name){ return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
-  function categoryHref(name){ return categoryCount(name) > 0 ? '../categories/' + categorySlug(name) + '.html' : '../index.html#/category/' + encodeURIComponent(name); }
+  function categoryHref(name){ return categoryCount(name) > 0 ? prefix + 'categories/' + categorySlug(name) + '.html' : prefix + 'index.html#/category/' + encodeURIComponent(name); }
 
   // ---- Products grid: category rows + collapsed-by-default subcategory toggles ----
   var navProductsGrid = document.getElementById('navProductsGrid');
@@ -61,7 +65,7 @@
         subsRow.dataset.parent = name;
         subNames.forEach(function(subName){
           var sa = document.createElement('a');
-          sa.href = '../index.html#/subcategory/' + encodeURIComponent(subName);
+          sa.href = prefix + 'index.html#/subcategory/' + encodeURIComponent(subName);
           sa.innerHTML = '<span>↳ ' + subName + '</span>';
           subsRow.appendChild(sa);
         });
@@ -112,7 +116,7 @@
       navProductsResults.appendChild(kicker);
       prodMatches.forEach(function(p){
         var a = document.createElement('a');
-        a.href = '../products/' + p.id + '.html';
+        a.href = prefix + 'products/' + p.id + '.html';
         a.className = 'search-product-row';
         var brandHTML = brandLogoOf[p.brand] ? '<img class="srp-brand-logo" src="' + brandLogoOf[p.brand] + '" alt="' + p.brand + '">' : (p.brand + ' · ');
         a.innerHTML = '<img src="' + p.thumb + '" alt="' + p.name + '"><span class="srp-info"><span class="srp-name">' + p.name + '</span><span class="srp-meta">' + brandHTML + p.category + '</span></span><span class="code">' + p.code + '</span>';
@@ -166,7 +170,7 @@
   if(navBrandsPanel){
     RKIC_BRANDS.forEach(function(b){
       var a = document.createElement('a');
-      a.href = '../brands/' + b.slug + '.html';
+      a.href = prefix + 'brands/' + b.slug + '.html';
       a.className = 'nav-drop-link';
       a.innerHTML = (b.logo ? '<img src="' + b.logo + '" alt="' + b.name + '" class="nav-drop-brand-logo" loading="lazy">' : '') + '<span class="nav-drop-brand-name">' + b.name + '</span>';
       navBrandsPanel.appendChild(a);
