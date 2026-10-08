@@ -6533,7 +6533,9 @@
 
   function categoryCount(name){ return products.filter(p => p.category === name).length; }
   // Matches the slugify() used by the category-page generator (tmp/gen_categories.py) exactly.
-  function categorySlug(name){ return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+  // Exceptions where the display name's auto-generated slug doesn't match the actual category page filename
+  const categorySlugOverrides = { 'FILTERS': 'filters-strainers', 'PRESSURE GAUGES': 'pressure-gauge-accessories' };
+  function categorySlug(name){ if (categorySlugOverrides[name]) return categorySlugOverrides[name]; return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
   function categoryHref(name){ return categoryCount(name) > 0 ? 'categories/' + categorySlug(name) + '.html' : 'javascript:void(0)'; }
   function brandCount(name){ return products.filter(p => p.brand === name).length; }
   // Matches the slugify() used by the brand-page generator (tmp/brands_gen/gen_brands.py) exactly.
