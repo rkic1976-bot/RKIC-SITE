@@ -229,6 +229,20 @@ const RKIC_PRODUCTS = [
   {id:"rkic-flame-relay", name:"Flame Relay — Ionization / Flame Sensor Module", brand:"R.K. Instruments & Controls", category:"FLAME RELAY", code:"", thumb:"../images/thumbs/rkic-flame-relay-thumb.jpg"},
   {id:"rkic-spark-ignition-electrode-200mm", name:"Industrial Spark Ignition Electrode Assembly, 200mm", brand:"R.K. Instruments & Controls", category:"IGNITION ELECTRODES", subcategory:null, code:"", thumb:"../images/thumbs/rkic-spark-ignition-electrode-200mm-thumb.jpg"},
   {id:"rkic-uv-flame-sensor-probe", name:"UV Flame Sensor — Ultraviolet Flame Detector Scanner Probe", brand:"R.K. Instruments & Controls", category:"UV FLAME DETECTORS", code:"", thumb:"../images/thumbs/rkic-uv-flame-sensor-probe-thumb.jpg"},
+  {id:"dungs-gw150a6",name:"Dungs GW 150 A6 Gas Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"GW 150 A6",thumb:"../images/thumbs/dungs-gw150a6-thumb.jpg"},
+  {id:"dungs-gw500a6",name:"Dungs GW 500 A6 Gas Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"GW 500 A6",thumb:"../images/thumbs/dungs-gw500a6-thumb.jpg"},
+  {id:"dungs-gw50a5",name:"Dungs GW 50 A5 Gas Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"GW 50 A5",thumb:"../images/thumbs/dungs-gw50a5-thumb.jpg"},
+  {id:"dungs-gw150a5",name:"Dungs GW 150 A5 Gas Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"GW 150 A5",thumb:"../images/thumbs/dungs-gw150a5-thumb.jpg"},
+  {id:"dungs-gw500a5",name:"Dungs GW 500 A5 Gas Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"GW 500 A5",thumb:"../images/thumbs/dungs-gw500a5-thumb.jpg"},
+  {id:"dungs-gw50a2",name:"Dungs GW 50 A2 Gas Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"GW 50 A2",thumb:"../images/thumbs/dungs-gw50a2-thumb.jpg"},
+  {id:"dungs-gw150a2",name:"Dungs GW 150 A2 Gas Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"GW 150 A2",thumb:"../images/thumbs/dungs-gw150a2-thumb.jpg"},
+  {id:"dungs-lgw3a2",name:"Dungs LGW 3 A2 Air Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"LGW 3 A2",thumb:"../images/thumbs/dungs-lgw3a2-thumb.jpg"},
+  {id:"dungs-lgw3a2p",name:"Dungs LGW 3 A2 P Air Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"LGW 3 A2 P",thumb:"../images/thumbs/dungs-lgw3a2p-thumb.jpg"},
+  {id:"dungs-lgw50a2p",name:"Dungs LGW 50 A2 P Air Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"LGW 50 A2 P",thumb:"../images/thumbs/dungs-lgw50a2p-thumb.jpg"},
+  {id:"dungs-lgw50a2",name:"Dungs LGW 50 A2 Air Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"LGW 50 A2",thumb:"../images/thumbs/dungs-lgw50a2-thumb.jpg"},
+  {id:"dungs-lgw50a2-pa",name:"Dungs LGW 50 A2 (Pa-scale) Air Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"LGW 50 A2 (Pa-scale)",thumb:"../images/thumbs/dungs-lgw50a2-pa-thumb.jpg"},
+  {id:"dungs-gw50a6",name:"Dungs GW 50 A6 Gas Pressure Switch",brand:"Dungs",category:"PRESSURE SWITCHES",code:"GW 50 A6",thumb:"../images/thumbs/dungs-gw50a6-thumb.jpg"},
+  {id:"brahma-t11-m",name:"Brahma Ignition Transformer T11/M",brand:"Brahma",category:"IGNITION TRANSFORMERS",subcategory:"Brahma",code:"15093051",thumb:"../images/thumbs/brahma-t11-m-thumb.jpg"},
 ];
 // Root-level pages (about.html, contact.html, index.html) sit one folder
 // shallower than products/*.html — strip the leading "../" from every thumb
