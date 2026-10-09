@@ -174,12 +174,75 @@
     min-width:260px; max-height:340px; overflow-y:auto; box-shadow:0 12px 28px rgba(51,65,78,0.14);
   }
   .nav-dropdown.open .nav-drop-panel{ display:block; }
+
+  /* ===== full-width dark mega-menu (Products / Brands) ===== */
+  .nav-drop-panel.nav-mega{
+    position:fixed; top:74px; left:0; right:0; width:100vw; transform:none;
+    max-width:none; min-width:0; border-radius:0; border:none;
+    border-top:1px solid rgba(255,255,255,0.08);
+    background:#0E1B33; box-shadow:0 24px 48px rgba(0,0,0,0.35);
+    padding:0; max-height:none; overflow:visible;
+  }
+  .nav-dropdown.open .nav-drop-panel.nav-mega{ display:block; }
+  .nav-mega-inner{
+    display:flex; gap:40px; max-width:1180px; margin:0 auto;
+    padding:32px 20px 36px; max-height:calc(100vh - 110px); 
+  }
+  .nav-mega-sidebar{
+    flex:0 0 220px; display:flex; flex-direction:column; gap:3px;
+    border-right:1px solid rgba(255,255,255,0.1); padding-right:24px;
+  }
+  .nav-mega-sidebar-label{
+    font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:10px;
+  }
+  .nav-mega-tab{
+    text-align:left; background:none; border:none; color:rgba(255,255,255,0.68);
+    font-family:'Barlow',sans-serif; font-size:0.86rem; padding:10px 12px; border-radius:6px;
+    cursor:pointer; line-height:1.3;
+  }
+  .nav-mega-tab:hover{ background:rgba(255,255,255,0.06); color:#fff; }
+  .nav-mega-tab.active{ background:rgba(255,213,74,0.12); color:var(--sage); font-weight:600; }
+  .nav-mega-main{ flex:1; min-width:0; }
+  .nav-mega .nav-drop-search{
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14);
+  }
+  .nav-mega .nav-drop-search svg{ color:rgba(255,255,255,0.5); }
+  .nav-mega .nav-drop-search input{ color:#fff; }
+  .nav-mega .nav-drop-search input::placeholder{ color:rgba(255,255,255,0.4); }
+  .nav-mega-group-header{
+    font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--sage); margin:22px 0 8px; grid-column:1 / -1;
+  }
+  .nav-mega-group-header:first-child{ margin-top:4px; }
+  .nav-mega .nav-drop-panel a, .nav-mega a.nav-drop-link{ color:rgba(255,255,255,0.82); }
+  .nav-mega #navProductsGrid a:hover, .nav-mega #navProductsGrid .nav-cat-row:hover{ background:rgba(255,255,255,0.07); }
+  .nav-mega .nav-cat-icon{ width:16px; height:16px; flex:0 0 auto; color:var(--sage); margin-right:9px; }
+  .nav-mega .nav-drop-link{ display:flex; align-items:center; justify-content:flex-start; gap:0; }
+  .nav-mega .nav-drop-link span{ margin-right:auto; }
+  .nav-mega .nav-cat-subs{ border-bottom-color:rgba(255,255,255,0.1); }
+  .nav-mega .nav-cat-subs a{ color:rgba(255,255,255,0.6); }
+  .nav-mega .nav-cat-subs a:hover{ background:rgba(255,255,255,0.07); color:#fff; }
+  .nav-mega .nav-cat-toggle:hover .nav-cat-caret{ color:#fff; }
+  .nav-mega-simple.nav-mega{ padding:0; }
+  .nav-mega-simple .nav-mega-inner-shim{ display:none; }
+  @media (max-width:860px){
+    .nav-drop-panel.nav-mega{ display:none !important; }
+  }
   .nav-drop-panel a{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 10px; font-size:0.84rem; color:var(--ink); border-radius:2px; }
   .nav-drop-panel a:hover{ background:var(--steel); }
   #navProductsPanel{
     width:min(92vw, 940px); max-width:940px; padding:12px;
     max-height:85vh; overflow-y:visible;
   }
+  #navProductsPanel.nav-mega{
+    position:fixed; top:74px; left:0; right:0; width:100vw; max-width:none; transform:none;
+    border-radius:0; border:none; border-top:1px solid rgba(255,255,255,0.08);
+    background:#0E1B33; box-shadow:0 24px 48px rgba(0,0,0,0.35);
+    padding:0; max-height:none; overflow-y:visible;
+  }
+  .nav-dropdown.open #navProductsPanel.nav-mega{ display:block; }
+  @media (max-width:860px){ #navProductsPanel.nav-mega{ display:none !important; } }
   .nav-drop-search{
     display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:5px;
     padding:8px 11px; margin:0 0 10px; background:var(--paper);
@@ -191,6 +254,8 @@
     display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 8px;
     max-height:60vh; overflow-y:auto;
   }
+  #navProductsGrid > *{ min-width:0; }
+  .nav-mega #navProductsGrid{ grid-template-columns:repeat(3, 1fr); max-height:none; overflow-y:visible; }
   #navProductsGrid[hidden]{ display:none; }
   #navProductsGrid a{ font-size:0.76rem; padding:7px 6px; }
   .nav-cat-caret{ display:inline-block; color:var(--sage-deep); font-size:1rem; font-weight:800; line-height:1; opacity:1; transition:transform 0.2s ease; }
@@ -269,6 +334,18 @@
   #navBrandsPanel .nav-drop-brand-name{
     flex:0 0 auto; width:100%; margin-left:0; white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:break-word;
   }
+  #navBrandsPanel.nav-mega{
+    position:fixed; top:74px; left:0; right:0; width:100vw; max-width:none; transform:none;
+    border-radius:0; border:none; border-top:1px solid rgba(255,255,255,0.08);
+    background:#0E1B33; box-shadow:0 24px 48px rgba(0,0,0,0.35);
+    padding:28px calc(50vw - 590px); max-height:none; overflow-y:visible;
+  }
+  @media (max-width:1260px){ #navBrandsPanel.nav-mega{ padding:28px 20px; } }
+  .nav-dropdown.open #navBrandsPanel.nav-mega{ display:grid; }
+  #navBrandsPanel.nav-mega a{ color:rgba(255,255,255,0.82); }
+  #navBrandsPanel.nav-mega a:hover{ background:rgba(255,255,255,0.07); }
+  #navBrandsPanel.nav-mega .nav-drop-brand-name{ color:rgba(255,255,255,0.6); }
+  @media (max-width:860px){ #navBrandsPanel.nav-mega{ display:none !important; } }
 
   /* floating whatsapp button */
   .wa-float{
@@ -777,18 +854,29 @@
       <a href="about.html">About Us</a>
       <div class="nav-dropdown" id="navProducts">
         <button class="nav-drop-btn">Products <span class="chev">⌄</span></button>
-        <div class="nav-drop-panel" id="navProductsPanel">
-          <div class="nav-drop-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            <input type="text" id="navProductsFilter" placeholder="Search products or categories…" autocomplete="off">
+        <div class="nav-drop-panel nav-mega" id="navProductsPanel">
+          <div class="nav-mega-inner">
+            <div class="nav-mega-sidebar">
+              <div class="nav-mega-sidebar-label">Browse Categories</div>
+              <button type="button" class="nav-mega-tab active" data-group="valves">Valves &amp; Flow Control</button>
+              <button type="button" class="nav-mega-tab" data-group="ignition">Ignition Components</button>
+              <button type="button" class="nav-mega-tab" data-group="flame">Flame Safety &amp; Controls</button>
+              <button type="button" class="nav-mega-tab" data-group="gastrain">Gas Train &amp; Measurement</button>
+            </div>
+            <div class="nav-mega-main">
+              <div class="nav-drop-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                <input type="text" id="navProductsFilter" placeholder="Search products or categories…" autocomplete="off">
+              </div>
+              <div class="nav-drop-grid" id="navProductsGrid"></div>
+              <div class="nav-drop-results search-results" id="navProductsResults" hidden></div>
+            </div>
           </div>
-          <div class="nav-drop-grid" id="navProductsGrid"></div>
-          <div class="nav-drop-results search-results" id="navProductsResults" hidden></div>
         </div>
       </div>
       <div class="nav-dropdown" id="navBrands">
         <button class="nav-drop-btn">Brands <span class="chev">⌄</span></button>
-        <div class="nav-drop-panel" id="navBrandsPanel"></div>
+        <div class="nav-drop-panel nav-mega nav-mega-simple" id="navBrandsPanel"></div>
       </div>
       <a href="contact.html">Contact Us</a>
     </nav>
@@ -1352,7 +1440,41 @@
     'GAS FLOW METERS': ['Diaphragm Gas Meters', 'Turbine Gas Meter Quantometer', 'RPD Rotary Gas Meter'],
     'SEQUENCE CONTROLLERS': ['Burner Control', 'Burner Control Unit (BCU)']
   };
-  const grid = document.getElementById('catGrid');
+  // ---- Mega-menu: category groups + icons (for Products dropdown) ----
+  const categoryGroups = [
+    { key:'valves', label:'Valves & Flow Control', items:['BUTTERFLY VALVES','MANUAL BALL VALVES','SOLENOID VALVES','SLAM SHUT OFF VALVES','SAFETY RELIEF VALVES','MULTIBLOCKS','RATIO REGULATORS','PRESSURE REGULATOR VALVES'] },
+    { key:'ignition', label:'Ignition Components', items:['IGNITION TRANSFORMERS','IGNITION ELECTRODES','IGNITION CABLE','IGNITION SPARES','IGNITION SPARK ELECTRODES','PILOT BURNERS'] },
+    { key:'flame', label:'Flame Safety & Controls', items:['FLAME RELAY','FLAME SAFEGUARD','FLAME ARRESTORS','FLAME MONITORING SYSTEMS','UV FLAME DETECTORS','UV FLAME SENSOR','PHOTOCELL','SEQUENCE CONTROLLERS'] },
+    { key:'gastrain', label:'Gas Train & Measurement', items:['GAS TRAIN SYSTEMS','GAS FLOW METERS','PRESSURE GAUGES','PRESSURE SWITCHES','VALVE PROVING SYSTEMS','FILTERS','SERVO MOTORS','HOSE PIPE FITTINGS'] }
+  ];
+  const categoryIconKey = {
+    'BUTTERFLY VALVES':'valve','MANUAL BALL VALVES':'valve','MULTIBLOCKS':'valve','SLAM SHUT OFF VALVES':'valve',
+    'PRESSURE REGULATOR VALVES':'valve','RATIO REGULATORS':'valve','SOLENOID VALVES':'valve',
+    'IGNITION CABLE':'spark','IGNITION ELECTRODES':'spark','IGNITION SPARES':'spark','IGNITION SPARK ELECTRODES':'spark','IGNITION TRANSFORMERS':'spark',
+    'PILOT BURNERS':'flame','FLAME ARRESTORS':'flame','FLAME MONITORING SYSTEMS':'flame','FLAME RELAY':'flame','FLAME SAFEGUARD':'flame',
+    'UV FLAME DETECTORS':'eye','UV FLAME SENSOR':'eye','PHOTOCELL':'eye',
+    'SEQUENCE CONTROLLERS':'gear','SERVO MOTORS':'gear',
+    'GAS TRAIN SYSTEMS':'pipe','HOSE PIPE FITTINGS':'pipe',
+    'GAS FLOW METERS':'gauge','PRESSURE GAUGES':'gauge','PRESSURE SWITCHES':'gauge',
+    'VALVE PROVING SYSTEMS':'shield','SAFETY RELIEF VALVES':'shield',
+    'FILTERS':'filter'
+  };
+  const navIconPaths = {
+    valve:'<circle cx="12" cy="12" r="3"/><path d="M4 12h5M15 12h5"/>',
+    flame:'<path d="M12 2c2 3-1 4-1 7a3 3 0 1 0 6 0c0-2-1-3-1-5 3 2 4 5 4 8a7 7 0 1 1-14 0c0-4 3-6 6-10z"/>',
+    gauge:'<path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l3-4"/><circle cx="12" cy="15" r="1"/>',
+    pipe:'<rect x="3" y="10" width="18" height="4" rx="1"/><circle cx="6" cy="12" r="1"/><circle cx="18" cy="12" r="1"/>',
+    spark:'<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/>',
+    eye:'<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
+    shield:'<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>',
+    filter:'<path d="M4 4h16l-6 8v6l-4 2v-8z"/>',
+    gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>'
+  };
+  function categoryIconSVG(name){
+    const key = categoryIconKey[name] || 'gear';
+    return '<svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + navIconPaths[key] + '</svg>';
+  }
+
   const products = [
     {
       id: 'brahma-eg12l-gmo',
@@ -6883,49 +7005,6 @@
     }));
   }
 
-  categories.forEach((name, i) => {
-    const code = 'RK-' + String(i+1).padStart(2,'0');
-    const n = categoryCount(name);
-    const tile = document.createElement('div');
-    tile.className = 'cat-tile';
-    const catHref = categoryHref(name);
-    tile.innerHTML = `<div class="code">${code}</div><a href="${catHref}" class="cname cname-link"><div class="cname">${name}</div></a>${countBadge(n)}<button type="button" class="cat-toggle" aria-label="Toggle sub-categories">+</button>`;
-    const tileLink = tile.querySelector('.cname-link');
-    if(tileLink){ tileLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); navigateToProduct({type:'category', value:name}); }); }
-    const toggleBtn = tile.querySelector('.cat-toggle');
-    toggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isExpanded = tile.classList.contains('expanded');
-      const existingList = tile.querySelector('.cat-subcats');
-      if(existingList) existingList.remove();
-      if(isExpanded){
-        tile.classList.remove('expanded');
-        toggleBtn.textContent = '+';
-        return;
-      }
-      tile.classList.add('expanded');
-      toggleBtn.textContent = '\u2212';
-      const items = subcategoryItemsForCategory(name);
-      const list = document.createElement('ul');
-      list.className = 'cat-subcats';
-      if(items.length === 0){
-        list.innerHTML = '<li><a>Items added soon</a></li>';
-      } else {
-        list.innerHTML = items.map(() => `<li><a></a></li>`).join('');
-        Array.from(list.querySelectorAll('a')).forEach((a, idx) => {
-          a.textContent = items[idx].label;
-          const countSpan = document.createElement('span');
-          countSpan.className = 'n';
-          countSpan.textContent = items[idx].count;
-          a.appendChild(countSpan);
-          a.addEventListener('click', (ev) => { ev.stopPropagation(); navigateToProduct(items[idx].filter); });
-        });
-      }
-      tile.appendChild(list);
-    });
-    tile.addEventListener('click', () => navigateToProduct({type:'category', value:name}));
-    grid.appendChild(tile);
-  });
 
   const brands = ["Brahma","Cofi","Danfoss","Dungs","Elektrogas","Honeywell Eclipse","Honeywell Elster","Honeywell Kromschröder","Honeywell Maxon","Honeywell Technologies","Madas","R.K. Instruments & Controls","Siemens","Vanaz"];
   // Brand logos - add more here as they're supplied; brands without an entry fall back to text
@@ -6974,7 +7053,7 @@
 
   // ---- Desktop dropdown: category grid (default) + product/category search (on type) ----
   const navProductsGrid = document.getElementById('navProductsGrid');
-  categories.forEach(name => {
+  function renderCategoryRow(name){
     const n = categoryCount(name);
     const items = subcategoryItemsForCategory(name);
     const hasSub = items.length > 0;
@@ -6985,7 +7064,7 @@
       const a = document.createElement('a');
       a.href = categoryHref(name);
       a.className = 'nav-drop-link';
-      a.innerHTML = `<span>${name}</span>`;
+      a.innerHTML = `${categoryIconSVG(name)}<span>${name}</span>`;
       a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
       const toggle = document.createElement('button');
       toggle.type = 'button';
@@ -7021,10 +7100,30 @@
       const a = document.createElement('a');
       a.href = categoryHref(name);
       a.className = 'nav-drop-link';
-      a.innerHTML = `<span>${name}</span>`;
+      a.innerHTML = `${categoryIconSVG(name)}<span>${name}</span>`;
       a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
       navProductsGrid.appendChild(a);
     }
+  }
+  const navGroupedCats = new Set();
+  categoryGroups.forEach(group => {
+    const header = document.createElement('div');
+    header.className = 'nav-mega-group-header';
+    header.id = 'navGroup-' + group.key;
+    header.textContent = group.label;
+    navProductsGrid.appendChild(header);
+    group.items.forEach(name => {
+      if(categories.includes(name)){ navGroupedCats.add(name); renderCategoryRow(name); }
+    });
+  });
+  categories.forEach(name => { if(!navGroupedCats.has(name)) renderCategoryRow(name); });
+  document.querySelectorAll('.nav-mega-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.nav-mega-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = document.getElementById('navGroup-' + tab.dataset.group);
+      if(target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+    });
   });
   const navProductsFilter = document.getElementById('navProductsFilter');
   const navProductsResults = document.getElementById('navProductsResults');
