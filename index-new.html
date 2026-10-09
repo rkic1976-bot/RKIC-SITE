@@ -185,36 +185,16 @@
   }
   .nav-dropdown.open .nav-drop-panel.nav-mega{ display:block; }
   .nav-mega-inner{
-    display:flex; gap:40px; max-width:1180px; margin:0 auto;
-    padding:32px 20px 36px; max-height:calc(100vh - 110px);
+    max-width:1180px; margin:0 auto;
+    padding:28px 20px 36px; max-height:calc(100vh - 110px);
   }
-  .nav-mega-sidebar{
-    flex:0 0 220px; display:flex; flex-direction:column; gap:3px;
-    border-right:1px solid var(--line); padding-right:24px;
-  }
-  .nav-mega-sidebar-label{
-    font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.14em;
-    text-transform:uppercase; color:var(--text-dim); margin-bottom:10px;
-  }
-  .nav-mega-tab{
-    text-align:left; background:none; border:none; color:var(--text-soft);
-    font-family:'Barlow',sans-serif; font-size:0.86rem; padding:10px 12px; border-radius:6px;
-    cursor:pointer; line-height:1.3;
-  }
-  .nav-mega-tab:hover{ background:var(--steel); color:var(--ink); }
-  .nav-mega-tab.active{ background:var(--sage-pale); color:var(--sage-deep); font-weight:600; }
-  .nav-mega-main{ flex:1; min-width:0; }
+  .nav-mega-main{ width:100%; min-width:0; }
   .nav-mega .nav-drop-search{
     background:var(--paper); border:1px solid var(--line);
   }
   .nav-mega .nav-drop-search svg{ stroke:var(--sage-deep); }
   .nav-mega .nav-drop-search input{ color:var(--ink); }
   .nav-mega .nav-drop-search input::placeholder{ color:var(--text-dim); }
-  .nav-mega-group-header{
-    font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.12em;
-    text-transform:uppercase; color:var(--sage-deep); margin:22px 0 8px; grid-column:1 / -1;
-  }
-  .nav-mega-group-header:first-child{ margin-top:4px; }
   .nav-mega-group-panel{ display:contents; }
   .nav-mega .nav-drop-panel a, .nav-mega a.nav-drop-link{ color:var(--ink); }
   .nav-mega #navProductsGrid a:hover, .nav-mega #navProductsGrid .nav-cat-row:hover{ background:var(--steel); }
@@ -256,7 +236,7 @@
     max-height:60vh; overflow-y:auto;
   }
   #navProductsGrid > *{ min-width:0; }
-  .nav-mega #navProductsGrid{ grid-template-columns:repeat(3, 1fr); max-height:none; overflow-y:visible; }
+  .nav-mega #navProductsGrid{ grid-template-columns:repeat(6, 1fr); gap:4px 16px; max-height:none; overflow-y:visible; }
   #navProductsGrid[hidden]{ display:none; }
   #navProductsGrid a{ font-size:0.76rem; padding:7px 6px; }
   .nav-cat-caret{ display:inline-block; color:var(--sage-deep); font-size:1rem; font-weight:800; line-height:1; opacity:1; transition:transform 0.2s ease; }
@@ -857,13 +837,6 @@
         <button class="nav-drop-btn">Products <span class="chev">⌄</span></button>
         <div class="nav-drop-panel nav-mega" id="navProductsPanel">
           <div class="nav-mega-inner">
-            <div class="nav-mega-sidebar">
-              <div class="nav-mega-sidebar-label">Browse Categories</div>
-              <button type="button" class="nav-mega-tab active" data-group="valves">Valves &amp; Flow Control</button>
-              <button type="button" class="nav-mega-tab" data-group="ignition">Ignition Components</button>
-              <button type="button" class="nav-mega-tab" data-group="flame">Flame Safety &amp; Controls</button>
-              <button type="button" class="nav-mega-tab" data-group="gastrain">Gas Train &amp; Measurement</button>
-            </div>
             <div class="nav-mega-main">
               <div class="nav-drop-search">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -7107,33 +7080,8 @@
       container.appendChild(a);
     }
   }
-  // All groups are listed together (full list, like before); sidebar tabs just
-  // jump/scroll to that group's section instead of hiding the others.
-  const navGroupedCats = new Set();
-  categoryGroups.forEach(group => {
-    const panel = document.createElement('div');
-    panel.className = 'nav-mega-group-panel';
-    panel.dataset.group = group.key;
-    const header = document.createElement('div');
-    header.className = 'nav-mega-group-header';
-    header.id = 'navGroup-' + group.key;
-    header.textContent = group.label;
-    panel.appendChild(header);
-    group.items.forEach(name => {
-      if(categories.includes(name)){ navGroupedCats.add(name); renderCategoryRow(name, panel); }
-    });
-    navProductsGrid.appendChild(panel);
-  });
-  categories.forEach(name => { if(!navGroupedCats.has(name)) renderCategoryRow(name); });
-  document.querySelectorAll('.nav-mega-tab').forEach(tab => {
-    tab.addEventListener('click', (e) => {
-      e.stopPropagation();
-      document.querySelectorAll('.nav-mega-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const target = document.getElementById('navGroup-' + tab.dataset.group);
-      if(target) target.scrollIntoView({ behavior:'smooth', block:'start' });
-    });
-  });
+  // Flat alphabetical category list, full-width edge-to-edge (no sidebar/groups).
+  categories.slice().sort((a, b) => a.localeCompare(b)).forEach(name => renderCategoryRow(name));
   const navProductsFilter = document.getElementById('navProductsFilter');
   const navProductsResults = document.getElementById('navProductsResults');
   function renderNavProductResults(rawQuery){
