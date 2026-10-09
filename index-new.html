@@ -215,6 +215,8 @@
     text-transform:uppercase; color:var(--sage-deep); margin:22px 0 8px; grid-column:1 / -1;
   }
   .nav-mega-group-header:first-child{ margin-top:4px; }
+  .nav-mega-group-panel{ display:none; }
+  .nav-mega-group-panel.active{ display:contents; }
   .nav-mega .nav-drop-panel a, .nav-mega a.nav-drop-link{ color:var(--ink); }
   .nav-mega #navProductsGrid a:hover, .nav-mega #navProductsGrid .nav-cat-row:hover{ background:var(--steel); }
   .nav-mega .nav-cat-icon{ width:16px; height:16px; flex:0 0 auto; color:var(--sage-deep); margin-right:9px; }
@@ -7053,7 +7055,8 @@
 
   // ---- Desktop dropdown: category grid (default) + product/category search (on type) ----
   const navProductsGrid = document.getElementById('navProductsGrid');
-  function renderCategoryRow(name){
+  function renderCategoryRow(name, container){
+    container = container || navProductsGrid;
     const n = categoryCount(name);
     const items = subcategoryItemsForCategory(name);
     const hasSub = items.length > 0;
@@ -7094,35 +7097,43 @@
       });
       row.appendChild(a);
       row.appendChild(toggle);
-      navProductsGrid.appendChild(row);
-      navProductsGrid.appendChild(subsRow);
+      container.appendChild(row);
+      container.appendChild(subsRow);
     } else {
       const a = document.createElement('a');
       a.href = categoryHref(name);
       a.className = 'nav-drop-link';
       a.innerHTML = `${categoryIconSVG(name)}<span>${name}</span>`;
       a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
-      navProductsGrid.appendChild(a);
+      container.appendChild(a);
     }
   }
+  // Each sidebar group gets its own panel; only the active group's categories are shown
+  // at once, so the dropdown stays short instead of listing all 30 categories together.
   const navGroupedCats = new Set();
-  categoryGroups.forEach(group => {
+  categoryGroups.forEach((group, idx) => {
+    const panel = document.createElement('div');
+    panel.className = 'nav-mega-group-panel' + (idx === 0 ? ' active' : '');
+    panel.dataset.group = group.key;
     const header = document.createElement('div');
     header.className = 'nav-mega-group-header';
     header.id = 'navGroup-' + group.key;
     header.textContent = group.label;
-    navProductsGrid.appendChild(header);
+    panel.appendChild(header);
     group.items.forEach(name => {
-      if(categories.includes(name)){ navGroupedCats.add(name); renderCategoryRow(name); }
+      if(categories.includes(name)){ navGroupedCats.add(name); renderCategoryRow(name, panel); }
     });
+    navProductsGrid.appendChild(panel);
   });
   categories.forEach(name => { if(!navGroupedCats.has(name)) renderCategoryRow(name); });
   document.querySelectorAll('.nav-mega-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
+    tab.addEventListener('click', (e) => {
+      e.stopPropagation();
       document.querySelectorAll('.nav-mega-tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      const target = document.getElementById('navGroup-' + tab.dataset.group);
-      if(target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+      document.querySelectorAll('.nav-mega-group-panel').forEach(p => {
+        p.classList.toggle('active', p.dataset.group === tab.dataset.group);
+      });
     });
   });
   const navProductsFilter = document.getElementById('navProductsFilter');
