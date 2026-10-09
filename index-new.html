@@ -215,8 +215,7 @@
     text-transform:uppercase; color:var(--sage-deep); margin:22px 0 8px; grid-column:1 / -1;
   }
   .nav-mega-group-header:first-child{ margin-top:4px; }
-  .nav-mega-group-panel{ display:none; }
-  .nav-mega-group-panel.active{ display:contents; }
+  .nav-mega-group-panel{ display:contents; }
   .nav-mega .nav-drop-panel a, .nav-mega a.nav-drop-link{ color:var(--ink); }
   .nav-mega #navProductsGrid a:hover, .nav-mega #navProductsGrid .nav-cat-row:hover{ background:var(--steel); }
   .nav-mega .nav-cat-icon{ width:16px; height:16px; flex:0 0 auto; color:var(--sage-deep); margin-right:9px; }
@@ -7108,12 +7107,12 @@
       container.appendChild(a);
     }
   }
-  // Each sidebar group gets its own panel; only the active group's categories are shown
-  // at once, so the dropdown stays short instead of listing all 30 categories together.
+  // All groups are listed together (full list, like before); sidebar tabs just
+  // jump/scroll to that group's section instead of hiding the others.
   const navGroupedCats = new Set();
-  categoryGroups.forEach((group, idx) => {
+  categoryGroups.forEach(group => {
     const panel = document.createElement('div');
-    panel.className = 'nav-mega-group-panel' + (idx === 0 ? ' active' : '');
+    panel.className = 'nav-mega-group-panel';
     panel.dataset.group = group.key;
     const header = document.createElement('div');
     header.className = 'nav-mega-group-header';
@@ -7131,9 +7130,8 @@
       e.stopPropagation();
       document.querySelectorAll('.nav-mega-tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      document.querySelectorAll('.nav-mega-group-panel').forEach(p => {
-        p.classList.toggle('active', p.dataset.group === tab.dataset.group);
-      });
+      const target = document.getElementById('navGroup-' + tab.dataset.group);
+      if(target) target.scrollIntoView({ behavior:'smooth', block:'start' });
     });
   });
   const navProductsFilter = document.getElementById('navProductsFilter');
