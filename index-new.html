@@ -257,6 +257,12 @@
   #navProductsResults{ margin:0 auto; max-width:460px; max-height:56vh; }
   #navProductsResults a{ font-size:0.83rem; padding:9px 6px; }
   #navProductsResults .search-kicker{ padding-top:8px; }
+  .nav-mega #navProductsResults{
+    max-width:900px; max-height:60vh; overflow-y:auto;
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:0 28px; align-content:start;
+  }
+  .nav-mega #navProductsResults .search-kicker{ grid-column:1 / -1; }
+  .nav-mega #navProductsResults .search-empty{ grid-column:1 / -1; }
   .nav-drop-hint{ padding:16px 8px; font-size:0.82rem; color:var(--text-dim); line-height:1.5; text-align:center; }
 
   /* mobile drawer */
