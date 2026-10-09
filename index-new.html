@@ -617,13 +617,13 @@
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 60px,#000 calc(100% - 60px),transparent 100%);
     mask-image:linear-gradient(90deg,transparent 0,#000 60px,#000 calc(100% - 60px),transparent 100%);
   }
-  .clients-track{ display:flex; align-items:center; gap:44px; width:max-content; animation:clientsScroll 42s linear infinite; }
+  .clients-track{ display:flex; align-items:center; gap:20px; width:max-content; animation:clientsScroll 42s linear infinite; }
   .clients-marquee:hover .clients-track{ animation-play-state:paused; }
   .clients-track img{
-    height:52px; width:150px; object-fit:contain; object-position:center; flex:0 0 auto;
+    height:76px; width:200px; object-fit:contain; object-position:center; flex:0 0 auto;
   }
   @keyframes clientsScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  @media (max-width:640px){ .clients-track img{ height:40px; width:112px; } .clients-track{ gap:30px; } }
+  @media (max-width:640px){ .clients-track img{ height:56px; width:150px; } .clients-track{ gap:16px; } }
   @media (prefers-reduced-motion: reduce){ .clients-track{ animation:none; } }
 
   /* ---------- CONTACT / FOOTER (light sage panel) ---------- */
