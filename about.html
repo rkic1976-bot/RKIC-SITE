@@ -569,6 +569,10 @@
   .cf-field input[aria-invalid="true"], .cf-field textarea[aria-invalid="true"]{ border-color:#c0392b; }
   .cf-field input[type="file"]{ padding:8px 10px; font-size:0.86rem; cursor:pointer; }
   .cf-field .cf-hint{ display:block; margin-top:4px; font-size:0.76rem; color:var(--text-dim); }
+  .cf-field-note{ padding:12px 14px; background:var(--paper); border:1px solid var(--line); border-radius:4px; }
+  .cf-field-note .cf-hint{ margin-top:0; }
+  .cf-field-note .cf-hint a{ color:var(--sage-deep); font-weight:600; text-decoration:none; }
+  .cf-field-note .cf-hint a:hover{ text-decoration:underline; }
   .cf-field textarea{ min-height:92px; resize:vertical; }
   .cf-field-err{ display:block; margin-top:5px; font-size:0.78rem; color:#c0392b; }
   .cf-field-hint{ display:block; margin-top:6px; font-size:0.76rem; color:var(--text-dim); }
@@ -1045,7 +1049,7 @@
     <div class="contact-form-col">
       <h3>Send an Enquiry</h3>
       <p>Fill this in and our technical desk will get back to you directly.</p>
-      <form id="cfForm" action="https://formspree.io/f/mppznvnq" method="POST" enctype="multipart/form-data">
+      <form id="cfForm" action="https://formspree.io/f/mppznvnq" method="POST">
         <div class="cf-field">
           <label for="cfName">Name <span class="cf-req">*</span></label>
           <input type="text" id="cfName" name="name" required autocomplete="name" data-fs-field>
@@ -1065,10 +1069,8 @@
           <label for="cfProduct">Product / Part No. (if known)</label>
           <input type="text" id="cfProduct" name="product" autocomplete="off" data-fs-field>
         </div>
-        <div class="cf-field">
-          <label for="cfAttachment">Attach Drawing / BOQ (optional)</label>
-          <input type="file" id="cfAttachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx,.dwg" data-fs-field>
-          <span class="cf-hint">PDF, image, Word, Excel or DWG — up to 10MB.</span>
+        <div class="cf-field cf-field-note">
+          <span class="cf-hint">Have a drawing or BOQ to share? Send it on <a href="https://wa.me/919824136145?text=Hello%20RKIC%2C%20I%20am%20looking%20for%20burner%2Fgas%20train%20components.%20Please%20assist." target="_blank" rel="noopener">WhatsApp</a> or email it to <a href="mailto:rkic1976@gmail.com">rkic1976@gmail.com</a> along with your enquiry.</span>
         </div>
         <div class="cf-field">
           <label for="cfMessage">Message <span class="cf-req">*</span></label>
