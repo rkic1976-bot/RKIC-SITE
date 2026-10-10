@@ -709,9 +709,14 @@
   }
   .fs-slide{
     position:absolute;inset:0;display:flex;opacity:0;transform:translateY(55px);
-    transition:opacity .7s ease, transform .8s cubic-bezier(.22,1,.36,1);pointer-events:none;
+    transition:opacity .4s ease;pointer-events:none;
   }
-  .fs-slide.active{opacity:1;transform:translateY(0);pointer-events:auto;}
+  /* Incoming slide waits until the outgoing one has fully faded (.4s) before it starts
+     appearing, so the two slides' text never overlap/garble mid-transition. */
+  .fs-slide.active{
+    opacity:1;transform:translateY(0);pointer-events:auto;
+    transition:opacity .4s ease .4s, transform .8s cubic-bezier(.22,1,.36,1) .4s;
+  }
   @media (max-width:860px){ .fs-slide{flex-direction:column;} }
   @media (max-width:860px){
     .flowslider{ height:auto; min-height:660px; max-height:740px; }
