@@ -6966,6 +6966,23 @@
   // Matches the slugify() used by the brand-page generator (tmp/brands_gen/gen_brands.py) exactly.
   function brandSlug(name){ return name.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
   function brandHref(name){ return brandCount(name) > 0 ? 'brands/' + brandSlug(name) + '.html' : 'javascript:void(0)'; }
+  // When a real static page exists for this category/brand, let the link's own
+  // href do the navigating (full page load, clean crawlable URL like
+  // categories/uv-flame-detectors.html) instead of intercepting the click for
+  // the in-page SPA hash view. Only categories/brands with zero products (no
+  // standalone page yet) fall back to the old in-page #/category/... view.
+  function categoryClick(e, name, cleanup){
+    if(cleanup) cleanup();
+    if(categoryCount(name) > 0) return;
+    e.preventDefault();
+    navigateToProduct({type:'category', value:name});
+  }
+  function brandClick(e, b, cleanup){
+    if(cleanup) cleanup();
+    if(brandCount(b) > 0) return;
+    e.preventDefault();
+    navigateToProduct({type:'brand', value:b});
+  }
   function countBadge(n){ return n > 0 ? `<span class="stock-badge">${n} added</span>` : ''; }
   // Brands present within a category, with counts - used as a fallback "sub-category" list
   // for categories that don't have an explicit subcategoryMap entry.
@@ -7034,8 +7051,8 @@
         : b;
       chip.innerHTML = `<span class="mono">${String(i+1).padStart(2,'0')}</span><a href="${brandHref(b)}" class="brand-chip-link">${label}</a>${countBadge(n)}`;
       const chipLink = chip.querySelector('.brand-chip-link');
-      if(chipLink){ chipLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); navigateToProduct({type:'brand', value:b}); }); }
-      chip.addEventListener('click', () => navigateToProduct({type:'brand', value:b}));
+      if(chipLink){ chipLink.addEventListener('click', (e) => { e.stopPropagation(); brandClick(e, b); }); }
+      chip.addEventListener('click', (e) => { if(brandCount(b) > 0){ window.location.href = brandHref(b); return; } navigateToProduct({type:'brand', value:b}); });
       strip.appendChild(chip);
     });
   }
@@ -7057,7 +7074,7 @@
       a.href = categoryHref(name);
       a.className = 'nav-drop-link';
       a.innerHTML = `${categoryIconSVG(name)}<span>${name}</span>`;
-      a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
+      a.addEventListener('click', (e) => { categoryClick(e, name, () => document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'))); });
       const toggle = document.createElement('button');
       toggle.type = 'button';
       toggle.className = 'nav-cat-toggle';
@@ -7093,7 +7110,7 @@
       a.href = categoryHref(name);
       a.className = 'nav-drop-link';
       a.innerHTML = `${categoryIconSVG(name)}<span>${name}</span>`;
-      a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
+      a.addEventListener('click', (e) => { categoryClick(e, name, () => document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'))); });
       container.appendChild(a);
     }
   }
@@ -7136,7 +7153,7 @@
         const a = document.createElement('a');
         a.href = categoryHref(name);
         a.innerHTML = `<span>${name}</span>`;
-        a.addEventListener('click', (e) => { e.preventDefault(); navProductsFilter.value=''; document.querySelectorAll('.nav-dropdown.open').forEach(d=>d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
+        a.addEventListener('click', (e) => { categoryClick(e, name, () => { navProductsFilter.value=''; document.querySelectorAll('.nav-dropdown.open').forEach(d=>d.classList.remove('open')); }); });
         navProductsResults.appendChild(a);
       });
     }
@@ -7185,7 +7202,7 @@
     const bLogo = brandLogos[b];
     const bLabel = bLogo ? `<img src="${bLogo}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
     a.innerHTML = `${bLabel}`;
-    a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'brand', value:b}); });
+    a.addEventListener('click', (e) => { brandClick(e, b, () => document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'))); });
     navBrandsInner.appendChild(a);
   });
   navBrandsPanel.appendChild(navBrandsInner);
@@ -7252,7 +7269,7 @@
       a.href = categoryHref(name);
       a.className = 'drawer-sub-link';
       a.innerHTML = `<span>${name}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
-      a.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct({type:'category', value:name}); });
+      a.addEventListener('click', (e) => { categoryClick(e, name, () => drawer.classList.remove('open')); });
       drawerProductsSub.appendChild(a);
       return;
     }
@@ -7278,10 +7295,10 @@
     const subList = document.createElement('div');
     subList.className = 'drawer-subcat-list';
     const viewAll = document.createElement('a');
-    viewAll.href = 'javascript:void(0)';
+    viewAll.href = categoryHref(name);
     viewAll.className = 'drawer-sub-link drawer-sub-sublink drawer-subcat-viewall';
     viewAll.innerHTML = `<span>↳ View all ${name}</span>`;
-    viewAll.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct({type:'category', value:name}); });
+    viewAll.addEventListener('click', (e) => { categoryClick(e, name, () => drawer.classList.remove('open')); });
     subList.appendChild(viewAll);
     items.forEach(item => {
       const sa = document.createElement('a');
@@ -7303,7 +7320,7 @@
     const bLogo2 = brandLogos[b];
     const bLabel2 = bLogo2 ? `<img src="${bLogo2}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
     a.innerHTML = `${bLabel2}${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
-    a.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct({type:'brand', value:b}); });
+    a.addEventListener('click', (e) => { brandClick(e, b, () => drawer.classList.remove('open')); });
     drawerBrandsSub.appendChild(a);
   });
 
@@ -7378,7 +7395,7 @@
         const a = document.createElement('a');
         a.href = categoryHref(name);
         a.innerHTML = `<span>${name}</span><span class="code">RK-${String(idx+1).padStart(2,'0')}</span>`;
-        a.addEventListener('click', (e) => { e.preventDefault(); closeSearch(); navigateToProduct({type:'category', value:name}); });
+        a.addEventListener('click', (e) => { categoryClick(e, name, closeSearch); });
         searchResults.appendChild(a);
       });
     }
