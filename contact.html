@@ -49,8 +49,11 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 @media (max-width:560px){ .topbar .wrap{ gap:14px; } }
 .nav-inner{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px 20px; padding:14px 20px; position:relative; }
 .nav-links{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; font-size:0.86rem; color:var(--text-dim); }
-.nav-links > a{ text-decoration:none; color:inherit; }
+.nav-links > a{ display:flex; align-items:center; gap:6px; text-decoration:none; color:inherit; }
 .nav-links > a:hover{ color:var(--ink); }
+.nav-links .nav-drop-btn{ color:var(--text-dim); font-size:0.86rem; }
+.nav-links .nav-drop-btn:hover{ color:var(--ink); }
+.nav-ic{ width:15px; height:15px; flex:0 0 auto; color:var(--sage-deep); }
 .nav-cta{ background:var(--ink); color:var(--paper); padding:9px 16px; border-radius:2px; font-size:0.82rem; font-weight:600; text-decoration:none; white-space:nowrap; }
 .search-btn{ background:none; border:1px solid var(--line); color:var(--ink); width:38px; height:38px; border-radius:4px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
 .search-btn svg{ width:17px; height:17px; }
@@ -134,6 +137,43 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 #navBrandsPanel .nav-drop-brand-name{
   flex:0 0 auto; width:100%; margin-left:0; white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:break-word;
 }
+/* ===== Header v2 — site-wide nav parity with index.html (10 Oct 2026) ===== */
+#navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{
+  position:fixed; top:115px; left:0; right:0; width:100vw; transform:none;
+  max-width:none; min-width:0; border-radius:0; border:none;
+  border-top:1px solid var(--line); z-index:65;
+  background:#fff; box-shadow:0 24px 48px rgba(51,65,78,0.18);
+  padding:0; max-height:none; overflow:visible;
+}
+.nav-dropdown.open #navProductsPanel.nav-mega{ display:block; }
+.nav-dropdown.open #navBrandsPanel.nav-mega{ display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 10px; padding:12px; }
+.nav-mega-inner{
+  position:relative; max-width:1180px; margin:0 auto;
+  padding:28px 20px 36px; max-height:calc(100vh - 110px);
+  overflow-y:auto; -webkit-overflow-scrolling:touch;
+}
+.nav-mega-close{
+  position:absolute; top:14px; right:16px; z-index:2;
+  width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
+  background:#fff; color:var(--ink); font-size:1rem; line-height:1; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+.nav-mega-close:hover{ background:var(--steel); }
+.nav-mega-main{ width:100%; min-width:0; }
+.nav-mega .nav-drop-search{ background:var(--paper); border:1px solid var(--line); }
+.nav-mega .nav-cat-icon{ width:16px; height:16px; flex:0 0 auto; color:var(--sage-deep); margin-right:9px; }
+.nav-mega .nav-drop-link{ display:flex; align-items:center; justify-content:flex-start; gap:0; }
+.nav-mega .nav-drop-link span{ margin-right:auto; }
+.nav-mega #navProductsGrid{ grid-template-columns:repeat(6, 1fr); gap:4px 16px; max-height:none; overflow-y:visible; }
+.nav-mega #navProductsResults{
+  max-width:900px; max-height:60vh; overflow-y:auto;
+  display:grid; grid-template-columns:repeat(2, 1fr); gap:0 28px; align-content:start;
+}
+.nav-mega #navProductsResults[hidden]{ display:none; }
+.nav-mega #navProductsResults .search-kicker{ grid-column:1 / -1; }
+.nav-mega #navProductsResults .search-empty{ grid-column:1 / -1; }
+.nav-mega-simple.nav-mega{ padding:0; }
+@media (max-width:860px){ #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{ display:none !important; } }
 .drawer-sub-brand{ justify-content:flex-start !important; }
 .drawer-brand-logo{ height:16px; width:auto; max-width:80px; object-fit:contain; }
 /* Search overlay panel */
@@ -343,24 +383,31 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
       </span>
     </a>
     <nav class="nav-links">
-      <a href="index.html#home">Home</a>
-      <a href="about.html">About Us</a>
+      <a href="index.html#home"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>Home</a>
+      <a href="about.html"><svg class="nav-ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M5 3a1 1 0 0 1 1-1h11.2a1 1 0 0 1 .8 1.6l-3 4 3 4a1 1 0 0 1-.8 1.6H7v7a1 1 0 1 1-2 0V3Z"/></svg>About Us</a>
       <div class="nav-dropdown" id="navProducts">
-        <button type="button" class="nav-drop-btn">Products <span class="chev">⌄</span></button>
-        <div class="nav-drop-panel" id="navProductsPanel">
-          <div class="nav-drop-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            <input type="text" id="navProductsFilter" placeholder="Search products or categories…" autocomplete="off">
+        <button type="button" class="nav-drop-btn"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Products <span class="chev">⌄</span></button>
+        <div class="nav-drop-panel nav-mega" id="navProductsPanel">
+          <button type="button" class="nav-mega-close" aria-label="Close menu">✕</button>
+          <div class="nav-mega-inner">
+            <div class="nav-mega-main">
+              <div class="nav-drop-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                <input type="text" id="navProductsFilter" placeholder="Search products or categories…" autocomplete="off">
+              </div>
+              <div class="nav-drop-grid" id="navProductsGrid"></div>
+              <div class="nav-drop-results search-results" id="navProductsResults" hidden></div>
+            </div>
           </div>
-          <div class="nav-drop-grid" id="navProductsGrid"></div>
-          <div class="nav-drop-results search-results" id="navProductsResults" hidden></div>
         </div>
       </div>
       <div class="nav-dropdown" id="navBrands">
-        <button type="button" class="nav-drop-btn">Brands <span class="chev">⌄</span></button>
-        <div class="nav-drop-panel" id="navBrandsPanel"></div>
+        <button type="button" class="nav-drop-btn"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.9 6.3L21 9l-4.8 4.6 1.2 6.6L12 17l-5.4 3.2 1.2-6.6L3 9l6.1-.7L12 2Z"/></svg>Brands <span class="chev">⌄</span></button>
+        <div class="nav-drop-panel nav-mega nav-mega-simple" id="navBrandsPanel">
+          <button type="button" class="nav-mega-close" aria-label="Close menu">✕</button>
+        </div>
       </div>
-      <a href="contact.html">Contact Us</a>
+      <a href="contact.html"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="m4 6 8 7 8-7"/></svg>Contact Us</a>
     </nav>
     <button type="button" class="search-btn" id="pgSearchBtn" aria-label="Search products">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
