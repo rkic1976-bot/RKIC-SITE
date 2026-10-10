@@ -333,6 +333,17 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
 .nav-mega #navProductsResults .search-empty{ grid-column:1 / -1; }
 .nav-mega-simple.nav-mega{ padding:0; }
 @media (max-width:860px){ #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{ display:none !important; } }
+
+  /* ===== Brand filter chips (10 Oct 2026) ===== */
+  .cat-filter-bar{ display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 22px; }
+  .cat-filter-chip{
+    padding:7px 14px; border:1px solid var(--line); border-radius:20px;
+    background:#fff; color:var(--text-dim); font-size:0.82rem; font-weight:600;
+    cursor:pointer; transition:all 0.15s ease; font-family:'Barlow',sans-serif;
+  }
+  .cat-filter-chip:hover{ border-color:var(--sage-deep); color:var(--ink); }
+  .cat-filter-chip.active{ background:var(--ink); border-color:var(--ink); color:#fff; }
+  .related-card[hidden]{ display:none !important; }
 </style>
 </head>
 <body>
@@ -581,22 +592,26 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
   <h1 class="pg-title">Manual Ball Valves</h1>
   <p class="pg-desc">Brass ball valves for manually isolating gas lines and gas trains — nickel-plated brass body, chrome-plated brass ball, PTFE seats, NBR + Viton&reg; sealing. Available lever-operated (1/4&quot; to 4&quot;), T-handle butterfly-operated (1/4&quot; to 1&quot;), and with a hose nozzle/barb outlet (1/2&quot;), female BSP threaded inlet.</p>
   <p class="pg-desc" style="margin-top:-8px;"><strong>3 products</strong> currently in stock &middot; brands: R.K. Instruments &amp; Controls</p>
+  <div class="cat-filter-bar" id="catFilterBar">
+      <button type="button" class="cat-filter-chip active" data-brand="all">All Brands</button>
+      <button type="button" class="cat-filter-chip" data-brand="R.K. Instruments &amp; Controls">R.K. Instruments &amp; Controls</button>
+    </div>
   <div class="related-grid" style="margin-top:24px;">
     <div class="cat-lightbox" id="catLightbox">
       <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
       <img src="" alt="">
     </div>
-    <a href="../products/rkic-gas-ball-valve.html" class="related-card">
+    <a href="../products/rkic-gas-ball-valve.html" class="related-card" data-brand="R.K. Instruments &amp; Controls">
   <div class="related-thumb"><img src="../images/thumbs/rkic-gas-ball-valve-thumb.jpg" alt="Gas Ball Valve" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/rkic-gas-ball-valve-large.jpg" data-zoom-alt="Gas Ball Valve" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Gas Ball Valve</div>
   <div class="related-code">R.K. Instruments &amp; Controls &middot; 1/4&quot; to 4&quot; (DN8&ndash;DN100)</div>
 </a>
-    <a href="../products/rkic-ball-valve-t-type.html" class="related-card">
+    <a href="../products/rkic-ball-valve-t-type.html" class="related-card" data-brand="R.K. Instruments &amp; Controls">
   <div class="related-thumb"><img src="../images/thumbs/rkic-ball-valve-t-type-thumb.jpg" alt="Ball Valve Butterfly T-Type" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/rkic-ball-valve-t-type-large.jpg" data-zoom-alt="Ball Valve Butterfly T-Type" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Ball Valve Butterfly T-Type</div>
   <div class="related-code">R.K. Instruments &amp; Controls &middot; 1/4&quot; to 1&quot; (DN8&ndash;DN25)</div>
 </a>
-    <a href="../products/rkic-gas-nozzle-valve.html" class="related-card">
+    <a href="../products/rkic-gas-nozzle-valve.html" class="related-card" data-brand="R.K. Instruments &amp; Controls">
   <div class="related-thumb"><img src="../images/thumbs/rkic-gas-nozzle-valve-thumb.jpg" alt="Gas Nozzle Valve 1/2&quot; (15 mm)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/rkic-gas-nozzle-valve-large.jpg" data-zoom-alt="Gas Nozzle Valve 1/2&quot; (15 mm)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Gas Nozzle Valve 1/2&quot; (15 mm)</div>
   <div class="related-code">R.K. Instruments &amp; Controls &middot; 1/2&quot; (15 mm / DN15)</div>
@@ -687,6 +702,24 @@ document.addEventListener('DOMContentLoaded', function(){
   if (closeBtn) closeBtn.addEventListener('click', closeBox);
   lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeBox(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeBox(); });
+})();
+</script>
+<script>
+(function(){
+  var filterBar = document.getElementById('catFilterBar');
+  if(!filterBar) return;
+  var chips = filterBar.querySelectorAll('.cat-filter-chip');
+  var cards = document.querySelectorAll('.related-card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      var brand = chip.getAttribute('data-brand');
+      cards.forEach(function(card){
+        card.hidden = !(brand === 'all' || card.getAttribute('data-brand') === brand);
+      });
+    });
+  });
 })();
 </script>
 </body>

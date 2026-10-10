@@ -333,6 +333,17 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
 .nav-mega #navProductsResults .search-empty{ grid-column:1 / -1; }
 .nav-mega-simple.nav-mega{ padding:0; }
 @media (max-width:860px){ #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{ display:none !important; } }
+
+  /* ===== Brand filter chips (10 Oct 2026) ===== */
+  .cat-filter-bar{ display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 22px; }
+  .cat-filter-chip{
+    padding:7px 14px; border:1px solid var(--line); border-radius:20px;
+    background:#fff; color:var(--text-dim); font-size:0.82rem; font-weight:600;
+    cursor:pointer; transition:all 0.15s ease; font-family:'Barlow',sans-serif;
+  }
+  .cat-filter-chip:hover{ border-color:var(--sage-deep); color:var(--ink); }
+  .cat-filter-chip.active{ background:var(--ink); border-color:var(--ink); color:#fff; }
+  .related-card[hidden]{ display:none !important; }
 </style>
 </head>
 <body>
@@ -581,17 +592,21 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
   <h1 class="pg-title">Slam Shut-Off Valves</h1>
   <p class="pg-desc">Slam shut-off valves are automatic over-pressure safety devices installed immediately after the filter and before the pressure regulator in a gas train. They remain normally open, and shut the gas supply instantly if the regulator’s outlet pressure exceeds a set limit, protecting downstream equipment. RKIC supplies the Vanaz slam shut-off valve range.</p>
   <p class="pg-desc" style="margin-top:-8px;"><strong>2 products</strong> currently in stock &middot; brands: Vanaz</p>
+  <div class="cat-filter-bar" id="catFilterBar">
+      <button type="button" class="cat-filter-chip active" data-brand="all">All Brands</button>
+      <button type="button" class="cat-filter-chip" data-brand="Vanaz">Vanaz</button>
+    </div>
   <div class="related-grid" style="margin-top:24px;">
     <div class="cat-lightbox" id="catLightbox">
       <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
       <img src="" alt="">
     </div>
-    <a href="../products/vanaz-v4321.html" class="related-card">
+    <a href="../products/vanaz-v4321.html" class="related-card" data-brand="Vanaz">
   <div class="related-thumb"><img src="../images/thumbs/vanaz-v4321-thumb.jpg" alt="Vanaz Slam Shut-Off Valve V4321" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-v4321-large.jpg" data-zoom-alt="Vanaz Slam Shut-Off Valve V4321" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz Slam Shut-Off Valve V4321</div>
   <div class="related-code">Vanaz &middot; Code V4321</div>
 </a>
-    <a href="../products/vanaz-v4325.html" class="related-card">
+    <a href="../products/vanaz-v4325.html" class="related-card" data-brand="Vanaz">
   <div class="related-thumb"><img src="../images/thumbs/vanaz-v4325-thumb.jpg" alt="Vanaz Slam Shut-Off Valve V4325 / V4325 II" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/vanaz-v4325-large.jpg" data-zoom-alt="Vanaz Slam Shut-Off Valve V4325 / V4325 II" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Vanaz Slam Shut-Off Valve V4325 / V4325 II</div>
   <div class="related-code">Vanaz &middot; Code V4325 / V4325 II</div>
@@ -682,6 +697,24 @@ document.addEventListener('DOMContentLoaded', function(){
   if (closeBtn) closeBtn.addEventListener('click', closeBox);
   lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeBox(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeBox(); });
+})();
+</script>
+<script>
+(function(){
+  var filterBar = document.getElementById('catFilterBar');
+  if(!filterBar) return;
+  var chips = filterBar.querySelectorAll('.cat-filter-chip');
+  var cards = document.querySelectorAll('.related-card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      var brand = chip.getAttribute('data-brand');
+      cards.forEach(function(card){
+        card.hidden = !(brand === 'all' || card.getAttribute('data-brand') === brand);
+      });
+    });
+  });
 })();
 </script>
 </body>

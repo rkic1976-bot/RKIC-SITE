@@ -333,6 +333,17 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
 .nav-mega #navProductsResults .search-empty{ grid-column:1 / -1; }
 .nav-mega-simple.nav-mega{ padding:0; }
 @media (max-width:860px){ #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{ display:none !important; } }
+
+  /* ===== Brand filter chips (10 Oct 2026) ===== */
+  .cat-filter-bar{ display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 22px; }
+  .cat-filter-chip{
+    padding:7px 14px; border:1px solid var(--line); border-radius:20px;
+    background:#fff; color:var(--text-dim); font-size:0.82rem; font-weight:600;
+    cursor:pointer; transition:all 0.15s ease; font-family:'Barlow',sans-serif;
+  }
+  .cat-filter-chip:hover{ border-color:var(--sage-deep); color:var(--ink); }
+  .cat-filter-chip.active{ background:var(--ink); border-color:var(--ink); color:#fff; }
+  .related-card[hidden]{ display:none !important; }
 </style>
 </head>
 <body>
@@ -581,37 +592,41 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
   <h1 class="pg-title">Ignition Electrodes</h1>
   <p class="pg-desc">Ignition electrodes carry the spark that lights a burner&#x27;s flame directly at the burner head. RKIC manufactures its own R.K. Instruments &amp; Controls ignition electrodes to Kanthal A1 wire specification.</p>
   <p class="pg-desc" style="margin-top:-8px;"><strong>6 products</strong> currently in stock &middot; brands: R.K. Instruments &amp; Controls</p>
+  <div class="cat-filter-bar" id="catFilterBar">
+      <button type="button" class="cat-filter-chip active" data-brand="all">All Brands</button>
+      <button type="button" class="cat-filter-chip" data-brand="R.K. Instruments &amp; Controls">R.K. Instruments &amp; Controls</button>
+    </div>
   <div class="related-grid" style="margin-top:24px;">
     <div class="cat-lightbox" id="catLightbox">
       <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
       <img src="" alt="">
     </div>
-    <a href="../products/rkic-ignition-electrode.html" class="related-card">
+    <a href="../products/rkic-ignition-electrode.html" class="related-card" data-brand="R.K. Instruments &amp; Controls">
   <div class="related-thumb"><img src="../images/thumbs/rkic-ignition-electrode-thumb.jpg" alt="Custom Ignition Electrode — Ignitor, Flame Rod &amp; Sensor Probe" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/rkic-ignition-electrode-large.jpg" data-zoom-alt="Custom Ignition Electrode — Ignitor, Flame Rod &amp; Sensor Probe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Custom Ignition Electrode — Ignitor, Flame Rod &amp; Sensor Probe</div>
   <div class="related-code">R.K. Instruments &amp; Controls &middot; Code Custom / Made to Order</div>
 </a>
-    <a href="../products/rkic-ignition-electrode-8x100x100mm.html" class="related-card">
+    <a href="../products/rkic-ignition-electrode-8x100x100mm.html" class="related-card" data-brand="R.K. Instruments &amp; Controls">
   <div class="related-thumb"><img src="../images/thumbs/rkic-ignition-electrode-8x100x100mm-thumb.jpg" alt="Ignition Electrode 8mm Insulator — 100mm x 100mm, Standard Stock" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/rkic-ignition-electrode-8x100x100mm-large.jpg" data-zoom-alt="Ignition Electrode 8mm Insulator — 100mm x 100mm, Standard Stock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Ignition Electrode 8mm Insulator — 100mm x 100mm, Standard Stock</div>
   <div class="related-code">R.K. Instruments &amp; Controls &middot; Code Standard Stock (8 x 100 x 100 mm)</div>
 </a>
-    <a href="../products/rkic-ignition-electrode-10x150x200mm.html" class="related-card">
+    <a href="../products/rkic-ignition-electrode-10x150x200mm.html" class="related-card" data-brand="R.K. Instruments &amp; Controls">
   <div class="related-thumb"><img src="../images/thumbs/rkic-ignition-electrode-10x150x200mm-thumb.jpg" alt="Ignition Electrode 10mm Insulator — 150mm x 200mm, Standard Stock" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/rkic-ignition-electrode-10x150x200mm-large.jpg" data-zoom-alt="Ignition Electrode 10mm Insulator — 150mm x 200mm, Standard Stock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Ignition Electrode 10mm Insulator — 150mm x 200mm, Standard Stock</div>
   <div class="related-code">R.K. Instruments &amp; Controls &middot; Code Standard Stock (10 x 150 x 200 mm)</div>
 </a>
-    <a href="../products/rkic-ignition-electrode-12x125x100mm.html" class="related-card">
+    <a href="../products/rkic-ignition-electrode-12x125x100mm.html" class="related-card" data-brand="R.K. Instruments &amp; Controls">
   <div class="related-thumb"><img src="../images/thumbs/rkic-ignition-electrode-12x125x100mm-thumb.jpg" alt="Ignition Electrode 12mm Insulator — 125mm x 100mm, Standard Stock" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/rkic-ignition-electrode-12x125x100mm-large.jpg" data-zoom-alt="Ignition Electrode 12mm Insulator — 125mm x 100mm, Standard Stock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Ignition Electrode 12mm Insulator — 125mm x 100mm, Standard Stock</div>
   <div class="related-code">R.K. Instruments &amp; Controls &middot; Code Standard Stock (12 x 125 x 100 mm)</div>
 </a>
-    <a href="../products/rkic-ignition-electrode-14x200x200mm.html" class="related-card">
+    <a href="../products/rkic-ignition-electrode-14x200x200mm.html" class="related-card" data-brand="R.K. Instruments &amp; Controls">
   <div class="related-thumb"><img src="../images/thumbs/rkic-ignition-electrode-14x200x200mm-thumb.jpg" alt="Ignition Electrode 14mm Insulator — 200mm x 200mm, Standard Stock" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/rkic-ignition-electrode-14x200x200mm-large.jpg" data-zoom-alt="Ignition Electrode 14mm Insulator — 200mm x 200mm, Standard Stock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Ignition Electrode 14mm Insulator — 200mm x 200mm, Standard Stock</div>
   <div class="related-code">R.K. Instruments &amp; Controls &middot; Code Standard Stock (14 x 200 x 200 mm)</div>
 </a>
-<a href="../products/rkic-spark-ignition-electrode-200mm.html" class="related-card">
+<a href="../products/rkic-spark-ignition-electrode-200mm.html" class="related-card" data-brand="R.K. Instruments &amp; Controls">
   <div class="related-thumb"><img src="../images/thumbs/rkic-spark-ignition-electrode-200mm-thumb.jpg" alt="Industrial Spark Ignition Electrode Assembly, 200mm" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/rkic-spark-ignition-electrode-200mm-large.jpg" data-zoom-alt="Industrial Spark Ignition Electrode Assembly, 200mm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Industrial Spark Ignition Electrode Assembly, 200mm</div>
   <div class="related-code">R.K. Instruments &amp; Controls</div>
@@ -702,6 +717,24 @@ document.addEventListener('DOMContentLoaded', function(){
   if (closeBtn) closeBtn.addEventListener('click', closeBox);
   lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeBox(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeBox(); });
+})();
+</script>
+<script>
+(function(){
+  var filterBar = document.getElementById('catFilterBar');
+  if(!filterBar) return;
+  var chips = filterBar.querySelectorAll('.cat-filter-chip');
+  var cards = document.querySelectorAll('.related-card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      var brand = chip.getAttribute('data-brand');
+      cards.forEach(function(card){
+        card.hidden = !(brand === 'all' || card.getAttribute('data-brand') === brand);
+      });
+    });
+  });
 })();
 </script>
 </body>

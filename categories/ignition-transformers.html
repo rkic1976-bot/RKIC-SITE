@@ -333,6 +333,17 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
 .nav-mega #navProductsResults .search-empty{ grid-column:1 / -1; }
 .nav-mega-simple.nav-mega{ padding:0; }
 @media (max-width:860px){ #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{ display:none !important; } }
+
+  /* ===== Brand filter chips (10 Oct 2026) ===== */
+  .cat-filter-bar{ display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 22px; }
+  .cat-filter-chip{
+    padding:7px 14px; border:1px solid var(--line); border-radius:20px;
+    background:#fff; color:var(--text-dim); font-size:0.82rem; font-weight:600;
+    cursor:pointer; transition:all 0.15s ease; font-family:'Barlow',sans-serif;
+  }
+  .cat-filter-chip:hover{ border-color:var(--sage-deep); color:var(--ink); }
+  .cat-filter-chip.active{ background:var(--ink); border-color:var(--ink); color:#fff; }
+  .related-card[hidden]{ display:none !important; }
 </style>
 </head>
 <body>
@@ -581,142 +592,150 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
   <h1 class="pg-title">Ignition Transformers</h1>
   <p class="pg-desc">An ignition transformer steps up mains voltage to the high voltage needed at the spark electrode to light a burner&#x27;s pilot or main flame. RKIC supplies ignition and modutrol transformers from Brahma, Honeywell Kromschröder, Honeywell Technologies, Cofi and Danfoss.</p>
   <p class="pg-desc" style="margin-top:-8px;"><strong>27 products</strong> currently in stock &middot; brands: Brahma, Cofi, Danfoss, Honeywell Kromschröder, Honeywell Technologies</p>
+  <div class="cat-filter-bar" id="catFilterBar">
+      <button type="button" class="cat-filter-chip active" data-brand="all">All Brands</button>
+      <button type="button" class="cat-filter-chip" data-brand="Brahma">Brahma</button>
+      <button type="button" class="cat-filter-chip" data-brand="Honeywell Kromschröder">Honeywell Kromschröder</button>
+      <button type="button" class="cat-filter-chip" data-brand="Honeywell Technologies">Honeywell Technologies</button>
+      <button type="button" class="cat-filter-chip" data-brand="Cofi">Cofi</button>
+      <button type="button" class="cat-filter-chip" data-brand="Danfoss">Danfoss</button>
+    </div>
   <div class="related-grid" style="margin-top:24px;">
     <div class="cat-lightbox" id="catLightbox">
       <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
       <img src="" alt="">
     </div>
-    <a href="../products/brahma-t8.html" class="related-card">
+    <a href="../products/brahma-t8.html" class="related-card" data-brand="Brahma">
   <div class="related-thumb"><img src="../images/thumbs/brahma-t8-thumb.jpg" alt="Brahma Ignition Transformer T8" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-t8-large.jpg" data-zoom-alt="Brahma Ignition Transformer T8" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Ignition Transformer T8</div>
   <div class="related-code">Brahma &middot; Code 15000081</div>
 </a>
-    <a href="../products/kromschroder-tzi.html" class="related-card">
+    <a href="../products/kromschroder-tzi.html" class="related-card" data-brand="Honeywell Kromschröder">
   <div class="related-thumb"><img src="../images/thumbs/kromschroder-tzi-thumb.jpg" alt="Kromschröder Ignition Transformer TZI 8-12/100WE" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/kromschroder-tzi-large.jpg" data-zoom-alt="Kromschröder Ignition Transformer TZI 8-12/100WE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Kromschröder Ignition Transformer TZI 8-12/100WE</div>
   <div class="related-code">Honeywell Kromschröder &middot; Code 84391170</div>
 </a>
-    <a href="../products/kromschroder-tzi-5-15-100we.html" class="related-card">
+    <a href="../products/kromschroder-tzi-5-15-100we.html" class="related-card" data-brand="Honeywell Kromschröder">
   <div class="related-thumb"><img src="../images/thumbs/kromschroder-tzi-5-15-100we-thumb.jpg" alt="Kromschröder Ignition Transformer TZI 5-15/100WE" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/kromschroder-tzi-5-15-100we-large.jpg" data-zoom-alt="Kromschröder Ignition Transformer TZI 5-15/100WE" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Kromschröder Ignition Transformer TZI 5-15/100WE</div>
   <div class="related-code">Honeywell Kromschröder &middot; Code 84391150</div>
 </a>
-    <a href="../products/brahma-tc2svcs.html" class="related-card">
+    <a href="../products/brahma-tc2svcs.html" class="related-card" data-brand="Brahma">
   <div class="related-thumb"><img src="../images/thumbs/brahma-tc2svcs-thumb.jpg" alt="Brahma Ignition Transformer TC2SVCS" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-tc2svcs-large.jpg" data-zoom-alt="Brahma Ignition Transformer TC2SVCS" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Ignition Transformer TC2SVCS</div>
   <div class="related-code">Brahma &middot; Code 15911350</div>
 </a>
-    <a href="../products/brahma-tc1svcs.html" class="related-card">
+    <a href="../products/brahma-tc1svcs.html" class="related-card" data-brand="Brahma">
   <div class="related-thumb"><img src="../images/thumbs/brahma-tc1svcs-thumb.jpg" alt="Brahma Ignition Transformer TC1SVCS" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-tc1svcs-large.jpg" data-zoom-alt="Brahma Ignition Transformer TC1SVCS" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Ignition Transformer TC1SVCS</div>
   <div class="related-code">Brahma &middot; Code 15911250</div>
 </a>
-    <a href="../products/brahma-tc1lvca.html" class="related-card">
+    <a href="../products/brahma-tc1lvca.html" class="related-card" data-brand="Brahma">
   <div class="related-thumb"><img src="../images/thumbs/brahma-tc1lvca-thumb.jpg" alt="Brahma Ignition Transformer TC1LVCA" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-tc1lvca-large.jpg" data-zoom-alt="Brahma Ignition Transformer TC1LVCA" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Ignition Transformer TC1LVCA</div>
   <div class="related-code">Brahma &middot; Code 15911000</div>
 </a>
-    <a href="../products/honeywell-50004263-001.html" class="related-card">
+    <a href="../products/honeywell-50004263-001.html" class="related-card" data-brand="Honeywell Technologies">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-50004263-001-thumb.jpg" alt="Honeywell Modutrol Transformer 50004263-001" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-50004263-001-large.jpg" data-zoom-alt="Honeywell Modutrol Transformer 50004263-001" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Modutrol Transformer 50004263-001</div>
   <div class="related-code">Honeywell Technologies &middot; Code 50004263-001</div>
 </a>
-    <a href="../products/cofi-tre820piso.html" class="related-card">
+    <a href="../products/cofi-tre820piso.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-tre820piso-thumb.jpg" alt="Cofi Ignition Transformer TRE820PISO" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-tre820piso-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRE820PISO" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRE820PISO</div>
   <div class="related-code">Cofi &middot; Code TRE820PISO</div>
 </a>
-    <a href="../products/cofi-trh2-30c.html" class="related-card">
+    <a href="../products/cofi-trh2-30c.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-trh2-30c-thumb.jpg" alt="Cofi Ignition Transformer TRH2-30C" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-trh2-30c-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRH2-30C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRH2-30C</div>
   <div class="related-code">Cofi &middot; Code TRH2-30C</div>
 </a>
-    <a href="../products/cofi-tre820.html" class="related-card">
+    <a href="../products/cofi-tre820.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-tre820-thumb.jpg" alt="Cofi Ignition Transformer TRE820" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-tre820-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRE820" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRE820</div>
   <div class="related-code">Cofi &middot; Code TRE820</div>
 </a>
-    <a href="../products/cofi-trk1-20cvd.html" class="related-card">
+    <a href="../products/cofi-trk1-20cvd.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-trk1-20cvd-thumb.jpg" alt="Cofi Ignition Transformer TRK1-20CVD" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-trk1-20cvd-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRK1-20CVD" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRK1-20CVD</div>
   <div class="related-code">Cofi &middot; Code TRK1-20CVD</div>
 </a>
-    <a href="../products/cofi-trg1020c.html" class="related-card">
+    <a href="../products/cofi-trg1020c.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-trg1020c-thumb.jpg" alt="Cofi Ignition Transformer TRG1020C" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-trg1020c-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRG1020C" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRG1020C</div>
   <div class="related-code">Cofi &middot; Code TRG1020C</div>
 </a>
-    <a href="../products/cofi-trs812pcisoh2.html" class="related-card">
+    <a href="../products/cofi-trs812pcisoh2.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-trs812pcisoh2-thumb.jpg" alt="Cofi Ignition Transformer TRS812PCISOH2" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-trs812pcisoh2-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRS812PCISOH2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRS812PCISOH2</div>
   <div class="related-code">Cofi &middot; Code TRS812PCISOH2</div>
 </a>
-    <a href="../products/cofi-tre820piso1.html" class="related-card">
+    <a href="../products/cofi-tre820piso1.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-tre820piso1-thumb.jpg" alt="Cofi Ignition Transformer TRE820PISO1" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-tre820piso1-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRE820PISO1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRE820PISO1</div>
   <div class="related-code">Cofi &middot; Code TRE820PISO1</div>
 </a>
-    <a href="../products/cofi-trs818pc-13.html" class="related-card">
+    <a href="../products/cofi-trs818pc-13.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-trs818pc-13-thumb.jpg" alt="Cofi Ignition Transformer TRS818PC/13" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-trs818pc-13-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRS818PC/13" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRS818PC/13</div>
   <div class="related-code">Cofi &middot; Code TRS818PC/13</div>
 </a>
-    <a href="../products/cofi-tre820piso4.html" class="related-card">
+    <a href="../products/cofi-tre820piso4.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-tre820piso4-thumb.jpg" alt="Cofi Ignition Transformer TRE820PISO4" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-tre820piso4-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRE820PISO4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRE820PISO4</div>
   <div class="related-code">Cofi &middot; Code TRE820PISO4</div>
 </a>
-    <a href="../products/cofi-tre820p.html" class="related-card">
+    <a href="../products/cofi-tre820p.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-tre820p-thumb.jpg" alt="Cofi Ignition Transformer TRE820P" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-tre820p-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRE820P" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRE820P</div>
   <div class="related-code">Cofi &middot; Code TRE820P</div>
 </a>
-    <a href="../products/cofi-trs830p-15.html" class="related-card">
+    <a href="../products/cofi-trs830p-15.html" class="related-card" data-brand="Cofi">
   <div class="related-thumb"><img src="../images/thumbs/cofi-trs830p-15-thumb.jpg" alt="Cofi Ignition Transformer TRS830P/15" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/cofi-trs830p-15-large.jpg" data-zoom-alt="Cofi Ignition Transformer TRS830P/15" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Cofi Ignition Transformer TRS830P/15</div>
   <div class="related-code">Cofi &middot; Code TRS830P/15</div>
 </a>
-    <a href="../products/brahma-t11-n.html" class="related-card">
+    <a href="../products/brahma-t11-n.html" class="related-card" data-brand="Brahma">
   <div class="related-thumb"><img src="../images/thumbs/brahma-t11-n-thumb.jpg" alt="Brahma Ignition Transformer T11/N" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-t11-n-large.jpg" data-zoom-alt="Brahma Ignition Transformer T11/N" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Ignition Transformer T11/N</div>
   <div class="related-code">Brahma &middot; Code 15099001</div>
 </a>
-    <a href="../products/brahma-t11-m.html" class="related-card">
+    <a href="../products/brahma-t11-m.html" class="related-card" data-brand="Brahma">
   <div class="related-thumb"><img src="../images/thumbs/brahma-t11-m-thumb.jpg" alt="Brahma Ignition Transformer T11/M" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/brahma-t11-m-large.jpg" data-zoom-alt="Brahma Ignition Transformer T11/M" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Brahma Ignition Transformer T11/M</div>
   <div class="related-code">Brahma &middot; Code 15093051</div>
 </a>
-    <a href="../products/danfoss-ebi4-cm.html" class="related-card">
+    <a href="../products/danfoss-ebi4-cm.html" class="related-card" data-brand="Danfoss">
   <div class="related-thumb"><img src="../images/thumbs/danfoss-ebi4-cm-thumb.jpg" alt="Danfoss EBI4 CM Ignition Transformer" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/danfoss-ebi4-cm-large.jpg" data-zoom-alt="Danfoss EBI4 CM Ignition Transformer" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Danfoss EBI4 CM Ignition Transformer</div>
   <div class="related-code">Danfoss &middot; Code 052F4034</div>
 </a>
-    <a href="../products/danfoss-ebi4-1p.html" class="related-card">
+    <a href="../products/danfoss-ebi4-1p.html" class="related-card" data-brand="Danfoss">
   <div class="related-thumb"><img src="../images/thumbs/danfoss-ebi4-1p-thumb.jpg" alt="Danfoss EBI4 1P Ignition Transformer" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/danfoss-ebi4-1p-large.jpg" data-zoom-alt="Danfoss EBI4 1P Ignition Transformer" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Danfoss EBI4 1P Ignition Transformer</div>
   <div class="related-code">Danfoss &middot; Code 052F4040</div>
 </a>
-    <a href="../products/danfoss-ebi4-m-s.html" class="related-card">
+    <a href="../products/danfoss-ebi4-m-s.html" class="related-card" data-brand="Danfoss">
   <div class="related-thumb"><img src="../images/thumbs/danfoss-ebi4-m-s-thumb.jpg" alt="Danfoss EBI4 M S Ignition Transformer" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/danfoss-ebi4-m-s-large.jpg" data-zoom-alt="Danfoss EBI4 M S Ignition Transformer" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Danfoss EBI4 M S Ignition Transformer</div>
   <div class="related-code">Danfoss &middot; Code 052F4045</div>
 </a>
-    <a href="../products/danfoss-ebi4-c1p.html" class="related-card">
+    <a href="../products/danfoss-ebi4-c1p.html" class="related-card" data-brand="Danfoss">
   <div class="related-thumb"><img src="../images/thumbs/danfoss-ebi4-c1p-thumb.jpg" alt="Danfoss EBI4 C1P Ignition Transformer" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/danfoss-ebi4-c1p-large.jpg" data-zoom-alt="Danfoss EBI4 C1P Ignition Transformer" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Danfoss EBI4 C1P Ignition Transformer</div>
   <div class="related-code">Danfoss &middot; Code 052F4036</div>
 </a>
-    <a href="../products/honeywell-et401a1.html" class="related-card">
+    <a href="../products/honeywell-et401a1.html" class="related-card" data-brand="Honeywell Technologies">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-et401a1-thumb.jpg" alt="Honeywell Ignition Transformer ET 401A1 (110-120V AC)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-et401a1-large.jpg" data-zoom-alt="Honeywell Ignition Transformer ET 401A1 (110-120V AC)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Ignition Transformer ET 401A1 (110-120V AC)</div>
   <div class="related-code">Honeywell Technologies &middot; Code ET 401A1</div>
 </a>
-    <a href="../products/honeywell-et401a.html" class="related-card">
+    <a href="../products/honeywell-et401a.html" class="related-card" data-brand="Honeywell Technologies">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-et401a-thumb.jpg" alt="Honeywell Ignition Transformer ET 401A (230V AC)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-et401a-large.jpg" data-zoom-alt="Honeywell Ignition Transformer ET 401A (230V AC)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Ignition Transformer ET 401A (230V AC)</div>
   <div class="related-code">Honeywell Technologies &middot; Code ET 401A</div>
 </a>
-    <a href="../products/honeywell-et402.html" class="related-card">
+    <a href="../products/honeywell-et402.html" class="related-card" data-brand="Honeywell Technologies">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-et402-thumb.jpg" alt="Honeywell Ignition Transformer ET 402" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-et402-large.jpg" data-zoom-alt="Honeywell Ignition Transformer ET 402" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Ignition Transformer ET 402</div>
   <div class="related-code">Honeywell Technologies &middot; Code ET 402</div>
@@ -807,6 +826,24 @@ document.addEventListener('DOMContentLoaded', function(){
   if (closeBtn) closeBtn.addEventListener('click', closeBox);
   lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeBox(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeBox(); });
+})();
+</script>
+<script>
+(function(){
+  var filterBar = document.getElementById('catFilterBar');
+  if(!filterBar) return;
+  var chips = filterBar.querySelectorAll('.cat-filter-chip');
+  var cards = document.querySelectorAll('.related-card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      var brand = chip.getAttribute('data-brand');
+      cards.forEach(function(card){
+        card.hidden = !(brand === 'all' || card.getAttribute('data-brand') === brand);
+      });
+    });
+  });
 })();
 </script>
 </body>

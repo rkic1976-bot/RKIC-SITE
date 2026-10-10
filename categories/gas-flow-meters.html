@@ -333,6 +333,17 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
 .nav-mega #navProductsResults .search-empty{ grid-column:1 / -1; }
 .nav-mega-simple.nav-mega{ padding:0; }
 @media (max-width:860px){ #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{ display:none !important; } }
+
+  /* ===== Brand filter chips (10 Oct 2026) ===== */
+  .cat-filter-bar{ display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 22px; }
+  .cat-filter-chip{
+    padding:7px 14px; border:1px solid var(--line); border-radius:20px;
+    background:#fff; color:var(--text-dim); font-size:0.82rem; font-weight:600;
+    cursor:pointer; transition:all 0.15s ease; font-family:'Barlow',sans-serif;
+  }
+  .cat-filter-chip:hover{ border-color:var(--sage-deep); color:var(--ink); }
+  .cat-filter-chip.active{ background:var(--ink); border-color:var(--ink); color:#fff; }
+  .related-card[hidden]{ display:none !important; }
 </style>
 </head>
 <body>
@@ -581,82 +592,87 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
   <h1 class="pg-title">Gas Flow Meters</h1>
   <p class="pg-desc">Gas flow meters measure the volume of fuel gas consumed by a plant or burner line, for billing, monitoring or balancing duty. RKIC supplies the Honeywell Elster range across diaphragm, turbine (quantometer) and RPD rotary gas meter types, DN32 to DN100 and beyond.</p>
   <p class="pg-desc" style="margin-top:-8px;"><strong>15 products</strong> currently in stock &middot; brands: Honeywell Elster, R.K. Instruments &amp; Controls</p>
+  <div class="cat-filter-bar" id="catFilterBar">
+      <button type="button" class="cat-filter-chip active" data-brand="all">All Brands</button>
+      <button type="button" class="cat-filter-chip" data-brand="Honeywell Elster">Honeywell Elster</button>
+      <button type="button" class="cat-filter-chip" data-brand="R.K. Instruments &amp; Controls">R.K. Instruments &amp; Controls</button>
+    </div>
   <div class="related-grid" style="margin-top:24px;">
     <div class="cat-lightbox" id="catLightbox">
       <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
       <img src="" alt="">
     </div>
-    <a href="../products/honeywell-elster-bk-g6m.html" class="related-card">
+    <a href="../products/honeywell-elster-bk-g6m.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-bk-g6m-thumb.jpg" alt="Honeywell Elster BK-G6M Diaphragm Gas Meter G6" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-bk-g6m-large.jpg" data-zoom-alt="Honeywell Elster BK-G6M Diaphragm Gas Meter G6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster BK-G6M Diaphragm Gas Meter G6</div>
   <div class="related-code">Honeywell Elster &middot; Code BK-G6M</div>
 </a>
-    <a href="../products/honeywell-elster-bk-g4m.html" class="related-card">
+    <a href="../products/honeywell-elster-bk-g4m.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-bk-g4m-thumb.jpg" alt="Honeywell Elster BK-G4M Diaphragm Gas Meter G4" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-bk-g4m-large.jpg" data-zoom-alt="Honeywell Elster BK-G4M Diaphragm Gas Meter G4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster BK-G4M Diaphragm Gas Meter G4</div>
   <div class="related-code">Honeywell Elster &middot; Code BK-G4M L</div>
 </a>
-    <a href="../products/honeywell-elster-bk-g1-6.html" class="related-card">
+    <a href="../products/honeywell-elster-bk-g1-6.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-bk-g1-6-thumb.jpg" alt="Honeywell Elster BK-G1.6 Diaphragm Gas Meter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-bk-g1-6-large.jpg" data-zoom-alt="Honeywell Elster BK-G1.6 Diaphragm Gas Meter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster BK-G1.6 Diaphragm Gas Meter</div>
   <div class="related-code">Honeywell Elster &middot; Code BK-G1.6</div>
 </a>
-    <a href="../products/honeywell-elster-bk-g16m.html" class="related-card">
+    <a href="../products/honeywell-elster-bk-g16m.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-bk-g16m-thumb.jpg" alt="Honeywell Elster BK-G16M Diaphragm Gas Meter G16" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-bk-g16m-large.jpg" data-zoom-alt="Honeywell Elster BK-G16M Diaphragm Gas Meter G16" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster BK-G16M Diaphragm Gas Meter G16</div>
   <div class="related-code">Honeywell Elster &middot; Code BK-G16M</div>
 </a>
-    <a href="../products/honeywell-elster-bk-g10m.html" class="related-card">
+    <a href="../products/honeywell-elster-bk-g10m.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-bk-g10m-thumb.jpg" alt="Honeywell Elster BK-G10M Diaphragm Gas Meter G10" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-bk-g10m-large.jpg" data-zoom-alt="Honeywell Elster BK-G10M Diaphragm Gas Meter G10" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster BK-G10M Diaphragm Gas Meter G10</div>
   <div class="related-code">Honeywell Elster &middot; Code 84056569</div>
 </a>
-    <a href="../products/honeywell-elster-bk-g25m.html" class="related-card">
+    <a href="../products/honeywell-elster-bk-g25m.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-bk-g25m-thumb.jpg" alt="Honeywell Elster BK-G25M Diaphragm Gas Meter G25" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-bk-g25m-large.jpg" data-zoom-alt="Honeywell Elster BK-G25M Diaphragm Gas Meter G25" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster BK-G25M Diaphragm Gas Meter G25</div>
   <div class="related-code">Honeywell Elster &middot; Code 84267716</div>
 </a>
-    <a href="../products/honeywell-elster-qa16-25.html" class="related-card">
+    <a href="../products/honeywell-elster-qa16-25.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-qa16-25-thumb.jpg" alt="Honeywell Elster Quantometer QA16 25 G I Turbine Gas Meter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-qa16-25-large.jpg" data-zoom-alt="Honeywell Elster Quantometer QA16 25 G I Turbine Gas Meter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster Quantometer QA16 25 G I Turbine Gas Meter</div>
   <div class="related-code">Honeywell Elster &middot; Code QA16 25 G I</div>
 </a>
-    <a href="../products/honeywell-elster-qa10-25.html" class="related-card">
+    <a href="../products/honeywell-elster-qa10-25.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-qa10-25-thumb.jpg" alt="Honeywell Elster Quantometer QA10 25 G I Turbine Gas Meter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-qa10-25-large.jpg" data-zoom-alt="Honeywell Elster Quantometer QA10 25 G I Turbine Gas Meter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster Quantometer QA10 25 G I Turbine Gas Meter</div>
   <div class="related-code">Honeywell Elster &middot; Code QA10 25 G I</div>
 </a>
-    <a href="../products/honeywell-elster-qa25-25.html" class="related-card">
+    <a href="../products/honeywell-elster-qa25-25.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-qa25-25-thumb.jpg" alt="Honeywell Elster Quantometer QA25 25 G I Turbine Gas Meter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-qa25-25-large.jpg" data-zoom-alt="Honeywell Elster Quantometer QA25 25 G I Turbine Gas Meter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster Quantometer QA25 25 G I Turbine Gas Meter</div>
   <div class="related-code">Honeywell Elster &middot; Code QA25 25 G I</div>
 </a>
-    <a href="../products/honeywell-elster-qa40.html" class="related-card">
+    <a href="../products/honeywell-elster-qa40.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-qa40-thumb.jpg" alt="Honeywell Elster Quantometer QA40 Turbine Gas Meter (DN25 / DN40)" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-qa40-large.jpg" data-zoom-alt="Honeywell Elster Quantometer QA40 Turbine Gas Meter (DN25 / DN40)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster Quantometer QA40 Turbine Gas Meter (DN25 / DN40)</div>
   <div class="related-code">Honeywell Elster &middot; Code QA40 25 G I / QA40 40 GF I</div>
 </a>
-    <a href="../products/honeywell-elster-qa65-50.html" class="related-card">
+    <a href="../products/honeywell-elster-qa65-50.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-qa65-50-thumb.jpg" alt="Honeywell Elster Quantometer QA65 50 Z I Turbine Gas Meter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-qa65-50-large.jpg" data-zoom-alt="Honeywell Elster Quantometer QA65 50 Z I Turbine Gas Meter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster Quantometer QA65 50 Z I Turbine Gas Meter</div>
   <div class="related-code">Honeywell Elster &middot; Code QA65 50 Z I</div>
 </a>
-    <a href="../products/honeywell-elster-qa100-80.html" class="related-card">
+    <a href="../products/honeywell-elster-qa100-80.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-qa100-80-thumb.jpg" alt="Honeywell Elster Quantometer QA100 80 Z I Turbine Gas Meter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-qa100-80-large.jpg" data-zoom-alt="Honeywell Elster Quantometer QA100 80 Z I Turbine Gas Meter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster Quantometer QA100 80 Z I Turbine Gas Meter</div>
   <div class="related-code">Honeywell Elster &middot; Code QA100 80 Z I</div>
 </a>
-    <a href="../products/honeywell-elster-qa160-80.html" class="related-card">
+    <a href="../products/honeywell-elster-qa160-80.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-qa160-80-thumb.jpg" alt="Honeywell Elster Quantometer QA160 80 Z I Turbine Gas Meter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-qa160-80-large.jpg" data-zoom-alt="Honeywell Elster Quantometer QA160 80 Z I Turbine Gas Meter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster Quantometer QA160 80 Z I Turbine Gas Meter</div>
   <div class="related-code">Honeywell Elster &middot; Code QA160 80 Z I</div>
 </a>
-    <a href="../products/honeywell-elster-rabo-g40-dn50.html" class="related-card">
+    <a href="../products/honeywell-elster-rabo-g40-dn50.html" class="related-card" data-brand="Honeywell Elster">
   <div class="related-thumb"><img src="../images/thumbs/honeywell-elster-rabo-g40-dn50-thumb.jpg" alt="Honeywell Elster RABO G40 DN50 Rotary Gas Meter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/honeywell-elster-rabo-g40-dn50-large.jpg" data-zoom-alt="Honeywell Elster RABO G40 DN50 Rotary Gas Meter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Honeywell Elster RABO G40 DN50 Rotary Gas Meter</div>
   <div class="related-code">Honeywell Elster &middot; Code RABO G40 DN50 CLASS150</div>
 </a>
-    <a href="../products/metrix-g4-lpg-gas-meter.html" class="related-card">
+    <a href="../products/metrix-g4-lpg-gas-meter.html" class="related-card" data-brand="R.K. Instruments &amp; Controls">
   <div class="related-thumb"><img src="../images/thumbs/metrix-g4-lpg-gas-meter-thumb.jpg" alt="Metrix G4 LPG High Pressure Diaphragm Gas Meter" loading="lazy"><span class="related-zoom-btn" data-zoom-src="../images/metrix-g4-lpg-gas-meter-large.jpg" data-zoom-alt="Metrix G4 LPG High Pressure Diaphragm Gas Meter" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
   <div class="related-name">Metrix G4 LPG High Pressure Diaphragm Gas Meter</div>
   <div class="related-code">R.K. Instruments &amp; Controls &middot; Code G4 LPG</div>
@@ -747,6 +763,24 @@ document.addEventListener('DOMContentLoaded', function(){
   if (closeBtn) closeBtn.addEventListener('click', closeBox);
   lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeBox(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeBox(); });
+})();
+</script>
+<script>
+(function(){
+  var filterBar = document.getElementById('catFilterBar');
+  if(!filterBar) return;
+  var chips = filterBar.querySelectorAll('.cat-filter-chip');
+  var cards = document.querySelectorAll('.related-card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      var brand = chip.getAttribute('data-brand');
+      cards.forEach(function(card){
+        card.hidden = !(brand === 'all' || card.getAttribute('data-brand') === brand);
+      });
+    });
+  });
 })();
 </script>
 </body>
