@@ -362,13 +362,9 @@
     position:fixed; right:22px; bottom:71px; z-index:80;
     width:56px; height:56px; border-radius:50%; background:#075E54;
     display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(7,94,84,0.4);
-    transition:opacity .2s ease, transform .2s ease;
   }
   .wa-float:hover{ background:#054C43; }
   .wa-float svg{ width:28px; height:28px; }
-  /* Hidden once the footer (which has its own WhatsApp icon) scrolls into view,
-     so the fixed floating button doesn't sit on top of the footer content. */
-  .wa-float.wa-float-hide{ opacity:0; transform:translateY(12px) scale(.9); pointer-events:none; }
 
   /* ---------- HERO (light sage block, no dark bg) ---------- */
   .hero{ position:relative; background:var(--steel); color:var(--ink); overflow:hidden; padding:88px 0 64px; }
@@ -1395,21 +1391,6 @@
 </a>
 
 <script>
-  // Hide the floating WhatsApp button once the footer scrolls into view so it
-  // never overlaps the footer's own content (map, social icons, copyright row).
-  (function(){
-    const waFloat = document.querySelector('.wa-float');
-    const footer = document.getElementById('contact');
-    if(waFloat && footer && 'IntersectionObserver' in window){
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          waFloat.classList.toggle('wa-float-hide', entry.isIntersecting);
-        });
-      }, { rootMargin: '0px 0px -40px 0px', threshold: 0 });
-      io.observe(footer);
-    }
-  })();
-
   const categories = [
     "BUTTERFLY VALVES",
     "FILTERS",
