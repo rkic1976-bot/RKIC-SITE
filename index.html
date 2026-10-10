@@ -448,41 +448,6 @@
   @media (max-width:640px){ .about-copy p{ line-height:1.6; } }
   .about-more-link{ display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-weight:600; color:var(--sage-deep); text-decoration:none; }
   .about-more-link:hover{ color:var(--ink); }
-  .about-visual{
-    position:relative; margin-top:40px; max-width:300px; border-radius:4px;
-    background:var(--ink); padding:20px 20px 0;
-    box-shadow:0 24px 46px rgba(51,65,78,0.28);
-  }
-  .about-visual::before{
-    content:""; position:absolute; top:0; left:20px; right:20px; height:3px;
-    background:var(--sage);
-  }
-  .about-visual-mount{
-    background:var(--paper); border-radius:2px; padding:16px;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .about-visual-mount img{ display:block; width:100%; max-width:200px; height:auto; }
-  .about-visual-cap{
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
-    padding:15px 2px 17px;
-  }
-  .about-visual-cap .avc-id{
-    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.02em;
-    color:rgba(247,245,238,0.62); line-height:1.5;
-  }
-  .about-visual-cap .avc-id strong{
-    display:block; color:var(--paper); font-family:'Barlow',sans-serif;
-    font-size:0.92rem; font-weight:600; letter-spacing:0; margin-top:1px;
-  }
-  .about-visual-cap .avc-stock{
-    display:flex; align-items:center; gap:7px; flex:0 0 auto;
-    font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.02em; color:var(--sage);
-  }
-  .about-visual-cap .avc-stock::before{
-    content:""; width:6px; height:6px; border-radius:50%; background:var(--sage);
-    box-shadow:0 0 0 3px rgba(228,206,150,0.25);
-  }
-  @media (max-width:860px){ .about-visual{ max-width:240px; margin-top:28px; } }
   .pillars{ display:flex; flex-direction:column; gap:0; }
   .pillar{ display:flex; gap:18px; padding:22px 0; border-top:1px solid var(--line); }
   @media (max-width:640px){ .pillar{ padding:14px 0; } }
@@ -1106,15 +1071,6 @@
       <div class="about-copy">
         <p>Founded in 1999 out of Surat, Gujarat, R.K. Instruments &amp; Controls is a trusted <strong>manufacturer</strong>, <strong>exporter</strong>, <strong>importer</strong>, <strong>supplier</strong> and <strong>stockist</strong> of burner, boiler and gas-handling components — from ignition electrodes to full valve-proving systems — working directly with <strong>dealers</strong> and <strong>distributors</strong> across India to get the right part to oil, gas, chemical, pharmaceutical and thermal plants every day.</p>
         <a href="about.html" class="about-more-link">Learn More About Us →</a>
-        <div class="about-visual">
-          <div class="about-visual-mount">
-            <img src="images/brahma-eg12l-gmo-xl.jpg" alt="Brahma EG12*L*GMO gas solenoid valve — representative of the genuine, manufacturer-spec parts RKIC stocks" loading="lazy" width="200" height="200">
-          </div>
-          <div class="about-visual-cap">
-            <span class="avc-id">Brahma<strong>EG12·L·GMO</strong></span>
-            <span class="avc-stock">In stock</span>
-          </div>
-        </div>
       </div>
       <div class="pillars">
         <div class="pillar">
