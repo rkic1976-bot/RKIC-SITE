@@ -148,7 +148,9 @@
   .brand .name{ font-size:0.98rem; font-weight:600; line-height:1.15; }
   .brand .name span{ display:block; font-size:0.62rem; letter-spacing:0.14em; color:var(--sage-deep); font-family:'IBM Plex Mono',monospace; margin-top:2px; }
   nav.links{ display:flex; align-items:center; gap:34px; color:var(--text-dim); font-size:0.88rem; }
+  nav.links > a{ display:flex; align-items:center; gap:6px; }
   nav.links > a:hover{ color:var(--ink); }
+  .nav-ic{ width:15px; height:15px; flex:0 0 auto; color:var(--sage-deep); }
   .nav-cta{ background:var(--ink); color:var(--paper); padding:10px 18px; border-radius:2px; font-size:0.84rem; font-weight:600; letter-spacing:0.01em; }
   .nav-cta:hover{ background:var(--sage-deep); }
   .nav-cta:hover{ background:var(--sage); }
@@ -174,12 +176,65 @@
     min-width:260px; max-height:340px; overflow-y:auto; box-shadow:0 12px 28px rgba(51,65,78,0.14);
   }
   .nav-dropdown.open .nav-drop-panel{ display:block; }
+
+  /* ===== full-width light mega-menu (Products / Brands) ===== */
+  .nav-drop-panel.nav-mega{
+    position:fixed; top:115px; left:0; right:0; width:100vw; transform:none;
+    max-width:none; min-width:0; border-radius:0; border:none;
+    border-top:1px solid var(--line); z-index:65;
+    background:#fff; box-shadow:0 24px 48px rgba(51,65,78,0.18);
+    padding:0; max-height:none; overflow:visible;
+  }
+  .nav-dropdown.open .nav-drop-panel.nav-mega{ display:block; }
+  .nav-mega-inner{
+    position:relative;
+    max-width:1180px; margin:0 auto;
+    padding:28px 20px 36px; max-height:calc(100vh - 110px);
+    overflow-y:auto; -webkit-overflow-scrolling:touch;
+  }
+  .nav-mega-close{
+    position:absolute; top:14px; right:16px; z-index:2;
+    width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
+    background:#fff; color:var(--ink); font-size:1rem; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .nav-mega-close:hover{ background:var(--steel); }
+  .nav-mega-main{ width:100%; min-width:0; }
+  .nav-mega .nav-drop-search{
+    background:var(--paper); border:1px solid var(--line);
+  }
+  .nav-mega .nav-drop-search svg{ stroke:var(--sage-deep); }
+  .nav-mega .nav-drop-search input{ color:var(--ink); }
+  .nav-mega .nav-drop-search input::placeholder{ color:var(--text-dim); }
+  .nav-mega-group-panel{ display:contents; }
+  .nav-mega .nav-drop-panel a, .nav-mega a.nav-drop-link{ color:var(--ink); }
+  .nav-mega #navProductsGrid a:hover, .nav-mega #navProductsGrid .nav-cat-row:hover{ background:var(--steel); }
+  .nav-mega .nav-cat-icon{ width:16px; height:16px; flex:0 0 auto; color:var(--sage-deep); margin-right:9px; }
+  .nav-mega .nav-drop-link{ display:flex; align-items:center; justify-content:flex-start; gap:0; }
+  .nav-mega .nav-drop-link span{ margin-right:auto; }
+  .nav-mega .nav-cat-subs{ border-bottom-color:var(--line); }
+  .nav-mega .nav-cat-subs a{ color:var(--text-dim); }
+  .nav-mega .nav-cat-subs a:hover{ background:var(--steel); color:var(--ink); }
+  .nav-mega .nav-cat-toggle:hover .nav-cat-caret{ color:var(--ink); }
+  .nav-mega-simple.nav-mega{ padding:0; }
+  .nav-mega-simple .nav-mega-inner-shim{ display:none; }
+  @media (max-width:860px){
+    .nav-drop-panel.nav-mega{ display:none !important; }
+  }
   .nav-drop-panel a{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 10px; font-size:0.84rem; color:var(--ink); border-radius:2px; }
   .nav-drop-panel a:hover{ background:var(--steel); }
   #navProductsPanel{
     width:min(92vw, 940px); max-width:940px; padding:12px;
     max-height:85vh; overflow-y:visible;
   }
+  #navProductsPanel.nav-mega{
+    position:fixed; top:115px; left:0; right:0; width:100vw; max-width:none; transform:none;
+    border-radius:0; border:none; border-top:1px solid var(--line);
+    background:#fff; box-shadow:0 24px 48px rgba(51,65,78,0.18);
+    padding:0; max-height:none; overflow-y:visible;
+  }
+  .nav-dropdown.open #navProductsPanel.nav-mega{ display:block; }
+  @media (max-width:860px){ #navProductsPanel.nav-mega{ display:none !important; } }
   .nav-drop-search{
     display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:5px;
     padding:8px 11px; margin:0 0 10px; background:var(--paper);
@@ -191,6 +246,8 @@
     display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 8px;
     max-height:60vh; overflow-y:auto;
   }
+  #navProductsGrid > *{ min-width:0; }
+  .nav-mega #navProductsGrid{ grid-template-columns:repeat(6, 1fr); gap:4px 16px; max-height:none; overflow-y:visible; }
   #navProductsGrid[hidden]{ display:none; }
   #navProductsGrid a{ font-size:0.76rem; padding:7px 6px; }
   .nav-cat-caret{ display:inline-block; color:var(--sage-deep); font-size:1rem; font-weight:800; line-height:1; opacity:1; transition:transform 0.2s ease; }
@@ -211,6 +268,13 @@
   #navProductsResults{ margin:0 auto; max-width:460px; max-height:56vh; }
   #navProductsResults a{ font-size:0.83rem; padding:9px 6px; }
   #navProductsResults .search-kicker{ padding-top:8px; }
+  .nav-mega #navProductsResults{
+    max-width:900px; max-height:60vh; overflow-y:auto;
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:0 28px; align-content:start;
+  }
+  .nav-mega #navProductsResults[hidden]{ display:none; }
+  .nav-mega #navProductsResults .search-kicker{ grid-column:1 / -1; }
+  .nav-mega #navProductsResults .search-empty{ grid-column:1 / -1; }
   .nav-drop-hint{ padding:16px 8px; font-size:0.82rem; color:var(--text-dim); line-height:1.5; text-align:center; }
 
   /* mobile drawer */
@@ -258,17 +322,40 @@
   #navBrandsPanel{
     width:min(92vw, 940px); max-width:940px; padding:12px;
     max-height:85vh; overflow-y:visible;
-    grid-template-columns:repeat(6, 1fr); gap:2px 10px;
+    grid-template-columns:repeat(4, 1fr); gap:0;
   }
   .nav-dropdown.open #navBrandsPanel{ display:grid; }
   #navBrandsPanel a{
-    font-size:0.76rem; padding:8px 6px; min-width:0;
-    flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:5px;
+    font-size:0.82rem; padding:13px 10px; min-width:0;
+    flex-direction:row; align-items:center; justify-content:flex-start; gap:14px;
+    border-bottom:1px solid var(--line);
   }
-  #navBrandsPanel .nav-drop-brand-logo{ width:auto; max-width:90px; flex:0 0 auto; }
+  /* Fixed uniform box for every logo (source files vary wildly in aspect ratio,
+     from ~1.2:1 to ~7.5:1) so all brands render at the same visual size instead
+     of near-square logos (Cofi, R.K. Instruments) shrinking to a sliver next to
+     wide wordmarks (Siemens, Brahma). object-fit:contain letterboxes each logo
+     inside the same box without distorting it. */
+  #navBrandsPanel .nav-drop-brand-logo{
+    width:92px; height:38px; max-width:none; object-fit:contain; object-position:left center; flex:0 0 92px;
+  }
   #navBrandsPanel .nav-drop-brand-name{
-    flex:0 0 auto; width:100%; margin-left:0; white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:break-word;
+    flex:1 1 auto; width:auto; margin-left:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
+  #navBrandsPanel.nav-mega{
+    position:fixed; top:115px; left:0; right:0; width:100vw; max-width:none; transform:none;
+    border-radius:0; border:none; border-top:1px solid var(--line);
+    background:#fff; box-shadow:0 24px 48px rgba(51,65,78,0.18);
+    max-height:none; overflow-y:visible;
+    display:none; padding:0;
+  }
+  .nav-dropdown.open #navBrandsPanel.nav-mega{ display:block; }
+  #navBrandsPanel.nav-mega .nav-mega-inner{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:0;
+  }
+  #navBrandsPanel.nav-mega a{ color:var(--ink); }
+  #navBrandsPanel.nav-mega a:hover{ background:var(--steel); }
+  #navBrandsPanel.nav-mega .nav-drop-brand-name{ color:var(--text-dim); }
+  @media (max-width:860px){ #navBrandsPanel.nav-mega{ display:none !important; } }
 
   /* floating whatsapp button */
   .wa-float{
@@ -342,19 +429,28 @@
   .rating .lab{ font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-top:4px; }
 
   /* ---------- SECTION HEADERS ---------- */
-  .sec{ padding:84px 0; }
-  .sec-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:44px; flex-wrap:wrap; }
+  .sec{ padding:56px 0; }
+  .sec-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:32px; flex-wrap:wrap; }
+  @media (max-width:640px){
+    .sec{ padding:34px 0; }
+    .sec-head{ margin-bottom:20px; }
+  }
   .sec-head .eyebrow-lt{ font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.18em; color:var(--lemon-text); text-transform:uppercase; margin-bottom:12px; }
   .sec-head h2{ font-size:clamp(1.6rem,3vw,2.2rem); font-weight:600; max-width:20ch; }
   .sec-head p{ color:var(--text-dim); max-width:34ch; font-size:0.92rem; line-height:1.6; }
+  .brands .sec-head h2{ max-width:44ch; }
 
   /* ---------- ABOUT ---------- */
   .about{ background:var(--paper); }
   .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; }
-  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; gap:36px; } }
+  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; gap:24px; } }
   .about-copy p{ font-size:1rem; line-height:1.75; color:var(--text-dim); }
+  @media (max-width:640px){ .about-copy p{ line-height:1.6; } }
+  .about-more-link{ display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-weight:600; color:var(--sage-deep); text-decoration:none; }
+  .about-more-link:hover{ color:var(--ink); }
   .pillars{ display:flex; flex-direction:column; gap:0; }
   .pillar{ display:flex; gap:18px; padding:22px 0; border-top:1px solid var(--line); }
+  @media (max-width:640px){ .pillar{ padding:14px 0; } }
   .pillar:last-child{ border-bottom:1px solid var(--line); }
   .pillar .tag{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; color:var(--lemon-text); flex:0 0 52px; text-align:center; }
   .pillar .tag .icon-badge{ width:38px; height:38px; border-radius:10px; background:var(--sage); display:flex; align-items:center; justify-content:center; margin:0 auto 8px; }
@@ -521,15 +617,16 @@
 
   /* ---------- BRANDS ---------- */
   .brands{ background:var(--paper); }
-  .stats-band{ background:var(--sage-pale); padding:52px 0; }
+  .stats-band{ background:var(--steel); padding:36px 0; }
   .stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
   @media (max-width:800px){ .stats-grid{ grid-template-columns:repeat(2,1fr); gap:32px 20px; } }
-  .stat-num{ font-family:'Barlow Condensed',sans-serif; font-size:2.4rem; font-weight:700; color:var(--flame); line-height:1; }
+  .stat-num{ font-family:'Barlow Condensed',sans-serif; font-size:2.4rem; font-weight:700; color:var(--sage-deep); line-height:1; }
   .stat-label{ margin-top:10px; font-size:0.8rem; color:rgba(51,65,78,0.75); letter-spacing:0.02em; }
-  .tagline-band{ background:var(--flame-light); padding:56px 0; }
+  .tagline-band{ background:var(--steel); padding:38px 0; }
   .tagline-quote{ font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:600; text-align:center; color:var(--ink); max-width:56ch; margin:0 auto; line-height:1.5; }
   @media (max-width:700px){ .tagline-quote{ font-size:1.15rem; } }
-  .brand-strip{ display:flex; flex-wrap:wrap; gap:12px; }
+  .brand-strip{ display:grid; grid-template-columns:repeat(7,1fr); gap:10px; }
+  @media (max-width:860px){ .brand-strip{ grid-template-columns:repeat(3,1fr); } }
   .brand-chip{ border:1px solid var(--line); background:var(--paper); padding:12px 20px; font-size:0.86rem; font-weight:500; letter-spacing:0.02em; color:var(--ink); border-radius:2px; cursor:pointer; transition:background 0.2s ease, border-color 0.2s ease; display:flex; align-items:center; }
   .brand-logo-img{ height:22px; width:auto; max-width:110px; object-fit:contain; display:block; }
   .brand-chip:hover{ background:var(--steel); border-color:var(--sage-deep); }
@@ -544,13 +641,13 @@
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 60px,#000 calc(100% - 60px),transparent 100%);
     mask-image:linear-gradient(90deg,transparent 0,#000 60px,#000 calc(100% - 60px),transparent 100%);
   }
-  .clients-track{ display:flex; align-items:center; gap:44px; width:max-content; animation:clientsScroll 42s linear infinite; }
+  .clients-track{ display:flex; align-items:center; gap:20px; width:max-content; animation:clientsScroll 42s linear infinite; }
   .clients-marquee:hover .clients-track{ animation-play-state:paused; }
   .clients-track img{
-    height:48px; width:auto; object-fit:contain; flex:0 0 auto;
+    height:76px; width:200px; object-fit:contain; object-position:center; flex:0 0 auto;
   }
   @keyframes clientsScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  @media (max-width:640px){ .clients-track img{ height:36px; } .clients-track{ gap:30px; } }
+  @media (max-width:640px){ .clients-track img{ height:56px; width:150px; } .clients-track{ gap:16px; } }
   @media (prefers-reduced-motion: reduce){ .clients-track{ animation:none; } }
 
   /* ---------- CONTACT / FOOTER (light sage panel) ---------- */
@@ -599,7 +696,104 @@
   .socials{ display:flex; gap:12px; }
   .socials a{ width:32px; height:32px; border:1px solid var(--line); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.72rem; font-family:'IBM Plex Mono',monospace; background:#fff; }
   .socials a:hover{ border-color:var(--sage-deep); color:var(--sage-deep); }
-</style>
+
+  /* ===== FLOW LINE HERO SLIDER (no red — scoped to slider only) ===== */
+  .hero.flow-hero{ padding:0; background:var(--ink); overflow:visible; }
+  .flowslider{
+    position:relative;width:100%;height:56vh;min-height:420px;max-height:560px;
+    overflow:hidden;background:var(--ink);
+  }
+  .fs-slide{
+    position:absolute;inset:0;display:flex;opacity:0;transform:translateY(55px);
+    transition:opacity .7s ease, transform .8s cubic-bezier(.22,1,.36,1);pointer-events:none;
+  }
+  .fs-slide.active{opacity:1;transform:translateY(0);pointer-events:auto;}
+  @media (max-width:860px){ .fs-slide{flex-direction:column;} }
+  @media (max-width:860px){
+    .flowslider{ height:auto; min-height:660px; max-height:740px; }
+    .fs-text{ padding:20px 22px 46px; }
+    .fs-headline{ font-size:23px; }
+    .fs-sub{ font-size:12.5px; margin-bottom:14px; max-width:100%; }
+  }
+  .fs-photo{ position:relative;flex:1.1;overflow:hidden; clip-path:polygon(0 0, 100% 0, 86% 100%, 0% 100%); }
+  @media (max-width:860px){ .fs-photo{clip-path:polygon(0 0,100% 0,100% 82%,0 100%);min-height:46%;} }
+  .fs-photo img{ position:absolute;inset:0;width:100%;height:100%;object-fit:cover; filter:saturate(1.05) contrast(1.04); transform:scale(1.12);transition:transform 7s linear; }
+  .fs-slide.active .fs-photo img{transform:scale(1.0);}
+  .fs-photo::after{ content:"";position:absolute;inset:0; background:linear-gradient(100deg, rgba(51,65,78,0.55) 0%, rgba(51,65,78,0.05) 45%, transparent 70%); }
+  .fs-spec-tag{
+    position:absolute;z-index:3;display:flex;flex-direction:column;gap:2px;
+    background:rgba(247,245,238,0.95);border:1px solid var(--line);border-radius:10px;
+    padding:7px 11px;box-shadow:0 6px 18px -8px rgba(0,0,0,0.35);
+    opacity:0;transform:translateY(10px);transition:opacity .5s ease .4s, transform .5s ease .4s;
+  }
+  .fs-slide.active .fs-spec-tag{opacity:1;transform:translateY(0);}
+  .fs-spec-tag b{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--sage-deep);line-height:1;}
+  .fs-spec-tag span{font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--ink);letter-spacing:0.05em;}
+  .fs-bracket{position:absolute;width:22px;height:22px;z-index:3;}
+  .fs-bracket.tl{top:18px;left:18px;border-top:2px solid var(--sage);border-left:2px solid var(--sage);}
+  .fs-bracket.br{bottom:18px;right:18px;border-bottom:2px solid var(--sage);border-right:2px solid var(--sage);}
+  .fs-text{ flex:1;display:flex;flex-direction:column;justify-content:center; padding:24px 32px 24px 28px;position:relative;z-index:2;background:var(--ink); }
+  @media (max-width:860px){ .fs-text{padding:26px 28px;} }
+  .fs-kicker{ display:flex;align-items:center;gap:8px;margin-bottom:14px; font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.2em;color:var(--sage); }
+  .fs-kicker .flow-dash{ width:34px;height:2px;background:repeating-linear-gradient(90deg,var(--sage-deep) 0 6px, transparent 6px 10px); position:relative;overflow:hidden; }
+  .fs-kicker .flow-dash::after{ content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,var(--sage-deep) 0 6px, transparent 6px 10px); animation:fsFlowMove 1.2s linear infinite; }
+  @keyframes fsFlowMove{ from{transform:translateX(0);} to{transform:translateX(16px);} }
+  .fs-headline{ font-family:'Barlow Condensed',sans-serif;font-weight:900;color:#fff; font-size:28px;line-height:0.98;letter-spacing:-0.01em;margin:0 0 10px; }
+  @media (min-width:860px){ .fs-headline{font-size:38px;} }
+  .fs-headline em{font-style:normal;color:#fff;position:relative;}
+  .fs-headline em::after{ content:"";position:absolute;left:-3px;right:-3px;bottom:2px;height:11px;background:var(--sage-deep);opacity:0.75;z-index:-1; }
+  .fs-sub{color:#C7CFD6;font-size:13.5px;line-height:1.55;max-width:400px;margin:0 0 18px;}
+  .fs-cta{display:flex;gap:12px;flex-wrap:wrap;}
+  .fs-btn{ font-family:'Barlow',sans-serif;font-weight:600;font-size:13.5px;border-radius:10px; padding:12px 22px;text-decoration:none;display:inline-flex;align-items:center;gap:8px; transition:transform .15s ease; }
+  .fs-btn:hover{transform:translateY(-2px);}
+  .fs-btn.primary{background:var(--sage-deep);color:#fff;}
+  .fs-btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;}
+  .fs-meter{position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(255,255,255,0.08);z-index:4;}
+  .fs-meter-fill{height:100%;background:var(--sage-deep);width:0%;position:relative;}
+  .fs-meter-fill::after{ content:"";position:absolute;right:-2px;top:-3px;width:11px;height:11px;border-radius:50%; background:var(--sage);box-shadow:0 0 0 4px rgba(228,206,150,0.25); }
+  .fs-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;
+    background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);display:grid;place-items:center;
+    cursor:pointer;z-index:5;color:#fff;font-size:17px;backdrop-filter:blur(3px);
+  }
+  .fs-nav:hover{background:rgba(255,255,255,0.22);}
+  .fs-nav.prev{left:16px;} .fs-nav.next{right:16px;}
+  .fs-dots{position:absolute;bottom:14px;left:28px;display:flex;gap:7px;z-index:5;}
+  .fs-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.3);border:none;cursor:pointer;padding:0;transition:all .2s;}
+  .fs-dot.on{background:var(--sage);width:20px;border-radius:4px;}
+  .fs-counter{ position:absolute;top:20px;right:22px;z-index:5;font-family:'IBM Plex Mono',monospace; font-size:11px;color:var(--sage);letter-spacing:0.08em; }
+
+  /* ===== PRODUCT LIST (compact row style: thumbnail + name) ===== */
+  .plist{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+  @media (max-width:860px){ .plist{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:520px){ .plist{grid-template-columns:repeat(2,1fr);} }
+  .pl-row{
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;
+    background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 8px;
+    text-decoration:none;color:inherit;transition:box-shadow .15s ease, transform .15s ease;
+  }
+  .pl-row:hover{box-shadow:0 6px 16px -10px rgba(51,65,78,0.3);transform:translateY(-1px);}
+  .pl-thumb{
+    width:56px;height:56px;border-radius:9px;background-size:cover;background-position:center;
+    background-color:var(--paper);border:1px solid var(--line);flex-shrink:0;
+  }
+  .pl-name{font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;color:var(--ink);line-height:1.25;}
+
+  /* ===== ASSOCIATE BRANDS — boxed grid (restyled chip strip, same data/JS) ===== */
+  .brand-strip .brand-chip{
+    border:none; background:transparent; padding:8px; height:52px;
+    border-radius:10px; display:flex; align-items:center; justify-content:center;
+    transition:transform .15s ease;
+  }
+  .brand-strip .brand-chip:hover{ transform:translateY(-1px); }
+  .brand-strip .brand-chip .mono, .brand-strip .brand-chip .stock-badge{ display:none; }
+  .brand-strip .brand-chip-link{ display:flex;align-items:center;justify-content:center;width:100%;height:100%; text-decoration:none;color:inherit; }
+  /* Fixed uniform box for every logo -- source PNGs range from ~1.2:1 (near-square,
+     e.g. Cofi, R.K. Instruments) to ~7.5:1 (wide wordmarks, e.g. Brahma), so a
+     max-width/max-height-only rule let each one scale to its own aspect ratio and
+     look wildly different in size. object-fit:contain letterboxes every logo into
+     the same box so they all read as the same visual size. */
+  .brand-strip .brand-logo-img{ width:100%; height:32px; max-width:120px; object-fit:contain; }
+  </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -680,24 +874,29 @@
       <div class="name">R.K. Instruments &amp; Controls<span>FLOW &amp; FLAME CONTROL</span></div>
     </a>
     <nav class="links">
-      <a href="#home">Home</a>
-      <a href="about.html">About Us</a>
+      <a href="#home"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>Home</a>
+      <a href="about.html"><svg class="nav-ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M5 3a1 1 0 0 1 1-1h11.2a1 1 0 0 1 .8 1.6l-3 4 3 4a1 1 0 0 1-.8 1.6H7v7a1 1 0 1 1-2 0V3Z"/></svg>About Us</a>
       <div class="nav-dropdown" id="navProducts">
-        <button class="nav-drop-btn">Products <span class="chev">⌄</span></button>
-        <div class="nav-drop-panel" id="navProductsPanel">
-          <div class="nav-drop-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            <input type="text" id="navProductsFilter" placeholder="Search products or categories…" autocomplete="off">
+        <button class="nav-drop-btn"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Products <span class="chev">⌄</span></button>
+        <div class="nav-drop-panel nav-mega" id="navProductsPanel">
+          <button type="button" class="nav-mega-close" aria-label="Close menu">✕</button>
+          <div class="nav-mega-inner">
+            <div class="nav-mega-main">
+              <div class="nav-drop-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                <input type="text" id="navProductsFilter" placeholder="Search products or categories…" autocomplete="off">
+              </div>
+              <div class="nav-drop-grid" id="navProductsGrid"></div>
+              <div class="nav-drop-results search-results" id="navProductsResults" hidden></div>
+            </div>
           </div>
-          <div class="nav-drop-grid" id="navProductsGrid"></div>
-          <div class="nav-drop-results search-results" id="navProductsResults" hidden></div>
         </div>
       </div>
       <div class="nav-dropdown" id="navBrands">
-        <button class="nav-drop-btn">Brands <span class="chev">⌄</span></button>
-        <div class="nav-drop-panel" id="navBrandsPanel"></div>
+        <button class="nav-drop-btn"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.9 6.3L21 9l-4.8 4.6 1.2 6.6L12 17l-5.4 3.2 1.2-6.6L3 9l6.1-.7L12 2Z"/></svg>Brands <span class="chev">⌄</span></button>
+        <div class="nav-drop-panel nav-mega nav-mega-simple" id="navBrandsPanel"></div>
       </div>
-      <a href="contact.html">Contact Us</a>
+      <a href="contact.html"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="m4 6 8 7 8-7"/></svg>Contact Us</a>
     </nav>
     <button class="search-btn" id="searchBtn" aria-label="Search products">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -735,48 +934,126 @@
 </div>
 
 <div id="homeView">
-<section class="hero" id="home">
-  <div class="hero-blob"></div>
-  <div class="wrap hero-inner">
-    <div>
-      <div class="eyebrow">Surat, Gujarat, India</div>
-      <h1>Components that keep <em>gas &amp; flame</em> under control.</h1>
-      <p class="sub">R.K. Instruments &amp; Controls supplies burner, boiler and gas-train components to industries that can't afford a misfire — from ignition electrodes to full valve-proving systems, sourced from the brands engineers already trust. Delivering trusted expertise in safe gas management and precision automation controls — since 1999.</p>
-      <div class="hero-ctas">
-        <a class="btn-primary" href="#catalog">Browse the Catalog</a>
-        <a class="btn-ghost" href="#contact">Talk to Our Team</a>
+<section class="hero flow-hero" id="home">
+    <div class="flowslider" id="flowslider">
+
+      <div class="fs-slide active" data-i="0">
+        <div class="fs-photo">
+          <img src="images/brahma-t11-n-large.jpg" alt="Brahma Ignition Transformer">
+          <div class="fs-bracket tl"></div>
+          <div class="fs-spec-tag" style="top:22px;right:40px;"><b>230V</b><span>PRIMARY SUPPLY</span></div>
+          <div class="fs-spec-tag" style="bottom:50px;left:30px;"><b>14kV</b><span>SECONDARY OUTPUT</span></div>
+        </div>
+        <div class="fs-text">
+          <div class="fs-kicker"><span class="flow-dash"></span>IGNITION TRANSFORMERS</div>
+          <h3 class="fs-headline">Spark that starts <em>every burner</em>, every time</h3>
+          <p class="fs-sub">Brahma &amp; Honeywell ignition transformers — reliable high-voltage spark generation for oil and gas burner systems, in stock at our Surat warehouse.</p>
+          <div class="fs-cta">
+            <a href="categories/ignition-transformers.html" class="fs-btn primary">View Transformers →</a>
+            <a href="https://wa.me/919824136145?text=Enquiry%20for%20Ignition%20Transformers" target="_blank" rel="noopener" class="fs-btn ghost">WhatsApp Enquiry</a>
+          </div>
+        </div>
+        <div class="fs-counter">01 / 03</div>
       </div>
-      <div class="rating">
-        <div><div class="num">1999</div><div class="lab">Established In</div></div>
-        <div><div class="num">500+</div><div class="lab">Products Stocked</div></div>
-        <div><div class="num">1000+</div><div class="lab">Clients Served</div></div>
-        <div><div class="num">900+</div><div class="lab">Installations</div></div>
-        <div><div class="num">30+</div><div class="lab">Committed Employees</div></div>
+
+      <div class="fs-slide" data-i="1">
+        <div class="fs-photo">
+          <img src="images/vanaz-r2301-large.jpg" alt="Vanaz Pressure Regulator">
+          <div class="fs-bracket tl"></div>
+          <div class="fs-spec-tag" style="top:24px;right:36px;"><b>250 mbar</b><span>MAX INLET PRESSURE</span></div>
+          <div class="fs-spec-tag" style="bottom:48px;left:26px;"><b>IP54</b><span>PROTECTION CLASS</span></div>
+        </div>
+        <div class="fs-text">
+          <div class="fs-kicker"><span class="flow-dash"></span>PRESSURE REGULATORS</div>
+          <h3 class="fs-headline">Gas pressure, <em>held steady</em> — no surprises</h3>
+          <p class="fs-sub">Vanaz &amp; Elektrogas regulators across high-pressure, low-pressure, oxygen and ammonia lines — exact pressure control from inlet to burner.</p>
+          <div class="fs-cta">
+            <a href="categories/pressure-regulators.html" class="fs-btn primary">View Regulators →</a>
+            <a href="tel:+919824136145" class="fs-btn ghost">Call +91 9824136145</a>
+          </div>
+        </div>
+        <div class="fs-counter">02 / 03</div>
       </div>
+
+      <div class="fs-slide" data-i="2">
+        <div class="fs-photo">
+          <img src="images/siemens-lfl1-333-large.jpg" alt="Siemens Burner Control Unit">
+          <div class="fs-bracket tl"></div>
+          <div class="fs-spec-tag" style="top:22px;right:38px;"><b>LFL1.333</b><span>SIEMENS SEQUENCE</span></div>
+          <div class="fs-spec-tag" style="bottom:50px;left:28px;"><b>BCU</b><span>FLAME SUPERVISION</span></div>
+        </div>
+        <div class="fs-text">
+          <div class="fs-kicker"><span class="flow-dash"></span>BURNER CONTROL UNITS</div>
+          <h3 class="fs-headline">One sequence controller, <em>zero guesswork</em></h3>
+          <p class="fs-sub">Siemens burner control units handling ignition sequencing and flame supervision — the brain that keeps every burner cycle safe.</p>
+          <div class="fs-cta">
+            <a href="categories/burner-controls.html" class="fs-btn primary">View Burner Controls →</a>
+            <a href="https://wa.me/919824136145?text=Enquiry%20for%20Burner%20Control%20Units" target="_blank" rel="noopener" class="fs-btn ghost">Enquire on WhatsApp</a>
+          </div>
+        </div>
+        <div class="fs-counter">03 / 03</div>
+      </div>
+
+      <div class="fs-nav prev" id="fsPrev">&#8592;</div>
+      <div class="fs-nav next" id="fsNext">&#8594;</div>
+      <div class="fs-dots" id="fsDots"></div>
+      <div class="fs-meter"><div class="fs-meter-fill" id="fsMeterFill"></div></div>
     </div>
-    <div class="schematic">
-      <svg viewBox="0 0 320 340" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="160" cy="150" r="130" fill="none" stroke="var(--line)" stroke-width="1"/>
-        <circle cx="160" cy="150" r="100" fill="none" stroke="var(--line)" stroke-width="1"/>
-        <line class="flow-line" x1="160" y1="150" x2="160" y2="50" stroke="var(--sage-deep)" stroke-width="1.3"/>
-        <line class="flow-line" x1="160" y1="150" x2="260" y2="150" stroke="var(--sage-deep)" stroke-width="1.3"/>
-        <line class="flow-line" x1="160" y1="150" x2="160" y2="250" stroke="var(--sage-deep)" stroke-width="1.3"/>
-        <line class="flow-line" x1="160" y1="150" x2="60" y2="150" stroke="var(--sage-deep)" stroke-width="1.3"/>
-        <g class="node"><circle cx="160" cy="50" r="14"/><text x="160" y="53" text-anchor="middle">S</text></g>
-        <text class="node-label" x="160" y="24" text-anchor="middle">Supply</text>
-        <g class="node"><circle cx="260" cy="150" r="14"/><text x="260" y="153" text-anchor="middle">F</text></g>
-        <text class="node-label" x="260" y="180" text-anchor="middle">Filter</text>
-        <g class="node"><circle cx="160" cy="250" r="14"/><text x="160" y="253" text-anchor="middle">V</text></g>
-        <text class="node-label" x="160" y="278" text-anchor="middle">Valve</text>
-        <g class="node"><circle cx="60" cy="150" r="14"/><text x="60" y="153" text-anchor="middle">R</text></g>
-        <text class="node-label" x="60" y="180" text-anchor="middle">Regulator</text>
-        <circle cx="160" cy="150" r="38" fill="var(--flame)"/>
-        <path d="M155,138 c-6,6 -6,14 0,19 c-2,-6 1,-9 3,-10 c0,3 2,5 4,4 c3,-2 2,-7 -1,-10 c3,1 6,4 6,9 c0,7 -5,11 -10,11 c-7,0 -12,-5 -12,-11 c0,-6 4,-10 10,-12z" fill="#fff"/>
-        <text class="node-label" x="160" y="320" text-anchor="middle" style="font-size:12px;">24 / 7 FLAME SAFETY MONITORING</text>
-      </svg>
-    </div>
-  </div>
 </section>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.fs-slide');
+  var dotsWrap = document.getElementById('fsDots');
+  var meterFill = document.getElementById('fsMeterFill');
+  var current = 0, total = slides.length;
+  var AUTOPLAY_MS = 5000;
+  var timer=null, rafId=null, progStart=null;
+
+  for(var i=0;i<total;i++){
+    var b=document.createElement('button');
+    b.className='fs-dot'+(i===0?' on':'');
+    b.addEventListener('click', (function(idx){ return function(){ goTo(idx); restart(); }; })(i));
+    dotsWrap.appendChild(b);
+  }
+  var dotEls = dotsWrap.querySelectorAll('.fs-dot');
+
+  function goTo(idx){
+    slides[current].classList.remove('active');
+    dotEls[current].classList.remove('on');
+    current=(idx+total)%total;
+    slides[current].classList.add('active');
+    dotEls[current].classList.add('on');
+  }
+  function next(){ goTo(current+1); }
+  function prev(){ goTo(current-1); }
+
+  function animate(ts){
+    if(!progStart) progStart=ts;
+    var pct=Math.min(100,((ts-progStart)/AUTOPLAY_MS)*100);
+    meterFill.style.width=pct+'%';
+    if(pct<100){ rafId=requestAnimationFrame(animate); }
+  }
+  function restart(){
+    clearTimeout(timer); cancelAnimationFrame(rafId); progStart=null; meterFill.style.width='0%';
+    rafId=requestAnimationFrame(animate);
+    timer=setTimeout(function(){ next(); restart(); }, AUTOPLAY_MS);
+  }
+
+  document.getElementById('fsNext').addEventListener('click', function(){ next(); restart(); });
+  document.getElementById('fsPrev').addEventListener('click', function(){ prev(); restart(); });
+
+  var el=document.getElementById('flowslider');
+  var sx=0;
+  el.addEventListener('touchstart', function(e){ sx=e.changedTouches[0].screenX; }, {passive:true});
+  el.addEventListener('touchend', function(e){
+    var dx=e.changedTouches[0].screenX-sx;
+    if(Math.abs(dx)>40){ dx<0?next():prev(); restart(); }
+  }, {passive:true});
+
+  restart();
+})();
+</script>
 
 <section class="sec about" id="about">
   <div class="wrap">
@@ -788,8 +1065,8 @@
     </div>
     <div class="about-grid">
       <div class="about-copy">
-        <p>Founded in 1999 out of Surat, Gujarat, R.K. Instruments &amp; Controls is a trusted <strong>manufacturer</strong>, <strong>exporter</strong>, <strong>importer</strong> and <strong>supplier</strong> of burner, boiler and gas-handling components, working directly with <strong>dealers</strong> and <strong>distributors</strong> across India to get the right part to oil, gas, chemical, pharmaceutical and thermal plants every day.</p>
-        <p>As a <strong>stockist</strong> for ignition electrodes to full valve-proving systems, drawn from established global manufacturers, we make sure an engineer can specify a part once and trust it will still be in stock — and still be correct — years later.</p>
+        <p>Founded in 1999 out of Surat, Gujarat, R.K. Instruments &amp; Controls is a trusted <strong>manufacturer</strong>, <strong>exporter</strong>, <strong>importer</strong>, <strong>supplier</strong> and <strong>stockist</strong> of burner, boiler and gas-handling components — from ignition electrodes to full valve-proving systems — working directly with <strong>dealers</strong> and <strong>distributors</strong> across India to get the right part to oil, gas, chemical, pharmaceutical and thermal plants every day.</p>
+        <a href="about.html" class="about-more-link">Learn More About Us →</a>
       </div>
       <div class="pillars">
         <div class="pillar">
@@ -839,16 +1116,41 @@
   </div>
 </section>
 
-<section class="sec catalog" id="catalog">
+<section class="sec" id="productlist">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow-lt">Product Categories</div>
-        <h2>Everything between gas inlet and open flame.</h2>
+        <div class="eyebrow-lt">Popular Picks</div>
+        <h2>Jump straight to what you're searching for.</h2>
       </div>
-      <p>One supplier across the full gas-train — fewer vendors for your procurement team to manage.</p>
+      <p>A quick shortcut to our most-asked-about categories — browse the full catalog for everything else.</p>
     </div>
-    <div class="grid-cat" id="catGrid"></div>
+    <div class="plist">
+      <a href="categories/solenoid-valves.html" class="pl-row">
+        <div class="pl-thumb" style="background-image:url('images/brahma-eg12l-gmo-large.jpg');"></div>
+        <span class="pl-name">Solenoid Valve</span>
+      </a>
+      <a href="categories/pressure-regulators.html" class="pl-row">
+        <div class="pl-thumb" style="background-image:url('images/vanaz-r2301-large.jpg');"></div>
+        <span class="pl-name">Pressure Regulator</span>
+      </a>
+      <a href="categories/ignition-transformers.html" class="pl-row">
+        <div class="pl-thumb" style="background-image:url('images/brahma-t11-n-large.jpg');"></div>
+        <span class="pl-name">Ignition Transformer</span>
+      </a>
+      <a href="categories/flame-sensors.html" class="pl-row">
+        <div class="pl-thumb" style="background-image:url('images/rkic-uv-flame-sensor-probe-large.jpg');"></div>
+        <span class="pl-name">Flame Sensor</span>
+      </a>
+      <a href="categories/gas-meters.html" class="pl-row">
+        <div class="pl-thumb" style="background-image:url('images/honeywell-elster-bk-g4m-large.jpg');"></div>
+        <span class="pl-name">Gas Flow Meter</span>
+      </a>
+      <a href="categories/burner-controls.html" class="pl-row">
+        <div class="pl-thumb" style="background-image:url('images/siemens-lfl1-333-large.jpg');"></div>
+        <span class="pl-name">Burner Control</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -869,63 +1171,16 @@
   </div>
 </section>
 
-<section class="sec spotlight" id="spotlight">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow-lt">Solenoid Valves · Brahma</div>
-        <h2>Featured part: Brahma EG12*L*GMO gas solenoid valve.</h2>
-      </div>
-      <p>In-stock example from our Solenoid Valves range — ask for availability on the full Brahma EG series.</p>
-    </div>
-    <article class="spot-card" itemscope itemtype="https://schema.org/Product">
-      <div class="spot-img">
-        <img src="data:image/jpeg;base64,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" alt="Brahma EG12*L*GMO gas solenoid valve, DN15 1/2 inch, class A automatic shut-off valve for gas burners and boilers" itemprop="image" width="700" height="700" loading="lazy"/>
-      </div>
-      <div>
-        <div class="spot-tags">
-          <span class="spot-tag">Solenoid Valves</span>
-          <span class="spot-tag" itemprop="brand" itemscope itemtype="https://schema.org/Brand"><span itemprop="name">Brahma</span></span>
-          <span class="spot-tag">DN15 · 1/2&quot;</span>
-        </div>
-        <h3 itemprop="name">Brahma Solenoid Valve EG12*L*GMO — DN15 (1/2&quot;) Gas Shut-Off Valve</h3>
-        <div class="spot-sku">Product Code <span itemprop="sku">13922051</span> · Solenoid Type BE6*GMO · Code 18811108</div>
-        <p class="spot-desc" itemprop="description">The Brahma EG12*L*GMO is a Class A automatic gas solenoid valve built for burner, boiler and gas-train shut-off duty on 1/2&quot; (DN15) BSP connections. Rated to 250 mbar max inlet pressure and IP54 enclosure protection, it runs on a 230V, 50-60Hz, 20VA coil for fast, reliable open/close switching on commercial and industrial combustion systems. R.K. Instruments &amp; Controls stocks genuine Brahma EG-series solenoid valves in Surat for burner OEMs, boiler retrofits and gas-train spares across India.</p>
-        <div class="spot-specs">
-          <div><span class="k">Type</span>EG12*L*GMO</div>
-          <div><span class="k">Connection</span>DN15 · 1/2&quot; BSP</div>
-          <div><span class="k">Class</span>Class A</div>
-          <div><span class="k">Max Pressure</span>P max. 250 mbar</div>
-          <div><span class="k">Power Supply</span>230V, 50-60Hz, 20VA</div>
-          <div><span class="k">Protection</span>IP54</div>
-        </div>
-        <div class="spot-ctas">
-          <a class="btn-primary btn-whatsapp" href="https://wa.me/919824136145?text=Enquiry%20for%20Brahma%20Solenoid%20Valve%20EG12*L*GMO%20(Code%2013922051)" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-          <a class="btn-ghost" href="categories/solenoid-valves.html">View All Solenoid Valves</a>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
 
-<section class="sec brands" id="brands">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow-lt">Associate Brands</div>
-        <h2>Genuine parts from the manufacturers your plant already runs on.</h2>
-      </div>
-      <p>We represent the sales &amp; service of these manufacturers across our territories.</p>
-    </div>
-    <div class="brand-strip" id="brandStrip"></div>
-  </div>
-</section>
+
 
 <section class="tagline-band">
   <div class="wrap">
     <p class="tagline-quote">The part you specify is the part that arrives — every single time.</p>
   </div>
 </section>
+
+
 
 </div>
 
@@ -1037,6 +1292,19 @@
   </div>
 </section>
 
+<section class="sec brands" id="brands">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow-lt">Associate Brands</div>
+        <h2>Genuine parts from the manufacturers your plant already runs on.</h2>
+      </div>
+      <p>We represent the sales &amp; service of these manufacturers across our territories.</p>
+    </div>
+    <div class="brand-strip" id="brandStrip"></div>
+  </div>
+</section>
+
 <!-- #contact footer moved out of #homeView (see below, after #productModal) so it
      stays visible on every SPA route — category/brand/product views open inside
      #productModal while #homeView gets display:none, which previously hid this
@@ -1102,7 +1370,18 @@
   <div class="wrap foot-bottom">
     <div>© 2026 R.K. Instruments &amp; Controls. All rights reserved. <span class="foot-sep">·</span> <a href="privacy.html" class="foot-privacy-link">Privacy Policy</a></div>
     <div class="socials">
-      <a href="https://wa.me/919824136145?text=Hello%20RKIC%2C%20I%20am%20looking%20for%20burner%2Fgas%20train%20components.%20Please%20assist." target="_blank" rel="noopener" aria-label="WhatsApp">wa</a>
+      <a href="https://wa.me/919824136145?text=Hello%20RKIC%2C%20I%20am%20looking%20for%20burner%2Fgas%20train%20components.%20Please%20assist." target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="#25D366"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.28 4.93L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.1h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.84-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.37c0-4.53 3.69-8.22 8.23-8.22 2.2 0 4.26.86 5.82 2.41a8.17 8.17 0 0 1 2.41 5.82c0 4.53-3.7 8.21-8.23 8.21Zm4.52-6.16c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.17.24-.63.8-.78.96-.14.17-.29.18-.53.06-.25-.12-1.05-.39-2-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.76-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.01 2.57.12.17 1.76 2.68 4.25 3.76.6.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.46-.6 1.67-1.18.2-.57.2-1.07.14-1.17-.06-.11-.23-.17-.48-.29Z"/></svg>
+      </a>
+      <a href="https://maps.app.goo.gl/dckyEYxhRWppFgK47" target="_blank" rel="noopener" aria-label="Google Business Profile">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A10.99 10.99 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.44.34-2.1V7.05H2.18A10.99 10.99 0 0 0 1 12c0 1.77.42 3.45 1.18 4.95l3.66-2.85z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1A10.99 10.99 0 0 0 2.18 7.05l3.66 2.85C6.71 7.3 9.14 5.38 12 5.38z"/></svg>
+      </a>
+      <a href="https://x.com/rkic1976" target="_blank" rel="noopener" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-7.3L4.2 22H1l8.1-9.3L.9 2H8l5 6.7L18.9 2Zm-1.2 18h1.9L6.4 4H4.3l13.4 16Z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/share/1cYFNBfJxP/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="#1877F2"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.25h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z"/></svg>
+      </a>
     </div>
   </div>
 </footer>
@@ -1152,7 +1431,41 @@
     'GAS FLOW METERS': ['Diaphragm Gas Meters', 'Turbine Gas Meter Quantometer', 'RPD Rotary Gas Meter'],
     'SEQUENCE CONTROLLERS': ['Burner Control', 'Burner Control Unit (BCU)']
   };
-  const grid = document.getElementById('catGrid');
+  // ---- Mega-menu: category groups + icons (for Products dropdown) ----
+  const categoryGroups = [
+    { key:'valves', label:'Valves & Flow Control', items:['BUTTERFLY VALVES','MANUAL BALL VALVES','SOLENOID VALVES','SLAM SHUT OFF VALVES','SAFETY RELIEF VALVES','MULTIBLOCKS','RATIO REGULATORS','PRESSURE REGULATOR VALVES'] },
+    { key:'ignition', label:'Ignition Components', items:['IGNITION TRANSFORMERS','IGNITION ELECTRODES','IGNITION CABLE','IGNITION SPARES','IGNITION SPARK ELECTRODES','PILOT BURNERS'] },
+    { key:'flame', label:'Flame Safety & Controls', items:['FLAME RELAY','FLAME SAFEGUARD','FLAME ARRESTORS','FLAME MONITORING SYSTEMS','UV FLAME DETECTORS','UV FLAME SENSOR','PHOTOCELL','SEQUENCE CONTROLLERS'] },
+    { key:'gastrain', label:'Gas Train & Measurement', items:['GAS TRAIN SYSTEMS','GAS FLOW METERS','PRESSURE GAUGES','PRESSURE SWITCHES','VALVE PROVING SYSTEMS','FILTERS','SERVO MOTORS','HOSE PIPE FITTINGS'] }
+  ];
+  const categoryIconKey = {
+    'BUTTERFLY VALVES':'valve','MANUAL BALL VALVES':'valve','MULTIBLOCKS':'valve','SLAM SHUT OFF VALVES':'valve',
+    'PRESSURE REGULATOR VALVES':'valve','RATIO REGULATORS':'valve','SOLENOID VALVES':'valve',
+    'IGNITION CABLE':'spark','IGNITION ELECTRODES':'spark','IGNITION SPARES':'spark','IGNITION SPARK ELECTRODES':'spark','IGNITION TRANSFORMERS':'spark',
+    'PILOT BURNERS':'flame','FLAME ARRESTORS':'flame','FLAME MONITORING SYSTEMS':'flame','FLAME RELAY':'flame','FLAME SAFEGUARD':'flame',
+    'UV FLAME DETECTORS':'eye','UV FLAME SENSOR':'eye','PHOTOCELL':'eye',
+    'SEQUENCE CONTROLLERS':'gear','SERVO MOTORS':'gear',
+    'GAS TRAIN SYSTEMS':'pipe','HOSE PIPE FITTINGS':'pipe',
+    'GAS FLOW METERS':'gauge','PRESSURE GAUGES':'gauge','PRESSURE SWITCHES':'gauge',
+    'VALVE PROVING SYSTEMS':'shield','SAFETY RELIEF VALVES':'shield',
+    'FILTERS':'filter'
+  };
+  const navIconPaths = {
+    valve:'<circle cx="12" cy="12" r="3"/><path d="M4 12h5M15 12h5"/>',
+    flame:'<path d="M12 2c2 3-1 4-1 7a3 3 0 1 0 6 0c0-2-1-3-1-5 3 2 4 5 4 8a7 7 0 1 1-14 0c0-4 3-6 6-10z"/>',
+    gauge:'<path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l3-4"/><circle cx="12" cy="15" r="1"/>',
+    pipe:'<rect x="3" y="10" width="18" height="4" rx="1"/><circle cx="6" cy="12" r="1"/><circle cx="18" cy="12" r="1"/>',
+    spark:'<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/>',
+    eye:'<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
+    shield:'<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>',
+    filter:'<path d="M4 4h16l-6 8v6l-4 2v-8z"/>',
+    gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>'
+  };
+  function categoryIconSVG(name){
+    const key = categoryIconKey[name] || 'gear';
+    return '<svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + navIconPaths[key] + '</svg>';
+  }
+
   const products = [
     {
       id: 'brahma-eg12l-gmo',
@@ -6653,6 +6966,23 @@
   // Matches the slugify() used by the brand-page generator (tmp/brands_gen/gen_brands.py) exactly.
   function brandSlug(name){ return name.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
   function brandHref(name){ return brandCount(name) > 0 ? 'brands/' + brandSlug(name) + '.html' : 'javascript:void(0)'; }
+  // When a real static page exists for this category/brand, let the link's own
+  // href do the navigating (full page load, clean crawlable URL like
+  // categories/uv-flame-detectors.html) instead of intercepting the click for
+  // the in-page SPA hash view. Only categories/brands with zero products (no
+  // standalone page yet) fall back to the old in-page #/category/... view.
+  function categoryClick(e, name, cleanup){
+    if(cleanup) cleanup();
+    if(categoryCount(name) > 0) return;
+    e.preventDefault();
+    navigateToProduct({type:'category', value:name});
+  }
+  function brandClick(e, b, cleanup){
+    if(cleanup) cleanup();
+    if(brandCount(b) > 0) return;
+    e.preventDefault();
+    navigateToProduct({type:'brand', value:b});
+  }
   function countBadge(n){ return n > 0 ? `<span class="stock-badge">${n} added</span>` : ''; }
   // Brands present within a category, with counts - used as a fallback "sub-category" list
   // for categories that don't have an explicit subcategoryMap entry.
@@ -6683,49 +7013,6 @@
     }));
   }
 
-  categories.forEach((name, i) => {
-    const code = 'RK-' + String(i+1).padStart(2,'0');
-    const n = categoryCount(name);
-    const tile = document.createElement('div');
-    tile.className = 'cat-tile';
-    const catHref = categoryHref(name);
-    tile.innerHTML = `<div class="code">${code}</div><a href="${catHref}" class="cname cname-link"><div class="cname">${name}</div></a>${countBadge(n)}<button type="button" class="cat-toggle" aria-label="Toggle sub-categories">+</button>`;
-    const tileLink = tile.querySelector('.cname-link');
-    if(tileLink){ tileLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); navigateToProduct({type:'category', value:name}); }); }
-    const toggleBtn = tile.querySelector('.cat-toggle');
-    toggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isExpanded = tile.classList.contains('expanded');
-      const existingList = tile.querySelector('.cat-subcats');
-      if(existingList) existingList.remove();
-      if(isExpanded){
-        tile.classList.remove('expanded');
-        toggleBtn.textContent = '+';
-        return;
-      }
-      tile.classList.add('expanded');
-      toggleBtn.textContent = '\u2212';
-      const items = subcategoryItemsForCategory(name);
-      const list = document.createElement('ul');
-      list.className = 'cat-subcats';
-      if(items.length === 0){
-        list.innerHTML = '<li><a>Items added soon</a></li>';
-      } else {
-        list.innerHTML = items.map(() => `<li><a></a></li>`).join('');
-        Array.from(list.querySelectorAll('a')).forEach((a, idx) => {
-          a.textContent = items[idx].label;
-          const countSpan = document.createElement('span');
-          countSpan.className = 'n';
-          countSpan.textContent = items[idx].count;
-          a.appendChild(countSpan);
-          a.addEventListener('click', (ev) => { ev.stopPropagation(); navigateToProduct(items[idx].filter); });
-        });
-      }
-      tile.appendChild(list);
-    });
-    tile.addEventListener('click', () => navigateToProduct({type:'category', value:name}));
-    grid.appendChild(tile);
-  });
 
   const brands = ["Brahma","Cofi","Danfoss","Dungs","Elektrogas","Honeywell Eclipse","Honeywell Elster","Honeywell Kromschröder","Honeywell Maxon","Honeywell Technologies","Madas","R.K. Instruments & Controls","Siemens","Vanaz"];
   // Brand logos - add more here as they're supplied; brands without an entry fall back to text
@@ -6764,8 +7051,8 @@
         : b;
       chip.innerHTML = `<span class="mono">${String(i+1).padStart(2,'0')}</span><a href="${brandHref(b)}" class="brand-chip-link">${label}</a>${countBadge(n)}`;
       const chipLink = chip.querySelector('.brand-chip-link');
-      if(chipLink){ chipLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); navigateToProduct({type:'brand', value:b}); }); }
-      chip.addEventListener('click', () => navigateToProduct({type:'brand', value:b}));
+      if(chipLink){ chipLink.addEventListener('click', (e) => { e.stopPropagation(); brandClick(e, b); }); }
+      chip.addEventListener('click', (e) => { if(brandCount(b) > 0){ window.location.href = brandHref(b); return; } navigateToProduct({type:'brand', value:b}); });
       strip.appendChild(chip);
     });
   }
@@ -6774,7 +7061,8 @@
 
   // ---- Desktop dropdown: category grid (default) + product/category search (on type) ----
   const navProductsGrid = document.getElementById('navProductsGrid');
-  categories.forEach(name => {
+  function renderCategoryRow(name, container){
+    container = container || navProductsGrid;
     const n = categoryCount(name);
     const items = subcategoryItemsForCategory(name);
     const hasSub = items.length > 0;
@@ -6785,8 +7073,8 @@
       const a = document.createElement('a');
       a.href = categoryHref(name);
       a.className = 'nav-drop-link';
-      a.innerHTML = `<span>${name}</span>`;
-      a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
+      a.innerHTML = `${categoryIconSVG(name)}<span>${name}</span>`;
+      a.addEventListener('click', (e) => { categoryClick(e, name, () => document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'))); });
       const toggle = document.createElement('button');
       toggle.type = 'button';
       toggle.className = 'nav-cat-toggle';
@@ -6815,17 +7103,19 @@
       });
       row.appendChild(a);
       row.appendChild(toggle);
-      navProductsGrid.appendChild(row);
-      navProductsGrid.appendChild(subsRow);
+      container.appendChild(row);
+      container.appendChild(subsRow);
     } else {
       const a = document.createElement('a');
       a.href = categoryHref(name);
       a.className = 'nav-drop-link';
-      a.innerHTML = `<span>${name}</span>`;
-      a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
-      navProductsGrid.appendChild(a);
+      a.innerHTML = `${categoryIconSVG(name)}<span>${name}</span>`;
+      a.addEventListener('click', (e) => { categoryClick(e, name, () => document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'))); });
+      container.appendChild(a);
     }
-  });
+  }
+  // Flat alphabetical category list, full-width edge-to-edge (no sidebar/groups).
+  categories.slice().sort((a, b) => a.localeCompare(b)).forEach(name => renderCategoryRow(name));
   const navProductsFilter = document.getElementById('navProductsFilter');
   const navProductsResults = document.getElementById('navProductsResults');
   function renderNavProductResults(rawQuery){
@@ -6863,7 +7153,7 @@
         const a = document.createElement('a');
         a.href = categoryHref(name);
         a.innerHTML = `<span>${name}</span>`;
-        a.addEventListener('click', (e) => { e.preventDefault(); navProductsFilter.value=''; document.querySelectorAll('.nav-dropdown.open').forEach(d=>d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
+        a.addEventListener('click', (e) => { categoryClick(e, name, () => { navProductsFilter.value=''; document.querySelectorAll('.nav-dropdown.open').forEach(d=>d.classList.remove('open')); }); });
         navProductsResults.appendChild(a);
       });
     }
@@ -6896,6 +7186,14 @@
     });
   }
   const navBrandsPanel = document.getElementById('navBrandsPanel');
+  const navBrandsCloseBtn = document.createElement('button');
+  navBrandsCloseBtn.type = 'button';
+  navBrandsCloseBtn.className = 'nav-mega-close';
+  navBrandsCloseBtn.setAttribute('aria-label', 'Close menu');
+  navBrandsCloseBtn.textContent = '✕';
+  navBrandsPanel.appendChild(navBrandsCloseBtn);
+  const navBrandsInner = document.createElement('div');
+  navBrandsInner.className = 'nav-mega-inner';
   brands.forEach(b => {
     const n = brandCount(b);
     const a = document.createElement('a');
@@ -6904,9 +7202,10 @@
     const bLogo = brandLogos[b];
     const bLabel = bLogo ? `<img src="${bLogo}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
     a.innerHTML = `${bLabel}`;
-    a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'brand', value:b}); });
-    navBrandsPanel.appendChild(a);
+    a.addEventListener('click', (e) => { brandClick(e, b, () => document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'))); });
+    navBrandsInner.appendChild(a);
   });
+  navBrandsPanel.appendChild(navBrandsInner);
 
   // desktop dropdown open/close on click (works on touch + mouse)
   [['navProducts'], ['navBrands']].forEach(([id]) => {
@@ -6921,6 +7220,23 @@
   });
   document.addEventListener('click', () => {
     document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+  });
+  document.querySelectorAll('.nav-mega-close').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+    });
+  });
+  // Scrolling the page while a mega-menu is open closes it, so the user is
+  // never stuck with the overlay covering the page and no obvious way back.
+  window.addEventListener('scroll', () => {
+    if(document.querySelector('.nav-dropdown.open')){
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+    }
+  }, { passive:true });
+  // Esc key also closes it.
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape'){ document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); }
   });
 
   // ---- Mobile drawer ----
@@ -6953,7 +7269,7 @@
       a.href = categoryHref(name);
       a.className = 'drawer-sub-link';
       a.innerHTML = `<span>${name}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
-      a.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct({type:'category', value:name}); });
+      a.addEventListener('click', (e) => { categoryClick(e, name, () => drawer.classList.remove('open')); });
       drawerProductsSub.appendChild(a);
       return;
     }
@@ -6979,10 +7295,10 @@
     const subList = document.createElement('div');
     subList.className = 'drawer-subcat-list';
     const viewAll = document.createElement('a');
-    viewAll.href = 'javascript:void(0)';
+    viewAll.href = categoryHref(name);
     viewAll.className = 'drawer-sub-link drawer-sub-sublink drawer-subcat-viewall';
     viewAll.innerHTML = `<span>↳ View all ${name}</span>`;
-    viewAll.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct({type:'category', value:name}); });
+    viewAll.addEventListener('click', (e) => { categoryClick(e, name, () => drawer.classList.remove('open')); });
     subList.appendChild(viewAll);
     items.forEach(item => {
       const sa = document.createElement('a');
@@ -7004,7 +7320,7 @@
     const bLogo2 = brandLogos[b];
     const bLabel2 = bLogo2 ? `<img src="${bLogo2}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
     a.innerHTML = `${bLabel2}${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
-    a.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct({type:'brand', value:b}); });
+    a.addEventListener('click', (e) => { brandClick(e, b, () => drawer.classList.remove('open')); });
     drawerBrandsSub.appendChild(a);
   });
 
@@ -7079,7 +7395,7 @@
         const a = document.createElement('a');
         a.href = categoryHref(name);
         a.innerHTML = `<span>${name}</span><span class="code">RK-${String(idx+1).padStart(2,'0')}</span>`;
-        a.addEventListener('click', (e) => { e.preventDefault(); closeSearch(); navigateToProduct({type:'category', value:name}); });
+        a.addEventListener('click', (e) => { categoryClick(e, name, closeSearch); });
         searchResults.appendChild(a);
       });
     }
