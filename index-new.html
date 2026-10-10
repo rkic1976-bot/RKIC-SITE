@@ -313,12 +313,13 @@
   #navBrandsPanel{
     width:min(92vw, 940px); max-width:940px; padding:12px;
     max-height:85vh; overflow-y:visible;
-    grid-template-columns:repeat(6, 1fr); gap:2px 10px;
+    grid-template-columns:repeat(4, 1fr); gap:0;
   }
   .nav-dropdown.open #navBrandsPanel{ display:grid; }
   #navBrandsPanel a{
-    font-size:0.76rem; padding:8px 6px; min-width:0;
-    flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:5px;
+    font-size:0.82rem; padding:11px 10px; min-width:0;
+    flex-direction:row; align-items:center; justify-content:flex-start; gap:12px;
+    border-bottom:1px solid var(--line);
   }
   /* Fixed uniform box for every logo (source files vary wildly in aspect ratio,
      from ~1.2:1 to ~7.5:1) so all brands render at the same visual size instead
@@ -326,19 +327,22 @@
      wide wordmarks (Siemens, Brahma). object-fit:contain letterboxes each logo
      inside the same box without distorting it. */
   #navBrandsPanel .nav-drop-brand-logo{
-    width:100px; height:40px; max-width:none; object-fit:contain; object-position:left center; flex:0 0 auto;
+    width:64px; height:30px; max-width:none; object-fit:contain; object-position:left center; flex:0 0 64px;
   }
   #navBrandsPanel .nav-drop-brand-name{
-    flex:0 0 auto; width:100%; margin-left:0; white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:break-word;
+    flex:1 1 auto; width:auto; margin-left:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
   #navBrandsPanel.nav-mega{
     position:fixed; top:74px; left:0; right:0; width:100vw; max-width:none; transform:none;
     border-radius:0; border:none; border-top:1px solid var(--line);
     background:#fff; box-shadow:0 24px 48px rgba(51,65,78,0.18);
-    padding:28px calc(50vw - 590px); max-height:none; overflow-y:visible;
+    max-height:none; overflow-y:visible;
+    display:block; padding:0;
   }
-  @media (max-width:1260px){ #navBrandsPanel.nav-mega{ padding:28px 20px; } }
-  .nav-dropdown.open #navBrandsPanel.nav-mega{ display:grid; }
+  .nav-dropdown.open #navBrandsPanel.nav-mega{ display:block; }
+  #navBrandsPanel.nav-mega .nav-mega-inner{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:0;
+  }
   #navBrandsPanel.nav-mega a{ color:var(--ink); }
   #navBrandsPanel.nav-mega a:hover{ background:var(--steel); }
   #navBrandsPanel.nav-mega .nav-drop-brand-name{ color:var(--text-dim); }
@@ -7149,6 +7153,8 @@
     });
   }
   const navBrandsPanel = document.getElementById('navBrandsPanel');
+  const navBrandsInner = document.createElement('div');
+  navBrandsInner.className = 'nav-mega-inner';
   brands.forEach(b => {
     const n = brandCount(b);
     const a = document.createElement('a');
@@ -7158,8 +7164,9 @@
     const bLabel = bLogo ? `<img src="${bLogo}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
     a.innerHTML = `${bLabel}`;
     a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'brand', value:b}); });
-    navBrandsPanel.appendChild(a);
+    navBrandsInner.appendChild(a);
   });
+  navBrandsPanel.appendChild(navBrandsInner);
 
   // desktop dropdown open/close on click (works on touch + mouse)
   [['navProducts'], ['navBrands']].forEach(([id]) => {
