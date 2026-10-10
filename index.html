@@ -448,6 +448,19 @@
   @media (max-width:640px){ .about-copy p{ line-height:1.6; } }
   .about-more-link{ display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-weight:600; color:var(--sage-deep); text-decoration:none; }
   .about-more-link:hover{ color:var(--ink); }
+  .about-visual{
+    position:relative; margin-top:40px; max-width:340px; border-radius:10px;
+    background:#fff; border:1px solid var(--line); padding:28px;
+    box-shadow:0 18px 40px rgba(51,65,78,0.08);
+  }
+  .about-visual img{ display:block; width:100%; height:auto; }
+  .about-visual-cap{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    margin-top:16px; padding-top:14px; border-top:1px solid var(--line);
+    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.05em; color:var(--text-dim);
+  }
+  .about-visual-cap strong{ color:var(--ink); font-family:'Barlow',sans-serif; font-size:0.84rem; letter-spacing:0; }
+  @media (max-width:860px){ .about-visual{ max-width:260px; margin-top:28px; } }
   .pillars{ display:flex; flex-direction:column; gap:0; }
   .pillar{ display:flex; gap:18px; padding:22px 0; border-top:1px solid var(--line); }
   @media (max-width:640px){ .pillar{ padding:14px 0; } }
@@ -1071,6 +1084,13 @@
       <div class="about-copy">
         <p>Founded in 1999 out of Surat, Gujarat, R.K. Instruments &amp; Controls is a trusted <strong>manufacturer</strong>, <strong>exporter</strong>, <strong>importer</strong>, <strong>supplier</strong> and <strong>stockist</strong> of burner, boiler and gas-handling components — from ignition electrodes to full valve-proving systems — working directly with <strong>dealers</strong> and <strong>distributors</strong> across India to get the right part to oil, gas, chemical, pharmaceutical and thermal plants every day.</p>
         <a href="about.html" class="about-more-link">Learn More About Us →</a>
+        <div class="about-visual">
+          <img src="images/brahma-eg12l-gmo-xl.jpg" alt="Brahma EG12*L*GMO gas solenoid valve — representative of the genuine, manufacturer-spec parts RKIC stocks" loading="lazy" width="340" height="340">
+          <div class="about-visual-cap">
+            <span>Brahma · EG12*L*GMO</span>
+            <strong>In stock</strong>
+          </div>
+        </div>
       </div>
       <div class="pillars">
         <div class="pillar">
