@@ -346,7 +346,7 @@
     border-radius:0; border:none; border-top:1px solid var(--line);
     background:#fff; box-shadow:0 24px 48px rgba(51,65,78,0.18);
     max-height:none; overflow-y:visible;
-    display:block; padding:0;
+    display:none; padding:0;
   }
   .nav-dropdown.open #navBrandsPanel.nav-mega{ display:block; }
   #navBrandsPanel.nav-mega .nav-mega-inner{
@@ -873,8 +873,8 @@
       <div class="nav-dropdown" id="navProducts">
         <button class="nav-drop-btn"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Products <span class="chev">⌄</span></button>
         <div class="nav-drop-panel nav-mega" id="navProductsPanel">
+          <button type="button" class="nav-mega-close" aria-label="Close menu">✕</button>
           <div class="nav-mega-inner">
-            <button type="button" class="nav-mega-close" aria-label="Close menu">✕</button>
             <div class="nav-mega-main">
               <div class="nav-drop-search">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -7203,6 +7203,17 @@
       e.stopPropagation();
       document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
     });
+  });
+  // Scrolling the page while a mega-menu is open closes it, so the user is
+  // never stuck with the overlay covering the page and no obvious way back.
+  window.addEventListener('scroll', () => {
+    if(document.querySelector('.nav-dropdown.open')){
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+    }
+  }, { passive:true });
+  // Esc key also closes it.
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape'){ document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); }
   });
 
   // ---- Mobile drawer ----
