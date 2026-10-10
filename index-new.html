@@ -187,9 +187,18 @@
   }
   .nav-dropdown.open .nav-drop-panel.nav-mega{ display:block; }
   .nav-mega-inner{
+    position:relative;
     max-width:1180px; margin:0 auto;
     padding:28px 20px 36px; max-height:calc(100vh - 110px);
+    overflow-y:auto; -webkit-overflow-scrolling:touch;
   }
+  .nav-mega-close{
+    position:absolute; top:14px; right:16px; z-index:2;
+    width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
+    background:#fff; color:var(--ink); font-size:1rem; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .nav-mega-close:hover{ background:var(--steel); }
   .nav-mega-main{ width:100%; min-width:0; }
   .nav-mega .nav-drop-search{
     background:var(--paper); border:1px solid var(--line);
@@ -865,6 +874,7 @@
         <button class="nav-drop-btn"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Products <span class="chev">⌄</span></button>
         <div class="nav-drop-panel nav-mega" id="navProductsPanel">
           <div class="nav-mega-inner">
+            <button type="button" class="nav-mega-close" aria-label="Close menu">✕</button>
             <div class="nav-mega-main">
               <div class="nav-drop-search">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -7153,6 +7163,12 @@
     });
   }
   const navBrandsPanel = document.getElementById('navBrandsPanel');
+  const navBrandsCloseBtn = document.createElement('button');
+  navBrandsCloseBtn.type = 'button';
+  navBrandsCloseBtn.className = 'nav-mega-close';
+  navBrandsCloseBtn.setAttribute('aria-label', 'Close menu');
+  navBrandsCloseBtn.textContent = '✕';
+  navBrandsPanel.appendChild(navBrandsCloseBtn);
   const navBrandsInner = document.createElement('div');
   navBrandsInner.className = 'nav-mega-inner';
   brands.forEach(b => {
@@ -7181,6 +7197,12 @@
   });
   document.addEventListener('click', () => {
     document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+  });
+  document.querySelectorAll('.nav-mega-close').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+    });
   });
 
   // ---- Mobile drawer ----
