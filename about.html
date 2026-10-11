@@ -361,6 +361,7 @@
   @media (max-width:520px){ .grid-cat{ grid-template-columns:1fr; } }
   .cat-tile{ background:var(--paper); padding:22px 20px; position:relative; overflow:hidden; transition:background 0.25s ease, border-color 0.25s ease; cursor:pointer; border:2px solid transparent; }
   .cat-tile:hover{ background:#fff; }
+  .cat-tile-img{ display:block; width:100%; height:78px; object-fit:contain; object-position:left center; margin-bottom:14px; }
   .cat-tile .code{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; color:var(--sage-deep); letter-spacing:0.08em; }
   .cat-tile .cname-link{ display:block; text-decoration:none; color:inherit; }
   .cat-tile .cname{ margin-top:10px; font-size:0.92rem; font-weight:500; line-height:1.35; color:var(--ink); padding-right:90px; }
@@ -1153,6 +1154,35 @@
     "UV FLAME SENSOR",
     "VALVE PROVING SYSTEMS"
   ];
+  // Representative photo per category (first stocked product's image) — categories not listed have no stock yet.
+  const categoryImages = {
+    'FILTERS': 'images/madas-fm-dn15-large.jpg',
+    'FLAME RELAY': 'images/brahma-re3-large.jpg',
+    'FLAME SAFEGUARD': 'images/siemens-lfs1-11a2-large.jpg',
+    'GAS FLOW METERS': 'images/honeywell-elster-bk-g6m-large.jpg',
+    'GAS TRAIN SYSTEMS': 'images/dungs-gastrain-dn65-large.jpg',
+    'IGNITION CABLE': 'images/cofi-09ca091804m-large.jpg',
+    'IGNITION ELECTRODES': 'images/rkic-ignition-electrode-large.jpg',
+    'IGNITION SPARES': 'images/rkic-cable-lug-4mm-large.jpg',
+    'IGNITION SPARK ELECTRODES': 'images/honeywell-eclipse-10019728-large.jpg',
+    'IGNITION TRANSFORMERS': 'images/brahma-t8-large.jpg',
+    'MANUAL BALL VALVES': 'images/rkic-gas-ball-valve-large.jpg',
+    'MULTIBLOCKS': 'images/dungs-mb-dle-405-b01-s20-large.jpg',
+    'PHOTOCELL': 'images/siemens-qrb3-1-large.jpg',
+    'PILOT BURNERS': 'images/kromschroder-pilot-burner-zkih-400-100r-large.jpg',
+    'PRESSURE GAUGES': 'images/kromschroder-dh8tn40-large.jpg',
+    'PRESSURE REGULATOR VALVES': 'images/vanaz-r2301-large.jpg',
+    'PRESSURE SWITCHES': 'images/madas-psm500-large.jpg',
+    'RATIO REGULATORS': 'images/madas-ag-rc-dn25-large.jpg',
+    'SAFETY RELIEF VALVES': 'images/vanaz-v7744-large.jpg',
+    'SEQUENCE CONTROLLERS': 'images/brahma-cm12u-large.jpg',
+    'SERVO MOTORS': 'images/siemens-sqn30-402a2700-large.jpg',
+    'SLAM SHUT OFF VALVES': 'images/vanaz-v4321-large.jpg',
+    'SOLENOID VALVES': 'images/brahma-eg12l-gmo-large.jpg',
+    'UV FLAME DETECTORS': 'images/honeywell-129464n-large.jpg',
+    'UV FLAME SENSOR': 'images/honeywell-c7027a1049-large.jpg',
+    'VALVE PROVING SYSTEMS': 'images/dungs-vps504s04-large.jpg'
+  };
   // Sub-categories nested under a parent category. Add more entries here as needed.
   const subcategoryMap = {
     'PRESSURE REGULATOR VALVES': ['High Pressure Regulator', 'Low Pressure Regulator', 'Oxygen Regulator', 'Ammonia Regulator', 'CO2 Regulator', 'LPG Auto Change Over Regulator'],
@@ -6698,7 +6728,9 @@
     const tile = document.createElement('div');
     tile.className = 'cat-tile';
     const catHref = categoryHref(name);
-    tile.innerHTML = `<div class="code">${code}</div><a href="${catHref}" class="cname cname-link"><div class="cname">${name}</div></a>${countBadge(n)}<button type="button" class="cat-toggle" aria-label="Toggle sub-categories">+</button>`;
+    const img = categoryImages[name];
+    const imgHTML = img ? `<img src="${img}" alt="${name}" class="cat-tile-img" loading="lazy">` : '';
+    tile.innerHTML = `${imgHTML}<div class="code">${code}</div><a href="${catHref}" class="cname cname-link"><div class="cname">${name}</div></a>${countBadge(n)}<button type="button" class="cat-toggle" aria-label="Toggle sub-categories">+</button>`;
     const tileLink = tile.querySelector('.cname-link');
     if(tileLink){ tileLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); navigateToProduct({type:'category', value:name}); }); }
     const toggleBtn = tile.querySelector('.cat-toggle');
