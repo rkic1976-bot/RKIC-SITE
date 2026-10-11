@@ -18,7 +18,6 @@
   var prefix = /\/(products|categories|brands)\//.test(location.pathname) ? '../' : '';
 
   var categories = [
-    "BUTTERFLY VALVES",
     "FILTERS","FLAME ARRESTORS","FLAME MONITORING SYSTEMS","FLAME RELAY",
     "FLAME SAFEGUARD","GAS FLOW METERS","GAS TRAIN SYSTEMS","HOSE PIPE FITTINGS","IGNITION CABLE",
     "IGNITION ELECTRODES","IGNITION SPARES","IGNITION SPARK ELECTRODES","IGNITION TRANSFORMERS",
@@ -37,7 +36,7 @@
 
   // ---- Category icons — matches index.html's nav-mega grid exactly (10 Oct 2026) ----
   var categoryIconKey = {
-    'BUTTERFLY VALVES':'valve','MANUAL BALL VALVES':'valve','MULTIBLOCKS':'valve','SLAM SHUT OFF VALVES':'valve',
+    'MANUAL BALL VALVES':'valve','MULTIBLOCKS':'valve','SLAM SHUT OFF VALVES':'valve',
     'PRESSURE REGULATOR VALVES':'valve','RATIO REGULATORS':'valve','SOLENOID VALVES':'valve',
     'IGNITION CABLE':'spark','IGNITION ELECTRODES':'spark','IGNITION SPARES':'spark','IGNITION SPARK ELECTRODES':'spark','IGNITION TRANSFORMERS':'spark',
     'PILOT BURNERS':'flame','FLAME ARRESTORS':'flame','FLAME MONITORING SYSTEMS':'flame','FLAME RELAY':'flame','FLAME SAFEGUARD':'flame',

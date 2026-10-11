@@ -22,7 +22,6 @@ RKIC supplies and distributes components from: Brahma, Cofi, Danfoss, Dungs, Ele
 - Boilers
 - Burner Connector Plug
 - Burners
-- Butterfly Valves
 - Electronic Pressure Gauge DMG
 - Filters | Strainers
 - Flame Arrestors

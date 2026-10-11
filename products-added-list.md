@@ -2374,3 +2374,19 @@ Product ID: `rkic-ss-braided-flexible-hose-pipe` (koi fixed model code nahi — 
 Files updated: `index.html` (242 entries), `about.html` (apna separate products array + categoryImages map, nayi category ki pehli image — placeholder), `related-products-data.js` (242 entries), `brand-data.js` (R.K. Instruments & Controls 36→37), `sitemap.xml` (286 URLs, 2 naye entries), `brands/r-k-instruments-and-controls.html` (36→37 products, ItemList + related-grid card add kiya, stale `#/category/HOSE%20PIPE%20FITTINGS` hash-link naye static category page se replace kiya) — **NEW**: `products/rkic-ss-braided-flexible-hose-pipe.html`, `categories/hose-pipe-fittings.html` (29th category), `images/rkic-ss-braided-flexible-hose-pipe-large.jpg` + thumb (dono self-generated placeholder, real photo nahi).
 
 PDF catalog bhi regenerate kiya: 242 products, 29 categories, 189 pages.
+
+## Butterfly Valves category permanently deleted + Silicon Carbide Tube placeholder added — 243 products total (11-12 Oct 2026)
+
+Rahul ne do explicit, urgent instructions diye ek hi message mein:
+
+**1. Butterfly Valves category hamesha ke liye delete:** Yeh category zero-product thi (koi dedicated category page nahi tha, sirf nav/menu metadata mein naam tha). Hata diya gaya har jagah: `index.html` (categories array, categoryGroups.valves.items, categoryIconKey), `about.html` (categories array), `nav-dropdown.js` (categories array, categoryIconKey), `llms.txt` (category list). Iske baad ek deeper gap mila: har individual static page (`products/*.html`, `categories/*.html`, `brands/*.html` — 242+29+14 = 285 files) mein mobile hamburger-drawer ka hardcoded, non-functional (`javascript:void(0)`) "Butterfly Valves" link tha, jo in 4 jagah se cover nahi hota (nav-dropdown.js apne comment ke mutabik mobile drawer cover nahi karta). "Hamesha ke liye hata do" instruction ko fully honor karne ke liye yeh dead link bhi saare 285 files se bulk-remove kiya gaya (regex-based, batch commits, 0 rejections), plus 4 root pages (`contact.html`, `privacy.html`, `index-new.html`, `index-preview-navy-yellow.html`) jahan bhi same link/array-entry mila.
+
+**2. Naya product — Silicon Carbide Tube (placeholder, naam-only):** Rahul ne pucha gaya ki photo/specs chahiye ya placeholder — unhone explicitly "Sirf naam ke saath placeholder bana do" chuna. Standard product-add workflow (photo/nameplate verification, spec research) is case mein skip kiya gaya kyunki user ne khud waive kiya.
+
+Category: **Ignition Spares** (koi exact fit nahi mila existing categories mein, par SiC tube ignition-related component hone ke karan closest fit). Brand: **R.K. Instruments & Controls** (in-house, `rkic-` prefix convention follow karte hue). Product ID: `rkic-silicon-carbide-tube`.
+
+Image: koi photo nahi mila (explicitly placeholder-only instruction), isliye ek original "Photo Coming Soon" placeholder graphic self-generate kiya (brand colors — ink/sage-deep tube-outline icon, white background) — koi real product photo ka copy/derivative nahi. Specs table minimal rakha: Product Type, Category, "Specifications: Coming Soon", Manufacturer.
+
+Files updated: `index.html` (243 entries), `related-products-data.js` (243 entries), `brand-data.js` (R.K. Instruments & Controls 37→38), `sitemap.xml` (287 URLs, 1 naya entry), `categories/ignition-spares.html` (9→10 products, ItemList + related-grid card add kiya), `brands/r-k-instruments-and-controls.html` (37→38 products, ItemList + related-grid card add kiya) — **NEW**: `products/rkic-silicon-carbide-tube.html`, `images/rkic-silicon-carbide-tube-large.jpg` + thumb (dono self-generated placeholder, real photo nahi).
+
+Note: jab Rahul photo + full specs bhejenge, is placeholder ko real content se update karna hoga (image replace, specs table fill, description rewrite) — standard product-update workflow follow karna.
