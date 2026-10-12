@@ -237,7 +237,8 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .sec-brands{ padding:48px 0 8px; }
 .sec-brands .eyebrow-lt{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--flame); }
 .sec-brands h2{ font-size:clamp(1.3rem,2.6vw,1.7rem); font-weight:600; margin-top:6px; max-width:32ch; }
-.sec-brands > .wrap > p{ color:var(--text-dim); margin-top:10px; max-width:60ch; font-size:0.92rem; }
+.sec-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:24px; flex-wrap:wrap; }
+.sec-brands .sec-head p{ color:var(--text-dim); margin-top:10px; max-width:60ch; font-size:0.92rem; }
 .brand-strip{ display:grid; grid-template-columns:repeat(7,1fr); gap:10px; margin-top:24px; }
   @media (max-width:860px){ .brand-strip{ grid-template-columns:repeat(3,1fr); } }
 .brand-chip{ border:1px solid var(--line); background:#fff; padding:11px 18px; font-size:0.86rem; font-weight:500; color:var(--ink); border-radius:2px; text-decoration:none; display:inline-flex; align-items:center; min-height:26px; }
@@ -697,9 +698,13 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
 
 <section class="sec sec-brands">
   <div class="wrap">
-    <div class="eyebrow-lt">Associate Brands</div>
-    <h2>Genuine parts from the manufacturers your plant already runs on.</h2>
-    <p>We represent the sales &amp; service of these manufacturers across our territories.</p>
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow-lt">Associate Brands</div>
+        <h2>Genuine parts from the manufacturers your plant already runs on.</h2>
+      </div>
+      <p>We represent the sales &amp; service of these manufacturers across our territories.</p>
+    </div>
     <div class="brand-strip" id="brandStrip"></div>
   </div>
 </section>
