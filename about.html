@@ -624,6 +624,7 @@
   .nav-mega-close:hover{ background:var(--steel); }
   .nav-mega-main{ width:100%; min-width:0; }
   .nav-mega .nav-drop-search{ background:var(--paper); border:1px solid var(--line); }
+  .nav-mega .nav-cat-icon{ width:16px; height:16px; flex:0 0 auto; color:var(--sage-deep); margin-right:9px; }
   .nav-mega .nav-drop-link{ display:flex; align-items:center; justify-content:flex-start; gap:0; }
   .nav-mega .nav-drop-link span{ margin-right:auto; }
   .nav-mega #navProductsGrid{ grid-template-columns:repeat(6, 1fr); gap:4px 16px; max-height:none; overflow-y:visible; }
@@ -6754,6 +6755,34 @@
   populateBrandStrip(document.getElementById('pmBrandStrip'));
 
   // ---- Desktop dropdown: category grid (default) + product/category search (on type) ----
+  const categoryIconKey = {
+    'MANUAL BALL VALVES':'valve','MULTIBLOCKS':'valve','SLAM SHUT OFF VALVES':'valve',
+    'PRESSURE REGULATOR VALVES':'valve','RATIO REGULATORS':'valve','SOLENOID VALVES':'valve',
+    'IGNITION CABLE':'spark','IGNITION ELECTRODES':'spark','IGNITION SPARES':'spark','IGNITION SPARK ELECTRODES':'spark','IGNITION TRANSFORMERS':'spark',
+    'PILOT BURNERS':'flame','FLAME ARRESTORS':'flame','FLAME MONITORING SYSTEMS':'flame','FLAME RELAY':'flame','FLAME SAFEGUARD':'flame',
+    'UV FLAME DETECTORS':'eye','UV FLAME SENSOR':'eye','PHOTOCELL':'eye',
+    'SEQUENCE CONTROLLERS':'gear','SERVO MOTORS':'gear',
+    'GAS TRAIN SYSTEMS':'pipe','HOSE PIPE FITTINGS':'pipe',
+    'GAS FLOW METERS':'gauge','PRESSURE GAUGES':'gauge','PRESSURE SWITCHES':'gauge',
+    'VALVE PROVING SYSTEMS':'shield','SAFETY RELIEF VALVES':'shield',
+    'FILTERS':'filter',
+    'SILICON CARBIDE TUBES':'pipe'
+  };
+  const navIconPaths = {
+    valve:'<circle cx="12" cy="12" r="3"/><path d="M4 12h5M15 12h5"/>',
+    flame:'<path d="M12 2c2 3-1 4-1 7a3 3 0 1 0 6 0c0-2-1-3-1-5 3 2 4 5 4 8a7 7 0 1 1-14 0c0-4 3-6 6-10z"/>',
+    gauge:'<path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l3-4"/><circle cx="12" cy="15" r="1"/>',
+    pipe:'<rect x="3" y="10" width="18" height="4" rx="1"/><circle cx="6" cy="12" r="1"/><circle cx="18" cy="12" r="1"/>',
+    spark:'<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/>',
+    eye:'<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
+    shield:'<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>',
+    filter:'<path d="M4 4h16l-6 8v6l-4 2v-8z"/>',
+    gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>'
+  };
+  function categoryIconSVG(name){
+    const key = categoryIconKey[name] || 'gear';
+    return '<svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + navIconPaths[key] + '</svg>';
+  }
   const navProductsGrid = document.getElementById('navProductsGrid');
   categories.forEach(name => {
     const n = categoryCount(name);
@@ -6766,7 +6795,7 @@
       const a = document.createElement('a');
       a.href = categoryHref(name);
       a.className = 'nav-drop-link';
-      a.innerHTML = `<span>${name}</span>`;
+      a.innerHTML = `${categoryIconSVG(name)}<span>${name}</span>`;
       a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
       const toggle = document.createElement('button');
       toggle.type = 'button';
@@ -6802,7 +6831,7 @@
       const a = document.createElement('a');
       a.href = categoryHref(name);
       a.className = 'nav-drop-link';
-      a.innerHTML = `<span>${name}</span>`;
+      a.innerHTML = `${categoryIconSVG(name)}<span>${name}</span>`;
       a.addEventListener('click', (e) => { e.preventDefault(); document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); navigateToProduct({type:'category', value:name}); });
       navProductsGrid.appendChild(a);
     }
