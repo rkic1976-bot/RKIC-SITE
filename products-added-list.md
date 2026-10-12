@@ -2390,3 +2390,19 @@ Image: koi photo nahi mila (explicitly placeholder-only instruction), isliye ek 
 Files updated: `index.html` (243 entries), `related-products-data.js` (243 entries), `brand-data.js` (R.K. Instruments & Controls 37→38), `sitemap.xml` (287 URLs, 1 naya entry), `categories/ignition-spares.html` (9→10 products, ItemList + related-grid card add kiya), `brands/r-k-instruments-and-controls.html` (37→38 products, ItemList + related-grid card add kiya) — **NEW**: `products/rkic-silicon-carbide-tube.html`, `images/rkic-silicon-carbide-tube-large.jpg` + thumb (dono self-generated placeholder, real photo nahi).
 
 Note: jab Rahul photo + full specs bhejenge, is placeholder ko real content se update karna hoga (image replace, specs table fill, description rewrite) — standard product-update workflow follow karna.
+
+## Vanaz R2324 High Pressure Regulator added, "High Pressure Regulator" subcategory — 244 products total (12-13 Oct 2026)
+
+Rahul ne vanaz.com ki official product page (pressure-regulators-with-high-pressure-high-flow-rate.html) se R2324 model specs diya, saath mein ek nameplate/body photo (stainless-steel body, top adjusting knob, 1" BSP side port). "Model : Vanaz R2324 ko add kare" — High Pressure Regulator subcategory link diya confirm karne ke liye.
+
+Pehle duplicate-check kiya (standing rule): koi `vanaz-r2324` id ya rkic.in par koi R2324 page exist nahi karta tha — genuinely naya product confirm hua.
+
+Specs vanaz.com se: Inlet Pressure 15–250 Kg/cm², Outlet Pressure 10–80 Kg/cm², Flow Rate 300 Nm³/hr, End Connection 1" BSP (INT), Media CNG/Nitrogen/Oxygen/CO2/Argon/Hydrogen. Manufacturer row Vanaz convention follow ki ("Vanaz Engineers Ltd, Pune", no period after Ltd). Body Material row omit ki kyunki source page mein nahi thi (never-guess-mandatory-specs rule).
+
+Subcategory: "High Pressure Regulator" (Rahul ke diye link se exact match, jo pehle se categories/pressure-regulator-valves-high-pressure-regulator.html mein 7 Vanaz products ke saath exist karti thi — ab 8). Product ID: `vanaz-r2324`. Image: Rahul ki bheji photo se standard white-canvas large(1100)/thumb(400) pair generate kiya.
+
+Page `products/vanaz-r2322.html` ko template banaya (same high-pressure Vanaz family, closest structure match) — targeted string-replace/rep() discipline follow kiya, sab unique-match assert kiye. Ek bug pakda-fix kiya: description text mein literal `1"` character JSON-LD aur meta-attribute dono jagah syntax tod raha tha — "1-inch BSP" wording se reword kiya (& quot;/escape complexity avoid karne ke liye).
+
+Files updated: `products-data.js` (244 entries, Node-parsed valid, 0 dup ids), `related-products-data.js` (244 entries), `brand-data.js` (Vanaz 37→38), `sitemap.xml` (new URL entry, alphabetically r2323/r2325 ke beech), `categories/pressure-regulator-valves-high-pressure-regulator.html` (7→8 products, ItemList + related-grid card), `categories/pressure-regulator-valves.html` (main category, 25→26, ItemList + related-grid card), `brands/vanaz.html` (37→38, ItemList + related-grid card) — **NEW**: `products/vanaz-r2324.html`, `images/vanaz-r2324-large.jpg` + thumb.
+
+Sab JSON-LD json.loads-validated, `<a>`/`<div>` tag-balance checked har touched file mein, products-data.js Node.js se parse karke verify kiya (244 total, 0 duplicates). Rahul ko ab device par commit+push karna hoga GitHub Desktop se.

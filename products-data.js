@@ -5227,4 +5227,24 @@ const products = [
       'Manufacturer': 'R.K. Instruments & Controls'
     },
     description: "R.K. Instruments & Controls supplies Silicon Carbide (SiC) ceramic tubes for demanding high-temperature and corrosive-duty applications. SiC is a near-diamond-hard technical ceramic (Mohs 9-9.5) with high thermal conductivity and strong thermal-shock resistance, offered in three industrial grades: Reaction-Bonded (SiSiC/RBSiC) — cost-effective and dimensionally stable, rated to around 1380°C; Sintered (SSiC) — higher-purity, fully gas-tight, rated to 1600-1800°C and the only grade resistant to hydrofluoric acid; and Nitride-Bonded (NSiC/NBSiC) — rated to around 1550°C. Tubes are manufactured to custom shape and dimension — straight, tapered, flanged, multi-hole or rectangular-bore profiles — for use as radiant burner tubes, kiln rollers and structural beams, thermocouple protection sleeves, blast nozzles, wear liners for abrasive slurry or coal-dust pipelines, and shell-and-tube heat exchangers handling corrosive fluids. Grade, dimensions and end configuration can be specified to your application and drawing."
-  }];
+  },
+  {
+      id: "vanaz-r2324",
+      name: "Vanaz High Pressure Regulator R2324",
+      brand: "Vanaz",
+      category: "PRESSURE REGULATOR VALVES",
+      subcategory: "High Pressure Regulator",
+      code: "R2324",
+      size: "1\" BSP (INT) Threaded",
+      image: "images/vanaz-r2324-large.jpg",
+      specs: {
+        "Type": "R2324",
+        "Connection": "1\" BSP (INT) Threaded",
+        "Media": "CNG / Nitrogen / Oxygen / CO2 / Argon / Hydrogen",
+        "Inlet Pressure": "15 – 250 Kg/cm²",
+        "Outlet Pressure": "10 – 80 Kg/cm²",
+        "Flow Rate": "300 Nm³/Hr.",
+        "Manufacturer": "Vanaz Engineers Ltd, Pune"
+      },
+      description: "The Vanaz R2324 is a heavy-duty, high-pressure industrial gas regulator manufactured by Vanaz Engineers, built for the controlled reduction of very high inlet pressures across industrial, medical and beverage-grade gas applications. Rated for a wide 15–250 Kg/cm² inlet pressure down to a 10–80 Kg/cm² adjustable outlet at flow rates of up to 300 Nm³/hr, with a 1-inch BSP (internal) threaded end connection, it is compatible with CNG, Nitrogen, Oxygen, CO2, Argon and Hydrogen. It is typically deployed in soft drink CO2 pressure reduction systems, steel industry high-pressure oxygen lancing, and high-pressure gas manifold reduction systems. Manufactured by Vanaz Engineers Ltd, Pune."
+    }];
