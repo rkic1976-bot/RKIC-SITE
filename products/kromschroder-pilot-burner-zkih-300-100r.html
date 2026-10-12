@@ -728,10 +728,8 @@ document.addEventListener('DOMContentLoaded', function(){
   if (!strip) return;
   var html = '';
   RKIC_BRANDS.forEach(function(b){
-    if (!b.count) return;
-    var badge = '<span class="stock-badge">' + b.count + ' added</span>';
-    html += '<a class="brand-chip" href="../brands/' + b.slug + '.html">' +
-      '<img class="brand-chip-logo" src="' + b.logo + '" alt="' + b.name + ' logo">' + badge + '</a>';
+    html += '<div class="brand-chip"><a class="brand-chip-link" href="../brands/' + b.slug + '.html">' +
+      '<img class="brand-logo-img" src="' + b.logo + '" alt="' + b.name + ' logo"></a></div>';
   });
   strip.innerHTML = html;
 });
