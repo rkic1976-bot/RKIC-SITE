@@ -63,8 +63,12 @@
     return '<svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + navIconPaths[key] + '</svg>';
   }
 
+  // Matches index.html's categorySlugOverrides exactly (search "categorySlugOverrides"
+  // there) — a couple of categories have a real page filename that doesn't match the
+  // plain slugified name. Mirror any change there here too.
+  var categorySlugOverrides = { 'FILTERS': 'filters-strainers', 'PRESSURE GAUGES': 'pressure-gauge-accessories' };
   function categoryCount(name){ return RKIC_PRODUCTS.filter(function(p){ return p.category === name; }).length; }
-  function categorySlug(name){ return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+  function categorySlug(name){ return categorySlugOverrides[name] || name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
   function categoryHref(name){ return categoryCount(name) > 0 ? prefix + 'categories/' + categorySlug(name) + '.html' : prefix + 'index.html#/category/' + encodeURIComponent(name); }
 
   // ---- Products grid: category rows + collapsed-by-default subcategory toggles ----
@@ -112,6 +116,53 @@
         a2.className = 'nav-drop-link';
         a2.innerHTML = categoryIconSVG(name) + '<span>' + name + '</span>';
         navProductsGrid.appendChild(a2);
+      }
+    });
+  }
+
+  // ---- Mobile drawer products list: same category/subcategory data as the desktop
+  // grid above, rendered into the hamburger drawer's #drawerProductsSub placeholder
+  // (markup: `<div class="drawer-sub" id="drawerProductsSub"></div>` inside the
+  // Products <li class="drawer-item">). Replaces the old per-page hardcoded list,
+  // which had a stray link to a non-existent "Electronic Pressure Gauge Dmg" category
+  // and was missing/stale on the subcategory expand options. Added 12 Oct 2026. ----
+  var drawerProductsSub = document.getElementById('drawerProductsSub');
+  if(drawerProductsSub){
+    categories.forEach(function(name){
+      var subNames = subcategoryMap[name] || [];
+      if(subNames.length){
+        var item = document.createElement('div');
+        item.className = 'drawer-cat-item';
+        var row = document.createElement('div');
+        row.className = 'drawer-cat-row';
+        var a = document.createElement('a');
+        a.href = categoryHref(name);
+        a.textContent = name;
+        var toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'drawer-cat-toggle';
+        toggle.setAttribute('aria-label', 'Show sub-categories');
+        toggle.innerHTML = '<span class="chev">⌄</span>';
+        toggle.addEventListener('click', function(){ item.classList.toggle('open'); });
+        row.appendChild(a);
+        row.appendChild(toggle);
+        var subList = document.createElement('div');
+        subList.className = 'drawer-subcat-list';
+        subNames.forEach(function(subName){
+          var sa = document.createElement('a');
+          sa.href = prefix + 'index.html#/subcategory/' + encodeURIComponent(subName);
+          sa.className = 'drawer-sub-sublink';
+          sa.textContent = '↳ ' + subName;
+          subList.appendChild(sa);
+        });
+        item.appendChild(row);
+        item.appendChild(subList);
+        drawerProductsSub.appendChild(item);
+      } else {
+        var a2 = document.createElement('a');
+        a2.href = categoryHref(name);
+        a2.textContent = name;
+        drawerProductsSub.appendChild(a2);
       }
     });
   }
