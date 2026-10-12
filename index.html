@@ -1286,41 +1286,11 @@
 
 </div>
 
-<div class="product-modal" id="productModal" aria-hidden="true">
-  <div class="product-modal-backdrop" id="productModalBackdrop"></div>
-  <div class="product-modal-panel">
-    <button class="product-modal-close" id="productModalClose" aria-label="Close">&times;</button>
-    <button class="product-modal-back" id="productModalBack" aria-label="Back to catalog">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-      Back to Catalog
-    </button>
-    <div class="product-modal-head">
-      <div class="eyebrow-lt" id="pmEyebrow"></div>
-      <h3 id="pmTitle"></h3>
-    </div>
-    <div class="product-modal-grid" id="pmGrid"></div>
-    <section class="sec brands pm-brands">
-      <div class="sec-head">
-        <div>
-          <div class="eyebrow-lt">Associate Brands</div>
-          <h2>Genuine parts from the manufacturers your plant already runs on.</h2>
-        </div>
-        <p>We represent the sales &amp; service of these manufacturers across our territories.</p>
-      </div>
-      <div class="brand-strip" id="pmBrandStrip"></div>
-    </section>
-  </div>
-</div>
-
 <div class="cat-lightbox" id="catLightbox">
   <button class="cat-lightbox-close" id="catLightboxClose" aria-label="Close">&times;</button>
   <img src="" alt="Product zoom preview">
 </div>
 
-<!-- #contact footer moved out of #homeView (see below, after #productModal) so it
-     stays visible on every SPA route — category/brand/product views open inside
-     #productModal while #homeView gets display:none, which previously hid this
-     footer (and its address/phone/email) on those routes entirely. -->
 <footer id="contact">
   <div class="wrap contact-grid">
     <div>
@@ -1524,73 +1494,6 @@
     });
   })();
 
-  function relatedProductsHTML(p){
-    var pool = products.filter(function(o){ return o.id !== p.id; });
-    var picked = [];
-    var used = {};
-    function addFrom(list){
-      for (var i=0;i<list.length && picked.length<4;i++){
-        var o = list[i];
-        if (!used[o.id]) { picked.push(o); used[o.id]=true; }
-      }
-    }
-    if (p.subcategory) addFrom(pool.filter(function(o){ return o.category===p.category && o.subcategory===p.subcategory; }));
-    addFrom(pool.filter(function(o){ return o.category===p.category; }));
-    addFrom(pool.filter(function(o){ return o.brand===p.brand; }));
-    if (picked.length===0) return '';
-    var cards = picked.map(function(o){
-      return `<a class="related-card" href="products/${o.id}.html">
-        <div class="related-thumb"><img src="${o.image}" alt="${o.name}" loading="lazy"></div>
-        <div class="related-name">${o.name}</div>
-        ${o.code ? `<div class="related-code">${o.code}</div>` : ''}
-      </a>`;
-    }).join('');
-    return `<div class="spot-extra">
-      <section class="sec-related">
-        <div class="eyebrow-lt">You May Also Need</div>
-        <h2>Related products from the same range.</h2>
-        <div class="related-grid">${cards}</div>
-      </section>
-    </div>`;
-  }
-  function productCardHTML(p, showExtra){
-    const specsHTML = Object.entries(p.specs).map(([k,v]) => `<div><span class="k">${k}</span>${v}</div>`).join('');
-    const images = (p.images && p.images.length) ? p.images : [p.image];
-    const brandLogoSrc = brandLogos[p.brand];
-    const brandTagHTML = brandLogoSrc
-      ? `<span class="spot-tag-brand"><img src="${brandLogoSrc}" alt="${p.brand} logo"/></span>`
-      : `<span class="spot-tag">${p.brand}</span>`;
-    const sliderNavHTML = images.length > 1 ? `
-        <button type="button" class="img-slide-prev" aria-label="Previous photo">&lsaquo;</button>
-        <button type="button" class="img-slide-next" aria-label="Next photo">&rsaquo;</button>
-        <div class="img-slide-dots">${images.map((img,i) => `<button type="button" class="img-slide-dot${i===0?' active':''}" data-idx="${i}" aria-label="Photo ${i+1}"></button>`).join('')}</div>` : '';
-    return `
-    <article class="spot-card">
-      <div class="spot-img" data-images='${JSON.stringify(images).replace(/'/g,'&#39;')}' data-idx="0">
-        <a href="products/${p.id}.html">
-          <img src="${images[0]}" alt="${p.name} — ${p.category} by ${p.brand}${p.code ? ', product code ' + p.code : ''}" loading="lazy"/>
-        </a>
-        ${sliderNavHTML}
-      </div>
-      <div>
-        <div class="spot-tags">
-          <span class="spot-tag">${p.category}</span>
-          ${p.subcategory ? `<span class="spot-tag spot-tag-sub">${p.subcategory}</span>` : ''}
-          ${brandTagHTML}
-          ${p.size ? `<span class="spot-tag">${p.size}</span>` : ''}
-        </div>
-        <h3><a href="products/${p.id}.html">${p.name}</a></h3>
-        ${p.code ? `<div class="spot-sku">Product Code ${p.code}</div>` : ''}
-        <p class="spot-desc">${p.description}</p>
-        <div class="spot-specs">${specsHTML}</div>
-        <div class="spot-ctas">
-          <a class="btn-primary btn-whatsapp" href="${waLink('Enquiry for ' + p.name + (p.code ? ' (Code ' + p.code + ')' : ''))}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-          <a class="btn-secondary" href="products/${p.id}.html">View Full Page</a>
-        </div>
-      </div>
-    </article>${(showExtra && p.extraHTML) ? p.extraHTML : ''}${showExtra ? relatedProductsHTML(p) : ''}`;
-  }
-
   // Multi-photo slider: prev/next/dot controls within .spot-img
   function updateSpotImgSlide(spotImg, newIdx){
     let images;
@@ -1635,156 +1538,6 @@
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeBox(); });
   })();
 
-  const productModal = document.getElementById('productModal');
-  const homeView = document.getElementById('homeView');
-  const pmEyebrow = document.getElementById('pmEyebrow');
-  const pmTitle = document.getElementById('pmTitle');
-  const pmGrid = document.getElementById('pmGrid');
-  const RANGE_BANNERS = {
-    'RPD Rotary Gas Meter': {
-      href: 'products/honeywell-elster-rabo-model-range.html',
-      title: 'Honeywell Elster RABO Rotary Gas Meter — Full Model Range (DN32&ndash;DN100)',
-      desc: 'MWA code, flow range (Qmin&ndash;Qmax) and body length for every RABO variant from DN32 to DN100, PN16. Reference chart for the full range &mdash; we currently stock and supply the RABO G40 DN50 CLASS150 shown below.',
-      imageProductId: 'honeywell-elster-rabo-g40-dn50',
-      subcategory: 'RPD Rotary Gas Meter',
-      brand: 'Honeywell Elster',
-      category: 'GAS FLOW METERS'
-    }
-  };
-  function rangeCardFromEntry(b){
-    const refProduct = b.imageProductId ? products.find(p => p.id === b.imageProductId) : null;
-    const img = refProduct ? refProduct.image : '';
-    const imgHTML = img ? `<a href="${b.href}"><img src="${img}" alt="${b.title}" loading="lazy"/></a>` : '';
-    return `
-    <article class="spot-card pm-range-card">
-      <div class="spot-img">${imgHTML}</div>
-      <div>
-        <div class="spot-tags">
-          <span class="spot-tag spot-tag-chart">Reference Chart</span>
-        </div>
-        <h3><a href="${b.href}">${b.title}</a></h3>
-        <p class="spot-desc">${b.desc}</p>
-        <div class="spot-ctas">
-          <a class="btn-secondary" href="${b.href}">View Full Model Range List</a>
-        </div>
-      </div>
-    </article>`;
-  }
-  function rangeCardHTML(subName){
-    const b = RANGE_BANNERS[subName];
-    return b ? rangeCardFromEntry(b) : '';
-  }
-  function rangeCardsForBrand(brandName){
-    return Object.values(RANGE_BANNERS).filter(b => b.brand === brandName).map(rangeCardFromEntry).join('');
-  }
-  function rangeCardsForCategoryBrand(category, brand){
-    return Object.values(RANGE_BANNERS).filter(b => b.category === category && b.brand === brand).map(rangeCardFromEntry).join('');
-  }
-
-  function compactCardHTML(p){
-    return `<a class="related-card" href="products/${p.id}.html">
-      <div class="related-thumb"><img src="${p.image}" alt="${p.name}" loading="lazy"><span class="related-zoom-btn" data-zoom-src="${p.image}" data-zoom-alt="${p.name}" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span></div>
-      <div class="related-name">${p.name}</div>
-      ${p.code ? `<div class="related-code">${p.code}</div>` : ''}
-    </a>`;
-  }
-  function renderProductView(filter){
-    let matches, title, eyebrow;
-    if(filter.type === 'category'){
-      matches = products.filter(p => p.category === filter.value);
-      eyebrow = 'Product Category';
-      title = filter.value;
-    } else if(filter.type === 'subcategory'){
-      matches = products.filter(p => p.subcategory === filter.value);
-      eyebrow = 'Product Sub-category';
-      title = filter.value;
-    } else if(filter.type === 'brand'){
-      matches = products.filter(p => p.brand === filter.value);
-      eyebrow = 'Associate Brand';
-      title = filter.value;
-    } else if(filter.type === 'category-brand'){
-      matches = products.filter(p => p.category === filter.value.category && p.brand === filter.value.brand);
-      eyebrow = filter.value.brand + ' · ' + filter.value.category;
-      title = filter.value.brand + ' ' + filter.value.category.charAt(0) + filter.value.category.slice(1).toLowerCase();
-    } else {
-      matches = [filter.value];
-      eyebrow = filter.value.brand + ' · ' + filter.value.category;
-      title = filter.value.name;
-    }
-    pmEyebrow.textContent = eyebrow;
-    pmTitle.textContent = title;
-    pmGrid.innerHTML = '';
-    if(matches.length === 0){
-      pmGrid.innerHTML = `<div class="pm-empty">We're adding parts to this ${filter.type} every week.<br>Have a specific part number in mind? <a href="${waLink('Enquiry for ' + title)}" target="_blank" rel="noopener">Ask us on WhatsApp</a> or <a href="#contact">send an enquiry</a>.</div>`;
-    } else if(filter.type === 'category'){
-      const gridClass = 'related-grid';
-      const general = matches.filter(p => !p.subcategory);
-      const subGroups = {};
-      matches.forEach(p => { if(p.subcategory){ (subGroups[p.subcategory] = subGroups[p.subcategory] || []).push(p); } });
-      let html = general.length ? `<div class="${gridClass}">${general.map(p => compactCardHTML(p)).join('')}</div>` : '';
-      Object.keys(subGroups).forEach(subName => {
-        html += `<div class="pm-subcat-heading"><span>${subName}</span></div>`;
-        html += rangeCardHTML(subName);
-        html += `<div class="${gridClass}">${subGroups[subName].map(p => compactCardHTML(p)).join('')}</div>`;
-      });
-      pmGrid.innerHTML = html;
-    } else if(filter.type === 'subcategory'){
-      pmGrid.innerHTML = rangeCardHTML(filter.value) + `<div class="related-grid">${matches.map(p => compactCardHTML(p)).join('')}</div>`;
-    } else if(filter.type === 'brand'){
-      pmGrid.innerHTML = rangeCardsForBrand(filter.value) + `<div class="related-grid">${matches.map(p => compactCardHTML(p)).join('')}</div>`;
-    } else if(filter.type === 'category-brand'){
-      pmGrid.innerHTML = rangeCardsForCategoryBrand(filter.value.category, filter.value.brand) + `<div class="related-grid">${matches.map(p => compactCardHTML(p)).join('')}</div>`;
-    } else {
-      pmGrid.innerHTML = matches.map(p => productCardHTML(p, true)).join('');
-    }
-    homeView.style.display = 'none';
-    productModal.classList.add('open');
-    productModal.setAttribute('aria-hidden','false');
-    window.scrollTo(0,0);
-  }
-  function filterToHash(filter){
-    if(filter.type === 'category') return '#/category/' + encodeURIComponent(filter.value);
-    if(filter.type === 'subcategory') return '#/subcategory/' + encodeURIComponent(filter.value);
-    if(filter.type === 'brand') return '#/brand/' + encodeURIComponent(filter.value);
-    if(filter.type === 'category-brand') return '#/category-brand/' + encodeURIComponent(filter.value.category) + '/' + encodeURIComponent(filter.value.brand);
-    return '#/product/' + encodeURIComponent(filter.value.id);
-  }
-  function hashToFilter(hash){
-    const m = hash.match(/^#\/(category|subcategory|brand|product|category-brand)\/(.+)$/);
-    if(!m) return null;
-    const kind = m[1];
-    if(kind === 'category-brand'){
-      const idx = m[2].indexOf('/');
-      if(idx === -1) return null;
-      return {type:'category-brand', value:{category: decodeURIComponent(m[2].slice(0,idx)), brand: decodeURIComponent(m[2].slice(idx+1))}};
-    }
-    const val = decodeURIComponent(m[2]);
-    if(kind === 'product'){
-      const p = products.find(pr => pr.id === val);
-      return p ? {type:'single', value:p} : null;
-    }
-    return {type:kind, value:val};
-  }
-  function navigateToProduct(filter){
-    const hash = filterToHash(filter);
-    if(location.hash === hash){ renderProductView(filter); }
-    else { location.hash = hash; }
-  }
-  function handleHashRoute(){
-    const filter = hashToFilter(location.hash);
-    if(filter){ renderProductView(filter); }
-    else { closeProductModal(); }
-  }
-  window.addEventListener('hashchange', handleHashRoute);
-  function closeProductModal(){
-    productModal.classList.remove('open');
-    productModal.setAttribute('aria-hidden','true');
-    homeView.style.display = '';
-  }
-  function goBackToCatalog(){ location.hash = '#catalog'; }
-  document.getElementById('productModalClose').addEventListener('click', goBackToCatalog);
-  document.getElementById('productModalBack').addEventListener('click', goBackToCatalog);
-
   function categoryCount(name){ return products.filter(p => p.category === name).length; }
   // Matches the slugify() used by the category-page generator (tmp/gen_categories.py) exactly.
   // Exceptions where the display name's auto-generated slug doesn't match the actual category page filename
@@ -1795,22 +1548,16 @@
   // Matches the slugify() used by the brand-page generator (tmp/brands_gen/gen_brands.py) exactly.
   function brandSlug(name){ return name.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
   function brandHref(name){ return brandCount(name) > 0 ? 'brands/' + brandSlug(name) + '.html' : 'javascript:void(0)'; }
-  // When a real static page exists for this category/brand, let the link's own
-  // href do the navigating (full page load, clean crawlable URL like
-  // categories/uv-flame-detectors.html) instead of intercepting the click for
-  // the in-page SPA hash view. Only categories/brands with zero products (no
-  // standalone page yet) fall back to the old in-page #/category/... view.
+  // Every category/brand always has a real standalone page (categoryHref /
+  // brandHref above), so the link's own href does the navigating — these two
+  // only run the cleanup callback (closing a dropdown/drawer/search panel).
+  // The hash-based in-page quick-preview view was removed site-wide (12 Oct
+  // 2026) in favour of real crawlable URLs everywhere.
   function categoryClick(e, name, cleanup){
     if(cleanup) cleanup();
-    if(categoryCount(name) > 0) return;
-    e.preventDefault();
-    navigateToProduct({type:'category', value:name});
   }
   function brandClick(e, b, cleanup){
     if(cleanup) cleanup();
-    if(brandCount(b) > 0) return;
-    e.preventDefault();
-    navigateToProduct({type:'brand', value:b});
   }
   function countBadge(n){ return n > 0 ? `<span class="stock-badge">${n} added</span>` : ''; }
   // Brands present within a category, with counts - used as a fallback "sub-category" list
@@ -1825,20 +1572,29 @@
   // in subcategoryMap, otherwise a per-brand breakdown fallback so every
   // category (not just the ones with a subcategoryMap entry) gets an
   // expandable list in the tile, nav dropdown, and mobile drawer.
+  // Real standalone pages for every subcategory / category-brand filter (12
+  // Oct 2026) — these used to only exist as an in-page #/subcategory or
+  // #/category-brand hash-routing modal view; each now has its own crawlable
+  // categories/<slug>.html page, so the "href" below is a genuine link.
   function subcategoryItemsForCategory(name){
     const subNames = subcategoryMap[name] || [];
     if(subNames.length){
-      return subNames.map(sub => ({
-        label: sub,
-        count: products.filter(p => p.category === name && p.subcategory === sub).length,
-        filter: {type:'subcategory', value: sub}
-      }));
+      return subNames.map(sub => {
+        const count = products.filter(p => p.category === name && p.subcategory === sub).length;
+        return {
+          label: sub,
+          count: count,
+          filter: {type:'subcategory', value: sub},
+          href: count > 0 ? ('categories/' + categorySlug(name) + '-' + brandSlug(sub) + '.html') : categoryHref(name)
+        };
+      });
     }
     const brandCounts = categoryBrandCounts(name);
     return Object.keys(brandCounts).sort().map(brand => ({
       label: brand + ' ' + titleCaseWord(name),
       count: brandCounts[brand],
-      filter: {type:'category-brand', value:{category:name, brand:brand}}
+      filter: {type:'category-brand', value:{category:name, brand:brand}},
+      href: 'categories/' + categorySlug(name) + '-' + brandSlug(brand) + '.html'
     }));
   }
 
@@ -1881,12 +1637,11 @@
       chip.innerHTML = `<span class="mono">${String(i+1).padStart(2,'0')}</span><a href="${brandHref(b)}" class="brand-chip-link">${label}</a>${countBadge(n)}`;
       const chipLink = chip.querySelector('.brand-chip-link');
       if(chipLink){ chipLink.addEventListener('click', (e) => { e.stopPropagation(); brandClick(e, b); }); }
-      chip.addEventListener('click', (e) => { if(brandCount(b) > 0){ window.location.href = brandHref(b); return; } navigateToProduct({type:'brand', value:b}); });
+      chip.addEventListener('click', (e) => { if(brandCount(b) > 0){ window.location.href = brandHref(b); } });
       strip.appendChild(chip);
     });
   }
   populateBrandStrip(document.getElementById('brandStrip'));
-  populateBrandStrip(document.getElementById('pmBrandStrip'));
 
   // ---- Desktop dropdown: category grid (default) + product/category search (on type) ----
   const navProductsGrid = document.getElementById('navProductsGrid');
@@ -1915,12 +1670,10 @@
       subsRow.dataset.parent = name;
       items.forEach(item => {
         const sa = document.createElement('a');
-        sa.href = 'javascript:void(0)';
+        sa.href = item.href;
         sa.innerHTML = `<span>↳ ${item.label}</span>`;
-        sa.addEventListener('click', (e) => {
-          e.preventDefault();
+        sa.addEventListener('click', () => {
           document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
-          navigateToProduct(item.filter);
         });
         subsRow.appendChild(sa);
       });
@@ -2131,10 +1884,10 @@
     subList.appendChild(viewAll);
     items.forEach(item => {
       const sa = document.createElement('a');
-      sa.href = 'javascript:void(0)';
+      sa.href = item.href;
       sa.className = 'drawer-sub-link drawer-sub-sublink';
       sa.innerHTML = `<span>↳ ${item.label}</span>${item.count > 0 ? `<span class="nav-drop-dot" aria-label="${item.count} products added"></span>` : ''}`;
-      sa.addEventListener('click', (e) => { e.preventDefault(); drawer.classList.remove('open'); navigateToProduct(item.filter); });
+      sa.addEventListener('click', () => { drawer.classList.remove('open'); });
       subList.appendChild(sa);
     });
     catItem.appendChild(subList);
@@ -2230,7 +1983,6 @@
     }
   }
   searchInput.addEventListener('input', (e) => renderResults(e.target.value));
-  if(location.hash){ handleHashRoute(); }
   // Fix: a plain URL-fragment link (e.g. Request a Quote on a product/category
   // page, linking to "../index.html#contact") must land on #contact in one
   // click. html{scroll-behavior} is kept 'auto' above so the browser's own

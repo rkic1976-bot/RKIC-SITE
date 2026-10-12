@@ -33,6 +33,40 @@
     'GAS FLOW METERS': ['Diaphragm Gas Meters', 'Turbine Gas Meter Quantometer', 'RPD Rotary Gas Meter'],
     'SEQUENCE CONTROLLERS': ['Burner Control', 'Burner Control Unit (BCU)']
   };
+  // Real standalone pages for each subcategory filter (12 Oct 2026) — replaces
+  // the old index.html#/subcategory/... hash-routing link, which was a real
+  // crawlable <a href> rendered unconditionally into every products/,
+  // categories/ and brands/ page's nav, flagged as a Google-crawling concern.
+  // One entry (Kromschröder Solenoid Valve) has zero products / no standalone
+  // page yet, so it falls back to the parent category page.
+  var subcategoryHrefMap = {
+    'GAS FLOW METERS||Diaphragm Gas Meters': 'categories/gas-flow-meters-diaphragm-gas-meters.html',
+    'GAS FLOW METERS||Turbine Gas Meter Quantometer': 'categories/gas-flow-meters-turbine-gas-meter-quantometer.html',
+    'GAS FLOW METERS||RPD Rotary Gas Meter': 'categories/gas-flow-meters-rpd-rotary-gas-meter.html',
+    'IGNITION TRANSFORMERS||Brahma': 'categories/ignition-transformers-brahma.html',
+    'IGNITION TRANSFORMERS||Cofi': 'categories/ignition-transformers-cofi.html',
+    'IGNITION TRANSFORMERS||Danfoss': 'categories/ignition-transformers-danfoss.html',
+    'IGNITION TRANSFORMERS||Honeywell Kromschröder': 'categories/ignition-transformers-honeywell-kromschroder.html',
+    'IGNITION TRANSFORMERS||Honeywell Technologies': 'categories/ignition-transformers-honeywell-technologies.html',
+    'PRESSURE REGULATOR VALVES||High Pressure Regulator': 'categories/pressure-regulator-valves-high-pressure-regulator.html',
+    'PRESSURE REGULATOR VALVES||Low Pressure Regulator': 'categories/pressure-regulator-valves-low-pressure-regulator.html',
+    'PRESSURE REGULATOR VALVES||Oxygen Regulator': 'categories/pressure-regulator-valves-oxygen-regulator.html',
+    'PRESSURE REGULATOR VALVES||Ammonia Regulator': 'categories/pressure-regulator-valves-ammonia-regulator.html',
+    'PRESSURE REGULATOR VALVES||CO2 Regulator': 'categories/pressure-regulator-valves-co2-regulator.html',
+    'PRESSURE REGULATOR VALVES||LPG Auto Change Over Regulator': 'categories/pressure-regulator-valves-lpg-auto-change-over-regulator.html',
+    'SEQUENCE CONTROLLERS||Burner Control': 'categories/sequence-controllers-burner-control.html',
+    'SEQUENCE CONTROLLERS||Burner Control Unit (BCU)': 'categories/sequence-controllers-burner-control-unit-bcu.html',
+    'SOLENOID VALVES||Brahma Solenoid Valve': 'categories/solenoid-valves-brahma-solenoid-valve.html',
+    'SOLENOID VALVES||Elektrogas Solenoid Valve': 'categories/solenoid-valves-elektrogas-solenoid-valve.html',
+    'SOLENOID VALVES||Solenoid Coil': 'categories/solenoid-valves-solenoid-coil.html',
+    'SOLENOID VALVES||Coil Connector': 'categories/solenoid-valves-coil-connector.html',
+    'SOLENOID VALVES||Kromschröder Solenoid Valve': 'categories/solenoid-valves.html'
+  };
+  function subcategoryHref(catName, subName){
+    var key = catName + '||' + subName;
+    var rel = subcategoryHrefMap[key] || ('categories/' + categorySlug(catName) + '.html');
+    return prefix + rel;
+  }
 
   // ---- Category icons — matches index.html's nav-mega grid exactly (10 Oct 2026) ----
   var categoryIconKey = {
@@ -69,7 +103,7 @@
   var categorySlugOverrides = { 'FILTERS': 'filters-strainers', 'PRESSURE GAUGES': 'pressure-gauge-accessories' };
   function categoryCount(name){ return RKIC_PRODUCTS.filter(function(p){ return p.category === name; }).length; }
   function categorySlug(name){ return categorySlugOverrides[name] || name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
-  function categoryHref(name){ return categoryCount(name) > 0 ? prefix + 'categories/' + categorySlug(name) + '.html' : prefix + 'index.html#/category/' + encodeURIComponent(name); }
+  function categoryHref(name){ return categoryCount(name) > 0 ? prefix + 'categories/' + categorySlug(name) + '.html' : 'javascript:void(0)'; }
 
   // ---- Products grid: category rows + collapsed-by-default subcategory toggles ----
   var navProductsGrid = document.getElementById('navProductsGrid');
@@ -96,7 +130,7 @@
         subsRow.dataset.parent = name;
         subNames.forEach(function(subName){
           var sa = document.createElement('a');
-          sa.href = prefix + 'index.html#/subcategory/' + encodeURIComponent(subName);
+          sa.href = subcategoryHref(name, subName);
           sa.innerHTML = '<span>↳ ' + subName + '</span>';
           subsRow.appendChild(sa);
         });
@@ -150,7 +184,7 @@
         subList.className = 'drawer-subcat-list';
         subNames.forEach(function(subName){
           var sa = document.createElement('a');
-          sa.href = prefix + 'index.html#/subcategory/' + encodeURIComponent(subName);
+          sa.href = subcategoryHref(name, subName);
           sa.className = 'drawer-sub-sublink';
           sa.textContent = '↳ ' + subName;
           subList.appendChild(sa);

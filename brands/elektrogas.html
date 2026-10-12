@@ -501,7 +501,7 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
         if(catMatches.length){
           html += '<div class="pg-search-kicker">Categories</div>';
           catMatches.forEach(function(c){
-            html += '<a href="../index.html#/category/' + encodeURIComponent(c) + '"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
+            var __slug = (c==='FILTERS'?'filters-strainers':(c==='PRESSURE GAUGES'?'pressure-gauge-accessories':c.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''))); html += '<a href="../categories/' + __slug + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
           });
         }
       }
