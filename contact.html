@@ -333,7 +333,8 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 
 /* ===== Contact Hero v2 — dark band, text + form side by side ===== */
 .contact-hero-v2{ background:var(--ink); color:#fff; padding:52px 0 60px; }
-.contact-hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:44px; align-items:start; }
+.contact-hero-v2 .wrap{ max-width:1240px; }
+.contact-hero-grid{ display:grid; grid-template-columns:0.95fr 1.05fr; gap:56px; align-items:start; }
 @media (max-width:860px){ .contact-hero-grid{ grid-template-columns:1fr; gap:30px; } }
 .chip-loc{
   display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,0.08);
@@ -353,7 +354,13 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .hero-stat .num{ font-family:'Barlow Condensed',sans-serif; font-size:1.9rem; font-weight:700; color:var(--sage); line-height:1; }
 .hero-stat .lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.65); }
 @media (max-width:560px){ .hero-stats{ gap:26px; margin-top:30px; padding-top:22px; } .hero-stat .num{ font-size:1.6rem; } }
-.contact-hero-grid .form-card{ margin-top:2px; }
+.contact-hero-grid .form-card{ background:transparent; border:none; box-shadow:none; padding:0; margin-top:2px; color:#fff; }
+.contact-hero-grid .form-card h3{ color:#fff; }
+.contact-hero-grid .form-card p{ color:rgba(255,255,255,0.72); }
+.contact-hero-grid .form-card .cf-note{ color:rgba(255,255,255,0.55); }
+.contact-hero-grid .form-card .cf-field label{ color:var(--sage); }
+.contact-hero-grid .form-card .cf-submit{ background:#fff; color:var(--ink); }
+.contact-hero-grid .form-card .cf-submit:hover{ background:var(--sage); }
 
 /* ===== Boxed info cards below the hero ===== */
 .contact-cards-wrap{ padding-top:44px; padding-bottom:12px; }
