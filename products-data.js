@@ -4673,7 +4673,7 @@ const products = [
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-12-35-A1',
       size: "M14x1.25 · LG12mm · L35mm",
-      image: 'images/rkic-ze-series-generic-large.webp',
+      image: 'images/rkic-ze-14-12-35-a1-ignition-spark-electrode-large.webp',
       specs: {
         "Part Number": "ZE-14-12-35-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
@@ -4694,7 +4694,7 @@ const products = [
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-12-66-A1',
       size: "M14x1.25 · LG12mm · L66mm",
-      image: 'images/rkic-ze-series-generic-large.webp',
+      image: 'images/rkic-ze-14-12-66-a1-ignition-spark-electrode-large.webp',
       specs: {
         "Part Number": "ZE-14-12-66-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
@@ -4715,7 +4715,7 @@ const products = [
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-12-100-A1',
       size: "M14x1.25 · LG12mm · L100mm",
-      image: 'images/rkic-ze-series-generic-large.webp',
+      image: 'images/rkic-ze-14-12-100-a1-ignition-spark-electrode-large.webp',
       specs: {
         "Part Number": "ZE-14-12-100-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
@@ -4736,7 +4736,7 @@ const products = [
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-12-150-A1',
       size: "M14x1.25 · LG12mm · L150mm",
-      image: 'images/rkic-ze-series-generic-large.webp',
+      image: 'images/rkic-ze-14-12-150-a1-ignition-spark-electrode-large.webp',
       specs: {
         "Part Number": "ZE-14-12-150-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
@@ -4757,7 +4757,7 @@ const products = [
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-12-200-A1',
       size: "M14x1.25 · LG12mm · L200mm",
-      image: 'images/rkic-ze-series-generic-large.webp',
+      image: 'images/rkic-ze-14-12-200-a1-ignition-spark-electrode-large.webp',
       specs: {
         "Part Number": "ZE-14-12-200-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
@@ -4778,7 +4778,7 @@ const products = [
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-8-250-A1',
       size: "M14x1.25 · LG8mm · L250mm",
-      image: 'images/rkic-ze-series-generic-large.webp',
+      image: 'images/rkic-ze-14-8-250-a1-ignition-spark-electrode-large.webp',
       specs: {
         "Part Number": "ZE-14-8-250-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
@@ -4799,7 +4799,7 @@ const products = [
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-12-300-A1',
       size: "M14x1.25 · LG12mm · L300mm",
-      image: 'images/rkic-ze-series-generic-large.webp',
+      image: 'images/rkic-ze-14-12-300-a1-ignition-spark-electrode-large.webp',
       specs: {
         "Part Number": "ZE-14-12-300-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
@@ -4820,7 +4820,7 @@ const products = [
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-12-400-A1',
       size: "M14x1.25 · LG12mm · L400mm",
-      image: 'images/rkic-ze-series-generic-large.webp',
+      image: 'images/rkic-ze-14-12-400-a1-ignition-spark-electrode-large.webp',
       specs: {
         "Part Number": "ZE-14-12-400-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
@@ -4862,7 +4862,7 @@ const products = [
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-12-1000-A1',
       size: "M14x1.25 · LG12mm · L1000mm",
-      image: 'images/rkic-ze-series-generic-large.webp',
+      image: 'images/rkic-ze-14-12-1000-a1-ignition-spark-electrode-large.webp',
       specs: {
         "Part Number": "ZE-14-12-1000-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
@@ -4883,7 +4883,7 @@ const products = [
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-12-1200-A1',
       size: "M14x1.25 · LG12mm · L1200mm",
-      image: 'images/rkic-ze-series-generic-large.webp',
+      image: 'images/rkic-ze-14-12-1200-a1-ignition-spark-electrode-large.webp',
       specs: {
         "Part Number": "ZE-14-12-1200-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
