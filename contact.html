@@ -354,6 +354,14 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .hero-stat .num{ font-family:'Barlow Condensed',sans-serif; font-size:1.9rem; font-weight:700; color:var(--sage); line-height:1; }
 .hero-stat .lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.65); }
 @media (max-width:560px){ .hero-stats{ gap:26px; margin-top:30px; padding-top:22px; } .hero-stat .num{ font-size:1.6rem; } }
+.hero-office{ margin-top:38px; padding-top:30px; border-top:1px solid rgba(255,255,255,0.14); }
+.hero-office h3{ font-size:0.98rem; font-weight:600; color:#fff; margin-bottom:16px; }
+.hero-office .info-block{ margin-bottom:14px; border:none; padding:0; }
+.hero-office .info-block:last-child{ margin-bottom:0; }
+.hero-office .info-block .k{ font-family:'IBM Plex Mono',monospace; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage); margin-bottom:4px; }
+.hero-office .info-block .v{ font-size:0.9rem; color:rgba(255,255,255,0.82); line-height:1.5; }
+.hero-office .info-block .v a{ color:#fff; text-decoration:none; }
+.hero-office .info-block .v a:hover{ color:var(--sage); }
 .contact-hero-grid .form-card{ background:transparent; border:none; box-shadow:none; padding:0; margin-top:2px; color:#fff; }
 .contact-hero-grid .form-card h3{ color:#fff; }
 .contact-hero-grid .form-card p{ color:rgba(255,255,255,0.72); }
@@ -365,6 +373,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 /* ===== Boxed info cards below the hero ===== */
 .contact-cards-wrap{ padding-top:44px; padding-bottom:12px; }
 .contact-cards-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start; }
+.contact-cards-grid-2{ grid-template-columns:repeat(2,1fr); }
 @media (max-width:960px){ .contact-cards-grid{ grid-template-columns:1fr; } }
 .contact-cards-grid .c-card + .c-card{ margin-top:0; }
 .c-card{ background:#fff; border:1px solid var(--line); border-radius:8px; padding:24px 24px 22px; box-shadow:0 10px 28px rgba(51,65,78,0.10); color:var(--ink); }
@@ -697,6 +706,12 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         <div class="hero-stat"><span class="num">14</span><span class="lbl">Brands Represented</span></div>
         <div class="hero-stat"><span class="num">240+</span><span class="lbl">Components in Stock</span></div>
       </div>
+      <div class="hero-office">
+        <h3>Contact &amp; Office Details</h3>
+        <div class="info-block"><div class="k">Registered Office</div><div class="v">12, 1st Floor, Dhamanwala Service Complex, G.I.D.C., Pandesara, Surat, Gujarat, India</div></div>
+        <div class="info-block"><div class="k">Email</div><div class="v"><a href="mailto:rkic1976@gmail.com">rkic1976@gmail.com</a></div></div>
+        <div class="info-block"><div class="k">Operating Hours</div><div class="v">9:00 AM to 6:30 PM, Monday to Saturday</div></div>
+      </div>
     </div>
     <div class="c-card form-card">
       <h3>Send Technical Enquiry</h3>
@@ -753,13 +768,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 </section>
 
 <section class="sec contact-cards-wrap">
-  <div class="wrap contact-cards-grid">
-    <div class="c-card">
-      <h3>Contact &amp; Office Details</h3>
-      <div class="info-block"><div class="k">Registered Office</div><div class="v">12, 1st Floor, Dhamanwala Service Complex, G.I.D.C., Pandesara, Surat, Gujarat, India</div></div>
-      <div class="info-block"><div class="k">Email</div><div class="v"><a href="mailto:rkic1976@gmail.com">rkic1976@gmail.com</a></div></div>
-      <div class="info-block"><div class="k">Operating Hours</div><div class="v">9:00 AM to 6:30 PM, Monday to Saturday</div></div>
-    </div>
+  <div class="wrap contact-cards-grid contact-cards-grid-2">
     <div class="c-card">
       <h3>Verified Business Credentials</h3>
       <div class="cred-badges">
