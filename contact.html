@@ -331,8 +331,10 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 /* ---- Contact Us page additions (shared with index.html's embedded styles; see CSS refactor item in pending list) ---- */
 :root{ --lemon-text:#855E1C; }
 
-/* ===== Contact Hero v2 — dark band + quick-action buttons ===== */
-.contact-hero-v2{ background:var(--ink); color:#fff; padding:52px 0 72px; }
+/* ===== Contact Hero v2 — dark band, text + form side by side ===== */
+.contact-hero-v2{ background:var(--ink); color:#fff; padding:52px 0 60px; }
+.contact-hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:44px; align-items:start; }
+@media (max-width:860px){ .contact-hero-grid{ grid-template-columns:1fr; gap:30px; } }
 .chip-loc{
   display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,0.08);
   border:1px solid rgba(255,255,255,0.2); color:var(--sage);
@@ -351,14 +353,16 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .hero-stat .num{ font-family:'Barlow Condensed',sans-serif; font-size:1.9rem; font-weight:700; color:var(--sage); line-height:1; }
 .hero-stat .lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.65); }
 @media (max-width:560px){ .hero-stats{ gap:26px; margin-top:30px; padding-top:22px; } .hero-stat .num{ font-size:1.6rem; } }
+.contact-hero-grid .form-card{ margin-top:2px; }
 
-/* ===== Boxed info/form cards, pulled up over the hero ===== */
-.contact-cards-wrap{ margin-top:-34px; position:relative; z-index:2; }
-.contact-cards-grid{ display:grid; grid-template-columns:0.92fr 1.08fr; gap:22px; align-items:start; }
-@media (max-width:860px){ .contact-cards-grid{ grid-template-columns:1fr; } .contact-cards-wrap{ margin-top:-22px; } }
-.c-card{ background:#fff; border:1px solid var(--line); border-radius:8px; padding:24px 24px 22px; box-shadow:0 10px 28px rgba(51,65,78,0.10); }
+/* ===== Boxed info cards below the hero ===== */
+.contact-cards-wrap{ padding-top:44px; padding-bottom:12px; }
+.contact-cards-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start; }
+@media (max-width:960px){ .contact-cards-grid{ grid-template-columns:1fr; } }
+.contact-cards-grid .c-card + .c-card{ margin-top:0; }
+.c-card{ background:#fff; border:1px solid var(--line); border-radius:8px; padding:24px 24px 22px; box-shadow:0 10px 28px rgba(51,65,78,0.10); color:var(--ink); }
 .c-card + .c-card{ margin-top:18px; }
-.c-card h3{ font-size:1.02rem; font-weight:600; margin-bottom:16px; }
+.c-card h3{ font-size:1.02rem; font-weight:600; margin-bottom:16px; color:var(--ink); }
 .c-card .info-block{ margin-bottom:14px; }
 .c-card .info-block:last-child{ margin-bottom:0; }
 .cred-badges{ display:flex; gap:8px; flex-wrap:wrap; }
@@ -672,46 +676,19 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 <div class="wrap breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Contact Us</div>
 
 <section class="sec contact-hero-v2">
-  <div class="wrap">
-    <span class="chip-loc">📍 Surat, Gujarat, India</span>
-    <h1>Talk to Our Technical Desk</h1>
-    <p>Part numbers, drawings, or just a description of the application — send us your gas train, burner or boiler requirement and we'll get back with the right components and lead time.</p>
-    <div class="cta-row">
-      <a class="btn-primary btn-hero-wa" href="https://wa.me/919824136145?text=Hello%20RKIC%2C%20I%20am%20looking%20for%20burner%2Fgas%20train%20components.%20Please%20assist." target="_blank" rel="noopener">Quick WhatsApp</a>
-      <a class="btn-primary btn-hero-call" href="tel:+919824136145">Direct Desk Call · +91 9824136145</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><span class="num">1999</span><span class="lbl">Established</span></div>
-      <div class="hero-stat"><span class="num">14</span><span class="lbl">Brands Represented</span></div>
-      <div class="hero-stat"><span class="num">240+</span><span class="lbl">Components in Stock</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec contact-cards-wrap" style="padding-top:0;">
-  <div class="wrap contact-cards-grid">
+  <div class="wrap contact-hero-grid">
     <div>
-      <div class="c-card">
-        <h3>Contact &amp; Office Details</h3>
-        <div class="info-block"><div class="k">Registered Office</div><div class="v">12, 1st Floor, Dhamanwala Service Complex, G.I.D.C., Pandesara, Surat, Gujarat, India</div></div>
-        <div class="info-block"><div class="k">Email</div><div class="v"><a href="mailto:rkic1976@gmail.com">rkic1976@gmail.com</a></div></div>
-        <div class="info-block"><div class="k">Operating Hours</div><div class="v">9:00 AM to 6:30 PM, Monday to Saturday</div></div>
+      <span class="chip-loc">📍 Surat, Gujarat, India</span>
+      <h1>Talk to Our Technical Desk</h1>
+      <p>Part numbers, drawings, or just a description of the application — send us your gas train, burner or boiler requirement and we'll get back with the right components and lead time.</p>
+      <div class="cta-row">
+        <a class="btn-primary btn-hero-wa" href="https://wa.me/919824136145?text=Hello%20RKIC%2C%20I%20am%20looking%20for%20burner%2Fgas%20train%20components.%20Please%20assist." target="_blank" rel="noopener">Quick WhatsApp</a>
+        <a class="btn-primary btn-hero-call" href="tel:+919824136145">Direct Desk Call · +91 9824136145</a>
       </div>
-      <div class="c-card">
-        <h3>Verified Business Credentials</h3>
-        <div class="cred-badges">
-          <span class="cred-badge">GSTIN</span>
-          <span class="cred-badge">UDYAM (MSME)</span>
-          <span class="cred-badge">D-U-N-S®</span>
-        </div>
-        <div class="cred-nums">GSTIN: 24ADPPK7006A1ZY<br>UDYAM: UDYAM-GJ-22-126661<br>D-U-N-S®: 920713349</div>
-      </div>
-      <div class="c-card">
-        <h3>Visit Our Office</h3>
-        <div class="map-embed">
-          <iframe src="https://maps.google.com/maps?cid=2131862660796870412&z=17&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="R.K. Instruments &amp; Controls — office location on Google Maps"></iframe>
-          <a class="map-open-link" href="https://maps.app.goo.gl/dckyEYxhRWppFgK47" target="_blank" rel="noopener">View on Google Maps →</a>
-        </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num">1999</span><span class="lbl">Established</span></div>
+        <div class="hero-stat"><span class="num">14</span><span class="lbl">Brands Represented</span></div>
+        <div class="hero-stat"><span class="num">240+</span><span class="lbl">Components in Stock</span></div>
       </div>
     </div>
     <div class="c-card form-card">
@@ -783,6 +760,33 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
         <div class="cf-status" data-fs-success></div>
         <div class="cf-status" data-fs-error></div>
       </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact-cards-wrap">
+  <div class="wrap contact-cards-grid">
+    <div class="c-card">
+      <h3>Contact &amp; Office Details</h3>
+      <div class="info-block"><div class="k">Registered Office</div><div class="v">12, 1st Floor, Dhamanwala Service Complex, G.I.D.C., Pandesara, Surat, Gujarat, India</div></div>
+      <div class="info-block"><div class="k">Email</div><div class="v"><a href="mailto:rkic1976@gmail.com">rkic1976@gmail.com</a></div></div>
+      <div class="info-block"><div class="k">Operating Hours</div><div class="v">9:00 AM to 6:30 PM, Monday to Saturday</div></div>
+    </div>
+    <div class="c-card">
+      <h3>Verified Business Credentials</h3>
+      <div class="cred-badges">
+        <span class="cred-badge">GSTIN</span>
+        <span class="cred-badge">UDYAM (MSME)</span>
+        <span class="cred-badge">D-U-N-S®</span>
+      </div>
+      <div class="cred-nums">GSTIN: 24ADPPK7006A1ZY<br>UDYAM: UDYAM-GJ-22-126661<br>D-U-N-S®: 920713349</div>
+    </div>
+    <div class="c-card">
+      <h3>Visit Our Office</h3>
+      <div class="map-embed">
+        <iframe src="https://maps.google.com/maps?cid=2131862660796870412&z=17&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="R.K. Instruments &amp; Controls — office location on Google Maps"></iframe>
+        <a class="map-open-link" href="https://maps.app.goo.gl/dckyEYxhRWppFgK47" target="_blank" rel="noopener">View on Google Maps →</a>
+      </div>
     </div>
   </div>
 </section>
