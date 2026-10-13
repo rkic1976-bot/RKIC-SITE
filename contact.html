@@ -372,10 +372,13 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 
 /* ===== Boxed info cards below the hero ===== */
 .contact-cards-wrap{ padding-top:44px; padding-bottom:12px; }
-.contact-cards-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start; }
+.contact-cards-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch; }
 .contact-cards-grid-2{ grid-template-columns:repeat(2,1fr); }
 @media (max-width:960px){ .contact-cards-grid{ grid-template-columns:1fr; } }
 .contact-cards-grid .c-card + .c-card{ margin-top:0; }
+.contact-cards-grid .c-card{ display:flex; flex-direction:column; }
+.contact-cards-grid .c-card .map-embed{ margin-top:auto; }
+.contact-cards-grid .c-card .cred-badges{ margin-bottom:12px; }
 .c-card{ background:#fff; border:1px solid var(--line); border-radius:8px; padding:24px 24px 22px; box-shadow:0 10px 28px rgba(51,65,78,0.10); color:var(--ink); }
 .c-card + .c-card{ margin-top:18px; }
 .c-card h3{ font-size:1.02rem; font-weight:600; margin-bottom:16px; color:var(--ink); }
