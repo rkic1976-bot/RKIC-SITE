@@ -695,19 +695,6 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
       <h3>Send Technical Enquiry</h3>
       <p>Fill this in and our technical desk will get back to you directly.</p>
       <form id="cfForm" action="https://formspree.io/f/mppznvnq" method="POST">
-        <div class="cf-field">
-          <label for="cfType">Enquiry Type <span class="cf-req">*</span></label>
-          <select id="cfType" name="enquiry_type" required data-fs-field>
-            <option value="" disabled selected>Click here — select the nature of your enquiry</option>
-            <option value="Product Availability / Stock">Product Availability / Stock</option>
-            <option value="Technical Specification / Datasheet">Technical Specification / Datasheet</option>
-            <option value="Quotation / Pricing">Quotation / Pricing</option>
-            <option value="Bulk / Distributor Enquiry">Bulk / Distributor Enquiry</option>
-            <option value="Service &amp; Repair">Service &amp; Repair</option>
-            <option value="Other">Other</option>
-          </select>
-          <span class="cf-field-err" data-fs-error="enquiry_type"></span>
-        </div>
         <div class="cf-row">
           <div class="cf-field">
             <label for="cfName">Name <span class="cf-req">*</span></label>
@@ -719,15 +706,9 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
             <input type="text" id="cfCompany" name="company" autocomplete="organization" data-fs-field>
           </div>
         </div>
-        <div class="cf-row">
-          <div class="cf-field">
-            <label for="cfCountry">Country <span class="cf-req">*</span></label>
-            <input type="text" id="cfCountry" name="country" required autocomplete="country-name" value="India" data-fs-field>
-          </div>
-          <div class="cf-field">
-            <label for="cfCity">City / District <span class="cf-req">*</span></label>
-            <input type="text" id="cfCity" name="city" required autocomplete="address-level2" data-fs-field>
-          </div>
+        <div class="cf-field">
+          <label for="cfCity">City / District</label>
+          <input type="text" id="cfCity" name="city" autocomplete="address-level2" data-fs-field>
         </div>
         <div class="cf-row">
           <div class="cf-field">
