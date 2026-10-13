@@ -2406,3 +2406,33 @@ Page `products/vanaz-r2322.html` ko template banaya (same high-pressure Vanaz fa
 Files updated: `products-data.js` (244 entries, Node-parsed valid, 0 dup ids), `related-products-data.js` (244 entries), `brand-data.js` (Vanaz 37→38), `sitemap.xml` (new URL entry, alphabetically r2323/r2325 ke beech), `categories/pressure-regulator-valves-high-pressure-regulator.html` (7→8 products, ItemList + related-grid card), `categories/pressure-regulator-valves.html` (main category, 25→26, ItemList + related-grid card), `brands/vanaz.html` (37→38, ItemList + related-grid card) — **NEW**: `products/vanaz-r2324.html`, `images/vanaz-r2324-large.jpg` + thumb.
 
 Sab JSON-LD json.loads-validated, `<a>`/`<div>` tag-balance checked har touched file mein, products-data.js Node.js se parse karke verify kiya (244 total, 0 duplicates). Rahul ko ab device par commit+push karna hoga GitHub Desktop se.
+
+
+---
+
+## 13 Oct 2026 — Naya product add: Dungs PBV Push Button Valve (Pressure Gauges)
+
+Rahul ji ne ek naya Dungs product add karne ko bola — Push Button Valve (PBV), category "Pressure Gauge Accessories". Reference diye: rkic.in ka purana listing (https://www.rkic.in/product/push-button-valve-pressure-gauge/), Dungs ki official installation-instructions PDF (`pbv_manual_us_261406.pdf`, Edition 2015.09), aur ek product photo (do Dungs gauge+PBV assemblies, mbar aur bar range, dono par CE-0085AQ0985 marking).
+
+**Duplicate-check**: `products-data.js` mein "push button"/"pbv"/order numbers 267055/266828 search kiya — koi match nahi mila. Ek existing similar-function product mila tha (`kromschroder-dh8tn40`, Honeywell Kromschröder brand ka push-to-test valve, same "PRESSURE GAUGES" category) — lekin brand alag (Dungs vs Honeywell Kromschröder) hai, isliye genuine naya product hai, duplicate nahi.
+
+**Specs source**: Dungs ki apni official PDF manual se liye (guess nahi kiya) — MOP 70 PSI (5 bar), Ambient -20°C to +60°C, Fluid -0°C to +70°C, media dry natural gas/propane/butane/noncorrosive gases, 2 order numbers (1/4" NPT = 267055, Rp 1/2" incl. metal seal = 266828). rkic.in ke purane listing se cross-verify kiya — exact match mila.
+
+**Rahul ji ka explicit instruction**: "merged both size in 1 page" — dono connection sizes (1/4" NPT aur Rp 1/2") ek hi combined product page mein rakhe gaye, alag-alag pages nahi banaye (existing "same specs, alag size" combined-page rule follow kiya).
+
+**Standalone page**: `products/dungs-pbv.html` — `kromschroder-dh8tn40.html` ko template banaya (same category/function), sab Dungs-specific content se replace kiya: head meta/OG/Twitter/JSON-LD (Product + BreadcrumbList), body (breadcrumb, image, pg-tags with Dungs brand logo, title, 10 spec rows, description, WhatsApp CTA). `CURRENT_PRODUCT_ID = "dungs-pbv"`.
+
+**Image processing**: User-uploaded photo (2000×2000 clean white-background) se standard convention follow kiya — 1100×1100 large @ q91, 400×400 thumb @ q82, white canvas 6% padding, LANCZOS resize. Files: `images/dungs-pbv-large.jpg`, `images/thumbs/dungs-pbv-thumb.jpg`.
+
+**Files update kiye (new-category/new-brand-in-category rule follow karte hue, kyunki Dungs ka pehla product tha "Pressure Gauges" category mein)**:
+- `products-data.js` — naya entry append kiya (245 total products ab).
+- `related-products-data.js` — naya entry add kiya (dh8tn40 ke baad).
+- `brand-data.js` — Dungs count 20 → 21.
+- `sitemap.xml` — naya product URL + naya category-brand page URL (359 total URLs ab).
+- `categories/pressure-gauge-accessories.html` (main category page) — title/meta/description generalize kiya ("Honeywell Kromschröder" specific se "Pressure Gauges & Accessories" generic mein, kyunki ab 2 brands hain is category mein), JSON-LD numberOfItems 2→3 + naya ListItem, "2 products" → "3 products" text, naya Dungs filter-chip add kiya, naya Dungs related-card add kiya.
+- `categories/pressure-gauge-accessories-dungs.html` (**naya file** — is category mein Dungs ka pehla product tha, isliye standing rule ke mutabik naya brand-subpage banaya, existing `-honeywell-kromschroder.html` sub-page ke pattern par).
+- `brands/dungs.html` — JSON-LD numberOfItems 20→21 + naya ListItem, "20 products" → "21 products" text + categories list mein "Pressure Gauges" add kiya, naya related-card add kiya.
+
+**Verify kiya**: `node --check` products-data.js/related-products-data.js/brand-data.js sab pass, `require()`-based enumeration se 245 products/0 duplicate ids confirm kiya, sitemap.xml well-formed XML (359 urls), sabhi touched HTML files ka JSON-LD `json.loads()`-valid, `<a>`/`<div>` tag-balance match. Device par commit karke byte-diff (text files) + PIL pixel-diff (images, bbox=None) se verify karunga commit ke baad.
+
+Ab Rahul ko sirf GitHub Desktop se commit + push karna hoga.

@@ -5247,4 +5247,27 @@ const products = [
         "Manufacturer": "Vanaz Engineers Ltd, Pune"
       },
       description: "The Vanaz R2324 is a heavy-duty, high-pressure industrial gas regulator manufactured by Vanaz Engineers, built for the controlled reduction of very high inlet pressures across industrial, medical and beverage-grade gas applications. Rated for a wide 15–250 Kg/cm² inlet pressure down to a 10–80 Kg/cm² adjustable outlet at flow rates of up to 300 Nm³/hr, with a 1-inch BSP (internal) threaded end connection, it is compatible with CNG, Nitrogen, Oxygen, CO2, Argon and Hydrogen. It is typically deployed in soft drink CO2 pressure reduction systems, steel industry high-pressure oxygen lancing, and high-pressure gas manifold reduction systems. Manufactured by Vanaz Engineers Ltd, Pune."
-    }];
+    },
+  {
+      id: "dungs-pbv",
+      name: "Dungs PBV Push Button Valve",
+      brand: "Dungs",
+      category: "PRESSURE GAUGES",
+      code: "PBV",
+      size: "1/4\" NPT & Rp 1/2\"",
+      image: "images/dungs-pbv-large.jpg",
+      specs: {
+        "Model": "PBV (Push Button Valve)",
+        "Type": "Push-to-Test Gauge Isolation Valve",
+        "Connection Sizes": "1/4\" NPT & Rp 1/2\"",
+        "Max. Operating Pressure (MOP)": "5 bar (70 PSI)",
+        "Ambient Temperature": "-20\u00b0C to +60\u00b0C (-5\u00b0F to +145\u00b0F)",
+        "Fluid Temperature": "-0\u00b0C to +70\u00b0C (-32\u00b0F to +155\u00b0F)",
+        "Media": "Dry natural gas, propane, butane & other noncorrosive gases",
+        "Order No. (1/4\" NPT)": "267055",
+        "Order No. (Rp 1/2\", incl. metal seal)": "266828",
+        "Manufacturer": "Dungs GmbH & Co. KG, Germany"
+      },
+      description: "The Dungs PBV (Push Button Valve) replaces a manual ball valve when mounting a pressure gauge on gas piping. Pressing the spring-return button lets the gauge pressure be read; releasing it automatically closes the valve and removes pressure from the gauge, extending gauge life and protecting it from pressure surges. Available in 1/4-inch NPT (Order No. 267055) and Rp 1/2-inch (Order No. 266828, includes metal seal) connections. Rated to a maximum operating pressure of 5 bar (70 psig) for dry natural gas, propane, butane and other noncorrosive gases. Manufactured by Dungs."
+    }
+];
