@@ -2,15 +2,15 @@
 // Single source of truth: extracted from index.html on 12 Oct 2026
 const products = [
     {
-      id: 'brahma-eg12l-gmo',
+      id: 'brahma-eg12l-gmo-solenoid-valve',
       name: 'Brahma Solenoid Valve EG12*L*GMO',
       brand: 'Brahma',
       category: 'SOLENOID VALVES',
       subcategory: 'Brahma Solenoid Valve',
       code: '13922051',
       size: 'DN15 · 1/2" BSP',
-      image: 'images/brahma-eg12l-gmo-large.jpg',
-      imageLarge: 'images/brahma-eg12l-gmo-xl.jpg',
+      image: 'images/brahma-eg12l-gmo-solenoid-valve-large.jpg',
+      imageLarge: 'images/brahma-eg12l-gmo-solenoid-valve-xl.jpg',
       specs: {
         'Type': 'EG12*L*GMO',
         'Connection': 'DN15 · 1/2" BSP',
@@ -23,15 +23,15 @@ const products = [
       description: 'The Brahma EG12*L*GMO is a Class A automatic gas solenoid valve built for burner, boiler and gas-train shut-off duty on 1/2" (DN15) BSP connections. Rated to 250 mbar max inlet pressure and IP54 enclosure protection, it runs on a 230V, 50-60Hz, 20VA coil for fast, reliable open/close switching on commercial and industrial combustion systems.'
     },
     {
-      id: 'brahma-eg12sr-gmo',
+      id: 'brahma-eg12sr-gmo-solenoid-valve',
       name: 'Brahma Solenoid Valve EG12*SR*GMO',
       brand: 'Brahma',
       category: 'SOLENOID VALVES',
       subcategory: 'Brahma Solenoid Valve',
       code: '13912001',
       size: 'DN15 · 1/2" BSP',
-      image: 'images/brahma-eg12sr-gmo-large.jpg',
-      imageLarge: 'images/brahma-eg12sr-gmo-xl.jpg',
+      image: 'images/brahma-eg12sr-gmo-solenoid-valve-large.jpg',
+      imageLarge: 'images/brahma-eg12sr-gmo-solenoid-valve-xl.jpg',
       specs: {
         'Type': 'EG12*SR*GMO',
         'Connection': 'DN15 · 1/2" BSP',
@@ -44,15 +44,15 @@ const products = [
       description: 'The Brahma EG12*SR*GMO is a Class A automatic gas solenoid valve for burner, boiler and gas-train shut-off duty on 1/2" (DN15) BSP connections. Rated to a higher 500 mbar max inlet pressure with IP54 enclosure protection, it runs on a 230V, 50-60Hz, 20VA coil, making it suited to applications needing extra pressure headroom over the standard EG12*L*GMO.'
     },
     {
-      id: 'brahma-e6gsr10-gmo',
+      id: 'brahma-e6gsr10-gmo-solenoid-valve',
       name: 'Brahma Solenoid Valve E6G*SR10*1/2*GMO',
       brand: 'Brahma',
       category: 'SOLENOID VALVES',
       subcategory: 'Brahma Solenoid Valve',
       code: '13762002',
       size: 'DN15 · 1/2" BSP',
-      image: 'images/brahma-e6gsr10-gmo-large.jpg',
-      imageLarge: 'images/brahma-e6gsr10-gmo-xl.jpg',
+      image: 'images/brahma-e6gsr10-gmo-solenoid-valve-large.jpg',
+      imageLarge: 'images/brahma-e6gsr10-gmo-solenoid-valve-xl.jpg',
       specs: {
         'Type': 'E6G*SR10*1/2*GMO',
         'Connection': 'DN15 · 1/2" BSP',
@@ -65,15 +65,15 @@ const products = [
       description: 'The Brahma E6G*SR10*1/2*GMO is a Class A automatic gas solenoid valve for burner, boiler and gas-train shut-off duty on 1/2" (DN15) BSP connections. Rated to 500 mbar max inlet pressure with IP54 enclosure protection, it runs on a 230V, 50-60Hz, 20VA coil and pairs with the BE6*GMO solenoid coil for reliable, repeatable shut-off on industrial combustion lines.'
     },
     {
-      id: 'brahma-e6gsr10-38-gmo',
+      id: 'brahma-e6gsr10-38-gmo-solenoid-valve',
       name: 'Brahma Solenoid Valve E6G*SR10*3/8*GMO',
       brand: 'Brahma',
       category: 'SOLENOID VALVES',
       subcategory: 'Brahma Solenoid Valve',
       code: '13767002',
       size: 'DN10 · 3/8" BSP',
-      image: 'images/brahma-e6gsr10-38-gmo-large.jpg',
-      imageLarge: 'images/brahma-e6gsr10-38-gmo-xl.jpg',
+      image: 'images/brahma-e6gsr10-38-gmo-solenoid-valve-large.jpg',
+      imageLarge: 'images/brahma-e6gsr10-38-gmo-solenoid-valve-xl.jpg',
       specs: {
         'Type': 'E6G*SR10*3/8*GMO',
         'Connection': 'DN10 · 3/8" BSP',
@@ -86,15 +86,15 @@ const products = [
       description: 'The Brahma E6G*SR10*3/8*GMO is a Class A automatic gas solenoid valve for burner, boiler and gas-train shut-off duty on 3/8" (DN10) BSP connections. Rated to 500 mbar max inlet pressure with IP54 enclosure protection, it runs on a 230V, 50-60Hz, 20VA coil and pairs with the BE6*GMO solenoid coil — the compact DN10 option for smaller-bore gas lines.'
     },
     {
-      id: 'vanaz-r2301',
+      id: 'vanaz-r2301-pressure-regulator',
       name: 'Vanaz R2301 High Pressure Regulator',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'High Pressure Regulator',
       code: 'R2301',
       size: '25mm · 1" BSP (F)',
-      image: 'images/vanaz-r2301-large.jpg',
-      imageLarge: 'images/vanaz-r2301-xl.jpg',
+      image: 'images/vanaz-r2301-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r2301-pressure-regulator-xl.jpg',
       specs: {
         'Type': 'R2301',
         'Connection': '25mm · 1" BSPF Threaded End',
@@ -108,14 +108,14 @@ const products = [
       description: 'The Vanaz R2301 is a first-stage, spring-loaded gas pressure regulator built for high-to-medium primary pressure reduction in gas manifolds, industrial burners, furnaces and gas train assemblies. It handles LPG, natural gas and nitrogen, and suits both horizontal and vertical pipeline layouts. Outlet pressure is set by rotating the top adjusting screw — clockwise to raise, counter-clockwise to lower — and the inline-serviceable design allows valve trim inspection without dismounting the body from the line. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'vanaz-r2202',
+      id: 'vanaz-r2202-pressure-regulator',
       name: 'Vanaz R2202 High Pressure LPG Gas Regulator',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'High Pressure Regulator',
       code: 'R2202',
       size: '21.8×14 TPI (LH) · 1/4" BSPF',
-      image: 'images/vanaz-r2202-large.jpg',
+      image: 'images/vanaz-r2202-pressure-regulator-large.jpg',
       specs: {
         'Type': 'R2202',
         'Gas': 'LPG',
@@ -130,14 +130,14 @@ const products = [
       description: 'The Vanaz R2202 is an adjustable high-pressure LPG gas regulator used for commercial and industrial gas supply lines such as canteens, restaurants and small furnaces. It accepts an inlet pressure of 0.5–17 kg/cm² and delivers a spring-adjustable outlet pressure of 0.2–2 kg/cm², with a flow capacity of up to 20 Nm³/hr on LPG. The inlet connection is a 21.8 × 14 TPI Left-Hand female union nut (standard LPG cylinder fitting), and the outlet is 1/4" BSPF. Built with a brass body and a red adjustment knob for clear pressure-range identification. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'vanaz-r2301-ii',
+      id: 'vanaz-r2301-ii-pressure-regulator',
       name: 'Vanaz R2301 II Oxygen Gas Pressure Regulator',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Oxygen Regulator',
       code: 'R2301 II',
       size: '25mm \u00b7 1" BSPF Threaded End',
-      image: 'images/vanaz-r2301-ii-large.jpg',
+      image: 'images/vanaz-r2301-ii-pressure-regulator-large.jpg',
       specs: {
         'Type': 'R2301 II',
         'Connection': '25mm (1") BSPF Threaded End',
@@ -151,14 +151,14 @@ const products = [
       description: 'The Vanaz R2301 II is a spring-loaded pressure regulator built for oxygen and nitrogen gas service, reducing high-pressure cylinder or manifold supply down to a safe, stable working pressure for cutting, welding and industrial gas-line applications. Rated for 15\u2013120 bar inlet down to a 1\u201310 bar adjustable outlet at flow rates up to 100 Nm\u00b3/hr, it is built with a brass body and trim parts with an aluminium bonnet for oxygen-service compatibility. Outlet pressure is set via the top T-handle adjusting screw. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'vanaz-r2325',
+      id: 'vanaz-r2325-pressure-regulator',
       name: 'Vanaz R2325 Medical Oxygen Pressure Regulator',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Oxygen Regulator',
       code: 'R2325',
       size: '1" BSP (F)',
-      image: 'images/vanaz-r2325-large.jpg',
+      image: 'images/vanaz-r2325-pressure-regulator-large.jpg',
       specs: {
         'Type': 'R2325',
         'Connection': '1\" BSP, Internal / Female',
@@ -172,13 +172,13 @@ const products = [
       description: 'The Vanaz R2325 is a spring-loaded pressure regulator built for medical oxygen service, reducing high-pressure manifold or cylinder supply down to a safe, stable working pressure for medical oxygen distribution lines and bulk industrial gas networks. Rated for 1\u201319 kg/cm\u00b2 inlet down to a 0.5\u20138 kg/cm\u00b2 adjustable outlet at flow rates up to 120 Nm\u00b3/hr, it is built with a forged brass/bronze body for oxygen-service compatibility, mounted in-line via threaded internal BSP ports. Outlet pressure is set via the top T-handle adjusting screw. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'vanaz-v7744',
+      id: 'vanaz-v7744-safety-relief-valve',
       name: 'Vanaz V7744 Safety Relief Valve',
       brand: 'Vanaz',
       category: 'SAFETY RELIEF VALVES',
       code: 'V7744',
       size: '\u00bd\" / \u00be\" / 1\" BSP (Internal)',
-      image: 'images/vanaz-v7744-large.jpg',
+      image: 'images/vanaz-v7744-safety-relief-valve-large.jpg',
       specs: {
         'Type': 'V7744',
         'Connection': '\u00bd\" / \u00be\" / 1\" BSP (Internal), as per requirement',
@@ -191,13 +191,13 @@ const products = [
       description: 'The Vanaz V7744 is a spring-loaded safety relief valve that stays closed during normal operation and automatically opens to vent gas once line pressure rises to the preset limit, closing again once pressure drops back below the set point. Fitted with a soft seat, it is rated for a wide 5\u2013120 kg/cm\u00b2 set-pressure range and is suitable for natural gas, LPG, CO\u2082, nitrogen and argon service, protecting pressure-reducing systems, gas trains and pipelines from overpressure. Available with \u00bd\", \u00be\" or 1\" BSP internal end connections as per requirement. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'vanaz-v7734',
+      id: 'vanaz-v7734-safety-relief-valve',
       name: 'Vanaz V7734 Safety Relief Valve',
       brand: 'Vanaz',
       category: 'SAFETY RELIEF VALVES',
       code: 'V7734',
       size: '\u00bd\" / \u00be\" BSP (External)',
-      image: 'images/vanaz-v7734-large.jpg',
+      image: 'images/vanaz-v7734-safety-relief-valve-large.jpg',
       specs: {
         'Type': 'V7734',
         'Connection': '\u00bd\" / \u00be\" BSP (External)',
@@ -210,13 +210,13 @@ const products = [
       description: 'The Vanaz V7734 is a spring-loaded safety relief valve that stays closed during normal operation and automatically opens to vent gas once line pressure rises to the preset limit, closing again once pressure drops back below the set point. Fitted with a soft seat, it is rated for a 1\u201319 kg/cm\u00b2 set-pressure range and is suitable for CO\u2082, LPG, natural gas, nitrogen and argon service, protecting pressure-reducing systems, gas trains and pipelines from overpressure. Available with \u00bd\" or \u00be\" BSP external end connections. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'vanaz-v7713',
+      id: 'vanaz-v7713-safety-relief-valve',
       name: 'Vanaz V7713 / V7715 Safety Relief Valve',
       brand: 'Vanaz',
       category: 'SAFETY RELIEF VALVES',
       code: 'V7713 / V7715',
       size: '\u00bd\" (V7713) or \u00be\" (V7715) BSP (Internal)',
-      image: 'images/vanaz-v7713-large.jpg',
+      image: 'images/vanaz-v7713-safety-relief-valve-large.jpg',
       specs: {
         'Type': 'V7713 (\u00bd\" size) / V7715 (\u00be\" size)',
         'Connection': 'V7713 \u2013 \u00bd\" | V7715 \u2013 \u00be\" (BSP Internal)',
@@ -229,13 +229,13 @@ const products = [
       description: 'The Vanaz V7713 (\u00bd\" size) and V7715 (\u00be\" size) are spring-loaded safety relief valves, identical in specification and differing only in end-connection size. Both stay closed during normal operation and automatically open to vent gas once line pressure rises to the preset limit, closing again once pressure drops back below the set point. Fitted with a metal-to-metal seat, they are built for high-pressure applications with a 20\u2013200 kg/cm\u00b2 set-pressure range and are suitable for CNG, LPG, CO\u2082, nitrogen and argon service, protecting pressure-reducing systems, gas trains and pipelines from overpressure. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'dungs-gastrain-dn65',
+      id: 'dungs-gastrain-dn65-gas-train-system',
       name: 'Dungs Flanged Gas Train System DN65',
       brand: 'Dungs',
       category: 'GAS TRAIN SYSTEMS',
       code: 'DN65 Gas Train',
       size: 'DN65 (2.5\" flanged connections, PN16 / ANSI)',
-      image: 'images/dungs-gastrain-dn65-large.jpg',
+      image: 'images/dungs-gastrain-dn65-gas-train-system-large.jpg',
       specs: {
         'Nominal Diameter': 'DN65 (2.5\"), flanged connection, PN16 / ANSI standard',
         'Applicable Medium': 'Natural Gas (PNG), LPG, Biogas, Town Gas, and neutral gases',
@@ -249,13 +249,13 @@ const products = [
       description: 'The Dungs DN65 Flanged Gas Train System is a complete, pre-assembled gas supply control line for industrial burners, built up from inlet to outlet as: a manual shut-off ball valve for inlet isolation, an in-line gas filter (Dungs GF series, 50\u03bcm element) to trap particulates, an inlet pressure gauge with push-button test cock, a double solenoid safety shut-off valve (Dungs DMV-D / DMV-DLE) fitted with a gas pressure switch (GW/UB series) for min/max pressure interlock and an integrated Valve Proving System (VPS 504) for automatic leak-tightness testing before burner start, an intermediate flanged spool piece with auxiliary test points, a spring-loaded diaphragm gas pressure regulator (Dungs FRS / FRNG series) with impulse feedback and breather/vent ports, and an outlet pressure gauge for monitoring regulated manifold pressure to the burner. Rated for up to 500 mbar inlet pressure with a fast (<1 second) safety closing time, compliant with EN 676 / EN 746-2 for industrial combustion systems. Manufactured by Dungs.'
     },
     {
-      id: 'madas-gastrain-dn50',
+      id: 'madas-gastrain-dn50-gas-train-system',
       name: 'Madas Flanged Gas Train System DN50',
       brand: 'Madas',
       category: 'GAS TRAIN SYSTEMS',
       code: 'DN50 Gas Train',
       size: 'DN50 (2" flanged connections, PN16)',
-      image: 'images/madas-gastrain-dn50-large.jpg',
+      image: 'images/madas-gastrain-dn50-gas-train-system-large.jpg',
       specs: {
         'Nominal Diameter': 'DN50 (2"), flanged connection, PN16',
         'Applicable Medium': 'Natural Gas (PNG), LPG, Biogas, and other non-corrosive dry gases',
@@ -270,13 +270,13 @@ const products = [
       description: 'The Madas DN50 Flanged Gas Train System is a complete, pre-assembled gas supply control line for industrial burners, built up from inlet to outlet as: a manual shut-off ball valve for inlet isolation, an in-line gas filter (Madas FM series, 50 micron element) to trap particulates, a spring-loaded diaphragm gas pressure regulator (Madas RG/2MC series) with breather/vent piping and a pressure gauge for monitoring regulated line pressure, a minimum gas pressure switch (Madas PSM series) for low-pressure interlock, and two normally-closed, manual-reset safety shut-off solenoid valves (Madas M16/RM series) wired in series for redundant shut-off. Rated for up to 500 mbar regulated pressure with a 230V AC coil supply and a -15°C to +60°C ambient range, it is built to EN 676, EN 88-1, EN 13611 and EN 161 standards for industrial combustion systems. Manufactured by Madas.'
     },
     {
-      id: 'vanaz-twostage-gastrain',
+      id: 'vanaz-twostage-gastrain-gas-train-system',
       name: 'Vanaz Two-Stage Pressure Reducing System',
       brand: 'Vanaz',
       category: 'GAS TRAIN SYSTEMS',
       code: 'Two-Stage PRS',
       size: '1" – 4" NB, flanged (ANSI 150/300)',
-      image: 'images/vanaz-twostage-gastrain-large.jpg',
+      image: 'images/vanaz-twostage-gastrain-gas-train-system-large.jpg',
       specs: {
         'Type': 'Two-Stage Pressure Reducing System (Gas Train / PRS)',
         'Applicable Gases': 'LPG, PNG (Natural Gas), Nitrogen (N2), Carbon Dioxide (CO2)',
@@ -291,13 +291,13 @@ const products = [
       description: 'The Vanaz Two-Stage Pressure Reducing System is a pre-engineered gas train / pressure regulating station (PRS) that reduces high inlet pressure down to a safe, stable downstream pressure in two regulation stages, for LPG, PNG (natural gas), nitrogen (N2) and CO2 service. The skid is built up from inlet and outlet ball valves for isolation, a filtration unit to protect downstream components, a slam shut-off valve that closes automatically if downstream pressure exceeds its set limit, one or more spring-loaded or pilot-operated pressure regulators for the two reduction stages, creep and safety relief valves for overpressure protection, and pressure gauges with isolation cocks for upstream/downstream monitoring — with an optional heater (electrical, water-bath or catalytic) available where Joule-Thomson cooling needs to be offset. Rated for inlet pressures up to 49 kg/cm², an outlet range of 0.03 to 26 kg/cm², flows up to 6,000 SCMH, and connection sizes from 1" to 4" NB flanged (ANSI 150/300), it is built for industrial gas distribution and pressure-reduction duty. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'dungs-mb-dle-405-b01-s20',
+      id: 'dungs-mb-dle-405-b01-s20-multiblock',
       name: 'Dungs MultiBloc MB-DLE 405 B01 S20',
       brand: 'Dungs',
       category: 'MULTIBLOCKS',
       code: '223745',
       size: 'DN15 (Rp 1/2") · Pmax 360 mbar · 230V AC',
-      image: 'images/dungs-mb-dle-405-b01-s20-large.jpg',
+      image: 'images/dungs-mb-dle-405-b01-s20-multiblock-large.jpg',
       specs: {
         'Type': 'MB-DLE 405 B01 S20',
         'Order No. (Art. Nr.)': '223745',
@@ -320,13 +320,13 @@ const products = [
       description: 'The Dungs MultiBloc MB-DLE 405 B01 S20 is a compact combination gas control unit that integrates a microfilter, an adjustable pressure regulator and two safety solenoid shut-off valves in a single cast housing — reducing the number of separate fittings, joints and potential leak points needed in a burner gas line. Rated for inlet pressures up to 360 mbar (36 kPa) with a regulated outlet of 4–20 mbar, it is built with an Rp 1/2\" (DN15) threaded connection, a 220–230V AC coil supply (32 VA), and an aluminium die-cast body with NBR/silicone seals rated for –15°C to +70°C ambient service. It accepts mountable Dungs GW/NB/ÜB-series pressure switches (per DIN EN 1854) for min/max pressure interlock, and is certified to DIN EN 161 Class A Group 2 and DIN EN 88 Class A for gas families 1, 2 and 3. Commonly used on atmospheric boilers, furnaces and small-to-medium gas burners as a space-saving, all-in-one gas train. Manufactured by Dungs, Germany.'
     },
     {
-      id: 'dungs-mb-zrdle-412-b01-s20',
+      id: 'dungs-mb-zrdle-412-b01-s20-multiblock',
       name: 'Dungs MultiBloc MB-ZRDLE 412 B01 S20',
       brand: 'Dungs',
       category: 'MULTIBLOCKS',
       code: '223752',
       size: 'DN32 (Rp 1 1/4") · Pmax 360 mbar · 230V AC',
-      image: 'images/dungs-mb-zrdle-412-b01-s20-large.jpg',
+      image: 'images/dungs-mb-zrdle-412-b01-s20-multiblock-large.jpg',
       specs: {
         'Type': 'MB-ZRDLE 412 B01 S20',
         'Order No. (Art. Nr.)': '223752',
@@ -347,13 +347,13 @@ const products = [
       description: 'The Dungs MultiBloc MB-ZRDLE 412 B01 S20 is a heavier-duty GasMultiBloc unit that combines an adjustable pressure regulator and two safety solenoid shut-off valves in a single cast housing, for larger burner gas lines than the compact MB-DLE 403/405 sizes. Rated for inlet pressures up to 360 mbar (36 kPa) with a regulated outlet of 4–20 mbar, it is built with an Rp 1 1/4\" (DN32) threaded connection, a 220–230V AC coil supply (80 VA), and an aluminium die-cast body with NBR/Silopren silicone-rubber seals rated for –15°C to +70°C ambient service. Certified under the EU Gas Appliances Regulation and EU Pressure Equipment Directive (CE 0036), it is built for gas families 1, 2 and 3. Commonly used on medium-to-large atmospheric boilers and industrial burners as a compact, all-in-one gas train. Manufactured by Dungs, Germany.'
     },
     {
-      id: 'dungs-mb-dle-403-b01-s50',
+      id: 'dungs-mb-dle-403-b01-s50-multiblock',
       name: 'Dungs MultiBloc MB-DLE 403 B01 S50',
       brand: 'Dungs',
       category: 'MULTIBLOCKS',
       code: '226783',
       size: 'DN10 (Rp 3/8") · Pmax 500 mbar · 230V AC',
-      image: 'images/dungs-mb-dle-403-b01-s50-large.jpg',
+      image: 'images/dungs-mb-dle-403-b01-s50-multiblock-large.jpg',
       specs: {
         'Type': 'MB-DLE 403 B01 S50',
         'Order No. (Art. Nr.)': '226783',
@@ -375,14 +375,14 @@ const products = [
       description: 'The Dungs MultiBloc MB-DLE 403 B01 S50 is the compact, smallest-size GasMultiBloc unit, integrating a microfilter, an adjustable pressure regulator and two safety solenoid shut-off valves in a single cast housing for small gas burners and appliances. Rated for inlet pressures up to 0.5 bar (500 mbar) with a wider regulated outlet range of 4–50 mbar (the \"S50\" regulator variant), it is built with an Rp 3/8\" (DN10) threaded connection, a 220–230V AC coil supply, IP54 protection and a 100% continuous duty cycle. The aluminium die-cast body with NBR/silicone seals is rated for –15°C to +70°C ambient service, and the unit is DVGW-certified for gas families 1, 2 and 3. Commonly used on small atmospheric boilers, water heaters and pilot/main burner lines as a space-saving, all-in-one gas train. Manufactured by Dungs, Germany.'
     },
     {
-      id: 'dungs-vps504s04',
+      id: 'dungs-vps504s04-valve-proving-system',
       name: 'Dungs Valve Proving System VPS 504 S04',
       brand: 'Dungs',
       category: 'VALVE PROVING SYSTEMS',
       code: '219881',
       size: 'Pmax 500 mbar/50 kPa \u00b7 230/240V AC',
-      image: 'images/dungs-vps504s04-large.jpg',
-      imageLarge: 'images/dungs-vps504s04-xl.jpg',
+      image: 'images/dungs-vps504s04-valve-proving-system-large.jpg',
+      imageLarge: 'images/dungs-vps504s04-valve-proving-system-xl.jpg',
       specs: {
         'Type': 'VPS 504 S04',
         'Part Number (Art. Nr.)': '219881',
@@ -402,14 +402,14 @@ const products = [
       description: 'The Dungs VPS 504 S04 is an automatic valve proving system that tests the leak-tightness of both safety shut-off valves in a gas train before burner start-up (and, on some systems, after shutdown), per EN 1643 / DIN 1643. It pressurizes the pipeline section between the two valves (up to 4 litres test volume) and monitors for pressure decay over a roughly 10\u201326 second test cycle; if either valve is leaking, the system locks out and blocks ignition (red Lockout indicator), while a successful test allows the burner sequence to proceed (yellow Run indicator). Rated for up to 500 mbar (50 kPa) inlet pressure, IP54 enclosure, screw-terminal (S04) connection, supporting 230V/240V AC 50Hz supply with a 4A SPDT output relay. Commonly used as the integrated proving module within Dungs flanged gas train assemblies. Manufactured by Dungs, Germany.'
     },
     {
-      id: 'dungs-vps504s01',
+      id: 'dungs-vps504s01-valve-proving-system',
       name: 'Dungs Valve Proving System VPS 504 S01',
       brand: 'Dungs',
       category: 'VALVE PROVING SYSTEMS',
       code: '219876',
       size: 'Pmax 500 mbar/50 kPa \u00b7 230/240V AC \u00b7 Cable connection (IP40)',
-      image: 'images/dungs-vps504s01-large.jpg',
-      imageLarge: 'images/dungs-vps504s01-xl.jpg',
+      image: 'images/dungs-vps504s01-valve-proving-system-large.jpg',
+      imageLarge: 'images/dungs-vps504s01-valve-proving-system-xl.jpg',
       specs: {
         'Type': 'VPS 504 S01',
         'Part Number': '219876',
@@ -431,14 +431,14 @@ const products = [
       description: 'The Dungs VPS 504 S01 is an automatic valve proving system that tests the leak-tightness of both safety shut-off valves in a gas train before burner start-up, per EN 1643. It pressurizes the pipeline section between the two valves (up to 4 litres test volume) and monitors for pressure decay over a roughly 10-second test cycle (max. 36 seconds); if either valve is leaking, the system locks out and blocks ignition (red St\u00f6rung/Lockout indicator), while a successful test allows the burner sequence to proceed (yellow Betrieb/Run indicator). Rated for up to 500 mbar (50 kPa) inlet pressure and 1000 mbar (100 kPa) max body pressure, IP40 enclosure, with an integrated plug/cable connector (2m cable, S01 variant) \u2014 differing from the screw-terminal S04 variant. Supports 230V/240V AC 50Hz supply, 4A. Commonly used as the integrated proving module within Dungs gas train assemblies. Manufactured by Dungs, Germany.'
     },
     {
-      id: 'dungs-vps504s02',
+      id: 'dungs-vps504s02-valve-proving-system',
       name: 'Dungs Valve Proving System VPS 504 S02',
       brand: 'Dungs',
       category: 'VALVE PROVING SYSTEMS',
       code: '219877',
       size: 'Pmax 500 mbar/50 kPa \u00b7 230/240V AC \u00b7 Plug connection (IP40)',
-      image: 'images/dungs-vps504s02-large.jpg',
-      imageLarge: 'images/dungs-vps504s02-xl.jpg',
+      image: 'images/dungs-vps504s02-valve-proving-system-large.jpg',
+      imageLarge: 'images/dungs-vps504s02-valve-proving-system-xl.jpg',
       specs: {
         'Type': 'VPS 504 S02',
         'Part Number': '219877',
@@ -460,13 +460,13 @@ const products = [
       description: 'The Dungs VPS 504 S02 is an automatic valve proving system that tests the leak-tightness of both safety shut-off valves in a gas train before burner start-up, per EN 1643. It pressurizes the pipeline section between the two valves (up to 4 litres test volume) and monitors for pressure decay over a roughly 10-second test cycle (max. 36 seconds); if either valve is leaking, the system locks out and blocks ignition (red St\u00f6rung/Lockout indicator), while a successful test allows the burner sequence to proceed (yellow Betrieb/Run indicator). Rated for up to 500 mbar (50 kPa) inlet pressure and 1000 mbar (100 kPa) max body pressure, IP40 enclosure, with a 7-pole plug connection and male connector (1.5m cable, S02 variant) \u2014 differing from the S01\u2019s integrated plug/cable design and the S04\u2019s screw-terminal connection. Supports 230V/240V AC 50Hz supply, 4A. Commonly used as the integrated proving module within Dungs gas train assemblies. Manufactured by Dungs, Germany.'
     },
     {
-      id: 'cofi-09ca091804m',
+      id: 'cofi-09ca091804m-ignition-cable',
       name: 'Cofi HT Silicone Ignition Cable 09CA091804M',
       brand: 'Cofi',
       category: 'IGNITION CABLE',
       code: '09CA091804M',
       size: '7mm OD \u00b7 1 \u00d7 1 mm\u00b2 conductor',
-      image: 'images/cofi-09ca091804m-large.jpg',
+      image: 'images/cofi-09ca091804m-ignition-cable-large.jpg',
       specs: {
         'Product Type': 'High Voltage (HT) Silicone Ignition Cable',
         'Conductor': 'Bare / Tinned Stranded Copper (1 \u00d7 1 mm\u00b2)',
@@ -480,13 +480,13 @@ const products = [
       description: 'The Cofi 09CA091804M is a high-voltage silicone ignition cable used to connect ignition transformers to spark electrodes on gas and oil burners. Built with a bare/tinned stranded copper conductor (1\u00d71 mm\u00b2) and a high-grade, tear-resistant silicone rubber insulation (Besilen / EI 2 grade), it has a 7mm outer diameter and is rated for 20 kV. It withstands a wide -50\u00b0C to +180\u00b0C continuous operating range, with a short-term rating up to +250\u00b0C, making it suitable for the high-heat environment near burner ignition assemblies. Supplied as a 100-metre coil/skein, also available per metre. Manufactured by Cofi srl.'
     },
     {
-      id: 'siltek-siaf-ht',
+      id: 'siltek-siaf-ht-ignition-cable',
       name: 'Siltek SIAF/HT 10kV Silicone Ignition Cable',
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION CABLE',
       code: 'SIAF/HT 10kV',
       size: '7mm OD \u00b7 1 \u00d7 1 mm\u00b2 conductor',
-      image: 'images/siltek-siaf-ht-large.jpg',
+      image: 'images/siltek-siaf-ht-ignition-cable-large.jpg',
       specs: {
         'Product Type': 'High Voltage (HT) Silicone Ignition Cable',
         'Conductor': 'Bare / Tinned Stranded Copper (1 \u00d7 1 mm\u00b2)',
@@ -500,13 +500,13 @@ const products = [
       description: 'The Siltek SIAF/HT is a high-voltage silicone ignition cable used to connect ignition transformers to spark electrodes on gas and oil burners. Built with a bare/tinned stranded copper conductor (1\u00d71 mm\u00b2) and a high-grade, tear-resistant silicone rubber insulation (Besilen / EI 2 grade), it has a 7mm outer diameter and is rated for 10 kV. It withstands a wide -50\u00b0C to +180\u00b0C continuous operating range, with a short-term rating up to +250\u00b0C, making it suitable for the high-heat environment near burner ignition assemblies. Supplied as a 100-metre coil/skein, also available per metre. Manufactured by Siltek.'
     },
     {
-      id: 'siltek-siaf-ht-15kv',
+      id: 'siltek-siaf-ht-15kv-ignition-cable',
       name: 'Siltek SIAF/HT 15kV Silicone Ignition Cable',
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION CABLE',
       code: 'SIAF/HT 15kV',
       size: '7mm OD \u00b7 1 \u00d7 1 mm\u00b2 conductor',
-      image: 'images/siltek-siaf-ht-15kv-large.jpg',
+      image: 'images/siltek-siaf-ht-15kv-ignition-cable-large.jpg',
       specs: {
         'Product Type': 'High Voltage (HT) Silicone Ignition Cable',
         'Conductor': 'Bare / Tinned Stranded Copper (1 \u00d7 1 mm\u00b2)',
@@ -520,15 +520,15 @@ const products = [
       description: 'The Siltek SIAF/HT 15kV is a high-voltage silicone ignition cable used to connect ignition transformers to spark electrodes on gas and oil burners. Built with a bare/tinned stranded copper conductor (1\u00d71 mm\u00b2) and a high-grade, tear-resistant silicone rubber insulation (Besilen / EI 2 grade), it has a 7mm outer diameter and is rated for 15 kV. It withstands a wide -50\u00b0C to +180\u00b0C continuous operating range, with a short-term rating up to +250\u00b0C, making it suitable for the high-heat environment near burner ignition assemblies. Supplied as a 100-metre coil/skein, also available per metre. Manufactured by Siltek.'
     },
     {
-      id: 'brahma-t8',
+      id: 'brahma-t8-ignition-transformer',
       name: 'Brahma Ignition Transformer T8',
       brand: 'Brahma',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Brahma',
       code: '15000081',
       size: 'T8',
-      image: 'images/brahma-t8-large.jpg',
-      imageLarge: 'images/brahma-t8-xl.jpg',
+      image: 'images/brahma-t8-ignition-transformer-large.jpg',
+      imageLarge: 'images/brahma-t8-ignition-transformer-xl.jpg',
       specs: {
         'Type': 'T8',
         'Primary': '230V · 2.1A · 50Hz',
@@ -539,15 +539,15 @@ const products = [
       description: 'The Brahma T8 is a high-voltage ignition transformer that converts standard 230V mains supply into the dual 6500 Vrms secondary output needed to fire the electrode spark gap on gas and oil burners. Its center-grounded, symmetrical secondary winding drives the ignition electrode reliably at start-up, and the potted, sealed enclosure protects the internal windings in industrial burner and boiler installations. Rated for a 33% duty cycle (3-minute cycle) matching typical burner start sequences.'
     },
     {
-      id: 'elektrogas-vmrl',
+      id: 'elektrogas-vmrl-solenoid-valve',
       name: 'Elektrogas VMR/L Solenoid Coil',
       brand: 'Elektrogas',
       category: 'SOLENOID VALVES',
       subcategory: 'Solenoid Coil',
       code: '1930.1313',
       size: 'VMR/L series',
-      image: 'images/elektrogas-vmrl-large.jpg',
-      imageLarge: 'images/elektrogas-vmrl-xl.jpg',
+      image: 'images/elektrogas-vmrl-solenoid-valve-large.jpg',
+      imageLarge: 'images/elektrogas-vmrl-solenoid-valve-xl.jpg',
       specs: {
         'Type': 'VMR/L 2/3 · 2-3 · 3-3 (360 mbar) / VMR/L 2-5 · 3-5 (500 mbar) / VMR/L 2-60 · 3-60 (6 bar)',
         'Power Supply': '230 VAC, 50/60Hz, 35W',
@@ -561,14 +561,14 @@ const products = [
       description: 'The Elektrogas VMR/L is the coil/operator head for the VMR series of normally-closed, automatic-reset safety solenoid valves — fast-opening when energised and fast-closing the moment power is cut. It is built for gas and air blocking and control duty on atmospheric and fan-assisted burners, industrial kilns, and other continuous-service (100% ED) gas equipment, and is available across 360 mbar, 500 mbar and 6 bar pressure ratings to match the application. Manufactured by Elektrogas, Italy.'
     },
     {
-      id: 'elektrogas-vmr4-2',
+      id: 'elektrogas-vmr4-2-solenoid-valve',
       name: 'Elektrogas VMR4-2 Gas Solenoid Valve',
       brand: 'Elektrogas',
       category: 'SOLENOID VALVES',
       subcategory: 'Elektrogas Solenoid Valve',
       code: 'VMR4-2',
       size: '230VAC, 50/60Hz',
-      image: 'images/elektrogas-vmr4-2-large.jpg',
+      image: 'images/elektrogas-vmr4-2-solenoid-valve-large.jpg',
       specs: {
         'Model': 'VMR4-2',
         'Connection Size': '1½" (DN40)',
@@ -583,14 +583,14 @@ const products = [
       description: 'The Elektrogas VMR4-2 is a normally-closed automatic-reset gas solenoid valve for shut-off duty on gas and LPG lines, with a 1½" (DN40) connection size, rated 230VAC 50/60Hz with a 30W holding coil (120W inrush at start) and a maximum working pressure of 260 mbar. Certified to EN 161 Class A, Group 2, it is suitable for natural gas, LPG (gaseous) and air service across an ambient and fluid temperature range of -15°C to +60°C. CE and EAC marked, manufactured by Elektrogas for burner, boiler and gas-train safety shut-off applications.'
     },
     {
-      id: 'elektrogas-vmr1-5',
+      id: 'elektrogas-vmr1-5-solenoid-valve',
       name: 'Elektrogas VMR1-5 Gas Solenoid Valve (Rp1/2)',
       brand: 'Elektrogas',
       category: 'SOLENOID VALVES',
       subcategory: 'Elektrogas Solenoid Valve',
       code: 'VMR1-5',
       size: '230VAC, 50/60Hz, Rp1/2',
-      image: 'images/elektrogas-vmr1-5-large.jpg',
+      image: 'images/elektrogas-vmr1-5-solenoid-valve-large.jpg',
       specs: {
         'Model': 'VMR1-5, Rp1/2',
         'Supply Voltage': '230 VAC, 50/60 Hz',
@@ -604,14 +604,14 @@ const products = [
       description: 'The Elektrogas VMR1-5 (Rp1/2) is a normally-closed automatic-reset gas solenoid valve for shut-off duty on gas lines, rated 230VAC 50/60Hz with a 20VA coil and a maximum working pressure of 500 mbar. Certified to EN 161 Class A, Group 2, IP54, with ATEX ratings Ex nA IIA T4 Gc X and Ex tc IIIB T135°C for use in potentially explosive atmospheres, and CE marked (0476). Rated for an ambient temperature range of -15°C to +40°C, manufactured by Elettromeccanica for Elektrogas for burner, boiler and gas-train safety shut-off applications on 1/2" (Rp1/2) BSP connections.'
     },
     {
-      id: 'elektrogas-vmr1-2',
+      id: 'elektrogas-vmr1-2-solenoid-valve',
       name: 'Elektrogas VMR1-2 Gas Solenoid Valve (Rp1/2)',
       brand: 'Elektrogas',
       category: 'SOLENOID VALVES',
       subcategory: 'Elektrogas Solenoid Valve',
       code: 'VMR1-2',
       size: '230VAC, 50/60Hz, Rp1/2',
-      image: 'images/elektrogas-vmr1-2-large.jpg',
+      image: 'images/elektrogas-vmr1-2-solenoid-valve-large.jpg',
       specs: {
         'Model': 'VMR1-2, Rp1/2',
         'Connection Size': '1/2" (Rp1/2)',
@@ -625,14 +625,14 @@ const products = [
       description: 'The Elektrogas VMR1-2 (Rp1/2) is a normally-closed automatic-reset gas solenoid valve for shut-off duty on gas lines, with a 1/2" connection size, rated 230VAC 50/60Hz with a 25VA coil and a maximum working pressure of 200 mbar. Certified to EN 161 Class A, Group 2, IP54, and CE marked (0694), it is rated for an ambient temperature range of -15°C to +60°C. Manufactured by Elektrogas, Italy, for burner, boiler and gas-train safety shut-off applications on 1/2" (Rp1/2) BSP connections.'
     },
     {
-      id: 'elektrogas-vmr2-5',
+      id: 'elektrogas-vmr2-5-solenoid-valve',
       name: 'Elektrogas VMR2-5 Gas Solenoid Valve (Rp3/4)',
       brand: 'Elektrogas',
       category: 'SOLENOID VALVES',
       subcategory: 'Elektrogas Solenoid Valve',
       code: 'VMR2-5',
       size: '230VAC, 50/60Hz, Rp3/4',
-      image: 'images/elektrogas-vmr2-5-large.jpg',
+      image: 'images/elektrogas-vmr2-5-solenoid-valve-large.jpg',
       specs: {
         'Model': 'VMR2-5, Rp3/4',
         'Supply Voltage': '230 VAC, 50/60 Hz',
@@ -646,14 +646,14 @@ const products = [
     },
     
     {
-      id: 'elektrogas-vmr4',
+      id: 'elektrogas-vmr4-solenoid-valve',
       name: 'Elektrogas VMR4 Gas Solenoid Valve (Rp1½")',
       brand: 'Elektrogas',
       category: 'SOLENOID VALVES',
       subcategory: 'Elektrogas Solenoid Valve',
       code: 'VMR4',
       size: '230VAC, 50/60Hz, Rp1½"',
-      image: 'images/elektrogas-vmr4-large.jpg',
+      image: 'images/elektrogas-vmr4-solenoid-valve-large.jpg',
       specs: {
         'Model': 'VMR4, Rp1½"',
         'Connection Size': '1½" (Rp1½)',
@@ -668,14 +668,14 @@ const products = [
       description: 'The Elektrogas VMR4 (Rp1½") is a normally-closed automatic-reset gas solenoid valve for shut-off duty on gas lines, with a 1½" connection size, rated 230VAC 50/60Hz with a 20VA coil (0.5A max current) and a maximum working pressure of 360 mbar. Certified to EN 161 Class A, Group 2, IP54, and CE marked (0694), it is rated for an ambient temperature range of -15°C to +60°C. Manufactured by Elektrogas, Italy, for burner, boiler and gas-train safety shut-off applications on 1½" (Rp1½") BSP connections.'
     },
     {
-      id: 'elektrogas-vmr6',
+      id: 'elektrogas-vmr6-solenoid-valve',
       name: 'Elektrogas VMR6 Gas Solenoid Valve (Rp2")',
       brand: 'Elektrogas',
       category: 'SOLENOID VALVES',
       subcategory: 'Elektrogas Solenoid Valve',
       code: 'VMR6',
       size: '230VAC, 50/60Hz, Rp2"',
-      image: 'images/elektrogas-vmr6-large.jpg',
+      image: 'images/elektrogas-vmr6-solenoid-valve-large.jpg',
       specs: {
         'Model': 'VMR6, Rp2"',
         'Connection Size': '2" (Rp2)',
@@ -690,14 +690,14 @@ const products = [
       description: 'The Elektrogas VMR6 (Rp2") is a normally-closed automatic-reset gas solenoid valve for shut-off duty on gas lines, with a 2" connection size, rated 230VAC 50/60Hz with a 20VA coil (0.5A max current) and a maximum working pressure of 360 mbar. Certified to EN 161 Class A, Group 2, IP54, and CE marked (0694), it is rated for an ambient temperature range of -15°C to +60°C. Manufactured by Elektrogas, Italy, for burner, boiler and gas-train safety shut-off applications on 2" (Rp2) BSP connections.'
     },
     {
-      id: 'kromschroder-tzi',
+      id: 'kromschroder-tzi-ignition-transformer',
       name: 'Kromschröder Ignition Transformer TZI 8-12/100WE',
       brand: 'Honeywell Kromschröder',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Honeywell Kromschröder',
       code: '84391170',
       size: 'TZI 8-12/100WE',
-      image: 'images/kromschroder-tzi-large.jpg',
+      image: 'images/kromschroder-tzi-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TZI 8-12/100WE',
         'Primary': '230V, 50(60)Hz, 0.6(0.4)A',
@@ -709,14 +709,14 @@ const products = [
       description: 'The Kromschröder TZI 8-12/100WE is a high-voltage ignition transformer that steps up standard 230V mains supply to an 8kV secondary output for firing the spark electrode on gas and oil burners. Rated for continuous 100% duty cycle operation, it is built by Elster GmbH (Osnabrück) under the Kromschröder brand, now part of Honeywell, for reliable ignition in industrial and commercial burner and boiler installations.'
     },
     {
-      id: 'kromschroder-tzi-5-15-100we',
+      id: 'kromschroder-tzi-5-15-100we-ignition-transformer',
       name: 'Kromschröder Ignition Transformer TZI 5-15/100WE',
       brand: 'Honeywell Kromschröder',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Honeywell Kromschröder',
       code: '84391150',
       size: 'TZI 5-15/100WE',
-      image: 'images/kromschroder-tzi-5-15-100we-large.jpg',
+      image: 'images/kromschroder-tzi-5-15-100we-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TZI 5-15/100WE',
         'Primary': '230V, 50(60)Hz, 0.4(0.3)A',
@@ -728,14 +728,14 @@ const products = [
       description: 'The Kromschröder TZI 5-15/100WE is a high-voltage ignition transformer that steps up standard 230V mains supply to a 5kV secondary output for firing the spark electrode on gas and oil burners. Rated for continuous 100% duty cycle operation, it is built by Elster GmbH (Osnabrück) under the Kromschröder brand, now part of Honeywell, for reliable ignition in industrial and commercial burner and boiler installations.'
     },
     {
-      id: 'siemens-lfs1-11a2',
+      id: 'siemens-lfs1-11a2-flame-safeguard',
       name: 'Siemens Flame Safeguard LFS1.11A2',
       brand: 'Siemens',
       category: 'FLAME SAFEGUARD',
       code: 'BPZ:LFS1.11A2',
       size: 'Rg. No. 5F248',
-      image: 'images/siemens-lfs1-11a2-large.jpg',
-      imageLarge: 'images/siemens-lfs1-11a2-xl.jpg',
+      image: 'images/siemens-lfs1-11a2-flame-safeguard-large.jpg',
+      imageLarge: 'images/siemens-lfs1-11a2-flame-safeguard-xl.jpg',
       specs: {
         'Type': 'LFS1.11A2',
         'Power Supply': '230V~, 50-60Hz',
@@ -747,14 +747,14 @@ const products = [
       description: 'The Siemens LFS1.11A2 is a flame safeguard (burner sequence controller) approved for continuous supervision of oil and gas flames, working with an ionization probe or the RAR9 photocell detector for oil firing, and with UV flame detectors such as the QRA2, QRA4 and QRA10 series for intermittent gas operation. Built by Siemens AG in Rastatt, Germany, it runs on a 230V, 50-60Hz supply and is designed for OEM integration into burner, boiler and gas-train control panels, replacing legacy LAE10 and LFE10 controllers. Manufactured by Siemens, Germany.'
     },
     {
-      id: 'siemens-qrb3-1',
+      id: 'siemens-qrb3-1-photocell',
       name: 'Siemens Photoresistive Flame Detector QRB3(1)',
       brand: 'Siemens',
       category: 'PHOTOCELL',
       code: 'BPZ:QRB3(1)',
       size: 'With flange & clamp, protective tube',
-      image: 'images/siemens-qrb3-1-large.jpg',
-      imageLarge: 'images/siemens-qrb3-1-xl.jpg',
+      image: 'images/siemens-qrb3-1-photocell-large.jpg',
+      imageLarge: 'images/siemens-qrb3-1-photocell-xl.jpg',
       specs: {
         'Type': 'QRB3(1)',
         'Part No.': '8603112100',
@@ -768,14 +768,14 @@ const products = [
       description: 'The Siemens QRB3(1) is a photoresistive flame detector used with Siemens burner controls for supervising yellow-burning oil flames in the visible light spectrum, tuned to a peak spectral sensitivity around 600nm. Housed in a rugged protective tube with a flange-and-clamp mount for easy fitting to the burner body, it is primarily used in intermittent-operation oil burner applications alongside control units such as the LAL, LME7, LMO, LMV and LOA series. It is an OEM-grade sensor built by Siemens for integration into burner and boiler flame-safety systems.'
     },
     {
-      id: 'siemens-qrb1a-a070b70a',
+      id: 'siemens-qrb1a-a070b70a-photocell',
       name: 'Siemens Photoresistive Flame Detector QRB1A-A070B70A',
       brand: 'Siemens',
       category: 'PHOTOCELL',
       code: 'QRB1A-A070B70A',
       size: '70cm cable, 70mm stripped ends, with flange & clamp',
-      image: 'images/siemens-qrb1a-a070b70a-large.jpg',
-      imageLarge: 'images/siemens-qrb1a-a070b70a-xl.jpg',
+      image: 'images/siemens-qrb1a-a070b70a-photocell-large.jpg',
+      imageLarge: 'images/siemens-qrb1a-a070b70a-photocell-xl.jpg',
       specs: {
         'Type': 'QRB1A-A070B70A',
         'Detection Principle': 'Photoresistive (cadmium sulfide cell)',
@@ -790,14 +790,14 @@ const products = [
       description: 'The Siemens QRB1A-A070B70A is a photoresistive flame detector used with Siemens burner controls for supervising yellow-burning oil flames in the visible light spectrum, tuned to a peak spectral sensitivity around 600nm. It carries a 70cm two-core stranded-copper cable with 70mm stripped ends for direct wiring, and mounts via a small or large flange with clamp, or a lateral groove plug, keeping installation flexible across burner types. Rated IP40 and built for -20°C to +60°C operation, it is used in intermittent-operation oil burner applications alongside control units such as the LAL, LME7, LMO, LMV and LOA series. It is an OEM-grade sensor built by Siemens for integration into burner and boiler flame-safety systems.'
     },
     {
-      id: 'siemens-qrb4a-b070b70a',
+      id: 'siemens-qrb4a-b070b70a-photocell',
       name: 'Siemens Photoresistive Flame Detector QRB4A-B070B70A',
       brand: 'Siemens',
       category: 'PHOTOCELL',
       code: 'QRB4A-B070B70A',
       size: 'Casing 68mm, 70cm cable, 70mm stripped ends, AGK42 flange + AGK43 clamp',
-      image: 'images/siemens-qrb4a-b070b70a-large.jpg',
-      imageLarge: 'images/siemens-qrb4a-b070b70a-xl.jpg',
+      image: 'images/siemens-qrb4a-b070b70a-photocell-large.jpg',
+      imageLarge: 'images/siemens-qrb4a-b070b70a-photocell-xl.jpg',
       specs: {
         'Type': 'QRB4A-B070B70A',
         'Detection Principle': 'Photoresistive (cadmium sulfide cell)',
@@ -812,15 +812,15 @@ const products = [
       description: 'The Siemens QRB4A-B070B70A is a photoresistive flame detector used with Siemens burner controls for supervising yellow-burning oil flames in the visible light spectrum, tuned to a peak spectral sensitivity around 600nm. Housed in a compact 68mm black casing with a 70cm cable and 70mm stripped, ferrule-ready ends, it mounts using the AGK42 flange and AGK43 clamp for a secure fit on the burner body. It is primarily used in intermittent-operation oil burner applications alongside control units such as the LAL, LME7, LMO, LMV and LOA series. It is an OEM-grade sensor built by Siemens for integration into burner and boiler flame-safety systems.'
     },
     {
-      id: 'vanaz-r2304',
+      id: 'vanaz-r2304-pressure-regulator',
       name: 'Vanaz High Pressure Regulator R2304',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'High Pressure Regulator',
       code: 'R2304',
       size: '40mm (1.5") BSPF Threaded End',
-      image: 'images/vanaz-r2304-large.jpg',
-      imageLarge: 'images/vanaz-r2304-xl.jpg',
+      image: 'images/vanaz-r2304-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r2304-pressure-regulator-xl.jpg',
       specs: {
         'Inlet Pressure': '1 – 17 kg/cm² (bar)',
         'Outlet Pressure': '0.5 – 10 kg/cm² (bar), spring-adjustable',
@@ -834,15 +834,15 @@ const products = [
     },
 
     {
-      id: 'vanaz-r2316',
+      id: 'vanaz-r2316-pressure-regulator',
       name: 'Vanaz High Pressure Regulator R2316 1.5" Flgd #150',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'High Pressure Regulator',
       code: 'R2316',
       size: '40mm (1.5") Flanged End ANSI 150# Class',
-      image: 'images/vanaz-r2316-large.jpg',
-      imageLarge: 'images/vanaz-r2316-xl.jpg',
+      image: 'images/vanaz-r2316-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r2316-pressure-regulator-xl.jpg',
       specs: {
         'Inlet Pressure': '1 – 17 kg/cm² (bar)',
         'Outlet Pressure': '0.5 – 10 kg/cm² (bar), spring-adjustable',
@@ -855,15 +855,15 @@ const products = [
       description: 'The Vanaz R2316 is a flanged-end high-pressure regulator for LPG, natural gas and N2 service, stepping down inlet pressures of 1–17 kg/cm² (bar) to a controlled, spring-adjustable outlet of 0.5–10 kg/cm² (bar) at flows up to 250 Nm³/Hr. Unlike the threaded-end R2304 series, it connects via a 40mm (1.5") ANSI 150# class flanged end, making it suited for bolted gas train installations. Built with an SGCI body, aluminium bonnet and brass trim parts by Vanaz Engineers Ltd, Pune, it includes an inline filter that must be cleaned periodically to keep the regulator operating trouble-free.'
     },
     {
-      id: 'vanaz-r2317',
+      id: 'vanaz-r2317-pressure-regulator',
       name: 'Vanaz High Pressure Regulator R2317 2" Flgd #150',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'High Pressure Regulator',
       code: 'R2317',
       size: '50mm (2") Flanged End ANSI 150# Class',
-      image: 'images/vanaz-r2317-large.jpg',
-      imageLarge: 'images/vanaz-r2317-xl.jpg',
+      image: 'images/vanaz-r2317-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r2317-pressure-regulator-xl.jpg',
       specs: {
         'Inlet Pressure': '1 – 17 kg/cm² (bar)',
         'Outlet Pressure': '0.5 – 10 kg/cm² (bar), spring-adjustable',
@@ -876,13 +876,13 @@ const products = [
       description: 'The Vanaz R2317 is a 2" flanged-end high-pressure regulator for LPG, natural gas and N2 service, stepping down inlet pressures of 1–17 kg/cm² (bar) to a controlled, spring-adjustable outlet of 0.5–10 kg/cm² (bar) at flows up to 250 Nm³/Hr. It connects via a 50mm (2") ANSI 150# class flanged end, larger than the R2316, for higher-capacity bolted gas train installations. Built with an SGCI body, aluminium bonnet and brass trim parts by Vanaz Engineers Ltd, Pune, it includes an inline filter that must be cleaned periodically to keep the regulator operating trouble-free.'
     },
     {
-      id: 'vanaz-v4321',
+      id: 'vanaz-v4321-slam-shut-off-valve',
       name: 'Vanaz Slam Shut-Off Valve V4321',
       brand: 'Vanaz',
       category: 'SLAM SHUT OFF VALVES',
       code: 'V4321',
       size: '1" BSP (Internal) End Connection',
-      image: 'images/vanaz-v4321-large.jpg',
+      image: 'images/vanaz-v4321-slam-shut-off-valve-large.jpg',
       specs: {
         'Inlet Pressure Range': '0.5 – 19 kg/cm²',
         'Outlet Pressure Range': '0.05 – 5 kg/cm²',
@@ -895,13 +895,13 @@ const products = [
       description: 'The Vanaz V4321 is a slam shut-off valve installed immediately after the filter and prior to the pressure regulator in a gas train. It normally remains open; if the regulator\u2019s outlet pressure exceeds the permissible limit, the valve senses this through its impulse line and immediately shuts off flow to the downstream line, acting as a critical over-pressure safety device. Once the regulator has been repaired, the valve must be reset (opened) manually \u2014 it will then remain open as long as the outlet pressure stays within limits. Rated for an inlet pressure of 0.5\u201319 kg/cm\u00b2 and outlet pressure of 0.05\u20135 kg/cm\u00b2, with a gas flow rate of 150 Nm\u00b3/hr through a 1" BSP (internal) end connection, for use with natural gas, LPG, nitrogen and CO2.'
     },
     {
-      id: 'vanaz-v4325',
+      id: 'vanaz-v4325-slam-shut-off-valve',
       name: 'Vanaz Slam Shut-Off Valve V4325 / V4325 II',
       brand: 'Vanaz',
       category: 'SLAM SHUT OFF VALVES',
       code: 'V4325 / V4325 II',
       size: '1" NB Flanged ANSI 150# (V4325) / 1" NB Flanged ANSI 300# (V4325 II)',
-      image: 'images/vanaz-v4325-large.jpg',
+      image: 'images/vanaz-v4325-slam-shut-off-valve-large.jpg',
       specs: {
         'Type': 'V4325 / V4325 II',
         'End Connection \u2014 V4325': '1" NB Flanged as per ANSI 150#',
@@ -916,15 +916,15 @@ const products = [
       description: 'The Vanaz V4325 / V4325 II is a slam shut-off valve installed immediately after the filter and prior to the pressure regulator in a gas train. It normally remains open; if the regulator\u2019s outlet pressure exceeds the permissible limit, the valve senses this through its impulse line and immediately shuts off flow to the downstream line, acting as a critical over-pressure safety device. Once the regulator has been repaired, the valve must be reset (opened) manually \u2014 it will then remain open as long as the outlet pressure stays within limits. Rated for an inlet pressure of 0.5\u201319 kg/cm\u00b2 and outlet pressure of 0.05\u20135 kg/cm\u00b2, with a gas flow rate of up to 1500 Nm\u00b3/hr, for use with LPG, natural gas and CO2. Available in two flange ratings on the same design \u2014 the V4325 with a 1" NB flanged end as per ANSI 150#, and the V4325 II with a 1" NB flanged end as per ANSI 300# \u2014 both sharing the same pressure, flow and construction specification.'
     },
     {
-      id: 'vanaz-r2323',
+      id: 'vanaz-r2323-pressure-regulator',
       name: 'Vanaz High Pressure Regulator R2323 1" Flgd #150',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'High Pressure Regulator',
       code: 'R2323',
       size: '25mm (1") Flanged End ANSI 150# Class',
-      image: 'images/vanaz-r2323-large.jpg',
-      imageLarge: 'images/vanaz-r2323-xl.jpg',
+      image: 'images/vanaz-r2323-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r2323-pressure-regulator-xl.jpg',
       specs: {
         'Inlet Pressure': '1 – 17 kg/cm² (bar)',
         'Outlet Pressure': '0.5 – 10 kg/cm² (bar), spring-adjustable',
@@ -937,15 +937,15 @@ const products = [
       description: 'The Vanaz R2323 is a compact 1" flanged-end high-pressure regulator for LPG, natural gas and N2 service, stepping down inlet pressures of 1–17 kg/cm² (bar) to a controlled, spring-adjustable outlet of 0.5–10 kg/cm² (bar) at flows up to 100 Nm³/Hr. It is the smallest flanged variant in the R23-series, connecting via a 25mm (1") ANSI 150# class flanged end, suited for lower-flow gas train installations. Built with an SGCI body, aluminium bonnet and brass trim parts by Vanaz Engineers Ltd, Pune, it includes an inline filter that must be cleaned periodically to keep the regulator operating trouble-free.'
     },
     {
-      id: 'vanaz-r2331-ii',
+      id: 'vanaz-r2331-ii-pressure-regulator',
       name: 'Vanaz R2331 II Medical Oxygen Regulator',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Oxygen Regulator',
       code: 'R2331 II',
       size: '1.5" BSP (Internal) End Connection',
-      image: 'images/vanaz-r2331-ii-large.jpg',
-      imageLarge: 'images/vanaz-r2331-ii-xl.jpg',
+      image: 'images/vanaz-r2331-ii-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r2331-ii-pressure-regulator-xl.jpg',
       specs: {
         'Inlet Pressure': '5 – 40 Kg/cm²',
         'Outlet Pressure': '4 – 12 Kg/cm²',
@@ -958,13 +958,13 @@ const products = [
       description: 'The Vanaz R2331 II is a high-flow pressure regulator purpose-built for Medical Oxygen service, stepping down inlet pressures of 5–40 kg/cm² to a controlled outlet of 4–12 kg/cm² at flows up to 600 Nm³/Hr. Its wetted body is CF8M stainless steel, oxygen-service rated for cleanliness and corrosion resistance, with a 1.5" BSP internal-thread end connection for direct pipeline fitting. Manufactured by Vanaz Engineers Ltd, Pune, it is built for hospital, medical gas and industrial oxygen distribution systems where reliable, contamination-free pressure regulation is critical.'
     },
     {
-      id: 'vanaz-r2330',
+      id: 'vanaz-r2330-pressure-regulator',
       name: 'Vanaz R2330 Nitrogen Pressure Regulator',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       code: 'R2330',
       size: '1" BSPT, Female End Connection',
-      image: 'images/vanaz-r2330-large.jpg',
+      image: 'images/vanaz-r2330-pressure-regulator-large.jpg',
       specs: {
         'Type': 'R2330',
         'Connection': '1" BSPT, Female',
@@ -977,15 +977,15 @@ const products = [
       description: 'The Vanaz R2330 is a high-flow pressure regulator built for industrial Nitrogen service, stepping down inlet pressures of 5\u201340 Bar to a controlled outlet of 4\u201312 Bar at flow rates up to 70 SCMH. It connects via a 1" BSPT female end port, and carries the manufacturer\u2019s standard caution to always fit an upstream filter ahead of the regulator for trouble-free service. Manufactured by Vanaz Engineers Ltd, Pune, it suits nitrogen purging, blanketing, and pressure-control duties on industrial gas lines.'
     },
     {
-      id: 'brahma-tc2svcs',
+      id: 'brahma-tc2svcs-ignition-transformer',
       name: 'Brahma Ignition Transformer TC2SVCS',
       brand: 'Brahma',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Brahma',
       code: '15911350',
       size: 'Two-Point (2x12kV) Secondary Output',
-      image: 'images/brahma-tc2svcs-large.jpg',
-      imageLarge: 'images/brahma-tc2svcs-xl.jpg',
+      image: 'images/brahma-tc2svcs-ignition-transformer-large.jpg',
+      imageLarge: 'images/brahma-tc2svcs-ignition-transformer-xl.jpg',
       specs: {
         'Type': 'TC2SVCS',
         'Product Code': '15911350',
@@ -998,14 +998,14 @@ const products = [
       description: 'The Brahma TC2SVCS is a two-point ignition transformer that steps up a 220–240V mains supply to two independent 12kV high-voltage secondary outputs, each rated at 20mA, for firing spark electrodes on gas and oil burners. Rated for continuous 100% duty (T60H), it supplies both ignition electrodes from a single compact unit via its dual HV output leads, simplifying wiring on twin-electrode burner ignition systems. Manufactured by Brahma, Italy, it is RoHS compliant and CE marked for industrial burner and boiler ignition applications.'
     },
     {
-      id: 'brahma-tc1svcs',
+      id: 'brahma-tc1svcs-ignition-transformer',
       name: 'Brahma Ignition Transformer TC1SVCS',
       brand: 'Brahma',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Brahma',
       code: '15911250',
       size: 'Single-Point (1x15kV) Secondary Output',
-      image: 'images/brahma-tc1svcs-large.jpg',
+      image: 'images/brahma-tc1svcs-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TC1SVCS',
         'Product Code': '15911250',
@@ -1018,14 +1018,14 @@ const products = [
       description: 'The Brahma TC1SVCS is a single-point ignition transformer that steps up a 220–240V mains supply to a single 15kV high-voltage secondary output rated at 15mA, for firing the spark electrode on gas and oil burners. Rated for continuous 100% duty (T60H), it delivers a compact, reliable HV source for single-electrode burner ignition systems, with flexible HV lead routing on the transformer body. Manufactured by Brahma, Italy, it is RoHS compliant and CE marked for industrial burner and boiler ignition applications.'
     },
     {
-      id: 'brahma-tc1lvca',
+      id: 'brahma-tc1lvca-ignition-transformer',
       name: 'Brahma Ignition Transformer TC1LVCA',
       brand: 'Brahma',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Brahma',
       code: '15911000',
       size: 'Single-Point (1x15kV) Secondary Output',
-      image: 'images/brahma-tc1lvca-large.jpg',
+      image: 'images/brahma-tc1lvca-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TC1LVCA',
         'Product Code': '15911000',
@@ -1039,14 +1039,14 @@ const products = [
     },
     
     {
-      id: 'honeywell-50004263-001',
+      id: 'honeywell-50004263-001-ignition-transformer',
       name: 'Honeywell Modutrol Transformer 50004263-001',
       brand: 'Honeywell Technologies',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Honeywell Technologies',
       code: '50004263-001',
       size: 'Multi-tap primary, flying leads',
-      image: 'images/honeywell-50004263-001-large.jpg',
+      image: 'images/honeywell-50004263-001-ignition-transformer-large.jpg',
       specs: {
         'Type': '50004263-001',
         'Primary': 'Selectable: BLK-COM, BRN-24V, WHT-120V, BLU-230V, 50/60Hz',
@@ -1060,13 +1060,13 @@ const products = [
       description: 'The Honeywell 50004263-001 is a multi-tap control transformer used to power Honeywell Modutrol motors and related burner/boiler control circuits. It accepts either 120V or 230V primary (50/60Hz) via selectable White/Blue taps against the Black common, and steps it down to a 24VAC, 20VA secondary (Brown-Brown) for driving low-voltage actuators and controls. Rated Class 2 for dry locations and Class 3 for wet locations, with Class 130(B) insulation system, it is UL listed. Manufactured by Honeywell, it is a common replacement part for Modutrol motor and burner control panel installations.'
     },
     {
-      id: 'honeywell-129464n',
+      id: 'honeywell-129464n-uv-flame-detector',
       name: 'Honeywell UV Flame Detector Bulb 129464N',
       brand: 'Honeywell Technologies',
       category: 'UV FLAME DETECTORS',
       code: '129464N',
       size: 'Multi-pin base, plug-in',
-      image: 'images/honeywell-129464n-large.jpg',
+      image: 'images/honeywell-129464n-uv-flame-detector-large.jpg',
       specs: {
         'Type': '129464N',
         'Application': 'UV Flame Detector Bulb / Scanner Tube',
@@ -1078,13 +1078,13 @@ const products = [
       description: 'The Honeywell 129464N is a UV-sensitive detector bulb (UV sensing tube) used inside the Honeywell C7035 solid-state UV flame detector and the Honeywell C7061 dynamic self-checking UV flame detector, to sense the ultraviolet radiation emitted by gas, oil, or coal-fired flames on commercial and industrial burners. It plugs into the scanner housing via its multi-pin base and is rated for operation from -40°F to 250°F (-40°C to 121°C), making it suitable for a wide range of industrial burner and boiler installations. Manufactured by Honeywell, it is a common replacement bulb for C7035/C7061 UV flame detection amplifier assemblies used in burner management and flame safeguard systems.'
     },
     {
-      id: 'honeywell-c7027a1049',
+      id: 'honeywell-c7027a1049-uv-flame-sensor',
       name: 'Honeywell UV Flame Sensor C7027A1049',
       brand: 'Honeywell Technologies',
       category: 'UV FLAME SENSOR',
       code: 'C7027A1049',
       size: 'Threaded mount, flying leads',
-      image: 'images/honeywell-c7027a1049-large.jpg',
+      image: 'images/honeywell-c7027a1049-uv-flame-sensor-large.jpg',
       specs: {
         'Type': 'C7027A1049',
         'Sensor Type': 'Self-checking UV Flame Sensor (Minipeeper)',
@@ -1099,13 +1099,13 @@ const products = [
       description: 'The Honeywell C7027A1049 is a self-checking Minipeeper® ultraviolet (UV) flame sensor used in burner management and flame safeguard systems to detect the UV radiation emitted by gas or oil flames. It mounts via a 1/2-14 NPSM threaded collar onto a 1/2" sight pipe, has a 1/2" spud-type electrical connector, and connects via a 2.44 m (8 ft) pair of flying leads to the flame safeguard control or amplifier. Rated for an operating temperature range of -18°C to 102°C and a maximum pressure of 5 psi. UL Listed, CSA Certified and FM Approved. Manufactured by Honeywell, it is a common replacement sensor for Honeywell burner flame monitoring and safety-shutdown systems.'
     },
     {
-      id: 'honeywell-c7027a1023',
+      id: 'honeywell-c7027a1023-uv-flame-sensor',
       name: 'Honeywell UV Flame Sensor C7027A1023',
       brand: 'Honeywell Technologies',
       category: 'UV FLAME SENSOR',
       code: 'C7027A1023',
       size: 'Threaded mount, long flying leads',
-      image: 'images/honeywell-c7027a1023-large.jpg',
+      image: 'images/honeywell-c7027a1023-uv-flame-sensor-large.jpg',
       specs: {
         'Type': 'C7027A1023',
         'Sensor Type': 'Self-checking UV Flame Sensor (Minipeeper)',
@@ -1120,13 +1120,13 @@ const products = [
       description: 'The Honeywell C7027A1023 is a self-checking Minipeeper® ultraviolet (UV) flame sensor used in burner management and flame safeguard systems to detect the UV radiation emitted by gas or oil flames. It mounts via a 1/2-14 NPSM threaded collar onto a 1/2" sight pipe, has a clamp-type connector for 1/2" flexible metallic conduit, and connects via a 2.44 m (8 ft) pair of flying leads to the flame safeguard control or amplifier. Rated for an operating temperature range of -18°C to 102°C and a maximum pressure of 5 psi. UL Listed, CSA Certified and FM Approved. Manufactured by Honeywell, it is a common replacement sensor for Honeywell burner flame monitoring and safety-shutdown systems.'
     },
     {
-      id: 'honeywell-c7027a1072',
+      id: 'honeywell-c7027a1072-uv-flame-sensor',
       name: 'Honeywell Minipeeper UV Detector C7027A1072',
       brand: 'Honeywell Technologies',
       category: 'UV FLAME SENSOR',
       code: 'C7027A1072',
       size: 'Threaded mount, flying leads',
-      image: 'images/honeywell-c7027a1072-large.jpg',
+      image: 'images/honeywell-c7027a1072-uv-flame-sensor-large.jpg',
       specs: {
         'Type': 'C7027A1072 (Minipeeper)',
         'Sensor Type': 'Self-checking UV Flame Sensor (Minipeeper)',
@@ -1141,13 +1141,13 @@ const products = [
       description: 'The Honeywell C7027A1072 (Minipeeper) is a compact self-checking ultraviolet (UV) flame sensor used in burner management and flame safeguard systems to detect the UV radiation emitted by gas or oil flames. It mounts via a 1/2-14 NPSM threaded collar onto a 1/2" sight pipe, has a 1/2" spud-type electrical connector, and connects via a 2.44 m (8 ft) pair of flying leads to the flame safeguard control or amplifier. Rated for an operating temperature range of -40°C to 102°C and a maximum pressure of 5 psi. UL Listed, CSA Certified and FM Approved. Manufactured by Honeywell, it is a common replacement sensor for Honeywell burner flame monitoring and safety-shutdown systems.'
     },
     {
-      id: 'honeywell-c7027a1056',
+      id: 'honeywell-c7027a1056-uv-flame-sensor',
       name: 'Honeywell UV Flame Sensor C7027A1056',
       brand: 'Honeywell Technologies',
       category: 'UV FLAME SENSOR',
       code: 'C7027A1056',
       size: 'Threaded mount, long flying leads',
-      image: 'images/honeywell-c7027a1056-large.jpg',
+      image: 'images/honeywell-c7027a1056-uv-flame-sensor-large.jpg',
       specs: {
         'Type': 'C7027A1056',
         'Sensor Type': 'Self-checking UV Flame Sensor (Minipeeper)',
@@ -1161,13 +1161,13 @@ const products = [
       description: 'The Honeywell C7027A1056 is a self-checking Minipeeper® ultraviolet (UV) flame sensor used in burner management and flame safeguard systems to detect the UV radiation emitted by gas or oil flames. It mounts via a 1/2-14 NPSM threaded collar onto a 1/2" sight pipe, has a clamp-type connector for 1/2" flexible metallic conduit, and connects via a 2.44 m (8 ft) pair of flying leads to the flame safeguard control or amplifier. Maximum pressure rating of 5 psi. UL Listed, CSA Certified, FM Approved and DIN Approved. Manufactured by Honeywell, it is a common replacement sensor for Honeywell burner flame monitoring and safety-shutdown systems.'
     },
     {
-      id: 'honeywell-c7027a1031',
+      id: 'honeywell-c7027a1031-uv-flame-sensor',
       name: 'Honeywell UV Flame Sensor C7027A1031',
       brand: 'Honeywell Technologies',
       category: 'UV FLAME SENSOR',
       code: 'C7027A1031',
       size: 'Threaded mount, flying leads',
-      image: 'images/honeywell-c7027a1031-large.jpg',
+      image: 'images/honeywell-c7027a1031-uv-flame-sensor-large.jpg',
       specs: {
         'Type': 'C7027A1031',
         'Sensor Type': 'Self-checking UV Flame Sensor (Minipeeper)',
@@ -1182,13 +1182,13 @@ const products = [
       description: 'The Honeywell C7027A1031 is a self-checking Minipeeper® ultraviolet (UV) flame sensor used in burner management and flame safeguard systems to detect the UV radiation emitted by gas or oil flames. It mounts via a 1/2-14 NPSM threaded collar onto a 1/2" sight pipe, has a clamp-type connector for 1/2" flexible metallic conduit, and connects via a 2.44 m (8 ft) pair of flying leads to the flame safeguard control or amplifier. Rated for an operating temperature range of -40°C to 102°C and a maximum pressure of 5 psi. UL Listed, CSA Certified and FM Approved. Manufactured by Honeywell, it is a common replacement sensor for Honeywell burner flame monitoring and safety-shutdown systems.'
     },
     {
-      id: 'honeywell-c7027a1064',
+      id: 'honeywell-c7027a1064-uv-flame-sensor',
       name: 'Honeywell UV Flame Sensor C7027A1064',
       brand: 'Honeywell Technologies',
       category: 'UV FLAME SENSOR',
       code: 'C7027A1064',
       size: 'Threaded mount, flying leads',
-      image: 'images/honeywell-c7027a1064-large.jpg',
+      image: 'images/honeywell-c7027a1064-uv-flame-sensor-large.jpg',
       specs: {
         'Type': 'C7027A1064',
         'Sensor Type': 'Self-checking UV Flame Sensor (Minipeeper)',
@@ -1203,13 +1203,13 @@ const products = [
       description: 'The Honeywell C7027A1064 is a self-checking Minipeeper® ultraviolet (UV) flame sensor used in burner management and flame safeguard systems to detect the UV radiation emitted by gas or oil flames. It mounts via a 1/2-14 NPSM threaded collar onto a 1/2" sight pipe, has a 1/2" spud-type electrical connector, and connects via an extended 7.32 m (24 ft) pair of flying leads to the flame safeguard control or amplifier, giving it extra reach for installations where the amplifier is mounted further from the sensor. Rated for an operating temperature range of -40°C to 102°C and a maximum pressure of 5 psi. UL Listed, CSA Certified and FM Approved. Manufactured by Honeywell, it is a common replacement sensor for Honeywell burner flame monitoring and safety-shutdown systems.'
     },
     {
-      id: 'honeywell-c7044a1006',
+      id: 'honeywell-c7044a1006-uv-flame-sensor',
       name: 'Honeywell UV Flame Sensor C7044A1006',
       brand: 'Honeywell Technologies',
       category: 'UV FLAME SENSOR',
       code: 'C7044A1006',
       size: 'Base bracket mount, flying leads',
-      image: 'images/honeywell-c7044a1006-large.jpg',
+      image: 'images/honeywell-c7044a1006-uv-flame-sensor-large.jpg',
       specs: {
         'Type': 'C7044A1006',
         'Sensor Type': 'UV Flame Sensor, Stainless Steel Body (Minipeeper)',
@@ -1223,14 +1223,14 @@ const products = [
       description: 'The Honeywell C7044A1006 is a self-checking Minipeeper® ultraviolet (UV) flame sensor with a stainless-steel body, used in burner management and flame safeguard systems to detect the UV radiation emitted by gas or oil flames. Its housing has two openings permitting either side or end viewing (side viewing is 1/8 as sensitive as end viewing), making it particularly suitable for blast-tube mounting. It mounts via a bracket secured by two 8-32 RHIS (European M-4) screws, has a clamp-type connector for 1/2" flexible metallic conduit, and connects via a 2.44 m (8 ft) pair of flying leads to the flame safeguard control or amplifier. UL Listed, CSA Certified and FM Approved. Manufactured by Honeywell, it is a common replacement sensor for Honeywell burner flame monitoring and safety-shutdown systems.'
     },
     {
-      id: 'cofi-tre820piso',
+      id: 'cofi-tre820piso-ignition-transformer',
       name: 'Cofi Ignition Transformer TRE820PISO',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRE820PISO',
       size: 'Flying leads',
-      image: 'images/cofi-tre820piso-large.jpg',
+      image: 'images/cofi-tre820piso-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRE820PISO',
         'Product Code': '02198794',
@@ -1244,14 +1244,14 @@ const products = [
       description: 'The Cofi TRE820PISO is an ignition transformer that steps up a 230V, 50/60Hz primary supply (0.8A) to a single 8kV, 20mA secondary output with an amplitude of 11kV, for firing the spark electrode on gas and oil burners. Rated for an intermittent duty cycle of 19% ED within a 3-minute cycle, it terminates in flying leads for direct wiring into the burner control circuit. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'cofi-trh2-30c',
+      id: 'cofi-trh2-30c-ignition-transformer',
       name: 'Cofi Ignition Transformer TRH2-30C',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRH2-30C',
       size: 'Earthed Center (2-Point)',
-      image: 'images/cofi-trh2-30c-large.jpg',
+      image: 'images/cofi-trh2-30c-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRH2-30C',
         'Product Code': '01295192',
@@ -1267,14 +1267,14 @@ const products = [
       description: 'The Cofi TRH2-30C is a two-point, earthed-centre ignition transformer that steps up a 230V, 50/60Hz primary supply (0.35A) to a dual 12kV secondary output (2 x 12kV) at 30mA RMS, for firing the spark electrodes on gas and oil burners requiring two ignition points from a single transformer. Rated for continuous 100% duty (ED 100%) at an ambient temperature of 60°C, IP00. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'cofi-tre820',
+      id: 'cofi-tre820-ignition-transformer',
       name: 'Cofi Ignition Transformer TRE820',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRE820',
       size: 'Earthed Center',
-      image: 'images/cofi-tre820-large.jpg',
+      image: 'images/cofi-tre820-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRE820',
         'Product Code': '0218051783',
@@ -1289,14 +1289,14 @@ const products = [
       description: 'The Cofi TRE820 is an ignition transformer that steps up a 230V, 50Hz primary supply (0.9A) to a dual 4kV secondary output (2 x 4kV, 20mA) with an amplitude of 11kV, earthed-centre configuration, for firing the spark electrodes on gas and oil burners. Rated for an intermittent duty cycle of 19% ED within a 3-minute cycle, it terminates in flying leads for direct wiring into the burner control circuit. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'cofi-trk1-20cvd',
+      id: 'cofi-trk1-20cvd-ignition-transformer',
       name: 'Cofi Ignition Transformer TRK1-20CVD',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRK1-20CVD',
       size: 'Earthed Center',
-      image: 'images/cofi-trk1-20cvd-large.jpg',
+      image: 'images/cofi-trk1-20cvd-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRK1-20CVD',
         'Product Code': '240-401-021831-272',
@@ -1312,14 +1312,14 @@ const products = [
       description: 'The Cofi TRK1-20CVD is a compact, high-output ignition transformer that steps up a 220-240V, 50-60Hz primary supply (0.1A) to a dual 14kV secondary output (2 x 14kV, 20mA RMS), earthed-centre configuration, for firing the spark electrodes on gas and oil burners. Rated for continuous 100% duty (ED 100%) at an ambient temperature of 50°C, IP00. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'cofi-trg1020c',
+      id: 'cofi-trg1020c-ignition-transformer',
       name: 'Cofi Ignition Transformer TRG1020C',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRG1020C',
       size: 'Earthed Center',
-      image: 'images/cofi-trg1020c-large.jpg',
+      image: 'images/cofi-trg1020c-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRG1020C',
         'Product Code': '0214948662',
@@ -1335,14 +1335,14 @@ const products = [
       description: 'The Cofi TRG1020C is an ignition transformer that steps up a 400V, 50Hz primary supply (0.6A) to a dual 5kV secondary output (2 x 5kV, 20mA) with an amplitude of 14kV, earthed-centre configuration, for firing the spark electrodes on gas and oil burners. Rated for continuous 100% duty (ED 100%) at an ambient temperature of -38°C/E, IR00. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'cofi-trs812pcisoh2',
+      id: 'cofi-trs812pcisoh2-ignition-transformer',
       name: 'Cofi Ignition Transformer TRS812PCISOH2',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRS812PCISOH2',
       size: 'Flying leads',
-      image: 'images/cofi-trs812pcisoh2-large.jpg',
+      image: 'images/cofi-trs812pcisoh2-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRS812PCISOH2',
         'Product Code': '34340587',
@@ -1358,14 +1358,14 @@ const products = [
       description: 'The Cofi TRS812PCISOH2 is an ignition transformer that steps up a 230V, 50(60)Hz primary supply (0.5(0.4)A) to a single 8kV secondary output (12(9)mA) with an amplitude of 11kV, for firing the spark electrode on gas and oil burners. Rated for continuous 100% duty (ED 100%) at an ambient temperature of 35°C/B, IP00. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'cofi-tre820piso1',
+      id: 'cofi-tre820piso1-ignition-transformer',
       name: 'Cofi Ignition Transformer TRE820PISO1',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRE820PISO1',
       size: 'Flying leads',
-      image: 'images/cofi-tre820piso1-large.jpg',
+      image: 'images/cofi-tre820piso1-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRE820PISO1',
         'Product Code': '02212336',
@@ -1380,14 +1380,14 @@ const products = [
       description: 'The Cofi TRE820PISO1 is an ignition transformer that steps up a 115V, 50/60Hz primary supply (1.9/1.4A) to a single 8kV, 20mA secondary output with an amplitude of 11kV, for firing the spark electrode on gas and oil burners. Rated for an intermittent duty cycle of 19% ED within a 3-minute cycle, at an ambient temperature of 35°C/B, IP00. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'cofi-trs818pc-13',
+      id: 'cofi-trs818pc-13-ignition-transformer',
       name: 'Cofi Ignition Transformer TRS818PC/13',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRS818PC/13',
       size: 'Earthed Pole',
-      image: 'images/cofi-trs818pc-13-large.jpg',
+      image: 'images/cofi-trs818pc-13-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRS818PC/13',
         'Product Code': '02216937',
@@ -1403,14 +1403,14 @@ const products = [
       description: 'The Cofi TRS818PC/13 is an earthed-pole ignition transformer that steps up a 230V, 50Hz primary supply (0.9A) to a single 8kV, 18mA secondary output with an amplitude of 11kV, for firing the spark electrode on gas and oil burners. Rated for continuous 100% duty (ED 100%) at an ambient temperature of 35°C-B, IP00. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'cofi-tre820piso4',
+      id: 'cofi-tre820piso4-ignition-transformer',
       name: 'Cofi Ignition Transformer TRE820PISO4',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRE820PISO4',
       size: 'Flying leads',
-      image: 'images/cofi-tre820piso4-large.jpg',
+      image: 'images/cofi-tre820piso4-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRE820PISO4',
         'Primary': '115V, 1.9/1.4A, 50/60Hz',
@@ -1423,14 +1423,14 @@ const products = [
       description: 'The Cofi TRE820PISO4 is an ignition transformer that steps up a 115V, 50/60Hz primary supply (1.9/1.4A) to a single 8kV, 20mA secondary output with an amplitude of 11kV, for firing the spark electrode on gas and oil burners. Rated for an intermittent duty cycle of 19% ED within a 3-minute cycle. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'cofi-tre820p',
+      id: 'cofi-tre820p-ignition-transformer',
       name: 'Cofi Ignition Transformer TRE820P',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRE820P',
       size: 'Earthed Pole',
-      image: 'images/cofi-tre820p-large.jpg',
+      image: 'images/cofi-tre820p-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRE820P',
         'Product Code': '02013898',
@@ -1446,14 +1446,14 @@ const products = [
       description: 'The Cofi TRE820P is an earthed-pole ignition transformer that steps up a 230V, 50Hz primary supply (0.9A) to a single 8kV, 20mA secondary output with an amplitude of 11kV, for firing the spark electrode on gas and oil burners. Rated for an intermittent duty cycle of 19% ED within a 3-minute cycle, at an ambient temperature of 35°C/B, IP00. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'cofi-trs830p-15',
+      id: 'cofi-trs830p-15-ignition-transformer',
       name: 'Cofi Ignition Transformer TRS830P/15',
       brand: 'Cofi',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Cofi',
       code: 'TRS830P/15',
       size: 'Earthed Pole',
-      image: 'images/cofi-trs830p-15-large.jpg',
+      image: 'images/cofi-trs830p-15-ignition-transformer-large.jpg',
       specs: {
         'Type': 'TRS830P/15',
         'Product Code': '02101837',
@@ -1469,13 +1469,13 @@ const products = [
       description: 'The Cofi TRS830P/15 is an earthed-pole ignition transformer that steps up a 230V, 50Hz primary supply (1.6A) to a single 8kV, 30mA secondary output with an amplitude of 11kV, for firing the spark electrode on gas and oil burners. Rated for an intermittent duty cycle of 25% ED within a 4-minute cycle, at an ambient temperature of 35°C/B, IP00. Manufactured by Cofi srl, Italy, it is CE marked and suited to industrial burner and boiler ignition applications.'
     },
     {
-      id: 'honeywell-eclipse-10019728',
+      id: 'honeywell-eclipse-10019728-ignition-spark-electrode',
       name: 'Honeywell Eclipse Spark Ignition Electrode 10019728',
       brand: 'Honeywell Eclipse',
       category: 'IGNITION SPARK ELECTRODES',
       code: '10019728 / 019728',
       size: '70mm insertion length',
-      image: 'images/honeywell-eclipse-10019728-large.jpg',
+      image: 'images/honeywell-eclipse-10019728-ignition-spark-electrode-large.jpg',
       specs: {
         'Part Number': '10019728 / 019728',
         'Product Type': 'Burner Spark Electrode / Ignition Rod (Self-Grounding)',
@@ -1493,13 +1493,13 @@ const products = [
       description: 'The Honeywell Eclipse 10019728 (marked 019728) is a self-grounding spark electrode / ignition rod that initiates the ignition process in industrial gas burners, engineered for direct spark configurations. It has a 70mm electrode base depth, an M14 x 1.25mm mounting thread, and a 13/16-inch hex nut for installation into the burner head. The electrode carries a removable terminal with an 8-32 NC thread for the ignition lead, with an integrated self-grounding rod setting a 1.5mm electrode gap. Rated for an operating temperature range of -100°C to 1350°C. Manufactured by Honeywell Eclipse, it is primarily used in Eclipse AH air-heating burners and similar specialized industrial equipment, and is a direct replacement for legacy part number 16927-1.'
     },
     {
-      id: 'honeywell-eclipse-23045',
+      id: 'honeywell-eclipse-23045-ignition-spark-electrode',
       name: 'Honeywell Eclipse Spark Ignition Electrode 23045',
       brand: 'Honeywell Eclipse',
       category: 'IGNITION SPARK ELECTRODES',
       code: '23045 / EC23045',
       size: '101mm insertion length',
-      image: 'images/honeywell-eclipse-23045-large.jpg',
+      image: 'images/honeywell-eclipse-23045-ignition-spark-electrode-large.jpg',
       specs: {
         'Part Number': '23045 / EC23045',
         'Product Type': 'Burner Spark Electrode / Ignition Rod (Self-Grounding, Extended Ceramic)',
@@ -1516,13 +1516,13 @@ const products = [
       description: 'The Honeywell Eclipse 23045 is a self-grounding burner spark ignition electrode with an extended ceramic insulator body, a 101mm base depth (3.98 in.) and M14 x 1.25mm threaded mounting. It features a 1.5mm fixed spark gap and is rated for continuous operation from -100°C to 1350°C. It is used on Eclipse Thermjet (TJ) and RatioAir (RA) burners and FurnNOx systems, and is suited to industrial boilers, commercial furnaces and high-temperature process heaters. Manufactured by Honeywell Eclipse (Eclipse Combustion).'
     },
     {
-      id: 'honeywell-eclipse-13047',
+      id: 'honeywell-eclipse-13047-ignition-spark-electrode',
       name: 'Honeywell Eclipse Spark Ignition Electrode 13047',
       brand: 'Honeywell Eclipse',
       category: 'IGNITION SPARK ELECTRODES',
       code: '13047',
       size: '42.7mm insertion length',
-      image: 'images/honeywell-eclipse-13047-large.jpg',
+      image: 'images/honeywell-eclipse-13047-ignition-spark-electrode-large.jpg',
       specs: {
         'Part Number': '13047',
         'Product Type': 'Burner Spark Ignition Electrode (Self-Grounding)',
@@ -1538,13 +1538,13 @@ const products = [
       description: 'The Honeywell Eclipse 13047 is a self-grounding burner spark ignition electrode with a 42.7mm base depth and M14 x 1.25mm threaded mounting, with a 13/16 in. hex nut for installation. Built with a Kanthal A1 electrode and an alumina ceramic body, it is rated for continuous operation from -100°C to 1350°C with a 40kV minimum ignition voltage. It is used on Eclipse AH (Airheat) Version 1 burners (AH0050–AH0400 series), with or without flame-rod detection. Manufactured by Honeywell Eclipse.'
     },
     {
-      id: 'honeywell-eclipse-13047-1',
+      id: 'honeywell-eclipse-13047-1-ignition-spark-electrode',
       name: 'Honeywell Eclipse Spark Ignition Electrode 13047-1',
       brand: 'Honeywell Eclipse',
       category: 'IGNITION SPARK ELECTRODES',
       code: '13047-1 / EC13047-1',
       size: '54.5mm insertion length',
-      image: 'images/honeywell-eclipse-13047-1-large.jpg',
+      image: 'images/honeywell-eclipse-13047-1-ignition-spark-electrode-large.jpg',
       specs: {
         'Part Number': '13047-1 / EC13047-1',
         'Product Type': 'Burner Spark Ignition Electrode (Self-Grounding)',
@@ -1559,13 +1559,13 @@ const products = [
       description: 'The Honeywell Eclipse 13047-1 is a self-grounding burner spark ignition electrode with a 54.5mm base depth (2.17 in.) and M14 x 1.25mm threaded mounting. Built with a Kanthal A1 electrode and an alumina ceramic body, it is rated for continuous operation from -100°C to 1350°C with a 40kV minimum ignition voltage. It is used on Eclipse AH (Airheat) Version 2 burners and Gas Burner Compact units, with or without flame-rod detection. Manufactured by Honeywell Eclipse.'
     },
     {
-      id: 'honeywell-eclipse-13093-3',
+      id: 'honeywell-eclipse-13093-3-ignition-spark-electrode',
       name: 'Honeywell Eclipse Ionization Flame Rod 13093-3',
       brand: 'Honeywell Eclipse',
       category: 'IGNITION SPARK ELECTRODES',
       code: '13093-3',
       size: '76mm rod length, field-trimmable',
-      image: 'images/honeywell-eclipse-13093-3-large.jpg',
+      image: 'images/honeywell-eclipse-13093-3-ignition-spark-electrode-large.jpg',
       specs: {
         'Part Number': '13093-3',
         'Product Type': 'Ionization Flame Rod / Detection Electrode (Field-Trimmable)',
@@ -1581,15 +1581,15 @@ const products = [
       description: 'The Honeywell Eclipse 13093-3 is an ionization flame rod (detection electrode) used to confirm flame presence on industrial process burners and Eclipse AH (Airheat) burners via flame rectification, where ions in the burner flame conduct a small electrical current back to the flame safeguard control. It has a 76mm (3 in.) rod length that can be trimmed on-site to suit varying low-fire and high-fire flame lengths, a 4.8mm diameter Kanthal electrode set in a ceramic insulator, and mounts via a 1/4 in. NPT thread. Rated for continuous operation from 25°C to 1450°C. Manufactured by Honeywell Eclipse.'
     },
     {
-      id: 'brahma-e7-l-a3c',
+      id: 'brahma-e7-l-a3c-solenoid-valve',
       name: 'Brahma E7/L*A3C Oil Solenoid Valve',
       brand: 'Brahma',
       category: 'SOLENOID VALVES',
       subcategory: 'Brahma Solenoid Valve',
       code: '13191801',
       size: 'NC, P max. 20 bar',
-      image: 'images/brahma-e7-l-a3c-large.jpg',
-      imageLarge: 'images/brahma-e7-l-a3c-xl.jpg',
+      image: 'images/brahma-e7-l-a3c-solenoid-valve-large.jpg',
+      imageLarge: 'images/brahma-e7-l-a3c-solenoid-valve-xl.jpg',
       specs: {
         'Type': 'E7/L*A3C',
         'Product Code': '13191801',
@@ -1603,14 +1603,14 @@ const products = [
       description: 'The Brahma E7/L*A3C is a normally-closed (NC) solenoid valve rated for pressures up to 20 bar, designed for shut-off duty on light oil and diesel burner fuel lines. It operates on a 230V, 50Hz, 11VA coil with IP65 protection for reliable performance in industrial burner environments, and pairs with the BE7*A3C solenoid coil. Manufactured by Brahma, Italy and CE marked, it is built for oil burner and boiler fuel-line safety shut-off applications.'
     },
     {
-      id: 'brahma-re3',
+      id: 'brahma-re3-flame-relay',
       name: 'Brahma Flame Relay Sensor RE3 (110–120V) — Code 10801125',
       brand: 'Brahma',
       category: 'FLAME RELAY',
       code: '10801125',
       size: '110–120V, 50–60Hz',
-      image: 'images/brahma-re3-large.jpg',
-      imageLarge: 'images/brahma-re3-xl.jpg',
+      image: 'images/brahma-re3-flame-relay-large.jpg',
+      imageLarge: 'images/brahma-re3-flame-relay-xl.jpg',
       specs: {
         'Type': 'RE3',
         'Product Code': '10801125',
@@ -1623,14 +1623,14 @@ const products = [
       description: 'The Brahma RE3 is a flame relay module that takes the signal from a flame sensor (UV cell or photocell) and converts it into a switched relay output confirming flame presence, with a fast maximum safety time of 1 second. Front-panel Power and Flame LED indicators give an instant visual check of supply status and flame signal. This variant runs on a 110–120V, 50–60Hz, 3VA supply, manufactured by Brahma, Italy for burner and boiler flame monitoring and safety circuits.'
     },
     {
-      id: 'brahma-re3-220v',
+      id: 'brahma-re3-220v-flame-relay',
       name: 'Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801025',
       brand: 'Brahma',
       category: 'FLAME RELAY',
       code: '10801025',
       size: '220–230V, 50–60Hz',
-      image: 'images/brahma-re3-220v-large.jpg',
-      imageLarge: 'images/brahma-re3-220v-xl.jpg',
+      image: 'images/brahma-re3-220v-flame-relay-large.jpg',
+      imageLarge: 'images/brahma-re3-220v-flame-relay-xl.jpg',
       specs: {
         'Type': 'RE3',
         'Product Code': '10801025',
@@ -1643,13 +1643,13 @@ const products = [
       description: 'The Brahma RE3 is a flame relay module that takes the signal from a flame sensor (UV cell or photocell) and converts it into a switched relay output confirming flame presence, with a fast maximum safety time of 1 second. Front-panel Power and Flame LED indicators give an instant visual check of supply status and flame signal. This variant runs on a 220–230V, 50–60Hz, 3VA supply, manufactured by Brahma, Italy for burner and boiler flame monitoring and safety circuits.'
     },
     {
-      id: 'brahma-re3-220v-c1035',
+      id: 'brahma-re3-220v-c1035-flame-relay',
       name: 'Brahma Flame Relay Sensor RE3 (220–230V) — Code 10801035',
       brand: 'Brahma',
       category: 'FLAME RELAY',
       code: '10801035',
       size: '220–230V, 50–60Hz',
-      image: 'images/brahma-re3-220v-c1035-large.jpg',
+      image: 'images/brahma-re3-220v-c1035-flame-relay-large.jpg',
       specs: {
         'Type': 'RE3',
         'Product Code': '10801035',
@@ -1662,14 +1662,14 @@ const products = [
       description: 'The Brahma RE3 (Code 10801035) is a flame relay module that takes the signal from a flame sensor (UV cell or photocell) and converts it into a switched relay output confirming flame presence, with a fast maximum safety time of 1 second. Front-panel Power and Flame LED indicators give an instant visual check of supply status and flame signal. This 220–230V, 50–60Hz, 3VA variant carries a distinct part number from the standard RE3 220–230V (Code 10801025) already in the catalog — always confirm the code on the label before ordering. Manufactured by Brahma, Italy for burner and boiler flame monitoring and safety circuits.'
     },
     {
-      id: 'brahma-re3-240v',
+      id: 'brahma-re3-240v-flame-relay',
       name: 'Brahma Flame Relay Sensor RE3 (240V) — Code 10801075',
       brand: 'Brahma',
       category: 'FLAME RELAY',
       code: '10801075',
       size: '240V, 50–60Hz',
-      image: 'images/brahma-re3-240v-large.jpg',
-      imageLarge: 'images/brahma-re3-240v-xl.jpg',
+      image: 'images/brahma-re3-240v-flame-relay-large.jpg',
+      imageLarge: 'images/brahma-re3-240v-flame-relay-xl.jpg',
       specs: {
         'Type': 'RE3',
         'Code': '10801075',
@@ -1682,15 +1682,15 @@ const products = [
       description: 'The Brahma RE3 is a flame relay module that takes the signal from a flame sensor (UV cell or photocell) and converts it into a switched relay output confirming flame presence, with a fast maximum safety time of 1 second. Front-panel Power and Flame LED indicators give an instant visual check of supply status and flame signal. This 240V variant (code 10801075) runs on a 240V, 50–60Hz, 3VA supply, manufactured by Brahma, Italy for burner and boiler flame monitoring and safety circuits.'
     },
     {
-      id: 'brahma-be9-gmo-coil',
+      id: 'brahma-be9-gmo-coil-solenoid-valve',
       name: 'Brahma Solenoid Coil BE9*GMO',
       brand: 'Brahma',
       category: 'SOLENOID VALVES',
       subcategory: 'Solenoid Coil',
       code: 'BE9*GMO',
       size: '230V, 50-60Hz',
-      image: 'images/brahma-be9-gmo-coil-large.jpg',
-      imageLarge: 'images/brahma-be9-gmo-coil-xl.jpg',
+      image: 'images/brahma-be9-gmo-coil-solenoid-valve-large.jpg',
+      imageLarge: 'images/brahma-be9-gmo-coil-solenoid-valve-xl.jpg',
       specs: {
         'Solenoid Type': 'BE9*GMO',
         'Part No.': '18814013',
@@ -1706,15 +1706,15 @@ const products = [
       description: 'The Brahma BE9*GMO is a replacement solenoid coil designed for the EG40*L*GMO series gas solenoid valve. Rated Class A with a maximum working pressure of 200 mbar, it runs on a 230V, 50-60Hz supply drawing 37W in normal operation and 138W during the 120-second start phase, with IP54 protection for reliable operation in industrial burner and boiler gas train installations. Manufactured by Brahma, Italy, it is RoHS compliant and CE marked, and is used as a spare coil to service or replace the coil on an existing EG40 valve without changing the valve body.'
     },
     {
-      id: 'brahma-be6-gmo-coil',
+      id: 'brahma-be6-gmo-coil-solenoid-valve',
       name: 'Brahma Solenoid Coil BE6*GMO',
       brand: 'Brahma',
       category: 'SOLENOID VALVES',
       subcategory: 'Solenoid Coil',
       code: '18811000',
       size: '230V, 50-60Hz',
-      image: 'images/brahma-be6-gmo-coil-large.jpg',
-      imageLarge: 'images/brahma-be6-gmo-coil-xl.jpg',
+      image: 'images/brahma-be6-gmo-coil-solenoid-valve-large.jpg',
+      imageLarge: 'images/brahma-be6-gmo-coil-solenoid-valve-xl.jpg',
       specs: {
         'Solenoid Type': 'BE6*GMO',
         'Part No.': '18811000',
@@ -1729,14 +1729,14 @@ const products = [
       description: 'The Brahma BE6*GMO is a replacement solenoid coil designed for the EG12*SR*GMO series gas solenoid valve. Rated Class A with a maximum working pressure of 500 mbar, it runs on a 230V, 50-60Hz, 20VA supply with IP54 protection for reliable operation in industrial burner and boiler gas train installations. Manufactured by Brahma, Italy, it is RoHS compliant and CE marked, and is used as a spare coil to service or replace the coil on an existing EG12 valve without changing the valve body.'
     },
     {
-      id: 'brahma-be8-gmo-coil',
+      id: 'brahma-be8-gmo-coil-solenoid-valve',
       name: 'Brahma Solenoid Coil BE8*GMO',
       brand: 'Brahma',
       category: 'SOLENOID VALVES',
       subcategory: 'Solenoid Coil',
       code: 'BE8*GMO',
       size: '230V, 50-60Hz',
-      image: 'images/brahma-be8-gmo-coil-large.jpg',
+      image: 'images/brahma-be8-gmo-coil-solenoid-valve-large.jpg',
       specs: {
         'Solenoid Type': 'BE8*GMO',
         'Part No.': '18813002',
@@ -1752,15 +1752,15 @@ const products = [
       description: 'The Brahma BE8*GMO is a replacement solenoid coil designed for the EG25*SR.3*GMO series gas solenoid valve (valve product Code 13931000). Rated Class A with a maximum working pressure of 500 mbar, it runs on a 230V, 50-60Hz supply drawing 33W, with IP54 protection for reliable operation in industrial burner and boiler gas train installations. Manufactured by Brahma, Italy, it is RoHS compliant and CE marked, and is used as a spare coil to service or replace the coil on an existing EG25 valve without changing the valve body.'
     },
     {
-      id: 'brahma-cm12u',
+      id: 'brahma-cm12u-sequence-controller',
       name: 'Brahma Sequence Controller CM12U',
       brand: 'Brahma',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
       code: '37053005',
       size: '230V, 50-60Hz, 7VA',
-      image: 'images/brahma-cm12u-large.jpg',
-      imageLarge: 'images/brahma-cm12u-xl.jpg',
+      image: 'images/brahma-cm12u-sequence-controller-large.jpg',
+      imageLarge: 'images/brahma-cm12u-sequence-controller-xl.jpg',
       specs: {
         'Type': 'CM12U',
         'Product Code': '37053005',
@@ -1774,15 +1774,15 @@ const products = [
       description: 'The Brahma CM12U is a burner sequence controller that manages the start-up, ignition, and flame-monitoring cycle of gas burners, with a 1.5-second pre-purge/wait time and a 5-second safety time. It drives a 20kV ignition transformer via its JT1/JT2 terminals and supports wiring for a second gas valve (VG1/VG2) for two-stage or dual-valve gas trains, alongside dedicated terminals for reset button, fault/lockout indication, and mains fuse protection. Running on a 230V, 50-60Hz, 7VA supply, it is manufactured by Brahma, Italy for automatic burner control and flame safeguard duty on gas-fired burners and boilers.'
     },
     {
-      id: 'brahma-sm592ns',
+      id: 'brahma-sm592ns-sequence-controller',
       name: 'Brahma Sequence Controller SM 592N/S',
       brand: 'Brahma',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
       code: '36223321',
       size: '230V, 50-60Hz, 14VA',
-      image: 'images/brahma-sm592ns-large.jpg',
-      imageLarge: 'images/brahma-sm592ns-xl.jpg',
+      image: 'images/brahma-sm592ns-sequence-controller-large.jpg',
+      imageLarge: 'images/brahma-sm592ns-sequence-controller-xl.jpg',
       specs: {
         'Type': 'SM 592N/S',
         'Product Code': '36223321',
@@ -1795,15 +1795,15 @@ const products = [
       description: 'The Brahma SM 592N/S is a burner sequence controller that manages the start-up, ignition, and flame-monitoring cycle of atmospheric gas burners for non-permanent (intermittent) operation, with a 1.5-second pre-purge/wait time and a 5-second safety time. It monitors flame current directly with a minimum detectable flame signal of 1.2 µA, and features a non-volatile lockout with a front-panel reset button for quick fault acknowledgement after a safety shutdown. Running on a 230V, 50-60Hz, 14VA supply, it is manufactured by Brahma, Italy, EN298:2003 compliant, for automatic burner control and flame safeguard duty on combi boilers, heating boilers, hot air generators, water heaters, and similar gas-fired appliances with atmospheric burners.'
     },
     {
-      id: 'brahma-cm191n2',
+      id: 'brahma-cm191n2-sequence-controller',
       name: 'Brahma Sequence Controller CM 191N.2',
       brand: 'Brahma',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
       code: '20023101',
       size: '230V, 50-60Hz, 7VA',
-      image: 'images/brahma-cm191n2-large.jpg',
-      imageLarge: 'images/brahma-cm191n2-xl.jpg',
+      image: 'images/brahma-cm191n2-sequence-controller-large.jpg',
+      imageLarge: 'images/brahma-cm191n2-sequence-controller-xl.jpg',
       specs: {
         'Type': 'CM 191N.2',
         'Product Code': '20083301',
@@ -1816,15 +1816,15 @@ const products = [
       description: 'The Brahma CM 191N.2 is a burner sequence controller that manages the start-up, ignition, and flame-monitoring cycle of gas burners, with a 1.5-second pre-purge/wait time and a 10-second safety time. It monitors flame current directly with a minimum detectable flame signal of 1.2 µA, and features a front-panel reset/lockout indicator button for quick fault acknowledgement. Running on a 230V, 50-60Hz, 7VA supply, it is manufactured by Brahma, Italy, EN298:2003 compliant, for automatic burner control and flame safeguard duty on gas-fired burners and boilers.'
     },
     {
-      id: 'brahma-eg40-sr-gmo',
+      id: 'brahma-eg40-sr-gmo-solenoid-valve',
       name: 'Brahma EG40*SR*GMO Gas Solenoid Valve',
       brand: 'Brahma',
       category: 'SOLENOID VALVES',
       subcategory: 'Brahma Solenoid Valve',
       code: '13950100',
       size: '230V, 50/60Hz, 30VA',
-      image: 'images/brahma-eg40-sr-gmo-large.jpg',
-      imageLarge: 'images/brahma-eg40-sr-gmo-xl.jpg',
+      image: 'images/brahma-eg40-sr-gmo-solenoid-valve-large.jpg',
+      imageLarge: 'images/brahma-eg40-sr-gmo-solenoid-valve-xl.jpg',
       specs: {
         'Type': 'EG40*SR*GMO',
         'Product Code': '13950100',
@@ -1840,14 +1840,14 @@ const products = [
       description: 'The Brahma EG40*SR*GMO is a fast-opening Class A gas solenoid valve rated for a maximum pressure of 200 mbar, opening within 3 seconds on a 230V, 50/60Hz, 30VA supply with a 70W start draw. Built with IP54 protection for reliable operation in industrial burner and boiler gas train installations, it runs on the BE9*GMOA solenoid coil. Manufactured by Brahma, Italy, it is RoHS compliant and CE marked, and is suited to burner applications needing quick valve response rather than the gradual-opening (L-type) EG40 variant.'
     },
     {
-      id: 'brahma-uv1',
+      id: 'brahma-uv1-uv-flame-sensor',
       name: 'Brahma UV1 Flame Sensor',
       brand: 'Brahma',
       category: 'UV FLAME SENSOR',
       code: '18210060',
       size: 'ø22mm, 655mm Cable',
-      image: 'images/brahma-uv1-large.jpg',
-      imageLarge: 'images/brahma-uv1-xl.jpg',
+      image: 'images/brahma-uv1-uv-flame-sensor-large.jpg',
+      imageLarge: 'images/brahma-uv1-uv-flame-sensor-xl.jpg',
       specs: {
         'Type': 'UV1',
         'Product Code': '18210060',
@@ -1863,13 +1863,13 @@ const products = [
       description: 'The Brahma UV1 is a UV phototube flame sensor that detects the ultraviolet light (190–290 nm) emitted by a burning flame and generates an ionization-based electrical signal used by ignition and burner control devices, such as a flame relay module, to confirm flame presence. Housed in a compact ø22mm nylon body with a 655mm integral cable and a mounting nut for a 1/2" sighting pipe, it is rated for -20°C to 50°C ambient operation with a nominal service life of 10,000 hours before the phototube should be replaced. Manufactured by Brahma, Italy, it is suited to gas and mixed-fuel (gas and oil) burner flame supervision, and pairs with flame relay control units such as the Brahma RE3.'
     },
     {
-      id: 'brahma-fc7',
+      id: 'brahma-fc7-photocell',
       name: 'Brahma Photocell FC7',
       brand: 'Brahma',
       category: 'PHOTOCELL',
       code: '18210006',
       size: 'RAR9-type plug-in socket',
-      image: 'images/brahma-fc7-large.jpg',
+      image: 'images/brahma-fc7-photocell-large.jpg',
       specs: {
         'Type': 'FC7',
         'Product Code': '18210006',
@@ -1882,13 +1882,13 @@ const products = [
       description: 'The Brahma FC7 is a photoresistive cell (photocell) used for flame detection on oil burners, plugging directly into the standard RAR9-type socket on the burner control box in place of the ionization probe circuit. Its cadmium-sulphide sensing element responds to the visible light emitted by an oil flame, signalling the burner control to confirm flame presence and continue the firing sequence, or to lock out if no flame is detected. Manufactured by Brahma, Italy, it is a common replacement part for oil-fired burner and boiler flame safeguard circuits. For detailed electrical ratings, please contact us for the latest datasheet.'
     },
     {
-      id: 'brahma-f8',
+      id: 'brahma-f8-photocell',
       name: 'Brahma Photocell F8',
       brand: 'Brahma',
       category: 'PHOTOCELL',
       code: '18210025',
       size: 'RAR9-type plug-in socket',
-      image: 'images/brahma-f8-large.jpg',
+      image: 'images/brahma-f8-photocell-large.jpg',
       specs: {
         'Type': 'F8',
         'Product Code': '18210025',
@@ -1901,15 +1901,15 @@ const products = [
       description: 'The Brahma F8 (Part No. 18210025) is a photoresistive cell (photocell) used for flame detection on oil burners, plugging directly into the standard RAR9-type socket on the burner control box in place of the ionization probe circuit. Its cadmium-sulphide sensing element responds to the visible light emitted by an oil flame, signalling the burner control to confirm flame presence and continue the firing sequence, or to lock out if no flame is detected. Manufactured by Brahma, Italy, it is part of the FC7/F8 photocell family and is a common replacement part for oil-fired burner and boiler flame safeguard circuits. For detailed electrical ratings, please contact us for the latest datasheet.'
     },
     {
-      id: 'brahma-eg40-l-gmo',
+      id: 'brahma-eg40-l-gmo-solenoid-valve',
       name: 'Brahma EG40*L*GMO Gas Solenoid Valve',
       brand: 'Brahma',
       category: 'SOLENOID VALVES',
       subcategory: 'Brahma Solenoid Valve',
       code: '13950200',
       size: '230V, 50-60Hz, 37W',
-      image: 'images/brahma-eg40-l-gmo-large.jpg',
-      imageLarge: 'images/brahma-eg40-l-gmo-xl.jpg',
+      image: 'images/brahma-eg40-l-gmo-solenoid-valve-large.jpg',
+      imageLarge: 'images/brahma-eg40-l-gmo-solenoid-valve-xl.jpg',
       specs: {
         'Type': 'EG40*L*GMO',
         'Product Code': '13950200',
@@ -1925,15 +1925,15 @@ const products = [
       description: 'The Brahma EG40*L*GMO is a gradual-opening (slow-start) Class A gas solenoid valve rated for a maximum pressure of 200 mbar, opening progressively over 120 seconds on a 230V, 50-60Hz, 37W supply with a 138W start draw. Built with IP54 protection for reliable operation in industrial burner and boiler gas train installations, it runs on the BE9*GMO solenoid coil. Manufactured by Brahma, Italy, it is RoHS compliant and CE marked, and is suited to burner applications needing a smooth, gradual gas ramp-up rather than the fast-opening (SR-type) EG40 variant.'
     },
     {
-      id: 'brahma-t11-n',
+      id: 'brahma-t11-n-ignition-transformer',
       name: 'Brahma Ignition Transformer T11/N',
       brand: 'Brahma',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Brahma',
       code: '15099001',
       size: '220-230V, 50Hz',
-      image: 'images/brahma-t11-n-large.jpg',
-      imageLarge: 'images/brahma-t11-n-xl.jpg',
+      image: 'images/brahma-t11-n-ignition-transformer-large.jpg',
+      imageLarge: 'images/brahma-t11-n-ignition-transformer-xl.jpg',
       specs: {
         'Type': 'T11/N',
         'Product Code': '15099001',
@@ -1952,15 +1952,15 @@ const products = [
       description: 'The Brahma T11/N is an induction ignition transformer for gas and oil burners, stepping up a 220-230V, 1.1A, 50Hz primary supply to a 9kV peak secondary voltage at 20mA RMS output current for firing a single ignition electrode. It has a 33% duty cycle over a 3-minute cycle (intermittent-spark duty, not for continuous operation, unlike the 100%-ED T13/T17 series), and operates within -10°C to 35°C ambient. The "/N" suffix denotes a non-standard mounting variant of the base T11 transformer. Manufactured by Brahma, Italy and CE marked, it weighs under 2kg and is sized to a compact 98x98x80mm footprint for burner ignition duty.'
     },
     {
-      id: 'brahma-ce11u',
+      id: 'brahma-ce11u-sequence-controller',
       name: 'Brahma Sequence Controller CE11U',
       brand: 'Brahma',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
       code: '37051010',
       size: '230V, 50-60Hz, 7VA',
-      image: 'images/brahma-ce11u-large.jpg',
-      imageLarge: 'images/brahma-ce11u-xl.jpg',
+      image: 'images/brahma-ce11u-sequence-controller-large.jpg',
+      imageLarge: 'images/brahma-ce11u-sequence-controller-xl.jpg',
       specs: {
         'Type': 'CE11U',
         'Product Code': '37051010',
@@ -1976,15 +1976,15 @@ const products = [
       description: 'The Brahma CE11U is a compact burner sequence controller from the Brahma "Control Microflat" series, managing the start-up, ignition, and flame-monitoring cycle for single-valve gas burners with a 1.5-second pre-purge time and a 10-second safety time. It is a lock-out type control, requiring a manual reset via its SB button after a fault, and monitors flame current directly with a minimum detectable signal of 1.2 µA. It drives a 20kV ignition transformer via its JT1/JT2 terminals and supplies a single gas valve through its J2 terminals. Running on a 230V, 50-60Hz, 7VA supply, it is manufactured by Brahma, Italy, for automatic burner control on atmospheric and monobloc gas burners.'
     },
     {
-      id: 'brahma-sm152n2',
+      id: 'brahma-sm152n2-sequence-controller',
       name: 'Brahma Sequence Controller SM 152N.2',
       brand: 'Brahma',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
       code: '24283961',
       size: '230V, 50-60Hz, 7VA',
-      image: 'images/brahma-sm152n2-large.jpg',
-      imageLarge: 'images/brahma-sm152n2-xl.jpg',
+      image: 'images/brahma-sm152n2-sequence-controller-large.jpg',
+      imageLarge: 'images/brahma-sm152n2-sequence-controller-xl.jpg',
       specs: {
         'Type': 'SM 152N.2',
         'Product Code': '24283961',
@@ -1997,14 +1997,14 @@ const products = [
       description: 'The Brahma SM 152N.2 is a burner sequence controller from the Brahma "Eurobox" series, managing the start-up, ignition, and flame-monitoring cycle of gas burners with a 5-second pre-purge time and a 10-second safety time. Running on a 230V, 50-60Hz, 7VA supply, it is manufactured by Brahma, Italy, EN298:2003 compliant and RoHS compliant, for automatic burner control and flame safeguard duty on atmospheric and monobloc gas burners.'
     },
     {
-      id: 'siemens-qra4-u',
+      id: 'siemens-qra4-u-uv-flame-sensor',
       name: 'Siemens QRA4.U UV Flame Detector',
       brand: 'Siemens',
       category: 'UV FLAME SENSOR',
       code: 'BPZ:QRA4.U',
       size: '3/4"-14 NPSM Mount',
-      image: 'images/siemens-qra4-u-large.jpg',
-      imageLarge: 'images/siemens-qra4-u-xl.jpg',
+      image: 'images/siemens-qra4-u-uv-flame-sensor-large.jpg',
+      imageLarge: 'images/siemens-qra4-u-uv-flame-sensor-xl.jpg',
       specs: {
         'Type': 'QRA4.U',
         'Product Code': '2508180031',
@@ -2024,14 +2024,14 @@ const products = [
       description: 'The Siemens QRA4.U is a UV phototube flame detector for supervising gas flames and yellow- or blue-burning oil flames, and for ignition spark proving, sensitive to ultraviolet radiation in the 190-270nm range so it stays unaffected by glowing refractory or daylight. Housed in an aluminium body with a 3/4"-14 NPSM mounting thread and 1.8m connecting wires, it fits directly onto the burner or boiler front for intermittent-operation flame supervision. Rated IP54 with a nominal UV cell life of about 10,000 hours at 50°C, it is built by Siemens for use with a wide range of Siemens burner controls including the LFL, LFE and LMV series, alongside compatible flame safeguard units such as the Siemens LFS1.11A2.'
     },
     {
-      id: 'siemens-qra2m',
+      id: 'siemens-qra2m-uv-flame-sensor',
       name: 'Siemens QRA2M UV Flame Detector',
       brand: 'Siemens',
       category: 'UV FLAME SENSOR',
       code: 'BPZ:QRA2M',
       size: 'Flange & Clamp Mount',
-      image: 'images/siemens-qra2m-large.jpg',
-      imageLarge: 'images/siemens-qra2m-xl.jpg',
+      image: 'images/siemens-qra2m-uv-flame-sensor-large.jpg',
+      imageLarge: 'images/siemens-qra2m-uv-flame-sensor-xl.jpg',
       specs: {
         'Type': 'QRA2M',
         'Product Code': 'BPZ:QRA2M',
@@ -2048,14 +2048,14 @@ const products = [
       description: 'The Siemens QRA2M is the high-sensitivity version of the standard QRA2 UV flame detector, identifiable by its green terminal cover (the normal-sensitivity QRA2 uses a black cover), designed for supervising gas flames, yellow- or blue-burning oil flames, and ignition spark proving. Its housing is a robust plastic shell that is metalised to prevent static charging from burner fan airflow, designed for flange-and-clamp mounting directly on the burner. Rated IP40 and weighing about 60g, it has a nominal UV cell life of around 10,000 hours at 50°C, and is built by Siemens for use with a wide range of burner controls including the LFL, LFE, LMG and LMV series via AGQ adapters.'
     },
     {
-      id: 'siemens-qra2',
+      id: 'siemens-qra2-uv-flame-sensor',
       name: 'Siemens QRA2 UV Flame Detector',
       brand: 'Siemens',
       category: 'UV FLAME SENSOR',
       code: 'BPZ:QRA2',
       size: 'Flange & Clamp Mount',
-      image: 'images/siemens-qra2-large.jpg',
-      imageLarge: 'images/siemens-qra2-xl.jpg',
+      image: 'images/siemens-qra2-uv-flame-sensor-large.jpg',
+      imageLarge: 'images/siemens-qra2-uv-flame-sensor-xl.jpg',
       specs: {
         'Type': 'QRA2',
         'Product Code': 'BPZ:QRA2',
@@ -2070,15 +2070,15 @@ const products = [
       description: 'The Siemens QRA2 is the normal-sensitivity UV flame detector in the QRA2 range, identifiable by its black terminal cover (the high-sensitivity QRA2M uses a green cover), designed for supervising gas flames, yellow- or blue-burning oil flames, and ignition spark proving. It uses a flange-and-clamp mount for direct fitting to the burner or sighting pipe. Weighing about 60g with a nominal UV cell life of around 10,000 hours at 50°C, it is built by Siemens for use with a wide range of burner controls including the LFL, LFE, LMG and LMV series via AGQ adapters.'
     },
     {
-      id: 'madas-rg-2mcs-dn25',
+      id: 'madas-rg-2mcs-dn25-pressure-regulator',
       name: 'Madas RG/2MCS DN25 Gas Pressure Regulator',
       brand: 'Madas',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Low Pressure Regulator',
       code: 'RCS040000',
       size: 'DN25, 0.5-5 bar',
-      image: 'images/madas-rg-2mcs-dn25-large.jpg',
-      imageLarge: 'images/madas-rg-2mcs-dn25-xl.jpg',
+      image: 'images/madas-rg-2mcs-dn25-pressure-regulator-large.jpg',
+      imageLarge: 'images/madas-rg-2mcs-dn25-pressure-regulator-xl.jpg',
       specs: {
         'Type': 'RG/2MCS DN 25',
         'Product Code': 'RCS040000 · 5XX2',
@@ -2095,15 +2095,15 @@ const products = [
       description: 'The Madas RG/2MCS DN25 is a gas pressure regulator that supplies a preset, constant downstream pressure despite variations in inlet pressure or flow rate, using a compensated obturator for precision even under sudden inlet pressure changes. It includes a relief valve that discharges small gas flows outward if downstream overpressure occurs, but does not include OPSO/UPSO safety shut-off devices. Rated for a 0.5–5 bar inlet pressure range and ATEX zone II 2G / II 2D, it is suited to civil and industrial installations running natural gas, LPG or other non-corrosive dry gases. Manufactured by MADAS s.r.l., Verona, Italy, to EN 88-2 and EN 13611 standards.'
     },
     {
-      id: 'danfoss-ebi4-cm',
+      id: 'danfoss-ebi4-cm-ignition-transformer',
       name: 'Danfoss EBI4 CM Ignition Transformer',
       brand: 'Danfoss',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Danfoss',
       code: '052F4034',
       size: '230V, 50-60Hz, 2-Pole',
-      image: 'images/danfoss-ebi4-cm-large.jpg',
-      imageLarge: 'images/danfoss-ebi4-cm-xl.jpg',
+      image: 'images/danfoss-ebi4-cm-ignition-transformer-large.jpg',
+      imageLarge: 'images/danfoss-ebi4-cm-ignition-transformer-xl.jpg',
       specs: {
         'Type': 'EBI4 CM',
         'Product Code': '052F4034',
@@ -2119,15 +2119,15 @@ const products = [
       description: 'The Danfoss EBI4 CM is a 2-pole, centre-grounded ignition transformer from the EBI4 "C" continuous-duty series, rated for 100% ED operation for applications needing sustained sparking rather than short intermittent bursts. It steps up a 230V, 50-60Hz, 60VA primary supply to two 7.5kV secondary outputs at 30mA, with the centre-grounded configuration providing extra protection against shock hazard on oil burner installations. Manufactured by Danfoss in Nordborg, Denmark, it is part of the EBI4 series succeeding the well-known Danfoss EBI range, built for domestic and light commercial oil and gas burner ignition duty.'
     },
     {
-      id: 'vanaz-r4110-ii',
+      id: 'vanaz-r4110-ii-pressure-regulator',
       name: 'Vanaz R4110 II Low Pressure Regulator',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Low Pressure Regulator',
       code: 'R4110 II',
       size: '1" BSPF',
-      image: 'images/vanaz-r4110-ii-large.jpg',
-      imageLarge: 'images/vanaz-r4110-ii-xl.jpg',
+      image: 'images/vanaz-r4110-ii-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r4110-ii-pressure-regulator-xl.jpg',
       specs: {
         'Type': 'R4110 II',
         'Inlet Pressure': '1 – 17 kg/cm²',
@@ -2141,15 +2141,15 @@ const products = [
       description: 'The Vanaz R4110 II is a low-pressure, medium-flow second-stage regulator for small industrial boilers, furnaces and commercial appliances such as canteen and restaurant kitchens, stepping down a 1–17 kg/cm² inlet pressure to a controlled, spring-adjustable 0.03–0.3 kg/cm² (30–300 mbar) outlet at up to 30 Nm³/Hr. It uses a 1" BSPF end connection, larger than the base R4110 (½"x¾" BSP), while sharing the same core pressure and flow rating, and handles air, LPG, natural gas, carbon dioxide, nitrogen, hydrogen and acetylene. Manufactured by Vanaz Engineers Ltd, Pune, it is widely used across small-to-medium gas-fired equipment installations in India.'
     },
     {
-      id: 'vanaz-r4110',
+      id: 'vanaz-r4110-pressure-regulator',
       name: 'Vanaz Low Pressure Regulator R4110',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Low Pressure Regulator',
       code: 'R4110',
       size: '½" BSP Inlet x ¾" BSP Outlet',
-      image: 'images/vanaz-r4110-large.jpg',
-      imageLarge: 'images/vanaz-r4110-xl.jpg',
+      image: 'images/vanaz-r4110-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r4110-pressure-regulator-xl.jpg',
       specs: {
         'Type': 'R4110',
         'Inlet Pressure': '1 – 17 kg/cm²',
@@ -2163,15 +2163,15 @@ const products = [
       description: 'The Vanaz R4110 is a low-pressure, medium-flow gas pressure regulator designed for small industrial boilers, furnaces and commercial appliances such as canteen and restaurant kitchens. It steps down a 1–17 kg/cm² inlet pressure to a controlled, spring-adjustable 0.03–0.3 kg/cm² (30–300 mbar) outlet at up to 30 Nm³/hr, with a ½" BSP threaded inlet and ¾" BSP threaded outlet. It handles air, LPG, natural gas, carbon dioxide, nitrogen, hydrogen and acetylene, and is manufactured by Vanaz Engineers Ltd, Pune, for use across small-to-medium gas-fired equipment installations in India.'
     },
     {
-      id: 'vanaz-r4110-i-ammonia',
+      id: 'vanaz-r4110-i-ammonia-pressure-regulator',
       name: 'Vanaz Ammonia Low Pressure Regulator R4110 I',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Ammonia Regulator',
       code: 'R4110 I',
       size: '½", ¾" or 1" BSP Threaded End',
-      image: 'images/vanaz-r4110-i-ammonia-large.jpg',
-      imageLarge: 'images/vanaz-r4110-i-ammonia-xl.jpg',
+      image: 'images/vanaz-r4110-i-ammonia-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r4110-i-ammonia-pressure-regulator-xl.jpg',
       specs: {
         'Type': 'R4110 I',
         'Inlet Pressure': '1 – 17 kg/cm²',
@@ -2186,15 +2186,15 @@ const products = [
       description: 'The Vanaz R4110 I is a low-pressure ammonia (NH3) pressure regulator, mainly used as a second-stage regulator in ammonia gas systems. It steps down a 1–17 kg/cm² inlet pressure to a controlled, spring-adjustable 0.03–0.3 kg/cm² (30–300 mbar) outlet at up to 30 Nm³/hr, with ½", ¾" or 1" BSP threaded end connections. Built with stainless steel trim parts for ammonia service. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'vanaz-r4109iv',
+      id: 'vanaz-r4109iv-pressure-regulator',
       name: 'Vanaz Low Pressure Regulator R4109IV',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Low Pressure Regulator',
       code: 'R4109IV',
       size: '21.8x14 TPI (L.H.) Union Nut or ½" BSP IN x ½" BSP OUT',
-      image: 'images/vanaz-r4109iv-large.jpg',
-      imageLarge: 'images/vanaz-r4109iv-xl.jpg',
+      image: 'images/vanaz-r4109iv-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r4109iv-pressure-regulator-xl.jpg',
       specs: {
         'Type': 'R4109IV',
         'Gas': 'LPG',
@@ -2209,15 +2209,15 @@ const products = [
       description: 'The Vanaz R4109IV is a low-pressure, medium-flow gas pressure regulator designed for small industrial boilers, furnaces and commercial appliances such as canteen and restaurant kitchens. It steps down a 1–17 kg/cm² inlet pressure to a controlled, spring-adjustable 30–300 mbar outlet at up to 0–28 Nm³/hr, handling LPG gas service. It has a 21.8 x 14 TPI (L.H.) union nut or ½" BSP (Internal) inlet connection and a ½" BSP (Internal) outlet, an octagonal cast body, and is manufactured by Vanaz Engineers Ltd, Pune, for use across small-to-medium LPG-fired equipment installations in India.'
     },
     {
-      id: 'vanaz-r4109-ii',
+      id: 'vanaz-r4109-ii-pressure-regulator',
       name: 'Vanaz Low Pressure Regulator R4109 II',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Low Pressure Regulator',
       code: 'R4109 II',
       size: '21.8x14 TPI (L.H.) or ½" BSP IN x ½" BSP OUT',
-      image: 'images/vanaz-r4109-ii-large.jpg',
-      imageLarge: 'images/vanaz-r4109-ii-xl.jpg',
+      image: 'images/vanaz-r4109-ii-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r4109-ii-pressure-regulator-xl.jpg',
       specs: {
         'Type': 'R4109 II',
         'Gas': 'LPG, Nitrogen, Natural Gas, Air',
@@ -2231,14 +2231,14 @@ const products = [
       description: 'The Vanaz R4109 II is a spring-loaded low-pressure gas regulator with an adjustable outlet pressure around 1.05 bar (15 PSI), set by rotating the adjustment screw clockwise or anticlockwise to raise or lower the delivery pressure, from a 1–17 bar inlet, with a flow rate of 0–28 Nm³/hr. It handles LPG, Nitrogen, Natural Gas and Air, and is fitted with a 21.8 × 14 TPI (L.H.) union nut or ½" BSP (Internal) inlet and a ½" BSP (Internal) outlet — connections common across the R4109 model range. Manufactured by Vanaz Engineers Ltd, Pune, it delivers accurate low-pressure control for gas cylinder and appliance connections.'
     },
     {
-      id: 'siemens-qra10-c',
+      id: 'siemens-qra10-c-uv-flame-detector',
       name: 'Siemens QRA10.C UV Flame Detector',
       brand: 'Siemens',
       category: 'UV FLAME DETECTORS',
       code: 'BPZ:QRA10.C',
       size: '1" Mounting Coupling',
-      image: 'images/siemens-qra10-c-large.jpg',
-      imageLarge: 'images/siemens-qra10-c-xl.jpg',
+      image: 'images/siemens-qra10-c-uv-flame-detector-large.jpg',
+      imageLarge: 'images/siemens-qra10-c-uv-flame-detector-xl.jpg',
       specs: {
         'Type': 'QRA10.C',
         'Product Code': 'BPZ:QRA10.C',
@@ -2254,14 +2254,14 @@ const products = [
       description: 'The Siemens QRA10.C is the normal-sensitivity UV flame detector in the QRA10 range (the QRA10M.C variant offers high sensitivity), designed for supervising gas flames, yellow- or blue-burning oil flames, and ignition spark proving. Its die-cast aluminium housing has a bayonet-fitting 1" mounting coupling that attaches directly to a viewing tube or ball head, plus a connection for cooling air and a removable Pg cable gland. Rated IP54 for up to 50 mbar combustion chamber pressure with a nominal UV cell life of around 10,000 hours at 50°C, it is made in Germany by Siemens for use with a wide range of burner controls including the LFL, LFE, LGB, LMG and LMV series via AGQ adapters.'
     },
     {
-      id: 'siemens-qra53-e27',
+      id: 'siemens-qra53-e27-uv-flame-detector',
       name: 'Siemens QRA53.E27 UV Flame Detector',
       brand: 'Siemens',
       category: 'UV FLAME DETECTORS',
       code: 'BPZ:QRA53.E27',
       size: '1" Mounting Coupling',
-      image: 'images/siemens-qra53-e27-large.jpg',
-      imageLarge: 'images/siemens-qra53-e27-xl.jpg',
+      image: 'images/siemens-qra53-e27-uv-flame-detector-large.jpg',
+      imageLarge: 'images/siemens-qra53-e27-uv-flame-detector-xl.jpg',
       specs: {
         'Type': 'QRA53.E27',
         'Product Code': 'BPZ:QRA53.E27',
@@ -2280,14 +2280,14 @@ const products = [
       description: 'The Siemens QRA53.E27 is a continuous-operation UV flame detector designed for supervising gas flames, yellow- or blue-burning oil flames, and ignition spark proving on larger industrial burners. Its die-cast aluminium housing carries a 125 mm detector tube with a quartz-glass window and bayonet-fit 1" mounting coupling, fixed to the burner via a mounting bracket, with a removable Pg cable gland for the AGM19 connecting cable. Rated IP54 (IP65 with the optional AGG06 glass holder) for ambient temperatures of -20°C to +60°C and up to 500 mbar combustion chamber pressure with the AGG02/AGG03 accessory, it runs on AC 220-240V and offers a nominal UV cell life of around 10,000 hours at 50°C. Made in Germany by Siemens, it is designed for continuous-operation burner controls such as the LGK16 and LGI16 series.'
     },
     {
-      id: 'siemens-qra75-a27',
+      id: 'siemens-qra75-a27-uv-flame-detector',
       name: 'Siemens QRA75.A27 UV Flame Detector',
       brand: 'Siemens',
       category: 'UV FLAME DETECTORS',
       code: 'BPZ:QRA75.A27',
       size: '69mm Detector Tube',
-      image: 'images/siemens-qra75-a27-large.jpg',
-      imageLarge: 'images/siemens-qra75-a27-xl.jpg',
+      image: 'images/siemens-qra75-a27-uv-flame-detector-large.jpg',
+      imageLarge: 'images/siemens-qra75-a27-uv-flame-detector-xl.jpg',
       specs: {
         'Type': 'QRA75.A27',
         'Product Code': 'BPZ:QRA75.A27',
@@ -2307,14 +2307,14 @@ const products = [
       description: 'The Siemens QRA75.A27 is a continuous-operation UV flame detector designed for supervising gas and oil flames on larger industrial burners. Its die-cast aluminium housing carries a 69 mm detector tube with a bayonet-fit mounting clamp (AGG16.C adapter), supplied complete with a 2 m AGM23 connecting cable. Rated IP65 for ambient temperatures of -20°C to +60°C with a nominal UV cell life of around 10,000 hours at 50°C, it draws 3.2 VA on AC 230V, 50-60Hz supply (+10%/-15%). Made in Germany by Siemens, it is designed for continuous-operation burner controls such as the LMV5 and LME75 series.'
     },
     {
-      id: 'siemens-qra55-e27',
+      id: 'siemens-qra55-e27-uv-flame-detector',
       name: 'Siemens QRA55.E27 UV Flame Detector',
       brand: 'Siemens',
       category: 'UV FLAME DETECTORS',
       code: 'BPZ:QRA55.E27',
       size: '69mm Detector Tube',
-      image: 'images/siemens-qra55-e27-large.jpg',
-      imageLarge: 'images/siemens-qra55-e27-xl.jpg',
+      image: 'images/siemens-qra55-e27-uv-flame-detector-large.jpg',
+      imageLarge: 'images/siemens-qra55-e27-uv-flame-detector-xl.jpg',
       specs: {
         'Type': 'QRA55.E27',
         'Product Code': 'BPZ:QRA55.E27',
@@ -2334,14 +2334,14 @@ const products = [
       description: 'The Siemens QRA55.E27 is a continuous-operation UV flame detector that uses an integrated motorized shutter to run periodic self-checks, preventing the sensor from failing in a dangerous flame-on state. Its die-cast aluminium housing carries a 69 mm detector tube (190-270 nm UV spectral range, normal sensitivity) and connects via a separate AGM19 connecting cable, with the AGR4 502 4065 0 replacement UV cell available for servicing. Rated IP65 for ambient temperatures of -20°C to +60°C with a nominal UV cell life of around 10,000 hours at 50°C, it draws 2.5 VA on AC 220-240V, 50-60Hz supply (+10%/-15%). Made in Germany by Siemens, it is designed for continuous-operation burner controls such as the LGK16 and LGI16 series, and directly replaces the discontinued QRA55.C27.'
     },
     {
-      id: 'siemens-qra50m',
+      id: 'siemens-qra50m-uv-flame-detector',
       name: 'Siemens QRA50M UV Flame Detector',
       brand: 'Siemens',
       category: 'UV FLAME DETECTORS',
       code: 'BPZ:QRA50M',
       size: 'Serie 02, Flange Mount',
-      image: 'images/siemens-qra50m-large.jpg',
-      imageLarge: 'images/siemens-qra50m-xl.jpg',
+      image: 'images/siemens-qra50m-uv-flame-detector-large.jpg',
+      imageLarge: 'images/siemens-qra50m-uv-flame-detector-xl.jpg',
       specs: {
         'Type': 'QRA50M',
         'Product Code': 'BPZ:QRA50M',
@@ -2360,14 +2360,14 @@ const products = [
       description: 'The Siemens QRA50M is a self-checking ultraviolet (UV) flame detector engineered for continuous-operation industrial burners (systems running uninterrupted for more than 24 hours). Its die-cast aluminium housing mounts directly to the burner flange via two studs and uses an internal rotating shutter (roughly 3 interruptions per second) to constantly verify the sensor\'s own health, with a 190-240 nm UV spectral range. Rated IP54 for ambient temperatures of -20°C to +60°C, it uses the 4 502 4268 0 replacement UV cell for servicing and is designed to pair with the Siemens LFE50 burner controller for supervising gas flames, yellow- or blue-burning oil flames, and ignition spark proving. Made in Germany by Siemens; this Serie 02 unit is a legacy model that Siemens has discontinued, but remains stocked by RKIC as a critical spare part.'
     },
     {
-      id: 'honeywell-r4343-e1048',
+      id: 'honeywell-r4343-e1048-flame-relay',
       name: 'Honeywell Flame Detector Relay R4343 E1048',
       brand: 'Honeywell Technologies',
       category: 'FLAME RELAY',
       code: 'R4343 E1048',
       size: '115-230VAC, 50/60Hz',
-      image: 'images/honeywell-r4343-e1048-large.jpg',
-      imageLarge: 'images/honeywell-r4343-e1048-xl.jpg',
+      image: 'images/honeywell-r4343-e1048-flame-relay-large.jpg',
+      imageLarge: 'images/honeywell-r4343-e1048-flame-relay-xl.jpg',
       specs: {
         'Type': 'R4343 E1048',
         'Application': 'Flame Detector Relay (Flame Switch)',
@@ -2384,14 +2384,14 @@ const products = [
       description: 'The Honeywell R4343 E1048 is a flame detector relay that acts as a switch, signalling the presence or absence of a flame or ultraviolet (UV) light when paired with the correct sensor, for intermittent-operation industrial oil or gas burner systems. It runs on a 115-230VAC, 50/60Hz universal supply and switches a 2A, 230VAC (cos phi 0.65) potential-free output contact, with a flame-failure response time of 2 seconds maximum. A front-facing microammeter (uA) jack socket lets technicians monitor flame signal strength directly, and the plug-in unit mounts onto a subbase for surface mounting. Swiss made and CE marked (CE-0085AR0415), it was discontinued by Honeywell in 2022 and is stocked by RKIC as a spare for legacy burner control panels.'
     },
     {
-      id: 'siemens-qra10m-c',
+      id: 'siemens-qra10m-c-uv-flame-detector',
       name: 'Siemens QRA10M.C UV Flame Detector',
       brand: 'Siemens',
       category: 'UV FLAME DETECTORS',
       code: 'BPZ:QRA10M.C',
       size: '1" Mounting Coupling',
-      image: 'images/siemens-qra10m-c-large.jpg',
-      imageLarge: 'images/siemens-qra10m-c-xl.jpg',
+      image: 'images/siemens-qra10m-c-uv-flame-detector-large.jpg',
+      imageLarge: 'images/siemens-qra10m-c-uv-flame-detector-xl.jpg',
       specs: {
         'Type': 'QRA10M.C',
         'Product Code': 'BPZ:QRA10M.C',
@@ -2406,13 +2406,13 @@ const products = [
       description: 'The Siemens QRA10M.C is the high-sensitivity UV flame detector in the QRA10 range, the counterpart to the normal-sensitivity QRA10.C, designed for supervising gas flames, yellow- or blue-burning oil flames, and ignition spark proving in installations where the flame signal is weaker or the detector sits further from the flame. It shares the same die-cast aluminium housing with a bayonet-fitting 1" mounting coupling, a connection for cooling air, and a removable Pg cable gland. Rated IP54 for up to 50 mbar combustion chamber pressure with a nominal UV cell life of around 10,000 hours at 50°C, it is made in Germany by Siemens for use with a wide range of burner controls including the LFL, LFE, LGB, LMG and LMV series via AGQ adapters.'
     },
     {
-      id: 'honeywell-maxon-47232',
+      id: 'honeywell-maxon-47232-ignition-spark-electrode',
       name: 'Honeywell Maxon 47232 Spark Ignition Electrode',
       brand: 'Honeywell Maxon',
       category: 'IGNITION SPARK ELECTRODES',
       code: '47232 / 47232MAXON / MX47232 / 90-25663',
       size: '5.875" length, 1/2" NPT',
-      image: 'images/honeywell-maxon-47232-large.jpg',
+      image: 'images/honeywell-maxon-47232-ignition-spark-electrode-large.jpg',
       specs: {
         'Part Number / MPN': '47232 (also 47232MAXON, MX47232, 90-25663)',
         'Total Length': '5.875 in (150 mm)',
@@ -2426,15 +2426,15 @@ const products = [
       description: 'The Honeywell Maxon 47232 is a heavy-duty industrial spark ignitor that provides direct spark ignition for pilot-lit burner configurations in high-demand thermal processing environments. It measures 5.875 inches (150 mm) in total length with a 0.375 inch (3/8") tip diameter (without tip extension) and mounts via a 1/2" NPT thread, finished with an IP-19 cut. Built with ceramic insulation and a Kanthal alloy electrode rod for durability under high heat, it is also referenced under part numbers 47232MAXON, MX47232, and 90-25663. Manufactured by Honeywell Maxon.'
     },
     {
-      id: 'honeywell-elster-bk-g6m',
+      id: 'honeywell-elster-bk-g6m-gas-flow-meter',
       name: 'Honeywell Elster BK-G6M Diaphragm Gas Meter G6',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Diaphragm Gas Meters',
       code: 'BK-G6M',
       size: 'G6 · Qmax 10 m³/h',
-      image: 'images/honeywell-elster-bk-g6m-large.jpg',
-      imageLarge: 'images/honeywell-elster-bk-g6m-xl.jpg',
+      image: 'images/honeywell-elster-bk-g6m-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-bk-g6m-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'BK-G6M',
         'Size and Capacity': 'G6 · Qmax 10 m³/h',
@@ -2458,15 +2458,15 @@ const products = [
       description: 'The Honeywell Elster BK-G6M is a G6-size diaphragm gas meter rated for a minimum flow of 0.06 m³/h, transitional flow of 0.6 m³/h and maximum flow of 10 m³/h, with a cyclic volume of 2 litres as standard (4 litres on the variant). It uses four measuring chambers separated by synthetic, stadium-shaped diaphragms with a pneumatic control mechanism, and is available in co-axial (one-pipe) or two-pipe housing versions built in pressed steel or aluminium. The BK-G6T variant adds mechanical bimetallic temperature compensation to adjust the diaphragm stroke for the current gas temperature. Rated to a maximum operating pressure of 0.5 bar (50 kPa), with a standard temperature range of -10°C to +40°C (extended gas temperature range -25°C to +55°C), it can optionally carry a Low Frequency (LF) pulse transmitter (0.1 m³/pulse) for remote reading and is EN 1359 and MID certified by PTB. Manufactured by Honeywell Elster.'
     },
     {
-      id: 'honeywell-elster-bk-g4m',
+      id: 'honeywell-elster-bk-g4m-gas-flow-meter',
       name: 'Honeywell Elster BK-G4M Diaphragm Gas Meter G4',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Diaphragm Gas Meters',
       code: 'BK-G4M L',
       size: 'G4 · Qmax 6 m³/h',
-      image: 'images/honeywell-elster-bk-g4m-large.jpg',
-      imageLarge: 'images/honeywell-elster-bk-g4m-xl.jpg',
+      image: 'images/honeywell-elster-bk-g4m-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-bk-g4m-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'BK-G4M L',
         'Size and Capacity': 'G4 · Qmax 6 m³/h',
@@ -2488,15 +2488,15 @@ const products = [
       description: 'The Honeywell Elster BK-G4M is a G4-size diaphragm gas meter rated for a minimum flow of 0.04 m³/h and maximum flow of 6 m³/h, with a cyclic volume of 1.2 litres. It uses four measuring chambers separated by synthetic, stadium-shaped diaphragms with a pneumatic control mechanism, housed in a steel body with internal and external surfaces coated against corrosion, and fitted with a 1” x ¾” BSPT connection (inlet x outlet nut and liner). It carries a low-frequency pulse output of 1 pulse per 0.01 m³, weighs approximately 3 kg, and is rated to a maximum operating pressure of 0.5 bar (50 kPa), with a standard temperature range of -10°C to +40°C (extended gas temperature range -25°C to +55°C). EN 1359 and MID certified (module DE-07-MI002-PTB001). Manufactured by Honeywell Elster.'
     },
     {
-      id: 'honeywell-elster-bk-g1-6',
+      id: 'honeywell-elster-bk-g1-6-gas-flow-meter',
       name: 'Honeywell Elster BK-G1.6 Diaphragm Gas Meter',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Diaphragm Gas Meters',
       code: 'BK-G1.6',
       size: 'G1.6 · Qmax 2.5 m³/h',
-      image: 'images/honeywell-elster-bk-g1-6-large.jpg',
-      imageLarge: 'images/honeywell-elster-bk-g1-6-xl.jpg',
+      image: 'images/honeywell-elster-bk-g1-6-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-bk-g1-6-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'BK-G1.6',
         'Size and Capacity': 'G1.6 · Qmax 2.5 m³/h',
@@ -2517,15 +2517,15 @@ const products = [
       description: 'The Honeywell Elster BK-G1.6 is a compact G1.6-size diaphragm gas meter for domestic and light commercial installations, rated for a minimum flow of 0.016 m³/h and maximum flow of 2.5 m³/h, with a cyclic volume of 1.2 litres. It uses the same four-chamber pneumatic diaphragm measuring principle as the rest of the BK-G range, fitted with a DN20 (¾” BSP) connection, and carries a low-frequency pulse output of 1 pulse per 0.01 m³. Rated to a maximum operating pressure of 0.5 bar (50 kPa), with a standard temperature range of -10°C to +40°C (extended gas temperature range -25°C to +55°C). EN 1359 and MID certified (module DE-07-MI002-PTB001). Manufactured by Honeywell Elster.'
     },
     {
-      id: 'honeywell-elster-bk-g16m',
+      id: 'honeywell-elster-bk-g16m-gas-flow-meter',
       name: 'Honeywell Elster BK-G16M Diaphragm Gas Meter G16',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Diaphragm Gas Meters',
       code: 'BK-G16M',
       size: 'G16 · Qmax 25 m³/h',
-      image: 'images/honeywell-elster-bk-g16m-large.jpg',
-      imageLarge: 'images/honeywell-elster-bk-g16m-xl.jpg',
+      image: 'images/honeywell-elster-bk-g16m-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-bk-g16m-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'BK-G16M',
         'Size and Capacity': 'G16 · Qmax 25 m³/h',
@@ -2549,14 +2549,14 @@ const products = [
       description: 'The Honeywell Elster BK-G16M is a G16-size diaphragm gas meter rated for a minimum flow of 0.16 m³/h, transitional flow of 4.0 m³/h and maximum flow of 25 m³/h, with a cyclic volume of 6.0 litres. It is built as a two-pipe diaphragm meter in a pressed steel casing with a pale grey (RAL 7035) powder-coated finish, and reads out via a mechanical roller counter (Vtb, in m³, with a red sub-decimal digit). Rated to a maximum operating pressure of 0.5 bar with a pressure loss of ≤ 0.1 bar at Qmax, it covers an operating gas temperature range of -25°C to +40°C and an ambient/measuring temperature range of -25°C to +55°C. Suitable for natural gas, PNG, LPG, propane, butane, town gas, air, and other inert non-corrosive gases, it can be retrofitted with a low-frequency pulse transmitter (e.g. IN-Z61) for remote reading, and is EN 1359:1998/A1:2006 compliant, MID approved and CE/DVGW certified. Manufactured by Honeywell Elster.'
     },
     {
-      id: 'madas-psm500',
+      id: 'madas-psm500-pressure-switch',
       name: 'Madas PSM500 Gas Pressure Switch',
       brand: 'Madas',
       category: 'PRESSURE SWITCHES',
       code: 'PSM500',
       size: '100 – 500 mbar adjustable range',
-      image: 'images/madas-psm500-large.jpg',
-      imageLarge: 'images/madas-psm500-xl.jpg',
+      image: 'images/madas-psm500-pressure-switch-large.jpg',
+      imageLarge: 'images/madas-psm500-pressure-switch-xl.jpg',
       specs: {
         'Model': 'PSM500',
         'Type': 'Gas Pressure Switch (adjustable minimum pressure switch)',
@@ -2572,14 +2572,14 @@ const products = [
       description: 'The Madas PSM500 is an adjustable gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 100 to 500 mbar and a maximum working pressure of 600 mbar on gas service. It is rated 6A at 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 1015-19). Manufactured by Madas.'
     },
     {
-      id: 'madas-psm150',
+      id: 'madas-psm150-pressure-switch',
       name: 'Madas PSM150 Gas Pressure Switch',
       brand: 'Madas',
       category: 'PRESSURE SWITCHES',
       code: 'PSM150',
       size: '5 – 150 mbar adjustable range',
-      image: 'images/madas-psm150-large.jpg',
-      imageLarge: 'images/madas-psm150-xl.jpg',
+      image: 'images/madas-psm150-pressure-switch-large.jpg',
+      imageLarge: 'images/madas-psm150-pressure-switch-xl.jpg',
       specs: {
         'Model': 'PSM150',
         'Type': 'Gas Pressure Switch (adjustable minimum pressure switch)',
@@ -2595,14 +2595,14 @@ const products = [
       description: 'The Madas PSM150 is an adjustable gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 150 mbar and a maximum working pressure of 500 mbar on gas service. It is rated 6A at 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 1015-19). Manufactured by Madas.'
     },
     {
-      id: 'madas-psm050',
+      id: 'madas-psm050-pressure-switch',
       name: 'Madas PSM050 Gas Pressure Switch',
       brand: 'Madas',
       category: 'PRESSURE SWITCHES',
       code: 'PSM050',
       size: '5 – 50 mbar adjustable range',
-      image: 'images/madas-psm050-large.jpg',
-      imageLarge: 'images/madas-psm050-xl.jpg',
+      image: 'images/madas-psm050-pressure-switch-large.jpg',
+      imageLarge: 'images/madas-psm050-pressure-switch-xl.jpg',
       specs: {
         'Model': 'PSM050',
         'Type': 'Gas Pressure Switch (adjustable minimum pressure switch)',
@@ -2618,14 +2618,14 @@ const products = [
       description: 'The Madas PSM050 is an adjustable gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 50 mbar and a maximum working pressure of 500 mbar on gas service. It is rated 6A at 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 1015-19). Manufactured by Madas.'
     },
     {
-      id: 'madas-psm010',
+      id: 'madas-psm010-pressure-switch',
       name: 'Madas PSM010 Gas Pressure Switch',
       brand: 'Madas',
       category: 'PRESSURE SWITCHES',
       code: 'PSM010',
       size: '2 – 10 mbar adjustable range',
-      image: 'images/madas-psm010-large.jpg',
-      imageLarge: 'images/madas-psm010-xl.jpg',
+      image: 'images/madas-psm010-pressure-switch-large.jpg',
+      imageLarge: 'images/madas-psm010-pressure-switch-xl.jpg',
       specs: {
         'Model': 'PSM010',
         'Type': 'Gas Pressure Switch (adjustable minimum pressure switch)',
@@ -2641,14 +2641,14 @@ const products = [
       description: 'The Madas PSM010 is an adjustable gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 2 to 10 mbar and a maximum working pressure of 500 mbar on gas service. It is rated 6A at 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 1015-19). Manufactured by Madas.'
     },
     {
-      id: 'madas-fm-dn15',
+      id: 'madas-fm-dn15-filter',
       name: 'Madas FM DN 15 Gas Filter',
       brand: 'Madas',
       category: 'FILTERS',
       code: 'FM DN 15',
       size: 'DN 15 (½" BSP)',
-      image: 'images/madas-fm-dn15-large.jpg',
-      imageLarge: 'images/madas-fm-dn15-xl.jpg',
+      image: 'images/madas-fm-dn15-filter-large.jpg',
+      imageLarge: 'images/madas-fm-dn15-filter-xl.jpg',
       specs: {
         'Model': 'FM DN 15',
         'Type': 'Gas Filter',
@@ -2664,14 +2664,14 @@ const products = [
       description: 'The Madas FM DN 15 is an in-line gas filter for gas control lines, sized DN 15 (½" BSP connection), rated to a maximum working pressure (PS) of 6 bar with a filtering grade of 50 microns. It has an operating temperature range of -10°C to +70°C and is certified to EN 126 (CE-SIAR1070). Manufactured by Madas.'
     },
     {
-      id: 'madas-fm-dn20',
+      id: 'madas-fm-dn20-filter',
       name: 'Madas FM DN 20 Gas Filter',
       brand: 'Madas',
       category: 'FILTERS',
       code: 'FM DN 20',
       size: 'DN 20 (¾" BSP)',
-      image: 'images/madas-fm-dn20-large.jpg',
-      imageLarge: 'images/madas-fm-dn20-xl.jpg',
+      image: 'images/madas-fm-dn20-filter-large.jpg',
+      imageLarge: 'images/madas-fm-dn20-filter-xl.jpg',
       specs: {
         'Model': 'FM DN 20',
         'Type': 'Gas Filter',
@@ -2687,14 +2687,14 @@ const products = [
       description: 'The Madas FM DN 20 is an in-line gas filter for gas control lines, sized DN 20 (¾" BSP connection), rated to a maximum working pressure (PS) of 6 bar with a filtering grade of 50 microns. It has an operating temperature range of -40°C to +70°C and is certified to EN 126 (CE-51AR1070). Manufactured by Madas.'
     },
     {
-      id: 'madas-fm-dn25',
+      id: 'madas-fm-dn25-filter',
       name: 'Madas FM DN 25 Gas Filter',
       brand: 'Madas',
       category: 'FILTERS',
       code: 'FM DN 25',
       size: 'DN 25 (1" BSP)',
-      image: 'images/madas-fm-dn25-large.jpg',
-      imageLarge: 'images/madas-fm-dn25-xl.jpg',
+      image: 'images/madas-fm-dn25-filter-large.jpg',
+      imageLarge: 'images/madas-fm-dn25-filter-xl.jpg',
       specs: {
         'Model': 'FM DN 25',
         'Type': 'Gas Filter',
@@ -2710,14 +2710,14 @@ const products = [
       description: 'The Madas FM DN 25 is an in-line gas filter for gas control lines, sized DN 25 (1" BSP connection), rated to a maximum working pressure (PS) of 6 bar with a filtering grade of 50 microns. It has an operating temperature range of -40°C to +70°C and is certified to EN 126 (CE-51AR1070). Manufactured by Madas.'
     },
     {
-      id: 'kromschroder-dh8tn40',
+      id: 'kromschroder-dh8tn40-pressure-gauge',
       name: 'Honeywell Kromschröder DH8TN40 Push Button Valve',
       brand: 'Honeywell Kromschröder',
       category: 'PRESSURE GAUGES',
       code: 'KS03152142',
       size: '¼" FNPT',
-      image: 'images/kromschroder-dh8tn40-large.jpg',
-      imageLarge: 'images/kromschroder-dh8tn40-xl.jpg',
+      image: 'images/kromschroder-dh8tn40-pressure-gauge-large.jpg',
+      imageLarge: 'images/kromschroder-dh8tn40-pressure-gauge-xl.jpg',
       specs: {
         'Model': 'DH8TN40',
         'Type': 'Push-to-Test Gauge Isolation Valve',
@@ -2731,15 +2731,15 @@ const products = [
       description: 'The Honeywell Kromschröder DH8TN40 is a manual push-to-test gauge isolation valve, brass body with nickel-plated finish, sized ¼" x ¼" FNPT. It protects a pressure gauge against pressure surges by isolating it from the line; pressing the button connects the gauge for a reading, and releasing it shuts off flow to the gauge while automatically venting residual pressure. Rated to a maximum inlet pressure of 5 bar (70 psig) for gas and air. Manufactured by Honeywell Kromschröder.'
     },
     {
-      id: 'kromschroder-ifd258-3-1w',
+      id: 'kromschroder-ifd258-3-1w-sequence-controller',
       name: 'Honeywell Kromschröder IFD 258-3/1W Automatic Burner Control Unit',
       brand: 'Honeywell Kromschröder',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control Unit (BCU)',
       code: '84621610',
       size: 'IFD 258-3/1W · 230 VAC',
-      image: 'images/kromschroder-ifd258-3-1w-large.jpg',
-      imageLarge: 'images/kromschroder-ifd258-3-1w-xl.jpg',
+      image: 'images/kromschroder-ifd258-3-1w-sequence-controller-large.jpg',
+      imageLarge: 'images/kromschroder-ifd258-3-1w-sequence-controller-xl.jpg',
       specs: {
         'Model': 'IFD 258-3/1W',
         'Type': 'Automatic Burner Control Unit',
@@ -2762,15 +2762,15 @@ const products = [
       description: 'The Honeywell Kromschröder IFD 258-3/1W (Order No. 84621610) is an automatic burner control unit that ignites and monitors directly-ignited industrial gas burners of unlimited capacity in continuous operation, suitable for modulating or stage-controlled burners and frequent cycling duty. Flame is monitored via an ionization or UV sensor, with a 2-digit 7-segment display showing program status and flame signal intensity, and a switch-selectable immediate fault lock-out or restart on flame failure. Rated 230 VAC 50/60 Hz with a start-up safety time of 3 s and an operating safety time of 1 s, it is built for an ambient temperature range of -20°C to +60°C with IP54 protection. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany).'
     },
     {
-      id: 'kromschroder-ifd258-5-1w',
+      id: 'kromschroder-ifd258-5-1w-sequence-controller',
       name: 'Honeywell Kromschröder IFD 258-5/1W Automatic Burner Control Unit',
       brand: 'Honeywell Kromschröder',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control Unit (BCU)',
       code: '84621630',
       size: 'IFD 258-5/1W · 230 VAC',
-      image: 'images/kromschroder-ifd258-5-1w-large.jpg',
-      imageLarge: 'images/kromschroder-ifd258-5-1w-xl.jpg',
+      image: 'images/kromschroder-ifd258-5-1w-sequence-controller-large.jpg',
+      imageLarge: 'images/kromschroder-ifd258-5-1w-sequence-controller-xl.jpg',
       specs: {
         'Model': 'IFD 258-5/1W',
         'Type': 'Automatic Burner Control Unit',
@@ -2792,15 +2792,15 @@ const products = [
       description: 'The Honeywell Kromschröder IFD 258-5/1W (Order No. 84621630) is an automatic burner control unit that ignites and monitors industrial gas burners for continuous operation, suitable for modulating or stage-controlled burners in frequent cycling duty. Flame can be monitored via an ionization sensor (cable up to 75 m) or a UV sensor (cable up to 100 m), with program status and flame signal level read directly from the unit, a switch-off threshold set by potentiometer, and switch-selectable behavior on flame failure. Rated 230 VAC 50/60 Hz with a start-up safety time of 5 s and an operating safety time of 1 s, it is built for an ambient temperature range of -20°C to +60°C with IP54 protection. Manufactured by Honeywell Kromschröder (Osnabrück, Germany).'
     },
     {
-      id: 'honeywell-elster-bk-g10m',
+      id: 'honeywell-elster-bk-g10m-gas-flow-meter',
       name: 'Honeywell Elster BK-G10M Diaphragm Gas Meter G10',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Diaphragm Gas Meters',
       code: '84056569',
       size: 'G10 · Qmax 16 m³/h',
-      image: 'images/honeywell-elster-bk-g10m-large.jpg',
-      imageLarge: 'images/honeywell-elster-bk-g10m-xl.jpg',
+      image: 'images/honeywell-elster-bk-g10m-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-bk-g10m-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'BK-G10M',
         'Size and Capacity': 'G10 · Qmax 16 m³/h',
@@ -2824,15 +2824,15 @@ const products = [
       description: 'The Honeywell Elster BK-G10M is a G10-size diaphragm gas meter rated for a nominal flow of 10 m³/h and a maximum flow of 16 m³/h (minimum flow 0.1 m³/h), with a physical cyclic volume of 6 litres and accuracy class 1.5. It operates on a pneumatic control principle, moving a synthetic diaphragm to track gas flow while ensuring quiet operation and long-term stability, and is available in two-pipe or co-axial connection configurations with a robust folded sheet-steel outer casing. Rated to a maximum operating pressure of 0.5 bar (500 mbar), with an ambient/measuring temperature range of -25°C to +55°C and an operating gas temperature range of -25°C to +40°C, it is suitable for natural gas, LPG, and other manufactured non-corrosive gases, with a pulse value of 1 imp. = 0.01 m³. Manufactured by Honeywell Elster.'
     },
     {
-      id: 'honeywell-elster-bk-g25m',
+      id: 'honeywell-elster-bk-g25m-gas-flow-meter',
       name: 'Honeywell Elster BK-G25M Diaphragm Gas Meter G25',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Diaphragm Gas Meters',
       code: '84267716',
       size: 'G25 · Qmax 40 m³/h',
-      image: 'images/honeywell-elster-bk-g25m-large.jpg',
-      imageLarge: 'images/honeywell-elster-bk-g25m-xl.jpg',
+      image: 'images/honeywell-elster-bk-g25m-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-bk-g25m-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'BK-G25M',
         'Size and Capacity': 'G25 · Qmax 40 m³/h',
@@ -2854,15 +2854,15 @@ const products = [
       description: 'The Honeywell Elster BK-G25M is a G25-size diaphragm gas meter rated for a maximum flow of 40 m³/h (minimum flow 0.25 m³/h), with a physical cyclic volume of 1.20 litres and accuracy class 1.5. It is a compact, commercial-grade meter engineered for high accuracy, long-term stability, and quiet operation, built with a stadium-shaped synthetic diaphragm. Rated to a maximum operating pressure of 0.5 bar, with an ambient/measuring temperature range of -25°C to +55°C, it carries a pulse value of 1 imp = 0.01 m³ and is EN 1359:1998 compliant. Manufactured by Honeywell Elster.'
     },
     {
-      id: 'vanaz-r2304-iv',
+      id: 'vanaz-r2304-iv-pressure-regulator',
       name: 'Vanaz High Pressure Regulator R2304 IV',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'High Pressure Regulator',
       code: 'R2304 IV',
       size: '50mm (2") BSPF Threaded End',
-      image: 'images/vanaz-r2304-iv-large.jpg',
-      imageLarge: 'images/vanaz-r2304-iv-xl.jpg',
+      image: 'images/vanaz-r2304-iv-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r2304-iv-pressure-regulator-xl.jpg',
       specs: {
         'Inlet Pressure': '1 – 17 Bar',
         'Outlet Pressure': '0.5 – 10 Bar, spring-adjustable',
@@ -2875,15 +2875,15 @@ const products = [
       description: 'The Vanaz R2304 IV is a high pressure regulator rated for an inlet pressure of 1 to 17 bar, with a spring-adjustable outlet pressure of 0.5 to 10 bar and a flow rate of up to 250 Nm³/Hr, suitable for LPG, natural gas, and N2 service. It features an SGCI body with an aluminium bonnet and brass trim parts, and a 50mm (2") BSPF threaded end connection. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'vanaz-r2301-i-ammonia',
+      id: 'vanaz-r2301-i-ammonia-pressure-regulator',
       name: 'Vanaz Ammonia Regulator R2301 I',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Ammonia Regulator',
       code: 'R2301 I',
       size: '25mm (1") BSPF Threaded End',
-      image: 'images/vanaz-r2301-i-ammonia-large.jpg',
-      imageLarge: 'images/vanaz-r2301-i-ammonia-xl.jpg',
+      image: 'images/vanaz-r2301-i-ammonia-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r2301-i-ammonia-pressure-regulator-xl.jpg',
       specs: {
         'Inlet Pressure': '1 – 17 Bar',
         'Outlet Pressure': '0.5 – 4 Bar, spring-adjustable',
@@ -2896,15 +2896,15 @@ const products = [
       description: 'The Vanaz R2301 I is an ammonia (NH3) pressure regulator rated for an inlet pressure of 1 to 17 bar, with a spring-adjustable outlet pressure of 0.5 to 4 bar and a flow rate of up to 100 Nm³/Hr. Built specifically for ammonia gas service with an aluminium body and bonnet and stainless steel trim parts for corrosion resistance, it features a 25mm (1") BSPF threaded end connection. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'vanaz-r2402-ammonia',
+      id: 'vanaz-r2402-ammonia-pressure-regulator',
       name: 'Vanaz Ammonia Regulator R2402',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Ammonia Regulator',
       code: 'R2402',
       size: '15mm (1/2″) BSPF',
-      image: 'images/vanaz-r2402-ammonia-large.jpg',
-      imageLarge: 'images/vanaz-r2402-ammonia-xl.jpg',
+      image: 'images/vanaz-r2402-ammonia-pressure-regulator-large.jpg',
+      imageLarge: 'images/vanaz-r2402-ammonia-pressure-regulator-xl.jpg',
       specs: {
         'Inlet Pressure': '22 Bar',
         'Outlet Pressure': '0.5 – 4 Bar, spring-adjustable',
@@ -2917,14 +2917,14 @@ const products = [
       description: 'The Vanaz R2402 is a compact ammonia (NH3) pressure regulator rated for a high inlet pressure of 22 bar, with a spring-adjustable outlet pressure of 0.5 to 4 bar and a flow rate of up to 25 Nm³/Hr. Built specifically for ammonia gas service with an aluminium body and bonnet and stainless steel trim parts for corrosion resistance, it features a compact 15mm (1/2″) BSPF connection suited for smaller ammonia refrigeration and gas-train lines. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
-      id: 'maxon-m333-39782',
+      id: 'maxon-m333-39782-ignition-spark-electrode',
       name: 'Honeywell Maxon M333 Spark Electrode 39782',
       brand: 'Honeywell Maxon',
       category: 'IGNITION SPARK ELECTRODES',
       code: '39782',
       size: '8.75 in · 1/2" NPT',
-      image: 'images/maxon-m333-39782-large.jpg',
-      imageLarge: 'images/maxon-m333-39782-xl.jpg',
+      image: 'images/maxon-m333-39782-ignition-spark-electrode-large.jpg',
+      imageLarge: 'images/maxon-m333-39782-ignition-spark-electrode-xl.jpg',
       specs: {
         'Model / Designation': 'M333 (8.75 SI)',
         'Part No.': '39782',
@@ -2939,13 +2939,13 @@ const products = [
       description: 'The Honeywell Maxon M333 (Part No. 39782, also designated 8.75 SI) is an 8.75-inch heavy-duty industrial spark ignitor providing direct-spark ignition for gas burners and thermal processing equipment. It features a 1/2" NPT mounting connection and is commonly used on Maxon OvenPak burners, including Model 400 OP2 sizes 445, 456, 470, 487, EB6, EB7, OPLE 70, and OPLE EB100. Manufactured by Honeywell Maxon.'
     },
     {
-      id: 'honeywell-maxon-23739',
+      id: 'honeywell-maxon-23739-ignition-spark-electrode',
       name: 'Honeywell Maxon 23739 Spark Ignition Electrode',
       brand: 'Honeywell Maxon',
       category: 'IGNITION SPARK ELECTRODES',
       code: '23739',
       size: '14mm thread · 1.5" gap',
-      image: 'images/honeywell-maxon-23739-large.jpg',
+      image: 'images/honeywell-maxon-23739-ignition-spark-electrode-large.jpg',
       specs: {
         'Part Number / MPN': '23739',
         'Type': 'Self-Grounding Direct Spark Ignition Electrode',
@@ -2958,14 +2958,14 @@ const products = [
       description: 'The Honeywell Maxon 23739 is a self-grounding, direct-spark ignition electrode (spark-plug style) used to light the burner in direct-spark ignition configurations. It has a 14mm x 1.25mm spark-plug-style mounting thread and a 1-1/2 inch (1.5") extended gap, and is commonly used on Maxon APX burners (0.5 through 5.0 APX sizes) as well as NP-LE / NP AIRFLO and RG AIRFLO burner series. Manufactured by Honeywell Maxon.'
     },
     {
-      id: 'kromschroder-dg6u3',
+      id: 'kromschroder-dg6u3-pressure-switch',
       name: 'Honeywell Kromschröder DG 6U-3 Gas Pressure Switch',
       brand: 'Honeywell Kromschröder',
       category: 'PRESSURE SWITCHES',
       code: '84447250',
       size: 'DG 6U-3 · pmax 600 mbar',
-      image: 'images/kromschroder-dg6u3-large.jpg',
-      imageLarge: 'images/kromschroder-dg6u3-xl.jpg',
+      image: 'images/kromschroder-dg6u3-pressure-switch-large.jpg',
+      imageLarge: 'images/kromschroder-dg6u3-pressure-switch-xl.jpg',
       specs: {
         'Model': 'DG 6U-3',
         'Type': 'Gas Pressure Switch',
@@ -2982,14 +2982,14 @@ const products = [
       description: 'The Honeywell Kromschröder DG 6U-3 (Order No. 84447250) is a gas pressure switch used to monitor and signal pressure conditions in gas control lines, rated to a maximum working pressure of 600 mbar on gas service. It carries an SPDT switch contact rated 250 VAC, 5(1) A, an IP54 protection rating, and an ambient temperature range of -15°C to +80°C. Certified CE-0063CU1907 (Type "S"). Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany).'
     },
     {
-      id: 'kromschroder-dg10u3',
+      id: 'kromschroder-dg10u3-pressure-switch',
       name: 'Honeywell Kromschröder DG 10U-3 Gas Pressure Switch',
       brand: 'Honeywell Kromschröder',
       category: 'PRESSURE SWITCHES',
       code: '84447300',
       size: 'DG 10U-3 · pmax 500 mbar',
-      image: 'images/kromschroder-dg10u3-large.jpg',
-      imageLarge: 'images/kromschroder-dg10u3-xl.jpg',
+      image: 'images/kromschroder-dg10u3-pressure-switch-large.jpg',
+      imageLarge: 'images/kromschroder-dg10u3-pressure-switch-xl.jpg',
       specs: {
         'Model': 'DG 10U-3',
         'Type': 'Gas Pressure Switch',
@@ -3006,14 +3006,14 @@ const products = [
       description: 'The Honeywell Kromschröder DG 10U-3 (Order No. 84447300) is a gas pressure switch used to monitor and signal pressure conditions in gas control lines, rated to a maximum working pressure of 500 mbar on gas service. It carries an SPDT switch contact rated 250 VAC, 5(1) A, an IP54 protection rating, and an ambient temperature range of -20°C to +80°C, housed with a clear protective terminal cover. Certified CE-0063CU2201 (Type S) and UKCA marked. Manufactured by Honeywell Kromschröder, Germany.'
     },
     {
-      id: 'kromschroder-dg50u3',
+      id: 'kromschroder-dg50u3-pressure-switch',
       name: 'Honeywell Kromschröder DG 50U-3 Gas Pressure Switch',
       brand: 'Honeywell Kromschröder',
       category: 'PRESSURE SWITCHES',
       code: '84447350',
       size: 'DG 50U-3 · 2.5–50 mbar',
-      image: 'images/kromschroder-dg50u3-large.jpg',
-      imageLarge: 'images/kromschroder-dg50u3-xl.jpg',
+      image: 'images/kromschroder-dg50u3-pressure-switch-large.jpg',
+      imageLarge: 'images/kromschroder-dg50u3-pressure-switch-xl.jpg',
       specs: {
         'Model': 'DG 50U-3',
         'Type': 'Gas Pressure Switch',
@@ -3030,14 +3030,14 @@ const products = [
       description: 'The Honeywell Kromschröder DG 50U-3 (Order No. 84447350) is a gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-adjustable setting range of 2.5 to 50 mbar and a maximum working pressure of 600 mbar on gas service. It carries an SPDT switch contact rated 250 VAC, 5(1) A, an IP54 protection rating, and an ambient temperature range of -15°C to +80°C, housed with a clear protective terminal cover. Certified CE-0085AP0487 (Type S). Manufactured by Honeywell Kromschröder, Germany.'
     },
     {
-      id: 'kromschroder-dg150u3',
+      id: 'kromschroder-dg150u3-pressure-switch',
       name: 'Honeywell Kromschröder DG 150U-3 Gas Pressure Switch',
       brand: 'Honeywell Kromschröder',
       category: 'PRESSURE SWITCHES',
       code: '84447500',
       size: 'DG 150U-3 · 30–150 mbar',
-      image: 'images/kromschroder-dg150u3-large.jpg',
-      imageLarge: 'images/kromschroder-dg150u3-xl.jpg',
+      image: 'images/kromschroder-dg150u3-pressure-switch-large.jpg',
+      imageLarge: 'images/kromschroder-dg150u3-pressure-switch-xl.jpg',
       specs: {
         'Model': 'DG 150U-3',
         'Type': 'Gas Pressure Switch',
@@ -3054,14 +3054,14 @@ const products = [
       description: 'The Honeywell Kromschröder DG 150U-3 (Order No. 84447500) is a gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-adjustable setting range of 30 to 150 mbar and a maximum working pressure of 600 mbar on gas service. It carries an SPDT switch contact rated 250 VAC, 5(1) A, an IP54 protection rating, and an ambient temperature range of -20°C to +80°C, housed with a clear protective terminal cover. Certified CE-0063CU2201 (Type S) and UKCA marked. Manufactured by Honeywell Kromschröder, Germany.'
     },
     {
-      id: 'kromschroder-dg500u3',
+      id: 'kromschroder-dg500u3-pressure-switch',
       name: 'Honeywell Kromschröder DG 500U-3 Gas Pressure Switch',
       brand: 'Honeywell Kromschröder',
       category: 'PRESSURE SWITCHES',
       code: '84447550',
       size: 'DG 500U-3 · 100–500 mbar',
-      image: 'images/kromschroder-dg500u3-large.jpg',
-      imageLarge: 'images/kromschroder-dg500u3-xl.jpg',
+      image: 'images/kromschroder-dg500u3-pressure-switch-large.jpg',
+      imageLarge: 'images/kromschroder-dg500u3-pressure-switch-xl.jpg',
       specs: {
         'Model': 'DG 500U-3',
         'Type': 'Gas Pressure Switch',
@@ -3078,15 +3078,15 @@ const products = [
       description: 'The Honeywell Kromschröder DG 500U-3 (Order No. 84447550) is a gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-adjustable setting range of 100 to 500 mbar and a maximum working pressure of 600 mbar on gas service. It carries an SPDT switch contact rated 250 VAC, 5(1) A, an IP54 protection rating, and an ambient temperature range of -20°C to +80°C, housed with a clear protective terminal cover. Certified CE-0063CU2201 (Type S) and UKCA marked. Manufactured by Honeywell Kromschröder, Germany.'
     },
     {
-      id: 'elektrogas-vmr2-2',
+      id: 'elektrogas-vmr2-2-solenoid-valve',
       name: 'Elektrogas VMR2-2 Solenoid Coil',
       brand: 'Elektrogas',
       category: 'SOLENOID VALVES',
       subcategory: 'Solenoid Coil',
       code: 'VMR2-2',
       size: 'Rp3/4',
-      image: 'images/elektrogas-vmr2-2-large.jpg',
-      imageLarge: 'images/elektrogas-vmr2-2-xl.jpg',
+      image: 'images/elektrogas-vmr2-2-solenoid-valve-large.jpg',
+      imageLarge: 'images/elektrogas-vmr2-2-solenoid-valve-xl.jpg',
       specs: {
         'Model': 'VMR2-2',
         'Connection Size': 'Rp3/4',
@@ -3123,13 +3123,13 @@ const products = [
       description: "R.K. Instruments & Controls manufactures and supplies Ignition Electrodes — also known as Ignitors, Igniters, Ionization Electrodes, Spark Rods, Flame Ionisation Probes, Flame Rods and Flame Sensors — for burner and boiler ignition and flame-proving applications. Each electrode is built to order with a tubular ceramic insulator available from 6 mm to 15 mm diameter and 50 mm (2\") to 1000 mm (40\") in length, with electrode and insulator lengths customised to the exact configuration required. Insulators are offered in low-loss, alkali-free steatite (glazed or unglazed, natural satin-smooth finish) or 92-95% Aluminium Oxide ceramic, with SAE, D4 or M4 connection types and straight or angled electrode tips. Wiring material, connection style and insulator grade can all be specified on demand for burner and boiler OEMs and service applications."
     }    ,
     {
-      id: 'rkic-ignition-electrode-8x100x100mm',
+      id: 'rkic-ignition-electrode-8x100x100mm-ignition-electrode',
       name: "Ignition Electrode 8mm Insulator — 100mm x 100mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION ELECTRODES',
       code: 'Standard Stock (8 x 100 x 100 mm)',
       size: "Insulator Dia 8mm · Insulator Length 100mm · Electrode Length 100mm",
-      image: 'images/rkic-ignition-electrode-8x100x100mm-large.jpg',
+      image: 'images/rkic-ignition-electrode-8x100x100mm-ignition-electrode-large.jpg',
       specs: {
         "Product Type": "Ignition Electrode (Ignitor / Flame Rod / Sensor Probe)",
         "Insulator Diameter (D2)": "8 mm",
@@ -3145,13 +3145,13 @@ const products = [
       description: "R.K. Instruments & Controls supplies this Straight Ignition Electrode as a standard fixed-size Ignitor, Flame Rod and Sensor Probe for burner and boiler ignition and flame-proving applications. It has a low-loss, alkali-free steatite ceramic insulator 100 mm long and 8 mm in diameter, with a 100 mm exposed electrode length and an SAE / D4 / M4 terminal connection (SAE = 8-32 NC, M4 = M4 x 0.7), built using our standard Kanthal A1 (FeCrAl) resistance wire. A compact, ready-to-fit size for applications that do not need a fully custom electrode."
     }    ,
     {
-      id: 'rkic-ignition-electrode-10x150x200mm',
+      id: 'rkic-ignition-electrode-10x150x200mm-ignition-electrode',
       name: "Ignition Electrode 10mm Insulator — 150mm x 200mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION ELECTRODES',
       code: 'Standard Stock (10 x 150 x 200 mm)',
       size: "Insulator Dia 10mm · Insulator Length 150mm · Electrode Length 200mm",
-      image: 'images/rkic-ignition-electrode-10x150x200mm-large.jpg',
+      image: 'images/rkic-ignition-electrode-10x150x200mm-ignition-electrode-large.jpg',
       specs: {
         "Product Type": "Ignition Electrode (Ignitor / Flame Rod / Sensor Probe)",
         "Insulator Diameter (D2)": "10 mm",
@@ -3167,13 +3167,13 @@ const products = [
       description: "R.K. Instruments & Controls supplies this Straight Ignition Electrode as a standard fixed-size Ignitor, Flame Rod and Sensor Probe for burner and boiler ignition and flame-proving applications. It has a low-loss, alkali-free steatite ceramic insulator 150 mm long and 10 mm in diameter, with a 200 mm electrode rod/wire length and an SAE / D4 / M4 terminal connection (SAE = 8-32 NC, M4 = M4 x 0.7), built using our standard Kanthal A1 (FeCrAl) resistance wire. A ready-to-fit standard size for applications that do not need a fully custom electrode."
     }    ,
     {
-      id: 'rkic-ignition-electrode-12x125x100mm',
+      id: 'rkic-ignition-electrode-12x125x100mm-ignition-electrode',
       name: "Ignition Electrode 12mm Insulator — 125mm x 100mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION ELECTRODES',
       code: 'Standard Stock (12 x 125 x 100 mm)',
       size: "Insulator Dia 12mm · Insulator Length 125mm · Electrode Length 100mm",
-      image: 'images/rkic-ignition-electrode-12x125x100mm-large.jpg',
+      image: 'images/rkic-ignition-electrode-12x125x100mm-ignition-electrode-large.jpg',
       specs: {
         "Product Type": "Ignition Electrode (Ignitor / Flame Rod / Sensor Probe)",
         "Insulator Diameter (D2)": "12 mm",
@@ -3189,13 +3189,13 @@ const products = [
       description: "R.K. Instruments & Controls supplies this Straight Ignition Electrode as a standard fixed-size Ignitor, Flame Rod and Sensor Probe for burner and boiler ignition and flame-proving applications. It has a low-loss, alkali-free steatite ceramic insulator 125 mm long and 12 mm in diameter, with a 100 mm electrode rod/wire length and an SAE / D4 / M4 terminal connection (SAE = 8-32 NC, M4 = M4 x 0.7), built using our standard Kanthal A1 (FeCrAl) resistance wire. A ready-to-fit standard size for applications that do not need a fully custom electrode."
     }    ,
     {
-      id: 'rkic-ignition-electrode-14x200x200mm',
+      id: 'rkic-ignition-electrode-14x200x200mm-ignition-electrode',
       name: "Ignition Electrode 14mm Insulator — 200mm x 200mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION ELECTRODES',
       code: 'Standard Stock (14 x 200 x 200 mm)',
       size: "Insulator Dia 14mm · Insulator Length 200mm · Electrode Length 200mm",
-      image: 'images/rkic-ignition-electrode-14x200x200mm-large.jpg',
+      image: 'images/rkic-ignition-electrode-14x200x200mm-ignition-electrode-large.jpg',
       specs: {
         "Product Type": "Ignition Electrode (Ignitor / Flame Rod / Sensor Probe)",
         "Insulator Diameter (D2)": "14 mm",
@@ -3211,13 +3211,13 @@ const products = [
       description: "R.K. Instruments & Controls supplies this Straight Ignition Electrode as a standard fixed-size Ignitor, Flame Rod and Sensor Probe for burner and boiler ignition and flame-proving applications. It has a low-loss, alkali-free steatite ceramic insulator 200 mm long and 14 mm in diameter, with a 200 mm electrode rod/wire length and an SAE / D4 / M4 terminal connection (SAE = 8-32 NC, M4 = M4 x 0.7), built using our standard Kanthal A1 (FeCrAl) resistance wire. A ready-to-fit standard size for applications that do not need a fully custom electrode."
     }    ,
     {
-      id: 'rkic-special-ignition-electrode',
+      id: 'rkic-special-ignition-electrode-ignition-spark-electrode',
       name: "Industrial Special Ignition Electrode — Threaded Spark-Plug Type Igniter",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
       code: 'Custom / Made to Order',
       size: "M14x1.25 / M18x1.50 · Length 35-600mm",
-      image: 'images/rkic-special-ignition-electrode-large.jpg',
+      image: 'images/rkic-special-ignition-electrode-ignition-spark-electrode-large.jpg',
       specs: {
         "Product Type": "Industrial Special Ignition Electrode (Threaded Spark-Plug Type Igniter, Single Electrode)",
         "Thread / Mounting Size": "M14 x 1.25 or M18 x 1.50 — per customer specification",
@@ -3232,13 +3232,13 @@ const products = [
       description: "R.K. Instruments & Controls manufactures and supplies Industrial Special Ignition Electrodes — threaded, spark-plug-style igniters used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Built to the widely used M14 x 1.25 or M18 x 1.50 threaded mounting format (compatible with standard threaded electrode ports), each unit is manufactured to order with a Kanthal A1 (FeCrAl) resistance-wire electrode tip, low-loss steatite or high-alumina ceramic insulation, and a customer-specified overall length. Thread size, length, wire diameter and electrode material can all be customised on request for gas engine OEMs, CHP operators and burner service applications."
     },
     {
-      id: 'rkic-angled-ignition-electrode',
+      id: 'rkic-angled-ignition-electrode-ignition-spark-electrode',
       name: "Angled (Bent-Tip) Special Ignition Electrode — Threaded Spark-Plug Type Igniter",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
       code: 'Custom / Made to Order',
       size: "M14x1.25 / M18x1.50 · Angled Tip · Length 35-600mm",
-      image: 'images/rkic-angled-ignition-electrode-large.jpg',
+      image: 'images/rkic-angled-ignition-electrode-ignition-spark-electrode-large.jpg',
       specs: {
         "Product Type": "Angled (Bent-Tip) Special Ignition Electrode (Threaded Spark-Plug Type Igniter, 90° Angled Ground Arm)",
         "Thread / Mounting Size": "M14 x 1.25 or M18 x 1.50 — per customer specification",
@@ -3255,13 +3255,13 @@ const products = [
       description: "R.K. Instruments & Controls manufactures and supplies Angled (Bent-Tip) Special Ignition Electrodes — threaded, spark-plug-style igniters with a 90° angled ground/mass arm, used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Built to the widely used M14 x 1.25 or M18 x 1.50 threaded mounting format, each unit is manufactured to order with a chromium-silicon stainless-steel center electrode, nickel-chromium ground arm, and low-loss steatite or high-alumina ceramic insulation. Bend angle, overall length, thread size and materials can all be customised on request for gas engine OEMs, CHP operators and burner service applications."
     },
     {
-      id: 'kromschroder-dmg-s2601',
+      id: 'kromschroder-dmg-s2601-pressure-gauge',
       name: "Honeywell Kromschröder DMG S2601 Electronic Pressure Gauge",
       brand: 'Honeywell Kromschröder',
       category: 'PRESSURE GAUGES',
       code: '03352141',
       size: "±150 mbar Range · DMG S2601",
-      image: 'images/kromschroder-dmg-s2601-large.jpg',
+      image: 'images/kromschroder-dmg-s2601-pressure-gauge-large.jpg',
       specs: {
         "Model": "DMG S2601",
         "Type": "Electronic Pressure Gauge (with Hose & Adapter Accessory Kit)",
@@ -3282,13 +3282,13 @@ const products = [
       description: "The Honeywell Kromschröder DMG S2601 (Order No. 03352141) is a handheld electronic pressure gauge used to measure positive, negative and differential pressure of air and non-aggressive gaseous media, with a measuring range of ±150 mbar (maximum 180 mbar) and an accuracy of ±1.0% of the measured value. It features a digital LCD display with switchable pressure units and hold / min-max functions, and is powered by 2 x 1.5V batteries (LR6/AA) or a USB power adapter. The plasticized PVC housing with securing magnet carries an IP40 protection rating (EN 60529) and an ambient operating range of 0°C to +40°C. Supplied complete with a dedicated tube & connection accessory kit (Part No. 03352147) — silicone hoses (5 x 2 mm dia., 1 m, with plastic adapter) and PU tubes (2.7 x 0.65 mm dia., 0.5 m, with brass adapter), plus assorted plastic and brass connectors — suited to burner adjustment, chimney draught measurement, HVAC systems, filter/duct checks and general process pressure measurement. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
     },
     {
-      id: 'kromschroder-gik-20r02-5',
+      id: 'kromschroder-gik-20r02-5-ratio-regulator',
       name: "Honeywell Kromschröder GIK 20R02-5 Air/Gas Ratio Regulator",
       brand: 'Honeywell Kromschröder',
       category: 'RATIO REGULATORS',
       code: '03155122',
       size: "DN 20 · Rp 3/4",
-      image: 'images/kromschroder-gik-20r02-5-large.jpg',
+      image: 'images/kromschroder-gik-20r02-5-ratio-regulator-large.jpg',
       specs: {
         "Model": "GIK 20R02-5",
         "Type": "Air/Gas Ratio Control (Continuous Control, Bypass Group 2)",
@@ -3309,13 +3309,13 @@ const products = [
       description: "The Honeywell Kromschröder GIK 20R02-5 (Part No. 03155122) is an air/gas ratio control that maintains a constant 1:1 gas/air pressure ratio (1:10 turndown) upstream of gas burners in systems without preheated combustion air. Sized for DN 20 / Rp 3/4 connections, it is rated for a maximum inlet pressure of 200 mbar, a control (load) pressure range of 0.5 to 120 mbar, an outlet (gas) pressure range of 0.2 to 119 mbar, and a maximum differential pressure of 100 mbar. Suitable for natural gas, town gas, LPG (gaseous) and biogas (max. 0.02% by volume H₂S), it features an aluminium-silicon alloy housing with NBR diaphragms and seals, a brass bypass screw, and an outlet pressure test point, rated for −20°C to +60°C ambient operation. EU certified to (EU) 2016/426 (GAR) and EN 88-1:2011+A1:2016. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
     },
     {
-      id: 'madas-ag-rc-dn25',
+      id: 'madas-ag-rc-dn25-ratio-regulator',
       name: 'Madas AG/RC DN25 Air/Gas Ratio Regulator',
       brand: 'Madas',
       category: 'RATIO REGULATORS',
       code: 'AG04',
       size: 'DN25 · Rp 1" (threaded/flanged)',
-      image: 'images/madas-ag-rc-dn25-large.jpg',
+      image: 'images/madas-ag-rc-dn25-ratio-regulator-large.jpg',
       specs: {
         'Model': 'AG/RC DN25',
         'Type': 'Air/Gas Zero Governor & Ratio Regulator',
@@ -3333,14 +3333,14 @@ const products = [
       description: 'The Madas AG/RC DN25 (Part No. AG04) is an air/gas zero governor and ratio regulator used on burner and gas-train lines to keep gas supply pressure matched to combustion-air pressure across the firing range. It works either as a zero regulator, holding downstream pressure at zero (atmospheric) regardless of flow, or as an air/gas ratio controller, maintaining a constant gas/air ratio as air pressure varies. Sized for DN25 (Rp 1") connections with a built-in 50µm filter, it is rated for a maximum inlet pressure of 500 mbar and an outlet control range of 0.2 to 120 mbar, with a 1:1–1:10 adjustable ratio as marked on this unit. Certified to EN 88-1 and EN 13611, it is rated for a -15°C to +60°C ambient temperature range. Manufactured by MADAS s.r.l., Verona, Italy.'
     },
     {
-      id: 'vanaz-r2301-oxygen',
+      id: 'vanaz-r2301-oxygen-pressure-regulator',
       name: 'Vanaz R2301 Oxygen Regulator',
       brand: 'Vanaz',
       category: 'PRESSURE REGULATOR VALVES',
       subcategory: 'Oxygen Regulator',
       code: 'R2301',
       size: '25mm \u00b7 1" BSPF Threaded End',
-      image: 'images/vanaz-r2301-oxygen-large.jpg',
+      image: 'images/vanaz-r2301-oxygen-pressure-regulator-large.jpg',
       specs: {
         "Type": "R2301",
         "Connection": "25mm (1\") BSPF Threaded End",
@@ -3354,14 +3354,14 @@ const products = [
       description: "The Vanaz R2301 is a spring-loaded pressure regulator built for oxygen gas service, reducing high-pressure cylinder or manifold supply down to a safe, stable working pressure for cutting, welding and industrial gas-line applications. Rated for a 1-17 kg/cm\u00b2 inlet pressure down to a 0.5-10 kg/cm\u00b2 adjustable outlet at flow rates up to 100 Nm3/hr, it is built with an aluminium body and bonnet with brass trim parts for oxygen-service compatibility. Outlet pressure is set via the top T-handle adjusting screw. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-f0105",
+      id: "vanaz-f0105-filter",
       name: "Vanaz F0105 Series Gas Filter",
       brand: "Vanaz",
       category: "FILTERS",
       subcategory: null,
       code: "F0105",
       size: "1\"–2\" BSP Female (see table below)",
-      image: "images/vanaz-f0105-large.jpg",
+      image: "images/vanaz-f0105-filter-large.jpg",
       specs: {
         "Model": "F0105 Series",
         "Type": "Gas Filter / Strainer",
@@ -3376,14 +3376,14 @@ const products = [
       description: "The Vanaz F0105 series is a heavy-duty gas pipeline filter/strainer range, installed upstream of pressure regulators and control valves to protect internal mechanics and regulator seats from particulate damage. It uses a 50-micron brass mesh filtration element, rated to a maximum working pressure of 20 Kg/cm² (bar). The series is available in three end-connection / flow-capacity variants — F0105 (1″, 200 Nm³/hr), F0105 I (1½″, 350 Nm³/hr) and F0105 II (2″, 500 Nm³/hr), all BSP female threaded — see the table below. The body is Spheroidal Graphite Cast Iron (SGCI). Compatible with LPG, Natural Gas and Nitrogen (N₂). Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-f0112",
+      id: "vanaz-f0112-filter",
       name: "Vanaz F0112 Gas Filter",
       brand: "Vanaz",
       category: "FILTERS",
       subcategory: null,
       code: "F0112",
       size: "1\" BSP (Internal Threads)",
-      image: "images/vanaz-f0112-large.jpg",
+      image: "images/vanaz-f0112-filter-large.jpg",
       specs: {
         "Model": "F0112",
         "Type": "Gas Filter / Strainer",
@@ -3398,14 +3398,14 @@ const products = [
       description: "The Vanaz F0112 is an industrial-grade gas pipeline filter/strainer, installed upstream of gas pressure regulators to trap dust, dirt and debris and prevent regulator seat damage. It has a 1″ BSP (internal thread) end connection, rated to a maximum working pressure of 6 Kg/cm² (bar), with a 20-micron filtration rating and a flow capacity of 100 Nm³/hr. The body is Aluminium Die-Cast. Compatible with LPG, Natural Gas and Nitrogen (N₂). Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-r2301-iii-co2",
+      id: "vanaz-r2301-iii-co2-pressure-regulator",
       name: "Vanaz R2301 III CO2 Gas Pressure Regulator",
       brand: "Vanaz",
       category: "PRESSURE REGULATOR VALVES",
       subcategory: "CO2 Regulator",
       code: "R2301 III",
       size: "25mm (1\") BSPF Threaded End",
-      image: "images/vanaz-r2301-iii-co2-large.jpg",
+      image: "images/vanaz-r2301-iii-co2-pressure-regulator-large.jpg",
       specs: {
         "Type": "R2301 III",
         "Connection": "25mm (1\") BSPF Threaded End",
@@ -3419,14 +3419,14 @@ const products = [
       description: "The Vanaz R2301 III is a high-flow, adjustable pressure regulator built for CO2, Nitrogen, Argon, Oxygen and Hydrogen gas service, reducing high-pressure cylinder or manifold supply down to a safe, stable working pressure for industrial gas lines, beverage/CO2 carbonation systems and steel manufacturing plants. Rated for 15–200 Kg/cm² inlet down to a 1–10 Kg/cm² adjustable outlet at flow rates up to 200 Nm³/hr, it is built with a brass body and brass trim parts with a carbon steel bonnet. Outlet pressure is set via the top T-handle adjusting screw — clockwise increases pressure, counterclockwise decreases it. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-r2310",
+      id: "vanaz-r2310-pressure-regulator",
       name: "Vanaz R2310 Industrial Gas Pressure Regulator",
       brand: "Vanaz",
       category: "PRESSURE REGULATOR VALVES",
       subcategory: "Oxygen Regulator",
       code: "R2310",
       size: "1.5\" BSP (External Thread)",
-      image: "images/vanaz-r2310-large.jpg",
+      image: "images/vanaz-r2310-pressure-regulator-large.jpg",
       specs: {
         "Type": "R2310",
         "Connection": "1.5\" BSP (External Thread)",
@@ -3440,14 +3440,14 @@ const products = [
       description: "The Vanaz R2310 is a heavy-duty, single-stage industrial gas pressure regulator engineered to control and reduce high pressure in gas cylinder manifolds and bulk distribution systems, delivering stable output pressure for a wide range of industrial gases. Rated for 200–250 Kg/cm² inlet down to a 0.5–50 Kg/cm² spring-adjustable outlet (spring/variant dependent), with flow rates up to 300 Nm³/hr in standard configuration and up to 500 Nm³/hr under full-pressure configurations. It is built with a forged brass body and bonnet with brass trim parts, and is widely used in CO2 carbonation manifolds for the soft drink industry, oxygen lancing and flame-cutting systems in steel plants, and as the primary-stage regulator in centralized industrial gas distribution pipelines. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-r2322",
+      id: "vanaz-r2322-pressure-regulator",
       name: "Vanaz R2322 Industrial Gas Pressure Regulator",
       brand: "Vanaz",
       category: "PRESSURE REGULATOR VALVES",
       subcategory: "Oxygen Regulator",
       code: "R2322",
       size: "1\" BSP Female (Screwed)",
-      image: "images/vanaz-r2322-large.jpg",
+      image: "images/vanaz-r2322-pressure-regulator-large.jpg",
       specs: {
         "Type": "R2322",
         "Connection": "1\" BSP Female (Screwed)",
@@ -3461,14 +3461,14 @@ const products = [
       description: "The Vanaz R2322 (formerly known as the R2307) is a heavy-duty, high-pressure industrial gas regulator manufactured by Vanaz Engineers, built for the controlled reduction and stabilization of high-pressure gases in demanding industrial applications such as high-pressure gas manifold systems, steel plant oxygen lancing and CO2 supply networks in the soft drink industry. Rated for 200–250 Kg/cm² inlet down to a 5–30 Kg/cm² adjustable outlet (specialized variants up to 10–80 Kg/cm²) at flow rates of 150–350 Nm³/hr, it is built with a forged brass body and bonnet with brass internal trim components, and is compatible with Oxygen, CO2, Nitrogen, Argon, Hydrogen, CNG and LPG. Outlet pressure is set via the top adjusting screw — clockwise increases downstream delivery pressure, counterclockwise decreases it — and it is ideally deployed as a first-stage, primary intermediate regulator directly downstream of bulk gas storage or manifold systems. Internal elastomers and valve seats can be inspected or replaced without removing the main body from the pipeline. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-r6111",
+      id: "vanaz-r6111-pressure-regulator",
       name: "Vanaz R6111-I Low Pressure Regulator (1.5 to 2 Bar)",
       brand: "Vanaz",
       category: "PRESSURE REGULATOR VALVES",
       subcategory: "Low Pressure Regulator",
       code: "R6111-I / R6111-II",
       size: "40mm (1½\") / 50mm (2\") BSPF Threaded End",
-      image: "images/vanaz-r6111-large.jpg",
+      image: "images/vanaz-r6111-pressure-regulator-large.jpg",
       specs: {
         "Gas": "LPG / Natural Gas / Nitrogen (both variants)",
         "Inlet Pressure": "1.5 – 2 Bar (both variants)",
@@ -3480,15 +3480,15 @@ const products = [
       description: "The Vanaz R6111 series is a low pressure, high-flow precision gas pressure regulator manufactured by Vanaz Engineers, suited for a 1.5–2 Bar inlet pressure range and typically deployed as a second-stage regulator in medium-to-large industrial furnace and burner systems. It delivers a precisely regulated 30–300 mbar outlet pressure at flow rates up to 60 Nm³/hr, and is suitable for LPG, Natural Gas and Nitrogen service. It is built with an SGCI (Spheroidal Graphite Cast Iron) body, an aluminum bonnet and brass trim parts. The series is available in two connection sizes on one common design — the R6111-I with a 40mm (1½″) BSPF threaded connection, and the R6111-II with a 50mm (2″) BSPF threaded connection — both sharing the same pressure, flow and construction specification. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-r9501",
+      id: "vanaz-r9501-pressure-regulator",
       name: "Vanaz R9501 LPG Auto Change Over Regulator",
       brand: "Vanaz",
       category: "PRESSURE REGULATOR VALVES",
       subcategory: "LPG Auto Change Over Regulator",
       code: "R9501",
       size: "1/2\" BSP",
-      image: "images/vanaz-r9501-large.jpg",
-      imageLarge: "images/vanaz-r9501-xl.jpg",
+      image: "images/vanaz-r9501-pressure-regulator-large.jpg",
+      imageLarge: "images/vanaz-r9501-pressure-regulator-xl.jpg",
       specs: {
         "Type": "R9501",
         "Connection": "1/2\" BSP",
@@ -3503,14 +3503,14 @@ const products = [
       description: "The Vanaz R9501 is an automatic LPG changeover pressure regulator built for twin-cylinder-bank supply systems. It connects to two sets of LPG cylinders — when one bank runs out, the device automatically switches over to the other bank, so gas supply is never interrupted, and a visual indicator shows which cylinder bank is currently in use. Rated for 1–17 kg/cm² inlet pressure with a 0.5–1.5 kg/cm² adjustable outlet, brass body construction and a 50 kg/hr flow capacity through 1/2\" BSP connections, it suits LPG reticulated systems and LOT (Liquid Off-Take) cylinder-bank installations. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-r9102",
+      id: "vanaz-r9102-flame-arrestor",
       name: "Vanaz R9102 Flame Arrestor with Non-Return Valve",
       brand: "Vanaz",
       category: "FLAME ARRESTORS",
       subcategory: null,
       code: "R9102",
       size: "1\" BSP (F), Screwed",
-      image: "images/vanaz-r9102-large.jpg",
+      image: "images/vanaz-r9102-flame-arrestor-large.jpg",
       specs: {
         "Type": "R9102",
         "Application": "Flame Arrestor with Non-Return Valve",
@@ -3523,14 +3523,14 @@ const products = [
       description: "The Vanaz R9102 is a flame arrestor with an integrated non-return valve (NRV), fitted in-line on LPG/gas supply piping to stop flashback (backfire) from an ignition source reaching the upstream gas line. It combines a flame-quenching element with a check-valve (NRV) function in a single compact body, with a 1″ BSP female end connection. Working pressure range is 1–19 Kg/cm² on LPG, Natural Gas and Air; weight approx. 1.54 kg. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-r9103",
+      id: "vanaz-r9103-flame-arrestor",
       name: "Vanaz R9103 Flame Arrestor with Non-Return Valve",
       brand: "Vanaz",
       category: "FLAME ARRESTORS",
       subcategory: null,
       code: "R9103",
       size: "¾\" BSP (F), Screwed",
-      image: "images/vanaz-r9103-large.jpg",
+      image: "images/vanaz-r9103-flame-arrestor-large.jpg",
       specs: {
         "Type": "R9103",
         "Application": "Flame Arrestor with Non-Return Valve",
@@ -3543,14 +3543,14 @@ const products = [
       description: "The Vanaz R9103 is a flame arrestor with an integrated non-return valve (NRV), fitted in-line on LPG / Natural Gas supply piping to stop the propagation of flame and shut off or extinguish it before it reaches the upstream gas supply source. It has a Mild Steel (MS) body with a ¾″ BSP female end connection, rated up to 17 Kg/cm² (bar) working pressure. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-r9104",
+      id: "vanaz-r9104-flame-arrestor",
       name: "Vanaz R9104 Flame Arrestor with Non-Return Valve",
       brand: "Vanaz",
       category: "FLAME ARRESTORS",
       subcategory: null,
       code: "R9104",
       size: "½\" BSP (F), Screwed",
-      image: "images/vanaz-r9104-large.jpg",
+      image: "images/vanaz-r9104-flame-arrestor-large.jpg",
       specs: {
         "Type": "R9104",
         "Application": "Flame Arrestor with Non-Return Valve",
@@ -3563,14 +3563,14 @@ const products = [
       description: "The Vanaz R9104 is a flame arrestor with an integrated non-return valve (NRV), fitted in-line on LPG/Natural Gas supply piping to stop backfire (flashback) from reaching the upstream gas line and mitigate explosion hazards in commercial and industrial gas systems. It has a Carbon Steel / Mild Steel body with brass trim parts and a ½″ BSP female end connection, rated up to 17 Kg/cm² (bar) working pressure. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-r9109",
+      id: "vanaz-r9109-flame-arrestor",
       name: "Vanaz R9109 Series Flame Arrestor with Non-Return Valve",
       brand: "Vanaz",
       category: "FLAME ARRESTORS",
       subcategory: null,
       code: "R9109",
       size: "1½\"–2\", BSP Threaded or ANSI #150 Flanged",
-      image: "images/vanaz-r9109-large.jpg",
+      image: "images/vanaz-r9109-flame-arrestor-large.jpg",
       specs: {
         "Type": "R9109 Series",
         "Application": "Flame Arrestor with Non-Return Valve",
@@ -3583,14 +3583,14 @@ const products = [
       description: "The Vanaz R9109 series is a range of high-capacity flame arrestors with an integrated non-return valve (NRV), engineered for heavy-duty gas distribution manifolds. It stops flashback propagation and blocks reverse flow before it reaches upstream storage, protecting the gas line from explosion hazards. The body is Cast Mild Steel / Carbon Steel with a brass trim assembly and a stainless steel ribbon element pack. The series is available in four end-connection options — 1½″ or 2″ BSP threaded, and 1½″ or 2″ ANSI Class #150 flanged — see the table below. Working pressure is rated up to 17–19 Kg/cm² (bar) on LPG and Natural Gas. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: "vanaz-r9110",
+      id: "vanaz-r9110-flame-arrestor",
       name: "Vanaz R9110 Flame Arrestor with Non-Return Valve",
       brand: "Vanaz",
       category: "FLAME ARRESTORS",
       subcategory: null,
       code: "R9110",
       size: "½\"–2\", BSP / BSPF Threaded",
-      image: "images/vanaz-r9110-large.jpg",
+      image: "images/vanaz-r9110-flame-arrestor-large.jpg",
       specs: {
         "Type": "R9110",
         "Application": "Flame Arrestor with Non-Return Valve",
@@ -3603,15 +3603,15 @@ const products = [
       description: "The Vanaz R9110 is a flame arrestor with an integrated non-return valve (NRV) using a brass spring mechanism, fitted in-line on gas supply piping to stop flame propagation and flashback from reaching the upstream gas line and mitigate explosion hazards. It is rated for Oxygen, LPG, Natural Gas and Acetylene service, with BSP/BSPF threaded end connections from ½″ to 2″, rated up to 19–20 Kg/cm² (bar) working pressure. Body and internal trim material (Stainless Steel, Carbon Steel or Brass) is selected to match the gas medium in your line — see the selection table below. Manufactured by Vanaz Engineers Ltd, Pune."
     },
     {
-      id: 'danfoss-ebi4-1p',
+      id: 'danfoss-ebi4-1p-ignition-transformer',
       name: 'Danfoss EBI4 1P Ignition Transformer',
       brand: 'Danfoss',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Danfoss',
       code: '052F4040',
       size: '230V, 50-60Hz, 1-Pole',
-      image: 'images/danfoss-ebi4-1p-large.jpg',
-      imageLarge: 'images/danfoss-ebi4-1p-xl.jpg',
+      image: 'images/danfoss-ebi4-1p-ignition-transformer-large.jpg',
+      imageLarge: 'images/danfoss-ebi4-1p-ignition-transformer-xl.jpg',
       specs: {
         'Type': 'EBI4 1P',
         'Product Code': '052F4040',
@@ -3627,15 +3627,15 @@ const products = [
       description: 'The Danfoss EBI4 1P is a single-pole ignition transformer from the EBI4 series, built for intermittent-duty gas burner ignition rated 33% ED in 3 minutes. It steps up a 230V, 50-60Hz, 60VA primary supply to a single 12kV secondary output at 40mA (Ampl.), sparking between one electrode and the burner frame/earth. Replacing the earlier Danfoss EBI No. 052F0040, it is manufactured by Danfoss in Nordborg, Denmark, and is widely used on gas-fired burners (including Junior GAS-series units) that need a compact, cost-effective ignition source for intermittent-cycle operation.'
     },
     {
-      id: 'danfoss-ebi4-m-s',
+      id: 'danfoss-ebi4-m-s-ignition-transformer',
       name: 'Danfoss EBI4 M S Ignition Transformer',
       brand: 'Danfoss',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Danfoss',
       code: '052F4045',
       size: '230V, 50-60Hz, 2-Pole',
-      image: 'images/danfoss-ebi4-m-s-large.jpg',
-      imageLarge: 'images/danfoss-ebi4-m-s-xl.jpg',
+      image: 'images/danfoss-ebi4-m-s-ignition-transformer-large.jpg',
+      imageLarge: 'images/danfoss-ebi4-m-s-ignition-transformer-xl.jpg',
       specs: {
         'Type': 'EBI4 M S',
         'Product Code': '052F4045',
@@ -3650,15 +3650,15 @@ const products = [
       description: 'A 2-pole ignition transformer from the Danfoss EBI4 series, rated for intermittent-duty burner ignition (33% ED in 3 minutes). It steps up a 230V, 50-60Hz, 90VA primary supply to two 7.5kV secondary outputs at 48mA (Ampl.), a higher-output variant of the EBI4 series for applications needing a stronger spark than the standard EBI4 1P/CM models. Manufactured by Danfoss in Nordborg, Denmark.'
     },
     {
-      id: 'danfoss-ebi4-c1p',
+      id: 'danfoss-ebi4-c1p-ignition-transformer',
       name: 'Danfoss EBI4 C1P Ignition Transformer',
       brand: 'Danfoss',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Danfoss',
       code: '052F4036',
       size: '230V, 50-60Hz, 1-Pole',
-      image: 'images/danfoss-ebi4-c1p-large.jpg',
-      imageLarge: 'images/danfoss-ebi4-c1p-xl.jpg',
+      image: 'images/danfoss-ebi4-c1p-ignition-transformer-large.jpg',
+      imageLarge: 'images/danfoss-ebi4-c1p-ignition-transformer-xl.jpg',
       specs: {
         'Type': 'EBI4 C1P',
         'Product Code': '052F4036',
@@ -3674,15 +3674,15 @@ const products = [
       description: 'A single-pole ignition transformer from the Danfoss EBI4 series, built for continuous-duty burner ignition (100% ED, thermal class T35). It steps up a 230V, 50-60Hz, 60VA primary supply to a single 12kV secondary output at 30mA (Ampl.), sparking between one electrode and the burner frame/earth. Manufactured by Danfoss in Nordborg, Denmark, suited to oil and gas burners needing sustained sparking rather than short intermittent bursts.'
     },
     {
-      id: 'honeywell-elster-qa16-25',
+      id: 'honeywell-elster-qa16-25-gas-flow-meter',
       name: 'Honeywell Elster Quantometer QA16 25 G I Turbine Gas Meter',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Turbine Gas Meter Quantometer',
       code: 'QA16 25 G I',
       size: 'QA16 · Qmax 25 m³/h',
-      image: 'images/honeywell-elster-qa16-25-large.jpg',
-      imageLarge: 'images/honeywell-elster-qa16-25-xl.jpg',
+      image: 'images/honeywell-elster-qa16-25-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-qa16-25-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'Quantometer QA16 25 G I',
         'Size and Capacity': 'QA16 · Qmax 25 m³/h',
@@ -3704,15 +3704,15 @@ const products = [
       description: 'The Honeywell Elster Quantometer QA16 25 G I is a turbine-type gas flow meter for industrial, non-fiscal metering, sized DN25 (1" FNPT) with a flow range of 2 to 25 m³/h (Qmin to Qmax). A free-spinning turbine wheel is set in motion by the gas flow, with the number of revolutions proportional to the volume passed, read out via a mechanical roller counter in m³. Rated to a maximum operating pressure of 4 bar, it covers an operating temperature range of -10°C to +60°C, and is ATEX/IECEx certified for use in hazardous areas — hazardous area rating II 2G Ex h IIC T4 Gb, IECEx TUR 16.0043X, CE 0085. Commonly used for in-plant allocation and consumption monitoring on boilers, furnaces and heating systems running on natural gas and other non-corrosive gases. Manufactured by Elster Instromet (Honeywell Elster).'
     },
     {
-      id: 'honeywell-elster-qa10-25',
+      id: 'honeywell-elster-qa10-25-gas-flow-meter',
       name: 'Honeywell Elster Quantometer QA10 25 G I Turbine Gas Meter',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Turbine Gas Meter Quantometer',
       code: 'QA10 25 G I',
       size: 'QA10 · Qmax 16 m³/h',
-      image: 'images/honeywell-elster-qa10-25-large.jpg',
-      imageLarge: 'images/honeywell-elster-qa10-25-xl.jpg',
+      image: 'images/honeywell-elster-qa10-25-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-qa10-25-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'Quantometer QA10 25 G I',
         'Size and Capacity': 'QA10 · Qmax 16 m³/h',
@@ -3733,15 +3733,15 @@ const products = [
       description: 'The Honeywell Elster Quantometer QA10 25 G I is a turbine-type gas flow meter for industrial, non-fiscal metering, sized DN25 (1" FNPT) with a flow range of 1.6 to 16 m³/h (Qmin to Qmax). A free-spinning turbine wheel is set in motion by the gas flow, with the number of revolutions proportional to the volume passed, read out via a mechanical roller counter in m³. Rated to a maximum operating pressure of 16 bar, it covers an operating temperature range of -10°C to +60°C, and is ATEX certified for use in hazardous areas — hazardous area rating II 2G eIIC T4, CE 0085. Manufactured by Elster GmbH, Uetzen, Germany (now part of Honeywell Elster); commonly used for in-plant allocation and consumption monitoring on boilers, furnaces and heating systems running on natural gas and other non-corrosive gases.'
     },
     {
-      id: 'honeywell-elster-qa25-25',
+      id: 'honeywell-elster-qa25-25-gas-flow-meter',
       name: 'Honeywell Elster Quantometer QA25 25 G I Turbine Gas Meter',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Turbine Gas Meter Quantometer',
       code: 'QA25 25 G I',
       size: 'QA25 · Qmax 40 m³/h',
-      image: 'images/honeywell-elster-qa25-25-large.jpg',
-      imageLarge: 'images/honeywell-elster-qa25-25-xl.jpg',
+      image: 'images/honeywell-elster-qa25-25-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-qa25-25-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'Quantometer QA25 25 G I',
         'Size and Capacity': 'QA25 · Qmax 40 m³/h',
@@ -3762,15 +3762,15 @@ const products = [
       description: 'The Honeywell Elster Quantometer QA25 25 G I is a turbine-type gas flow meter for industrial, non-fiscal metering, sized DN25 (1" FNPT) with a flow range of 2.5 to 40 m³/h (Qmin to Qmax). A free-spinning turbine wheel is set in motion by the gas flow, with the number of revolutions proportional to the volume passed, read out via a mechanical roller counter in m³. Rated to a maximum operating pressure of 16 bar, it covers an operating temperature range of -10°C to +60°C, and is ATEX certified for use in hazardous areas — hazardous area rating II 2G eIIC T4, CE 0085. Manufactured by Elster Instromet (Honeywell Elster); commonly used for in-plant allocation and consumption monitoring on boilers, furnaces and heating systems running on natural gas and other non-corrosive gases.'
     },
     {
-      id: 'honeywell-elster-qa40',
+      id: 'honeywell-elster-qa40-gas-flow-meter',
       name: 'Honeywell Elster Quantometer QA40 Turbine Gas Meter (DN25 / DN40)',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Turbine Gas Meter Quantometer',
       code: 'QA40 25 G I / QA40 40 GF I',
       size: 'QA40 · Qmax 65 m³/h',
-      image: 'images/honeywell-elster-qa40-large.jpg',
-      imageLarge: 'images/honeywell-elster-qa40-xl.jpg',
+      image: 'images/honeywell-elster-qa40-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-qa40-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'Quantometer QA40 — available as Type 25 G I (DN25) and Type 40 GF I (DN40)',
         'Size and Capacity': 'QA40 · Qmax 65 m³/h (both variants)',
@@ -3795,15 +3795,15 @@ const products = [
       description: 'The Honeywell Elster Quantometer QA40 is a turbine-type gas flow meter for industrial, non-fiscal metering, available in two connection variants with the same 65 m³/h maximum flow rating: Type 25 G I, sized DN25 (1" FNPT, threaded), with a flow range of 3.3 to 65 m³/h; and Type 40 GF I, sized DN40 (1½" FNPT, flanged), with a flow range of 5 to 65 m³/h. A free-spinning turbine wheel is set in motion by the gas flow, with the number of revolutions proportional to the volume passed, read out via a mechanical roller counter in m³. Rated to a maximum operating pressure of 16 bar, it covers an operating temperature range of -10°C to +60°C, and is ATEX certified for use in hazardous areas — hazardous area rating II 2G c IIC T4, CE 0085. Manufactured by Elster Instromet (Honeywell Elster); commonly used for in-plant allocation and consumption monitoring on boilers, furnaces and heating systems running on natural gas and other non-corrosive gases.'
     },
     {
-      id: 'honeywell-elster-qa65-50',
+      id: 'honeywell-elster-qa65-50-gas-flow-meter',
       name: 'Honeywell Elster Quantometer QA65 50 Z I Turbine Gas Meter',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Turbine Gas Meter Quantometer',
       code: 'QA65 50 Z I',
       size: 'QA65 · Qmax 100 m³/h',
-      image: 'images/honeywell-elster-qa65-50-large.jpg',
-      imageLarge: 'images/honeywell-elster-qa65-50-xl.jpg',
+      image: 'images/honeywell-elster-qa65-50-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-qa65-50-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'Quantometer QA65 50 Z I',
         'Size and Capacity': 'QA65 · Qmax 100 m³/h',
@@ -3825,15 +3825,15 @@ const products = [
       description: 'The Honeywell Elster Quantometer QA65 50 Z I is a turbine-type gas flow meter for industrial, non-fiscal metering, sized DN50 (2") with a flow range of 5 to 100 m³/h (Qmin to Qmax). Supplied with a mounting bolt and nut kit for its wafer/flange-type pipe connection. A free-spinning turbine wheel is set in motion by the gas flow, with the number of revolutions proportional to the volume passed, read out via a mechanical roller counter in m³. Rated to a maximum operating pressure of 16 bar, it covers an operating temperature range of -10°C to +60°C, and is ATEX certified for use in hazardous areas — hazardous area rating II 2G c IIC T4, CE 0085. Manufactured by Elster GmbH, Uelzen, Germany (Honeywell Elster); commonly used for in-plant allocation and consumption monitoring on boilers, furnaces and heating systems running on natural gas and other non-corrosive gases.'
     },
     {
-      id: 'honeywell-elster-qa100-80',
+      id: 'honeywell-elster-qa100-80-gas-flow-meter',
       name: 'Honeywell Elster Quantometer QA100 80 Z I Turbine Gas Meter',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Turbine Gas Meter Quantometer',
       code: 'QA100 80 Z I',
       size: 'QA100 · Qmax 160 m³/h',
-      image: 'images/honeywell-elster-qa100-80-large.jpg',
-      imageLarge: 'images/honeywell-elster-qa100-80-xl.jpg',
+      image: 'images/honeywell-elster-qa100-80-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-qa100-80-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'Quantometer QA100 80 Z I',
         'Size and Capacity': 'QA100 · Qmax 160 m³/h',
@@ -3855,15 +3855,15 @@ const products = [
       description: 'The Honeywell Elster Quantometer QA100 80 Z I is a turbine-type gas flow meter for industrial, non-fiscal metering, sized DN80 (3") with a flow range of 10 to 160 m³/h (Qmin to Qmax). Supplied with a mounting bolt and nut kit for its wafer/flange-type pipe connection. A free-spinning turbine wheel is set in motion by the gas flow, with the number of revolutions proportional to the volume passed, read out via a mechanical roller counter in m³. Rated to a maximum operating pressure of 16 bar, it covers an operating temperature range of -10°C to +60°C, and is ATEX certified for use in hazardous areas — hazardous area rating II 2G Ex h IIC T4 Gc / II 2D Ex h IIIC T60°43°C, CE 0085. Manufactured by Elster GmbH, Uelzen, Germany (Honeywell Elster); commonly used for in-plant allocation and consumption monitoring on boilers, furnaces and heating systems running on natural gas and other non-corrosive gases.'
     },
     {
-      id: 'honeywell-elster-qa160-80',
+      id: 'honeywell-elster-qa160-80-gas-flow-meter',
       name: 'Honeywell Elster Quantometer QA160 80 Z I Turbine Gas Meter',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'Turbine Gas Meter Quantometer',
       code: 'QA160 80 Z I',
       size: 'QA160 · Qmax 250 m³/h',
-      image: 'images/honeywell-elster-qa160-80-large.jpg',
-      imageLarge: 'images/honeywell-elster-qa160-80-xl.jpg',
+      image: 'images/honeywell-elster-qa160-80-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-qa160-80-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'Quantometer QA160 80 Z I',
         'Size and Capacity': 'QA160 · Qmax 250 m³/h',
@@ -3885,15 +3885,15 @@ const products = [
       description: 'The Honeywell Elster Quantometer QA160 80 Z I is a turbine-type gas flow meter for industrial, non-fiscal metering, sized DN80 (3") with a flow range of 13 to 250 m³/h (Qmin to Qmax). Supplied with a mounting bolt and nut kit for its wafer/flange-type pipe connection. A free-spinning turbine wheel is set in motion by the gas flow, with the number of revolutions proportional to the volume passed, read out via a mechanical roller counter in m³. Rated to a maximum operating pressure of 16 bar, it covers an operating temperature range of -10°C to +60°C, and is ATEX certified for use in hazardous areas — hazardous area rating II 2G Ex h IIC T4 Gb, IECEx TUR 16.0043X, CE 0085. Manufactured by Elster GmbH, Uelzen, Germany (Honeywell Elster); commonly used for in-plant allocation and consumption monitoring on boilers, furnaces and heating systems running on natural gas and other non-corrosive gases.'
     },
     {
-      id: 'honeywell-elster-rabo-g40-dn50',
+      id: 'honeywell-elster-rabo-g40-dn50-gas-flow-meter',
       name: 'Honeywell Elster RABO G40 DN50 Rotary Gas Meter',
       brand: 'Honeywell Elster',
       category: 'GAS FLOW METERS',
       subcategory: 'RPD Rotary Gas Meter',
       code: 'RABO G40 DN50 CLASS150',
       size: 'G40 · Qmax 65 m³/h',
-      image: 'images/honeywell-elster-rabo-g40-dn50-large.jpg',
-      imageLarge: 'images/honeywell-elster-rabo-g40-dn50-xl.jpg',
+      image: 'images/honeywell-elster-rabo-g40-dn50-gas-flow-meter-large.jpg',
+      imageLarge: 'images/honeywell-elster-rabo-g40-dn50-gas-flow-meter-xl.jpg',
       specs: {
         'Model': 'RABO G40 DN50 CLASS150',
         'Meter Size (G-Rating)': 'G40 (Qmax 65 m³/h per EN 12480)',
@@ -3917,15 +3917,15 @@ const products = [
       description: 'The Honeywell Elster RABO G40 DN50 CLASS150 is a rotary-piston (positive-displacement) gas meter for industrial and commercial metering, sized DN50 with a flow range of 0.32 to 65 m³/h (Qmin to Qmax, EN 12480:2015 accuracy class AC 10). Two counter-rotating rotary pistons sweep a fixed cyclic volume of 0.97 dm³ per revolution, driving a mechanical roller-counter index that reads directly in m³ (1 m³ = 10 Imp on the low-frequency pulse output). Rated to a maximum operating pressure of 20 bar with an internal volume of 1.36 L, it covers a storage temperature range of -40°C to +70°C and an operating range of -25°C to +70°C, and is ATEX certified for use in hazardous areas — hazardous area rating II 2G Ex h IIC T4 Gb, IECEx TUR 16.0042X, CE 0085. The unit shown is fitted with the optional ENCODER S1D low-frequency pulse output module for remote/electronic reading; a plain mechanical-index version without the encoder is also available. Manufactured by Elster GmbH, Uelzen, Germany (Honeywell Elster); commonly used for custody-transfer and allocation metering on industrial and commercial gas supplies.'
     },
     {
-      id: 'honeywell-et401a1',
+      id: 'honeywell-et401a1-ignition-transformer',
       name: 'Honeywell Ignition Transformer ET 401A1 (110-120V AC)',
       brand: 'Honeywell Technologies',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Honeywell Technologies',
       code: 'ET 401A1',
       size: 'Flying leads, 3-wire',
-      image: 'images/honeywell-et401a1-large.jpg',
-      imageLarge: 'images/honeywell-et401a1-xl.jpg',
+      image: 'images/honeywell-et401a1-ignition-transformer-large.jpg',
+      imageLarge: 'images/honeywell-et401a1-ignition-transformer-xl.jpg',
       specs: {
         'Type': 'ET 401A1',
         'Primary': '110–120V, 0.3A, 50/60 Hz',
@@ -3940,14 +3940,14 @@ const products = [
       description: 'The Honeywell ET 401A1 is an ignition transformer that steps up a 110–120V mains supply to a 14kV high-voltage secondary output rated at 30mA rms, for firing the spark electrode on gas and oil burners. Rated for an intermittent duty cycle of 33% ED (energised duration) within a 3-minute cycle, with IP40 protection, it delivers reliable high-voltage ignition for burner and boiler applications. UL/cUL listed, it terminates in flying leads (Blue-N, Brown-L, Green&Yellow-E) for direct wiring into the burner control circuit. Manufactured by Honeywell.'
     },
     {
-      id: 'honeywell-et401a',
+      id: 'honeywell-et401a-ignition-transformer',
       name: 'Honeywell Ignition Transformer ET 401A (230V AC)',
       brand: 'Honeywell Technologies',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Honeywell Technologies',
       code: 'ET 401A',
       size: 'Flying leads, 3-wire',
-      image: 'images/honeywell-et401a-large.jpg',
+      image: 'images/honeywell-et401a-ignition-transformer-large.jpg',
       specs: {
         'Type': 'ET 401A',
         'Primary': '230V, 0.25A, 50/60 Hz',
@@ -3961,14 +3961,14 @@ const products = [
       description: 'The Honeywell ET 401A is an ignition transformer that steps up a 230V mains supply to a 14kV high-voltage secondary output rated at 35mA rms, for firing the spark electrode on gas and oil burners. Rated for an intermittent duty cycle of 33% ED (energised duration) within a 3-minute cycle, with IP40 protection, it delivers reliable high-voltage ignition for burner and boiler applications. It terminates in flying leads (Blue-N, Brown-L, Green&Yellow-E) for direct wiring into the burner control circuit. Manufactured by Honeywell.'
     },
     {
-      id: 'honeywell-et402',
+      id: 'honeywell-et402-ignition-transformer',
       name: 'Honeywell Ignition Transformer ET 402',
       brand: 'Honeywell Technologies',
       category: 'IGNITION TRANSFORMERS',
       subcategory: 'Honeywell Technologies',
       code: 'ET 402',
       size: 'Flying leads, 3-wire',
-      image: 'images/honeywell-et402-large.jpg',
+      image: 'images/honeywell-et402-ignition-transformer-large.jpg',
       specs: {
         'Type': 'ET 402',
         'Primary': '230V, 0.25A, 50/60 Hz',
@@ -3982,14 +3982,14 @@ const products = [
       description: 'The Honeywell ET 402 is a 2-pole ignition transformer that steps up a 230V mains supply to two 7kV high-voltage secondary outputs rated at 40mA rms (2 x 7kV Ampl.), for firing the spark electrodes on gas and oil burners. Rated for an intermittent duty cycle of 33% ED (energised duration) within a 3-minute cycle, with IP40 protection, it delivers reliable high-voltage ignition for burner and boiler applications. It terminates in flying leads (Blue-N, Brown-L, Green&Yellow-E) for direct wiring into the burner control circuit. Manufactured by Honeywell.'
     },
     {
-      id: 'rkic-cable-lug-4mm',
+      id: 'rkic-cable-lug-4mm-ignition-spare',
       name: 'Ignition Cable Lug 4.0mm Female Bullet',
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARES',
       code: '4.0mm Female Bullet Lug',
       size: '4.0mm dia \u00b7 19.5mm length',
-      image: 'images/rkic-cable-lug-4mm-large.jpg',
-      imageLarge: 'images/rkic-cable-lug-4mm-xl.jpg',
+      image: 'images/rkic-cable-lug-4mm-ignition-spare-large.jpg',
+      imageLarge: 'images/rkic-cable-lug-4mm-ignition-spare-xl.jpg',
       specs: {
         'Product Type': 'Non-Insulated Female Quick-Disconnect Spade/Bullet Crimp Terminal (High-Voltage Ignition Connector)',
         'Receptacle Inner Diameter': '4.0mm',
@@ -4006,14 +4006,14 @@ const products = [
       description: 'R.K. Instruments & Controls supplies the 4.0mm Female Bullet/Spade Cable Lug, a non-insulated female quick-disconnect crimp terminal engineered for high-voltage ignition circuits such as ignition transformer connectors and ceramic ignition pin terminations. Stamped from 0.5mm phosphor bronze — offering greater elasticity, fatigue resistance and electrical conductivity than standard brass — the terminal measures 19.5mm in overall length with a 7.6mm back-opening / 8.7mm outer-wing mating width, a 4.0mm receptacle inner diameter and 5.0mm outer barrel diameter, and accepts conductors up to 10 mm² in cross-section. A standard ignition-circuit spare used across burner and boiler control panels wherever a 4.0mm high-voltage bullet-style termination is required.'
     },
     {
-      id: 'rkic-cable-lug-6mm',
+      id: 'rkic-cable-lug-6mm-ignition-spare',
       name: 'Ignition Cable Lug 6.0mm Female Bullet',
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARES',
       code: '6.0mm Female Bullet Lug',
       size: '6.0mm dia \u00b7 20mm length',
-      image: 'images/rkic-cable-lug-6mm-large.jpg',
-      imageLarge: 'images/rkic-cable-lug-6mm-xl.jpg',
+      image: 'images/rkic-cable-lug-6mm-ignition-spare-large.jpg',
+      imageLarge: 'images/rkic-cable-lug-6mm-ignition-spare-xl.jpg',
       specs: {
         'Product Type': 'Non-Insulated Female Quick-Disconnect Spade/Bullet Crimp Terminal (High-Voltage Ignition Connector)',
         'Receptacle Inner Diameter': '6.0mm',
@@ -4030,14 +4030,14 @@ const products = [
       description: 'R.K. Instruments & Controls supplies the 6.0mm Female Bullet/Spade Cable Lug, a non-insulated female quick-disconnect crimp terminal engineered for high-voltage ignition circuits such as ignition transformer connectors and ceramic ignition pin terminations. Stamped from 0.5mm phosphor bronze — offering greater elasticity, fatigue resistance and electrical conductivity than standard brass — the terminal measures 20mm in overall length with a 8.4mm back-opening / 9.4mm outer-wing mating width, a 6.0mm receptacle inner diameter and 7.3mm outer barrel diameter, and accepts conductors up to 10 mm² in cross-section. A standard ignition-circuit spare used across burner and boiler control panels wherever a 6.0mm high-voltage bullet-style termination is required.'
     },
     {
-      id: 'kromschroder-connex-l4x40',
+      id: 'kromschroder-connex-l4x40-ignition-spare',
       name: 'Honeywell Kromschröder Connex Light Spring Pin L4 x 40',
       brand: 'Honeywell Kromschröder',
       category: 'IGNITION SPARES',
       code: '74921607',
       size: 'L4 x 40 \u00b7 d=3.5mm electrode',
-      image: 'images/kromschroder-connex-l4x40-large.jpg',
-      imageLarge: 'images/kromschroder-connex-l4x40-xl.jpg',
+      image: 'images/kromschroder-connex-l4x40-ignition-spare-large.jpg',
+      imageLarge: 'images/kromschroder-connex-l4x40-ignition-spare-xl.jpg',
       specs: {
         'Component Type': 'Connex Light Spring Pin / Slotted Pin',
         'Part Number': '74921607',
@@ -4052,13 +4052,13 @@ const products = [
       description: 'The Honeywell Kromschröder Connex Light Spring Pin (L4 x 40, Part No. 74921607) is a slotted spring-steel connector pin used as an electrical joint and dowel-pin coupling for industrial burner ignition circuits, most commonly to join spark plug electrode rods and ignition wires. Manufactured in Germany from Grade 1.4568 stainless steel, the pin has a 4mm outer diameter and 40mm overall length, and is optimised for a 3.5mm (d) electrode wire diameter. A standard Kromschröder ignition-spares component used across burner and boiler ignition assemblies wherever a Connex-type spring-pin joint is required.'
     },
     {
-      id: 'kromschroder-electrode-plug-04115302',
+      id: 'kromschroder-electrode-plug-04115302-ignition-spare',
       name: 'Honeywell Kromschröder Ignition & Sensing Electrode Plug Boot Cap — Type C (4mm, PBT)',
       brand: 'Honeywell Kromschröder',
       category: 'IGNITION SPARES',
       code: '04115302',
       size: 'Type C · 4mm connection',
-      image: 'images/kromschroder-electrode-plug-04115302-large.jpg',
+      image: 'images/kromschroder-electrode-plug-04115302-ignition-spare-large.jpg',
       specs: {
         'Component Type': 'Ignition & Sensing Electrode Connector Plug (Type C)',
         'Order Number': '04115302',
@@ -4071,15 +4071,15 @@ const products = [
       description: 'The Honeywell Kromschröder Ignition & Sensing Electrode Plug (Type C, Order No. 04115302) is a 4mm connector plug used to terminate the ignition cable onto Kromschröder’s FE/FZE-series ignition and sensing electrodes fitted to industrial gas burners. Moulded in PBT (Polybutylene Terephthalate) with no interference suppression, it is a standard Kromschröder ignition-spares accessory used across burner and boiler ignition assemblies wherever a Type C electrode plug connection is required.'
     },
     {
-      id: 'rkic-srg-21',
+      id: 'rkic-srg-21-sequence-controller',
       name: 'Gas Burner Sequence Controller SRG-21',
       brand: 'R.K. Instruments & Controls',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
       code: 'SRG-21',
       size: '230V AC, 3.5-5.0VA',
-      image: 'images/rkic-srg-21-large.jpg',
-      imageLarge: 'images/rkic-srg-21-xl.jpg',
+      image: 'images/rkic-srg-21-sequence-controller-large.jpg',
+      imageLarge: 'images/rkic-srg-21-sequence-controller-xl.jpg',
       specs: {
         'Model': 'SRG-21',
         'Type': '16-Step Burner Sequence Controller',
@@ -4096,15 +4096,15 @@ const products = [
       description: 'The R.K. Instruments & Controls SRG-21 is an in-house manufactured 16-step burner sequence controller for industrial gas-fired burners, supporting both single and double stage gas burner operation. Rated for a 230 VAC supply with a power consumption of 3.5 VA to 5.0 VA, it is available in plug-in base or panel-mount configurations for flexible installation. The controller drives dedicated Blower (BL) and Ignition (IG) outputs along with two solenoid valve outputs (SV1, SV2) for staged gas trains, accepts a UV flame sensor input (UV), and provides an Alarm (AL) output on lockout, with a front-panel manual RESET button and status LEDs for Power, Stage-2, Valve 1 (V1), Flame (FLM), Valve 2 (V2) and Alarm (AL). Manufactured and supplied by R.K. Instruments & Controls for industrial gas-fired heating applications, and also supplied on an OEM basis to other panel builders.'
     },
     {
-      id: 'rkic-sp-2307',
+      id: 'rkic-sp-2307-sequence-controller',
       name: 'Gas Burner Sequence Controller',
       brand: 'R.K. Instruments & Controls',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
       code: '',
       size: '230V AC, 2-Stage Low/High Flame',
-      image: 'images/rkic-sp-2307-large.jpg',
-      imageLarge: 'images/rkic-sp-2307-xl.jpg',
+      image: 'images/rkic-sp-2307-sequence-controller-large.jpg',
+      imageLarge: 'images/rkic-sp-2307-sequence-controller-xl.jpg',
       specs: {
         'Type': 'Burner Sequence Controller (2-Stage, Low/High Flame)',
         'Burner Type': 'Gas Burner (Two Stage — Low Flame / High Flame)',
@@ -4162,14 +4162,14 @@ const products = [
       </div>`
     },
     {
-      id: 'rkic-gas-ball-valve',
+      id: 'rkic-gas-ball-valve-manual-ball-valve',
       name: 'Gas Ball Valve',
       brand: 'R.K. Instruments & Controls',
       category: 'MANUAL BALL VALVES',
       code: '',
       size: '1/4" to 4" (DN8 to DN100)',
-      image: 'images/rkic-gas-ball-valve-large.jpg',
-      imageLarge: 'images/rkic-gas-ball-valve-xl.jpg',
+      image: 'images/rkic-gas-ball-valve-manual-ball-valve-large.jpg',
+      imageLarge: 'images/rkic-gas-ball-valve-manual-ball-valve-xl.jpg',
       specs: {
         'Type': 'Full Bore Manual Ball Valve, Lever Operated',
         'Application': 'Manual isolation valve for gas lines & gas trains',
@@ -4224,14 +4224,14 @@ const products = [
       </div>`
     },
     {
-      id: 'rkic-ball-valve-t-type',
+      id: 'rkic-ball-valve-t-type-manual-ball-valve',
       name: 'Ball Valve Butterfly T-Type',
       brand: 'R.K. Instruments & Controls',
       category: 'MANUAL BALL VALVES',
       code: '',
       size: '1/4" to 1" (DN8 to DN25)',
-      image: 'images/rkic-ball-valve-t-type-large.jpg',
-      imageLarge: 'images/rkic-ball-valve-t-type-xl.jpg',
+      image: 'images/rkic-ball-valve-t-type-manual-ball-valve-large.jpg',
+      imageLarge: 'images/rkic-ball-valve-t-type-manual-ball-valve-xl.jpg',
       specs: {
         'Type': 'Manual Ball Valve, Butterfly T-Handle Operated',
         'Application': 'Manual isolation valve for gas lines & gas trains',
@@ -4280,14 +4280,14 @@ const products = [
       </div>`
     },
     {
-      id: 'rkic-gas-nozzle-valve',
+      id: 'rkic-gas-nozzle-valve-manual-ball-valve',
       name: 'Gas Nozzle Valve 1/2" (15 mm)',
       brand: 'R.K. Instruments & Controls',
       category: 'MANUAL BALL VALVES',
       code: '',
       size: '1/2" (15 mm / DN15)',
-      image: 'images/rkic-gas-nozzle-valve-large.jpg',
-      imageLarge: 'images/rkic-gas-nozzle-valve-xl.jpg',
+      image: 'images/rkic-gas-nozzle-valve-manual-ball-valve-large.jpg',
+      imageLarge: 'images/rkic-gas-nozzle-valve-manual-ball-valve-xl.jpg',
       specs: {
         'Type': 'Manual Ball Valve with Hose Nozzle Outlet, Lever Operated',
         'Application': 'Manual isolation & gas hose connection point for gas lines & appliances',
@@ -4322,14 +4322,14 @@ const products = [
       </div>`
     },
     {
-      id: 'madas-cn0045',
+      id: 'madas-cn0045-solenoid-valve',
       name: 'Madas CN 0045 Solenoid Valve Coil Connector',
       brand: 'Madas',
       category: 'SOLENOID VALVES',
       subcategory: 'Coil Connector',
       code: 'CN.0045',
       size: '230 VAC, 1.5A',
-      image: 'images/madas-cn0045-large.jpg',
+      image: 'images/madas-cn0045-solenoid-valve-large.jpg',
       specs: {
         'Product Type': 'DIN 43650 Rectifier-Type Coil Connector (AC-to-DC Valve Plug)',
         'Part No.': 'CN.0045',
@@ -4346,14 +4346,14 @@ const products = [
       description: 'MADAS supplies the CN.0045 connector, a DIN 43650 coil plug fitted with a built-in bridge rectifier that converts a 230 VAC supply into rectified DC for MADAS gas solenoid valve coils designed to run on DC current — commonly used on the smaller-bore MADAS solenoid valve range (DN15–DN25) among others. Rated 230 VAC, 1.5 A, the connector kit is supplied complete with its sealing gasket and fixing screw for a secure, weatherproof DIN 43650 mount at the coil head. A standard MADAS gas-train accessory used wherever an AC-supplied MADAS DC-coil valve needs its rectifier/wiring connector replaced.'
     },
     {
-      id: 'madas-cn2130',
+      id: 'madas-cn2130-solenoid-valve',
       name: 'Madas CN 2130 Solenoid Valve Coil Connector',
       brand: 'Madas',
       category: 'SOLENOID VALVES',
       subcategory: 'Coil Connector',
       code: 'CN-2130',
       size: '230 VAC, 50-60Hz',
-      image: 'images/madas-cn2130-large.jpg',
+      image: 'images/madas-cn2130-solenoid-valve-large.jpg',
       specs: {
         'Product Type': 'DIN 43650 Rectifier-Type Coil Connector (Energy-Saving, Automatic-Reset AC-to-DC Valve Plug)',
         'Part No.': 'CN-2130',
@@ -4369,13 +4369,13 @@ const products = [
       description: 'MADAS supplies the CN-2130 connector, a DIN 43650 coil plug fitted with a built-in bridge rectifier that provides an energy-saving, automatic-reset rectified DC holding current for MADAS gas solenoid valve coils — commonly used on the EVP/EVPC series normally-closed (NC) gas solenoid valve range (DN15–DN20). Rated 230 VAC, 50–60 Hz, it mounts directly onto the coil head in the standard weatherproof DIN 43650 form. A standard MADAS gas-train accessory used wherever an EVP/EVPC NC valve needs its energy-saving rectifier/wiring connector replaced.'
     },
     {
-      id: 'madas-mtc10',
+      id: 'madas-mtc10-valve-proving-system',
       name: 'Madas MTC10 Valve Proving System',
       brand: 'Madas',
       category: 'VALVE PROVING SYSTEMS',
       code: 'MTC10',
       size: '110V/230V AC \u00b7 3.2 VA \u00b7 IP65',
-      image: 'images/madas-mtc10-large.jpg',
+      image: 'images/madas-mtc10-valve-proving-system-large.jpg',
       specs: {
         'Type': 'MTC10 Valve Proving System (VPS)',
         'Part No.': 'MTC10',
@@ -4397,14 +4397,14 @@ const products = [
       description: 'The MADAS MTC10 is an automatic valve-proving (leak-tightness) control unit that checks the shut-off valves of a gas train for leaks before every burner start, per EN 1643. It monitors 1 or 2 MADAS solenoid valves (EVP / CB-CK series, DN15\u2013DN100) together with 1 or 2 pressure switches (EN 1854), running a roughly 60-second test cycle on each start; front-panel FAULT/OK LEDs (with separate V1/V2 valve-status and P/pressure indicators) show the result, and a RESET button clears a fault lockout. Rated 110V or 230V AC, 3.2 VA, with a 2A working output and 1A fault output (6.3A delayed fuse), IP65 enclosure rated -20\u00b0C to +60\u00b0C for any mounting position. A standard MADAS gas-train safety accessory for industrial burner and heating plants, used wherever automatic valve-proving is mandated ahead of the solenoid valves.'
     },
     {
-      id: 'madas-cn2131',
+      id: 'madas-cn2131-solenoid-valve',
       name: 'Madas CN 2131 Solenoid Valve Coil Connector',
       brand: 'Madas',
       category: 'SOLENOID VALVES',
       subcategory: 'Coil Connector',
       code: 'CN-2131',
       size: '110\u2013230 VAC, 50-60Hz',
-      image: 'images/madas-cn2131-large.jpg',
+      image: 'images/madas-cn2131-solenoid-valve-large.jpg',
       specs: {
         'Product Type': 'DIN 43650 Rectifier-Type Coil Connector (Energy-Saving, Automatic-Reset AC-to-DC Valve Plug)',
         'Part No.': 'CN-2131',
@@ -4419,14 +4419,14 @@ const products = [
       description: 'MADAS supplies the CN-2131 connector, a DIN 43650 coil plug fitted with a built-in bridge rectifier that provides an energy-saving, automatic-reset rectified DC holding current for MADAS gas solenoid valve coils. Rated for a 110\u2013230 VAC universal supply range (this unit\u2019s nameplate marked 230V, 50\u201360 Hz), it mounts directly onto the coil head in the standard weatherproof DIN 43650 form. A standard MADAS gas-train accessory \u2014 sold alongside the single-voltage CN-2130 and DC-only CN.0045 connectors \u2014 used wherever a MADAS AC-supplied valve coil needs its energy-saving, wide-range rectifier/wiring connector replaced.'
     },
     {
-      id: 'metrix-g4-lpg-gas-meter',
+      id: 'metrix-g4-lpg-gas-meter-gas-flow-meter',
       name: 'Metrix G4 LPG High Pressure Diaphragm Gas Meter',
       brand: 'R.K. Instruments & Controls',
       category: 'GAS FLOW METERS',
       subcategory: 'Diaphragm Gas Meters',
       code: 'G4 LPG',
       size: 'G4 · Qmax 6 m³/h',
-      image: 'images/metrix-g4-lpg-gas-meter-large.jpg',
+      image: 'images/metrix-g4-lpg-gas-meter-gas-flow-meter-large.jpg',
       specs: {
         'Model': 'G4 LPG',
         'Size and Capacity': 'G4 · Qmax 6 m³/h',
@@ -4447,14 +4447,14 @@ const products = [
       description: 'The Metrix G4 LPG is a G4-size diaphragm gas meter built for LPG/GLP service, rated for a minimum flow of 0.016 m³/h, a transitional flow of 0.6 m³/h and a maximum flow of 6 m³/h, with a cyclic volume of 1.2 litres and a reading resolution of 1 imp = 0.01 m³. It has an aluminium (Type UG-ALU) body, a working pressure range of 0.006 bar to 2 bar and an operating temperature range of -25°C to +55°C, tested for LPG/GLP use at Qstart 0.006 m³/h. Built to EN 1359:1998+A1:2006 Class 1.5 accuracy, CE M23 1450 and OIML R137-1&2:2012 certified. Manufactured by Metrix Italia, Padova, Italy, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-lme11-330c2',
+      id: 'siemens-lme11-330c2-sequence-controller',
       name: 'Siemens Burner Control LME11.330C2',
       brand: 'Siemens',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
       code: 'BPZ:LME11.330C2',
       size: '230V~, 50-60Hz, 12VA',
-      image: 'images/siemens-lme11-330c2-large.jpg',
+      image: 'images/siemens-lme11-330c2-sequence-controller-large.jpg',
       specs: {
         'Type': 'LME11.330C2',
         'BPZ (Product Code)': 'LME11.330C2',
@@ -4472,14 +4472,14 @@ const products = [
       description: 'The Siemens LME11.330C2 is a compact burner control (sequence controller) for single-stage gas burners, working with an ionization probe, or with QRA2/QRA2.9/QRA4.U/QRA10.C UV flame detectors via the AGQ3.xA27 adapter. It runs a pre-purge time (t1) of 2 seconds minimum and a safety time (TSA) of 3 seconds maximum, with direct ignition through its integrated transformer, on a 230V~, 50-60Hz, 12VA supply. Rated IP40 and for an operating temperature of -20°C to 60°C, it weighs approx. 160g and is tested to DIN EN 298, DIN EN 13611 and DIN EN 60730-2-5. Manufactured by Siemens AG, Rastatt, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-lgk16-322a27',
+      id: 'siemens-lgk16-322a27-sequence-controller',
       name: 'Siemens Burner Control LGK16.322A27',
       brand: 'Siemens',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
       code: 'BPZ:LGK16.322A27',
       size: '220-240V~, 50-60Hz, 3.5VA',
-      image: 'images/siemens-lgk16-322a27-large.jpg',
+      image: 'images/siemens-lgk16-322a27-sequence-controller-large.jpg',
       specs: {
         'Type': 'LGK16.322A27',
         'BPZ (Product Code)': 'LGK16.322A27',
@@ -4495,14 +4495,14 @@ const products = [
       description: 'The Siemens LGK16.322A27 is a gas burner control (sequence controller) for stationary air heaters, with an electromechanical program switch visible through its indicator window. It runs a pre-purge time (t1) of 36 seconds and a safety time (TSA) of 2 seconds max., working with an ionization probe or QRA53/QRA55 UV flame detectors, on a 220-240V~, 50-60Hz, 3.5VA supply, with a switching load rating of 4A per contact (5A total). Approved to DIN Rg. 5F018/02 and CE-0085AO0103. Manufactured by Siemens Building Technologies Production GmbH, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-lfl1-333',
+      id: 'siemens-lfl1-333-sequence-controller',
       name: 'Siemens Burner Control LFL1.333',
       brand: 'Siemens',
       category: 'SEQUENCE CONTROLLERS',
       subcategory: 'Burner Control',
       code: 'BPZ:LFL1.333',
       size: '230V~, 50-60Hz, 3.5VA',
-      image: 'images/siemens-lfl1-333-large.jpg',
+      image: 'images/siemens-lfl1-333-sequence-controller-large.jpg',
       specs: {
         'Type': 'LFL1.333',
         'BPZ (Product Code)': 'LFL1.333',
@@ -4518,13 +4518,13 @@ const products = [
       description: 'The Siemens LFL1.333 is a burner control (sequence controller) for single-burner gas, oil or dual-fuel installations — on-off, multi-stage or modulating — with direct main-burner ignition or intermittent/interrupted pilot operation, and an electromechanical program switch visible through its indicator window. It runs a pre-purge time (t1) of 31 seconds and a safety time (TSA) of 3 seconds max., working with an ionization probe (flame rod) or QRA-series UV flame detectors, on a 230V~, 50-60Hz, 3.5VA supply, with a switching load rating of 4A per contact (5A total). Approved to DIN Rg. 5F091 and CE-0085AP0001. Manufactured by Siemens AG, D-76437 Rastatt, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-lfs1-21a1',
+      id: 'siemens-lfs1-21a1-flame-safeguard',
       name: 'Siemens Flame Safeguard LFS1.21A1',
       brand: 'Siemens',
       category: 'FLAME SAFEGUARD',
       code: 'BPZ:LFS1.21A1',
       size: '120V~, 50-60Hz',
-      image: 'images/siemens-lfs1-21a1-large.jpg',
+      image: 'images/siemens-lfs1-21a1-flame-safeguard-large.jpg',
       specs: {
         'Type': 'LFS1.21A1',
         'Power Supply': '120V~, 50-60Hz',
@@ -4539,13 +4539,13 @@ const products = [
       description: 'The Siemens LFS1.21A1 is a flame safeguard (burner sequence controller) approved for continuous supervision of oil and gas flames, working with an ionization probe or the RAR9 photocell detector for oil firing, and with UV flame detectors such as the QRA2, QRA4.U and QRA10 series for gas operation. It provides a DC 0-10V display output plus potential-free double-insulated signal contacts, is rated IP40 for an operating temperature of -20°C to +60°C, and runs on a 120V~, 50-60Hz supply — the North American voltage variant of the LFS1 series, approved to CE-0085CQ0369 and CSA. Manufactured by Siemens AG, Rastatt, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-lfs1-21a2',
+      id: 'siemens-lfs1-21a2-flame-safeguard',
       name: 'Siemens Flame Safeguard LFS1.21A2',
       brand: 'Siemens',
       category: 'FLAME SAFEGUARD',
       code: 'BPZ:LFS1.21A2',
       size: '230V~, 50-60Hz',
-      image: 'images/siemens-lfs1-21a2-large.jpg',
+      image: 'images/siemens-lfs1-21a2-flame-safeguard-large.jpg',
       specs: {
         'Type': 'LFS1.21A2',
         'Power Supply': '230V~, 50-60Hz',
@@ -4560,13 +4560,13 @@ const products = [
       description: 'The Siemens LFS1.21A2 is a flame safeguard (burner sequence controller) approved for continuous supervision of oil and gas flames, working with an ionization probe or the RAR9 photocell detector for oil firing, and with UV flame detectors such as the QRA2, QRA4.U and QRA10 series for gas operation. It provides a DC 0-10V display output plus potential-free double-insulated signal contacts, is rated IP40 for an operating temperature of -20°C to +60°C, and runs on a 230V~, 50-60Hz supply — the standard-voltage variant of the LFS1.21A series, approved to CE-0085CQ0369 and CSA. Manufactured by Siemens AG, Rastatt, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-sqn30-402a2700',
+      id: 'siemens-sqn30-402a2700-servo-motor',
       name: 'Siemens Servo Motor | Damper Actuator SQN30.402A2700',
       brand: 'Siemens',
       category: 'SERVO MOTORS',
       code: 'BPZ:SQN30.402A2700',
       size: '220-240V~, 50-60Hz',
-      image: 'images/siemens-sqn30-402a2700-large.jpg',
+      image: 'images/siemens-sqn30-402a2700-servo-motor-large.jpg',
       specs: {
         'Type': 'SQN30.402A2700',
         'Application': 'Damper actuator / servo motor for gas-air dampers & fuel-air ratio control',
@@ -4581,13 +4581,13 @@ const products = [
       description: 'The Siemens SQN30.402A2700 is an electromotoric damper actuator — also known as a servo motor — used to position gas/air dampers and fuel-air ratio control linkages on oil and gas burners and heating plant. It completes a 90° stroke in 30 seconds (50Hz), delivers 3Nm of operating and holding torque, and permits a maximum rotation angle of 160°. The unit carries one integral auxiliary switch rated 1(1)A ~250V~, is rated IP40, and runs on a 220-240V~, 50-60Hz, 6.3VA supply. Manufactured by Siemens AG, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-sqn31-401a2700',
+      id: 'siemens-sqn31-401a2700-servo-motor',
       name: 'Siemens Servo Motor | Damper Actuator SQN31.401A2700',
       brand: 'Siemens',
       category: 'SERVO MOTORS',
       code: 'BPZ:SQN31.401A2700',
       size: '220-240V~, 50-60Hz',
-      image: 'images/siemens-sqn31-401a2700-large.jpg',
+      image: 'images/siemens-sqn31-401a2700-servo-motor-large.jpg',
       specs: {
         'Type': 'SQN31.401A2700',
         'Application': 'Damper actuator / servo motor for gas-air dampers & fuel-air ratio control',
@@ -4602,13 +4602,13 @@ const products = [
       description: 'The Siemens SQN31.401A2700 is an electromotoric damper actuator — also known as a servo motor — used to position gas/air dampers and fuel-air ratio control linkages on oil and gas burners and heating plant. It completes a 90° stroke in 30 seconds (50Hz), delivers 3Nm of operating and holding torque, and permits a maximum rotation angle of 160°. The unit carries one integral auxiliary switch rated 7(1) A, 250V~, is rated IP40, and runs on a 220-240V~, 50-60Hz, 6.5VA supply. Manufactured by Siemens AG, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-sqn71-664b20',
+      id: 'siemens-sqn71-664b20-servo-motor',
       name: 'Siemens Servo Motor | Damper Actuator SQN71.664B20',
       brand: 'Siemens',
       category: 'SERVO MOTORS',
       code: 'BPZ:SQN71.664B20',
       size: '230V~, 50-60Hz',
-      image: 'images/siemens-sqn71-664b20-large.jpg',
+      image: 'images/siemens-sqn71-664b20-servo-motor-large.jpg',
       specs: {
         'Type': 'SQN71.664B20',
         'Application': 'Damper actuator / servo motor for gas-air dampers & fuel-air ratio control',
@@ -4623,13 +4623,13 @@ const products = [
       description: 'The Siemens SQN71.664B20 is an electromotoric damper actuator — also known as a servo motor — used to position gas/air dampers and fuel-air ratio control linkages on oil and gas burners and heating plant. It completes a 90° stroke in 30 seconds (50Hz), delivers 2.5Nm of nominal torque, and permits a maximum rotation angle of 160°. The unit carries one integral auxiliary switch rated 7(1)A / 250V~, is rated IP40, and runs on a 230V~, 50-60Hz, 6VA supply. Manufactured by Siemens AG, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-sqn72-4a4b20',
+      id: 'siemens-sqn72-4a4b20-servo-motor',
       name: 'Siemens Servo Motor | Damper Actuator SQN72.4A4B20',
       brand: 'Siemens',
       category: 'SERVO MOTORS',
       code: 'BPZ:SQN72.4A4B20',
       size: '230V~, 50-60Hz',
-      image: 'images/siemens-sqn72-4a4b20-large.jpg',
+      image: 'images/siemens-sqn72-4a4b20-servo-motor-large.jpg',
       specs: {
         'Type': 'SQN72.4A4B20',
         'Application': 'Damper actuator / servo motor for gas-air dampers & fuel-air ratio control',
@@ -4645,13 +4645,13 @@ const products = [
       description: 'The Siemens SQN72.4A4B20 is an electromotoric damper actuator — also known as a servo motor — used to position gas/air dampers and fuel-air ratio control linkages on oil and gas burners and heating plant. It completes a 90° stroke in 12 seconds (50Hz), delivers 2.5Nm of nominal torque, and permits a maximum rotation angle of 160°. The unit carries two free auxiliary switches plus two end switches, is rated IP54, and runs on a 230V~, 50-60Hz, 6VA supply. Manufactured by Siemens AG, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'kromschroder-spark-plug-ks34483591',
+      id: 'kromschroder-spark-plug-ks34483591-ignition-spark-electrode',
       name: "Kromschröder Spark Plug KS34483591 (M18 x 1.5, L50)",
       brand: 'Honeywell Kromschröder',
       category: 'IGNITION SPARK ELECTRODES',
       code: 'KS34483591',
       size: 'M18 x 1.5 · L50',
-      image: 'images/kromschroder-spark-plug-ks34483591-large.jpg',
+      image: 'images/kromschroder-spark-plug-ks34483591-ignition-spark-electrode-large.jpg',
       specs: {
         'Order Number / Type': 'KS34483591',
         'Manufacturer Part No.': '34483591',
@@ -4667,7 +4667,7 @@ const products = [
       description: "The Kromschröder KS34483591 is a genuine threaded ignition spark plug (M18 x 1.5 thread, 50mm overall length) used for direct spark ignition on industrial gas burners and gas engines. It carries the engraved marking \"ZE 18-12-50\" and \"Germany\" on the hex body, with a ceramic insulator and a top-mounted threaded stud terminal for the ignition cable connection. Manufactured by Honeywell Kromschröder, Germany, and supplied by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-12-35-a1',
+      id: 'rkic-ze-14-12-35-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-12-35-A1 — M14x1.25, L35mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
@@ -4688,7 +4688,7 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-12-35-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 12mm thread length (LG) and 35mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-12-66-a1',
+      id: 'rkic-ze-14-12-66-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-12-66-A1 — M14x1.25, L66mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
@@ -4709,7 +4709,7 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-12-66-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 12mm thread length (LG) and 66mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-12-100-a1',
+      id: 'rkic-ze-14-12-100-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-12-100-A1 — M14x1.25, L100mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
@@ -4730,7 +4730,7 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-12-100-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 12mm thread length (LG) and 100mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-12-150-a1',
+      id: 'rkic-ze-14-12-150-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-12-150-A1 — M14x1.25, L150mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
@@ -4751,7 +4751,7 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-12-150-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 12mm thread length (LG) and 150mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-12-200-a1',
+      id: 'rkic-ze-14-12-200-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-12-200-A1 — M14x1.25, L200mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
@@ -4772,7 +4772,7 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-12-200-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 12mm thread length (LG) and 200mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-8-250-a1',
+      id: 'rkic-ze-14-8-250-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-8-250-A1 — M14x1.25, L250mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
@@ -4793,7 +4793,7 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-8-250-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 8mm thread length (LG) and 250mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-12-300-a1',
+      id: 'rkic-ze-14-12-300-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-12-300-A1 — M14x1.25, L300mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
@@ -4814,7 +4814,7 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-12-300-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 12mm thread length (LG) and 300mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-12-400-a1',
+      id: 'rkic-ze-14-12-400-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-12-400-A1 — M14x1.25, L400mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
@@ -4835,13 +4835,13 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-12-400-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 12mm thread length (LG) and 400mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-12-500-a1',
+      id: 'rkic-ze-14-12-500-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-12-500-A1 — M14x1.25, L500mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
       code: 'ZE-14-12-500-A1',
       size: "M14x1.25 · LG12mm · L500mm",
-      image: 'images/rkic-ze-14-12-500-a1-large.jpg',
+      image: 'images/rkic-ze-14-12-500-a1-ignition-spark-electrode-large.jpg',
       specs: {
         "Part Number": "ZE-14-12-500-A1",
         "Product Type": "Spark Ignition Electrode Threaded (Spark-Plug Type Igniter, Single Electrode) — Standard Stock",
@@ -4856,7 +4856,7 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-12-500-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 12mm thread length (LG) and 500mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-12-1000-a1',
+      id: 'rkic-ze-14-12-1000-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-12-1000-A1 — M14x1.25, L1000mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
@@ -4877,7 +4877,7 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-12-1000-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 12mm thread length (LG) and 1000mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-ze-14-12-1200-a1',
+      id: 'rkic-ze-14-12-1200-a1-ignition-spark-electrode',
       name: "Spark Ignition Electrode Threaded ZE-14-12-1200-A1 — M14x1.25, L1200mm, Standard Stock",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARK ELECTRODES',
@@ -4898,13 +4898,13 @@ const products = [
       description: "The R.K. Instruments & Controls ZE-14-12-1200-A1 is a standard-stock threaded ignition electrode (spark-plug-type igniter) with an M14 x 1.25 thread, 12mm thread length (LG) and 1200mm overall/critical length (L). Built with a Kanthal A1 (FeCrAl) resistance-wire electrode tip and a low-loss steatite or high-alumina ceramic insulator, it is used for direct spark ignition in gas engines, CHP (Combined Heat & Power) plants, biogas and natural gas generator sets, and industrial burners. Manufactured by R.K. Instruments & Controls."
     },
     {
-      id: 'kromschroder-fze300-ks74434610',
+      id: 'kromschroder-fze300-ks74434610-ignition-spark-electrode',
       name: "Kromschröder Ignition & Sensing Electrode FZE 300, Isolated (KS74434610)",
       brand: 'Honeywell Kromschröder',
       category: 'IGNITION SPARK ELECTRODES',
       code: 'KS74434610',
       size: "300 mm",
-      image: 'images/kromschroder-fze300-ks74434610-large.jpg',
+      image: 'images/kromschroder-fze300-ks74434610-ignition-spark-electrode-large.jpg',
       specs: {
         "Order Number / Type": "KS74434610",
         "Manufacturer Part No.": "74434610",
@@ -4924,13 +4924,13 @@ const products = [
       description: "The Kromschröder KS74434610 (FZE 300, Isolated) is a genuine ignition and flame-sensing (ionization) electrode, 300mm overall length, used for spark ignition and flame monitoring on industrial gas burners. It features a Kanthal A1 (FeCrAl) resistance-wire electrode with an insulated/isolated body, mounted via a threaded hex-mount body. Manufactured by Honeywell Kromschröder, Germany, and supplied by R.K. Instruments & Controls."
     },
     {
-      id: 'kromschroder-pilot-burner-zkih-400-100r',
+      id: 'kromschroder-pilot-burner-zkih-400-100r-pilot-burner',
       name: "Kromschröder Pilot Burner ZKIH 400/100R (84214040)",
       brand: 'Honeywell Kromschröder',
       category: 'PILOT BURNERS',
       code: 'KS84214040',
       size: "400/100 mm",
-      image: 'images/kromschroder-pilot-burner-zkih-400-100r-large.jpg',
+      image: 'images/kromschroder-pilot-burner-zkih-400-100r-pilot-burner-large.jpg',
       specs: {
         "Order Number / Type": "KS84214040 · ZKIH 400/100R",
         "Manufacturer Part No.": "84214040",
@@ -4953,13 +4953,13 @@ const products = [
       description: "The Kromschröder ZKIH 400/100R (Part No. 84214040) is a genuine forced-air pilot burner used for the safe ignition of industrial gas burners in conjunction with Kromschröder's automatic burner control units (IFS/IFD or PFS/PFD). It delivers a capacity of 2 to 7 kW (up to 5 kW on natural gas) and runs on natural gas, town gas, LPG, or coke oven gas, with a 400/100 mm burner tube length and threaded connections. The burner uses direct spark ignition (via a 5 kV ignition transformer) with ionization-electrode flame monitoring, an aluminium housing, a stainless steel protective tube, and a heat-resistant steel flame tube rated up to 1000°C at the tip. Manufactured by Honeywell Kromschröder, Germany, and supplied by R.K. Instruments & Controls."
     },
     {
-      id: 'kromschroder-pilot-burner-zkih-300-100r',
+      id: 'kromschroder-pilot-burner-zkih-300-100r-pilot-burner',
       name: "Kromschröder Pilot Burner ZKIH 300/100R (84214030)",
       brand: 'Honeywell Kromschröder',
       category: 'PILOT BURNERS',
       code: 'KS84214030',
       size: "300/100 mm",
-      image: 'images/kromschroder-pilot-burner-zkih-300-100r-large.jpg',
+      image: 'images/kromschroder-pilot-burner-zkih-300-100r-pilot-burner-large.jpg',
       specs: {
         "Order Number / Type": "KS84214030 · ZKIH 300/100R",
         "Manufacturer Part No.": "84214030",
@@ -4982,13 +4982,13 @@ const products = [
       description: "The Kromschröder ZKIH 300/100R (Part No. 84214030) is a genuine forced-air pilot burner used for the safe ignition of industrial gas burners in conjunction with Kromschröder's automatic burner control units (IFS/IFD or PFS/PFD). It delivers a capacity of 2 to 7 kW (up to 5 kW on natural gas) and runs on natural gas, town gas, LPG, or coke oven gas, with a 300/100 mm burner tube length and threaded connections. The burner uses direct spark ignition (via a 5 kV ignition transformer) with ionization-electrode flame monitoring, an aluminium housing, a stainless steel protective tube, and a heat-resistant steel flame tube rated up to 1000°C at the tip. Manufactured by Honeywell Kromschröder, Germany, and supplied by R.K. Instruments & Controls."
     },
     {
-      id: 'kromschroder-pilot-burner-zkih-500-100r',
+      id: 'kromschroder-pilot-burner-zkih-500-100r-pilot-burner',
       name: "Kromschröder Pilot Burner ZKIH 500/100R (84214050)",
       brand: 'Honeywell Kromschröder',
       category: 'PILOT BURNERS',
       code: 'KS84214050',
       size: "500/100 mm",
-      image: 'images/kromschroder-pilot-burner-zkih-500-100r-large.jpg',
+      image: 'images/kromschroder-pilot-burner-zkih-500-100r-pilot-burner-large.jpg',
       specs: {
         "Order Number / Type": "KS84214050 · ZKIH 500/100R",
         "Manufacturer Part No.": "84214050",
@@ -5011,13 +5011,13 @@ const products = [
       description: "The Kromschröder ZKIH 500/100R (Part No. 84214050) is a genuine forced-air pilot burner used for the safe ignition of industrial gas burners in conjunction with Kromschröder's automatic burner control units (IFS/IFD or PFS/PFD). It delivers a capacity of 2 to 7 kW (up to 5 kW on natural gas) and runs on natural gas, town gas, LPG, or coke oven gas, with a 500/100 mm burner tube length and threaded connections. The burner uses direct spark ignition (via a 5 kV ignition transformer) with ionization-electrode flame monitoring, an aluminium housing, a stainless steel protective tube, and a heat-resistant steel flame tube rated up to 1000°C at the tip. Manufactured by Honeywell Kromschröder, Germany, and supplied by R.K. Instruments & Controls."
     },
     {
-      id: 'kromschroder-pilot-burner-zkih-600-100r',
+      id: 'kromschroder-pilot-burner-zkih-600-100r-pilot-burner',
       name: "Kromschröder Pilot Burner ZKIH 600/100R (84214060)",
       brand: 'Honeywell Kromschröder',
       category: 'PILOT BURNERS',
       code: 'KS84214060',
       size: "600/100 mm",
-      image: 'images/kromschroder-pilot-burner-zkih-600-100r-large.jpg',
+      image: 'images/kromschroder-pilot-burner-zkih-600-100r-pilot-burner-large.jpg',
       specs: {
         "Order Number / Type": "KS84214060 · ZKIH 600/100R",
         "Manufacturer Part No.": "84214060",
@@ -5040,14 +5040,14 @@ const products = [
       description: "The Kromschröder ZKIH 600/100R (Part No. 84214060) is a genuine forced-air pilot burner used for the safe ignition of industrial gas burners in conjunction with Kromschröder's automatic burner control units (IFS/IFD or PFS/PFD). It delivers a capacity of 2 to 7 kW (up to 5 kW on natural gas) and runs on natural gas, town gas, LPG, or coke oven gas, with a 600/100 mm burner tube length and threaded connections. The burner uses direct spark ignition (via a 5 kV ignition transformer) with ionization-electrode flame monitoring, an aluminium housing, a stainless steel protective tube, and a heat-resistant steel flame tube rated up to 1000°C at the tip. Manufactured by Honeywell Kromschröder, Germany, and supplied by R.K. Instruments & Controls."
     },
     {
-      id: 'kromschroder-ks04115308',
+      id: 'kromschroder-ks04115308-ignition-spare',
       name: "Honeywell Kromschröder Ignition & Sensing Electrode Boot Cap — Right-Angle, Interference-Suppressed (4mm, PBT)",
       brand: 'Honeywell Kromschröder',
       category: 'IGNITION SPARES',
       code: 'KS04115308',
       size: "4mm Connection · Right-Angle, Suppressed",
-      image: 'images/kromschroder-ks04115308-large.jpg',
-      imageLarge: 'images/kromschroder-ks04115308-xl.jpg',
+      image: 'images/kromschroder-ks04115308-ignition-spare-large.jpg',
+      imageLarge: 'images/kromschroder-ks04115308-ignition-spare-xl.jpg',
       specs: {
         "Component Type": "Ignition & Sensing Electrode Terminal Boot",
         "Order Number": "KS04115308",
@@ -5063,14 +5063,14 @@ const products = [
       description: "The Honeywell Kromschröder Ignition & Sensing Electrode Boot (Order No. 04115308) is a 4mm, interference-suppressed connector boot with a right-angle (90°) body, used to terminate the ignition cable onto Kromschröder's FE/FZE-series ignition and sensing electrodes fitted to industrial gas burners. Moulded in PBT (Polybutylene Terephthalate), it is a standard Kromschröder ignition-spares accessory used wherever a suppressed, angled electrode connection is required. Manufactured by Honeywell Kromschröder, Germany, and supplied by R.K. Instruments & Controls. Rated for Zone 2, IIA, IIB, T hazardous areas — certified to operate safely in low-risk explosive gas environments containing the specified gases, under a defined maximum surface temperature limit."
     },
     {
-      id: 'kromschroder-br65-ks74330401',
+      id: 'kromschroder-br65-ks74330401-ignition-spark-electrode',
       name: "Kromschröder Electrode Rod BR65 L35 (KS74330401)",
       brand: 'Honeywell Kromschröder',
       category: 'IGNITION SPARK ELECTRODES',
       code: 'KS74330401',
       size: "BR65 L35",
-      image: 'images/kromschroder-br65-ks74330401-large.jpg',
-      imageLarge: 'images/kromschroder-br65-ks74330401-xl.jpg',
+      image: 'images/kromschroder-br65-ks74330401-ignition-spark-electrode-large.jpg',
+      imageLarge: 'images/kromschroder-br65-ks74330401-ignition-spark-electrode-xl.jpg',
       specs: {
         "Order Number / Type": "KS74330401",
         "Manufacturer Part No.": "74330401",
@@ -5082,14 +5082,14 @@ const products = [
       description: "The Kromschröder KS74330401 (BR65 L35) is a genuine sparker/flame-rod type electrode used for ignition or flame sensing on Kromschröder gas burner assemblies. Manufactured by Honeywell Kromschröder, Germany, and supplied by R.K. Instruments & Controls."
     },
     {
-      id: 'kromschroder-br140-ks74330411',
+      id: 'kromschroder-br140-ks74330411-ignition-spark-electrode',
       name: "Kromschröder Electrode Rod BR140 L35, Torch Type (KS74330411)",
       brand: 'Honeywell Kromschröder',
       category: 'IGNITION SPARK ELECTRODES',
       code: 'KS74330411',
       size: "BR140 L35 · Torch Type",
-      image: 'images/kromschroder-br140-ks74330411-large.jpg',
-      imageLarge: 'images/kromschroder-br140-ks74330411-xl.jpg',
+      image: 'images/kromschroder-br140-ks74330411-ignition-spark-electrode-large.jpg',
+      imageLarge: 'images/kromschroder-br140-ks74330411-ignition-spark-electrode-xl.jpg',
       specs: {
         "Order Number / Type": "KS74330411",
         "Manufacturer Part No.": "74330411",
@@ -5104,14 +5104,14 @@ const products = [
       description: "The Kromschröder KS74330411 (BR140 L35, Torch type) is a genuine ignition electrode rod for hot-air and high-furnace-temperature burners, with a 100mm steel tube measured from the furnace mounting flange. It is compatible with Propane, Propane/Butane and Butane (with mixer) burner models such as the BIO 140HML-100/35-(53)E. Manufactured by Honeywell Kromschröder, Germany, and supplied by R.K. Instruments & Controls."
     },
     {
-      id: 'kromschroder-ks74337958',
+      id: 'kromschroder-ks74337958-ignition-spark-electrode',
       name: "Kromschröder Ignition & Sensing Electrode Rod (KS74337958)",
       brand: 'Honeywell Kromschröder',
       category: 'IGNITION SPARK ELECTRODES',
       code: 'KS74337958',
       size: "Multi-Insulator Rod",
-      image: 'images/kromschroder-ks74337958-large.jpg',
-      imageLarge: 'images/kromschroder-ks74337958-xl.jpg',
+      image: 'images/kromschroder-ks74337958-ignition-spark-electrode-large.jpg',
+      imageLarge: 'images/kromschroder-ks74337958-ignition-spark-electrode-xl.jpg',
       specs: {
         "Order Number / Type": "KS74337958",
         "Manufacturer Part No.": "74337958",
@@ -5123,13 +5123,13 @@ const products = [
       description: "The Kromschröder KS74337958 is a genuine ignition & sensing electrode rod featuring a stainless-steel shaft with three ceramic insulator segments spaced along its length, used for spark ignition and flame monitoring on industrial gas burner assemblies. Manufactured by Honeywell Kromschröder, Germany, and supplied by R.K. Instruments & Controls."
     },
     {
-      id: 'rkic-cap-connector-bakelite',
+      id: 'rkic-cap-connector-bakelite-ignition-spare',
       name: "Ignition Spark Cable Boot — 90° Bakelite Cap Connector (Black)",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARES',
       code: '90° Bakelite Cap Connector, Type D',
       size: "Ø22.8mm socket · 54.4mm height",
-      image: 'images/rkic-cap-connector-bakelite-large.jpg',
+      image: 'images/rkic-cap-connector-bakelite-ignition-spare-large.jpg',
       specs: {
         "Product Type": "Ignition Spark Cable Boot / Electrode Boot — 90° Bakelite Cap Connector",
         "Socket Outer Diameter": "22.8mm",
@@ -5147,13 +5147,13 @@ const products = [
       description: "R.K. Instruments & Controls supplies this 90-degree Bakelite Cap Connector (Black), a right-angled ignition spark cable boot / electrode cap used to terminate the ignition cable onto the spark ignition electrode on industrial gas burners. Moulded in black bakelite (phenolic resin) with a straight cable-entry arm and a right-angled socket end, it carries an internal brass spring contact (approx. 10mm dia) that clips onto the electrode terminal stud, and a bore of approx. 3.0mm through the arm for the ignition cable core. Overall socket outer diameter 22.8mm, socket height 54.4mm, arm length 36.6mm, arm diameter 14mm. A standard ignition-circuit spare used across burner and boiler ignition assemblies wherever a 90-degree spark cable boot connection is required. Rated for Zone 2, IIA, IIB, T hazardous areas — certified to operate safely in low-risk explosive gas environments containing the specified gases, under a defined maximum surface temperature limit."
     },
     {
-      id: 'rkic-cap-connector-bakelite-straight',
+      id: 'rkic-cap-connector-bakelite-straight-ignition-spare',
       name: "Ignition Spark Cable Boot — Straight Bakelite Cap Connector (Black)",
       brand: 'R.K. Instruments & Controls',
       category: 'IGNITION SPARES',
       code: 'Straight Bakelite Cap Connector, Type B',
       size: "Ø20.8mm body · 52mm length",
-      image: 'images/rkic-cap-connector-bakelite-straight-large.jpg',
+      image: 'images/rkic-cap-connector-bakelite-straight-ignition-spare-large.jpg',
       specs: {
         "Product Type": "Ignition Spark Cable Boot / Electrode Boot — Straight Bakelite Cap Connector",
         "Overall Length": "52mm",
@@ -5169,14 +5169,14 @@ const products = [
       description: "R.K. Instruments & Controls supplies this Straight Bakelite Cap Connector (Black), a straight (non-angled) ignition spark cable boot / electrode cap used to terminate the ignition cable onto the spark ignition electrode on industrial gas burners. Moulded in black bakelite (phenolic resin) with a smooth tapered body and a knurled (ribbed) grip section for a secure hand-fit, it pushes directly over the electrode terminal in a straight in-line connection — unlike the site's 90-degree angled variant. Overall length 52mm, body outer diameter 20.8mm, grip-end outer diameter 19.8mm, bore diameter 14mm. A standard ignition-circuit spare used across burner and boiler ignition assemblies wherever a straight (in-line) spark cable boot connection is required. Rated for Zone 2, IIA, IIB, T hazardous areas — certified to operate safely in low-risk explosive gas environments containing the specified gases, under a defined maximum surface temperature limit."
     },
     {
-      id: "honeywell-elster-rabo-model-range",
+      id: "honeywell-elster-rabo-model-range-gas-flow-meter",
       name: "Honeywell Elster RABO Rotary Gas Meter \u2014 Full Model Range",
       brand: "Honeywell Elster",
       category: "GAS FLOW METERS",
       subcategory: "RPD Rotary Gas Meter",
       code: "",
       size: "DN32 to DN100, PN16 (full range chart)",
-      image: "images/honeywell-elster-rabo-g40-dn50-large.jpg",
+      image: "images/honeywell-elster-rabo-g40-dn50-gas-flow-meter-large.jpg",
       specs: {
         "Series": "RABO Positive-Displacement Rotary Gas Meter",
         "Size Range": "DN32, DN40, DN50, DN80, DN100",
@@ -5187,26 +5187,26 @@ const products = [
       },
       description: "Reference chart for the Honeywell Elster RABO positive-displacement rotary gas meter series, covering every DN32 to DN100 variant at PN16 with RABO code, flow range (Qmin\u2013Qmax) and body length. RKIC currently stocks and supplies the RABO G40 DN50 CLASS150 (nameplate-verified Qmin 0.32 Nm\u00b3/hr) \u2014 enquire for other sizes in this range."
     },
-    {"id":"beru-ck4-spark-plug-connector","name":"BERU / Federal-Mogul CK4 Spark Plug Connector","brand":"R.K. Instruments & Controls","category":"IGNITION SPARES","code":"Part No. 0300005001","size":"50mm length · Ø14mm ceramic","image":"images/beru-ck4-spark-plug-connector-large.jpg","specs":{"Product Type":"Spark Plug / Ignition Connector — Straight, Unshielded Ceramic","Part Number":"0300005001","Total Length":"50mm","Maximum Ceramic Diameter":"14mm","Tip Diameter":"10mm","Compatible HT Wire Diameter":"5mm to 7mm","Terminal Connection":"H/4mm and M4 Threaded","Internal Contact":"Brass Socket Contact","Body Material":"Straight, Unshielded Ceramic (CER)","Temperature Resistance":"Up to 250°C","Suppression":"None (Unshielded)","Manufacturer":"BERU / Federal-Mogul"},"description":"R.K. Instruments & Controls supplies the BERU / Federal-Mogul CK4 Spark Plug Connector, Part No. 0300005001, a straight, unshielded ceramic ignition cable connector used to terminate the HT ignition cable onto the spark plug or ignition electrode terminal on industrial burners and boilers. The connector body is straight, unshielded ceramic (CER), rated for continuous operation up to 250°C, with an overall length of 50mm, maximum ceramic diameter of 14mm and a 10mm tip diameter. It accepts HT ignition wire of 5mm to 7mm diameter at the wire-insertion point and terminates via H/4mm and M4 threaded terminal connections onto a brass socket contact inside the ceramic body. Being unshielded (no suppression), it is suited to straightforward spark-ignition circuits on burner and boiler ignition assemblies. A standard genuine BERU / Federal-Mogul ignition spare stocked for burner service and replacement."},
-    {"id":"rkic-ceramic-cap-connector-90deg","name":"Ignition Spark Cable Boot — 90° Ceramic Cap Connector (Small & Long)","brand":"R.K. Instruments & Controls","category":"IGNITION SPARES","code":"","size":"35mm (Small) / 56mm (Long)","image":"images/rkic-ceramic-cap-connector-90deg-large.jpg","specs":{"Product Type":"Ignition Spark Cable Boot — 90° L-Shaped Ceramic Cap Connector","Coupling Electrode":"Female Rayal Ø6.35mm (Snap-On / Spring-Type)","HV Cable Connection":"Self-Threading Screw Pin into Ø7mm Silicone HV Cable","Dielectric Withstand Voltage":"Up to 20kV","Insulation Body":"Glazed Industrial Ceramic","Protection Degree":"IP10","Mounting Position":"Any Orientation","Small Variant (35mm)":"Depth 32mm (12.5mm socket) &middot; Electrode Bore Ø18/Ø13.1mm &middot; Cable Bore Ø15/Ø8mm &middot; ~30g &middot; No EMC Filter &middot; -20°C to +300°C &middot; Ignition Electrode Only","Long Variant (56mm)":"Depth 32mm (13mm socket) &middot; Electrode Bore Ø20/Ø14.5mm &middot; Cable Bore Ø15/Ø9.5mm &middot; ~48g &middot; Integrated 1kΩ EMC Suppressor &middot; -20°C to +250°C &middot; Ignition & Flame-Detection Electrodes"},"description":"R.K. Instruments & Controls supplies these 90° L-shaped ceramic cap connectors, used as ignition spark cable boots that terminate the HT ignition cable directly onto a burner's spark/flame-rod electrode terminal. Both variants share a Female Rayal Ø6.35mm snap-on spring coupling electrode, a self-threading screw-pin termination into Ø7mm silicone HT cable, glazed industrial ceramic insulation rated to 20kV dielectric withstand, IP10 protection, and mounting in any orientation. The Small (35mm) variant has a 32mm horizontal depth (12.5mm socket depth), Ø18mm/Ø13.1mm electrode bore, Ø15mm/Ø8mm cable-entry bore, weighs ~30g, has no EMC filter, is rated -20°C to +300°C, and is intended for ignition electrode coupling only. The Long (56mm) variant has a 32mm horizontal depth (13mm socket depth), Ø20mm/Ø14.5mm electrode bore, Ø15mm/Ø9.5mm cable-entry bore, weighs ~48g, carries an integrated 1kΩ ceramic suppressor resistor to attenuate ignition-spark EMI/EMC noise, is rated -20°C to +250°C, and is used for both ignition and flame-detection (ionization) electrodes — its built-in resistor helps prevent false flame signals and controller lockouts caused by spark-discharge interference. Both are high-temperature-ceramic alternatives to standard bakelite cap connectors for burner hoods running at elevated ambient temperatures."},
+    {"id":"beru-ck4-spark-plug-connector-ignition-spare","name":"BERU / Federal-Mogul CK4 Spark Plug Connector","brand":"R.K. Instruments & Controls","category":"IGNITION SPARES","code":"Part No. 0300005001","size":"50mm length · Ø14mm ceramic","image":"images/beru-ck4-spark-plug-connector-ignition-spare-large.jpg","specs":{"Product Type":"Spark Plug / Ignition Connector — Straight, Unshielded Ceramic","Part Number":"0300005001","Total Length":"50mm","Maximum Ceramic Diameter":"14mm","Tip Diameter":"10mm","Compatible HT Wire Diameter":"5mm to 7mm","Terminal Connection":"H/4mm and M4 Threaded","Internal Contact":"Brass Socket Contact","Body Material":"Straight, Unshielded Ceramic (CER)","Temperature Resistance":"Up to 250°C","Suppression":"None (Unshielded)","Manufacturer":"BERU / Federal-Mogul"},"description":"R.K. Instruments & Controls supplies the BERU / Federal-Mogul CK4 Spark Plug Connector, Part No. 0300005001, a straight, unshielded ceramic ignition cable connector used to terminate the HT ignition cable onto the spark plug or ignition electrode terminal on industrial burners and boilers. The connector body is straight, unshielded ceramic (CER), rated for continuous operation up to 250°C, with an overall length of 50mm, maximum ceramic diameter of 14mm and a 10mm tip diameter. It accepts HT ignition wire of 5mm to 7mm diameter at the wire-insertion point and terminates via H/4mm and M4 threaded terminal connections onto a brass socket contact inside the ceramic body. Being unshielded (no suppression), it is suited to straightforward spark-ignition circuits on burner and boiler ignition assemblies. A standard genuine BERU / Federal-Mogul ignition spare stocked for burner service and replacement."},
+    {"id":"rkic-ceramic-cap-connector-90deg-ignition-spare","name":"Ignition Spark Cable Boot — 90° Ceramic Cap Connector (Small & Long)","brand":"R.K. Instruments & Controls","category":"IGNITION SPARES","code":"","size":"35mm (Small) / 56mm (Long)","image":"images/rkic-ceramic-cap-connector-90deg-ignition-spare-large.jpg","specs":{"Product Type":"Ignition Spark Cable Boot — 90° L-Shaped Ceramic Cap Connector","Coupling Electrode":"Female Rayal Ø6.35mm (Snap-On / Spring-Type)","HV Cable Connection":"Self-Threading Screw Pin into Ø7mm Silicone HV Cable","Dielectric Withstand Voltage":"Up to 20kV","Insulation Body":"Glazed Industrial Ceramic","Protection Degree":"IP10","Mounting Position":"Any Orientation","Small Variant (35mm)":"Depth 32mm (12.5mm socket) &middot; Electrode Bore Ø18/Ø13.1mm &middot; Cable Bore Ø15/Ø8mm &middot; ~30g &middot; No EMC Filter &middot; -20°C to +300°C &middot; Ignition Electrode Only","Long Variant (56mm)":"Depth 32mm (13mm socket) &middot; Electrode Bore Ø20/Ø14.5mm &middot; Cable Bore Ø15/Ø9.5mm &middot; ~48g &middot; Integrated 1kΩ EMC Suppressor &middot; -20°C to +250°C &middot; Ignition & Flame-Detection Electrodes"},"description":"R.K. Instruments & Controls supplies these 90° L-shaped ceramic cap connectors, used as ignition spark cable boots that terminate the HT ignition cable directly onto a burner's spark/flame-rod electrode terminal. Both variants share a Female Rayal Ø6.35mm snap-on spring coupling electrode, a self-threading screw-pin termination into Ø7mm silicone HT cable, glazed industrial ceramic insulation rated to 20kV dielectric withstand, IP10 protection, and mounting in any orientation. The Small (35mm) variant has a 32mm horizontal depth (12.5mm socket depth), Ø18mm/Ø13.1mm electrode bore, Ø15mm/Ø8mm cable-entry bore, weighs ~30g, has no EMC filter, is rated -20°C to +300°C, and is intended for ignition electrode coupling only. The Long (56mm) variant has a 32mm horizontal depth (13mm socket depth), Ø20mm/Ø14.5mm electrode bore, Ø15mm/Ø9.5mm cable-entry bore, weighs ~48g, carries an integrated 1kΩ ceramic suppressor resistor to attenuate ignition-spark EMI/EMC noise, is rated -20°C to +250°C, and is used for both ignition and flame-detection (ionization) electrodes — its built-in resistor helps prevent false flame signals and controller lockouts caused by spark-discharge interference. Both are high-temperature-ceramic alternatives to standard bakelite cap connectors for burner hoods running at elevated ambient temperatures."},
     {"id":"rkic-flame-relay","name":"Flame Relay — Ionization / Flame Sensor Module","brand":"R.K. Instruments & Controls","category":"FLAME RELAY","code":"","size":"230V AC · 2 C/O Contacts","image":"images/rkic-flame-relay-large.jpg","specs":{"Product Type":"Ionization / Flame Sensor Flame Relay Module","Operating Voltage":"230V AC (±10%), 50Hz","Power Consumption":"~3 to 5VA","Input Sensing Type":"Flame Rod / Ionization Sensor (Rectification Principle)","Response Time":"Flame Failure Detection ≤1 to 2 Seconds","Output Contacts":"2 Potential-Free Changeover Contacts (2×SPDT / 2 C/O)","Contact Rating":"~5A at 230V AC (Resistive)","Mounting":"DIN-Rail or Panel Surface Mount","Status Indicators":"POWER (Red LED — Mains On) &middot; FLAME (Green LED — Valid Flame Signal)","Output Terminals":"Top Row: 2× NO-C-NC Potential-Free Contact Groups","Supply & Sensor Terminals":"Bottom Row: L/N Mains Input &middot; FLAME SENSOR / EARTH Sensor Input","Manufacturer":"R.K. Instruments & Controls"},"description":"R.K. Instruments & Controls manufactures this Flame Relay, an ionization / flame sensor module used for flame monitoring and supervision in industrial gas and oil burners. It detects the rectification current generated across a flame rod (ionization electrode) and provides potential-free changeover contacts for burner sequence interlocks or alarm annunciators. The unit operates on 230V AC (±10%), 50Hz, drawing approximately 3 to 5VA, and senses the flame rod / ionization sensor via the rectification principle, with flame-failure detection response typically within 1 to 2 seconds. Output is via 2 independent potential-free changeover contact sets (2×SPDT), each rated approximately 5A at 230V AC resistive — one set for burner-run status/safety-valve interlock, the second for remote PLC signalling or auxiliary interlocks. The unit is DIN-rail or panel-surface mountable, with POWER (red LED, illuminates on mains-on) and FLAME (green LED, illuminates on valid flame signal) visual status indicators on the front face. Wiring: the top terminal row carries the two NO-C-NC output contact groups; the bottom row carries L/N mains supply input and the FLAME SENSOR / EARTH sensor input, with FLAME SENSOR connecting directly to the ionization flame rod inside the combustion chamber and EARTH connecting to the burner body/chassis ground to complete the ionization rectification path."},
-    {"id": "flame-failure-monitor-ffm-5", "name": "Flame Failure Monitor — FFM-5", "brand": "R.K. Instruments & Controls", "category": "FLAME MONITORING SYSTEMS", "code": "FFM-5", "size": "230V AC, Dual-Stage Pilot/Main", "image": "images/flame-failure-monitor-ffm-5-large.jpg", "specs": {"Product Type": "Flame Failure Monitor (Flame Conduction / Ionization Type)", "Model": "FFM-5", "Flame Sensing Principle": "Flame Conduction Current via Ionization Electrode — unaffected by ambient light, radiant furnace heat or soot", "Max. Sensing Electrode Temperature": "1200°C (Continuous Operation)", "Burner Capability": "Multi-Burner Monitoring · Dual-Stage (Pilot + Main) Sequencing", "Supply Voltage": "230V AC", "Pre-Purge / Safety Delay": "3 to 5 Seconds (before Ignition & SV-1 Pilot energize)", "Ignition Period": "10 to 12 Seconds (Ignition OFF · SV-2 Main ON after this window)", "Flameout Re-Ignition Attempt": "10 Seconds, then Lock Out if flame is not re-established", "Sensor Selection": "Rear S1 / S2 Toggle Switch — Primary / Backup Flame Sensor", "Bypass Function": "Rear Toggle — Right: Normal Active Sensing · Left: Bench Test Only (never during live gas operation)", "Protection": "Dedicated Cartridge Fuse (Rear Panel)", "Reset": "Front-Panel Yellow RESET Button · External Reset Terminal Provision", "Front Panel Indicators": "POWER (Green) · IGNITION (Red) · S. VALVE 1 (Red) · FLAME (Amber) · S. VALVE 2 (Red) · LOCK OUT (Red)", "Output Contacts": "Ignition, SV-1 Pilot & SV-2 Main: COM / NO · Lock Out: COM / NC / NO (Alarm/Beacon)", "Applications": "Gas-Fired Furnaces, Boilers, Flare Chimneys, Special Atmosphere Furnaces, Industrial Gas-Fired Equipment", "Manufacturer": "R.K. Instruments & Controls"}, "description": "R.K. Instruments & Controls manufactures the FFM-5 Flame Failure Monitor, a flame-conduction (ionization) type burner safety controller for gas-fired furnaces, boilers, flare chimneys, special atmosphere furnaces and other industrial gas-fired equipment. Unlike optical/UV or infrared flame sensors, the FFM-5 senses flame by conduction current through a heavy-duty high-temperature sensing electrode rated to withstand up to 1200°C continuous operation, so it is unaffected by ambient room light, radiant furnace heat or soot accumulation. It automates a full pilot-and-main sequence: on power-up the POWER LED lights, and after a 3-5 second safety pre-delay the Ignition Transformer and Pilot Solenoid Valve (SV-1) energize together. Once flame touches the sensing rod, an ionization current confirms flame and the FLAME LED lights; ignition cuts off after 10-12 seconds while SV-1 stays energized, and 10-12 seconds later the Main Solenoid Valve (SV-2) energizes to bring the burner to full firing. If the pilot fails to establish within the 10-12 second ignition window, or flame is lost during running (with one 10-second automatic re-ignition attempt), the controller cuts all fuel valves and the ignition transformer, latches into Lock Out with its LOCK OUT LED and alarm/beacon output, and is restarted via the front-panel yellow RESET button or an external reset terminal. The rear panel carries an S1/S2 toggle to select the primary or backup flame sensor, a BYPASS toggle for offline bench-testing only (must remain in the Right/Normal position whenever gas lines are live), a dedicated protection fuse, and full terminal blocks for 230VAC supply, both flame sensor inputs, Ignition, SV-1 Pilot, SV-2 Main and Lock Out outputs, plus an auxiliary Main SV2 Extra contact. Suitable for multi-burner installations and dual-stage pilot/main firing sequences."},
-    {"id":"rkic-spark-ignition-electrode-200mm","name":"Industrial Spark Ignition Electrode Assembly, 200mm","brand":"R.K. Instruments & Controls","category":"IGNITION ELECTRODES","code":"","size":"200mm length · Ø13.3mm insulator","image":"images/rkic-spark-ignition-electrode-200mm-large.jpg","specs":{"Product Type":"Industrial Spark Plug / Ignition Electrode Assembly","Total Length":"20.0cm (200mm)","Mounting Body & Upper Plug Length":"85.6mm","Upper Ceramic Insulator Diameter":"13.3mm","Lower Insulator Neck Diameter":"7.5mm (Below Threaded Section)","Front Ceramic Sleeve Length":"4.9cm (49mm)","Front Ceramic Sleeve Diameter":"10.6mm","Mounting / Fitting":"Threaded Hex Bushing — Direct Mounting/Sealing into Burner/Flange","Terminal":"Standard Threaded/Snap Terminal Top for HT Cable Connector","Tip Configuration":"Disc-Style Electrode Contact Tip","Material of Construction":"High-Alumina Ceramic Insulators with Stainless Steel/Metallic Rod, Hex Body & Terminal"},"description":"R.K. Instruments & Controls stocks this Industrial Spark Plug / Ignition Electrode Assembly, a threaded, hex-bodied ignition electrode built for direct mounting and sealing into a burner or flange via its hex bushing, unlike the site's bare ceramic-rod custom and ZE-series electrodes. The assembly has an overall length of 20.0cm (200mm), with the mounting body and upper plug section measuring 85.6mm, an upper ceramic insulator diameter of 13.3mm and a lower insulator-neck diameter of 7.5mm below the threaded section. The front ceramic sleeve, which houses the exposed electrode tip, measures 4.9cm (49mm) in length with a 10.6mm diameter. The top terminal is a standard threaded/snap fitting for the HT ignition cable connector, and the electrode contacts via a disc-style tip configuration. Construction is high-alumina ceramic insulators over a stainless steel/metallic rod, with a metal hex body and terminal for direct threaded installation — a robust, self-contained spark-plug-style ignition electrode for burner and boiler applications where a threaded mounting (rather than a loose ceramic rod) is required."},
-    {"id":"rkic-uv-flame-sensor-probe","name":"UV Flame Sensor — Ultraviolet Flame Detector Scanner Probe","brand":"R.K. Instruments & Controls","category":"UV FLAME DETECTORS","code":"","size":"190-290nm Solar-Blind UV","image":"images/rkic-uv-flame-sensor-probe-large.jpg","specs":{"Device Type":"Ultraviolet (UV) Flame Phototube Scanner / Optical Flame Detector Probe","Sensing Element":"Gas-Filled UV Phototube / UVtron Sensor (Side Quartz Viewing Window)","Viewing Orientation":"Side-Viewing / Radial Optical Window","Housing Material":"Stainless Steel / Aluminium Alloy Cylindrical Body","Mounting / Fitting":"Integrated Flange, Knurled Locking Collar & Threaded Gland Fitting for Sight-Tube Mounting","Cable Connection":"2-Core Heat-Resistant Shielded Industrial Cable, Sealed Rear Gland Entry","Lead Terminations":"Pre-Stripped 2-Wire Leads (Red / Black)","Spectral Sensitivity Range":"190nm to 290nm (Solar-Blind UV)","Application":"Flame Monitoring & Safeguard — Industrial Gas, Light Oil & Dual-Fuel Burners / Gas Trains","Ambient Operating Temperature":"-20°C to +70°C"},"description":"R.K. Instruments & Controls supplies this UV Flame Sensor, an ultraviolet (UV) flame phototube scanner / optical flame detector probe used for flame monitoring and safeguard on industrial gas, light oil and dual-fuel burners and gas-train combustion systems. The sensing element is a gas-filled UV phototube (UVtron-type sensor), visible through a side-viewing quartz window, giving a radial optical field of view suited to side-mounted sight-tube installation. The housing is a stainless steel / aluminium-alloy cylindrical body with an integrated mounting flange, knurled locking collar and threaded gland fitting for secure burner sight-tube mounting. Cable connection is via a 2-core heat-resistant shielded industrial cable with a sealed rear cable-gland entry, terminating in pre-stripped 2-wire leads (Red/Black). Spectral sensitivity spans 190nm to 290nm — the solar-blind UV spectrum — so the sensor responds to genuine flame UV emission while remaining unaffected by daylight or hot refractory glow, preventing false flame signals. Ambient operating temperature range is -20°C to +70°C, standard industrial rating, suited to continuous flame-safeguard duty across gas, oil and dual-fuel burner installations."},
-    {"id":"dungs-gw150a6","name":"Dungs GW 150 A6 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 150 A6","size":"5 – 150 mbar adjustable range","image":"images/dungs-gw150a6-large.jpg","specs":{"Model":"GW 150 A6","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"5 – 150 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Push-on blade (spade) terminals","Protection Rating":"IP54","ID No.":"CE-0085A03220-15T70 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 150 A6 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 150 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-gw500a6","name":"Dungs GW 500 A6 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 500 A6","size":"100 – 500 mbar adjustable range","image":"images/dungs-gw500a6-large.jpg","specs":{"Model":"GW 500 A6","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"100 – 500 mbar","Maximum Pressure (Pmax)":"600 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Push-on blade (spade) terminals","Protection Rating":"IP54","ID No.":"CE-0085A03220-15T70 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 500 A6 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 100 to 500 mbar and a maximum working pressure of 600 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-gw50a5","name":"Dungs GW 50 A5 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 50 A5","size":"5 – 50 mbar adjustable range","image":"images/dungs-gw50a5-large.jpg","specs":{"Model":"GW 50 A5","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"5 – 50 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Blade (spade) pin terminals","Protection Rating":"IP54","ID No.":"CE-0036 012319 -15T70 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 50 A5 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 50 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-gw150a5","name":"Dungs GW 150 A5 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 150 A5","size":"5 – 150 mbar adjustable range","image":"images/dungs-gw150a5-large.jpg","specs":{"Model":"GW 150 A5","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"5 – 150 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Blade (spade) pin terminals","Protection Rating":"IP54","ID No.":"CE-0036 012319 -15T70 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 150 A5 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 150 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-gw500a5","name":"Dungs GW 500 A5 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 500 A5","size":"100 – 500 mbar adjustable range","image":"images/dungs-gw500a5-large.jpg","specs":{"Model":"GW 500 A5","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"100 – 500 mbar","Maximum Pressure (Pmax)":"600 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Blade (spade) pin terminals","Protection Rating":"IP54","ID No.":"CE-0085A03220-15T70 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 500 A5 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 100 to 500 mbar and a maximum working pressure of 600 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-gw50a2","name":"Dungs GW 50 A2 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 50 A2","size":"2.5 – 50 mbar adjustable range","image":"images/dungs-gw50a2-large.jpg","specs":{"Model":"GW 50 A2","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"2.5 – 50 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Screw terminal (wired compartment)","Protection Rating":"IP54","ID No.":"CE-0085 AO3220, TÜ 12/94 0164 'S' -15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 50 A2 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 2.5 to 50 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-gw150a2","name":"Dungs GW 150 A2 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 150 A2","size":"5 – 150 mbar adjustable range","image":"images/dungs-gw150a2-large.jpg","specs":{"Model":"GW 150 A2","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"5 – 150 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Screw terminal (enclosed box)","Protection Rating":"IP54","ID No.":"CE-0085 AO3220, TÜ 12/94 0164 'S' -15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 150 A2 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 150 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-lgw3a2","name":"Dungs LGW 3 A2 Air Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"LGW 3 A2","size":"0.4 – 3.0 mbar adjustable range","image":"images/dungs-lgw3a2-large.jpg","specs":{"Model":"LGW 3 A2","Type":"Air (Low Pressure) Pressure Switch (adjustable)","Adjustable Setting Range":"0.4 – 3.0 mbar","Maximum Pressure (Pmax)":"500 mbar (Air)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Screw terminal","Protection Rating":"IP54","ID No.":"CE-0085 AQ0673, TÜ 12/94 0162 'S' -15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs LGW 3 A2 is a compact air pressure switch used to monitor and signal pressure conditions in air control lines, with a dial-set adjustable range of 0.4 to 3.0 mbar and a maximum working pressure of 500 mbar (Air). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-lgw3a2p","name":"Dungs LGW 3 A2 P Air Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"LGW 3 A2 P","size":"0.4 – 3.0 mbar adjustable range","image":"images/dungs-lgw3a2p-large.jpg","specs":{"Model":"LGW 3 A2 P","Type":"Air (Low Pressure) Pressure Switch (adjustable)","Adjustable Setting Range":"0.4 – 3.0 mbar","Maximum Pressure (Pmax)":"500 mbar (Air)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Plug connector (P variant)","Protection Rating":"IP54","ID No.":"CE-0085 AQ0673 -15170 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs LGW 3 A2 P is a compact air pressure switch used to monitor and signal pressure conditions in air control lines, with a dial-set adjustable range of 0.4 to 3.0 mbar and a maximum working pressure of 500 mbar (Air). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-lgw50a2p","name":"Dungs LGW 50 A2 P Air Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"LGW 50 A2 P","size":"2.5 – 50 mbar adjustable range","image":"images/dungs-lgw50a2p-large.jpg","specs":{"Model":"LGW 50 A2 P","Type":"Air (Low Pressure) Pressure Switch (adjustable)","Adjustable Setting Range":"2.5 – 50 mbar","Maximum Pressure (Pmax)":"500 mbar (Air)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Plug connector (P variant)","Protection Rating":"IP54","ID No.":"CE-0085 AQ0673, TÜ 12/94 0163 'S' -15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs LGW 50 A2 P is a compact air pressure switch used to monitor and signal pressure conditions in air control lines, with a dial-set adjustable range of 2.5 to 50 mbar and a maximum working pressure of 500 mbar (Air). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-lgw50a2","name":"Dungs LGW 50 A2 Air Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"LGW 50 A2","size":"2.5 – 50 mbar adjustable range","image":"images/dungs-lgw50a2-large.jpg","specs":{"Model":"LGW 50 A2","Type":"Air (Low Pressure) Pressure Switch (adjustable)","Adjustable Setting Range":"2.5 – 50 mbar","Maximum Pressure (Pmax)":"500 mbar (Air)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Screw terminal, cable gland","Protection Rating":"IP54","ID No.":"CE-0085 AQ0673, TÜ 12/94 0162 'S' -15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs LGW 50 A2 is a compact air pressure switch used to monitor and signal pressure conditions in air control lines, with a dial-set adjustable range of 2.5 to 50 mbar and a maximum working pressure of 500 mbar (Air). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-lgw50a2-pa","name":"Dungs LGW 50 A2 (Pa-scale) Air Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"LGW 50 A2 (Pa-scale)","size":"250 – 5000 Pa (= 2.5 – 50 mbar) adjustable range","image":"images/dungs-lgw50a2-pa-large.jpg","specs":{"Model":"LGW 50 A2 (Pa-scale)","Type":"Air (Low Pressure) Pressure Switch (adjustable)","Adjustable Setting Range":"250 – 5000 Pa (= 2.5 – 50 mbar)","Maximum Pressure (Pmax)":"±50 kPa (Air)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Screw terminal, cable gland","Protection Rating":"IP54","ID No.":"CE 0036 'S' (Pa-calibrated dial variant)","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs LGW 50 A2 (Pa-scale) is a compact air pressure switch used to monitor and signal pressure conditions in air control lines, with a dial-set adjustable range of 250 to 5000 Pa (= 2.5 to 50 mbar) and a maximum working pressure of ±50 kPa (Air). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"dungs-gw50a6","name":"Dungs GW 50 A6 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 50 A6","size":"5 – 50 mbar adjustable range","image":"images/dungs-gw50a6-large.jpg","specs":{"Model":"GW 50 A6","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"5 – 50 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Push-on blade (spade) terminal","Protection Rating":"IP54","ID No.":"CE-0085A05200-15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 50 A6 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 50 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
-    {"id":"brahma-t11-m","name":"Brahma Ignition Transformer T11/M","brand":"Brahma","category":"IGNITION TRANSFORMERS","subcategory":"Brahma","code":"15093051","size":"220-230V, 50Hz","image":"images/brahma-t11-m-large.jpg","specs":{"Type":"T11/M","Product Code":"15093051","Primary":"220-230V, 1.1A, 50Hz","Secondary Voltage":"1 x 9000V Amplitude","Output RMS Current":"20 mA","Duty Cycle":"33% ED (3 min. cycle)","Thermal Marking":"T35E","Poles":"1 (single output)","Consumption":"~240 VA","Operating Temperature":"-10°C to 35°C","Max Weight":"2 kg","Mounting":"/M variant (standard M-fixing mounting)","Compliance":"CE Marked"},"description":"The Brahma T11/M is an induction ignition transformer for gas and oil burners, stepping up a 220-230V, 1.1A, 50Hz primary supply to a 9kV amplitude secondary voltage at 20mA RMS output current for firing a single ignition electrode. It has a 33% duty cycle over a 3-minute cycle (intermittent-spark duty, not for continuous operation, unlike the 100%-ED T13/T17 series), and operates within -10°C to 35°C ambient. The \"/M\" suffix denotes the standard M-fixing mounting variant of the base T11 transformer. Manufactured by Brahma, Italy and CE marked, it weighs under 2kg and is sized to a compact 98x98x80mm footprint for burner ignition duty."},{"id": "rkic-ss-braided-flexible-hose-pipe", "name": "Stainless Steel SS Braided Flexible Hose Pipe", "brand": "R.K. Instruments & Controls", "category": "HOSE PIPE FITTINGS", "code": "", "size": "1/4\" To 12\"", "image": "images/rkic-ss-braided-flexible-hose-pipe-large.jpg", "specs": {"Product Type": "Annular Corrugated, Metallic Wire-Braided Flexible Hose Pipe", "Size Range": "1/4\" To 12\"", "Material of Construction": "SS 304, SS 321, SS 316, SS 316L", "Standard": "Manufactured as per BS 6501, Part –1", "Length": "Any length available — custom lengths on request", "Function": "Absorbs high-frequency, low-amplitude vibration & reduces structure-borne pipeline noise", "Compensation": "Compensates for installation misalignment between connected units", "Applications": "Gas, Air & Water Installations · Fuel Pipes · Flexible Element for Press Connections", "Suitable For": "Locations without fixed mounting points", "Manufacturer": "R.K. Instruments & Controls"}, "description": "R.K. Instruments & Controls supplies the Stainless Steel SS Braided Flexible Hose Pipe, an annular corrugated, metallic wire-braided flexible hose designed for stress-free flexible connections between pipes, valves and equipment. Manufactured in SS 304, SS 321, SS 316 or SS 316L as per BS 6501, Part –1, and available in sizes from 1/4\" to 12\" in any custom length, it absorbs high-frequency, low-amplitude vibration — such as on fuel pipes — reduces structure-borne pipeline noise, and compensates for misalignment between connected units. The hose prevents vibration transmission across gas, air & water installations, can serve as a flexible element on press connections, and suits locations where fixed mounting points are not available."}, {
+    {"id": "flame-failure-monitor-ffm-5-flame-monitoring-system", "name": "Flame Failure Monitor — FFM-5", "brand": "R.K. Instruments & Controls", "category": "FLAME MONITORING SYSTEMS", "code": "FFM-5", "size": "230V AC, Dual-Stage Pilot/Main", "image": "images/flame-failure-monitor-ffm-5-flame-monitoring-system-large.jpg", "specs": {"Product Type": "Flame Failure Monitor (Flame Conduction / Ionization Type)", "Model": "FFM-5", "Flame Sensing Principle": "Flame Conduction Current via Ionization Electrode — unaffected by ambient light, radiant furnace heat or soot", "Max. Sensing Electrode Temperature": "1200°C (Continuous Operation)", "Burner Capability": "Multi-Burner Monitoring · Dual-Stage (Pilot + Main) Sequencing", "Supply Voltage": "230V AC", "Pre-Purge / Safety Delay": "3 to 5 Seconds (before Ignition & SV-1 Pilot energize)", "Ignition Period": "10 to 12 Seconds (Ignition OFF · SV-2 Main ON after this window)", "Flameout Re-Ignition Attempt": "10 Seconds, then Lock Out if flame is not re-established", "Sensor Selection": "Rear S1 / S2 Toggle Switch — Primary / Backup Flame Sensor", "Bypass Function": "Rear Toggle — Right: Normal Active Sensing · Left: Bench Test Only (never during live gas operation)", "Protection": "Dedicated Cartridge Fuse (Rear Panel)", "Reset": "Front-Panel Yellow RESET Button · External Reset Terminal Provision", "Front Panel Indicators": "POWER (Green) · IGNITION (Red) · S. VALVE 1 (Red) · FLAME (Amber) · S. VALVE 2 (Red) · LOCK OUT (Red)", "Output Contacts": "Ignition, SV-1 Pilot & SV-2 Main: COM / NO · Lock Out: COM / NC / NO (Alarm/Beacon)", "Applications": "Gas-Fired Furnaces, Boilers, Flare Chimneys, Special Atmosphere Furnaces, Industrial Gas-Fired Equipment", "Manufacturer": "R.K. Instruments & Controls"}, "description": "R.K. Instruments & Controls manufactures the FFM-5 Flame Failure Monitor, a flame-conduction (ionization) type burner safety controller for gas-fired furnaces, boilers, flare chimneys, special atmosphere furnaces and other industrial gas-fired equipment. Unlike optical/UV or infrared flame sensors, the FFM-5 senses flame by conduction current through a heavy-duty high-temperature sensing electrode rated to withstand up to 1200°C continuous operation, so it is unaffected by ambient room light, radiant furnace heat or soot accumulation. It automates a full pilot-and-main sequence: on power-up the POWER LED lights, and after a 3-5 second safety pre-delay the Ignition Transformer and Pilot Solenoid Valve (SV-1) energize together. Once flame touches the sensing rod, an ionization current confirms flame and the FLAME LED lights; ignition cuts off after 10-12 seconds while SV-1 stays energized, and 10-12 seconds later the Main Solenoid Valve (SV-2) energizes to bring the burner to full firing. If the pilot fails to establish within the 10-12 second ignition window, or flame is lost during running (with one 10-second automatic re-ignition attempt), the controller cuts all fuel valves and the ignition transformer, latches into Lock Out with its LOCK OUT LED and alarm/beacon output, and is restarted via the front-panel yellow RESET button or an external reset terminal. The rear panel carries an S1/S2 toggle to select the primary or backup flame sensor, a BYPASS toggle for offline bench-testing only (must remain in the Right/Normal position whenever gas lines are live), a dedicated protection fuse, and full terminal blocks for 230VAC supply, both flame sensor inputs, Ignition, SV-1 Pilot, SV-2 Main and Lock Out outputs, plus an auxiliary Main SV2 Extra contact. Suitable for multi-burner installations and dual-stage pilot/main firing sequences."},
+    {"id":"rkic-spark-ignition-electrode-200mm-ignition-electrode","name":"Industrial Spark Ignition Electrode Assembly, 200mm","brand":"R.K. Instruments & Controls","category":"IGNITION ELECTRODES","code":"","size":"200mm length · Ø13.3mm insulator","image":"images/rkic-spark-ignition-electrode-200mm-ignition-electrode-large.jpg","specs":{"Product Type":"Industrial Spark Plug / Ignition Electrode Assembly","Total Length":"20.0cm (200mm)","Mounting Body & Upper Plug Length":"85.6mm","Upper Ceramic Insulator Diameter":"13.3mm","Lower Insulator Neck Diameter":"7.5mm (Below Threaded Section)","Front Ceramic Sleeve Length":"4.9cm (49mm)","Front Ceramic Sleeve Diameter":"10.6mm","Mounting / Fitting":"Threaded Hex Bushing — Direct Mounting/Sealing into Burner/Flange","Terminal":"Standard Threaded/Snap Terminal Top for HT Cable Connector","Tip Configuration":"Disc-Style Electrode Contact Tip","Material of Construction":"High-Alumina Ceramic Insulators with Stainless Steel/Metallic Rod, Hex Body & Terminal"},"description":"R.K. Instruments & Controls stocks this Industrial Spark Plug / Ignition Electrode Assembly, a threaded, hex-bodied ignition electrode built for direct mounting and sealing into a burner or flange via its hex bushing, unlike the site's bare ceramic-rod custom and ZE-series electrodes. The assembly has an overall length of 20.0cm (200mm), with the mounting body and upper plug section measuring 85.6mm, an upper ceramic insulator diameter of 13.3mm and a lower insulator-neck diameter of 7.5mm below the threaded section. The front ceramic sleeve, which houses the exposed electrode tip, measures 4.9cm (49mm) in length with a 10.6mm diameter. The top terminal is a standard threaded/snap fitting for the HT ignition cable connector, and the electrode contacts via a disc-style tip configuration. Construction is high-alumina ceramic insulators over a stainless steel/metallic rod, with a metal hex body and terminal for direct threaded installation — a robust, self-contained spark-plug-style ignition electrode for burner and boiler applications where a threaded mounting (rather than a loose ceramic rod) is required."},
+    {"id":"rkic-uv-flame-sensor-probe-uv-flame-detector","name":"UV Flame Sensor — Ultraviolet Flame Detector Scanner Probe","brand":"R.K. Instruments & Controls","category":"UV FLAME DETECTORS","code":"","size":"190-290nm Solar-Blind UV","image":"images/rkic-uv-flame-sensor-probe-uv-flame-detector-large.jpg","specs":{"Device Type":"Ultraviolet (UV) Flame Phototube Scanner / Optical Flame Detector Probe","Sensing Element":"Gas-Filled UV Phototube / UVtron Sensor (Side Quartz Viewing Window)","Viewing Orientation":"Side-Viewing / Radial Optical Window","Housing Material":"Stainless Steel / Aluminium Alloy Cylindrical Body","Mounting / Fitting":"Integrated Flange, Knurled Locking Collar & Threaded Gland Fitting for Sight-Tube Mounting","Cable Connection":"2-Core Heat-Resistant Shielded Industrial Cable, Sealed Rear Gland Entry","Lead Terminations":"Pre-Stripped 2-Wire Leads (Red / Black)","Spectral Sensitivity Range":"190nm to 290nm (Solar-Blind UV)","Application":"Flame Monitoring & Safeguard — Industrial Gas, Light Oil & Dual-Fuel Burners / Gas Trains","Ambient Operating Temperature":"-20°C to +70°C"},"description":"R.K. Instruments & Controls supplies this UV Flame Sensor, an ultraviolet (UV) flame phototube scanner / optical flame detector probe used for flame monitoring and safeguard on industrial gas, light oil and dual-fuel burners and gas-train combustion systems. The sensing element is a gas-filled UV phototube (UVtron-type sensor), visible through a side-viewing quartz window, giving a radial optical field of view suited to side-mounted sight-tube installation. The housing is a stainless steel / aluminium-alloy cylindrical body with an integrated mounting flange, knurled locking collar and threaded gland fitting for secure burner sight-tube mounting. Cable connection is via a 2-core heat-resistant shielded industrial cable with a sealed rear cable-gland entry, terminating in pre-stripped 2-wire leads (Red/Black). Spectral sensitivity spans 190nm to 290nm — the solar-blind UV spectrum — so the sensor responds to genuine flame UV emission while remaining unaffected by daylight or hot refractory glow, preventing false flame signals. Ambient operating temperature range is -20°C to +70°C, standard industrial rating, suited to continuous flame-safeguard duty across gas, oil and dual-fuel burner installations."},
+    {"id":"dungs-gw150a6-pressure-switch","name":"Dungs GW 150 A6 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 150 A6","size":"5 – 150 mbar adjustable range","image":"images/dungs-gw150a6-pressure-switch-large.jpg","specs":{"Model":"GW 150 A6","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"5 – 150 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Push-on blade (spade) terminals","Protection Rating":"IP54","ID No.":"CE-0085A03220-15T70 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 150 A6 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 150 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-gw500a6-pressure-switch","name":"Dungs GW 500 A6 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 500 A6","size":"100 – 500 mbar adjustable range","image":"images/dungs-gw500a6-pressure-switch-large.jpg","specs":{"Model":"GW 500 A6","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"100 – 500 mbar","Maximum Pressure (Pmax)":"600 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Push-on blade (spade) terminals","Protection Rating":"IP54","ID No.":"CE-0085A03220-15T70 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 500 A6 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 100 to 500 mbar and a maximum working pressure of 600 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-gw50a5-pressure-switch","name":"Dungs GW 50 A5 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 50 A5","size":"5 – 50 mbar adjustable range","image":"images/dungs-gw50a5-pressure-switch-large.jpg","specs":{"Model":"GW 50 A5","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"5 – 50 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Blade (spade) pin terminals","Protection Rating":"IP54","ID No.":"CE-0036 012319 -15T70 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 50 A5 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 50 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-gw150a5-pressure-switch","name":"Dungs GW 150 A5 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 150 A5","size":"5 – 150 mbar adjustable range","image":"images/dungs-gw150a5-pressure-switch-large.jpg","specs":{"Model":"GW 150 A5","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"5 – 150 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Blade (spade) pin terminals","Protection Rating":"IP54","ID No.":"CE-0036 012319 -15T70 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 150 A5 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 150 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-gw500a5-pressure-switch","name":"Dungs GW 500 A5 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 500 A5","size":"100 – 500 mbar adjustable range","image":"images/dungs-gw500a5-pressure-switch-large.jpg","specs":{"Model":"GW 500 A5","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"100 – 500 mbar","Maximum Pressure (Pmax)":"600 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Blade (spade) pin terminals","Protection Rating":"IP54","ID No.":"CE-0085A03220-15T70 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 500 A5 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 100 to 500 mbar and a maximum working pressure of 600 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-gw50a2-pressure-switch","name":"Dungs GW 50 A2 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 50 A2","size":"2.5 – 50 mbar adjustable range","image":"images/dungs-gw50a2-pressure-switch-large.jpg","specs":{"Model":"GW 50 A2","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"2.5 – 50 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Screw terminal (wired compartment)","Protection Rating":"IP54","ID No.":"CE-0085 AO3220, TÜ 12/94 0164 'S' -15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 50 A2 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 2.5 to 50 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-gw150a2-pressure-switch","name":"Dungs GW 150 A2 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 150 A2","size":"5 – 150 mbar adjustable range","image":"images/dungs-gw150a2-pressure-switch-large.jpg","specs":{"Model":"GW 150 A2","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"5 – 150 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Screw terminal (enclosed box)","Protection Rating":"IP54","ID No.":"CE-0085 AO3220, TÜ 12/94 0164 'S' -15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 150 A2 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 150 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-lgw3a2-pressure-switch","name":"Dungs LGW 3 A2 Air Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"LGW 3 A2","size":"0.4 – 3.0 mbar adjustable range","image":"images/dungs-lgw3a2-pressure-switch-large.jpg","specs":{"Model":"LGW 3 A2","Type":"Air (Low Pressure) Pressure Switch (adjustable)","Adjustable Setting Range":"0.4 – 3.0 mbar","Maximum Pressure (Pmax)":"500 mbar (Air)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Screw terminal","Protection Rating":"IP54","ID No.":"CE-0085 AQ0673, TÜ 12/94 0162 'S' -15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs LGW 3 A2 is a compact air pressure switch used to monitor and signal pressure conditions in air control lines, with a dial-set adjustable range of 0.4 to 3.0 mbar and a maximum working pressure of 500 mbar (Air). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-lgw3a2p-pressure-switch","name":"Dungs LGW 3 A2 P Air Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"LGW 3 A2 P","size":"0.4 – 3.0 mbar adjustable range","image":"images/dungs-lgw3a2p-pressure-switch-large.jpg","specs":{"Model":"LGW 3 A2 P","Type":"Air (Low Pressure) Pressure Switch (adjustable)","Adjustable Setting Range":"0.4 – 3.0 mbar","Maximum Pressure (Pmax)":"500 mbar (Air)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Plug connector (P variant)","Protection Rating":"IP54","ID No.":"CE-0085 AQ0673 -15170 'S'","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs LGW 3 A2 P is a compact air pressure switch used to monitor and signal pressure conditions in air control lines, with a dial-set adjustable range of 0.4 to 3.0 mbar and a maximum working pressure of 500 mbar (Air). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-lgw50a2p-pressure-switch","name":"Dungs LGW 50 A2 P Air Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"LGW 50 A2 P","size":"2.5 – 50 mbar adjustable range","image":"images/dungs-lgw50a2p-pressure-switch-large.jpg","specs":{"Model":"LGW 50 A2 P","Type":"Air (Low Pressure) Pressure Switch (adjustable)","Adjustable Setting Range":"2.5 – 50 mbar","Maximum Pressure (Pmax)":"500 mbar (Air)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Plug connector (P variant)","Protection Rating":"IP54","ID No.":"CE-0085 AQ0673, TÜ 12/94 0163 'S' -15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs LGW 50 A2 P is a compact air pressure switch used to monitor and signal pressure conditions in air control lines, with a dial-set adjustable range of 2.5 to 50 mbar and a maximum working pressure of 500 mbar (Air). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-lgw50a2-pressure-switch","name":"Dungs LGW 50 A2 Air Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"LGW 50 A2","size":"2.5 – 50 mbar adjustable range","image":"images/dungs-lgw50a2-pressure-switch-large.jpg","specs":{"Model":"LGW 50 A2","Type":"Air (Low Pressure) Pressure Switch (adjustable)","Adjustable Setting Range":"2.5 – 50 mbar","Maximum Pressure (Pmax)":"500 mbar (Air)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Screw terminal, cable gland","Protection Rating":"IP54","ID No.":"CE-0085 AQ0673, TÜ 12/94 0162 'S' -15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs LGW 50 A2 is a compact air pressure switch used to monitor and signal pressure conditions in air control lines, with a dial-set adjustable range of 2.5 to 50 mbar and a maximum working pressure of 500 mbar (Air). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-lgw50a2-pa-pressure-switch","name":"Dungs LGW 50 A2 (Pa-scale) Air Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"LGW 50 A2 (Pa-scale)","size":"250 – 5000 Pa (= 2.5 – 50 mbar) adjustable range","image":"images/dungs-lgw50a2-pa-pressure-switch-large.jpg","specs":{"Model":"LGW 50 A2 (Pa-scale)","Type":"Air (Low Pressure) Pressure Switch (adjustable)","Adjustable Setting Range":"250 – 5000 Pa (= 2.5 – 50 mbar)","Maximum Pressure (Pmax)":"±50 kPa (Air)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Screw terminal, cable gland","Protection Rating":"IP54","ID No.":"CE 0036 'S' (Pa-calibrated dial variant)","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs LGW 50 A2 (Pa-scale) is a compact air pressure switch used to monitor and signal pressure conditions in air control lines, with a dial-set adjustable range of 250 to 5000 Pa (= 2.5 to 50 mbar) and a maximum working pressure of ±50 kPa (Air). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"dungs-gw50a6-pressure-switch","name":"Dungs GW 50 A6 Gas Pressure Switch","brand":"Dungs","category":"PRESSURE SWITCHES","code":"GW 50 A6","size":"5 – 50 mbar adjustable range","image":"images/dungs-gw50a6-pressure-switch-large.jpg","specs":{"Model":"GW 50 A6","Type":"Gas Pressure Switch (adjustable)","Adjustable Setting Range":"5 – 50 mbar","Maximum Pressure (Pmax)":"500 mbar (Gas)","Electrical Rating":"10A, 250VAC, 50/60Hz","Electrical Connection":"Push-on blade (spade) terminal","Protection Rating":"IP54","ID No.":"CE-0085A05200-15T70","Certification":"CE 0036","Manufacturer":"Dungs GmbH & Co. KG, Germany","Country of Origin":"Germany"},"description":"The Dungs GW 50 A6 is a compact gas pressure switch used to monitor and signal pressure conditions in gas control lines, with a dial-set adjustable range of 5 to 50 mbar and a maximum working pressure of 500 mbar (Gas). It is rated 10A, 250VAC, 50/60Hz, carries an IP54 protection rating, and is CE certified (CE 0036). Manufactured by Dungs, Germany."},
+    {"id":"brahma-t11-m-ignition-transformer","name":"Brahma Ignition Transformer T11/M","brand":"Brahma","category":"IGNITION TRANSFORMERS","subcategory":"Brahma","code":"15093051","size":"220-230V, 50Hz","image":"images/brahma-t11-m-ignition-transformer-large.jpg","specs":{"Type":"T11/M","Product Code":"15093051","Primary":"220-230V, 1.1A, 50Hz","Secondary Voltage":"1 x 9000V Amplitude","Output RMS Current":"20 mA","Duty Cycle":"33% ED (3 min. cycle)","Thermal Marking":"T35E","Poles":"1 (single output)","Consumption":"~240 VA","Operating Temperature":"-10°C to 35°C","Max Weight":"2 kg","Mounting":"/M variant (standard M-fixing mounting)","Compliance":"CE Marked"},"description":"The Brahma T11/M is an induction ignition transformer for gas and oil burners, stepping up a 220-230V, 1.1A, 50Hz primary supply to a 9kV amplitude secondary voltage at 20mA RMS output current for firing a single ignition electrode. It has a 33% duty cycle over a 3-minute cycle (intermittent-spark duty, not for continuous operation, unlike the 100%-ED T13/T17 series), and operates within -10°C to 35°C ambient. The \"/M\" suffix denotes the standard M-fixing mounting variant of the base T11 transformer. Manufactured by Brahma, Italy and CE marked, it weighs under 2kg and is sized to a compact 98x98x80mm footprint for burner ignition duty."},{"id": "rkic-ss-braided-flexible-hose-pipe-hose-pipe-fitting", "name": "Stainless Steel SS Braided Flexible Hose Pipe", "brand": "R.K. Instruments & Controls", "category": "HOSE PIPE FITTINGS", "code": "", "size": "1/4\" To 12\"", "image": "images/rkic-ss-braided-flexible-hose-pipe-hose-pipe-fitting-large.jpg", "specs": {"Product Type": "Annular Corrugated, Metallic Wire-Braided Flexible Hose Pipe", "Size Range": "1/4\" To 12\"", "Material of Construction": "SS 304, SS 321, SS 316, SS 316L", "Standard": "Manufactured as per BS 6501, Part –1", "Length": "Any length available — custom lengths on request", "Function": "Absorbs high-frequency, low-amplitude vibration & reduces structure-borne pipeline noise", "Compensation": "Compensates for installation misalignment between connected units", "Applications": "Gas, Air & Water Installations · Fuel Pipes · Flexible Element for Press Connections", "Suitable For": "Locations without fixed mounting points", "Manufacturer": "R.K. Instruments & Controls"}, "description": "R.K. Instruments & Controls supplies the Stainless Steel SS Braided Flexible Hose Pipe, an annular corrugated, metallic wire-braided flexible hose designed for stress-free flexible connections between pipes, valves and equipment. Manufactured in SS 304, SS 321, SS 316 or SS 316L as per BS 6501, Part –1, and available in sizes from 1/4\" to 12\" in any custom length, it absorbs high-frequency, low-amplitude vibration — such as on fuel pipes — reduces structure-borne pipeline noise, and compensates for misalignment between connected units. The hose prevents vibration transmission across gas, air & water installations, can serve as a flexible element on press connections, and suits locations where fixed mounting points are not available."}, {
     id: 'rkic-silicon-carbide-tube',
     name: "Silicon Carbide (SiC) Tubes — Custom Shapes for Flame & Thermal Protection",
     brand: 'R.K. Instruments & Controls',
@@ -5229,14 +5229,14 @@ const products = [
     description: "R.K. Instruments & Controls supplies Silicon Carbide (SiC) ceramic tubes for demanding high-temperature and corrosive-duty applications. SiC is a near-diamond-hard technical ceramic (Mohs 9-9.5) with high thermal conductivity and strong thermal-shock resistance, offered in three industrial grades: Reaction-Bonded (SiSiC/RBSiC) — cost-effective and dimensionally stable, rated to around 1380°C; Sintered (SSiC) — higher-purity, fully gas-tight, rated to 1600-1800°C and the only grade resistant to hydrofluoric acid; and Nitride-Bonded (NSiC/NBSiC) — rated to around 1550°C. Tubes are manufactured to custom shape and dimension — straight, tapered, flanged, multi-hole or rectangular-bore profiles — for use as radiant burner tubes, kiln rollers and structural beams, thermocouple protection sleeves, blast nozzles, wear liners for abrasive slurry or coal-dust pipelines, and shell-and-tube heat exchangers handling corrosive fluids. Grade, dimensions and end configuration can be specified to your application and drawing."
   },
   {
-      id: "vanaz-r2324",
+      id: "vanaz-r2324-pressure-regulator",
       name: "Vanaz High Pressure Regulator R2324",
       brand: "Vanaz",
       category: "PRESSURE REGULATOR VALVES",
       subcategory: "High Pressure Regulator",
       code: "R2324",
       size: "1\" BSP (INT) Threaded",
-      image: "images/vanaz-r2324-large.jpg",
+      image: "images/vanaz-r2324-pressure-regulator-large.jpg",
       specs: {
         "Type": "R2324",
         "Connection": "1\" BSP (INT) Threaded",
@@ -5249,13 +5249,13 @@ const products = [
       description: "The Vanaz R2324 is a heavy-duty, high-pressure industrial gas regulator manufactured by Vanaz Engineers, built for the controlled reduction of very high inlet pressures across industrial, medical and beverage-grade gas applications. Rated for a wide 15–250 Kg/cm² inlet pressure down to a 10–80 Kg/cm² adjustable outlet at flow rates of up to 300 Nm³/hr, with a 1-inch BSP (internal) threaded end connection, it is compatible with CNG, Nitrogen, Oxygen, CO2, Argon and Hydrogen. It is typically deployed in soft drink CO2 pressure reduction systems, steel industry high-pressure oxygen lancing, and high-pressure gas manifold reduction systems. Manufactured by Vanaz Engineers Ltd, Pune."
     },
   {
-      id: "dungs-pbv",
+      id: "dungs-pbv-pressure-gauge",
       name: "Dungs PBV Push Button Valve",
       brand: "Dungs",
       category: "PRESSURE GAUGES",
       code: "PBV",
       size: "1/4\" NPT & Rp 1/2\"",
-      image: "images/dungs-pbv-large.jpg",
+      image: "images/dungs-pbv-pressure-gauge-large.jpg",
       specs: {
         "Model": "PBV (Push Button Valve)",
         "Type": "Push-to-Test Gauge Isolation Valve",
