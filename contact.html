@@ -331,44 +331,44 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 /* ---- Contact Us page additions (shared with index.html's embedded styles; see CSS refactor item in pending list) ---- */
 :root{ --lemon-text:#855E1C; }
 
-/* ===== Contact Hero v2 — dark band, text + form side by side ===== */
-.contact-hero-v2{ background:var(--ink); color:#fff; padding:52px 0 60px; }
+/* ===== Contact Hero v2 — light band, text + form side by side ===== */
+.contact-hero-v2{ background:linear-gradient(180deg,#fff 0%,var(--paper) 100%); color:var(--ink); padding:52px 0 60px; border-bottom:1px solid var(--line); }
 .contact-hero-v2 .wrap{ max-width:1240px; }
 .contact-hero-grid{ display:grid; grid-template-columns:0.95fr 1.05fr; gap:56px; align-items:start; }
 @media (max-width:860px){ .contact-hero-grid{ grid-template-columns:1fr; gap:30px; } }
 .chip-loc{
-  display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.2); color:var(--sage);
+  display:inline-flex; align-items:center; gap:7px; background:var(--steel);
+  border:1px solid var(--line); color:var(--sage-deep);
   font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase;
   padding:7px 14px; border-radius:20px;
 }
-.contact-hero-v2 h1{ font-family:'Barlow Condensed',sans-serif; font-size:clamp(1.9rem,4.2vw,2.8rem); font-weight:600; max-width:18ch; margin-top:16px; color:#fff; }
-.contact-hero-v2 p{ color:rgba(255,255,255,0.78); max-width:58ch; margin-top:14px; font-size:1rem; line-height:1.65; }
+.contact-hero-v2 h1{ font-family:'Barlow Condensed',sans-serif; font-size:clamp(1.9rem,4.2vw,2.8rem); font-weight:600; max-width:18ch; margin-top:16px; color:var(--ink); }
+.contact-hero-v2 p{ color:var(--text-dim); max-width:58ch; margin-top:14px; font-size:1rem; line-height:1.65; }
 .contact-hero-v2 .cta-row{ margin-top:26px; }
-.btn-hero-wa{ background:#25D366; color:#063821; border:none; }
-.btn-hero-wa:hover{ background:#1ebb59; }
-.btn-hero-call{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.38); }
-.btn-hero-call:hover{ border-color:#fff; background:rgba(255,255,255,0.08); }
-.hero-stats{ display:flex; gap:36px; margin-top:38px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.14); flex-wrap:wrap; }
+.btn-hero-wa{ background:#1ea952; color:#fff; border:none; }
+.btn-hero-wa:hover{ background:#178a43; }
+.btn-hero-call{ background:transparent; color:var(--ink); border:1px solid var(--sage-deep); }
+.btn-hero-call:hover{ border-color:var(--ink); background:var(--steel); }
+.hero-stats{ display:flex; gap:36px; margin-top:38px; padding-top:28px; border-top:1px solid var(--line); flex-wrap:wrap; }
 .hero-stat{ display:flex; flex-direction:column; gap:4px; }
-.hero-stat .num{ font-family:'Barlow Condensed',sans-serif; font-size:1.9rem; font-weight:700; color:var(--sage); line-height:1; }
-.hero-stat .lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.65); }
+.hero-stat .num{ font-family:'Barlow Condensed',sans-serif; font-size:1.9rem; font-weight:700; color:var(--flame); line-height:1; }
+.hero-stat .lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-dim); }
 @media (max-width:560px){ .hero-stats{ gap:26px; margin-top:30px; padding-top:22px; } .hero-stat .num{ font-size:1.6rem; } }
-.hero-office{ margin-top:38px; padding-top:30px; border-top:1px solid rgba(255,255,255,0.14); }
-.hero-office h3{ font-size:0.98rem; font-weight:600; color:#fff; margin-bottom:16px; }
+.hero-office{ margin-top:38px; padding-top:30px; border-top:1px solid var(--line); }
+.hero-office h3{ font-size:0.98rem; font-weight:600; color:var(--ink); margin-bottom:16px; }
 .hero-office .info-block{ margin-bottom:14px; border:none; padding:0; }
 .hero-office .info-block:last-child{ margin-bottom:0; }
-.hero-office .info-block .k{ font-family:'IBM Plex Mono',monospace; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage); margin-bottom:4px; }
-.hero-office .info-block .v{ font-size:0.9rem; color:rgba(255,255,255,0.82); line-height:1.5; }
-.hero-office .info-block .v a{ color:#fff; text-decoration:none; }
-.hero-office .info-block .v a:hover{ color:var(--sage); }
-.contact-hero-grid .form-card{ background:transparent; border:none; box-shadow:none; padding:0; margin-top:2px; color:#fff; }
-.contact-hero-grid .form-card h3{ color:#fff; }
-.contact-hero-grid .form-card p{ color:rgba(255,255,255,0.72); }
-.contact-hero-grid .form-card .cf-note{ color:rgba(255,255,255,0.55); }
-.contact-hero-grid .form-card .cf-field label{ color:var(--sage); }
-.contact-hero-grid .form-card .cf-submit{ background:#fff; color:var(--ink); }
-.contact-hero-grid .form-card .cf-submit:hover{ background:var(--sage); }
+.hero-office .info-block .k{ font-family:'IBM Plex Mono',monospace; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage-deep); margin-bottom:4px; }
+.hero-office .info-block .v{ font-size:0.9rem; color:var(--ink); line-height:1.5; }
+.hero-office .info-block .v a{ color:var(--ink); text-decoration:none; }
+.hero-office .info-block .v a:hover{ color:var(--sage-deep); }
+.contact-hero-grid .form-card{ background:#fff; border:1px solid var(--line); border-radius:8px; box-shadow:0 14px 32px rgba(51,65,78,0.08); padding:26px 26px 24px; margin-top:0; color:var(--ink); }
+.contact-hero-grid .form-card h3{ color:var(--ink); }
+.contact-hero-grid .form-card p{ color:var(--text-dim); }
+.contact-hero-grid .form-card .cf-note{ color:var(--text-dim); }
+.contact-hero-grid .form-card .cf-field label{ color:var(--lemon-text); }
+.contact-hero-grid .form-card .cf-submit{ background:var(--ink); color:var(--paper); }
+.contact-hero-grid .form-card .cf-submit:hover{ background:var(--sage-deep); }
 
 /* ===== Boxed info cards below the hero ===== */
 .contact-cards-wrap{ padding-top:44px; padding-bottom:12px; }
