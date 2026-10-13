@@ -5176,7 +5176,7 @@ const products = [
       subcategory: "RPD Rotary Gas Meter",
       code: "",
       size: "DN32 to DN100, PN16 (full range chart)",
-      image: "images/honeywell-elster-rabo-g40-dn50-gas-flow-meter-large.webp",
+      image: "images/honeywell-elster-rabo-model-range-gas-flow-meter-large.webp",
       specs: {
         "Series": "RABO Positive-Displacement Rotary Gas Meter",
         "Size Range": "DN32, DN40, DN50, DN80, DN100",
