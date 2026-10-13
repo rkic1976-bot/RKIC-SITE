@@ -346,6 +346,11 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .btn-hero-wa:hover{ background:#1ebb59; }
 .btn-hero-call{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.38); }
 .btn-hero-call:hover{ border-color:#fff; background:rgba(255,255,255,0.08); }
+.hero-stats{ display:flex; gap:36px; margin-top:38px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.14); flex-wrap:wrap; }
+.hero-stat{ display:flex; flex-direction:column; gap:4px; }
+.hero-stat .num{ font-family:'Barlow Condensed',sans-serif; font-size:1.9rem; font-weight:700; color:var(--sage); line-height:1; }
+.hero-stat .lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.65); }
+@media (max-width:560px){ .hero-stats{ gap:26px; margin-top:30px; padding-top:22px; } .hero-stat .num{ font-size:1.6rem; } }
 
 /* ===== Boxed info/form cards, pulled up over the hero ===== */
 .contact-cards-wrap{ margin-top:-34px; position:relative; z-index:2; }
@@ -671,6 +676,11 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
     <div class="cta-row">
       <a class="btn-primary btn-hero-wa" href="https://wa.me/919824136145?text=Hello%20RKIC%2C%20I%20am%20looking%20for%20burner%2Fgas%20train%20components.%20Please%20assist." target="_blank" rel="noopener">Quick WhatsApp</a>
       <a class="btn-primary btn-hero-call" href="tel:+919824136145">Direct Desk Call · +91 9824136145</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">1999</span><span class="lbl">Established</span></div>
+      <div class="hero-stat"><span class="num">14</span><span class="lbl">Brands Represented</span></div>
+      <div class="hero-stat"><span class="num">240+</span><span class="lbl">Components in Stock</span></div>
     </div>
   </div>
 </section>
