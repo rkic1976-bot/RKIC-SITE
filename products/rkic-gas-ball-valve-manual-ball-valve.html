@@ -297,7 +297,10 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .seq-table th{ text-align:left; font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-dim); border-bottom:1px solid var(--line); padding:8px 12px; }
 .seq-table td{ border-bottom:1px solid var(--line); padding:11px 12px; vertical-align:top; }
 .seq-table tr:last-child td{ border-bottom:none; }
+.seq-table-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:20px; min-width:0; }
+.seq-table-wrap .seq-table{ margin-top:0; min-width:560px; }
 .tech-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:36px; align-items:start; margin-top:20px; }
+.tech-grid > div{ min-width:0; }
 @media (max-width:760px){ .tech-grid{ grid-template-columns:1fr; gap:24px; } }
 .tech-grid h3{ font-size:0.95rem; font-weight:600; margin:0 0 4px; }
 
@@ -597,6 +600,7 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
     <div class="tech-grid">
       <div>
         <h3>Size &amp; Gas Working Pressure</h3>
+        <div class="seq-table-wrap">
         <table class="seq-table">
           <tr><th>Size</th><th>Gas Working Pressure</th></tr>
           <tr><td>1/4&quot; (DN 8)</td><td>5 bar / 72.5 psi</td></tr>
@@ -611,9 +615,11 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
           <tr><td>3&quot; (DN 80)</td><td>16 bar / 232 psi</td></tr>
           <tr><td>4&quot; (DN 100)</td><td>14 bar / 203 psi</td></tr>
         </table>
+        </div>
       </div>
       <div>
         <h3>Materials of Construction</h3>
+        <div class="seq-table-wrap">
         <table class="seq-table">
           <tr><th>Pos.</th><th>Description</th><th>N.</th><th>Material</th></tr>
           <tr><td>1</td><td>Female end adapter</td><td>1</td><td>Nickel-plated brass CW617N</td></tr>
@@ -626,6 +632,7 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
           <tr><td>8</td><td>Lever</td><td>1</td><td>Varnished steel P04 (1/4&quot;&ndash;2&quot;) &middot; Aluminium (2&quot;1/2&ndash;4&quot;)</td></tr>
           <tr><td>9</td><td>Screw</td><td>1</td><td>Zinc-plated steel C4C (1/4&quot;&ndash;2&quot;) &middot; Zinc-plated CB4 FF/C34 (2&quot;1/2&ndash;4&quot;)</td></tr>
         </table>
+        </div>
       </div>
     </div>
   </section>

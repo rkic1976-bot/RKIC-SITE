@@ -273,6 +273,8 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .seq-table th{ text-align:left; font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-dim); border-bottom:1px solid var(--line); padding:8px 12px; }
 .seq-table td{ border-bottom:1px solid var(--line); padding:11px 12px; vertical-align:top; }
 .seq-table tr:last-child td{ border-bottom:none; }
+.seq-table-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:20px; min-width:0; }
+.seq-table-wrap .seq-table{ margin-top:0; min-width:560px; }
 .seq-step{ font-family:'IBM Plex Mono',monospace; color:var(--sage-deep); font-weight:600; width:2.4em; }
 .seq-note{ margin-top:16px; font-size:0.86rem; color:var(--text-dim); line-height:1.6; }
 .seq-note strong{ color:var(--ink); }
@@ -602,6 +604,7 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
   <section class="sec sec-seq">
     <div class="eyebrow-lt">Sequence of Operation</div>
     <h2>How the controller fires and monitors a two-stage gas burner.</h2>
+    <div class="seq-table-wrap">
     <table class="seq-table">
       <thead><tr><th>Step</th><th>Action</th><th>Delay / Condition</th><th>Output / Status</th></tr></thead>
       <tbody>
@@ -614,6 +617,7 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
           <tr><td class="seq-step">7</td><td>Restart</td><td>Manual RESET button, or external reset terminal (on request)</td><td>System restarts from Step 1</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="seq-note"><strong>Note:</strong> The flame-sensing relay's NO/NC contacts are inbuilt, so no separate external NC wiring is required. All timings are approximate and can be customized as per process requirements.</p>
   </section>
   <section class="sec sec-seq" style="margin-top:44px;">
