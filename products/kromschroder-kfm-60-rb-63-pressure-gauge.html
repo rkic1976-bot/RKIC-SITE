@@ -199,6 +199,7 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 @media (max-width:760px){ .pg-grid{ grid-template-columns:1fr; gap:26px; } }
 .pg-img-box{ background:#fff; border:1px solid var(--line); border-radius:4px; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:20px; position:relative; }
 .pg-img-box img{ max-width:100%; max-height:100%; object-fit:contain; touch-action:manipulation; }
+.pg-img-badge{ position:absolute; top:12px; left:12px; background:var(--sage-deep); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.03em; padding:5px 10px; border-radius:2px; z-index:2; }
 .pg-tags{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
 .pg-tag{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage-deep); border:1px solid var(--line); padding:5px 10px; border-radius:2px; }
 .pg-tag-sub{ background:var(--sage-deep); color:#fff; border-color:var(--sage-deep); }
@@ -546,6 +547,7 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
   <a class="pg-back" href="../categories/pressure-gauge-accessories.html">&larr; Back to Pressure Gauges</a>
   <div class="pg-grid">
     <div class="pg-img-box" id="pgImgBox">
+      <span class="pg-img-badge">Dial Size: 2.5&Prime;</span>
       <img src="../images/kromschroder-kfm-60-rb-63-pressure-gauge-large.webp" alt="Honeywell Kromschr&ouml;der KFM 60 RB 63 Pressure Gauge &mdash; Pressure Gauges by Honeywell Kromschr&ouml;der, 0&ndash;60 mbar, 63mm dial, KL 1.6 accuracy" loading="lazy">
       <span class="pg-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg></span>
     </div>
