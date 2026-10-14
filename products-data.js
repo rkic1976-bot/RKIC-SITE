@@ -3296,13 +3296,14 @@ const products = [
         "Accuracy Class": "KL 1.6 (Class 1.6, per EN 837-3)",
         "Standard": "EN 837-3 (Capsule-Element Pressure Gauges)",
         "Dial Size": "100 mm",
+        "Weight": "474 g (1.04 lbs)",
         "Unit": "mbar",
         "Case Material": "Stainless steel case",
-        "Process Connection": "Brass, bottom (radial) entry, male threaded — exact thread size not legible on this unit; Kromschröder KFM range is offered in G1/4B, G1/2B or NPT",
+        "Process Connection": "G½B, brass, bottom entry, A/F 22 (per Honeywell Kromschröder connection table for 100 mm dial, EN 837-3 Part 3)",
         "Application": "Measurement of low gas and air pressures — gas pressure monitoring, differential pressure indication, leak-tightness checks on burner and gas-train systems",
         "Manufacturer": "Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)"
       },
-      description: "The Honeywell Kromschröder KFM 250 MB 100 is a mechanical capsule-element (diaphragm) pressure gauge used to measure low gas and air pressures, with a 0–250 mbar range and KL 1.6 (Class 1.6) accuracy per EN 837-3. It has a 100 mm dial with a stainless steel case and a brass, bottom-entry threaded connection, and is used for gas pressure monitoring, differential pressure indication, and leak-tightness checks on burner and gas-train systems. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
+      description: "The Honeywell Kromschröder KFM 250 MB 100 is a mechanical capsule-element (diaphragm) pressure gauge used to measure low gas and air pressures, with a 0–250 mbar range and KL 1.6 (Class 1.6) accuracy per EN 837-3. It has a 100 mm dial with a stainless steel case and a G½B brass bottom-entry connection, and is used for gas pressure monitoring, differential pressure indication, and leak-tightness checks on burner and gas-train systems. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
     },
     {
       id: 'kromschroder-kfm-60-rb-63-pressure-gauge',
@@ -3320,13 +3321,38 @@ const products = [
         "Accuracy Class": "KL 1.6 (Class 1.6, per EN 837-3)",
         "Standard": "EN 837-3 (Capsule-Element Pressure Gauges)",
         "Dial Size": "63 mm (2.5″)",
+        "Weight": "189 g (0.42 lbs)",
         "Unit": "mbar",
         "Case Material": "Black-finish metal case",
-        "Process Connection": "Brass, bottom entry, male G-threaded — exact thread size not legible on this unit; Kromschröder KFM range is offered in G1/4B, G1/2B or NPT",
+        "Process Connection": "G¼B, brass, bottom entry, A/F 14 (per Honeywell Kromschröder connection table for 63 mm dial, EN 837-3 Part 3)",
         "Application": "Measurement of low gas and air pressures — gas pressure monitoring, differential pressure indication, leak-tightness checks on burner and gas-train systems",
         "Manufacturer": "Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)"
       },
-      description: "The Honeywell Kromschröder KFM 60 RB 63 is a mechanical capsule-element (diaphragm) pressure gauge used to measure low gas and air pressures, with a 0–60 mbar range and KL 1.6 (Class 1.6) accuracy per EN 837-3. It has a 63 mm (2.5″) dial with a black-finish metal case and a brass, bottom-entry G-threaded connection, and is used for gas pressure monitoring, differential pressure indication, and leak-tightness checks on burner and gas-train systems. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
+      description: "The Honeywell Kromschröder KFM 60 RB 63 is a mechanical capsule-element (diaphragm) pressure gauge used to measure low gas and air pressures, with a 0–60 mbar range and KL 1.6 (Class 1.6) accuracy per EN 837-3. It has a 63 mm (2.5″) dial with a black-finish metal case and a G¼B brass bottom-entry connection, and is used for gas pressure monitoring, differential pressure indication, and leak-tightness checks on burner and gas-train systems. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
+    },
+    {
+      id: 'kromschroder-kfm-40-pressure-gauge',
+      name: "Honeywell Kromschröder KFM 40 Pressure Gauge",
+      brand: 'Honeywell Kromschröder',
+      category: 'PRESSURE GAUGES',
+      code: 'KFM 40',
+      size: "0–40 mbar Range · KFM 40",
+      image: 'images/kromschroder-kfm-40-pressure-gauge-large.webp',
+      specs: {
+        "Model": "KFM 40",
+        "Type": "Capsule-Element (Diaphragm) Pressure Gauge, Low-Pressure Range",
+        "Measuring Range": "0 – 40 mbar",
+        "Accuracy Class": "KL 1.6 (Class 1.6)",
+        "Standard": "Capsule-element gauge to EN 837-3 (this unit’s dial is marked “DIN”, an older marking convention for the same capsule-gauge design)",
+        "Dial Size": "100 mm",
+        "Weight": "474 g (1.04 lbs)",
+        "Unit": "mbar",
+        "Case Material": "Stainless steel case",
+        "Process Connection": "G½B, brass, bottom entry, A/F 22 (per Honeywell Kromschröder connection table for 100 mm dial, EN 837-3 Part 3)",
+        "Application": "Measurement of low gas and air pressures — gas pressure monitoring, differential pressure indication, leak-tightness checks on burner and gas-train systems",
+        "Manufacturer": "Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)"
+      },
+      description: "The Honeywell Kromschröder KFM 40 is a mechanical capsule-element (diaphragm) pressure gauge used to measure low gas and air pressures, with a 0–40 mbar range and KL 1.6 (Class 1.6) accuracy. It has a 100 mm dial with a stainless steel case and a G½B brass bottom-entry connection, and is used for gas pressure monitoring, differential pressure indication, and leak-tightness checks on burner and gas-train systems. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
     },
     {
       id: 'kromschroder-gik-20r02-5-ratio-regulator',
