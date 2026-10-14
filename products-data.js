@@ -3282,6 +3282,53 @@ const products = [
       description: "The Honeywell Kromschröder DMG S2601 (Order No. 03352141) is a handheld electronic pressure gauge used to measure positive, negative and differential pressure of air and non-aggressive gaseous media, with a measuring range of ±150 mbar (maximum 180 mbar) and an accuracy of ±1.0% of the measured value. It features a digital LCD display with switchable pressure units and hold / min-max functions, and is powered by 2 x 1.5V batteries (LR6/AA) or a USB power adapter. The plasticized PVC housing with securing magnet carries an IP40 protection rating (EN 60529) and an ambient operating range of 0°C to +40°C. Supplied complete with a dedicated tube & connection accessory kit (Part No. 03352147) — silicone hoses (5 x 2 mm dia., 1 m, with plastic adapter) and PU tubes (2.7 x 0.65 mm dia., 0.5 m, with brass adapter), plus assorted plastic and brass connectors — suited to burner adjustment, chimney draught measurement, HVAC systems, filter/duct checks and general process pressure measurement. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
     },
     {
+      id: 'kromschroder-kfm-250-mb-100-pressure-gauge',
+      name: "Honeywell Kromschröder KFM 250 MB 100 Pressure Gauge",
+      brand: 'Honeywell Kromschröder',
+      category: 'PRESSURE GAUGES',
+      code: 'KFM 250 MB 100',
+      size: "0–250 mbar Range · KFM 250 MB 100",
+      image: 'images/kromschroder-kfm-250-mb-100-pressure-gauge-large.webp',
+      specs: {
+        "Model": "KFM 250 MB 100",
+        "Type": "Capsule-Element (Diaphragm) Pressure Gauge, Low-Pressure Range",
+        "Measuring Range": "0 – 250 mbar",
+        "Accuracy Class": "KL 1.6 (Class 1.6, per EN 837-3)",
+        "Standard": "EN 837-3 (Capsule-Element Pressure Gauges)",
+        "Dial Size": "100 mm",
+        "Unit": "mbar",
+        "Case Material": "Stainless steel case",
+        "Process Connection": "Brass, bottom (radial) entry, male threaded — exact thread size not legible on this unit; Kromschröder KFM range is offered in G1/4B, G1/2B or NPT",
+        "Application": "Measurement of low gas and air pressures — gas pressure monitoring, differential pressure indication, leak-tightness checks on burner and gas-train systems",
+        "Manufacturer": "Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)"
+      },
+      description: "The Honeywell Kromschröder KFM 250 MB 100 is a mechanical capsule-element (diaphragm) pressure gauge used to measure low gas and air pressures, with a 0–250 mbar range and KL 1.6 (Class 1.6) accuracy per EN 837-3. It has a 100 mm dial with a stainless steel case and a brass, bottom-entry threaded connection, and is used for gas pressure monitoring, differential pressure indication, and leak-tightness checks on burner and gas-train systems. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
+    },
+    {
+      id: 'kromschroder-kfm-60-rb-63-pressure-gauge',
+      name: "Honeywell Kromschröder KFM 60 RB 63 Pressure Gauge",
+      brand: 'Honeywell Kromschröder',
+      category: 'PRESSURE GAUGES',
+      code: '03200179',
+      size: "0–60 mbar Range · KFM 60 RB 63",
+      image: 'images/kromschroder-kfm-60-rb-63-pressure-gauge-large.webp',
+      specs: {
+        "Model": "KFM 60 RB 63",
+        "Part No.": "03200179",
+        "Type": "Capsule-Element (Diaphragm) Pressure Gauge, Low-Pressure Range",
+        "Measuring Range": "0 – 60 mbar",
+        "Accuracy Class": "KL 1.6 (Class 1.6, per EN 837-3)",
+        "Standard": "EN 837-3 (Capsule-Element Pressure Gauges)",
+        "Dial Size": "63 mm",
+        "Unit": "mbar",
+        "Case Material": "Black-finish metal case",
+        "Process Connection": "Brass, bottom entry, male G-threaded — exact thread size not legible on this unit; Kromschröder KFM range is offered in G1/4B, G1/2B or NPT",
+        "Application": "Measurement of low gas and air pressures — gas pressure monitoring, differential pressure indication, leak-tightness checks on burner and gas-train systems",
+        "Manufacturer": "Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)"
+      },
+      description: "The Honeywell Kromschröder KFM 60 RB 63 is a mechanical capsule-element (diaphragm) pressure gauge used to measure low gas and air pressures, with a 0–60 mbar range and KL 1.6 (Class 1.6) accuracy per EN 837-3. It has a 63 mm dial with a black-finish metal case and a brass, bottom-entry G-threaded connection, and is used for gas pressure monitoring, differential pressure indication, and leak-tightness checks on burner and gas-train systems. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
+    },
+    {
       id: 'kromschroder-gik-20r02-5-ratio-regulator',
       name: "Honeywell Kromschröder GIK 20R02-5 Air/Gas Ratio Regulator",
       brand: 'Honeywell Kromschröder',
