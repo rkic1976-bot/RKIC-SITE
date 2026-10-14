@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Header Mega-Menu Gap Demo</title>
+<style>
+  :root{
+    --ink:#33414E;
+    --paper:#F7F5EE;
+    --steel:#E8E6DD;
+    --steel-2:#D5D2C4;
+    --line: rgba(51,65,78,0.18);
+    --sage:#E4CE96;
+    --sage-pale:#EDE2C0;
+    --sage-deep:#855E1C;
+    --flame:#C5432F;
+    --flame-light:#ECD9A8;
+    --lemon-text:#855E1C;
+    --text-soft: rgba(51,65,78,0.62);
+    --text-dim: rgba(51,65,78,0.90);
+    font-size: 16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:auto;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Barlow', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.disp{ font-family:'Barlow Condensed', sans-serif; letter-spacing:0.005em; font-weight:600; margin:0; }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+  @media (max-width:640px){ .wrap{ padding:0 20px; } }
+
+  .sticky-stack{ position:sticky; top:0; z-index:60; }
+  .topbar{ background:var(--ink); color:#fff; font-size:0.84rem; font-weight:600; }
+  .topbar .wrap{ display:flex; align-items:center; gap:28px; height:40px; }
+  .topbar a{ display:flex; align-items:center; gap:8px; color:#fff; }
+  .topbar .ic{ color:var(--sage); display:flex; align-items:center; }
+  .topbar .ic svg{ width:15px; height:15px; }
+  @media (max-width:520px){ .topbar .wrap{ gap:16px; } }
+
+  header{
+    position:relative; z-index:50;
+    background:rgba(246,249,244,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; height:74px; gap:16px; }
+  .brand{ display:flex; align-items:center; gap:12px; color:var(--ink); }
+  .brand img{ height:38px; width:auto; }
+  .brand .name{ font-size:0.98rem; font-weight:600; line-height:1.15; }
+  .brand .name span{ display:block; font-size:0.62rem; letter-spacing:0.14em; color:var(--sage-deep); font-family:'IBM Plex Mono',monospace; margin-top:2px; }
+  nav.links{ display:flex; align-items:center; gap:34px; color:var(--text-dim); font-size:0.88rem; }
+  nav.links > a{ display:flex; align-items:center; gap:6px; }
+  .nav-ic{ width:15px; height:15px; flex:0 0 auto; color:var(--sage-deep); }
+  .nav-cta{ background:var(--ink); color:var(--paper); padding:10px 18px; border-radius:2px; font-size:0.84rem; font-weight:600; }
+  .search-btn{ background:none; border:1px solid var(--line); color:var(--ink); width:38px; height:38px; border-radius:4px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  .search-btn svg{ width:17px; height:17px; }
+  .burger{ display:none; color:var(--ink); font-size:1.4rem; cursor:pointer; background:none; border:none; padding:4px; }
+  @media (max-width:860px){ nav.links{ display:none; } .nav-cta{ display:none; } .burger{ display:block; } }
+
+  .nav-dropdown{ position:relative; }
+  .nav-drop-btn{ display:flex; align-items:center; gap:6px; background:none; border:none; cursor:pointer; color:var(--text-dim); font-size:0.88rem; font-family:'Barlow',sans-serif; padding:0; }
+  .nav-drop-btn .chev{ font-size:0.7rem; transition:transform 0.2s ease; }
+  .nav-dropdown.open .nav-drop-btn .chev{ transform:rotate(180deg); }
+
+  /* ===== full-width light mega-menu (Products) — UNCHANGED from live site ===== */
+  .nav-drop-panel.nav-mega{
+    display:none;
+    position:fixed; top:75px; left:0; right:0; width:100vw; transform:none;
+    max-width:none; min-width:0; border-radius:0; border:none;
+    border-top:1px solid var(--line); z-index:65;
+    background:#fff; box-shadow:0 24px 48px rgba(51,65,78,0.18);
+    padding:0; max-height:none; overflow:visible;
+  }
+  .nav-dropdown.open .nav-drop-panel.nav-mega{ display:block; }
+  .nav-mega-inner{
+    position:relative;
+    max-width:1180px; margin:0 auto;
+    padding:28px 20px 36px; max-height:calc(100vh - 110px);
+    overflow-y:auto; -webkit-overflow-scrolling:touch;
+  }
+  .nav-mega-close{
+    position:absolute; top:14px; right:16px; z-index:2;
+    width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
+    background:#fff; color:var(--ink); font-size:1rem; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .nav-mega-main{ width:100%; min-width:0; }
+  .nav-mega .nav-drop-search{ background:var(--paper); border:1px solid var(--line); }
+  .nav-drop-search{ display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:5px; padding:8px 11px; margin:0 0 10px; background:var(--paper); }
+  .nav-drop-search svg{ width:15px; height:15px; stroke:var(--sage-deep); flex:0 0 auto; }
+  .nav-drop-search input{ border:none; outline:none; font-size:0.82rem; color:var(--ink); width:100%; background:transparent; font-family:'Barlow',sans-serif; }
+  .nav-drop-search input::placeholder{ color:var(--text-dim); }
+  #navProductsGrid{ display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 8px; max-height:60vh; overflow-y:auto; }
+  .nav-mega #navProductsGrid{ grid-template-columns:repeat(6, 1fr); gap:4px 16px; max-height:none; overflow-y:visible; }
+  #navProductsGrid a{ font-size:0.76rem; padding:7px 6px; display:flex; align-items:center; justify-content:space-between; gap:8px; color:var(--ink); border-radius:2px; }
+  #navProductsGrid a:hover, .nav-mega #navProductsGrid a:hover, .nav-mega #navProductsGrid .nav-cat-row:hover{ background:var(--steel); }
+  .nav-cat-icon{ width:16px; height:16px; flex:0 0 auto; color:var(--sage-deep); margin-right:9px; }
+  .nav-drop-link{ display:flex; align-items:center; justify-content:flex-start; gap:0; }
+  .nav-drop-link span{ margin-right:auto; }
+  .nav-cat-caret{ display:inline-block; color:var(--sage-deep); font-size:1rem; font-weight:800; line-height:1; opacity:1; transition:transform 0.2s ease; }
+  .nav-cat-row{ display:flex; align-items:stretch; gap:2px; border-radius:2px; }
+  .nav-cat-row .nav-drop-link{ flex:1; min-width:0; }
+  .nav-cat-toggle{ flex:0 0 22px; width:22px; align-self:center; display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; padding:0; }
+  .nav-cat-toggle:hover .nav-cat-caret, .nav-mega .nav-cat-toggle:hover .nav-cat-caret{ color:var(--ink); }
+  .nav-cat-row.expanded .nav-cat-toggle .nav-cat-caret{ transform:rotate(180deg); }
+  .nav-cat-subs{ grid-column:1 / -1; display:none; flex-wrap:wrap; gap:2px 16px; padding:2px 6px 8px 16px; border-bottom:1px solid var(--line); margin-bottom:2px; }
+  .nav-cat-subs a{ font-size:0.76rem; color:#3f3f3f; padding:5px 6px; display:flex; align-items:center; gap:5px; border-radius:2px; }
+  .nav-cat-subs a:hover, .nav-mega .nav-cat-subs a:hover{ background:var(--steel); color:var(--ink); }
+  @media (max-width:860px){ .nav-drop-panel.nav-mega{ display:none !important; } }
+
+  /* ---- demo-only chrome (not part of the real site) ---- */
+  .demo-note{
+    max-width:1180px; margin:18px auto 0; padding:0 20px 28px;
+    font-size:0.86rem; line-height:1.65; color:var(--ink);
+  }
+  .demo-note .box{ border:1px dashed var(--flame); border-radius:6px; padding:16px 18px; background:#fff; }
+  .demo-note b{ color:var(--flame); }
+  .demo-note code{ background:var(--steel); padding:1px 5px; border-radius:3px; font-family:'IBM Plex Mono',monospace; font-size:0.82em; }
+  .demo-cta{ display:inline-flex; margin-top:14px; background:var(--ink); color:var(--paper); padding:10px 16px; border-radius:4px; font-size:0.82rem; font-weight:600; cursor:pointer; border:none; }
+  .filler{ height:900px; }
+</style>
+</head>
+<body>
+
+<div class="sticky-stack">
+  <div class="topbar">
+    <div class="wrap">
+      <a href="mailto:rkic1976@gmail.com">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg></span>
+        <span>rkic1976@gmail.com</span>
+      </a>
+      <a href="tel:+919824136145">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.5 6.5l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg></span>
+        <span>+91 9824136145</span>
+      </a>
+    </div>
+  </div>
+  <header>
+    <div class="wrap nav-inner">
+      <a href="#" class="brand" style="text-decoration:none;color:inherit;">
+        <img src="images/logo-header.webp" alt="R.K. Instruments & Controls logo">
+        <div class="name">R.K. Instruments &amp; Controls<span>FLOW &amp; FLAME CONTROL</span></div>
+      </a>
+      <nav class="links">
+        <a href="#"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>Home</a>
+        <a href="#"><svg class="nav-ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M5 3a1 1 0 0 1 1-1h11.2a1 1 0 0 1 .8 1.6l-3 4 3 4a1 1 0 0 1-.8 1.6H7v7a1 1 0 1 1-2 0V3Z"/></svg>About Us</a>
+        <div class="nav-dropdown" id="navProducts">
+          <button class="nav-drop-btn"><svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Products <span class="chev">⌄</span></button>
+          <div class="nav-drop-panel nav-mega" id="navProductsPanel">
+            <button type="button" class="nav-mega-close" aria-label="Close menu">✕</button>
+            <div class="nav-mega-inner">
+              <div class="nav-mega-main">
+                <div class="nav-drop-search">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                  <input type="text" placeholder="Search products or categories…" autocomplete="off">
+                </div>
+<div class="nav-drop-grid" id="navProductsGrid"><div class="nav-cat-row" data-cat="FILTERS"><a href="categories/filters-strainers.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16l-6 8v6l-4 2v-8z"></path></svg><span>FILTERS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show FILTERS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="FILTERS"><a href="categories/filters-strainers-madas.html"><span>↳ Madas Filters</span></a><a href="categories/filters-strainers-vanaz.html"><span>↳ Vanaz Filters</span></a></div><div class="nav-cat-row" data-cat="FLAME ARRESTORS"><a href="categories/flame-arrestors.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 3-1 4-1 7a3 3 0 1 0 6 0c0-2-1-3-1-5 3 2 4 5 4 8a7 7 0 1 1-14 0c0-4 3-6 6-10z"></path></svg><span>FLAME ARRESTORS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show FLAME ARRESTORS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="FLAME ARRESTORS"><a href="categories/flame-arrestors-vanaz.html"><span>↳ Vanaz Flame arrestors</span></a></div><div class="nav-cat-row" data-cat="FLAME MONITORING SYSTEMS"><a href="categories/flame-monitoring-systems.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 3-1 4-1 7a3 3 0 1 0 6 0c0-2-1-3-1-5 3 2 4 5 4 8a7 7 0 1 1-14 0c0-4 3-6 6-10z"></path></svg><span>FLAME MONITORING SYSTEMS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show FLAME MONITORING SYSTEMS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="FLAME MONITORING SYSTEMS"><a href="categories/flame-monitoring-systems-r-k-instruments-and-controls.html"><span>↳ R.K. Instruments &amp; Controls Flame monitoring systems</span></a></div><div class="nav-cat-row" data-cat="FLAME RELAY"><a href="categories/flame-relay.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 3-1 4-1 7a3 3 0 1 0 6 0c0-2-1-3-1-5 3 2 4 5 4 8a7 7 0 1 1-14 0c0-4 3-6 6-10z"></path></svg><span>FLAME RELAY</span></a><button type="button" class="nav-cat-toggle" aria-label="Show FLAME RELAY subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="FLAME RELAY"><a href="categories/flame-relay-brahma.html"><span>↳ Brahma Flame relay</span></a><a href="categories/flame-relay-honeywell-technologies.html"><span>↳ Honeywell Technologies Flame relay</span></a><a href="categories/flame-relay-r-k-instruments-and-controls.html"><span>↳ R.K. Instruments &amp; Controls Flame relay</span></a></div><div class="nav-cat-row" data-cat="FLAME SAFEGUARD"><a href="categories/flame-safeguard.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 3-1 4-1 7a3 3 0 1 0 6 0c0-2-1-3-1-5 3 2 4 5 4 8a7 7 0 1 1-14 0c0-4 3-6 6-10z"></path></svg><span>FLAME SAFEGUARD</span></a><button type="button" class="nav-cat-toggle" aria-label="Show FLAME SAFEGUARD subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="FLAME SAFEGUARD"><a href="categories/flame-safeguard-siemens.html"><span>↳ Siemens Flame safeguard</span></a></div><div class="nav-cat-row" data-cat="GAS FLOW METERS"><a href="categories/gas-flow-meters.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"></path><path d="M12 15l3-4"></path><circle cx="12" cy="15" r="1"></circle></svg><span>GAS FLOW METERS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show GAS FLOW METERS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="GAS FLOW METERS"><a href="categories/gas-flow-meters-diaphragm-gas-meters.html"><span>↳ Diaphragm Gas Meters</span></a><a href="categories/gas-flow-meters-turbine-gas-meter-quantometer.html"><span>↳ Turbine Gas Meter Quantometer</span></a><a href="categories/gas-flow-meters-rpd-rotary-gas-meter.html"><span>↳ RPD Rotary Gas Meter</span></a></div><div class="nav-cat-row" data-cat="GAS TRAIN SYSTEMS"><a href="categories/gas-train-systems.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="4" rx="1"></rect><circle cx="6" cy="12" r="1"></circle><circle cx="18" cy="12" r="1"></circle></svg><span>GAS TRAIN SYSTEMS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show GAS TRAIN SYSTEMS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="GAS TRAIN SYSTEMS"><a href="categories/gas-train-systems-dungs.html"><span>↳ Dungs Gas train systems</span></a><a href="categories/gas-train-systems-madas.html"><span>↳ Madas Gas train systems</span></a><a href="categories/gas-train-systems-vanaz.html"><span>↳ Vanaz Gas train systems</span></a></div><div class="nav-cat-row" data-cat="HOSE PIPE FITTINGS"><a href="categories/hose-pipe-fittings.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="4" rx="1"></rect><circle cx="6" cy="12" r="1"></circle><circle cx="18" cy="12" r="1"></circle></svg><span>HOSE PIPE FITTINGS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show HOSE PIPE FITTINGS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="HOSE PIPE FITTINGS"><a href="categories/hose-pipe-fittings-r-k-instruments-and-controls.html"><span>↳ R.K. Instruments &amp; Controls Hose pipe fittings</span></a></div><div class="nav-cat-row" data-cat="IGNITION CABLE"><a href="categories/ignition-cable.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"></path></svg><span>IGNITION CABLE</span></a><button type="button" class="nav-cat-toggle" aria-label="Show IGNITION CABLE subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="IGNITION CABLE"><a href="categories/ignition-cable-cofi.html"><span>↳ Cofi Ignition cable</span></a><a href="categories/ignition-cable-r-k-instruments-and-controls.html"><span>↳ R.K. Instruments &amp; Controls Ignition cable</span></a></div><div class="nav-cat-row" data-cat="IGNITION ELECTRODES"><a href="categories/ignition-electrodes.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"></path></svg><span>IGNITION ELECTRODES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show IGNITION ELECTRODES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="IGNITION ELECTRODES"><a href="categories/ignition-electrodes-r-k-instruments-and-controls.html"><span>↳ R.K. Instruments &amp; Controls Ignition electrodes</span></a></div><div class="nav-cat-row" data-cat="IGNITION SPARES"><a href="categories/ignition-spares.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"></path></svg><span>IGNITION SPARES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show IGNITION SPARES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="IGNITION SPARES"><a href="categories/ignition-spares-honeywell-kromschroder.html"><span>↳ Honeywell Kromschröder Ignition spares</span></a><a href="categories/ignition-spares-r-k-instruments-and-controls.html"><span>↳ R.K. Instruments &amp; Controls Ignition spares</span></a></div><div class="nav-cat-row" data-cat="IGNITION SPARK ELECTRODES"><a href="categories/ignition-spark-electrodes.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"></path></svg><span>IGNITION SPARK ELECTRODES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show IGNITION SPARK ELECTRODES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="IGNITION SPARK ELECTRODES"><a href="categories/ignition-spark-electrodes-honeywell-eclipse.html"><span>↳ Honeywell Eclipse Ignition spark electrodes</span></a><a href="categories/ignition-spark-electrodes-honeywell-kromschroder.html"><span>↳ Honeywell Kromschröder Ignition spark electrodes</span></a><a href="categories/ignition-spark-electrodes-honeywell-maxon.html"><span>↳ Honeywell Maxon Ignition spark electrodes</span></a><a href="categories/ignition-spark-electrodes-r-k-instruments-and-controls.html"><span>↳ R.K. Instruments &amp; Controls Ignition spark electrodes</span></a></div><div class="nav-cat-row" data-cat="IGNITION TRANSFORMERS"><a href="categories/ignition-transformers.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"></path></svg><span>IGNITION TRANSFORMERS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show IGNITION TRANSFORMERS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="IGNITION TRANSFORMERS"><a href="categories/ignition-transformers-brahma.html"><span>↳ Brahma</span></a><a href="categories/ignition-transformers-cofi.html"><span>↳ Cofi</span></a><a href="categories/ignition-transformers-danfoss.html"><span>↳ Danfoss</span></a><a href="categories/ignition-transformers-honeywell-kromschroder.html"><span>↳ Honeywell Kromschröder</span></a><a href="categories/ignition-transformers-honeywell-technologies.html"><span>↳ Honeywell Technologies</span></a></div><div class="nav-cat-row" data-cat="MANUAL BALL VALVES"><a href="categories/manual-ball-valves.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M4 12h5M15 12h5"></path></svg><span>MANUAL BALL VALVES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show MANUAL BALL VALVES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="MANUAL BALL VALVES"><a href="categories/manual-ball-valves-r-k-instruments-and-controls.html"><span>↳ R.K. Instruments &amp; Controls Manual ball valves</span></a></div><div class="nav-cat-row" data-cat="MULTIBLOCKS"><a href="categories/multiblocks.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M4 12h5M15 12h5"></path></svg><span>MULTIBLOCKS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show MULTIBLOCKS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="MULTIBLOCKS"><a href="categories/multiblocks-dungs.html"><span>↳ Dungs Multiblocks</span></a></div><div class="nav-cat-row" data-cat="PHOTOCELL"><a href="categories/photocell.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg><span>PHOTOCELL</span></a><button type="button" class="nav-cat-toggle" aria-label="Show PHOTOCELL subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="PHOTOCELL"><a href="categories/photocell-brahma.html"><span>↳ Brahma Photocell</span></a><a href="categories/photocell-siemens.html"><span>↳ Siemens Photocell</span></a></div><div class="nav-cat-row" data-cat="PILOT BURNERS"><a href="categories/pilot-burners.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 3-1 4-1 7a3 3 0 1 0 6 0c0-2-1-3-1-5 3 2 4 5 4 8a7 7 0 1 1-14 0c0-4 3-6 6-10z"></path></svg><span>PILOT BURNERS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show PILOT BURNERS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="PILOT BURNERS"><a href="categories/pilot-burners-honeywell-kromschroder.html"><span>↳ Honeywell Kromschröder Pilot burners</span></a></div><div class="nav-cat-row" data-cat="PRESSURE GAUGES"><a href="categories/pressure-gauge-accessories.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"></path><path d="M12 15l3-4"></path><circle cx="12" cy="15" r="1"></circle></svg><span>PRESSURE GAUGES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show PRESSURE GAUGES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="PRESSURE GAUGES"><a href="categories/pressure-gauge-accessories-dungs.html"><span>↳ Dungs Pressure gauges</span></a><a href="categories/pressure-gauge-accessories-honeywell-kromschroder.html"><span>↳ Honeywell Kromschröder Pressure gauges</span></a></div><div class="nav-cat-row" data-cat="PRESSURE REGULATOR VALVES"><a href="categories/pressure-regulator-valves.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M4 12h5M15 12h5"></path></svg><span>PRESSURE REGULATOR VALVES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show PRESSURE REGULATOR VALVES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="PRESSURE REGULATOR VALVES"><a href="categories/pressure-regulator-valves-high-pressure-regulator.html"><span>↳ High Pressure Regulator</span></a><a href="categories/pressure-regulator-valves-low-pressure-regulator.html"><span>↳ Low Pressure Regulator</span></a><a href="categories/pressure-regulator-valves-oxygen-regulator.html"><span>↳ Oxygen Regulator</span></a><a href="categories/pressure-regulator-valves-ammonia-regulator.html"><span>↳ Ammonia Regulator</span></a><a href="categories/pressure-regulator-valves-co2-regulator.html"><span>↳ CO2 Regulator</span></a><a href="categories/pressure-regulator-valves-lpg-auto-change-over-regulator.html"><span>↳ LPG Auto Change Over Regulator</span></a></div><div class="nav-cat-row" data-cat="PRESSURE SWITCHES"><a href="categories/pressure-switches.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"></path><path d="M12 15l3-4"></path><circle cx="12" cy="15" r="1"></circle></svg><span>PRESSURE SWITCHES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show PRESSURE SWITCHES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="PRESSURE SWITCHES"><a href="categories/pressure-switches-dungs.html"><span>↳ Dungs Pressure switches</span></a><a href="categories/pressure-switches-honeywell-kromschroder.html"><span>↳ Honeywell Kromschröder Pressure switches</span></a><a href="categories/pressure-switches-madas.html"><span>↳ Madas Pressure switches</span></a></div><div class="nav-cat-row" data-cat="RATIO REGULATORS"><a href="categories/ratio-regulators.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M4 12h5M15 12h5"></path></svg><span>RATIO REGULATORS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show RATIO REGULATORS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="RATIO REGULATORS"><a href="categories/ratio-regulators-honeywell-kromschroder.html"><span>↳ Honeywell Kromschröder Ratio regulators</span></a><a href="categories/ratio-regulators-madas.html"><span>↳ Madas Ratio regulators</span></a></div><div class="nav-cat-row" data-cat="SAFETY RELIEF VALVES"><a href="categories/safety-relief-valves.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"></path></svg><span>SAFETY RELIEF VALVES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show SAFETY RELIEF VALVES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="SAFETY RELIEF VALVES"><a href="categories/safety-relief-valves-vanaz.html"><span>↳ Vanaz Safety relief valves</span></a></div><div class="nav-cat-row" data-cat="SEQUENCE CONTROLLERS"><a href="categories/sequence-controllers.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path></svg><span>SEQUENCE CONTROLLERS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show SEQUENCE CONTROLLERS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="SEQUENCE CONTROLLERS"><a href="categories/sequence-controllers-burner-control.html"><span>↳ Burner Control</span></a><a href="categories/sequence-controllers-burner-control-unit-bcu.html"><span>↳ Burner Control Unit (BCU)</span></a></div><div class="nav-cat-row" data-cat="SERVO MOTORS"><a href="categories/servo-motors.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path></svg><span>SERVO MOTORS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show SERVO MOTORS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="SERVO MOTORS"><a href="categories/servo-motors-siemens.html"><span>↳ Siemens Servo motors</span></a></div><div class="nav-cat-row" data-cat="SILICON CARBIDE TUBES"><a href="categories/silicon-carbide-tubes.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="4" rx="1"></rect><circle cx="6" cy="12" r="1"></circle><circle cx="18" cy="12" r="1"></circle></svg><span>SILICON CARBIDE TUBES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show SILICON CARBIDE TUBES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="SILICON CARBIDE TUBES"><a href="categories/silicon-carbide-tubes-r-k-instruments-and-controls.html"><span>↳ R.K. Instruments &amp; Controls Silicon carbide tubes</span></a></div><div class="nav-cat-row" data-cat="SLAM SHUT OFF VALVES"><a href="categories/slam-shut-off-valves.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M4 12h5M15 12h5"></path></svg><span>SLAM SHUT OFF VALVES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show SLAM SHUT OFF VALVES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="SLAM SHUT OFF VALVES"><a href="categories/slam-shut-off-valves-vanaz.html"><span>↳ Vanaz Slam shut off valves</span></a></div><div class="nav-cat-row" data-cat="SOLENOID VALVES"><a href="categories/solenoid-valves.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M4 12h5M15 12h5"></path></svg><span>SOLENOID VALVES</span></a><button type="button" class="nav-cat-toggle" aria-label="Show SOLENOID VALVES subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="SOLENOID VALVES"><a href="categories/solenoid-valves-brahma-solenoid-valve.html"><span>↳ Brahma Solenoid Valve</span></a><a href="categories/solenoid-valves.html"><span>↳ Kromschröder Solenoid Valve</span></a><a href="categories/solenoid-valves-elektrogas-solenoid-valve.html"><span>↳ Elektrogas Solenoid Valve</span></a><a href="categories/solenoid-valves-solenoid-coil.html"><span>↳ Solenoid Coil</span></a><a href="categories/solenoid-valves-coil-connector.html"><span>↳ Coil Connector</span></a></div><div class="nav-cat-row" data-cat="UV FLAME DETECTORS"><a href="categories/uv-flame-detectors.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg><span>UV FLAME DETECTORS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show UV FLAME DETECTORS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="UV FLAME DETECTORS"><a href="categories/uv-flame-detectors-honeywell-technologies.html"><span>↳ Honeywell Technologies Uv flame detectors</span></a><a href="categories/uv-flame-detectors-r-k-instruments-and-controls.html"><span>↳ R.K. Instruments &amp; Controls Uv flame detectors</span></a><a href="categories/uv-flame-detectors-siemens.html"><span>↳ Siemens Uv flame detectors</span></a></div><div class="nav-cat-row" data-cat="UV FLAME SENSOR"><a href="categories/uv-flame-sensor.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg><span>UV FLAME SENSOR</span></a><button type="button" class="nav-cat-toggle" aria-label="Show UV FLAME SENSOR subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="UV FLAME SENSOR"><a href="categories/uv-flame-sensor-brahma.html"><span>↳ Brahma Uv flame sensor</span></a><a href="categories/uv-flame-sensor-honeywell-technologies.html"><span>↳ Honeywell Technologies Uv flame sensor</span></a><a href="categories/uv-flame-sensor-siemens.html"><span>↳ Siemens Uv flame sensor</span></a></div><div class="nav-cat-row" data-cat="VALVE PROVING SYSTEMS"><a href="categories/valve-proving-systems.html" class="nav-drop-link"><svg class="nav-cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"></path></svg><span>VALVE PROVING SYSTEMS</span></a><button type="button" class="nav-cat-toggle" aria-label="Show VALVE PROVING SYSTEMS subcategories" aria-expanded="false"><span class="nav-cat-caret">⌄</span></button></div><div class="nav-cat-subs" data-parent="VALVE PROVING SYSTEMS"><a href="categories/valve-proving-systems-dungs.html"><span>↳ Dungs Valve proving systems</span></a><a href="categories/valve-proving-systems-madas.html"><span>↳ Madas Valve proving systems</span></a></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#">Contact Us</a>
+      </nav>
+      <button class="search-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+      <a class="nav-cta" href="#">Request a Quote</a>
+      <button class="burger">☰</button>
+    </div>
+  </header>
+</div>
+
+<div class="demo-note">
+  <div class="box">
+    <b>Demo</b> — Ye page aapki live site ke header se <b>hubahu</b> copy kiya hai (koi change nahi), taaki gap wahi reproduce ho jo aapne screenshot mein circle kiya tha.<br><br>
+    <b>Computer/wide screen par:</b> upar "Products" par click/tap kijiye — neeche gap check kijiye.<br>
+    <b>Phone par (narrow screen):</b> "Products" dropdown chhota screen par nahi khulta (jaisa real site par bhi hai) — iske bajaye ☰ (menu) icon aur 🔍 (search) icon dono try kijiye, jahan bhi gap dikhe wahi screenshot bhej dijiye.
+    <br><br>
+    <button class="demo-cta" onclick="document.querySelector('.nav-drop-btn').click()">Open Products dropdown</button>
+  </div>
+</div>
+<div class="filler"></div>
+
+<script>
+  document.getElementById('navProducts').querySelector('.nav-drop-btn').addEventListener('click', function(e){
+    e.stopPropagation();
+    var el = document.getElementById('navProducts');
+    var isOpen = el.classList.contains('open');
+    document.querySelectorAll('.nav-dropdown.open').forEach(function(d){ d.classList.remove('open'); });
+    if(!isOpen) el.classList.add('open');
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.nav-dropdown.open').forEach(function(d){ d.classList.remove('open'); });
+  });
+  document.querySelector('.nav-mega-close').addEventListener('click', function(e){
+    e.stopPropagation();
+    document.querySelectorAll('.nav-dropdown.open').forEach(function(d){ d.classList.remove('open'); });
+  });
+  // category row expand/collapse — same behavior as live site
+  document.querySelectorAll('.nav-cat-toggle').forEach(function(toggle){
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation(); e.preventDefault();
+      var row = toggle.closest('.nav-cat-row');
+      var subs = row.nextElementSibling;
+      var isOpen = row.classList.toggle('expanded');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (subs && subs.classList.contains('nav-cat-subs')) subs.style.display = isOpen ? 'flex' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
