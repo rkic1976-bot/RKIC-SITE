@@ -778,6 +778,24 @@
   .fs-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.3);border:none;cursor:pointer;padding:0;transition:all .2s;}
   .fs-dot.on{background:var(--sage);width:20px;border-radius:4px;}
   .fs-counter{ position:absolute;top:20px;right:22px;z-index:5;font-family:'IBM Plex Mono',monospace; font-size:11px;color:var(--sage);letter-spacing:0.08em; }
+  /* Light variant for a slide whose photo has a white/light background (e.g. a product collage) —
+     dark navy text panel + dark wedge look wrong against a light photo, so flip that one slide to cream+ink. */
+  .fs-slide.fs-light{ background:var(--paper); }
+  .fs-slide.fs-light .fs-photo{ background:var(--paper); }
+  .fs-slide.fs-light .fs-photo::after{ background:linear-gradient(100deg, rgba(247,245,238,0.65) 0%, rgba(247,245,238,0.05) 45%, transparent 70%); }
+  .fs-slide.fs-light .fs-text{ background:var(--paper); }
+  .fs-slide.fs-light .fs-headline, .fs-slide.fs-light .fs-headline em{ color:var(--ink); }
+  .fs-slide.fs-light .fs-sub{ color:#51606B; }
+  .fs-slide.fs-light .fs-btn.ghost{ border-color:rgba(51,65,78,0.3);color:var(--ink); }
+  .fs-slide.fs-light .fs-kicker{ color:var(--sage-deep); }
+  .fs-slide.fs-light .fs-counter{ color:var(--sage-deep); }
+  /* Nav arrows / dots live outside .fs-slide (shared across all slides), so toggle
+     their contrast via a class the slider JS sets on #flowslider when the light slide is active. */
+  #flowslider.fs-light-active .fs-nav{ background:rgba(51,65,78,0.08);border-color:rgba(51,65,78,0.25);color:var(--ink); }
+  #flowslider.fs-light-active .fs-nav:hover{ background:rgba(51,65,78,0.16); }
+  #flowslider.fs-light-active .fs-dot{ background:rgba(51,65,78,0.25); }
+  #flowslider.fs-light-active .fs-dot.on{ background:var(--sage-deep); }
+  #flowslider.fs-light-active .fs-meter{ background:rgba(51,65,78,0.1); }
 
   /* ===== PRODUCT LIST (compact row style: thumbnail + name) ===== */
   .plist{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
@@ -971,7 +989,7 @@
             <a href="https://wa.me/919824136145?text=Enquiry%20for%20Ignition%20Transformers" target="_blank" rel="noopener" class="fs-btn ghost">WhatsApp Enquiry</a>
           </div>
         </div>
-        <div class="fs-counter">01 / 03</div>
+        <div class="fs-counter">01 / 04</div>
       </div>
 
       <div class="fs-slide" data-i="1">
@@ -990,7 +1008,7 @@
             <a href="https://wa.me/919824136145?text=Enquiry%20for%20Pressure%20Regulators" target="_blank" rel="noopener" class="fs-btn ghost">WhatsApp Enquiry</a>
           </div>
         </div>
-        <div class="fs-counter">02 / 03</div>
+        <div class="fs-counter">02 / 04</div>
       </div>
 
       <div class="fs-slide" data-i="2">
@@ -1009,7 +1027,26 @@
             <a href="https://wa.me/919824136145?text=Enquiry%20for%20Burner%20Control%20Units" target="_blank" rel="noopener" class="fs-btn ghost">Enquire on WhatsApp</a>
           </div>
         </div>
-        <div class="fs-counter">03 / 03</div>
+        <div class="fs-counter">03 / 04</div>
+      </div>
+
+      <div class="fs-slide fs-light" data-i="3">
+        <div class="fs-photo">
+          <img src="images/hero-product-collage.webp" alt="RKIC Product Range — Solenoid Valves, Sequence Controllers, Pressure Regulators, Flow Meters, Ignition Transformers">
+          <div class="fs-bracket tl"></div>
+          <div class="fs-spec-tag" style="top:22px;right:40px;"><b>248+</b><span>PRODUCTS IN STOCK</span></div>
+          <div class="fs-spec-tag" style="bottom:50px;left:30px;"><b>14</b><span>GLOBAL BRANDS</span></div>
+        </div>
+        <div class="fs-text">
+          <div class="fs-kicker"><span class="flow-dash"></span>COMPLETE PRODUCT RANGE</div>
+          <h3 class="fs-headline">Everything your burner needs, <em>under one roof</em></h3>
+          <p class="fs-sub">Solenoid valves, pressure regulators, sequence controllers, flow meters, ignition transformers &amp; more — from Brahma, Dungs, Madas, Elektrogas, Danfoss and 9 other trusted brands.</p>
+          <div class="fs-cta">
+            <a href="#brands" class="fs-btn primary">View All Brands →</a>
+            <a href="https://wa.me/919824136145?text=Enquiry%20for%20Product%20Catalog" target="_blank" rel="noopener" class="fs-btn ghost">WhatsApp Enquiry</a>
+          </div>
+        </div>
+        <div class="fs-counter">04 / 04</div>
       </div>
 
       <div class="fs-nav prev" id="fsPrev">&#8592;</div>
@@ -1042,6 +1079,7 @@
     current=(idx+total)%total;
     slides[current].classList.add('active');
     dotEls[current].classList.add('on');
+    el.classList.toggle('fs-light-active', slides[current].classList.contains('fs-light'));
   }
   function next(){ goTo(current+1); }
   function prev(){ goTo(current-1); }
