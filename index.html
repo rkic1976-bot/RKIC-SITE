@@ -797,6 +797,43 @@
   #flowslider.fs-light-active .fs-dot.on{ background:var(--sage-deep); }
   #flowslider.fs-light-active .fs-meter{ background:rgba(51,65,78,0.1); }
 
+  /* ===== Centered "full-range arc" hero slide variant — paper bg, centered copy,
+     a single product-arc photo below, soft 3D orb accent top-left. ===== */
+  .fs-slide.fs-centered{
+    flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;
+    background:var(--paper);overflow:hidden;padding:26px 28px 0;
+  }
+  .fs-slide.fs-centered::before{
+    content:"";position:absolute;width:420px;height:420px;border-radius:50%;top:-200px;left:-140px;z-index:0;
+    background:radial-gradient(circle at 34% 30%,#f3e6c4 0%,var(--sage) 46%,var(--sage-deep) 100%);
+    box-shadow:inset -22px -30px 50px rgba(51,65,78,0.3), inset 16px 14px 30px rgba(255,255,255,0.4), 30px 44px 60px rgba(51,65,78,0.15);
+    opacity:0.55;
+  }
+  .fs-slide.fs-centered .fs-kicker{justify-content:center;color:var(--sage-deep);position:relative;z-index:2;}
+  .fs-slide.fs-centered .fs-kicker .flow-dash{display:none;}
+  .fs-slide.fs-centered .fs-headline{color:var(--ink);max-width:620px;margin:0 auto 8px;font-size:22px;position:relative;z-index:2;}
+  .fs-slide.fs-centered .fs-headline em{color:var(--sage-deep);}
+  .fs-slide.fs-centered .fs-headline em::after{display:none;}
+  .fs-slide.fs-centered .fs-sub{color:#51606B;max-width:480px;margin:0 auto;text-align:center;position:relative;z-index:2;}
+  .fs-slide.fs-centered .fs-range-photo{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;min-height:0;width:100%;padding:6px 0;}
+  .fs-slide.fs-centered .fs-range-photo img{max-width:min(78%,440px);max-height:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 16px 20px rgba(51,65,78,0.25));}
+  .fs-slide.fs-centered .fs-cta{justify-content:center;position:relative;z-index:2;margin-bottom:22px;}
+  .fs-slide.fs-centered .fs-btn.primary{background:var(--ink);color:#fff;}
+  .fs-slide.fs-centered .fs-btn.ghost{border-color:rgba(51,65,78,0.3);color:var(--ink);}
+  .fs-slide.fs-centered .fs-counter, .fs-slide.fs-centered ~ .fs-counter{color:var(--sage-deep);}
+  @media (max-width:860px){
+    .fs-slide.fs-centered{padding:20px 20px 0;}
+    .fs-slide.fs-centered .fs-headline{font-size:19px;}
+    .fs-slide.fs-centered .fs-sub{font-size:12px;}
+    .fs-slide.fs-centered .fs-range-photo img{max-width:88%;}
+  }
+  #flowslider.fs-centered-active .fs-nav{background:rgba(51,65,78,0.08);border-color:rgba(51,65,78,0.25);color:var(--ink);}
+  #flowslider.fs-centered-active .fs-nav:hover{background:rgba(51,65,78,0.16);}
+  #flowslider.fs-centered-active .fs-dot{background:rgba(51,65,78,0.25);}
+  #flowslider.fs-centered-active .fs-dot.on{background:var(--sage-deep);}
+  #flowslider.fs-centered-active .fs-meter{background:rgba(51,65,78,0.1);}
+  #flowslider.fs-centered-active .fs-counter{color:var(--sage-deep);}
+
   /* ===== PRODUCT LIST (compact row style: thumbnail + name) ===== */
   .plist{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
   @media (max-width:860px){ .plist{grid-template-columns:repeat(3,1fr);} }
@@ -973,80 +1010,40 @@
     <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">R.K. Instruments &amp; Controls (RKIC) — Burner, Boiler &amp; Gas Train Components Supplier in Surat, Gujarat</h1>
     <div class="flowslider" id="flowslider">
 
-      <div class="fs-slide active" data-i="0">
-        <div class="fs-photo">
-          <img src="images/brahma-t11-n-ignition-transformer-large.webp" alt="Brahma Ignition Transformer">
-          <div class="fs-bracket tl"></div>
-          <div class="fs-spec-tag" style="top:22px;right:40px;"><b>230V</b><span>PRIMARY SUPPLY</span></div>
-          <div class="fs-spec-tag" style="bottom:50px;left:30px;"><b>14kV</b><span>SECONDARY OUTPUT</span></div>
+      <div class="fs-slide fs-centered active" data-i="0">
+        <div class="fs-kicker">THE FULL RKIC RANGE</div>
+        <h3 class="fs-headline">One warehouse. Every part your burner and gas train need.</h3>
+        <p class="fs-sub">Ignition, flame safety, pressure regulation, gas trains and controllers — ex-stock at our Surat warehouse.</p>
+        <div class="fs-range-photo"><img src="images/hero-full-range-arc.webp" alt="RKIC full product range — ignition, flame safety, pressure regulation and gas train components" loading="eager"></div>
+        <div class="fs-cta">
+          <a href="#brands" class="fs-btn primary">View Full Catalog →</a>
+          <a href="https://wa.me/919824136145?text=Enquiry%20for%20Product%20Catalog" target="_blank" rel="noopener" class="fs-btn ghost">WhatsApp Enquiry</a>
         </div>
-        <div class="fs-text">
-          <div class="fs-kicker"><span class="flow-dash"></span>IGNITION TRANSFORMERS</div>
-          <h3 class="fs-headline">Spark that starts <em>every burner</em>, every time</h3>
-          <p class="fs-sub">Brahma &amp; Honeywell ignition transformers — reliable high-voltage spark generation for oil and gas burner systems, in stock at our Surat warehouse.</p>
-          <div class="fs-cta">
-            <a href="categories/ignition-transformers.html" class="fs-btn primary">View Transformers →</a>
-            <a href="https://wa.me/919824136145?text=Enquiry%20for%20Ignition%20Transformers" target="_blank" rel="noopener" class="fs-btn ghost">WhatsApp Enquiry</a>
-          </div>
-        </div>
-        <div class="fs-counter">01 / 04</div>
+        <div class="fs-counter">01 / 03</div>
       </div>
 
-      <div class="fs-slide" data-i="1">
-        <div class="fs-photo">
-          <img src="images/vanaz-r2301-pressure-regulator-large.webp" alt="Vanaz Pressure Regulator">
-          <div class="fs-bracket tl"></div>
-          <div class="fs-spec-tag" style="top:24px;right:36px;"><b>250 mbar</b><span>MAX INLET PRESSURE</span></div>
-          <div class="fs-spec-tag" style="bottom:48px;left:26px;"><b>IP54</b><span>PROTECTION CLASS</span></div>
+      <div class="fs-slide fs-centered" data-i="1">
+        <div class="fs-kicker">IGNITION &amp; FLAME SAFETY</div>
+        <h3 class="fs-headline">Everything that <em>starts</em> and <em>watches</em> the flame.</h3>
+        <p class="fs-sub">Ignition transformers, electrodes and UV flame sensors — the complete set, in stock at our Surat warehouse.</p>
+        <div class="fs-range-photo"><img src="images/hero-ignition-arc.webp" alt="Brahma ignition transformer, ignition electrode and UV flame sensor" loading="lazy"></div>
+        <div class="fs-cta">
+          <a href="categories/ignition-transformers.html" class="fs-btn primary">View Ignition Range →</a>
+          <a href="https://wa.me/919824136145?text=Enquiry%20for%20Ignition%20Transformers" target="_blank" rel="noopener" class="fs-btn ghost">WhatsApp Enquiry</a>
         </div>
-        <div class="fs-text">
-          <div class="fs-kicker"><span class="flow-dash"></span>PRESSURE REGULATORS</div>
-          <h3 class="fs-headline">Gas pressure, <em>held steady</em> — no surprises</h3>
-          <p class="fs-sub">Vanaz &amp; Elektrogas regulators across high-pressure, low-pressure, oxygen and ammonia lines — exact pressure control from inlet to burner.</p>
-          <div class="fs-cta">
-            <a href="categories/pressure-regulator-valves.html" class="fs-btn primary">View Regulators →</a>
-            <a href="https://wa.me/919824136145?text=Enquiry%20for%20Pressure%20Regulators" target="_blank" rel="noopener" class="fs-btn ghost">WhatsApp Enquiry</a>
-          </div>
-        </div>
-        <div class="fs-counter">02 / 04</div>
+        <div class="fs-counter">02 / 03</div>
       </div>
 
-      <div class="fs-slide" data-i="2">
-        <div class="fs-photo">
-          <img src="images/siemens-lfl1-333-sequence-controller-large.webp" alt="Siemens Burner Control Unit">
-          <div class="fs-bracket tl"></div>
-          <div class="fs-spec-tag" style="top:22px;right:38px;"><b>LFL1.333</b><span>SIEMENS SEQUENCE</span></div>
-          <div class="fs-spec-tag" style="bottom:50px;left:28px;"><b>BCU</b><span>FLAME SUPERVISION</span></div>
+      <div class="fs-slide fs-centered" data-i="2">
+        <div class="fs-kicker">GAS TRAIN &amp; PRESSURE REGULATION</div>
+        <h3 class="fs-headline">Precise pressure, <em>measured</em> and regulated — end to end.</h3>
+        <p class="fs-sub">Gas pressure switches, ratio regulators and gas pressure regulators — ex-stock at our Surat warehouse.</p>
+        <div class="fs-range-photo"><img src="images/hero-gastrain-arc.webp" alt="Madas gas pressure switch, Dungs gas pressure switch and Elektrogas pressure regulator" loading="lazy"></div>
+        <div class="fs-cta">
+          <a href="categories/pressure-regulator-valves.html" class="fs-btn primary">View Gas Train Range →</a>
+          <a href="https://wa.me/919824136145?text=Enquiry%20for%20Pressure%20Regulators" target="_blank" rel="noopener" class="fs-btn ghost">WhatsApp Enquiry</a>
         </div>
-        <div class="fs-text">
-          <div class="fs-kicker"><span class="flow-dash"></span>BURNER CONTROL UNITS</div>
-          <h3 class="fs-headline">One sequence controller, <em>zero guesswork</em></h3>
-          <p class="fs-sub">Siemens burner control units handling ignition sequencing and flame supervision — the brain that keeps every burner cycle safe.</p>
-          <div class="fs-cta">
-            <a href="categories/sequence-controllers.html" class="fs-btn primary">View Burner Controls →</a>
-            <a href="https://wa.me/919824136145?text=Enquiry%20for%20Burner%20Control%20Units" target="_blank" rel="noopener" class="fs-btn ghost">Enquire on WhatsApp</a>
-          </div>
-        </div>
-        <div class="fs-counter">03 / 04</div>
-      </div>
-
-      <div class="fs-slide fs-light" data-i="3">
-        <div class="fs-photo">
-          <img src="images/hero-product-collage.webp" alt="RKIC Product Range — Solenoid Valves, Sequence Controllers, Pressure Regulators, Flow Meters, Ignition Transformers">
-          <div class="fs-bracket tl"></div>
-          <div class="fs-spec-tag" style="top:22px;right:40px;"><b>248+</b><span>PRODUCTS IN STOCK</span></div>
-          <div class="fs-spec-tag" style="bottom:50px;left:30px;"><b>14</b><span>GLOBAL BRANDS</span></div>
-        </div>
-        <div class="fs-text">
-          <div class="fs-kicker"><span class="flow-dash"></span>COMPLETE PRODUCT RANGE</div>
-          <h3 class="fs-headline">Everything your burner needs, <em>under one roof</em></h3>
-          <p class="fs-sub">Solenoid valves, pressure regulators, sequence controllers, flow meters, ignition transformers &amp; more — from Brahma, Dungs, Madas, Elektrogas, Danfoss and 9 other trusted brands.</p>
-          <div class="fs-cta">
-            <a href="#brands" class="fs-btn primary">View All Brands →</a>
-            <a href="https://wa.me/919824136145?text=Enquiry%20for%20Product%20Catalog" target="_blank" rel="noopener" class="fs-btn ghost">WhatsApp Enquiry</a>
-          </div>
-        </div>
-        <div class="fs-counter">04 / 04</div>
+        <div class="fs-counter">03 / 03</div>
       </div>
 
       <div class="fs-nav prev" id="fsPrev">&#8592;</div>
@@ -1080,6 +1077,7 @@
     slides[current].classList.add('active');
     dotEls[current].classList.add('on');
     el.classList.toggle('fs-light-active', slides[current].classList.contains('fs-light'));
+    el.classList.toggle('fs-centered-active', slides[current].classList.contains('fs-centered'));
   }
   function next(){ goTo(current+1); }
   function prev(){ goTo(current-1); }
@@ -1100,6 +1098,8 @@
   document.getElementById('fsPrev').addEventListener('click', function(){ prev(); restart(); });
 
   var el=document.getElementById('flowslider');
+  el.classList.toggle('fs-light-active', slides[current].classList.contains('fs-light'));
+  el.classList.toggle('fs-centered-active', slides[current].classList.contains('fs-centered'));
   var sx=0;
   el.addEventListener('touchstart', function(e){ sx=e.changedTouches[0].screenX; }, {passive:true});
   el.addEventListener('touchend', function(e){
