@@ -504,47 +504,59 @@ nav.links .nav-drop-btn:hover{ color:var(--sage-deep); }
       pgPositionSearchPanel();
       panel.classList.add('open');
       setTimeout(() => panel.querySelector('input').focus(), 100);
+      if (typeof renderPgResults === 'function') renderPgResults('');
     });
     closeBtn.addEventListener('click', () => panel.classList.remove('open'));
     window.addEventListener('resize', pgPositionSearchPanel);
   }
-  // Live search results (added) — uses RKIC_PRODUCTS from related-products-data.js
+    // Live search results (added)
+  const PG_ALL_CATEGORIES = ["FILTERS","FLAME ARRESTORS","FLAME MONITORING SYSTEMS","FLAME RELAY","FLAME SAFEGUARD","GAS FLOW METERS","GAS TRAIN SYSTEMS","HOSE PIPE FITTINGS","IGNITION CABLE","IGNITION ELECTRODES","IGNITION SPARES","IGNITION SPARK ELECTRODES","IGNITION TRANSFORMERS","MANUAL BALL VALVES","MULTIBLOCKS","PHOTOCELL","PILOT BURNERS","PRESSURE GAUGES","PRESSURE REGULATOR VALVES","PRESSURE SWITCHES","RATIO REGULATORS","SAFETY RELIEF VALVES","SEQUENCE CONTROLLERS","SERVO MOTORS","SILICON CARBIDE TUBES","SLAM SHUT OFF VALVES","SOLENOID VALVES","UV FLAME DETECTORS","UV FLAME SENSOR","VALVE PROVING SYSTEMS"];
+  function pgCatSlug(c){ return (c==='FILTERS'?'filters-strainers':(c==='PRESSURE GAUGES'?'pressure-gauge-accessories':c.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''))); }
   const pgSearchInput = panel ? panel.querySelector('input[name="q"]') : null;
   const pgSearchResults = document.getElementById('pgSearchResults');
-  if(pgSearchInput && pgSearchResults){
-    pgSearchInput.addEventListener('input', function(){
-      var q = pgSearchInput.value.trim().toLowerCase();
-      if(!q || typeof RKIC_PRODUCTS === 'undefined'){ pgSearchResults.innerHTML = ''; return; }
-      var cats = [];
-      var seenCat = {};
-      RKIC_PRODUCTS.forEach(function(p){ if(!seenCat[p.category]){ seenCat[p.category] = true; cats.push(p.category); } });
-      var prodMatches = RKIC_PRODUCTS.filter(function(p){
-        return (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().indexOf(q) !== -1;
-      }).slice(0, 50);
-      var catMatches = cats.filter(function(c){ return c.toLowerCase().indexOf(q) !== -1; }).slice(0, 15);
-      var html = '';
-      if(prodMatches.length === 0 && catMatches.length === 0){
-        html = '<div class="pg-search-empty">No products match \"' + q.replace(/</g,'&lt;') + '\" — try a different term, or contact us for a custom requirement.</div>';
-      } else {
-        if(prodMatches.length){
-          html += '<div class="pg-search-kicker">In Stock</div>';
-          prodMatches.forEach(function(p){
-            html += '<a href="../products/' + p.id + '.html">' +
-              '<img src="' + p.thumb + '" alt="" loading="lazy">' +
-              '<span class="pg-sr-info"><span class="pg-sr-name">' + p.name + '</span>' +
-              '<span class="pg-sr-meta">' + p.brand + ' · ' + p.category + '</span></span>' +
-              '<span class="pg-sr-code">' + p.code + '</span></a>';
-          });
-        }
-        if(catMatches.length){
-          html += '<div class="pg-search-kicker">Categories</div>';
-          catMatches.forEach(function(c){
-            var __slug = (c==='FILTERS'?'filters-strainers':(c==='PRESSURE GAUGES'?'pressure-gauge-accessories':c.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''))); html += '<a href="../categories/' + __slug + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
-          });
-        }
-      }
+  function renderPgResults(qRaw){
+    var q = (qRaw || '').trim().toLowerCase();
+    var html = '';
+    if(!q){
+      html += '<div class="pg-search-kicker">Categories</div>';
+      PG_ALL_CATEGORIES.forEach(function(c, i){
+        html += '<a href="../categories/' + pgCatSlug(c) + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span><span class="pg-sr-code">RK-' + String(i+1).padStart(2,'0') + '</span></a>';
+      });
       pgSearchResults.innerHTML = html;
-    });
+      return;
+    }
+    if(typeof RKIC_PRODUCTS === 'undefined'){ pgSearchResults.innerHTML = ''; return; }
+    var cats = [];
+    var seenCat = {};
+    RKIC_PRODUCTS.forEach(function(p){ if(!seenCat[p.category]){ seenCat[p.category] = true; cats.push(p.category); } });
+    var prodMatches = RKIC_PRODUCTS.filter(function(p){
+      return (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().indexOf(q) !== -1;
+    }).slice(0, 50);
+    var catMatches = cats.filter(function(c){ return c.toLowerCase().indexOf(q) !== -1; }).slice(0, 15);
+    if(prodMatches.length === 0 && catMatches.length === 0){
+      html = '<div class="pg-search-empty">No products match \"' + q.replace(/</g,'&lt;') + '\" — try a different term, or contact us for a custom requirement.</div>';
+    } else {
+      if(prodMatches.length){
+        html += '<div class="pg-search-kicker">In Stock</div>';
+        prodMatches.forEach(function(p){
+          html += '<a href="../products/' + p.id + '.html">' +
+            '<img src="' + p.thumb + '" alt="" loading="lazy">' +
+            '<span class="pg-sr-info"><span class="pg-sr-name">' + p.name + '</span>' +
+            '<span class="pg-sr-meta">' + p.brand + ' · ' + p.category + '</span></span>' +
+            '<span class="pg-sr-code">' + p.code + '</span></a>';
+        });
+      }
+      if(catMatches.length){
+        html += '<div class="pg-search-kicker">Categories</div>';
+        catMatches.forEach(function(c){
+          html += '<a href="../categories/' + pgCatSlug(c) + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
+        });
+      }
+    }
+    pgSearchResults.innerHTML = html;
+  }
+  if(pgSearchInput && pgSearchResults){
+    pgSearchInput.addEventListener('input', function(){ renderPgResults(pgSearchInput.value); });
     closeBtn && closeBtn.addEventListener('click', function(){ pgSearchInput.value = ''; pgSearchResults.innerHTML = ''; });
   }
   const burger = document.getElementById('pgBurgerBtn');
