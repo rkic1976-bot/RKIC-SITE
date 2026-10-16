@@ -240,6 +240,11 @@
   .drawer-item.open .drawer-row .chev{ transform:rotate(180deg); }
   .drawer-sub{ display:none; background:var(--steel); }
   .drawer-item.open .drawer-sub{ display:block; }
+  .drawer-search{ display:flex; align-items:center; gap:10px; background:#fff; border:2px solid var(--sage-deep); border-radius:8px; padding:11px 14px; margin:12px 16px; box-shadow:0 2px 10px rgba(133,94,28,0.18); }
+  .drawer-search svg{ width:17px; height:17px; stroke:var(--sage-deep); flex:0 0 auto; }
+  .drawer-search input{ border:none; outline:none; font-family:'Barlow',sans-serif; font-size:0.92rem; font-weight:600; width:100%; background:transparent; color:var(--ink); }
+  .drawer-search input::placeholder{ color:var(--sage-deep); opacity:0.85; }
+  #drawerSearchResults{ padding:0 10px; }
   .drawer-sub a{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:14px 20px 14px 40px; font-size:0.9rem; color:var(--text-dim); border-top:1px solid var(--line); }
   .drawer-sub a:hover{ color:var(--ink); }
   .drawer-sub-sublink{ padding-left:58px !important; font-size:0.82rem !important; }
@@ -747,7 +752,14 @@
     <li><a class="drawer-row" href="about.html">About Us</a></li>
     <li class="drawer-item" id="drawerProducts">
       <div class="drawer-row">Products <span class="chev">⌄</span></div>
-      <div class="drawer-sub" id="drawerProductsSub"></div>
+      <div class="drawer-sub" id="drawerProductsSub">
+        <div class="drawer-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="drawerCatFilter" placeholder="Search products — e.g. solenoid valve, ignition electrode…" autocomplete="off">
+        </div>
+        <div class="search-results" id="drawerSearchResults" hidden></div>
+        <div id="drawerCatTree"></div>
+      </div>
     </li>
     <li class="drawer-item" id="drawerBrands">
       <div class="drawer-row">Brands <span class="chev">⌄</span></div>
@@ -1588,6 +1600,7 @@
   }).observe(drawer, {attributes:true, attributeFilter:['class']});
 
   const drawerProductsSub = document.getElementById('drawerProductsSub');
+  const drawerCatTree = document.getElementById('drawerCatTree');
   categories.forEach(name => {
     const n = categoryCount(name);
     const items = subcategoryItemsForCategory(name);
@@ -1597,7 +1610,7 @@
       a.className = 'drawer-sub-link';
       a.innerHTML = `<span>${name}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
       a.addEventListener('click', () => { drawer.classList.remove('open'); });
-      drawerProductsSub.appendChild(a);
+      drawerCatTree.appendChild(a);
       return;
     }
     // Categories with sub-categories: tap anywhere on the row to expand/collapse
@@ -1636,8 +1649,66 @@
       subList.appendChild(sa);
     });
     catItem.appendChild(subList);
-    drawerProductsSub.appendChild(catItem);
+    drawerCatTree.appendChild(catItem);
   });
+
+  const drawerCatFilter = document.getElementById('drawerCatFilter');
+  const drawerSearchResults = document.getElementById('drawerSearchResults');
+  function renderDrawerResults(rawQuery){
+    const q = rawQuery.trim().toLowerCase();
+    drawerSearchResults.innerHTML = '';
+    const prodMatches = products.filter(p => (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().includes(q)).slice(0, 50);
+    const catMatches = categories.filter(c => c.toLowerCase().includes(q)).slice(0, 15);
+    if(prodMatches.length === 0 && catMatches.length === 0){
+      const div = document.createElement('div');
+      div.className = 'search-empty';
+      div.textContent = `No products match "${rawQuery}" — try a different term, or contact us for a custom requirement.`;
+      drawerSearchResults.appendChild(div);
+      return;
+    }
+    if(prodMatches.length){
+      const kicker = document.createElement('div');
+      kicker.className = 'search-kicker';
+      kicker.textContent = 'In Stock';
+      drawerSearchResults.appendChild(kicker);
+      prodMatches.forEach(p => {
+        const a = document.createElement('a');
+        a.href = 'products/' + p.id + '.html';
+        a.className = 'search-product-row';
+        const brandHTML = brandLogos[p.brand] ? `<img class="srp-brand-logo" src="${brandLogos[p.brand]}" alt="${p.brand}">` : `${p.brand} · `;
+        a.innerHTML = `<img src="${p.image}" alt="${p.name}"><span class="srp-info"><span class="srp-name">${p.name}</span><span class="srp-meta">${brandHTML}${p.category}</span></span><span class="code">${p.code}</span>`;
+        drawerSearchResults.appendChild(a);
+      });
+    }
+    if(catMatches.length){
+      const kicker2 = document.createElement('div');
+      kicker2.className = 'search-kicker';
+      kicker2.textContent = 'Categories';
+      drawerSearchResults.appendChild(kicker2);
+      catMatches.forEach(name => {
+        const a = document.createElement('a');
+        a.href = categoryHref(name);
+        a.innerHTML = `<span>${name}</span>`;
+        a.addEventListener('click', () => { drawer.classList.remove('open'); });
+        drawerSearchResults.appendChild(a);
+      });
+    }
+  }
+  if(drawerCatFilter){
+    drawerCatFilter.addEventListener('input', () => {
+      const q = drawerCatFilter.value.trim();
+      if(!q){
+        drawerCatTree.hidden = false;
+        drawerSearchResults.hidden = true;
+      } else {
+        drawerCatTree.hidden = true;
+        drawerSearchResults.hidden = false;
+        renderDrawerResults(q);
+      }
+    });
+    drawerCatFilter.addEventListener('click', (e) => { e.stopPropagation(); });
+  }
+
   const drawerBrandsSub = document.getElementById('drawerBrandsSub');
   brands.forEach(b => {
     const n = brandCount(b);

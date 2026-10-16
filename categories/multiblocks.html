@@ -192,6 +192,11 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .drawer-item.open > .drawer-row .chev{ transform:rotate(180deg); }
 .drawer-sub{ display:none; background:var(--steel); }
 .drawer-item.open > .drawer-sub{ display:block; }
+.drawer-search{ display:flex; align-items:center; gap:10px; background:#fff; border:2px solid var(--sage-deep); border-radius:8px; padding:11px 14px; margin:12px 16px; box-shadow:0 2px 10px rgba(133,94,28,0.18); }
+.drawer-search svg{ width:17px; height:17px; stroke:var(--sage-deep); flex:0 0 auto; }
+.drawer-search input{ border:none; outline:none; font-family:'Barlow',sans-serif; font-size:0.92rem; font-weight:600; width:100%; background:transparent; color:var(--ink); }
+.drawer-search input::placeholder{ color:var(--sage-deep); opacity:0.85; }
+#drawerSearchResults{ padding:0 10px; }
 .drawer-sub a{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:14px 20px 14px 40px; font-size:0.9rem; color:var(--text-dim); border-top:1px solid var(--line); text-decoration:none; }
 .drawer-sub a:hover{ color:var(--ink); }
 .drawer-sub-sublink{ padding-left:58px !important; font-size:0.82rem !important; }
