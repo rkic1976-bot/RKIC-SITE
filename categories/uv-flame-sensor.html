@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' https://unpkg.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://formspree.io; frame-src https://www.google.com; form-action 'self' https://formspree.io;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
@@ -48,12 +51,12 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .topbar a:hover{ color:var(--sage); }
 .topbar svg{ width:14px; height:14px; color:var(--sage); }
 @media (max-width:560px){ .topbar .wrap{ gap:14px; } }
-.nav-inner{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px 20px; padding:14px 20px; position:relative; height:74px; }
+.nav-inner{ display:flex; align-items:center; justify-content:space-between; flex-wrap:nowrap; gap:14px 20px; padding:14px 20px; position:relative; height:74px; }
 .nav-links{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; font-size:0.86rem; color:var(--text-dim); }
 .nav-links > a{ text-decoration:none; color:inherit; }
 .nav-links > a:hover{ color:var(--ink); }
 .nav-cta{ background:var(--ink); color:var(--paper); padding:9px 16px; border-radius:2px; font-size:0.82rem; font-weight:600; text-decoration:none; white-space:nowrap; }
-.search-btn{ background:none; border:1px solid var(--line); color:var(--ink); width:38px; height:38px; border-radius:4px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+.search-btn{ background:#fff; border:2px solid var(--sage-deep); color:var(--sage-deep); box-shadow:0 2px 8px rgba(133,94,28,0.15); width:38px; height:38px; border-radius:6px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
 .search-btn svg{ width:17px; height:17px; }
 /* Products/Brands dropdowns — matches index.html's dynamic mega-menu exactly (19 Sep 2026) */
 .nav-dropdown{ position:relative; }
@@ -76,12 +79,12 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
   max-height:85vh; overflow-y:visible;
 }
 .nav-drop-search{
-  display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:5px;
-  padding:8px 11px; margin:0 0 10px; background:var(--paper);
+  display:flex; align-items:center; gap:8px; border:2px solid var(--sage-deep); border-radius:8px;
+  padding:10px 14px; margin:0 0 10px; background:#fff; box-shadow:0 2px 10px rgba(133,94,28,0.18);
 }
-.nav-drop-search svg{ width:15px; height:15px; stroke:var(--sage-deep); flex:0 0 auto; }
-.nav-drop-search input{ border:none; outline:none; font-size:0.82rem; color:var(--ink); width:100%; background:transparent; font-family:'Barlow',sans-serif; }
-.nav-drop-search input::placeholder{ color:var(--text-dim); }
+.nav-drop-search svg{ width:17px; height:17px; stroke:var(--sage-deep); flex:0 0 auto; }
+.nav-drop-search input{ border:none; outline:none; font-size:0.92rem; font-weight:600; color:var(--ink); width:100%; background:transparent; font-family:'Barlow',sans-serif; }
+.nav-drop-search input::placeholder{ color:var(--sage-deep); opacity:0.85; }
 #navProductsGrid{
   display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 8px;
   max-height:60vh; overflow-y:auto;
@@ -141,9 +144,9 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .search-panel{ display:none; position:fixed; top:0; left:0; right:0; bottom:auto; z-index:90; background:rgba(51,65,78,0.55); padding-top:0; }
 .search-panel.open{ display:block; }
 .search-panel-inner{ background:var(--paper); padding:20px; margin-top:0; }
-.search-row{ display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line); border-radius:4px; padding:12px 14px; max-width:700px; margin:0 auto; }
-.search-row svg{ width:18px; height:18px; color:var(--text-dim); flex:0 0 auto; }
-.search-row input{ border:none; outline:none; font-family:'Barlow',sans-serif; font-size:0.92rem; width:100%; background:transparent; color:var(--ink); }
+.search-row{ display:flex; align-items:center; gap:10px; background:#fff; border:2px solid var(--sage-deep); border-radius:8px; padding:12px 16px; width:100%; box-shadow:0 2px 10px rgba(133,94,28,0.18); }
+.search-row svg{ width:18px; height:18px; color:var(--sage-deep); flex:0 0 auto; }
+.search-row input{ border:none; outline:none; font-family:'Barlow',sans-serif; font-size:0.92rem; font-weight:600; width:100%; background:transparent; color:var(--ink); }
 .search-close{ background:none; border:none; font-size:1.1rem; cursor:pointer; color:var(--text-dim); flex:0 0 auto; }
 .wa-float{
   position:fixed; right:20px; bottom:20px; z-index:80;
@@ -153,12 +156,25 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .wa-float:hover{ background:#054C43; }
 .wa-float svg{ width:26px; height:26px; }
 .burger{ display:none; color:var(--ink); font-size:1.4rem; cursor:pointer; background:none; border:none; padding:4px; }
-@media (max-width:860px){
+@media (max-width:767px){
   .nav-inner{ flex-wrap:nowrap; }
   .nav-links{ display:none; }
   .nav-cta{ display:none; }
   .burger{ display:block; }
 }
+  @media (min-width:768px) and (max-width:1099px){
+    .nav-inner{ padding:0 8px !important; gap:5px !important; }
+    .brand{ gap:5px !important; }
+    .brand img{ height:24px !important; }
+    .brand .name{ font-size:0.68rem !important; }
+    .brand .name span{ font-size:0.4rem !important; }
+    nav.links{ gap:7px !important; font-size:0.64rem !important; }
+    nav.links > a{ white-space:nowrap !important; }
+    nav.links .nav-ic{ display:none !important; }
+    .nav-drop-btn{ font-size:0.64rem !important; }
+    .nav-cta{ padding:6px 8px !important; font-size:0.62rem !important; white-space:nowrap !important; }
+    .search-btn{ padding:3px !important; }
+  }
 /* mobile drawer — matches main site exactly */
 .mobile-drawer{
   position:fixed; top:0; left:0; right:0; bottom:0; z-index:100; background:var(--steel);
@@ -176,6 +192,11 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .drawer-item.open > .drawer-row .chev{ transform:rotate(180deg); }
 .drawer-sub{ display:none; background:var(--steel); }
 .drawer-item.open > .drawer-sub{ display:block; }
+.drawer-search{ display:flex; align-items:center; gap:10px; background:#fff; border:2px solid var(--sage-deep); border-radius:8px; padding:11px 14px; margin:12px 16px; box-shadow:0 2px 10px rgba(133,94,28,0.18); }
+.drawer-search svg{ width:17px; height:17px; stroke:var(--sage-deep); flex:0 0 auto; }
+.drawer-search input{ border:none; outline:none; font-family:'Barlow',sans-serif; font-size:0.92rem; font-weight:600; width:100%; background:transparent; color:var(--ink); }
+.drawer-search input::placeholder{ color:var(--sage-deep); opacity:0.85; }
+#drawerSearchResults{ padding:0 10px; }
 .drawer-sub a{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:14px 20px 14px 40px; font-size:0.9rem; color:var(--text-dim); border-top:1px solid var(--line); text-decoration:none; }
 .drawer-sub a:hover{ color:var(--ink); }
 .drawer-sub-sublink{ padding-left:58px !important; font-size:0.82rem !important; }
@@ -277,7 +298,7 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .cat-lightbox-close{ position:absolute; top:18px; right:22px; width:42px; height:42px; border-radius:50%; background:#fff; border:none; font-size:1.3rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--ink); touch-action:manipulation; }
 
 /* Live product search (added) */
-.pg-search-results{ max-width:700px; margin:8px auto 0; max-height:60vh; overflow-y:auto; background:#fff; border-radius:4px; }
+.pg-search-results{ width:100%; margin:8px 0 0; max-height:35vh; overflow-y:auto; background:#fff; border-radius:4px; }
 .pg-search-results a{ display:flex; align-items:center; gap:10px; padding:10px 12px; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line, #e0ddd0); font-size:0.86rem; }
 .pg-search-results a:hover{ background:var(--steel); }
 .pg-search-results a img{ width:34px; height:34px; object-fit:contain; flex:0 0 auto; background:var(--paper); border-radius:3px; }
@@ -293,13 +314,13 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .brand img{ height:38px; width:auto; }
 .brand .name{ font-size:0.98rem; font-weight:600; line-height:1.15; white-space:nowrap; }
 .brand .name span{ display:block; font-size:0.62rem; letter-spacing:0.14em; color:var(--sage-deep); font-family:'IBM Plex Mono',monospace; margin-top:2px; }
-nav.links{ display:flex; align-items:center; gap:34px; color:var(--text-dim); font-size:0.88rem; }
+nav.links{ display:flex; align-items:center; gap:34px; color:var(--ink); font-size:0.92rem; font-weight:600; }
 nav.links > a{ display:flex; align-items:center; gap:6px; text-decoration:none; color:inherit; }
-nav.links > a:hover{ color:var(--ink); }
-nav.links .nav-drop-btn{ color:var(--text-dim); font-size:0.88rem; }
-nav.links .nav-drop-btn:hover{ color:var(--ink); }
+nav.links > a:hover{ color:var(--sage-deep); }
+nav.links .nav-drop-btn{ color:var(--ink); font-size:0.92rem; font-weight:600; }
+nav.links .nav-drop-btn:hover{ color:var(--sage-deep); }
 .nav-ic{ width:15px; height:15px; flex:0 0 auto; color:var(--sage-deep); }
-@media (max-width:860px){ nav.links{ display:none; } }
+@media (max-width:767px){ nav.links{ display:none; } }
 #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{
   position:fixed; top:105px; left:0; right:0; width:100vw; transform:none;
   max-width:none; min-width:0; border-radius:0; border:none;
@@ -321,7 +342,7 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
 }
 .nav-mega-close:hover{ background:var(--steel); }
 .nav-mega-main{ width:100%; min-width:0; }
-.nav-mega .nav-drop-search{ background:var(--paper); border:1px solid var(--line); }
+.nav-mega .nav-drop-search{ background:#fff; border:2px solid var(--sage-deep); }
 .nav-mega .nav-cat-icon{ width:16px; height:16px; flex:0 0 auto; color:var(--sage-deep); margin-right:9px; }
 .nav-mega .nav-drop-link{ display:flex; align-items:center; justify-content:flex-start; gap:0; }
 .nav-mega .nav-drop-link span{ margin-right:auto; }
@@ -334,7 +355,7 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
 .nav-mega #navProductsResults .search-kicker{ grid-column:1 / -1; }
 .nav-mega #navProductsResults .search-empty{ grid-column:1 / -1; }
 .nav-mega-simple.nav-mega{ padding:0; }
-@media (max-width:860px){ #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{ display:none !important; } }
+@media (max-width:767px){ #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{ display:none !important; } }
 
   /* ===== Brand filter chips (10 Oct 2026) ===== */
   .cat-filter-bar{ display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 22px; }
@@ -486,47 +507,59 @@ nav.links .nav-drop-btn:hover{ color:var(--ink); }
       pgPositionSearchPanel();
       panel.classList.add('open');
       setTimeout(() => panel.querySelector('input').focus(), 100);
+      if (typeof renderPgResults === 'function') renderPgResults('');
     });
     closeBtn.addEventListener('click', () => panel.classList.remove('open'));
     window.addEventListener('resize', pgPositionSearchPanel);
   }
-  // Live search results (added) — uses RKIC_PRODUCTS from related-products-data.js
+    // Live search results (added)
+  const PG_ALL_CATEGORIES = ["FILTERS","FLAME ARRESTORS","FLAME MONITORING SYSTEMS","FLAME RELAY","FLAME SAFEGUARD","GAS FLOW METERS","GAS TRAIN SYSTEMS","HOSE PIPE FITTINGS","IGNITION CABLE","IGNITION ELECTRODES","IGNITION SPARES","IGNITION SPARK ELECTRODES","IGNITION TRANSFORMERS","MANUAL BALL VALVES","MULTIBLOCKS","PHOTOCELL","PILOT BURNERS","PRESSURE GAUGES","PRESSURE REGULATOR VALVES","PRESSURE SWITCHES","RATIO REGULATORS","SAFETY RELIEF VALVES","SEQUENCE CONTROLLERS","SERVO MOTORS","SILICON CARBIDE TUBES","SLAM SHUT OFF VALVES","SOLENOID VALVES","UV FLAME DETECTORS","UV FLAME SENSOR","VALVE PROVING SYSTEMS"];
+  function pgCatSlug(c){ return (c==='FILTERS'?'filters-strainers':(c==='PRESSURE GAUGES'?'pressure-gauge-accessories':c.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''))); }
   const pgSearchInput = panel ? panel.querySelector('input[name="q"]') : null;
   const pgSearchResults = document.getElementById('pgSearchResults');
-  if(pgSearchInput && pgSearchResults){
-    pgSearchInput.addEventListener('input', function(){
-      var q = pgSearchInput.value.trim().toLowerCase();
-      if(!q || typeof RKIC_PRODUCTS === 'undefined'){ pgSearchResults.innerHTML = ''; return; }
-      var cats = [];
-      var seenCat = {};
-      RKIC_PRODUCTS.forEach(function(p){ if(!seenCat[p.category]){ seenCat[p.category] = true; cats.push(p.category); } });
-      var prodMatches = RKIC_PRODUCTS.filter(function(p){
-        return (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().indexOf(q) !== -1;
-      }).slice(0, 50);
-      var catMatches = cats.filter(function(c){ return c.toLowerCase().indexOf(q) !== -1; }).slice(0, 15);
-      var html = '';
-      if(prodMatches.length === 0 && catMatches.length === 0){
-        html = '<div class="pg-search-empty">No products match \"' + q.replace(/</g,'&lt;') + '\" — try a different term, or contact us for a custom requirement.</div>';
-      } else {
-        if(prodMatches.length){
-          html += '<div class="pg-search-kicker">In Stock</div>';
-          prodMatches.forEach(function(p){
-            html += '<a href="../products/' + p.id + '.html">' +
-              '<img src="' + p.thumb + '" alt="" loading="lazy">' +
-              '<span class="pg-sr-info"><span class="pg-sr-name">' + p.name + '</span>' +
-              '<span class="pg-sr-meta">' + p.brand + ' · ' + p.category + '</span></span>' +
-              '<span class="pg-sr-code">' + p.code + '</span></a>';
-          });
-        }
-        if(catMatches.length){
-          html += '<div class="pg-search-kicker">Categories</div>';
-          catMatches.forEach(function(c){
-            var __slug = (c==='FILTERS'?'filters-strainers':(c==='PRESSURE GAUGES'?'pressure-gauge-accessories':c.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''))); html += '<a href="../categories/' + __slug + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
-          });
-        }
-      }
+  function renderPgResults(qRaw){
+    var q = (qRaw || '').trim().toLowerCase();
+    var html = '';
+    if(!q){
+      html += '<div class="pg-search-kicker">Categories</div>';
+      PG_ALL_CATEGORIES.forEach(function(c, i){
+        html += '<a href="../categories/' + pgCatSlug(c) + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span><span class="pg-sr-code">RK-' + String(i+1).padStart(2,'0') + '</span></a>';
+      });
       pgSearchResults.innerHTML = html;
-    });
+      return;
+    }
+    if(typeof RKIC_PRODUCTS === 'undefined'){ pgSearchResults.innerHTML = ''; return; }
+    var cats = [];
+    var seenCat = {};
+    RKIC_PRODUCTS.forEach(function(p){ if(!seenCat[p.category]){ seenCat[p.category] = true; cats.push(p.category); } });
+    var prodMatches = RKIC_PRODUCTS.filter(function(p){
+      return (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().indexOf(q) !== -1;
+    }).slice(0, 50);
+    var catMatches = cats.filter(function(c){ return c.toLowerCase().indexOf(q) !== -1; }).slice(0, 15);
+    if(prodMatches.length === 0 && catMatches.length === 0){
+      html = '<div class="pg-search-empty">No products match \"' + q.replace(/</g,'&lt;') + '\" — try a different term, or contact us for a custom requirement.</div>';
+    } else {
+      if(prodMatches.length){
+        html += '<div class="pg-search-kicker">In Stock</div>';
+        prodMatches.forEach(function(p){
+          html += '<a href="../products/' + p.id + '.html">' +
+            '<img src="' + p.thumb + '" alt="" loading="lazy">' +
+            '<span class="pg-sr-info"><span class="pg-sr-name">' + p.name + '</span>' +
+            '<span class="pg-sr-meta">' + p.brand + ' · ' + p.category + '</span></span>' +
+            '<span class="pg-sr-code">' + p.code + '</span></a>';
+        });
+      }
+      if(catMatches.length){
+        html += '<div class="pg-search-kicker">Categories</div>';
+        catMatches.forEach(function(c){
+          html += '<a href="../categories/' + pgCatSlug(c) + '.html"><span class="pg-sr-info"><span class="pg-sr-name">' + c + '</span></span></a>';
+        });
+      }
+    }
+    pgSearchResults.innerHTML = html;
+  }
+  if(pgSearchInput && pgSearchResults){
+    pgSearchInput.addEventListener('input', function(){ renderPgResults(pgSearchInput.value); });
     closeBtn && closeBtn.addEventListener('click', function(){ pgSearchInput.value = ''; pgSearchResults.innerHTML = ''; });
   }
   const burger = document.getElementById('pgBurgerBtn');
@@ -780,7 +813,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <script src="../nav-dropdown.js?v=20261012a" defer></script>
 
 <style>
-@media (max-width:860px){
+@media (max-width:767px){
   .mobile-quote-bar{
     display:flex; position:fixed; left:0; right:0; bottom:0; z-index:90;
     background:#F7F5EE; border-top:1px solid rgba(51,65,78,0.22);
@@ -794,7 +827,7 @@ document.addEventListener('DOMContentLoaded', function(){
   body{ padding-bottom:52px; }
   .wa-float{ bottom:69px; }
 }
-@media (min-width:861px){ .mobile-quote-bar{ display:none; } }
+@media (min-width:768px){ .mobile-quote-bar{ display:none; } }
 </style>
 <div class="mobile-quote-bar"><a href="../index.html#contact">Request a Quote</a></div>
 <script>

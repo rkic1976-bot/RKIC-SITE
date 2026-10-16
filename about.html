@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' https://unpkg.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://formspree.io; frame-src https://www.google.com; form-action 'self' https://formspree.io;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -96,11 +99,11 @@
 
   /* search */
   .search-btn{
-    background:none; border:1px solid var(--line); color:var(--ink);
-    width:38px; height:38px; border-radius:4px; cursor:pointer;
+    background:#fff; border:2px solid var(--sage-deep); color:var(--sage-deep); box-shadow:0 2px 8px rgba(133,94,28,0.15);
+    width:38px; height:38px; border-radius:6px; cursor:pointer;
     display:flex; align-items:center; justify-content:center; flex:0 0 auto;
   }
-  .search-btn:hover{ border-color:var(--sage-deep); }
+  .search-btn:hover{ background:var(--sage-deep); border-color:var(--sage-deep); color:#fff; }
   .search-btn svg{ width:17px; height:17px; }
   .search-panel{
     position:absolute; left:0; right:0; top:100%; z-index:55;
@@ -110,10 +113,10 @@
   }
   .search-panel.open{ max-height:420px; }
   .search-panel-inner{ padding:20px 28px; }
-  .search-row{ display:flex; align-items:center; gap:12px; border-bottom:2px solid var(--line); padding-bottom:12px; }
+  .search-row{ display:flex; align-items:center; gap:12px; border:2px solid var(--sage-deep); border-radius:8px; padding:10px 14px; box-shadow:0 2px 10px rgba(133,94,28,0.18); }
   .search-row svg{ width:18px; height:18px; color:var(--sage-deep); flex:0 0 auto; }
   .search-row input{
-    flex:1; border:none; outline:none; font-family:'Barlow',sans-serif; font-size:1.05rem;
+    flex:1; border:none; outline:none; font-family:'Barlow',sans-serif; font-size:1.05rem; font-weight:600;
     background:none; color:var(--ink);
   }
   .search-row .search-close{ background:none; border:none; cursor:pointer; font-size:1.2rem; color:var(--text-dim); }
@@ -135,25 +138,38 @@
   .brand img{ height:38px; width:auto; }
   .brand .name{ font-size:0.98rem; font-weight:600; line-height:1.15; white-space:nowrap; }
   .brand .name span{ display:block; font-size:0.62rem; letter-spacing:0.14em; color:var(--sage-deep); font-family:'IBM Plex Mono',monospace; margin-top:2px; }
-  nav.links{ display:flex; align-items:center; gap:34px; color:var(--text-dim); font-size:0.88rem; }
-  nav.links > a:hover{ color:var(--ink); }
+  nav.links{ display:flex; align-items:center; gap:34px; color:var(--ink); font-size:0.92rem; font-weight:600; }
+  nav.links > a:hover{ color:var(--sage-deep); }
   .nav-cta{ background:var(--ink); color:var(--paper); padding:10px 18px; border-radius:2px; font-size:0.84rem; font-weight:600; letter-spacing:0.01em; }
   .nav-cta:hover{ background:var(--sage-deep); }
   .nav-cta:hover{ background:var(--sage); }
   .burger{ display:none; color:var(--ink); font-size:1.4rem; cursor:pointer; background:none; border:none; padding:4px; }
-  @media (max-width:860px){
+  @media (max-width:767px){
     nav.links{ display:none; }
     .nav-cta{ display:none; }
     .burger{ display:block; }
+  }
+  @media (min-width:768px) and (max-width:1099px){
+    .nav-inner{ padding:0 8px !important; gap:5px !important; }
+    .brand{ gap:5px !important; }
+    .brand img{ height:24px !important; }
+    .brand .name{ font-size:0.68rem !important; }
+    .brand .name span{ font-size:0.4rem !important; }
+    nav.links{ gap:7px !important; font-size:0.64rem !important; }
+    nav.links > a{ white-space:nowrap !important; }
+    nav.links .nav-ic{ display:none !important; }
+    .nav-drop-btn{ font-size:0.64rem !important; }
+    .nav-cta{ padding:6px 8px !important; font-size:0.62rem !important; white-space:nowrap !important; }
+    .search-btn{ padding:3px !important; }
   }
 
   /* desktop Products/Brands dropdowns */
   .nav-dropdown{ position:relative; }
   .nav-drop-btn{
     display:flex; align-items:center; gap:6px; background:none; border:none; cursor:pointer;
-    color:var(--text-dim); font-size:0.88rem; font-family:'Barlow',sans-serif; padding:0;
+    color:var(--ink); font-size:0.92rem; font-weight:600; font-family:'Barlow',sans-serif; padding:0;
   }
-  .nav-drop-btn:hover{ color:var(--ink); }
+  .nav-drop-btn:hover{ color:var(--sage-deep); }
   .nav-drop-btn .chev{ font-size:0.7rem; transition:transform 0.2s ease; }
   .nav-dropdown.open .nav-drop-btn .chev{ transform:rotate(180deg); }
   .nav-drop-panel{
@@ -169,12 +185,12 @@
     max-height:85vh; overflow-y:visible;
   }
   .nav-drop-search{
-    display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:5px;
-    padding:8px 11px; margin:0 0 10px; background:var(--paper);
+    display:flex; align-items:center; gap:8px; border:2px solid var(--sage-deep); border-radius:8px;
+    padding:10px 14px; margin:0 0 10px; background:#fff; box-shadow:0 2px 10px rgba(133,94,28,0.18);
   }
-  .nav-drop-search svg{ width:15px; height:15px; stroke:var(--sage-deep); flex:0 0 auto; }
-  .nav-drop-search input{ border:none; outline:none; font-size:0.82rem; color:var(--ink); width:100%; background:transparent; font-family:'Barlow',sans-serif; }
-  .nav-drop-search input::placeholder{ color:var(--text-dim); }
+  .nav-drop-search svg{ width:17px; height:17px; stroke:var(--sage-deep); flex:0 0 auto; }
+  .nav-drop-search input{ border:none; outline:none; font-size:0.92rem; font-weight:600; color:var(--ink); width:100%; background:transparent; font-family:'Barlow',sans-serif; }
+  .nav-drop-search input::placeholder{ color:var(--sage-deep); opacity:0.85; }
   #navProductsGrid{
     display:grid; grid-template-columns:repeat(6, 1fr); gap:2px 8px;
     max-height:60vh; overflow-y:auto;
@@ -224,6 +240,11 @@
   .drawer-item.open .drawer-row .chev{ transform:rotate(180deg); }
   .drawer-sub{ display:none; background:var(--steel); }
   .drawer-item.open .drawer-sub{ display:block; }
+  .drawer-search{ display:flex; align-items:center; gap:10px; background:#fff; border:2px solid var(--sage-deep); border-radius:8px; padding:11px 14px; margin:12px 16px; box-shadow:0 2px 10px rgba(133,94,28,0.18); }
+  .drawer-search svg{ width:17px; height:17px; stroke:var(--sage-deep); flex:0 0 auto; }
+  .drawer-search input{ border:none; outline:none; font-family:'Barlow',sans-serif; font-size:0.92rem; font-weight:600; width:100%; background:transparent; color:var(--ink); }
+  .drawer-search input::placeholder{ color:var(--sage-deep); opacity:0.85; }
+  #drawerSearchResults{ padding:0 10px; }
   .drawer-sub a{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:14px 20px 14px 40px; font-size:0.9rem; color:var(--text-dim); border-top:1px solid var(--line); }
   .drawer-sub a:hover{ color:var(--ink); }
   .drawer-sub-sublink{ padding-left:58px !important; font-size:0.82rem !important; }
@@ -515,7 +536,7 @@
   .stats-band{ background:var(--sage-pale); padding:52px 0; }
   .stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
   @media (max-width:800px){ .stats-grid{ grid-template-columns:repeat(2,1fr); gap:32px 20px; } }
-  .stat-num{ font-family:'Barlow Condensed',sans-serif; font-size:2.4rem; font-weight:700; color:var(--flame); line-height:1; }
+  .stat-num{ font-family:'Barlow Condensed',sans-serif; font-size:2.4rem; font-weight:700; color:var(--sage-deep); line-height:1; }
   .stat-label{ margin-top:10px; font-size:0.8rem; color:rgba(51,65,78,0.75); letter-spacing:0.02em; }
   .tagline-band{ background:var(--flame-light); padding:56px 0; }
   .tagline-quote{ font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:600; text-align:center; color:var(--ink); max-width:56ch; margin:0 auto; line-height:1.5; }
@@ -631,7 +652,7 @@
   }
   .nav-mega-close:hover{ background:var(--steel); }
   .nav-mega-main{ width:100%; min-width:0; }
-  .nav-mega .nav-drop-search{ background:var(--paper); border:1px solid var(--line); }
+  .nav-mega .nav-drop-search{ background:#fff; border:2px solid var(--sage-deep); }
   .nav-mega .nav-cat-icon{ width:16px; height:16px; flex:0 0 auto; color:var(--sage-deep); margin-right:9px; }
   .nav-mega .nav-drop-link{ display:flex; align-items:center; justify-content:flex-start; gap:0; }
   .nav-mega .nav-drop-link span{ margin-right:auto; }
@@ -644,7 +665,7 @@
   .nav-mega #navProductsResults .search-kicker{ grid-column:1 / -1; }
   .nav-mega #navProductsResults .search-empty{ grid-column:1 / -1; }
   .nav-mega-simple.nav-mega{ padding:0; }
-  @media (max-width:860px){ #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{ display:none !important; } }
+  @media (max-width:767px){ #navProductsPanel.nav-mega, #navBrandsPanel.nav-mega{ display:none !important; } }
 
   /* ===== ASSOCIATE BRANDS — boxed grid (restyled chip strip, same data/JS) ===== */
   .brand-strip .brand-chip{
@@ -731,7 +752,14 @@
     <li><a class="drawer-row" href="about.html">About Us</a></li>
     <li class="drawer-item" id="drawerProducts">
       <div class="drawer-row">Products <span class="chev">⌄</span></div>
-      <div class="drawer-sub" id="drawerProductsSub"></div>
+      <div class="drawer-sub" id="drawerProductsSub">
+        <div class="drawer-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="drawerCatFilter" placeholder="Search products — e.g. solenoid valve, ignition electrode…" autocomplete="off">
+        </div>
+        <div class="search-results" id="drawerSearchResults" hidden></div>
+        <div id="drawerCatTree"></div>
+      </div>
     </li>
     <li class="drawer-item" id="drawerBrands">
       <div class="drawer-row">Brands <span class="chev">⌄</span></div>
@@ -1039,7 +1067,7 @@
       <div class="info-block"><div class="k">Working Time</div><div class="v">9:00 AM to 6:30 PM</div></div>
       <div class="info-block"><div class="k">Business Registration</div><div class="v">GSTIN: 24ADPPK7006A1ZY<br>UDYAM (MSME): UDYAM-GJ-22-126661<br>DUNS: 920713349</div></div>
       <div class="map-embed">
-        <iframe src="https://maps.google.com/maps?cid=2131862660796870412&amp;z=17&amp;output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="R.K. Instruments &amp; Controls — office location on Google Maps"></iframe>
+        <iframe src="https://www.google.com/maps?q=R.K.+Instruments+%26+Controls,+Dhamanwala+Service+Complex,+GIDC+Pandesara,+Surat,+Gujarat&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="R.K. Instruments &amp; Controls — office location on Google Maps"></iframe>
         <a class="map-open-link" href="https://maps.app.goo.gl/dckyEYxhRWppFgK47" target="_blank" rel="noopener">Open in Google Maps →</a>
       </div>
     </div>
@@ -1572,6 +1600,7 @@
   }).observe(drawer, {attributes:true, attributeFilter:['class']});
 
   const drawerProductsSub = document.getElementById('drawerProductsSub');
+  const drawerCatTree = document.getElementById('drawerCatTree');
   categories.forEach(name => {
     const n = categoryCount(name);
     const items = subcategoryItemsForCategory(name);
@@ -1581,7 +1610,7 @@
       a.className = 'drawer-sub-link';
       a.innerHTML = `<span>${name}</span>${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
       a.addEventListener('click', () => { drawer.classList.remove('open'); });
-      drawerProductsSub.appendChild(a);
+      drawerCatTree.appendChild(a);
       return;
     }
     // Categories with sub-categories: tap anywhere on the row to expand/collapse
@@ -1620,8 +1649,66 @@
       subList.appendChild(sa);
     });
     catItem.appendChild(subList);
-    drawerProductsSub.appendChild(catItem);
+    drawerCatTree.appendChild(catItem);
   });
+
+  const drawerCatFilter = document.getElementById('drawerCatFilter');
+  const drawerSearchResults = document.getElementById('drawerSearchResults');
+  function renderDrawerResults(rawQuery){
+    const q = rawQuery.trim().toLowerCase();
+    drawerSearchResults.innerHTML = '';
+    const prodMatches = products.filter(p => (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().includes(q)).slice(0, 50);
+    const catMatches = categories.filter(c => c.toLowerCase().includes(q)).slice(0, 15);
+    if(prodMatches.length === 0 && catMatches.length === 0){
+      const div = document.createElement('div');
+      div.className = 'search-empty';
+      div.textContent = `No products match "${rawQuery}" — try a different term, or contact us for a custom requirement.`;
+      drawerSearchResults.appendChild(div);
+      return;
+    }
+    if(prodMatches.length){
+      const kicker = document.createElement('div');
+      kicker.className = 'search-kicker';
+      kicker.textContent = 'In Stock';
+      drawerSearchResults.appendChild(kicker);
+      prodMatches.forEach(p => {
+        const a = document.createElement('a');
+        a.href = 'products/' + p.id + '.html';
+        a.className = 'search-product-row';
+        const brandHTML = brandLogos[p.brand] ? `<img class="srp-brand-logo" src="${brandLogos[p.brand]}" alt="${p.brand}">` : `${p.brand} · `;
+        a.innerHTML = `<img src="${p.image}" alt="${p.name}"><span class="srp-info"><span class="srp-name">${p.name}</span><span class="srp-meta">${brandHTML}${p.category}</span></span><span class="code">${p.code}</span>`;
+        drawerSearchResults.appendChild(a);
+      });
+    }
+    if(catMatches.length){
+      const kicker2 = document.createElement('div');
+      kicker2.className = 'search-kicker';
+      kicker2.textContent = 'Categories';
+      drawerSearchResults.appendChild(kicker2);
+      catMatches.forEach(name => {
+        const a = document.createElement('a');
+        a.href = categoryHref(name);
+        a.innerHTML = `<span>${name}</span>`;
+        a.addEventListener('click', () => { drawer.classList.remove('open'); });
+        drawerSearchResults.appendChild(a);
+      });
+    }
+  }
+  if(drawerCatFilter){
+    drawerCatFilter.addEventListener('input', () => {
+      const q = drawerCatFilter.value.trim();
+      if(!q){
+        drawerCatTree.hidden = false;
+        drawerSearchResults.hidden = true;
+      } else {
+        drawerCatTree.hidden = true;
+        drawerSearchResults.hidden = false;
+        renderDrawerResults(q);
+      }
+    });
+    drawerCatFilter.addEventListener('click', (e) => { e.stopPropagation(); });
+  }
+
   const drawerBrandsSub = document.getElementById('drawerBrandsSub');
   brands.forEach(b => {
     const n = brandCount(b);
@@ -1763,7 +1850,7 @@
 
 
 <style>
-@media (max-width:860px){
+@media (max-width:767px){
   .mobile-quote-bar{
     display:flex; position:fixed; left:0; right:0; bottom:0; z-index:90;
     background:#F7F5EE; border-top:1px solid rgba(51,65,78,0.22);
@@ -1776,7 +1863,7 @@
   }
   body{ padding-bottom:52px; }
 }
-@media (min-width:861px){ .mobile-quote-bar{ display:none; } }
+@media (min-width:768px){ .mobile-quote-bar{ display:none; } }
 </style>
 <div class="mobile-quote-bar"><a href="#contact">Request a Quote</a></div>
 <script>

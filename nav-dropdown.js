@@ -162,6 +162,23 @@
   // and was missing/stale on the subcategory expand options. Added 12 Oct 2026. ----
   var drawerProductsSub = document.getElementById('drawerProductsSub');
   if(drawerProductsSub){
+    // Search box (full product search — name, brand, category, subcategory,
+    // model/part code — same matching rule as navProductsFilter above) sits
+    // above the category tree; typing hides the tree and shows live results.
+    var drawerSearchWrap = document.createElement('div');
+    drawerSearchWrap.className = 'drawer-search';
+    drawerSearchWrap.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' +
+      '<input type="text" id="drawerCatFilter" placeholder="Search products — e.g. solenoid valve, ignition electrode…" autocomplete="off">';
+    var drawerSearchResults = document.createElement('div');
+    drawerSearchResults.className = 'search-results';
+    drawerSearchResults.id = 'drawerSearchResults';
+    drawerSearchResults.hidden = true;
+    var drawerCatTree = document.createElement('div');
+    drawerCatTree.id = 'drawerCatTree';
+    drawerProductsSub.appendChild(drawerSearchWrap);
+    drawerProductsSub.appendChild(drawerSearchResults);
+    drawerProductsSub.appendChild(drawerCatTree);
+
     categories.forEach(function(name){
       var subNames = subcategoryMap[name] || [];
       if(subNames.length){
@@ -191,14 +208,71 @@
         });
         item.appendChild(row);
         item.appendChild(subList);
-        drawerProductsSub.appendChild(item);
+        drawerCatTree.appendChild(item);
       } else {
         var a2 = document.createElement('a');
         a2.href = categoryHref(name);
         a2.textContent = name;
-        drawerProductsSub.appendChild(a2);
+        drawerCatTree.appendChild(a2);
       }
     });
+
+    var drawerCatFilter = document.getElementById('drawerCatFilter');
+    function renderDrawerResults(rawQuery){
+      var q = rawQuery.trim().toLowerCase();
+      drawerSearchResults.innerHTML = '';
+      var prodMatches = RKIC_PRODUCTS.filter(function(p){
+        return (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.subcategory || '') + ' ' + p.code).toLowerCase().indexOf(q) !== -1;
+      }).slice(0, 50);
+      var catMatches = categories.filter(function(c){ return c.toLowerCase().indexOf(q) !== -1; }).slice(0, 15);
+      if(prodMatches.length === 0 && catMatches.length === 0){
+        var div = document.createElement('div');
+        div.className = 'search-empty';
+        div.textContent = 'No products match "' + rawQuery + '" — try a different term, or contact us for a custom requirement.';
+        drawerSearchResults.appendChild(div);
+        return;
+      }
+      if(prodMatches.length){
+        var kicker = document.createElement('div');
+        kicker.className = 'search-kicker';
+        kicker.textContent = 'In Stock';
+        drawerSearchResults.appendChild(kicker);
+        prodMatches.forEach(function(p){
+          var a = document.createElement('a');
+          a.href = prefix + 'products/' + p.id + '.html';
+          a.className = 'search-product-row';
+          var brandHTML = brandLogoOf[p.brand] ? '<img class="srp-brand-logo" src="' + brandLogoOf[p.brand] + '" alt="' + p.brand + '">' : (p.brand + ' · ');
+          a.innerHTML = '<img src="' + p.thumb + '" alt="' + p.name + '"><span class="srp-info"><span class="srp-name">' + p.name + '</span><span class="srp-meta">' + brandHTML + p.category + '</span></span><span class="code">' + p.code + '</span>';
+          drawerSearchResults.appendChild(a);
+        });
+      }
+      if(catMatches.length){
+        var kicker2 = document.createElement('div');
+        kicker2.className = 'search-kicker';
+        kicker2.textContent = 'Categories';
+        drawerSearchResults.appendChild(kicker2);
+        catMatches.forEach(function(name){
+          var a = document.createElement('a');
+          a.href = categoryHref(name);
+          a.innerHTML = '<span>' + name + '</span>';
+          drawerSearchResults.appendChild(a);
+        });
+      }
+    }
+    if(drawerCatFilter){
+      drawerCatFilter.addEventListener('input', function(e){
+        var q = e.target.value.trim();
+        if(!q){
+          drawerCatTree.hidden = false;
+          drawerSearchResults.hidden = true;
+        } else {
+          drawerCatTree.hidden = true;
+          drawerSearchResults.hidden = false;
+          renderDrawerResults(q);
+        }
+      });
+      drawerCatFilter.addEventListener('click', function(e){ e.stopPropagation(); });
+    }
   }
 
   // ---- Live search (products + categories), same matching rule as index.html ----
