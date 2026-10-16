@@ -158,10 +158,23 @@
   .nav-cta:hover{ background:var(--sage-deep); }
   .nav-cta:hover{ background:var(--sage); }
   .burger{ display:none; color:var(--ink); font-size:1.4rem; cursor:pointer; background:none; border:none; padding:4px; }
-  @media (max-width:1099px){
+  @media (max-width:767px){
     nav.links{ display:none; }
     .nav-cta{ display:none; }
     .burger{ display:block; }
+  }
+  @media (min-width:768px) and (max-width:1099px){
+    .nav-inner{ padding:0 8px !important; gap:5px !important; }
+    .brand{ gap:5px !important; }
+    .brand img{ height:24px !important; }
+    .brand .name{ font-size:0.68rem !important; }
+    .brand .name span{ font-size:0.4rem !important; }
+    nav.links{ gap:7px !important; font-size:0.64rem !important; }
+    nav.links > a{ white-space:nowrap !important; }
+    nav.links .nav-ic{ display:none !important; }
+    .nav-drop-btn{ font-size:0.64rem !important; }
+    .nav-cta{ padding:6px 8px !important; font-size:0.62rem !important; white-space:nowrap !important; }
+    .search-btn{ padding:3px !important; }
   }
 
   /* desktop Products/Brands dropdowns */
@@ -221,7 +234,7 @@
   .nav-mega .nav-cat-toggle:hover .nav-cat-caret{ color:var(--ink); }
   .nav-mega-simple.nav-mega{ padding:0; }
   .nav-mega-simple .nav-mega-inner-shim{ display:none; }
-  @media (max-width:1099px){
+  @media (max-width:767px){
     .nav-drop-panel.nav-mega{ display:none !important; }
   }
   .nav-drop-panel a{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 10px; font-size:0.84rem; color:var(--ink); border-radius:2px; }
@@ -237,7 +250,7 @@
     padding:0; max-height:none; overflow-y:visible;
   }
   .nav-dropdown.open #navProductsPanel.nav-mega{ display:block; }
-  @media (max-width:1099px){ #navProductsPanel.nav-mega{ display:none !important; } }
+  @media (max-width:767px){ #navProductsPanel.nav-mega{ display:none !important; } }
   .nav-drop-search{
     display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:5px;
     padding:8px 11px; margin:0 0 10px; background:var(--paper);
@@ -358,7 +371,7 @@
   #navBrandsPanel.nav-mega a{ color:var(--ink); }
   #navBrandsPanel.nav-mega a:hover{ background:var(--steel); }
   #navBrandsPanel.nav-mega .nav-drop-brand-name{ color:var(--text-dim); }
-  @media (max-width:1099px){ #navBrandsPanel.nav-mega{ display:none !important; } }
+  @media (max-width:767px){ #navBrandsPanel.nav-mega{ display:none !important; } }
 
   /* floating whatsapp button */
   .wa-float{
@@ -2089,7 +2102,7 @@
 
 
 <style>
-@media (max-width:1099px){
+@media (max-width:767px){
   .mobile-quote-bar{
     display:flex; position:fixed; left:0; right:0; bottom:0; z-index:90;
     background:#F7F5EE; border-top:1px solid rgba(51,65,78,0.22);
@@ -2102,7 +2115,7 @@
   }
   body{ padding-bottom:52px; }
 }
-@media (min-width:1100px){ .mobile-quote-bar{ display:none; } }
+@media (min-width:768px){ .mobile-quote-bar{ display:none; } }
 </style>
 <div class="mobile-quote-bar"><a href="#contact">Request a Quote</a></div>
 <script>
