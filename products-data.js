@@ -5343,4 +5343,26 @@ const products = [
       },
       description: "The Dungs PBV (Push Button Valve) replaces a manual ball valve when mounting a pressure gauge on gas piping. Pressing the spring-return button lets the gauge pressure be read; releasing it automatically closes the valve and removes pressure from the gauge, extending gauge life and protecting it from pressure surges. Available in 1/4-inch NPT (Order No. 267055) and Rp 1/2-inch (Order No. 266828, includes metal seal) connections. Rated to a maximum operating pressure of 5 bar (70 psig) for dry natural gas, propane, butane and other noncorrosive gases. Manufactured by Dungs."
     }
+    ,
+    {
+      id: "vanaz-r5112-pressure-regulator",
+      name: "Vanaz R5112 Preset Pressure Regulator (1 to 5 Kg/cm\u00b2)",
+      brand: "Vanaz",
+      category: "PRESSURE REGULATOR VALVES",
+      subcategory: "Low Pressure Regulator",
+      code: "R5110 / R5112",
+      size: "1.5\" NB Flanged (R5110) / 2\" NB Flanged (R5112), ANSI 150#",
+      image: "images/vanaz-r5112-pressure-regulator-large.webp",
+      specs: {
+        "Type": "R5110 / R5112",
+        "Connection Size \u2014 R5110": "1.5\" NB Flanged, ANSI 150#",
+        "Connection Size \u2014 R5112": "2\" NB Flanged, ANSI 150#",
+        "Gas": "LPG / Natural Gas / Nitrogen (both variants)",
+        "Inlet Pressure": "1 \u2013 5 Kg/cm\u00b2 (both variants)",
+        "Outlet Pressure": "0.15 \u2013 0.6 Kg/cm\u00b2 (150 \u2013 600 mbar) (both variants)",
+        "Flow Rate": "80 Nm\u00b3/Hr. (both variants)",
+        "Manufacturer": "Vanaz Engineers Ltd, Pune"
+      },
+      description: "The Vanaz R5110 / R5112 is a preset pressure regulator built for a wide, variable inlet pressure range, well suited as a regulator ahead of medium to large industrial furnace and burner systems. It accepts an inlet pressure of 1\u20135 Kg/cm\u00b2 and delivers a regulated outlet pressure of 0.15\u20130.6 Kg/cm\u00b2 (150\u2013600 mbar) at a flow capacity of 80 Nm\u00b3/hr, and is compatible with LPG, Natural Gas and Nitrogen service. The series is available in two flanged connection sizes on one common design \u2014 the R5110 with a 1.5\u2033 NB flanged (ANSI 150#) connection, and the R5112 with a 2\u2033 NB flanged (ANSI 150#) connection \u2014 both sharing the same pressure, flow and construction specification. Manufactured by Vanaz Engineers Ltd, Pune."
+    }
 ];
