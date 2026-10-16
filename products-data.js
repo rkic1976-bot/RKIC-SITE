@@ -3386,13 +3386,13 @@ const products = [
       name: "Honeywell Kromschröder GIK 40R02-5 Air/Gas Ratio Regulator",
       brand: 'Honeywell Kromschröder',
       category: 'RATIO REGULATORS',
-      code: '02166148',
+      code: '03166146',
       size: "DN 40 · Rp 1½",
       image: 'images/kromschroder-gik-40r02-5-ratio-regulator-large.webp',
       specs: {
         "Model": "GIK 40R02-5",
         "Type": "Air/Gas Ratio Control (Continuous Control, Bypass Group 2)",
-        "Part No.": "02166148",
+        "Part No.": "03166146",
         "Connection Size": "DN 40, Rp 1½ (internal thread)",
         "Transmission Ratio": "1:1 (1:10 turndown)",
         "Maximum Inlet Pressure": "200 mbar",
@@ -3406,7 +3406,7 @@ const products = [
         "Approvals": "EU certified — (EU) 2016/426 (GAR), EN 88-1:2011+A1:2016",
         "Manufacturer": "Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)"
       },
-      description: "The Honeywell Kromschröder GIK 40R02-5 (Part No. 02166148) is an air/gas ratio control that maintains a constant 1:1 gas/air pressure ratio (1:10 turndown) upstream of gas burners in systems without preheated combustion air. Sized for DN 40 / Rp 1½ connections, it is rated for a maximum inlet pressure of 200 mbar, a control (load) pressure range of 0.5 to 120 mbar, an outlet (gas) pressure range of 0.2 to 119 mbar, and a maximum differential pressure of 100 mbar. Suitable for natural gas, town gas, LPG (gaseous) and biogas, it features an aluminium-silicon alloy housing with NBR diaphragms and seals, a brass bypass screw, and an outlet pressure test point, rated for −15°C to +60°C ambient operation (per nameplate). EU certified to (EU) 2016/426 (GAR) and EN 88-1:2011+A1:2016. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
+      description: "The Honeywell Kromschröder GIK 40R02-5 (Part No. 03166146) is an air/gas ratio control that maintains a constant 1:1 gas/air pressure ratio (1:10 turndown) upstream of gas burners in systems without preheated combustion air. Sized for DN 40 / Rp 1½ connections, it is rated for a maximum inlet pressure of 200 mbar, a control (load) pressure range of 0.5 to 120 mbar, an outlet (gas) pressure range of 0.2 to 119 mbar, and a maximum differential pressure of 100 mbar. Suitable for natural gas, town gas, LPG (gaseous) and biogas, it features an aluminium-silicon alloy housing with NBR diaphragms and seals, a brass bypass screw, and an outlet pressure test point, rated for −15°C to +60°C ambient operation (per nameplate). EU certified to (EU) 2016/426 (GAR) and EN 88-1:2011+A1:2016. Manufactured by Honeywell Kromschröder (Elster GmbH, Osnabrück, Germany)."
     },
     {
       id: 'kromschroder-gik-25r02-5-ratio-regulator',
