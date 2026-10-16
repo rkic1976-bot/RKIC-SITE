@@ -5419,4 +5419,30 @@ const products = [
     },
     description: "The Vanaz R5110 / R5112 is a preset pressure regulator built for a wide, variable inlet pressure range, well suited as a regulator ahead of medium to large industrial furnace and burner systems. It accepts an inlet pressure of 1\u20135 Kg/cm\u00b2 and delivers a regulated outlet pressure of 0.15\u20130.6 Kg/cm\u00b2 (150\u2013600 mbar) at a flow capacity of 80 Nm\u00b3/hr, and is compatible with LPG, Natural Gas and Nitrogen service. The series is available in two flanged connection sizes on one common design \u2014 the R5110 with a 1.5\u2033 NB flanged (ANSI 150#) connection, and the R5112 with a 2\u2033 NB flanged (ANSI 150#) connection \u2014 both sharing the same pressure, flow and construction specification. Manufactured by Vanaz Engineers Ltd, Pune."
   }
+  ,
+  {
+    id: "honeywell-kromschroder-gas-train-system",
+    name: "Honeywell Kromschr\u00f6der Gas Pressure Control & Safety Train",
+    brand: "Honeywell Kromschr\u00f6der",
+    category: "GAS TRAIN SYSTEMS",
+    code: "Custom Engineered",
+    size: "Engineered to Order",
+    image: "images/honeywell-kromschroder-gas-train-system-large.webp",
+    specs: {
+      "Type": "Gas Pressure Control & Safety Train (engineered assembly)",
+      "Applicable Gases": "Natural Gas, LPG and other fuel gases per burner requirement",
+      "Standard": "Engineered to EN 746-2 (thermoprocessing equipment) guidelines",
+      "Isolation": "AKT manual ball valve",
+      "Filtration": "GFK gas filter",
+      "Pressure Monitoring": "KFM / RFM pressure gauges with test valves",
+      "Overpressure Protection": "JSAV slam shut-off valve + VSBV relief valve",
+      "Pressure Regulation": "VGBF / GDJ pressure regulator",
+      "Safety Interlocks": "DG high/low pressure switches",
+      "Flow Shutoff": "VAS / VG automatic solenoid valves",
+      "Valve Proving": "TC 410 automated tightness test system",
+      "Burner Management": "IFS / IFD / BCU ignition & flame monitoring",
+      "Manufacturer": "Honeywell Kromschr\u00f6der (Elster GmbH, Germany)"
+    },
+    description: "A Honeywell Kromschr\u00f6der gas train is a pre-assembled engineering system of safety devices and flow controls that delivers fuel gas to industrial burners safely and steadily, built up in sequence from a manual isolating ball valve (AKT) for maintenance isolation, a gas filter (GFK) to protect downstream controls from dirt, pressure gauges (KFM/RFM) with push-button test valves for line-pressure monitoring, a slam shut-off valve (JSAV) paired with a relief valve (VSBV) to block overpressure surges while venting minor spikes, a pressure regulator (VGBF/GDJ) to smooth out fluctuations and hold a steady working pressure, high/low pressure switches (DG) that trigger safety interlocks on abnormal pressure, automatic solenoid valves (VAS/VG) for process-controlled shutoff, a valve proving system (TC 410) that runs an automated tightness test on the dual safety valves before burner start-up, and burner management systems (IFS/IFD/BCU) that control ignition and continuously monitor the flame signal. Engineered and assembled to each project\u2019s gas medium, inlet pressure and flow requirement, and built to international thermoprocessing standards such as EN 746-2. Manufactured by Honeywell Kromschr\u00f6der (Elster GmbH, Germany)."
+  }
 ];

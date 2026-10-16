@@ -2453,3 +2453,19 @@ Naya product add kiya: **Vanaz R5110 / R5112 Preset Pressure Regulator**, catego
 - **Note**: local computer folder GitHub se thoda purana tha (kuch recent products/CSS changes missing the) — isliye sab edits GitHub ke current `main` version par fresh base karke apply kiye, taaki koi security header ya recent styling fix revert na ho.
 
 Rahul ke "kar do push" request par ye commit maine seedha GitHub `main` par push kar diya hai.
+
+---
+
+## 16 Oct 2026 — Honeywell Kromschröder Gas Pressure Control & Safety Train
+
+Naya product add kiya: **Honeywell Kromschröder Gas Pressure Control & Safety Train**, category Gas Train Systems, brand Honeywell Kromschröder — engineered assembly (no fixed SKU), fixed size/connection nahi hai kyunki ye project-specific engineered-to-order system hai.
+
+- **Duplicate check**: Gas Train Systems category mein sirf Dungs DN65, Madas DN50, Vanaz Two-Stage the — Honeywell Kromschröder ka koi gas train nahi tha. Naya product confirm.
+- **Specs source**: Rahul ne khud reference diya (Kromschröder ki official system-technology pages ke citations ke saath) — component list (AKT, GFK, KFM/RFM, JSAV/VSBV, VGBF/GDJ, DG, VAS/VG, TC 410, IFS/IFD/BCU) aur EN 746-2 standard. Koi fixed numeric inlet/outlet pressure ya flow rate nahi diya gaya tha (kyunki ye generic engineered system hai, single SKU nahi) — isliye specs sirf qualitative/component-level rakhe, koi number invent nahi kiya.
+- Template: `vanaz-twostage-gastrain-gas-train-system.html` (existing "system" style product page, qualitative specs) use kiya kyunki wahi format is tarah ke engineered-assembly products ke liye already established hai.
+- Image: Rahul ke diye gaye product photo se `large` (1100px, JPEG q91) + `webp` (q82), `thumb` (400px, JPEG q82) + `webp` (q75) — 4 files, current site convention follow kiya.
+- Files touched: `products/honeywell-kromschroder-gas-train-system.html` (naya), `products-data.js` (+1), `related-products-data.js` (+1), `brand-data.js` (Honeywell Kromschröder count +1), `sitemap.xml` (+1 url), `categories/gas-train-systems.html` (+1 product), `brands/honeywell-kromschroder.html` (+1 item).
+- Validation: JSON-LD valid on sab touched HTML, `<a>`/`<div>` tag-balance match, `products-data.js`/`related-products-data.js` 253 entries dono mein (0 duplicate ids), sitemap well-formed XML (367 urls).
+- Fresh GitHub `main` (standing rule ke hisaab se) par base karke banaya — local device folder use nahi kiya, isliye koi staleness risk nahi.
+
+Rahul ke explicit go-ahead par ye commit seedha GitHub `main` par push kar diya hai.
