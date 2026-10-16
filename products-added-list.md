@@ -2448,7 +2448,8 @@ Naya product add kiya: **Vanaz R5110 / R5112 Preset Pressure Regulator**, catego
 - Rahul ne clarify kiya ki product id/slug **R5112** par base ho aur naam mein **"5 Kg/cm²"** aana chahiye — isliye final id `vanaz-r5112-pressure-regulator`, title "Vanaz R5112 Preset Pressure Regulator (1 to 5 Kg/cm²)".
 - Dono connection sizes (R5110 aur R5112) **ek hi combined page** par rakhe, alag-alag spec rows ke through (R6111-I/II wale existing pattern follow kiya).
 - Image: user-uploaded photo se `large` (1100px, JPEG q91) + `webp` (q82), `thumb` (400px, JPEG q82) + `webp` (q75) — 4 files, current site convention (jpg + webp dono) follow kiya.
-- Files touched: `products/vanaz-r5112-pressure-regulator.html` (naya), `products-data.js` (+1, 249 total), `related-products-data.js` (+1), `brand-data.js` (Vanaz 38→39), `sitemap.xml` (+1 url), `categories/pressure-regulator-valves.html` (26→27 products), `categories/pressure-regulator-valves-low-pressure-regulator.html` (6→7 products), `brands/vanaz.html` (38→39 items).
-- Validation: JSON-LD `json.loads()` valid on sab touched HTML, `<a>`/`<div>` tag-balance match, `products-data.js` Node-parsed (249 entries, 0 duplicate ids), sitemap well-formed XML.
+- Files touched: `products/vanaz-r5112-pressure-regulator.html` (naya), `products-data.js` (+1), `related-products-data.js` (+1), `brand-data.js` (Vanaz count +1), `sitemap.xml` (+1 url), `categories/pressure-regulator-valves.html` (+1 product), `categories/pressure-regulator-valves-low-pressure-regulator.html` (+1 product), `brands/vanaz.html` (+1 item).
+- Validation: JSON-LD `json.loads()` valid on sab touched HTML, `<a>`/`<div>` tag-balance match, `products-data.js` Node-parsed (0 duplicate ids), sitemap well-formed XML.
+- **Note**: local computer folder GitHub se thoda purana tha (kuch recent products/CSS changes missing the) — isliye sab edits GitHub ke current `main` version par fresh base karke apply kiye, taaki koi security header ya recent styling fix revert na ho.
 
-Ab Rahul ko sirf GitHub Desktop se commit + push karna hoga.
+Rahul ke "kar do push" request par ye commit maine seedha GitHub `main` par push kar diya hai.
