@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rkic1976-bot.github.io/RKIC-SITE/sitemap.xml
+Sitemap: https://rkic.in/sitemap.xml
