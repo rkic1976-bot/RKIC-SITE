@@ -2886,14 +2886,14 @@ const products = [
       imageLarge: 'images/vanaz-r2301-i-ammonia-pressure-regulator-xl.webp',
       specs: {
         'Inlet Pressure': '1 – 17 Bar',
-        'Outlet Pressure': '0.5 – 4 Bar, spring-adjustable',
+        'Outlet Pressure': '0.5 – 10 Bar, spring-adjustable',
         'Flow Rate': '0 – 100 Nm³/Hr',
         'Gas': 'Ammonia (NH3)',
         'MOC': 'Aluminium Body & Bonnet, SS Trim Parts',
         'Size': '25mm (1") BSPF Threaded End',
         'Manufacturer': 'Vanaz Engineers Ltd, Pune'
       },
-      description: 'The Vanaz R2301 I is an ammonia (NH3) pressure regulator rated for an inlet pressure of 1 to 17 bar, with a spring-adjustable outlet pressure of 0.5 to 4 bar and a flow rate of up to 100 Nm³/Hr. Built specifically for ammonia gas service with an aluminium body and bonnet and stainless steel trim parts for corrosion resistance, it features a 25mm (1") BSPF threaded end connection. Manufactured by Vanaz Engineers Ltd, Pune.'
+      description: 'The Vanaz R2301 I is an ammonia (NH3) pressure regulator rated for an inlet pressure of 1 to 17 bar, with a spring-adjustable outlet pressure of 0.5 to 10 bar and a flow rate of up to 100 Nm³/Hr. Built specifically for ammonia gas service with an aluminium body and bonnet and stainless steel trim parts for corrosion resistance, it features a 25mm (1") BSPF threaded end connection. Manufactured by Vanaz Engineers Ltd, Pune.'
     },
     {
       id: 'vanaz-r2402-ammonia-pressure-regulator',
