@@ -10,6 +10,26 @@
 // Added 19 Sep 2026 — replaces the old per-page hardcoded <details> link lists,
 // which had drifted out of sync with index.html (missing subcategories, wrong
 // column layout, no search box). See products-added-list.md.
+// Same-page anchor links (e.g. "Request a Quote" -> #contact, on the page's
+// own footer form) smooth-scroll to their target WITHOUT letting the browser
+// append "#contact" etc. to the URL bar — Rahul's explicit standing rule
+// (21 Oct 2026): no "#" fragment should ever show in the address bar,
+// including from legitimate same-page scroll links, not just dead/stale ones
+// like the old "#home"/"#catalog" bugs. Runs independent of the
+// RKIC_PRODUCTS/RKIC_BRANDS guard below since it doesn't need that data.
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var hash = a.getAttribute('href');
+    if(!hash || hash.length < 2) return; // bare "#" has no real target, let it no-op normally
+    var target = document.getElementById(hash.slice(1));
+    if(!target) return; // unknown id: don't swallow the click, let default happen
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+
 (function(){
   if (typeof RKIC_PRODUCTS === 'undefined' || typeof RKIC_BRANDS === 'undefined') return;
 

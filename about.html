@@ -789,7 +789,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1>Components that keep <em>gas &amp; flame</em> under control.</h1>
       <p class="sub">R.K. Instruments &amp; Controls supplies burner, boiler and gas-train components to industries that can't afford a misfire — from ignition electrodes to full valve-proving systems, sourced from the brands engineers already trust. Delivering trusted expertise in safe gas management and precision automation controls — since 1999.</p>
       <div class="hero-ctas">
-        <a class="btn-primary" href="#catalog">Browse the Catalog</a>
+        <a class="btn-primary" href="/">Browse the Catalog</a>
         <a class="btn-ghost" href="#contact">Talk to Our Team</a>
       </div>
       <div class="rating">
@@ -1921,6 +1921,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     requestAnimationFrame(tick);
   });
 })();
+</script>
+<script>
+  // Same-page anchor links (#contact) smooth-scroll to their target WITHOUT
+  // letting the browser append the hash to the URL bar — standing rule
+  // (21 Oct 2026): no "#" fragment should ever show in the address bar.
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var hash = a.getAttribute('href');
+    if(!hash || hash.length < 2) return;
+    var target = document.getElementById(hash.slice(1));
+    if(!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 </script>
 </body>
 </html>
