@@ -23,9 +23,17 @@
     "IGNITION ELECTRODES","IGNITION SPARES","IGNITION SPARK ELECTRODES","IGNITION TRANSFORMERS",
     "MANUAL BALL VALVES","MULTIBLOCKS","PHOTOCELL","PILOT BURNERS","PRESSURE GAUGES",
     "PRESSURE REGULATOR VALVES","PRESSURE SWITCHES","RATIO REGULATORS","SAFETY RELIEF VALVES",
-    "SEQUENCE CONTROLLERS","SERVO MOTORS","SLAM SHUT OFF VALVES","SOLENOID VALVES",
+    "SEQUENCE CONTROLLERS","SERVO MOTORS","SILICON CARBIDE TUBES","SLAM SHUT OFF VALVES","SOLENOID VALVES",
     "UV FLAME DETECTORS","UV FLAME SENSOR","VALVE PROVING SYSTEMS"
   ];
+  // Explicit sub-category breakdown for a few categories (kept in sync with
+  // index.html's own `subcategoryMap` by hand). Any category NOT listed here
+  // still gets an expandable sub-list — see subcategoryItemsForCategory()
+  // below, which falls back to a per-brand breakdown. FIX (21 Oct 2026): this
+  // file used to treat "no subcategoryMap entry" as "no sub-list / no arrow
+  // at all", which is why only these 5 categories ever showed a chevron on
+  // product/category/brand pages while index.html showed one on all 30 (via
+  // its own per-brand fallback). Mirroring that fallback here is the fix.
   var subcategoryMap = {
     'PRESSURE REGULATOR VALVES': ['High Pressure Regulator', 'Low Pressure Regulator', 'Oxygen Regulator', 'Ammonia Regulator', 'CO2 Regulator', 'LPG Auto Change Over Regulator'],
     'SOLENOID VALVES': ['Brahma Solenoid Valve', 'Kromschröder Solenoid Valve', 'Elektrogas Solenoid Valve', 'Solenoid Coil', 'Coil Connector'],
@@ -33,39 +41,39 @@
     'GAS FLOW METERS': ['Diaphragm Gas Meters', 'Turbine Gas Meter Quantometer', 'RPD Rotary Gas Meter'],
     'SEQUENCE CONTROLLERS': ['Burner Control', 'Burner Control Unit (BCU)']
   };
-  // Real standalone pages for each subcategory filter (12 Oct 2026) — replaces
-  // the old index.html#/subcategory/... hash-routing link, which was a real
-  // crawlable <a href> rendered unconditionally into every products/,
-  // categories/ and brands/ page's nav, flagged as a Google-crawling concern.
-  // One entry (Kromschröder Solenoid Valve) has zero products / no standalone
-  // page yet, so it falls back to the parent category page.
-  var subcategoryHrefMap = {
-    'GAS FLOW METERS||Diaphragm Gas Meters': 'categories/gas-flow-meters-diaphragm-gas-meters.html',
-    'GAS FLOW METERS||Turbine Gas Meter Quantometer': 'categories/gas-flow-meters-turbine-gas-meter-quantometer.html',
-    'GAS FLOW METERS||RPD Rotary Gas Meter': 'categories/gas-flow-meters-rpd-rotary-gas-meter.html',
-    'IGNITION TRANSFORMERS||Brahma': 'categories/ignition-transformers-brahma.html',
-    'IGNITION TRANSFORMERS||Cofi': 'categories/ignition-transformers-cofi.html',
-    'IGNITION TRANSFORMERS||Danfoss': 'categories/ignition-transformers-danfoss.html',
-    'IGNITION TRANSFORMERS||Honeywell Kromschröder': 'categories/ignition-transformers-honeywell-kromschroder.html',
-    'IGNITION TRANSFORMERS||Honeywell Technologies': 'categories/ignition-transformers-honeywell-technologies.html',
-    'PRESSURE REGULATOR VALVES||High Pressure Regulator': 'categories/pressure-regulator-valves-high-pressure-regulator.html',
-    'PRESSURE REGULATOR VALVES||Low Pressure Regulator': 'categories/pressure-regulator-valves-low-pressure-regulator.html',
-    'PRESSURE REGULATOR VALVES||Oxygen Regulator': 'categories/pressure-regulator-valves-oxygen-regulator.html',
-    'PRESSURE REGULATOR VALVES||Ammonia Regulator': 'categories/pressure-regulator-valves-ammonia-regulator.html',
-    'PRESSURE REGULATOR VALVES||CO2 Regulator': 'categories/pressure-regulator-valves-co2-regulator.html',
-    'PRESSURE REGULATOR VALVES||LPG Auto Change Over Regulator': 'categories/pressure-regulator-valves-lpg-auto-change-over-regulator.html',
-    'SEQUENCE CONTROLLERS||Burner Control': 'categories/sequence-controllers-burner-control.html',
-    'SEQUENCE CONTROLLERS||Burner Control Unit (BCU)': 'categories/sequence-controllers-burner-control-unit-bcu.html',
-    'SOLENOID VALVES||Brahma Solenoid Valve': 'categories/solenoid-valves-brahma-solenoid-valve.html',
-    'SOLENOID VALVES||Elektrogas Solenoid Valve': 'categories/solenoid-valves-elektrogas-solenoid-valve.html',
-    'SOLENOID VALVES||Solenoid Coil': 'categories/solenoid-valves-solenoid-coil.html',
-    'SOLENOID VALVES||Coil Connector': 'categories/solenoid-valves-coil-connector.html',
-    'SOLENOID VALVES||Kromschröder Solenoid Valve': 'categories/solenoid-valves.html'
-  };
-  function subcategoryHref(catName, subName){
-    var key = catName + '||' + subName;
-    var rel = subcategoryHrefMap[key] || ('categories/' + categorySlug(catName) + '.html');
-    return prefix + rel;
+  function titleCaseWord(str){ return str.charAt(0) + str.slice(1).toLowerCase(); }
+  // Matches index.html's brandSlug() exactly (diacritic-safe).
+  function brandSlug(name){ return name.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+  function categoryBrandCounts(catName){
+    var counts = {};
+    RKIC_PRODUCTS.filter(function(p){ return p.category === catName; }).forEach(function(p){ counts[p.brand] = (counts[p.brand] || 0) + 1; });
+    return counts;
+  }
+  // Sub-navigation items for a category: explicit sub-categories when defined
+  // above, otherwise a per-brand breakdown — so every category (not just the
+  // 5 with an explicit entry) gets an expandable list. Mirrors index.html's
+  // subcategoryItemsForCategory() exactly; hrefs are computed (not a
+  // hardcoded map) so a new subcategory/brand page never needs a second edit.
+  function subcategoryItemsForCategory(name){
+    var subNames = subcategoryMap[name] || [];
+    if(subNames.length){
+      return subNames.map(function(sub){
+        var count = RKIC_PRODUCTS.filter(function(p){ return p.category === name && p.subcategory === sub; }).length;
+        return {
+          label: sub,
+          count: count,
+          href: count > 0 ? (prefix + 'categories/' + categorySlug(name) + '-' + brandSlug(sub) + '.html') : categoryHref(name)
+        };
+      });
+    }
+    var brandCounts = categoryBrandCounts(name);
+    return Object.keys(brandCounts).sort().map(function(brand){
+      return {
+        label: brand + ' ' + titleCaseWord(name),
+        count: brandCounts[brand],
+        href: prefix + 'categories/' + categorySlug(name) + '-' + brandSlug(brand) + '.html'
+      };
+    });
   }
 
   // ---- Category icons — matches index.html's nav-mega grid exactly (10 Oct 2026) ----
@@ -79,7 +87,8 @@
     'GAS TRAIN SYSTEMS':'pipe','HOSE PIPE FITTINGS':'pipe',
     'GAS FLOW METERS':'gauge','PRESSURE GAUGES':'gauge','PRESSURE SWITCHES':'gauge',
     'VALVE PROVING SYSTEMS':'shield','SAFETY RELIEF VALVES':'shield',
-    'FILTERS':'filter'
+    'FILTERS':'filter',
+    'SILICON CARBIDE TUBES':'pipe'
   };
   var navIconPaths = {
     valve:'<circle cx="12" cy="12" r="3"/><path d="M4 12h5M15 12h5"/>',
@@ -109,8 +118,8 @@
   var navProductsGrid = document.getElementById('navProductsGrid');
   if(navProductsGrid){
     categories.forEach(function(name){
-      var subNames = subcategoryMap[name] || [];
-      var hasSub = subNames.length > 0;
+      var items = subcategoryItemsForCategory(name);
+      var hasSub = items.length > 0;
       if(hasSub){
         var row = document.createElement('div');
         row.className = 'nav-cat-row';
@@ -128,10 +137,10 @@
         var subsRow = document.createElement('div');
         subsRow.className = 'nav-cat-subs';
         subsRow.dataset.parent = name;
-        subNames.forEach(function(subName){
+        items.forEach(function(item){
           var sa = document.createElement('a');
-          sa.href = subcategoryHref(name, subName);
-          sa.innerHTML = '<span>↳ ' + subName + '</span>';
+          sa.href = item.href;
+          sa.innerHTML = '<span>↳ ' + item.label + '</span>';
           subsRow.appendChild(sa);
         });
         toggle.addEventListener('click', function(e){
@@ -180,41 +189,49 @@
     drawerProductsSub.appendChild(drawerCatTree);
 
     categories.forEach(function(name){
-      var subNames = subcategoryMap[name] || [];
-      if(subNames.length){
-        var item = document.createElement('div');
-        item.className = 'drawer-cat-item';
-        var row = document.createElement('div');
-        row.className = 'drawer-cat-row';
-        var a = document.createElement('a');
-        a.href = categoryHref(name);
-        a.textContent = name;
-        var toggle = document.createElement('button');
-        toggle.type = 'button';
-        toggle.className = 'drawer-cat-toggle';
-        toggle.setAttribute('aria-label', 'Show sub-categories');
-        toggle.innerHTML = '<span class="chev">⌄</span>';
-        toggle.addEventListener('click', function(){ item.classList.toggle('open'); });
-        row.appendChild(a);
-        row.appendChild(toggle);
-        var subList = document.createElement('div');
-        subList.className = 'drawer-subcat-list';
-        subNames.forEach(function(subName){
-          var sa = document.createElement('a');
-          sa.href = subcategoryHref(name, subName);
-          sa.className = 'drawer-sub-sublink';
-          sa.textContent = '↳ ' + subName;
-          subList.appendChild(sa);
-        });
-        item.appendChild(row);
-        item.appendChild(subList);
-        drawerCatTree.appendChild(item);
-      } else {
+      var n = categoryCount(name);
+      var items = subcategoryItemsForCategory(name);
+      if(items.length === 0){
         var a2 = document.createElement('a');
         a2.href = categoryHref(name);
-        a2.textContent = name;
+        a2.className = 'drawer-sub-link';
+        a2.innerHTML = '<span>' + name + '</span>' + (n > 0 ? '<span class="nav-drop-dot" aria-label="' + n + ' products added"></span>' : '');
         drawerCatTree.appendChild(a2);
+        return;
       }
+      var item = document.createElement('div');
+      item.className = 'drawer-cat-item';
+      var row = document.createElement('div');
+      row.className = 'drawer-cat-row';
+      var a = document.createElement('a');
+      a.href = categoryHref(name);
+      a.className = 'drawer-sub-link';
+      a.innerHTML = '<span>' + name + '</span>' + (n > 0 ? '<span class="nav-drop-dot" aria-label="' + n + ' products added"></span>' : '');
+      var toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'drawer-cat-toggle';
+      toggle.setAttribute('aria-label', 'Show sub-categories');
+      toggle.innerHTML = '<span class="chev">⌄</span>';
+      row.addEventListener('click', function(e){ e.preventDefault(); item.classList.toggle('open'); });
+      row.appendChild(a);
+      row.appendChild(toggle);
+      var subList = document.createElement('div');
+      subList.className = 'drawer-subcat-list';
+      var viewAll = document.createElement('a');
+      viewAll.href = categoryHref(name);
+      viewAll.className = 'drawer-sub-link drawer-sub-sublink drawer-subcat-viewall';
+      viewAll.innerHTML = '<span>↳ View all ' + name + '</span>';
+      subList.appendChild(viewAll);
+      items.forEach(function(it){
+        var sa = document.createElement('a');
+        sa.href = it.href;
+        sa.className = 'drawer-sub-link drawer-sub-sublink';
+        sa.innerHTML = '<span>↳ ' + it.label + '</span>' + (it.count > 0 ? '<span class="nav-drop-dot" aria-label="' + it.count + ' products added"></span>' : '');
+        subList.appendChild(sa);
+      });
+      item.appendChild(row);
+      item.appendChild(subList);
+      drawerCatTree.appendChild(item);
     });
 
     var drawerCatFilter = document.getElementById('drawerCatFilter');
