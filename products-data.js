@@ -4574,14 +4574,14 @@ const products = [
       description: 'The Metrix G4 LPG is a G4-size diaphragm gas meter built for LPG/GLP service, rated for a minimum flow of 0.016 m³/h, a transitional flow of 0.6 m³/h and a maximum flow of 6 m³/h, with a cyclic volume of 1.2 litres and a reading resolution of 1 imp = 0.01 m³. It has an aluminium (Type UG-ALU) body, a working pressure range of 0.006 bar to 2 bar and an operating temperature range of -25°C to +55°C, tested for LPG/GLP use at Qstart 0.006 m³/h. Built to EN 1359:1998+A1:2006 Class 1.5 accuracy, CE M23 1450 and OIML R137-1&2:2012 certified. Manufactured by Metrix Italia, Padova, Italy, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-lme11-330c2-sequence-controller',
+      id: 'siemens-lme11-330c2-flame-safeguard',
       name: 'Siemens Burner Control LME11.330C2',
       brand: 'Siemens',
       category: 'FLAME SAFEGUARD',
       subcategory: null,
       code: 'BPZ:LME11.330C2',
       size: '230V~, 50-60Hz, 12VA',
-      image: 'images/siemens-lme11-330c2-sequence-controller-large.webp',
+      image: 'images/siemens-lme11-330c2-flame-safeguard-large.webp',
       specs: {
         'Type': 'LME11.330C2',
         'BPZ (Product Code)': 'LME11.330C2',
@@ -4599,14 +4599,14 @@ const products = [
       description: 'The Siemens LME11.330C2 is a compact burner control (sequence controller) for single-stage gas burners, working with an ionization probe, or with QRA2/QRA2.9/QRA4.U/QRA10.C UV flame detectors via the AGQ3.xA27 adapter. It runs a pre-purge time (t1) of 2 seconds minimum and a safety time (TSA) of 3 seconds maximum, with direct ignition through its integrated transformer, on a 230V~, 50-60Hz, 12VA supply. Rated IP40 and for an operating temperature of -20°C to 60°C, it weighs approx. 160g and is tested to DIN EN 298, DIN EN 13611 and DIN EN 60730-2-5. Manufactured by Siemens AG, Rastatt, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-lgk16-322a27-sequence-controller',
+      id: 'siemens-lgk16-322a27-flame-safeguard',
       name: 'Siemens Burner Control LGK16.322A27',
       brand: 'Siemens',
       category: 'FLAME SAFEGUARD',
       subcategory: null,
       code: 'BPZ:LGK16.322A27',
       size: '220-240V~, 50-60Hz, 3.5VA',
-      image: 'images/siemens-lgk16-322a27-sequence-controller-large.webp',
+      image: 'images/siemens-lgk16-322a27-flame-safeguard-large.webp',
       specs: {
         'Type': 'LGK16.322A27',
         'BPZ (Product Code)': 'LGK16.322A27',
@@ -4622,14 +4622,14 @@ const products = [
       description: 'The Siemens LGK16.322A27 is a gas burner control (sequence controller) for stationary air heaters, with an electromechanical program switch visible through its indicator window. It runs a pre-purge time (t1) of 36 seconds and a safety time (TSA) of 2 seconds max., working with an ionization probe or QRA53/QRA55 UV flame detectors, on a 220-240V~, 50-60Hz, 3.5VA supply, with a switching load rating of 4A per contact (5A total). Approved to DIN Rg. 5F018/02 and CE-0085AO0103. Manufactured by Siemens Building Technologies Production GmbH, Germany, and supplied by R.K. Instruments & Controls.'
     },
     {
-      id: 'siemens-lfl1-333-sequence-controller',
+      id: 'siemens-lfl1-333-flame-safeguard',
       name: 'Siemens Burner Control LFL1.333',
       brand: 'Siemens',
       category: 'FLAME SAFEGUARD',
       subcategory: null,
       code: 'BPZ:LFL1.333',
       size: '230V~, 50-60Hz, 3.5VA',
-      image: 'images/siemens-lfl1-333-sequence-controller-large.webp',
+      image: 'images/siemens-lfl1-333-flame-safeguard-large.webp',
       specs: {
         'Type': 'LFL1.333',
         'BPZ (Product Code)': 'LFL1.333',
