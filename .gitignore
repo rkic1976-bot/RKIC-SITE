@@ -4,3 +4,6 @@
 # of the live site -- never commit it. (Root-caused 18 Sep 2026: this is why
 # a "Claude outputs" folder kept reappearing after being deleted.)
 Claude outputs/
+RKIC-Site-Reminder-Instructions.md
+products-added-list.md
+low-quality-images-list.md
