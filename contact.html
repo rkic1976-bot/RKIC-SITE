@@ -485,6 +485,15 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
   @keyframes clientsScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
   @media (max-width:640px){ .clients-track img{ height:56px; width:150px; } .clients-track{ gap:16px; } }
   @media (prefers-reduced-motion: reduce){ .clients-track{ animation:none; } }
+
+.map-static{ height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; background:var(--steel); color:var(--ink); text-align:center; padding:16px; }
+.map-static .map-pin{ color:var(--sage-deep); flex:none; }
+.map-static-text{ font-size:0.84rem; line-height:1.5; margin:0; }
+.map-static-text strong{ display:block; font-size:0.92rem; margin-bottom:2px; }
+
+.sec-brands--flush{ padding-top:0; }
+.site-footer--flush{ background:var(--ink); color:var(--paper); padding:0; }
+.foot-bottom--pad{ padding:22px 20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center; font-size:0.84rem; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -857,7 +866,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="c-card">
       <h3>Visit Our Office</h3>
       <div class="map-embed">
-        <iframe src="https://www.google.com/maps?q=R.K.+Instruments+%26+Controls,+Dhamanwala+Service+Complex,+GIDC+Pandesara,+Surat,+Gujarat&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="R.K. Instruments &amp; Controls — office location on Google Maps"></iframe>
+        <div class="map-static"><svg class="map-pin" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg><p class="map-static-text"><strong>R.K. Instruments &amp; Controls</strong>Dhamanwala Service Complex-200, G.I.D.C. Pandesara, Surat, Gujarat - 394 221</p></div>
         <a class="map-open-link" href="https://maps.app.goo.gl/dckyEYxhRWppFgK47" target="_blank" rel="noopener">View on Google Maps →</a>
       </div>
     </div>
@@ -946,7 +955,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 
-<section class="sec sec-brands" style="padding-top:0;">
+<section class="sec sec-brands sec-brands--flush">
   <div class="wrap">
     <div class="sec-head">
       <div>
@@ -959,8 +968,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<footer id="contact-footer" style="background:var(--ink); color:var(--paper); padding:0;">
-  <div class="wrap foot-bottom" style="padding:22px 20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center; font-size:0.84rem;">
+<footer id="contact-footer" class="site-footer--flush">
+  <div class="wrap foot-bottom foot-bottom--pad">
     <div>© 2026 R.K. Instruments &amp; Controls. All rights reserved. <span class="foot-sep">·</span> <a href="privacy.html" class="foot-privacy-link">Privacy Policy</a></div>
     <div class="socials">
       <a href="https://wa.me/919824136145?text=Hello%20RKIC%2C%20I%20am%20looking%20for%20burner%2Fgas%20train%20components.%20Please%20assist." target="_blank" rel="noopener" aria-label="WhatsApp">

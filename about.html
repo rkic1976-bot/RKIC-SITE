@@ -685,6 +685,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .brand-strip .brand-chip .mono, .brand-strip .brand-chip .stock-badge{ display:none; }
   .brand-strip .brand-chip-link{ display:flex;align-items:center;justify-content:center;width:100%;height:100%; text-decoration:none;color:inherit; }
   .brand-strip .brand-logo-img{ width:100%; height:56px; max-width:160px; object-fit:contain; }
+
+.map-static{ height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; background:var(--steel); color:var(--ink); text-align:center; padding:16px; }
+.map-static .map-pin{ color:var(--sage-deep); flex:none; }
+.map-static-text{ font-size:0.84rem; line-height:1.5; margin:0; }
+.map-static-text strong{ display:block; font-size:0.92rem; margin-bottom:2px; }
+
+.node-label--lg{ font-size:12px; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -725,7 +732,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <header>
   <div class="wrap nav-inner">
-    <a href="index.html" class="brand" style="text-decoration:none;color:inherit;cursor:pointer;" aria-label="R.K. Instruments &amp; Controls — Home">
+    <a href="index.html" class="brand" aria-label="R.K. Instruments &amp; Controls — Home">
       <img src="images/logo-header.webp" alt="R.K. Instruments & Controls logo" width="164" height="136">
       <div class="name">R.K. Instruments &amp; Controls<span>FLOW &amp; FLAME CONTROL</span></div>
     </a>
@@ -836,7 +843,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <text class="node-label" x="60" y="180" text-anchor="middle">Regulator</text>
         <circle cx="160" cy="150" r="38" fill="var(--flame)"/>
         <path d="M155,138 c-6,6 -6,14 0,19 c-2,-6 1,-9 3,-10 c0,3 2,5 4,4 c3,-2 2,-7 -1,-10 c3,1 6,4 6,9 c0,7 -5,11 -10,11 c-7,0 -12,-5 -12,-11 c0,-6 4,-10 10,-12z" fill="#fff"/>
-        <text class="node-label" x="160" y="320" text-anchor="middle" style="font-size:12px;">24 / 7 FLAME SAFETY MONITORING</text>
+        <text class="node-label node-label--lg" x="160" y="320" text-anchor="middle">24 / 7 FLAME SAFETY MONITORING</text>
       </svg>
     </div>
   </div>
@@ -1096,7 +1103,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="info-block"><div class="k">Working Time</div><div class="v">9:00 AM to 6:30 PM</div></div>
       <div class="info-block"><div class="k">Business Registration</div><div class="v">GSTIN: 24ADPPK7006A1ZY<br>UDYAM (MSME): UDYAM-GJ-22-126661<br>DUNS: 920713349</div></div>
       <div class="map-embed">
-        <iframe src="https://www.google.com/maps?q=R.K.+Instruments+%26+Controls,+Dhamanwala+Service+Complex,+GIDC+Pandesara,+Surat,+Gujarat&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="R.K. Instruments &amp; Controls — office location on Google Maps"></iframe>
+        <div class="map-static"><svg class="map-pin" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg><p class="map-static-text"><strong>R.K. Instruments &amp; Controls</strong>Dhamanwala Service Complex-200, G.I.D.C. Pandesara, Surat, Gujarat - 394 221</p></div>
         <a class="map-open-link" href="https://maps.app.goo.gl/dckyEYxhRWppFgK47" target="_blank" rel="noopener">Open in Google Maps →</a>
       </div>
     </div>

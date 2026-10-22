@@ -230,6 +230,7 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .pg-img-box img{ max-width:100%; max-height:100%; object-fit:contain; touch-action:manipulation; }
 .pg-tags{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
 .pg-tag{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage-deep); border:1px solid var(--line); padding:5px 10px; border-radius:2px; }
+.pg-tag--logo{ display:inline-flex; align-items:center; padding:4px 10px; }
 .pg-tag-sub{ background:var(--sage-deep); color:#fff; border-color:var(--sage-deep); }
 .pg-brand-logo{ height:16px; width:auto; display:block; }
 .pg-title{ font-size:1.7rem; font-weight:600; margin:4px 0 6px; line-height:1.2; }
@@ -396,6 +397,15 @@ nav.links .nav-drop-btn:hover{ color:var(--sage-deep); }
   @keyframes clientsScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
   @media (max-width:640px){ .clients-track img{ height:56px; width:150px; } .clients-track{ gap:16px; } }
   @media (prefers-reduced-motion: reduce){ .clients-track{ animation:none; } }
+
+.mv-block{ margin:22px 0 26px; }
+.mv-title{ font-size:0.98rem; font-weight:600; margin-bottom:10px; }
+.mv-table{ width:100%; border-collapse:collapse; font-size:0.86rem; }
+.mv-row{ border-bottom:1px solid var(--line); }
+.mv-th{ text-align:left; padding:9px 4px; color:var(--text-dim); font-weight:500; }
+.mv-td{ padding:9px 4px; }
+.mv-code{ font-family:'IBM Plex Mono',monospace; font-weight:700; }
+.mv-note{ font-size:0.78rem; color:var(--text-dim); margin-top:8px; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -626,7 +636,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <div class="pg-tags">
         <span class="pg-tag">Flame Arrestors</span>
-        <span class="pg-tag" style="display:inline-flex;align-items:center;padding:4px 10px;"><img class="pg-brand-logo" src="../images/pg-logos/pg-logo-vanaz.webp" alt="Vanaz logo"></span>
+        <span class="pg-tag pg-tag--logo"><img class="pg-brand-logo" src="../images/pg-logos/pg-logo-vanaz.webp" alt="Vanaz logo"></span>
         <span class="pg-tag">R9110</span>
       </div>
       <h1 class="pg-title">Vanaz R9110 Flame Arrestor with Non-Return Valve</h1>
@@ -639,24 +649,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="pg-spec-row"><span class="pg-spec-k">End Connection</span><span class="pg-spec-v">½&quot;–2&quot;, BSP / BSPF Threaded</span></div>
 <div class="pg-spec-row"><span class="pg-spec-k">Body Material</span><span class="pg-spec-v">Stainless Steel (SS) &amp; Brass — Selected per Gas Media (see table below)</span></div>
 <div class="pg-spec-row"><span class="pg-spec-k">Manufacturer</span><span class="pg-spec-v">Vanaz Engineers Ltd, Pune</span></div>
-            <div style="margin:22px 0 26px;">
-        <h3 style="font-size:0.98rem;font-weight:600;margin-bottom:10px;">Material Selection by Gas Medium</h3>
-        <table style="width:100%;border-collapse:collapse;font-size:0.86rem;">
+            <div class="mv-block">
+        <h3 class="mv-title">Material Selection by Gas Medium</h3>
+        <table class="mv-table">
           <thead>
-            <tr style="border-bottom:1px solid var(--line);">
-              <th style="text-align:left;padding:9px 4px;color:var(--text-dim);font-weight:500;">Gas Medium</th>
-              <th style="text-align:left;padding:9px 4px;color:var(--text-dim);font-weight:500;">Body Material</th>
-              <th style="text-align:left;padding:9px 4px;color:var(--text-dim);font-weight:500;">Internal Trim Material</th>
+            <tr class="mv-row">
+              <th class="mv-th">Gas Medium</th>
+              <th class="mv-th">Body Material</th>
+              <th class="mv-th">Internal Trim Material</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:9px 4px;">Oxygen</td><td style="padding:9px 4px;">Stainless Steel (SS)</td><td style="padding:9px 4px;">Brass / Stainless Steel mesh</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:9px 4px;">LPG / Natural Gas</td><td style="padding:9px 4px;">Carbon Steel / Mild Steel (or SS)</td><td style="padding:9px 4px;">Brass / Stainless Steel mesh</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:9px 4px;">Acetylene</td><td style="padding:9px 4px;">Stainless Steel (SS)</td><td style="padding:9px 4px;">Stainless Steel mesh</td></tr>
-            <tr><td style="padding:9px 4px;">Corrosive / Marine Environments</td><td style="padding:9px 4px;">Stainless Steel (SS 316)</td><td style="padding:9px 4px;">Stainless Steel mesh</td></tr>
+            <tr class="mv-row"><td class="mv-td">Oxygen</td><td class="mv-td">Stainless Steel (SS)</td><td class="mv-td">Brass / Stainless Steel mesh</td></tr>
+            <tr class="mv-row"><td class="mv-td">LPG / Natural Gas</td><td class="mv-td">Carbon Steel / Mild Steel (or SS)</td><td class="mv-td">Brass / Stainless Steel mesh</td></tr>
+            <tr class="mv-row"><td class="mv-td">Acetylene</td><td class="mv-td">Stainless Steel (SS)</td><td class="mv-td">Stainless Steel mesh</td></tr>
+            <tr><td class="mv-td">Corrosive / Marine Environments</td><td class="mv-td">Stainless Steel (SS 316)</td><td class="mv-td">Stainless Steel mesh</td></tr>
           </tbody>
         </table>
-        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Material grade is selected to match the gas medium in your line. High-copper brass trim is not used on Acetylene service. Mention your application (Oxygen / LPG-NG / Acetylene / corrosive environment) when enquiring so we supply the correct-grade R9110.</p>
+        <p class="mv-note">Material grade is selected to match the gas medium in your line. High-copper brass trim is not used on Acetylene service. Mention your application (Oxygen / LPG-NG / Acetylene / corrosive environment) when enquiring so we supply the correct-grade R9110.</p>
       </div>
       </div>
       <p class="pg-desc">The Vanaz R9110 is a flame arrestor with an integrated non-return valve (NRV) using a brass spring mechanism, fitted in-line on gas supply piping to stop flame propagation and flashback from reaching the upstream gas line and mitigate explosion hazards. It is rated for Oxygen, LPG, Natural Gas and Acetylene service, with BSP/BSPF threaded end connections from ½″ to 2″, rated up to 19–20 Kg/cm² (bar) working pressure. Body and internal trim material (Stainless Steel, Carbon Steel or Brass) is selected to match the gas medium in your line — see the selection table below. Manufactured by Vanaz Engineers Ltd, Pune.</p>

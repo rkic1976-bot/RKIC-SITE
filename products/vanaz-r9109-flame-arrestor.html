@@ -230,6 +230,7 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .pg-img-box img{ max-width:100%; max-height:100%; object-fit:contain; touch-action:manipulation; }
 .pg-tags{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
 .pg-tag{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage-deep); border:1px solid var(--line); padding:5px 10px; border-radius:2px; }
+.pg-tag--logo{ display:inline-flex; align-items:center; padding:4px 10px; }
 .pg-tag-sub{ background:var(--sage-deep); color:#fff; border-color:var(--sage-deep); }
 .pg-brand-logo{ height:16px; width:auto; display:block; }
 .pg-title{ font-size:1.7rem; font-weight:600; margin:4px 0 6px; line-height:1.2; }
@@ -396,6 +397,15 @@ nav.links .nav-drop-btn:hover{ color:var(--sage-deep); }
   @keyframes clientsScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
   @media (max-width:640px){ .clients-track img{ height:56px; width:150px; } .clients-track{ gap:16px; } }
   @media (prefers-reduced-motion: reduce){ .clients-track{ animation:none; } }
+
+.mv-block{ margin:22px 0 26px; }
+.mv-title{ font-size:0.98rem; font-weight:600; margin-bottom:10px; }
+.mv-table{ width:100%; border-collapse:collapse; font-size:0.86rem; }
+.mv-row{ border-bottom:1px solid var(--line); }
+.mv-th{ text-align:left; padding:9px 4px; color:var(--text-dim); font-weight:500; }
+.mv-td{ padding:9px 4px; }
+.mv-code{ font-family:'IBM Plex Mono',monospace; font-weight:700; }
+.mv-note{ font-size:0.78rem; color:var(--text-dim); margin-top:8px; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -626,7 +636,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <div class="pg-tags">
         <span class="pg-tag">Flame Arrestors</span>
-        <span class="pg-tag" style="display:inline-flex;align-items:center;padding:4px 10px;"><img class="pg-brand-logo" src="../images/pg-logos/pg-logo-vanaz.webp" alt="Vanaz logo"></span>
+        <span class="pg-tag pg-tag--logo"><img class="pg-brand-logo" src="../images/pg-logos/pg-logo-vanaz.webp" alt="Vanaz logo"></span>
         <span class="pg-tag">R9109</span>
       </div>
       <h1 class="pg-title">Vanaz R9109 Series Flame Arrestor with Non-Return Valve</h1>
@@ -639,24 +649,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="pg-spec-row"><span class="pg-spec-k">End Connection</span><span class="pg-spec-v">1½&quot;–2&quot;, BSP Threaded or ANSI #150 Flanged</span></div>
 <div class="pg-spec-row"><span class="pg-spec-k">Body Material</span><span class="pg-spec-v">Cast Mild Steel / Carbon Steel Body, Brass Trim, SS Ribbon Element Pack</span></div>
 <div class="pg-spec-row"><span class="pg-spec-k">Manufacturer</span><span class="pg-spec-v">Vanaz Engineers Ltd, Pune</span></div>
-            <div style="margin:22px 0 26px;">
-        <h3 style="font-size:0.98rem;font-weight:600;margin-bottom:10px;">Available Model Variants &amp; Connection Sizes</h3>
-        <table style="width:100%;border-collapse:collapse;font-size:0.86rem;">
+            <div class="mv-block">
+        <h3 class="mv-title">Available Model Variants &amp; Connection Sizes</h3>
+        <table class="mv-table">
           <thead>
-            <tr style="border-bottom:1px solid var(--line);">
-              <th style="text-align:left;padding:9px 4px;color:var(--text-dim);font-weight:500;">Model</th>
-              <th style="text-align:left;padding:9px 4px;color:var(--text-dim);font-weight:500;">Connection Size</th>
-              <th style="text-align:left;padding:9px 4px;color:var(--text-dim);font-weight:500;">Connection Type</th>
+            <tr class="mv-row">
+              <th class="mv-th">Model</th>
+              <th class="mv-th">Connection Size</th>
+              <th class="mv-th">Connection Type</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:9px 4px;font-family:'IBM Plex Mono',monospace;font-weight:700;">R9109</td><td style="padding:9px 4px;">1&frac12;&quot; (38.1 mm) BSP Female</td><td style="padding:9px 4px;">Threaded</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:9px 4px;font-family:'IBM Plex Mono',monospace;font-weight:700;">R9109 (I)</td><td style="padding:9px 4px;">2&quot; (50.8 mm) BSP Female</td><td style="padding:9px 4px;">Threaded</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:9px 4px;font-family:'IBM Plex Mono',monospace;font-weight:700;">R9109 (II)</td><td style="padding:9px 4px;">1&frac12;&quot; (38.1 mm) ANSI Class #150</td><td style="padding:9px 4px;">Flanged</td></tr>
-            <tr><td style="padding:9px 4px;font-family:'IBM Plex Mono',monospace;font-weight:700;">R9109 (III)</td><td style="padding:9px 4px;">2&quot; (50.8 mm) ANSI Class #150</td><td style="padding:9px 4px;">Flanged</td></tr>
+            <tr class="mv-row"><td class="mv-td mv-code">R9109</td><td class="mv-td">1&frac12;&quot; (38.1 mm) BSP Female</td><td class="mv-td">Threaded</td></tr>
+            <tr class="mv-row"><td class="mv-td mv-code">R9109 (I)</td><td class="mv-td">2&quot; (50.8 mm) BSP Female</td><td class="mv-td">Threaded</td></tr>
+            <tr class="mv-row"><td class="mv-td mv-code">R9109 (II)</td><td class="mv-td">1&frac12;&quot; (38.1 mm) ANSI Class #150</td><td class="mv-td">Flanged</td></tr>
+            <tr><td class="mv-td mv-code">R9109 (III)</td><td class="mv-td">2&quot; (50.8 mm) ANSI Class #150</td><td class="mv-td">Flanged</td></tr>
           </tbody>
         </table>
-        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Body material, working pressure, gas compatibility and NRV function are identical across all four variants — only the end connection differs. Mention the model / connection size you need when enquiring.</p>
+        <p class="mv-note">Body material, working pressure, gas compatibility and NRV function are identical across all four variants — only the end connection differs. Mention the model / connection size you need when enquiring.</p>
       </div>
       </div>
       <p class="pg-desc">The Vanaz R9109 series is a range of high-capacity flame arrestors with an integrated non-return valve (NRV), engineered for heavy-duty gas distribution manifolds. It stops flashback propagation and blocks reverse flow before it reaches upstream storage, protecting the gas line from explosion hazards. The body is Cast Mild Steel / Carbon Steel with a brass trim assembly and a stainless steel ribbon element pack. The series is available in four end-connection options — 1½″ or 2″ BSP threaded, and 1½″ or 2″ ANSI Class #150 flanged — see the table below. Working pressure is rated up to 17–19 Kg/cm² (bar) on LPG and Natural Gas. Manufactured by Vanaz Engineers Ltd, Pune.</p>
