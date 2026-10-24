@@ -1586,39 +1586,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return `https://wa.me/919824136145?text=${encodeURIComponent(text)}`;
   }
 
-  // Auto-generate Product structured data (SEO) for every product in the array
-  (function injectProductSEO(){
-    const items = products.map(p => ({
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: p.name,
-      sku: p.code,
-      mpn: p.code,
-      description: p.description,
-      brand: { '@type': 'Brand', name: p.brand },
-      category: p.category,
-      manufacturer: { '@type': 'Organization', name: p.brand },
-      seller: {
-        '@type': 'Organization',
-        name: 'R.K. Instruments & Controls',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: '12, 1st Floor, Dhamanwala Service Complex, G.I.D.C., Pandesara',
-          addressLocality: 'Surat',
-          addressRegion: 'Gujarat',
-          addressCountry: 'IN'
-        },
-        telephone: '+91-98241-36145',
-        email: 'rkic1976@gmail.com'
-      }
-    }));
-    items.forEach(item => {
-      const s = document.createElement('script');
-      s.type = 'application/ld+json';
-      s.textContent = JSON.stringify(item);
-      document.body.appendChild(s);
-    });
-  })();
+  // NOTE: a sitewide Product-schema injector was removed from here on 24 Oct 2026.
+  // It was stamping every product in the catalog onto this single page as a
+  // separate Product entity (with no offers/review/aggregateRating), which
+  // Google Search Console flagged as 253 invalid "Product snippet" items.
+  // Product structured data belongs only on each product's own page, not here.
 
   // Multi-photo slider: prev/next/dot controls within .spot-img
   function updateSpotImgSlide(spotImg, newIdx){
