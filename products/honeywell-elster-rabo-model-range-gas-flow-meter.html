@@ -386,6 +386,11 @@ nav.links .nav-drop-btn:hover{ color:var(--sage-deep); }
   padding:0; max-height:none; overflow:visible;
 }
 .nav-dropdown.open #navProductsPanel.nav-mega{ display:block; }
+.nav-dropdown.open #navBrandsPanel.nav-mega{ display:block; }
+#navBrandsPanel.nav-mega .nav-mega-inner{ display:grid; grid-template-columns:repeat(4, 1fr); gap:0; }
+#navBrandsPanel.nav-mega a{ color:var(--ink); }
+#navBrandsPanel.nav-mega a:hover{ background:var(--steel); }
+#navBrandsPanel.nav-mega .nav-drop-brand-name{ color:var(--text-dim); }
 .nav-mega-inner{
   position:relative; max-width:1180px; margin:0 auto;
   padding:10px 20px 36px; max-height:calc(100vh - 110px);

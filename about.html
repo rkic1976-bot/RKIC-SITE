@@ -647,6 +647,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding:0; max-height:none; overflow:visible;
   }
   .nav-dropdown.open #navProductsPanel.nav-mega{ display:block; }
+.nav-dropdown.open #navBrandsPanel.nav-mega{ display:block; }
+#navBrandsPanel.nav-mega .nav-mega-inner{ display:grid; grid-template-columns:repeat(4, 1fr); gap:0; }
+#navBrandsPanel.nav-mega a{ color:var(--ink); }
+#navBrandsPanel.nav-mega a:hover{ background:var(--steel); }
+#navBrandsPanel.nav-mega .nav-drop-brand-name{ color:var(--text-dim); }
   .nav-mega-inner{
     position:relative; max-width:1180px; margin:0 auto;
     padding:10px 20px 36px; max-height:calc(100vh - 110px);
@@ -1580,6 +1585,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }
   const navBrandsPanel = document.getElementById('navBrandsPanel');
+  let navBrandsInner = navBrandsPanel.querySelector('.nav-mega-inner');
+  if (!navBrandsInner) {
+    navBrandsInner = document.createElement('div');
+    navBrandsInner.className = 'nav-mega-inner';
+    navBrandsPanel.appendChild(navBrandsInner);
+  }
   brands.forEach(b => {
     const n = brandCount(b);
     const a = document.createElement('a');
@@ -1589,7 +1600,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const bLabel = bLogo ? `<img src="${bLogo}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
     a.innerHTML = `${bLabel}`;
     a.addEventListener('click', () => { document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); });
-    navBrandsPanel.appendChild(a);
+    navBrandsInner.appendChild(a);
   });
 
   // desktop dropdown open/close on click (works on touch + mouse)
