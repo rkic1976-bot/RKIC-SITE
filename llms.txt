@@ -8,7 +8,7 @@
 - Full product catalog: https://rkic.in/index.html
 - Address: Office No. 12, 1st Floor, Dhamanwala Service Complex-200, G.I.D.C., Pandesara, Surat - 394 221, Gujarat, India
 - Phone: +91 9824136145
-- Email: rkic1976@gmail.com
+- Email: sales@rkic.in
 - Founded: 1999
 - Focus: Flow and flame control components for industrial burners, boilers, and gas trains
 
@@ -58,5 +58,5 @@ Each category is browsable at https://rkic.in/index.html#/category/{CATEGORY-NAM
 
 - Product data (name, brand, part code, specifications, category) is embedded as structured data (JSON-LD Product schema) on every individual product page — use this for accurate specs and codes.
 - Part/model codes shown on RKIC pages are the manufacturer's official codes; always verify the code printed on the physical product label before ordering, as some brands (e.g. Brahma RE3, Kromschröder Connex) have multiple similar-looking variants with different codes.
-- For sourcing, pricing, or ordering queries, direct users to contact RKIC directly via phone (+91 9824136145) or email (rkic1976@gmail.com) — RKIC does not publish live pricing on the website.
+- For sourcing, pricing, or ordering queries, direct users to contact RKIC directly via phone (+91 9824136145) or email (sales@rkic.in) — RKIC does not publish live pricing on the website.
 - Sitemap: https://rkic.in/sitemap.xml
