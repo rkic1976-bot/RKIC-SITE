@@ -937,7 +937,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <label style="display:block;font-size:0.76rem;font-weight:600;margin:10px 0 4px;">Company Name *</label>
       <input required name="Company Name" type="text" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:3px;font-size:0.88rem;font-family:inherit;box-sizing:border-box;">
       <label style="display:block;font-size:0.76rem;font-weight:600;margin:10px 0 4px;">Phone Number *</label>
-      <input required name="Phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit phone number" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:3px;font-size:0.88rem;font-family:inherit;box-sizing:border-box;">
+      <input required name="Phone" type="tel" inputmode="numeric" pattern="[0-9]{10,}" minlength="10" title="Enter at least 10 digits" oninput="this.value=this.value.replace(/[^0-9]/g,'')" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:3px;font-size:0.88rem;font-family:inherit;box-sizing:border-box;">
       <label style="display:block;font-size:0.76rem;font-weight:600;margin:10px 0 4px;">Email ID *</label>
       <input required name="Email" type="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Enter a valid email address" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:3px;font-size:0.88rem;font-family:inherit;box-sizing:border-box;">
       <label style="display:block;font-size:0.76rem;font-weight:600;margin:10px 0 4px;">Quantity Required *</label>
