@@ -16,6 +16,12 @@ CLUSTERS = [
     ('Pune Auto Hub', 'pune-auto-hub'),
     ('Ahmedabad–Vapi Chemical Belt', 'ahmedabad-vapi-chemical-belt'),
     ('Faridabad / NCR', 'faridabad-ncr'),
+    ('Mumbai–Pune Industrial Belt', 'mumbai-pune-industrial-belt'),
+    ('Bengaluru–Chennai Corridor', 'bengaluru-chennai-corridor'),
+    ('Kolkata–Hugli Belt', 'kolkata-hugli-belt'),
+    ('Chota Nagpur Steel Belt', 'chota-nagpur-steel-belt'),
+    ('Visakhapatnam–Guntur Belt', 'visakhapatnam-guntur-belt'),
+    ('Kollam–Thiruvananthapuram Belt', 'kollam-thiruvananthapuram-belt'),
 ]
 
 BADGE_END = '''      <span style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;">GeM Seller ID: 3VSX240012704275</span>
@@ -34,13 +40,27 @@ def links_row(prefix):
         + '    </div>'
     )
 
+EXISTING_ROW_RE = re.compile(
+    r'\n?\s*<div id="clusterLinksRow"[^>]*>.*?</div>', re.DOTALL
+)
+
 def process(path, prefix):
     with open(path, encoding='utf-8') as f:
         content = f.read()
     if 'id="panIndiaService"' not in content:
         return False
     if MARKER in content:
-        return False
+        # Already has a links row from an earlier run: replace it with the
+        # current (possibly longer) CLUSTERS list instead of skipping.
+        new_content, n = EXISTING_ROW_RE.subn('\n' + links_row(prefix), content, count=1)
+        if not n:
+            print('  SKIP (could not locate existing row to replace):', path)
+            return False
+        if new_content == content:
+            return False
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+        return True
     if BADGE_END not in content:
         print('  SKIP (badge anchor not found):', path)
         return False
