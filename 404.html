@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | RKIC</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#33414E;
+    --paper:#F7F5EE;
+    --steel:#E8E6DD;
+    --line: rgba(51,65,78,0.18);
+    --sage-deep:#855E1C;
+    --flame:#C5432F;
+    --text-soft: rgba(51,65,78,0.62);
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--paper); color:var(--ink);
+    font-family:'Barlow', system-ui, sans-serif;
+    text-align:center; padding:24px;
+  }
+  .wrap{max-width:560px;}
+  .code{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700; font-size:clamp(64px,14vw,110px);
+    color:var(--flame); line-height:1; margin:0 0 8px;
+  }
+  h1{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:600; font-size:clamp(22px,4vw,30px);
+    margin:0 0 12px; color:var(--ink);
+  }
+  p{color:var(--text-soft); font-size:16px; line-height:1.6; margin:0 0 28px;}
+  .actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+  a.btn{
+    display:inline-block; padding:12px 22px; border-radius:8px;
+    text-decoration:none; font-weight:600; font-size:15px;
+    border:1px solid var(--line);
+  }
+  a.btn.primary{background:var(--flame); color:#fff; border-color:var(--flame);}
+  a.btn.secondary{background:var(--steel); color:var(--ink);}
+  a.btn:hover{opacity:0.9;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="code">404</p>
+    <h1>This page doesn't exist</h1>
+    <p>The link you followed may be outdated, or the page may have moved. Browse our product catalog or head back to the homepage.</p>
+    <div class="actions">
+      <a class="btn primary" href="/">Go to Homepage</a>
+      <a class="btn secondary" href="/#products">Browse Products</a>
+    </div>
+  </div>
+</body>
+</html>
