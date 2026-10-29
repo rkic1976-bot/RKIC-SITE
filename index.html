@@ -905,6 +905,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 .visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
 
+/* ---------- FAQ (was inline style="") ---------- */
+.faq-section{ max-width:900px; margin:0 auto; }
+.faq-list{ display:flex; flex-direction:column; gap:12px; }
+.faq-item{ border:1px solid var(--line); border-radius:10px; padding:16px 20px; background:var(--steel); }
+.faq-item summary{ font-family:'Barlow Condensed',sans-serif; font-weight:600; cursor:pointer; }
+.faq-item p{ margin-top:10px; color:var(--text-dim); }
+
+/* ---------- Pan-India service strip (was inline style="") ---------- */
+.panindia{ padding:40px 0 8px; border-top:1px solid var(--line); }
+.panindia-kicker{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--flame); }
+.panindia-head{ font-size:clamp(1.25rem,2.6vw,1.6rem); font-weight:600; margin:6px 0 0; max-width:38ch; }
+.panindia-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; margin-top:24px; }
+.panindia-card{ border:1px solid var(--line); border-radius:4px; padding:18px; background:#fff; }
+.panindia-card-title{ font-weight:700; font-size:0.86rem; margin-bottom:8px; }
+.panindia-card-text{ font-size:0.84rem; color:var(--text-dim); line-height:1.7; }
+.cluster-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; }
+.cluster-label{ color:var(--text-dim); align-self:center; }
+.cluster-chip{ border:1px solid var(--line); border-radius:20px; padding:6px 13px; color:var(--ink); text-decoration:none; }
+.hp-trap{ position:absolute; left:-9999px; top:-9999px; }
+.noscript-hidden{ display:none; }
+.noscript-hidden-iframe{ display:none; visibility:hidden; }
+
 .pl-thumb--brahma-eg12l-gmo-solenoid-valve{ background-image:url('images/brahma-eg12l-gmo-solenoid-valve-large.webp'); }
 .pl-thumb--vanaz-r2301-pressure-regulator{ background-image:url('images/vanaz-r2301-pressure-regulator-large.webp'); }
 .pl-thumb--brahma-t11-n-ignition-transformer{ background-image:url('images/brahma-t11-n-ignition-transformer-large.webp'); }
@@ -997,7 +1019,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '4508648549353325');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
+<noscript><img height="1" width="1" class="noscript-hidden"
 src="https://www.facebook.com/tr?id=4508648549353325&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
@@ -1005,7 +1027,7 @@ src="https://www.facebook.com/tr?id=4508648549353325&ev=PageView&noscript=1"
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P48RJT"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+height="0" width="0" class="noscript-hidden-iframe"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <div class="sticky-stack">
@@ -1114,7 +1136,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="fs-slide fs-centered" data-i="1">
         <div class="fs-kicker">IGNITION &amp; FLAME SAFETY</div>
         <h2 class="fs-headline">Everything that <em>starts</em> and <em>watches</em> the flame.</h2>
-        <p class="fs-sub">Ignition transformers, electrodes and UV flame sensors — the complete set, in stock at our Surat warehouse.</p>
+        <p class="fs-sub">Ignition transformers, ignition spark electrodes and UV flame sensors — the complete set, in stock at our Surat warehouse.</p>
         <div class="fs-range-photo"><img src="images/hero-ignition-arc.webp" alt="Brahma ignition transformer, ignition electrode and UV flame sensor" loading="lazy" width="900" height="520"></div>
         <div class="fs-cta">
           <a href="categories/ignition-transformers" class="fs-btn primary">View Ignition Range →</a>
@@ -1124,9 +1146,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="fs-slide fs-centered" data-i="2">
-        <div class="fs-kicker">GAS TRAIN &amp; PRESSURE REGULATION</div>
+        <div class="fs-kicker">GAS TRAIN SYSTEMS &amp; PRESSURE REGULATION</div>
         <h2 class="fs-headline">Precise pressure, <em>measured</em> and regulated — end to end.</h2>
-        <p class="fs-sub">Gas pressure switches, ratio regulators and gas pressure regulators — ex-stock at our Surat warehouse.</p>
+        <p class="fs-sub">Gas pressure switches, ratio regulators and pressure regulator valves — ex-stock at our Surat warehouse.</p>
         <div class="fs-range-photo"><img src="images/hero-gastrain-arc.webp" alt="Madas gas pressure switch, Dungs gas pressure switch and Elektrogas pressure regulator" loading="lazy" width="900" height="520"></div>
         <div class="fs-cta">
           <a href="categories/pressure-regulator-valves" class="fs-btn primary">View Gas Train Range →</a>
@@ -1410,7 +1432,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="sec faq" id="faq" style="max-width:900px;margin:0 auto;">
+<section class="sec" id="whatWeStock">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow-lt">What We Stock</div>
+        <h2>Five categories our customers search for most.</h2>
+      </div>
+      <p>A closer look at the parts and brands behind our most frequent enquiries.</p>
+    </div>
+    <div class="panindia-grid">
+      <div class="panindia-card">
+        <h3>Gas Train Systems</h3>
+        <p class="panindia-card-text">Complete gas train systems — solenoid valves, multiblocks, pressure regulators, filters and valve-proving systems — assembled to the burner and boiler duty you specify, ex-stock from our Surat warehouse for pan-India dispatch.</p>
+      </div>
+      <div class="panindia-card">
+        <h3>Ignition Spark Electrodes</h3>
+        <p class="panindia-card-text">Ignition spark electrodes and ignition transformers in standard and custom lengths, including Kanthal A1 resistance-wire electrode sets, matched to the burner make and kVA rating of your existing combustion system.</p>
+      </div>
+      <div class="panindia-card">
+        <h3>UV Flame Sensor &amp; UV Flame Detectors</h3>
+        <p class="panindia-card-text">UV flame sensor probes and UV flame detectors for continuous flame monitoring in burner safety circuits — genuine Honeywell and Honeywell Kromschröder parts, stocked in the sizes most commonly replaced on Indian plant floors.</p>
+      </div>
+      <div class="panindia-card">
+        <h3>Pressure Regulator Valves</h3>
+        <p class="panindia-card-text">Gas pressure regulator valves across high-pressure, low-pressure, oxygen, ammonia, CO2 and LPG auto-change-over ranges, plus ratio regulators and pressure switches for precise, repeatable fuel-pressure control.</p>
+      </div>
+      <div class="panindia-card">
+        <h3>Honeywell Kromschröder Components</h3>
+        <p class="panindia-card-text">Solenoid valves, ignition transformers and UV flame sensors from Honeywell Kromschröder — a core brand in our gas train and flame-safety range, supplied alongside Brahma, Dungs, Siemens, Madas, Vanaz, Danfoss and Cofi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq faq-section" id="faq">
   <div class="wrap">
     <div class="sec-head">
       <div>
@@ -1418,26 +1474,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>Common questions about our burner &amp; gas train components.</h2>
       </div>
     </div>
-    <div class="faq-list" style="display:flex;flex-direction:column;gap:12px;">
-      <details style="border:1px solid var(--line);border-radius:10px;padding:16px 20px;background:var(--steel);">
-        <summary style="font-family:'Barlow Condensed',sans-serif;font-weight:600;cursor:pointer;">What gas train components does RKIC supply?</summary>
-        <p style="margin-top:10px;color:var(--text-dim);">We supply complete gas train systems and individual components — solenoid valves, pressure regulators, gas filters, pressure switches, and flame safety parts — from Brahma, Dungs, Siemens, Honeywell Kromschröder, Elektrogas, Madas, Vanaz, Danfoss and Cofi, stocked at our Surat warehouse for pan-India dispatch.</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What gas train components does RKIC supply?</summary>
+        <p>We supply complete gas train systems and individual components — solenoid valves, pressure regulators, gas filters, pressure switches, and flame safety parts — from Brahma, Dungs, Siemens, Honeywell Kromschröder, Elektrogas, Madas, Vanaz, Danfoss and Cofi, stocked at our Surat warehouse for pan-India dispatch.</p>
       </details>
-      <details style="border:1px solid var(--line);border-radius:10px;padding:16px 20px;background:var(--steel);">
-        <summary style="font-family:'Barlow Condensed',sans-serif;font-weight:600;cursor:pointer;">What's the difference between a UV flame sensor and a UV flame detector?</summary>
-        <p style="margin-top:10px;color:var(--text-dim);">The terms are used interchangeably in burner safety systems — both refer to the UV-sensitive cell that monitors flame presence and signals the burner control unit to cut fuel supply if the flame is lost. We stock UV flame sensors/detectors from Honeywell and Honeywell Kromschröder in standard industrial sizes.</p>
+      <details class="faq-item">
+        <summary>What's the difference between a UV flame sensor and a UV flame detector?</summary>
+        <p>The terms are used interchangeably in burner safety systems — both refer to the UV-sensitive cell that monitors flame presence and signals the burner control unit to cut fuel supply if the flame is lost. We stock UV flame sensors/detectors from Honeywell and Honeywell Kromschröder in standard industrial sizes.</p>
       </details>
-      <details style="border:1px solid var(--line);border-radius:10px;padding:16px 20px;background:var(--steel);">
-        <summary style="font-family:'Barlow Condensed',sans-serif;font-weight:600;cursor:pointer;">Do you stock ignition transformers and ignition spark electrodes?</summary>
-        <p style="margin-top:10px;color:var(--text-dim);">Yes — ignition transformers and ignition spark electrode sets (including Kanthal A1 resistance-wire electrodes) are in regular stock for burner and boiler ignition systems, matched to the burner make and kVA rating you're running.</p>
+      <details class="faq-item">
+        <summary>Do you stock ignition transformers and ignition spark electrodes?</summary>
+        <p>Yes — ignition transformers and ignition spark electrode sets (including Kanthal A1 resistance-wire electrodes) are in regular stock for burner and boiler ignition systems, matched to the burner make and kVA rating you're running.</p>
       </details>
-      <details style="border:1px solid var(--line);border-radius:10px;padding:16px 20px;background:var(--steel);">
-        <summary style="font-family:'Barlow Condensed',sans-serif;font-weight:600;cursor:pointer;">Can you supply to locations outside Gujarat?</summary>
-        <p style="margin-top:10px;color:var(--text-dim);">Yes, RKIC dispatches pan-India from our Surat (Gujarat) warehouse. Send us the part number, drawing, or application details via the enquiry form or WhatsApp and our technical desk will confirm stock and lead time.</p>
+      <details class="faq-item">
+        <summary>Can you supply to locations outside Gujarat?</summary>
+        <p>Yes, RKIC dispatches pan-India from our Surat (Gujarat) warehouse. Send us the part number, drawing, or application details via the enquiry form or WhatsApp and our technical desk will confirm stock and lead time.</p>
       </details>
-      <details style="border:1px solid var(--line);border-radius:10px;padding:16px 20px;background:var(--steel);">
-        <summary style="font-family:'Barlow Condensed',sans-serif;font-weight:600;cursor:pointer;">Are RKIC's components genuine, manufacturer-sourced parts?</summary>
-        <p style="margin-top:10px;color:var(--text-dim);">Yes. Every component is checked against manufacturer specification before dispatch — we deal in genuine Brahma, Dungs, Siemens, Honeywell, Elster, Madas, Vanaz, Danfoss and Cofi parts, with no unauthorised substitutions.</p>
+      <details class="faq-item">
+        <summary>Are RKIC's components genuine, manufacturer-sourced parts?</summary>
+        <p>Yes. Every component is checked against manufacturer specification before dispatch — we deal in genuine Brahma, Dungs, Siemens, Honeywell, Elster, Madas, Vanaz, Danfoss and Cofi parts, with no unauthorised substitutions.</p>
       </details>
     </div>
   </div>
@@ -1463,27 +1519,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <img src="" alt="Product zoom preview">
 </div>
 
-<section id="panIndiaService" style="padding:40px 0 8px;border-top:1px solid var(--line);">
+<section id="panIndiaService" class="panindia">
   <div class="wrap">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--flame);">Pan-India Service</div>
-    <h2 style="font-size:clamp(1.25rem,2.6vw,1.6rem);font-weight:600;margin:6px 0 0;max-width:38ch;">Ready stock, fast dispatch, GST-compliant billing &mdash; anywhere in India.</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:24px;">
-      <div style="border:1px solid var(--line);border-radius:4px;padding:18px;background:#fff;">
-        <div style="font-weight:700;font-size:0.86rem;margin-bottom:8px;">Industries We Supply</div>
-        <div style="font-size:0.84rem;color:var(--text-dim);line-height:1.8;">Textile Processing &middot; Furnaces &amp; Ovens &middot; Ceramics &middot; Forging &middot; Boilers &amp; EPC Plants</div>
+    <div class="panindia-kicker">Pan-India Service</div>
+    <h2 class="panindia-head">Ready stock, fast dispatch, GST-compliant billing &mdash; anywhere in India.</h2>
+    <div class="panindia-grid">
+      <div class="panindia-card">
+        <div class="panindia-card-title">Industries We Supply</div>
+        <div class="panindia-card-text">Textile Processing &middot; Furnaces &amp; Ovens &middot; Ceramics &middot; Forging &middot; Boilers &amp; EPC Plants</div>
       </div>
-      <div style="border:1px solid var(--line);border-radius:4px;padding:18px;background:#fff;">
-        <div style="font-weight:700;font-size:0.86rem;margin-bottom:8px;">Logistics &amp; Delivery Partners</div>
-        <div style="font-size:0.84rem;color:var(--text-dim);line-height:1.6;">Same-day / 24-hr dispatch for ready inventory via V-Trans, TCI, Safexpress, Blue Dart.</div>
+      <div class="panindia-card">
+        <div class="panindia-card-title">Logistics &amp; Delivery Partners</div>
+        <div class="panindia-card-text">Same-day / 24-hr dispatch for ready inventory via V-Trans, TCI, Safexpress, Blue Dart.</div>
       </div>
-      <div style="border:1px solid var(--line);border-radius:4px;padding:18px;background:#fff;">
-        <div style="font-weight:700;font-size:0.86rem;margin-bottom:8px;">Billing</div>
-        <div style="font-size:0.84rem;color:var(--text-dim);line-height:1.6;">100% GST Compliant B2B Invoicing with E-Way Bill Support for All States.</div>
+      <div class="panindia-card">
+        <div class="panindia-card-title">Billing</div>
+        <div class="panindia-card-text">100% GST Compliant B2B Invoicing with E-Way Bill Support for All States.</div>
       </div>
     </div>
-    <div id="clusterLinksRow" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;">
-      <span style="color:var(--text-dim);align-self:center;">Industrial Clusters We Serve:</span>
-      <a href="industrial-supply/morbi-ceramic-zone" style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;color:var(--ink);text-decoration:none;">Morbi Ceramic Zone</a><a href="industrial-supply/pune-auto-hub" style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;color:var(--ink);text-decoration:none;">Pune Auto Hub</a><a href="industrial-supply/ahmedabad-vapi-chemical-belt" style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;color:var(--ink);text-decoration:none;">Ahmedabad–Vapi Chemical Belt</a><a href="industrial-supply/faridabad-ncr" style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;color:var(--ink);text-decoration:none;">Faridabad / NCR</a><a href="industrial-supply/mumbai-pune-industrial-belt" style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;color:var(--ink);text-decoration:none;">Mumbai–Pune Industrial Belt</a><a href="industrial-supply/bengaluru-chennai-corridor" style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;color:var(--ink);text-decoration:none;">Bengaluru–Chennai Corridor</a><a href="industrial-supply/kolkata-hugli-belt" style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;color:var(--ink);text-decoration:none;">Kolkata–Hugli Belt</a><a href="industrial-supply/chota-nagpur-steel-belt" style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;color:var(--ink);text-decoration:none;">Chota Nagpur Steel Belt</a><a href="industrial-supply/visakhapatnam-guntur-belt" style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;color:var(--ink);text-decoration:none;">Visakhapatnam–Guntur Belt</a><a href="industrial-supply/kollam-thiruvananthapuram-belt" style="border:1px solid var(--line);border-radius:20px;padding:6px 13px;color:var(--ink);text-decoration:none;">Kollam–Thiruvananthapuram Belt</a>
+    <div id="clusterLinksRow" class="cluster-row">
+      <span class="cluster-label">Industrial Clusters We Serve:</span>
+      <a href="industrial-supply/morbi-ceramic-zone" class="cluster-chip">Morbi Ceramic Zone</a><a href="industrial-supply/pune-auto-hub" class="cluster-chip">Pune Auto Hub</a><a href="industrial-supply/ahmedabad-vapi-chemical-belt" class="cluster-chip">Ahmedabad–Vapi Chemical Belt</a><a href="industrial-supply/faridabad-ncr" class="cluster-chip">Faridabad / NCR</a><a href="industrial-supply/mumbai-pune-industrial-belt" class="cluster-chip">Mumbai–Pune Industrial Belt</a><a href="industrial-supply/bengaluru-chennai-corridor" class="cluster-chip">Bengaluru–Chennai Corridor</a><a href="industrial-supply/kolkata-hugli-belt" class="cluster-chip">Kolkata–Hugli Belt</a><a href="industrial-supply/chota-nagpur-steel-belt" class="cluster-chip">Chota Nagpur Steel Belt</a><a href="industrial-supply/visakhapatnam-guntur-belt" class="cluster-chip">Visakhapatnam–Guntur Belt</a><a href="industrial-supply/kollam-thiruvananthapuram-belt" class="cluster-chip">Kollam–Thiruvananthapuram Belt</a>
     </div>
   </div>
 </section>
@@ -1501,7 +1557,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3>Send an Enquiry</h3>
       <p>Fill this in and our technical desk will get back to you directly.</p>
       <form id="cfForm" action="https://formspree.io/f/mppznvnq" method="POST">
-        <input type="text" name="_gotcha" value="" style="position:absolute;left:-9999px;top:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="text" name="_gotcha" value="" class="hp-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="cf-field">
           <label for="cfName">Name <span class="cf-req">*</span></label>
           <input type="text" id="cfName" name="name" required autocomplete="name" data-fs-field>
