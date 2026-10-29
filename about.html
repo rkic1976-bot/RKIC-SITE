@@ -1349,7 +1349,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     tile.className = 'cat-tile';
     const catHref = categoryHref(name);
     const img = categoryImages[name];
-    const imgHTML = img ? `<img src="${img}" alt="${name}" class="cat-tile-img" loading="lazy">` : '';
+    const imgHTML = img ? `<img src="${img}" alt="${name}" class="cat-tile-img" width="160" height="48" loading="lazy">` : '';
     tile.innerHTML = `${imgHTML}<a href="${catHref}" class="cname cname-link"><div class="cname">${name}</div></a><button type="button" class="cat-toggle" aria-label="Toggle sub-categories">+</button>`;
     const tileLink = tile.querySelector('.cname-link');
     if(tileLink){ tileLink.addEventListener('click', (e) => { e.stopPropagation(); }); }
@@ -1414,6 +1414,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     'Honeywell Maxon': 'images/brands/brand-honeywell-maxon.webp',
     'Honeywell Eclipse': 'images/brands/brand-honeywell-eclipse.webp',
   };
+  // Intrinsic pixel dimensions of each file above, used only to set the width/height
+  // attributes on the generated img tags below, so the browser can reserve layout
+  // space before the logo loads (prevents CLS).
+  const brandLogoDims = {
+    'R.K. Instruments & Controls': [360, 299],
+    'Vanaz': [174, 68],
+    'Danfoss': [500, 197],
+    'Cofi': [178, 135],
+    'Elektrogas': [500, 109],
+    'Siemens': [500, 80],
+    'Honeywell Kromschröder': [164, 72],
+    'Brahma': [151, 20],
+    'Dungs': [500, 204],
+    'Honeywell Technologies': [431, 108],
+    'Madas': [275, 105],
+    'Honeywell Elster': [272, 168],
+    'Honeywell Maxon': [500, 197],
+    'Honeywell Eclipse': [500, 175],
+  };
   function populateBrandStrip(strip){
     if(!strip) return;
     strip.innerHTML = '';
@@ -1422,7 +1441,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const chip = document.createElement('div');
       chip.className = 'brand-chip';
       const label = brandLogos[b]
-        ? `<img src="${brandLogos[b]}" alt="${b} logo" class="brand-logo-img">`
+        ? `<img src="${brandLogos[b]}" alt="${b} logo" class="brand-logo-img" width="${brandLogoDims[b][0]}" height="${brandLogoDims[b][1]}" loading="lazy">`
         : b;
       const bHref = brandHref(b);
       chip.innerHTML = `<span class="mono">${String(i+1).padStart(2,'0')}</span><a href="${bHref}" class="brand-chip-link">${label}</a>${countBadge(n)}`;
@@ -1537,8 +1556,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const a = document.createElement('a');
         a.href = 'products/' + p.id;
         a.className = 'search-product-row';
-        const brandHTML = brandLogos[p.brand] ? `<img class="srp-brand-logo" src="${brandLogos[p.brand]}" alt="${p.brand}">` : `${p.brand} · `;
-        a.innerHTML = `<img src="${p.image}" alt="${p.name}"><span class="srp-info"><span class="srp-name">${p.name}</span><span class="srp-meta">${brandHTML}${p.category}</span></span><span class="code">${p.code}</span>`;
+        const brandHTML = brandLogos[p.brand] ? `<img class="srp-brand-logo" src="${brandLogos[p.brand]}" alt="${p.brand}" width="${brandLogoDims[p.brand][0]}" height="${brandLogoDims[p.brand][1]}" loading="lazy">` : `${p.brand} · `;
+        a.innerHTML = `<img src="${p.image}" alt="${p.name}" width="38" height="38" loading="lazy"><span class="srp-info"><span class="srp-name">${p.name}</span><span class="srp-meta">${brandHTML}${p.category}</span></span><span class="code">${p.code}</span>`;
         navProductsResults.appendChild(a);
       });
     }
@@ -1596,7 +1615,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     a.href = brandHref(b);
     a.className = 'nav-drop-link';
     const bLogo = brandLogos[b];
-    const bLabel = bLogo ? `<img src="${bLogo}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
+    const bLabel = bLogo ? `<img src="${bLogo}" alt="${b}" class="nav-drop-brand-logo" width="38" height="20" loading="lazy"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
     a.innerHTML = `${bLabel}`;
     a.addEventListener('click', () => { document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); });
     navBrandsInner.appendChild(a);
@@ -1722,8 +1741,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const a = document.createElement('a');
         a.href = 'products/' + p.id;
         a.className = 'search-product-row';
-        const brandHTML = brandLogos[p.brand] ? `<img class="srp-brand-logo" src="${brandLogos[p.brand]}" alt="${p.brand}">` : `${p.brand} · `;
-        a.innerHTML = `<img src="${p.image}" alt="${p.name}"><span class="srp-info"><span class="srp-name">${p.name}</span><span class="srp-meta">${brandHTML}${p.category}</span></span><span class="code">${p.code}</span>`;
+        const brandHTML = brandLogos[p.brand] ? `<img class="srp-brand-logo" src="${brandLogos[p.brand]}" alt="${p.brand}" width="${brandLogoDims[p.brand][0]}" height="${brandLogoDims[p.brand][1]}" loading="lazy">` : `${p.brand} · `;
+        a.innerHTML = `<img src="${p.image}" alt="${p.name}" width="38" height="38" loading="lazy"><span class="srp-info"><span class="srp-name">${p.name}</span><span class="srp-meta">${brandHTML}${p.category}</span></span><span class="code">${p.code}</span>`;
         drawerSearchResults.appendChild(a);
       });
     }
@@ -1763,7 +1782,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     a.href = brandHref(b);
     a.className = 'drawer-sub-link';
     const bLogo2 = brandLogos[b];
-    const bLabel2 = bLogo2 ? `<img src="${bLogo2}" alt="${b}" class="nav-drop-brand-logo"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
+    const bLabel2 = bLogo2 ? `<img src="${bLogo2}" alt="${b}" class="nav-drop-brand-logo" width="38" height="20" loading="lazy"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
     a.innerHTML = `${bLabel2}${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
     a.addEventListener('click', () => { drawer.classList.remove('open'); });
     drawerBrandsSub.appendChild(a);
@@ -1823,8 +1842,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const a = document.createElement('a');
         a.href = 'products/' + p.id;
         a.className = 'search-product-row';
-        const srpBrandHTML = brandLogos[p.brand] ? `<img class="srp-brand-logo" src="${brandLogos[p.brand]}" alt="${p.brand}">` : `${p.brand} · `;
-        a.innerHTML = `<img src="${p.image}" alt="${p.name}"><span class="srp-info"><span class="srp-name">${p.name}</span><span class="srp-meta">${srpBrandHTML}${p.category}</span></span><span class="code">${p.code}</span>`;
+        const srpBrandHTML = brandLogos[p.brand] ? `<img class="srp-brand-logo" src="${brandLogos[p.brand]}" alt="${p.brand}" width="${brandLogoDims[p.brand][0]}" height="${brandLogoDims[p.brand][1]}" loading="lazy">` : `${p.brand} · `;
+        a.innerHTML = `<img src="${p.image}" alt="${p.name}" width="38" height="38" loading="lazy"><span class="srp-info"><span class="srp-name">${p.name}</span><span class="srp-meta">${srpBrandHTML}${p.category}</span></span><span class="code">${p.code}</span>`;
         searchResults.appendChild(a);
       });
     }
