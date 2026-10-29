@@ -272,9 +272,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .drawer-subcat-list{ display:none; }
   .drawer-cat-item.open .drawer-subcat-list{ display:block; }
   .drawer-subcat-viewall{ font-weight:600 !important; color:var(--sage-deep) !important; }
-  .nav-drop-dot{ width:7px; height:7px; border-radius:50%; background:var(--lemon-text); flex:0 0 auto; }
+  .nav-drop-dot{ display:none; }
   .nav-drop-brand-logo{ height:20px; width:38px; object-fit:contain; object-position:left center; flex:0 0 38px; }
   .nav-drop-brand-name{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-left:8px; letter-spacing:0.02em; flex:1 1 auto; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .drawer-sub .nav-drop-brand-logo{ width:60px; height:28px; flex:0 0 60px; }
+  .drawer-sub .nav-drop-brand-name{ font-family:'Barlow',sans-serif; font-size:0.9rem; font-weight:600; color:var(--ink); letter-spacing:0; margin-left:12px; white-space:normal; }
   #navBrandsPanel{
     width:min(92vw, 940px); max-width:940px; padding:12px;
     max-height:85vh; overflow-y:visible;
@@ -1782,8 +1784,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     a.href = brandHref(b);
     a.className = 'drawer-sub-link';
     const bLogo2 = brandLogos[b];
-    const bLabel2 = bLogo2 ? `<img src="${bLogo2}" alt="${b}" class="nav-drop-brand-logo" width="38" height="20" loading="lazy"><span class="nav-drop-brand-name">${b}</span>` : `<span>${b}</span>`;
-    a.innerHTML = `${bLabel2}${n > 0 ? `<span class="nav-drop-dot" aria-label="${n} products added"></span>` : ''}`;
+    const bLabel2 = bLogo2 ? `<img src="${bLogo2}" alt="${b}" class="nav-drop-brand-logo" width="60" height="28" loading="lazy"><span class="nav-drop-brand-name">${b}</span>` : `<span class="nav-drop-brand-name">${b}</span>`;
+    a.innerHTML = bLabel2;
     a.addEventListener('click', () => { drawer.classList.remove('open'); });
     drawerBrandsSub.appendChild(a);
   });
