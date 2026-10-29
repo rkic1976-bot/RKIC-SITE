@@ -33,6 +33,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AboutPage", "name": "About R.K. Instruments & Controls", "url": "https://www.rkic.in/about", "mainEntity": {"@type": "Organization", "name": "R.K. Instruments & Controls", "foundingDate": "1999", "logo": "https://www.rkic.in/logo.png", "url": "https://www.rkic.in/", "address": {"@type": "PostalAddress", "streetAddress": "Office No. 12, 1st Floor, Dhamanwala Service Complex-200, G.I.D.C., Pandesara", "addressLocality": "Surat", "addressRegion": "Gujarat", "postalCode": "394221", "addressCountry": "IN"}, "telephone": "+91-9824136145", "email": "sales@rkic.in"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rkic.in/"}, {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.rkic.in/about"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <style>
@@ -1854,7 +1856,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // fire many seconds late, leaving the page stuck at the very top with no
   // scroll at all until then (confirmed via a real-device screen recording
   // on a throttled connection) -- so we no longer rely on 'load' alone. This
-  // script tag sits near the end of <body>, after <footer id="contact">, so
+  // script tag sits near the end of the body element, after the footer#contact, so
   // #contact is already in the DOM the instant this script runs -- call the
   // fix immediately (no event wait at all), plus on 'DOMContentLoaded' as a
   // backup for the (impossible today, but cheap to guard) case this script

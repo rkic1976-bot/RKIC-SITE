@@ -46,6 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preload" as="image" href="images/hero-full-range-arc.webp" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
@@ -2278,7 +2279,7 @@ height="0" width="0" class="noscript-hidden-iframe"></iframe></noscript>
   // fire many seconds late, leaving the page stuck at the very top with no
   // scroll at all until then (confirmed via a real-device screen recording
   // on a throttled connection) -- so we no longer rely on 'load' alone. This
-  // script tag sits near the end of <body>, after <footer id="contact">, so
+  // script tag sits near the end of the body element, after the footer#contact, so
   // #contact is already in the DOM the instant this script runs -- call the
   // fix immediately (no event wait at all), plus on 'DOMContentLoaded' as a
   // backup for the (impossible today, but cheap to guard) case this script
