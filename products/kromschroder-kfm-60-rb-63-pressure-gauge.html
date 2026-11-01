@@ -232,6 +232,9 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .pg-img-badge{ position:absolute; top:12px; left:12px; background:var(--sage-deep); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.03em; padding:5px 10px; border-radius:2px; z-index:2; }
 .pg-tags{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
 .pg-tag{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage-deep); border:1px solid var(--line); padding:5px 10px; border-radius:2px; }
+a.pg-tag{ text-decoration:none; }
+a.pg-tag:hover{ border-color:var(--flame); color:var(--flame); }
+
 .pg-tag--logo{ display:inline-flex; align-items:center; padding:4px 10px; }
 .pg-tag-sub{ background:var(--sage-deep); color:#fff; border-color:var(--sage-deep); }
 .pg-brand-logo{ height:16px; width:auto; display:block; }
@@ -632,8 +635,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div>
       <div class="pg-tags">
-        <span class="pg-tag">Pressure Gauges</span>
-        <span class="pg-tag pg-tag--logo"><img class="pg-brand-logo" src="../images/pg-logos/pg-logo-honeywell-kromschroder.webp" alt="Honeywell Kromschröder logo"></span>
+        <a href="../categories/pressure-gauge-accessories" class="pg-tag">Pressure Gauges</a>
+        <a href="../brands/honeywell-kromschroder" class="pg-tag pg-tag--logo"><img class="pg-brand-logo" src="../images/pg-logos/pg-logo-honeywell-kromschroder.webp" alt="Honeywell Kromschröder logo"></a>
         <span class="pg-tag">03200179</span>
       </div>
       <h1 class="pg-title">Honeywell Kromschröder KFM 60 RB 63 Pressure Gauge</h1>
