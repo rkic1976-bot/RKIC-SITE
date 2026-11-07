@@ -651,6 +651,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
     new MutationObserver(function(){
       var isOpen = drawer.classList.contains('open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
       burger.textContent = isOpen ? '\u2715' : '\u2630';
       burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     }).observe(drawer, {attributes:true, attributeFilter:['class']});
