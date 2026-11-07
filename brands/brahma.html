@@ -67,6 +67,8 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 .nav-links > a:hover{ color:var(--ink); }
 .nav-cta{ background:var(--ink); color:var(--paper); padding:9px 16px; border-radius:2px; font-size:0.82rem; font-weight:600; text-decoration:none; white-space:nowrap; }
 .search-btn{ background:#fff; border:2px solid var(--sage-deep); color:var(--sage-deep); box-shadow:0 2px 8px rgba(133,94,28,0.15); width:38px; height:38px; border-radius:6px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+.search-btn{ position:relative; }
+.search-btn::before{ content:""; position:absolute; inset:-5px; }
 .search-btn svg{ width:17px; height:17px; }
 /* Products/Brands dropdowns — matches index.html's dynamic mega-menu exactly (19 Sep 2026) */
 .nav-dropdown{ position:relative; }
@@ -166,7 +168,8 @@ header{ background:rgba(246,249,244,0.94); border-bottom:1px solid var(--line); 
 }
 .wa-float:hover{ background:#054C43; }
 .wa-float svg{ width:26px; height:26px; }
-.burger{ display:none; color:var(--ink); font-size:1.4rem; cursor:pointer; background:none; border:none; padding:4px; }
+.burger{ display:none; color:var(--ink); font-size:1.4rem; cursor:pointer; background:none; border:none; padding:4px; position:relative; }
+  .burger::before{ content:""; position:absolute; inset:-9px; }
 @media (max-width:767px){
   .nav-inner{ flex-wrap:nowrap; }
   .nav-links{ display:none; }
@@ -302,8 +305,8 @@ footer{ background:var(--steel); color:var(--ink); margin-top:56px; }
 .related-name{ font-size:0.86rem; font-weight:600; line-height:1.35; }
 .related-code{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-top:4px; }
 .related-thumb{ position:relative; }
-.related-zoom-btn{ position:absolute; bottom:6px; right:6px; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.92); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,0.12); cursor:zoom-in; touch-action:manipulation; z-index:2; }
-.related-zoom-btn svg{ width:14px; height:14px; display:block; }
+.related-zoom-btn{ position:absolute; bottom:6px; right:6px; width:48px; height:48px; border-radius:50%; background:rgba(255,255,255,0.92); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,0.12); cursor:zoom-in; touch-action:manipulation; z-index:2; }
+.related-zoom-btn svg{ width:22px; height:22px; display:block; }
 .cat-lightbox{ position:fixed; inset:0; background:rgba(20,20,20,0.92); z-index:9999; display:none; align-items:center; justify-content:center; padding:24px; touch-action:manipulation; }
 .cat-lightbox.open{ display:flex; }
 .cat-lightbox img{ max-width:min(92vw,900px); max-height:88vh; object-fit:contain; border-radius:4px; background:#fff; touch-action:manipulation; }
