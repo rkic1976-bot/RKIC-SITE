@@ -750,7 +750,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="c-card form-card" id="contact">
       <h3>Send Technical Enquiry</h3>
       <p>Fill this in and our technical desk will get back to you directly.</p>
-      <form id="cfForm" action="https://formspree.io/f/mppznvnq" method="POST">
+      <form id="cfForm" action="https://formspree.io/f/mppznvnq" method="POST" enctype="multipart/form-data">
         <input type="text" name="_gotcha" value="" style="position:absolute;left:-9999px;top:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="cf-row">
           <div class="cf-field">
@@ -783,18 +783,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <label for="cfProduct">Product / Part No. (if known)</label>
           <input type="text" id="cfProduct" name="product" autocomplete="off" data-fs-field>
         </div>
-        <div class="cf-field cf-field-note">
-          <span class="cf-hint">Have a drawing or BOQ to share? Send it on <a href="https://wa.me/919824136145?text=Hello%20RKIC%2C%20I%20am%20looking%20for%20burner%2Fgas%20train%20components.%20Please%20assist." target="_blank" rel="noopener">WhatsApp</a> or email it to <a href="mailto:sales@rkic.in">sales@rkic.in</a> along with your enquiry.</span>
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cfQuantity">Quantity Required</label>
+            <input type="text" id="cfQuantity" name="quantity" autocomplete="off" data-fs-field>
+          </div>
+          <div class="cf-field">
+            <label for="cfUrgency">Urgency</label>
+            <select id="cfUrgency" name="urgency" data-fs-field>
+              <option value="Planning ahead">Planning ahead</option>
+              <option value="Needed this week">Needed this week</option>
+              <option value="Urgent — line down">Urgent — line down</option>
+            </select>
+          </div>
         </div>
         <div class="cf-field">
           <label for="cfMessage">Message <span class="cf-req">*</span></label>
           <textarea id="cfMessage" name="message" required data-fs-field></textarea>
           <span class="cf-field-err" data-fs-error="message"></span>
         </div>
+        <div class="cf-field">
+          <label for="cfAttachment">Attach Photo / Drawing / BOQ (optional)</label>
+          <input type="file" id="cfAttachment" name="attachment" accept="image/*,.pdf,.doc,.docx" data-fs-field>
+          <span class="cf-hint">Max 10MB, 1 file. For a larger file or multiple files, send it on <a href="https://wa.me/919824136145?text=Hello%20RKIC%2C%20I%20am%20looking%20for%20burner%2Fgas%20train%20components.%20Please%20assist." target="_blank" rel="noopener">WhatsApp</a> or email it to <a href="mailto:sales@rkic.in">sales@rkic.in</a> along with your enquiry.</span>
+        </div>
         <input type="text" name="_gotcha" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" name="_subject" value="New Enquiry — RKIC Contact Us Page">
         <button type="submit" class="cf-submit" data-fs-submit-btn>Send Enquiry</button>
-        <p class="cf-note">Protected against spam and bots.</p>
+        <p class="cf-note">Our technical desk reviews every enquiry during business hours (9:00 AM–6:30 PM, Mon–Sat) and gets back to you directly by phone or email. Protected against spam and bots.</p>
         <div class="cf-status" data-fs-success></div>
         <div class="cf-status" data-fs-error></div>
       </form>
