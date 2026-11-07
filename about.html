@@ -237,7 +237,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     position:fixed; top:115px; left:0; right:0; bottom:0; z-index:100; background:var(--steel);
     transform:translateX(100%); transition:transform 0.28s ease;
     overflow-y:auto; box-shadow:-8px 0 30px rgba(51,65,78,0.25);
+    scrollbar-width:none; -ms-overflow-style:none;
   }
+  .mobile-drawer::-webkit-scrollbar{ display:none; }
   .mobile-drawer.open{ transform:translateX(0); }
   .drawer-head{
     display:flex; align-items:center; justify-content:space-between; padding:0 20px; height:52px;
