@@ -884,6 +884,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background-color:var(--paper);border:1px solid var(--line);flex-shrink:0;
   }
   .pl-name{font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;color:var(--ink);line-height:1.25;}
+  .pl-code{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim);}
+  .pl-stock{font-family:'Barlow',sans-serif;font-size:10px;font-weight:600;color:var(--sage-deep);display:flex;align-items:center;gap:4px;}
+  .pl-stock::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sage-deep);display:inline-block;}
 
   /* ===== ASSOCIATE BRANDS — boxed grid (restyled chip strip, same data/JS) ===== */
   .brand-strip .brand-chip{
@@ -921,6 +924,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .panindia-head{ font-size:clamp(1.25rem,2.6vw,1.6rem); font-weight:600; margin:6px 0 0; max-width:38ch; }
 .panindia-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; margin-top:24px; }
 .panindia-card{ border:1px solid var(--line); border-radius:4px; padding:18px; background:#fff; }
+a.panindia-card{ display:block; text-decoration:none; color:inherit; transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease; }
+a.panindia-card:hover{ border-color:var(--flame); box-shadow:0 6px 16px -10px rgba(51,65,78,0.3); transform:translateY(-1px); }
+a.panindia-card h3{ color:var(--ink); }
 .panindia-card-title{ font-weight:700; font-size:0.86rem; margin-bottom:8px; }
 .panindia-card-text{ font-size:0.84rem; color:var(--text-dim); line-height:1.7; }
 .cluster-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; }
@@ -1302,29 +1308,41 @@ height="0" width="0" class="noscript-hidden-iframe"></iframe></noscript>
       <p>A quick shortcut to our most-asked-about categories — browse the full catalog for everything else.</p>
     </div>
     <div class="plist">
-      <a href="categories/solenoid-valves" class="pl-row">
+      <a href="products/brahma-eg12l-gmo-solenoid-valve" class="pl-row">
         <div class="pl-thumb pl-thumb--brahma-eg12l-gmo-solenoid-valve"></div>
         <span class="pl-name">Solenoid Valve</span>
+        <span class="pl-code">Brahma 13922051</span>
+        <span class="pl-stock">In Stock</span>
       </a>
-      <a href="categories/pressure-regulator-valves" class="pl-row">
+      <a href="products/vanaz-r2301-pressure-regulator" class="pl-row">
         <div class="pl-thumb pl-thumb--vanaz-r2301-pressure-regulator"></div>
         <span class="pl-name">Pressure Regulator</span>
+        <span class="pl-code">Vanaz R2301</span>
+        <span class="pl-stock">In Stock</span>
       </a>
-      <a href="categories/ignition-transformers" class="pl-row">
+      <a href="products/brahma-t11-n-ignition-transformer" class="pl-row">
         <div class="pl-thumb pl-thumb--brahma-t11-n-ignition-transformer"></div>
         <span class="pl-name">Ignition Transformer</span>
+        <span class="pl-code">Brahma 15099001</span>
+        <span class="pl-stock">In Stock</span>
       </a>
-      <a href="categories/uv-flame-sensor" class="pl-row">
+      <a href="products/rkic-uv-flame-sensor-probe-uv-flame-detector" class="pl-row">
         <div class="pl-thumb pl-thumb--rkic-uv-flame-sensor-probe-uv-flame-detector"></div>
         <span class="pl-name">Flame Sensor</span>
+        <span class="pl-code">RKIC</span>
+        <span class="pl-stock">In Stock</span>
       </a>
-      <a href="categories/gas-flow-meters" class="pl-row">
+      <a href="products/honeywell-elster-bk-g4m-gas-flow-meter" class="pl-row">
         <div class="pl-thumb pl-thumb--honeywell-elster-bk-g4m-gas-flow-meter"></div>
         <span class="pl-name">Gas Flow Meter</span>
+        <span class="pl-code">Elster BK-G4M L</span>
+        <span class="pl-stock">In Stock</span>
       </a>
-      <a href="categories/sequence-controllers" class="pl-row">
+      <a href="products/brahma-cm12u-sequence-controller" class="pl-row">
         <div class="pl-thumb pl-thumb--brahma-cm12u-sequence-controller"></div>
         <span class="pl-name">Burner Control</span>
+        <span class="pl-code">Brahma 37053005</span>
+        <span class="pl-stock">In Stock</span>
       </a>
     </div>
   </div>
@@ -1447,26 +1465,26 @@ height="0" width="0" class="noscript-hidden-iframe"></iframe></noscript>
       <p>A closer look at the parts and brands behind our most frequent enquiries.</p>
     </div>
     <div class="panindia-grid">
-      <div class="panindia-card">
+      <a href="categories/gas-train-systems" class="panindia-card">
         <h3>Gas Train Systems</h3>
         <p class="panindia-card-text">Complete gas train systems — solenoid valves, multiblocks, pressure regulators, filters and valve-proving systems — assembled to the burner and boiler duty you specify, ex-stock from our Surat warehouse for pan-India dispatch.</p>
-      </div>
-      <div class="panindia-card">
+      </a>
+      <a href="categories/ignition-spark-electrodes" class="panindia-card">
         <h3>Ignition Spark Electrodes</h3>
         <p class="panindia-card-text">Ignition spark electrodes and ignition transformers in standard and custom lengths, including Kanthal A1 resistance-wire electrode sets, matched to the burner make and kVA rating of your existing combustion system.</p>
-      </div>
-      <div class="panindia-card">
+      </a>
+      <a href="categories/uv-flame-sensor" class="panindia-card">
         <h3>UV Flame Sensor &amp; UV Flame Detectors</h3>
         <p class="panindia-card-text">UV flame sensor probes and UV flame detectors for continuous flame monitoring in burner safety circuits — genuine Honeywell and Honeywell Kromschröder parts, stocked in the sizes most commonly replaced on Indian plant floors.</p>
-      </div>
-      <div class="panindia-card">
+      </a>
+      <a href="categories/pressure-regulator-valves" class="panindia-card">
         <h3>Pressure Regulator Valves</h3>
         <p class="panindia-card-text">Gas pressure regulator valves across high-pressure, low-pressure, oxygen, ammonia, CO2 and LPG auto-change-over ranges, plus ratio regulators and pressure switches for precise, repeatable fuel-pressure control.</p>
-      </div>
-      <div class="panindia-card">
+      </a>
+      <a href="brands/honeywell-kromschroder" class="panindia-card">
         <h3>Honeywell Kromschröder Components</h3>
         <p class="panindia-card-text">Solenoid valves, ignition transformers and UV flame sensors from Honeywell Kromschröder — a core brand in our gas train and flame-safety range, supplied alongside Brahma, Dungs, Siemens, Madas, Vanaz, Danfoss and Cofi.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
