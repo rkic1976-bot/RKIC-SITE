@@ -829,10 +829,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="rating">
         <div><div class="num">1999</div><div class="lab">Established In</div></div>
-        <div><div class="num">500+</div><div class="lab">Products Stocked</div></div>
-        <div><div class="num">1000+</div><div class="lab">Clients Served</div></div>
-        <div><div class="num">900+</div><div class="lab">Installations</div></div>
-        <div><div class="num">30+</div><div class="lab">Committed Employees</div></div>
+        <div><div class="num" id="heroStatProducts">—</div><div class="lab">Products Stocked</div></div>
+        <div><div class="num">3000+</div><div class="lab">Clients Served</div></div>
+        <div><div class="num">972+</div><div class="lab">Installations</div></div>
+        <div><div class="num">12+</div><div class="lab">Committed Employees</div></div>
       </div>
     </div>
     <div class="schematic">
@@ -1899,6 +1899,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const statBrandsEl = document.getElementById('statBrands');
   if(statProductsEl) statProductsEl.textContent = products.length + '+';
   if(statBrandsEl) statBrandsEl.textContent = Object.keys(brandLogos).length + '+';
+  // Hero "Products Stocked" figure — same live source as the stats band above, kept in sync automatically
+  const heroStatProductsEl = document.getElementById('heroStatProducts');
+  if(heroStatProductsEl) heroStatProductsEl.textContent = products.length + '+';
   // If a product page's search box was used, ?q=... lands here — open search pre-filled with it
   const urlParams = new URLSearchParams(location.search);
   const qParam = urlParams.get('q');

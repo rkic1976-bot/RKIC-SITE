@@ -737,8 +737,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><span class="num">1999</span><span class="lbl">Established</span></div>
-        <div class="hero-stat"><span class="num">14</span><span class="lbl">Brands Represented</span></div>
-        <div class="hero-stat"><span class="num">240+</span><span class="lbl">Components in Stock</span></div>
+        <div class="hero-stat"><span class="num" id="heroStatBrands">—</span><span class="lbl">Brands Represented</span></div>
+        <div class="hero-stat"><span class="num" id="heroStatProducts">—</span><span class="lbl">Components in Stock</span></div>
       </div>
       <div class="hero-office">
         <h3>Contact &amp; Office Details</h3>
@@ -972,6 +972,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   formspree("initForm", { formElement: "#cfForm", formId: "mppznvnq" });
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<script src="site-stats.js?v=20261107a"></script>
+<script>
+  // Hero "Brands Represented" / "Components in Stock" — live count, same source as home/about stats band
+  if (window.RKIC_STATS) {
+    var hsb = document.getElementById('heroStatBrands');
+    var hsp = document.getElementById('heroStatProducts');
+    if (hsb) hsb.textContent = RKIC_STATS.brands;
+    if (hsp) hsp.textContent = RKIC_STATS.products + '+';
+  }
+</script>
 <script src="brand-data.js?v=20261025a" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
